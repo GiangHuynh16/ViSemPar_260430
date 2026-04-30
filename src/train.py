@@ -62,6 +62,14 @@ class ChatDataset(Dataset):
         self.max_length = max_length
         self.examples = self._load(data_path)
 
+    def _find_sublist(self, haystack: list, needle: list) -> int:
+        """Return index of last occurrence of needle in haystack, or -1."""
+        n, h = len(needle), len(haystack)
+        for i in range(h - n, -1, -1):
+            if haystack[i:i + n] == needle:
+                return i
+        return -1
+
     def _load(self, path: str):
         with open(path, encoding='utf-8') as f:
             content = f.read()
@@ -70,6 +78,11 @@ class ChatDataset(Dataset):
         raw = re.split(r'\n\n(?=<\|im_start\|>)', content.strip())
         examples = []
         skipped = 0
+
+        # Pre-compute marker token IDs (try both with and without trailing newline)
+        # Qwen tokenizer may encode the newline as part of the next token
+        marker_str = '<|im_start|>assistant\n'
+        marker_ids = self.tokenizer.encode(marker_str, add_special_tokens=False)
 
         for text in raw:
             text = text.strip()
@@ -87,25 +100,29 @@ class ChatDataset(Dataset):
             )
             input_ids = encoded['input_ids']
 
-            # Build labels: mask everything up to and including <|im_start|>assistant\n
-            labels = [-100] * len(input_ids)
-            assistant_marker = '<|im_start|>assistant\n'
-            marker_ids = self.tokenizer.encode(
-                assistant_marker, add_special_tokens=False)
+            # Strategy 1: find marker token sequence
+            marker_pos = self._find_sublist(input_ids, marker_ids)
 
-            # Find last occurrence of marker in input_ids
-            marker_pos = -1
-            for i in range(len(input_ids) - len(marker_ids), -1, -1):
-                if input_ids[i:i + len(marker_ids)] == marker_ids:
-                    marker_pos = i
-                    break
-
+            # Strategy 2: if not found, split the text at the marker and
+            # tokenize the prefix to get its length
             if marker_pos == -1:
-                skipped += 1
-                continue
+                split_marker = '<|im_start|>assistant\n'
+                idx = text.rfind(split_marker)
+                if idx == -1:
+                    skipped += 1
+                    continue
+                prefix = text[:idx + len(split_marker)]
+                prefix_ids = self.tokenizer.encode(
+                    prefix, add_special_tokens=False, truncation=True,
+                    max_length=self.max_length)
+                marker_end = len(prefix_ids)
+            else:
+                marker_end = marker_pos + len(marker_ids)
 
-            # Only compute loss on tokens after the marker
-            for j in range(marker_pos + len(marker_ids), len(input_ids)):
+            # Build labels: -100 for prefix (system+user+assistant header),
+            # real token ids for assistant response
+            labels = [-100] * len(input_ids)
+            for j in range(marker_end, len(input_ids)):
                 labels[j] = input_ids[j]
 
             if all(l == -100 for l in labels):
@@ -119,6 +136,15 @@ class ChatDataset(Dataset):
 
         if skipped:
             print(f"  [Dataset] Skipped {skipped} examples (no assistant marker / truncated)")
+
+        n_valid = len(examples)
+        if n_valid > 0:
+            # Sanity check on first example
+            first_labels = examples[0]['labels']
+            n_response_tokens = sum(1 for l in first_labels if l != -100)
+            print(f"  [Dataset] Loaded {n_valid} examples. "
+                  f"First example: {len(examples[0]['input_ids'])} tokens, "
+                  f"{n_response_tokens} response tokens.")
         return examples
 
     def __len__(self):
@@ -156,6 +182,8 @@ def build_model(cfg: dict):
         bias=lora_cfg.get('bias', 'none'),
     )
     model = get_peft_model(model, peft_config)
+    # Required when using device_map="auto" + gradient_checkpointing
+    model.enable_input_require_grads()
     model.print_trainable_parameters()
     return model, tokenizer
 
