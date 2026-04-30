@@ -182,8 +182,6 @@ def build_model(cfg: dict):
         bias=lora_cfg.get('bias', 'none'),
     )
     model = get_peft_model(model, peft_config)
-    # Required when using device_map="auto" + gradient_checkpointing
-    model.enable_input_require_grads()
     model.print_trainable_parameters()
     return model, tokenizer
 
@@ -228,7 +226,9 @@ def main():
         max_grad_norm=tr_cfg.get('max_grad_norm', 1.0),
         optim=tr_cfg.get('optimizer', 'adamw_torch'),
         bf16=True,
+        # gradient_checkpointing via kwargs so enable_input_require_grads is set correctly
         gradient_checkpointing=True,
+        gradient_checkpointing_kwargs={"use_reentrant": False},
         logging_steps=10,
         save_strategy='epoch',
         save_total_limit=3,
