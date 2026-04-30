@@ -1,0 +1,7 @@
+base: base.yaml
+method: B1
+group: baselines
+data:
+  train: B1_train.txt
+decoding:
+  max_new_tokens: 512

@@ -1,0 +1,7 @@
+base: base.yaml
+method: MTUP3B
+group: mtup_3tasks
+data:
+  train: MTUP3B_train.txt
+decoding:
+  max_new_tokens: 1536

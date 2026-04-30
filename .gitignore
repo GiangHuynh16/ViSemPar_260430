@@ -1,0 +1,20 @@
+# Model checkpoints – lưu trên server, KHÔNG push GitHub
+checkpoints/
+
+# Large formatted data files – build lại bằng data_pipeline.py
+data/formatted/
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+.DS_Store
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Env
+.env
+*.egg-info/
+dist/
+build/

@@ -1,0 +1,7 @@
+base: base.yaml
+method: MTUP2
+group: mtup_2tasks
+data:
+  train: MTUP2_train.txt
+decoding:
+  max_new_tokens: 1024
