@@ -159,6 +159,11 @@ def main():
 
     if len(preds) != len(gold):
         print(f"WARNING: pred count ({len(preds)}) != gold count ({len(gold)})")
+        # public_test.txt has 150 sentences but gold only has 149 (sentence 97 missing).
+        # Drop index 97 from preds to realign with gold.
+        if len(preds) == 150 and len(gold) == 149:
+            print("  Auto-fix: dropping pred[97] to align with gold (known missing gold entry).")
+            preds = preds[:97] + preds[98:]
 
     metrics = compute_metrics(preds, gold)
 
