@@ -1,0 +1,2241 @@
+#::snt tôi nhớ lời anh chủ tịch xã Bùi Văn Luyến nhắc đi nhắc lại : " coi bộ nhỏ nhưng quan trọng lắm !
+AMR_NO_VAR: (nhớ
+    :pivot(tôi)
+    :theme(lời
+        :agent-of(nhắc
+            :agent(anh
+                :mod(chủ tịch
+                    :mod(xã)
+                    :mod(person
+                        :name(name
+                            :op1(Bùi)
+                            :op2(Văn)
+                            :op3(Luyến))
+                        :wiki -)))
+            :compound(đi)
+            :compound(nói-lại))
+        :topic(contrast-01
+            :ARG1(nhỏ)
+            :ARG2(quan trọng
+                :degree(lắm))))
+    :mode expressive)
+
+
+#::snt hiện nay xã có 68 tổ nhân dân , mỗi tổ phụ trách 40 gia đình .
+AMR_NO_VAR: (có
+    :pivot(xã)
+    :theme(tổ
+        :mod(nhân dân)
+        :quant 68)
+    :topic(phụ trách
+        :agent(tổ)
+        :theme(gia đình)
+        :quant 40))
+
+
+#::snt chủ trương tốt nhưng dân không hiểu , không hưởng ứng thì cũng chịu thua !
+AMR_NO_VAR: (contrast-01
+    :ARG1(chủ trương
+        :mod(tốt))
+    :ARG2(and
+        :op1(hiểu
+            :pivot(dân)
+            :polarity -)
+        :op2(hưởng ứng
+            :polarity -
+            :agent d)
+        :op3(chịu thua
+            :modality(cũng))))
+
+
+#::snt nên trước nhất người đảng viên phải làm gương .
+AMR_NO_VAR: (obligate-01
+    :topic(làm
+        :agent(người
+            :mod(đảng viên))
+        :theme(gương)
+        :time(before)))
+
+
+#::snt riêng về xuất khẩu lao động , anh Luyến có cách nghĩ riêng : " du học sinh đi nước ngoài để mở mang kiến thức .
+AMR_NO_VAR: (cách nghĩ
+    :topic(xuất khẩu
+        :mod(lao động))
+    :domain(anh
+        :mod(Luyến))
+    :mod(riêng)
+    :topic(du hoc sinh
+        :agent-of(đi
+            :location(nước ngoài)
+            :purpose(mở mang
+                :theme(kiến thức)))))
+
+
+#::snt người lao động cũng vậy .
+AMR_NO_VAR: (vậy
+    :domain(người
+        :mod(lao động)))
+
+
+#::snt sau ba năm làm việc ở nước ngoài , bên cạnh việc tạo vốn giúp gia đình thoát nghèo , họ còn tiếp cận một môi trường làm việc công nghiệp .
+AMR_NO_VAR: (tiếp cận
+    :topic(bên
+        :compound(cạnh)
+        :mod(việc
+            :agent-of(tạo
+                :theme(vốn)
+                :purpose(giúp
+                    :beneficiary-arg2(gia đình
+                        :agent-of(thoát
+                            :theme(nghèo)))))))
+    :agent(họ)
+    :theme(môi trường
+        :theme-of(làm việc
+            :theme(công nghiệp))
+        :quant 1)
+    :time(after
+        :op1(năm
+            :agent-of(làm việc
+                :location(nước ngoài
+                    :prep(ở))
+                :agent h)
+            :quant 3)))
+
+
+#::snt đến nay xã có 672 người đi làm việc ở nước ngoài .
+AMR_NO_VAR: (có
+    :pivot(xã)
+    :theme(người
+        :quant 672
+        :agent-of(đi
+            :compound(làm việc)
+            :location(nước ngoài
+                :prep(ở))))
+    :time(now))
+
+
+#::snt khi trở về , hầu hết tiếp tục làm việc tốt .
+AMR_NO_VAR: (tiếp tục
+    :time(trở về)
+    :pivot(hầu hết)
+    :topic(làm việc
+        :manner(tốt)))
+
+
+#::snt nhiều người từ nghèo khó nhất xã đã có vốn mở cơ sở , lập trang trại , tạo công ăn việc làm cho nhiều lao động .
+AMR_NO_VAR: (có
+    :pivot(người
+        :mod(nhiều)
+        :mod(nghèo khó
+            :prep(từ)
+            :degree(nhất)
+            :poss(xã)))
+    :tense(đã)
+    :theme(vốn
+        :purpose(or
+            :op1(mở
+                :theme(cơ sở))
+            :op2(lập
+                :theme(trang trại))))
+    :purpose(tạo
+        :theme(công ăn việc làm)
+        :beneficiary-arg2(lao động
+            :prep(cho)
+            :mod(nhiều))))
+
+
+#::snt mất hai cánh tay , một mắt .
+AMR_NO_VAR: (multi-sentence
+    :snt1(mất
+        :theme(cánh tay
+            :quant 2))
+    :snt2(mất
+        :theme(mắt
+            :quant 1)))
+
+
+#::snt một tập thể vững mạnh còn nhờ " đầu tàu " .
+AMR_NO_VAR: (nhờ
+    :pivot(tập thể
+        :mod(vững mạnh))
+    :theme(đầu tàu))
+
+
+#::snt hai lão nông - một cánh tay còn nguyên vẹn - đã dựng lên hai gia đình gương mẫu .
+AMR_NO_VAR: (dựng
+    :agent(nông
+        :quant 2
+            :mod(lão))
+    :patient(cánh tay
+        :mod(còn)
+        :mod(nguyên vẹn)
+        :quant 1)
+    :tense(đã)
+    :compound(lên)
+    :result(gia đình
+        :mod(gương mẫu)
+        :quant 2))
+
+
+#::snt có em trở về còn quyết tâm dùng tiền dành dụm tiếp tục học văn hóa , vào đại học " .
+AMR_NO_VAR: (and
+    :op1(trở về
+        :agent(em))
+    :op2(quyết tâm
+        :topic(dùng
+            :theme(tiền
+                :mod(nhận
+                    :compound(dành dụm)))
+            :purpose(tiếp tục
+                :theme(học
+                    :theme(văn hóa))))
+        :location(đại học
+            :prep(vào))))
+
+
+#::snt có em trở về còn quyết tâm dùng tiền dành dụm tiếp tục học văn hóa , vào đại học " .
+AMR_NO_VAR: (and
+    :op1(trở về
+        :agent(em))
+    :op2(quyết tâm
+        :topic(dùng
+            :theme(tiền
+                :mod(nhận
+                    :compound(dành dụm)))
+            :purpose(tiếp tục
+                :theme(học
+                    :theme(văn hóa))))
+        :location(đại học
+            :prep(vào))))
+
+
+#::snt dự kiến từ nay đến năm 2007 sẽ hoàn thành phổ cập thpt .
+AMR_NO_VAR: (hoàn thành
+    :theme(dự kiến
+        :time(date-entity
+            :initialNow(nay)
+            :finalYear(temporal-quantity
+                :year 2007)))
+    :tense(sẽ)
+    :topic(phổ cập
+        :theme(thpt)))
+
+
+#::snt con của " thép " .
+AMR_NO_VAR: (con
+    :poss(thép))
+
+
+#::snt tôi nghe câu chuyện anh Thanh cho anh Đu mượn chú heo con .
+AMR_NO_VAR: (nghe
+    :agent(tôi)
+    :theme(câu chuyện
+        :agent-of(cho
+            :agent(anh
+                :mod(thanh))
+            :beneficiary(mượn
+                :beneficiary-arg1(anh
+                    :mod(Đu))
+                :theme(héo
+                    :classifier(chú)
+                    :mod(con)))))
+)
+
+#::snt ai trồng lúa , xã mời các cán bộ về tập huấn cho trồng lúa .
+AMR_NO_VAR: (mời
+    :agent(xã)
+    :goal(cán bộ)
+    :topic(về
+        :purpose(tập huấn
+            :topic(trồng
+                :theme(lúa))
+            :agent c)
+        :agent c))
+
+
+#::snt ai nuôi cá , nuôi bò thì được tập huấn về chăn nuôi .
+AMR_NO_VAR: (tập huấn
+    :beneficiary-arg0(nuôi
+        :animal(cá))
+    :condition(nuôi
+        :animal(bò))
+    :topic(chăn nuôi)
+    :modality +)
+
+
+#::snt ai muốn giữ nghề truyền thống được tạo điều kiện vay vốn .
+AMR_NO_VAR: (tạo
+    :beneficiary-arg0(ai
+        :pivot-of(muốn
+            :topic(giữ
+                :theme(nghề
+                    :mod(truyền thống)))))
+    :theme(điều kiện)
+    :purpose(vay
+        :theme(vốn))
+    :modality +)
+
+
+#::snt nhưng không !
+AMR_NO_VAR: (contrast-01
+    :ARG2(không))
+
+
+#::snt gặp những đứa con của quê hương này , tôi bị bất ngờ bởi sức sống mãnh liệt .
+AMR_NO_VAR: (bất ngờ
+    :time(gặp
+        :goal(con
+            :classifier(đứa)
+            :poss(quê hương
+                :mod(này)))
+        :agent t)
+    :pivot(tôi)
+    :reason(sức sống
+        :prep(bởi)
+        :mod(mãnh liệt))
+    :modality +)
+
+
+#::snt mình còn sống .
+AMR_NO_VAR: (sống
+    :domain(mình)
+    :modality(còn))
+
+
+#::snt hên thiệt !
+AMR_NO_VAR: (and
+    :op1(hên
+        :mode expressive)
+    :op2(thiệt
+        :mode expressive))
+
+
+#::snt à , mà chuyện đó cũ hết rồi ... " .
+AMR_NO_VAR: (and
+    :op2(cũ
+        :domain(chuyện
+            :mod(đó))
+        :degree(hết)
+        :time(rồi)))
+
+
+#::snt sau chiến tranh đi tháo gỡ bom mìn .
+AMR_NO_VAR: (đi
+    :compound(tháo gỡ
+        :patient(bom
+            :mod(mìn)))
+    :time(after
+        :op1(chiến tranh)))
+
+
+#::snt tháo gỡ đến trái 223 thì bị nổ .
+AMR_NO_VAR: (nổ
+    :time(tháo gỡ
+        :patient(trái
+            :ord 223))
+    :modality -)
+
+
+#::snt có người đã là cô giáo dạy thcs .
+AMR_NO_VAR: (cô giáo
+    :domain(người)
+    :tense(đã)
+    :agent-of(dạy
+        :theme(thcs)))
+
+
+#::snt gần đó cũng vừa mọc lên một nhà văn hóa trị giá khoảng 5 tỉ đồng .
+AMR_NO_VAR: (mọc
+    :location(gần
+        :mod(đó))
+    :tense(vừa)
+    :compound(lên)
+    :result-arg1(nhà
+        :compound(văn hóa)
+        :mod(trị giá
+            :quant(khoảng)
+            :unit(tỉ)
+            :mod(đồng))
+        :quant 1)
+    :degree(cũng))
+
+
+#::snt ngôi nhà của Ama Công .
+AMR_NO_VAR: (nhà
+    :classifier(ngôi)
+    :poss(person
+        :wiki -
+        :name(name
+            :op1(Ama)
+            :op2(Công))))
+
+
+#::snt đó là ngôi nhà của một gia đình người Kinh dưới chân núi chư pah ( Gia Lai ) .
+AMR_NO_VAR: (nhà
+    :domain(đó)
+    :classifier(ngôi)
+    :poss(gia đình
+        :mod(người
+            :mod(Kinh))
+        :location(chân
+            :mod(núi
+                :mod(chư pah)
+                :part-of(provice
+                    :name(name
+                        :op1(Gia)
+                        :op2(Lai))
+                    :wiki(Gia_Lai)))
+            :directionTowards(down))))
+
+
+#::snt cứ nhà nào có người ốm đau , bệnh hoạn anh đều có mặt .
+AMR_NO_VAR: (có
+    :theme(nhà
+        :mod(nào)
+        :pivot-of(có
+            :theme(người
+                :mod(ốm đau))))
+    :theme(bệnh hoạn
+        :pivot n)
+    :agent(anh)
+    :compound(mặt)
+    :frequency(always))
+
+
+#::snt " hồi ấy đây là vùng giao tranh ác liệt - ông kể - ngày nào cũng có người chết vì bom đạn .
+AMR_NO_VAR: (kể
+    :agent(ông)
+    :topic(and
+        :op1(vùng
+            :domain(đây)
+            :mod(giao tranh)
+            :degree(ác liệt)
+            :time(before))
+        :op2(có
+            :time(ngày
+                :mod(nào))
+            :theme(người
+                :pivot-of(chết
+                    :cause(bom đạn))))
+        :mode expressive))
+
+
+#::snt nay thì mô hình đã thành công .
+AMR_NO_VAR: (thành công
+    :time(nay)
+    :theme(mô hình)
+    :tense(đã))
+
+
+#::snt tất cả chỉ với hai cùi tay cụt .
+AMR_NO_VAR: (cùi
+    :degree(chỉ)
+    :part-of(tay
+        :mod(cụt))
+    :quant 2)
+
+
+#::snt sẽ tổ chức phố đi bộ tại Hội An .
+AMR_NO_VAR: (tổ chức
+    :tense(sẽ)
+    :theme(phố
+        :mod(đi
+            :compound(bộ))
+        :location(city
+            :name(name
+                :op1(Hội)
+                :op2(An))
+            :wiki(Hội_An)))
+    :agent organizers)
+
+#::snt công ty đồng ý , cụ mãn nguyện , yên tâm sống ở đây suốt quãng đời còn lại .
+AMR_NO_VAR: (and
+    :op1(đồng ý
+        :agent(công ty))
+    :op2(and
+        :op1(mãn nguyện
+            :pivot(cụ))
+        :op2(sống
+            :manner(yên tâm)
+            :location(đây
+                :prep(ở))
+            :time(quãng
+                :mod(suốt)
+                :mod(đời)
+                :theme-of(còn
+                    :compound(lại)))
+            :pivot c1)))
+
+
+#::snt một điểm chung là người thương binh ít chạm vào quá khứ .
+AMR_NO_VAR: (điểm
+    :domain(chung)
+    :topic(người
+        :mod(thương binh)
+        :agent-of(chạm
+            :polarity -
+            :patient(quá khứ))))
+
+
+#::snt giờ nó đi làm có chút vốn , lấy đó mà học tiếp " .
+AMR_NO_VAR: (and
+    :op1(đi
+        :agent(nó)
+        :compound(làm)
+        :concession(có
+            :quant(một chút)
+            :theme(vốn)))
+    :op2(lấy
+        :theme(đó)
+        :purpose(học
+            :compound(tiếp))))
+
+
+#::snt đấy là phòng giá cao nhất : 3, 5 triệu / tháng .
+AMR_NO_VAR: (phòng
+    :domain(đấy)
+    :mod(giá
+        :degree(cao
+            :degree(nhất))
+        :quant(monetary-quantity
+            :unit(triệu)
+            :quant 3.5))
+    :time(temporal-quantity
+        :unit(tháng)
+        :quant 1))
+
+
+#::snt mẹ anh là cụ g . , có năm con .
+AMR_NO_VAR: (cụ
+    :domain(mẹ
+        :poss(anh))
+    :mod(g)
+    :pivot-of(có
+        :theme(con)
+        :quant 5))
+
+
+#::snt bán thuốc giá cao , công ty Sanofi phải giải trình .
+AMR_NO_VAR: (obligate-01
+    :topic(giải trình
+        :topic(bán
+            :theme(thuốc)
+            :manner(giá
+                :mod(cao)))
+        :agent(company
+            :name(name
+                :op1(Sanofi))
+            :wiki -)))
+
+
+#::snt không phải phép thần kỳ biến quê hương từ chỗ cay cực nhất vinh dự nhận danh hiệu tập thể " anh hùng lao động thời kỳ đổi mới " sau 15 năm đổi mới .
+AMR_NO_VAR: (phép
+    :mod(thần kỳ)
+    :agent-of(biến
+        :theme(quê hương)
+        :initialLocation(chỗ
+            :mod(cay
+                :degree(cực)
+                :rank(max))
+            :agent-of(nhận
+                :theme(danh hiệu
+                    :mod(tập thể)
+                    :mod(anh hùng
+                        :compound(lao động
+                            :time(era
+                                :name(name
+                                    :op1(thời kỳ)
+                                    :op2(đổi mới)))))))
+        :duration(after
+            :op1(temporal-quantity
+                :unit(năm)
+                :quant 15))
+        :agent q))
+    :polarity -)
+
+
+#::snt ăn xong chị lại quày quả ra đi với chiếc xe đạp cọc cạch và hai cái bao nhỏ .
+AMR_NO_VAR: (and
+    :op1(ăn
+        :agent(chị)
+        :compound(xong))
+    :op2(quày quả
+        :pivot(chị)
+        :manner(ra
+            :compound(đi)
+            :accompanier(and
+                :op1(xe đạp
+                    :classifier(chiếc)
+                    :mod(cọc cạch))
+                :op2(bao
+                    :quant 2
+                        :classifier(cái)
+                        :mod(nhỏ))))))
+
+
+#::snt tối 21 - 3 , chúng tôi tìm đến chỗ trọ của vợ chồng anh trong ngôi nhà nhỏ của người em gái chị Xoan .
+AMR_NO_VAR: (tìm
+    :agent(chúng tôi)
+    :compound(đến)
+    :location(chỗ
+        :compound(trọ)
+        :poss(vợ chồng
+            :mod(anh))
+        :prep(trong)
+        :mod(nhà
+            :classifier(ngôi)
+            :mod(nhỏ)
+            :poss(người
+                :mod(have-rel-role-91
+                    :ARG2(em gái)
+                    :ARG0(person
+                        :wiki -
+                        :name(name
+                            :op1(chị)
+                            :op2(Xoan)))))))
+    :time(date-entity
+        :dayperiod(tối)
+        :day 21
+        :month 3))
+
+
+#::snt đứa lớn theo vợ chồng chị vào tp hcm .
+AMR_NO_VAR: (theo
+    :agent(đứa
+        :mod(lớn))
+    :goal(vợ chồng
+        :mod(chị))
+    :location(tp
+        :wiki(Hồ_Chí_Minh)
+        :name(name
+            :op1(hcm))))
+
+
+#::snt hà nội : 98 % - 100 % người nghiện tái nghiện .
+AMR_NO_VAR: (tái nghiện
+    :agent(người
+        :compound(nghiện)
+        :quant(percentage-entity
+            :ARG2(percentage-entity
+                :value 100)
+            :ARG1(percentage-entity
+                :value 98)))
+    :location(city
+        :name(name
+            :op2(Nội)
+            :op1(Hà))
+        :wiki(Hà_Nội)))
+
+
+#::snt lập tức các mặt hàng trên bị lập biên bản thu giữ .
+AMR_NO_VAR: (lập
+    :manner(tức thì)
+    :patient(mặt hàng
+        :prep(trên))
+    :modality(bị)
+    :result(lập
+        :compound(biên bản)
+        :purpose(thu giữ)))
+
+
+#::snt ai muốn lao động ở nước ngoài , xã làm cầu nối ... 500 liệt sĩ ! 750 hộ gia đình chính sách ! 176 thương binh ! ...
+AMR_NO_VAR: (and
+    :op1(làm
+        :theme(cầu
+            :compound(nối))
+        :agent(xã)
+        :condition(muốn
+            :pivot-of(ai)
+            :theme(lao động
+                :location(nước ngoài
+                    :prep(ở)))))
+    :op2(and
+        :op1(liệt sĩ
+            :quant 500)
+        :op2(hộ
+            :mod(gia đình
+                :mod(chính sách))
+            :quant 750)
+        :op3(thương binh
+            :quant 176)))
+
+
+#::snt 17 lao động trở về từ Malaysia vì không có việc làm .
+AMR_NO_VAR: (trở
+    :agent(lao động
+        :quant 17)
+    :compound(về)
+    :initialLocation(country
+        :wiki(Malaysia)
+        :name(name
+            :op1(Malaysia)))
+    :reason(có
+        :polarity -
+        :theme(việc làm)))
+
+
+#::snt thực chất là đổi đất lấy hạ tầng .
+AMR_NO_VAR: (đổi
+    :domain(thực chất)
+    :theme(đất)
+    :goal(hạ tầng))
+
+
+#::snt anh Đu nuôi đến khi heo lớn , bán thịt thì mới trả heo con lại cho anh Thanh , không tính lời lãi .
+AMR_NO_VAR: (and
+    :op1(nuôi
+        :agent(anh
+            :mod(person
+                :name(name
+                    :op1(Đu))
+                :wiki -))
+        :duration(khi
+            :prep(đến)
+            :op1(lớn
+                :pivot(heo))))
+    :op2(bán
+        :theme(thịt)
+        :agent a)
+    :op3(trả
+        :time(mới)
+        :theme(heo
+            :mod(con))
+        :beneficiary-arg1(anh
+            :mod(person
+                :name(name
+                    :op1(Thanh))
+                :wiki -))
+        :agent a)
+    :op4(tính
+        :polarity -
+        :theme(lời
+            :mod(lãi))
+        :agent a))
+
+
+#::snt anh Đu thì vui mừng thông báo con heo con đi mượn ấy giờ đã thành mẹ của một bầy con ...
+AMR_NO_VAR: (thông báo
+    :agent(anh
+        :mod(vui mừng)
+        :name(name
+            :op1(Đu)))
+    :topic(thành
+        :pivot(heo
+            :classifier(con))
+        :tense(đã)
+        :result-of(mẹ
+            :of(bầy
+                :classifier(con)
+                :quant 1)
+            :pivot h)))
+
+
+#::snt còn anh Đu thì : " ngày 30-4-1975 tui còn y nguyên .
+AMR_NO_VAR: (day
+    :mod(y nguyên)
+    :domain(person
+        :name(name
+            :op1(anh)
+            :op2(Đu))
+        :wiki -)
+    :time(date-entity
+        :day(30)
+        :month(4)
+        :year(1975)))
+
+
+#::snt chuyện mới là từ chỗ đất anh gửi lại một phần thân thể ấy đang xây một trụ sở ubnd xã mới .
+AMR_NO_VAR: (từ
+    :theme(chuyện
+        :mod(mới))
+    :source(chỗ
+        :mod(đất
+            :location-of(gửi
+                :agent(anh)
+                :compound(lại)
+                :theme(thân thể
+                    :mod(ấy)
+                    :agent-of(xây
+                        :tense(đang)
+                        :result-arg1(trụ sở
+                            :mod(ubnd
+                                :compound(xã)
+                                :mod(mới))))))))
+    :quant 1)
+
+
+#::snt cũng qua rồi thời thức suốt trong bưng , đội mít , đội thúng mua đi bán lại nuôi con ăn học .
+AMR_NO_VAR: (qua
+    :theme(thời
+        :agent-of(thức
+            :duration(temporal-quantity
+                :unit(giờ)
+                :quant 24))
+        :location(and
+            :op1(bưng)
+            :op2(đội
+                :mod(mít))
+            :op3(đội
+                :mod(thúng
+                    :purpose(mua
+                        :compound(đi)
+                        :purpose(nuôi
+                            :theme(con)
+                            :purpose-of(ăn học)))))))
+    :modality(rồi))
+
+
+#::snt họ lập tức thông báo với người thân và bạn bè đến nộp đơn xin mua đất xây dựng .
+AMR_NO_VAR: (thông báo
+    :agent(họ)
+    :manner(lập tức)
+    :goal(and
+        :op1(người thân)
+        :op2(bạn bè))
+    :topic(nộp
+        :compound(đơn)
+        :purpose(xin
+            :theme(mua
+                :theme(đất)
+                :purpose(xây dựng)))
+        :agent h))
+
+
+#::snt đến nay ngôi nhà ngói ba gian vững chãi xây trên nền căn nhà lá .
+AMR_NO_VAR: (xây
+    :result-arg1(nhà
+        :classifier(ngôi)
+        :mod(ngói)
+        :mod(vững chãi)
+        :theme-of(có
+            :theme(nền)
+            :mod(căn)
+            :mod(nhà
+                :mod(lá))))
+    :time(now))
+
+
+#::snt công trình mẫu ... thi công bê bối .
+AMR_NO_VAR: (thi công
+    :theme(công trình
+        :mod(mẫu))
+    :manner(bê bối))
+
+
+#::snt hiện chúng tôi vẫn tiếp tục điều tra làm rõ động cơ của cán bộ địa phương .
+AMR_NO_VAR: (tiếp tục
+    :agent(chúng tôi)
+    :mod(vẫn)
+    :topic(điều tra
+        :purpose(làm rõ
+            :topic(động cơ
+                :poss(cán bộ
+                    :mod(địa phương))))
+        :agent c))
+
+
+#::snt 80 triệu đồng ủng hộ bệnh nhân nghèo .
+AMR_NO_VAR: (ủng hộ
+    :theme(80
+        :unit(triệu
+            :mod(đồng)))
+    :beneficiary(bệnh nhân
+        :mod(nghèo)))
+
+
+#::snt trong các trường học đã phát hiện 652 học sinh và 229 giáo viên nghiện ma túy .
+AMR_NO_VAR: (phát hiện
+    :location(trường học)
+    :tense(đã)
+    :patient(and
+        :op1(học sinh
+            :quant 652)
+        :op2(giáo viên
+            :mod(nghiện
+                :theme(ma túy))
+            :quant 229)))
+
+
+#::snt dân Thái Mỹ cũng quen lắm hình ảnh phó chủ tịch hội cựu chiến binh xã kiêm tổ trưởng tổ nhân dân một mắt , lái xe máy bằng hai cùi tay .
+AMR_NO_VAR: (quen
+    :pivot(dân
+        :mod(country
+            :wiki(Thái_Mỹ)
+            :name(name
+                :op1(Thai)
+                :op2(Mỹ))))
+    :degree(lắm)
+    :theme(hình ảnh
+        :mod(person
+            :agent-of(have-org-role-91
+                :ARG1(hội
+                    :mod(cựu
+                        :compound(chiến binh)
+                        :mod(xã)))
+                :ARG2(tổ
+                    :mod(nhân dân)
+                    :mod(trưởng)
+                    :mod(tổ))
+                :quant 1)
+            :mod(làm việc
+                :instrument(xe máy
+                    :poss d)
+                :manner(lái
+                    :manner(cùi
+                        :quant 2
+                            :part-of(tay))
+                    :agent p)
+                :agent p)
+            :name(name
+                :op1(mắt)
+                :op2(làm việc
+                    :instrument(xe máy
+                        :poss d)
+                    :manner(lái
+                        :manner(cùi
+                            :quant 2
+                                :part-of(tay))
+                        :agent p)
+                    :agent p)
+                :op2(thấy
+                    :goal(gì
+                        :mod(vô hình))
+                    :pivot p)
+                :op3(nghe
+                    :goal(gì
+                        :mod(vô thanh))
+                    :pivot p)
+                :op4(thức
+                    :patient(gì
+                        :mod(vô thức))
+                    :pivot p)
+                :op5(biết
+                    :topic(gì
+                        :mod(vô ý))
+                    :pivot p)
+                :op6(đọc
+                    :goal(gì
+                        :mod(vô chữ))
+                    :pivot p)
+                :op7(tưởng
+                    :topic(gì
+                        :mod(vô lý))
+                    :pivot p)
+                :op8(hiểu
+                    :topic(gì
+                        :mod(vô nghĩa))
+                    :pivot p)
+                :op9(thấy
+                    :goal(gì
+                        :mod(vô hình))
+                    :pivot p)
+                :op10(nghe
+                    :goal(gì
+                        :mod(vô thanh))
+                    :pivot p)
+                :op11(thức
+                    :patient(g
+
+#::snt dự án này đã được ubnd tỉnh Phú Yên phê duyệt và giao cho ubnd huyện Sông Cầu thực hiện .
+AMR_NO_VAR: (and
+    :op1(phê duyệt
+        :patient(dự án
+            :mod(này))
+        :tense(đã)
+        :modality(được)
+        :agent(ubnd
+            :mod(tỉnh)
+            :mod(name
+                :op1(Phú)
+                :op2(Yên))))
+    :op2(giao
+        :theme(dự án
+            :mod(này))
+        :agent(tỉnh uỷ
+            :mod(name
+                :op1(Phú)
+                :op2(Yên)))
+        :goal(ubnd
+            :mod(huyện)
+            :mod(name
+                :op1(Sông)
+                :op2(Cầu)))))
+
+
+#::snt mỗi thước " đất thép " đều thấm máu xương và mồ hôi nên chuyện con người lạ kỳ trên xã anh hùng vẫn còn dài .
+AMR_NO_VAR: (dài
+    :domain(chuyện
+        :mod(lạ kỳ)
+        :location(xã
+            :prep(trên)
+            :mod(anh hùng)))
+    :reason(and
+        :op1(thấm
+            :pivot(thước
+                :mod(đất
+                    :mod(thép))
+                :quant(mỗi))
+            :theme(máu
+                :mod(xương))
+            :op2(thấm
+                :theme(mồ hôi)
+                :pivot t))
+        :op2(obligate-01
+            :topic(còn
+                :pivot c))))
+
+
+#::snt như chuyện dân chắt chiu xây dựng gần 500 căn nhà tình nghĩa , tình thương ...
+AMR_NO_VAR: (example
+    :topic(chuyện
+        :mod(xây dựng
+            :agent(dân
+                :mod(chắt chiu))
+            :result-arg1(nhà
+                :mod(tình nghĩa)
+                :quant 500
+                    :classifier(căn)))
+        :conj(and
+            :op1(tình thương))))
+
+
+#::snt chị già đi rất nhiều so với cái tuổi 35 của mình .
+AMR_NO_VAR: (già
+    :domain(chị)
+    :manner(đi)
+    :compared-to(tuổi
+        :quant 35
+        :poss c)
+    :degree(very))
+
+
+#::snt anh khẳng định : " trong vụ kiện này , tiền bạc đối với tôi không phải là tất cả , dù gia đình tôi đang rất túng quẫn " .
+AMR_NO_VAR: (khẳng định
+    :agent(anh)
+    :topic(and
+        :op1(phải
+            :beneficiary(tôi)
+            :theme(tiền bạc)
+            :polarity -
+            :degree(tất cả))
+        :op2(túng quẫn
+            :domain(gia đình
+                :poss(tôi))
+            :tense(đang)
+            :degree(rất))))
+
+
+#::snt nhiều gia đình trong số họ đã dắt díu nhau đi đâu , chính anh Đại bây giờ cũng không rõ .
+AMR_NO_VAR: (rõ
+    :pivot(anh
+        :mod(chính)
+        :compound(Đại))
+    :time(bây giờ)
+    :polarity -
+    :topic(dắt díu
+        :agent(gia đình
+            :quant(nhiều)
+            :mod(họ))
+        :tense(đã)
+        :patient(nhau)
+        :location(amr-unknown)))
+
+
+#::snt nỗi oan chưa được giải nên cháu cũng phải sống trong sự ngờ vực của bạn bè .
+AMR_NO_VAR: (obligate-01
+    :reason(giải
+        :theme(nỗi
+            :mod(oan))
+        :polarity -
+        :agent(cháu))
+    :degree(cũng)
+    :result(sống
+        :setting(sự
+            :compound(khuấy vực)
+            :poss(bạn bè))
+        :agent c))
+
+
+#::snt chị Xoan vừa đi nhặt ve chai , giấy vụn trở về đang cùng chồng và đứa con gái ăn vội miếng cơm đạm bạc .
+AMR_NO_VAR: (and
+    :op1(đi
+        :agent(chị
+            :mod(person
+                :name(name
+                    :op1(Xoan))
+                :wiki -))
+        :time(vừa)
+        :compound(nhặt)
+        :theme(and
+            :op1(ve
+                :mod(chai))
+            :op2(giấy
+                :mod(vụn))))
+    :op2(trở
+        :compound(về)
+        :tense(đang)
+        :setting(and
+            :op1(chồng)
+            :op2(con gái
+                :classifier(đứa))
+            :op3(ăn
+                :manner(vội)
+                :patient(cơm
+                    :quant(miếng)
+                    :mod(đạm bạc))))))
+
+
+#::snt cũng như số phận của vợ chồng anh Đại , những công nhân đứng ra tố cáo tiêu cực ở đường liên cảng a5 ngày xưa bây giờ phiêu bạt khắp nơi .
+AMR_NO_VAR: (phiêu bạt
+    :compared-to(số phận
+        :poss(vợ chồng
+            :mod(anh
+                :mod(Đại))))
+    :agent(công nhân
+        :agent-of(đứng
+            :compound(ra)
+            :purpose(tố cáo
+                :manner(tiêu cực)
+                :location(đường
+                    :mod(liên cảng)
+                    :mod(a5))
+                :time(before)
+                :agent c)))
+    :location(nơi
+        :mod(khắp))
+    :time(now))
+
+
+#::snt rùi đồng bào bị lũ lụt , hỏa hoạn , người thương binh ấy cũng lặn lội đi vận động ...
+AMR_NO_VAR: (and
+    :op2(đi
+        :agent(người
+            :mod(thương binh)
+            :mod(ấy))
+        :compound(vận động)
+        :condition(lặn lội)))
+    :op1(lũ
+        :patient(đồng bào)
+        :mod(bị)
+        :theme(and
+            :op1(lụt)
+            :op2(hỏa hoạn)
+            :op3(người
+                :mod(thương binh)
+                :mod(ấy)))))
+
+
+#::snt tôi rất lấy làm lạ là vì sao tôi không cho phép mà ở dưới vẫn làm .
+AMR_NO_VAR: (lấy làm
+    :pivot(tôi)
+    :degree(rất)
+    :theme(lạ)
+    :reason(contrast-01
+        :ARG2(cho phép
+            :agent(tôi)
+            :polarity -
+            :patient(ở
+                :location(dưới)
+                :patient-of(tôi)))
+        :mode interrogative))
+
+
+#::snt ở đó có đến 13 con người chen chúc nhau sống trong đó .
+AMR_NO_VAR: (có
+    :location(đó)
+    :theme(người
+        :quant 13
+            :classifier(con)
+        :pivot-of(chen chúc
+            :goal(nhau)
+            :purpose(sống
+                :location(đó
+                    :prep(trong))
+                :pivot n))))
+
+
+#::snt wb giới thiệu mô hình xóa đói giảm nghèo của vn cho các nước đang phát triển .
+AMR_NO_VAR: (giới thiệu
+    :agent(wb)
+    :topic(mô hình
+        :agent-of(xóa đói giảm nghèo
+            :beneficiary-arg1(vn))
+        :goal(nước
+            :mod(đang)
+            :agent-of(phát triển))))
+
+
+#::snt tôi đã chấp nhận cho trả lại tiền và lãi ngân hàng từ mấy năm nay .
+AMR_NO_VAR: (chấp nhận
+    :agent(tôi)
+    :tense(đã)
+    :theme(and
+        :op1(trả
+            :compound(lại)
+            :theme(tiền)
+            :agent t)
+        :op2(lãi
+            :poss(ngân hàng)
+            :theme t))
+    :time(temporal-quantity
+        :unit(năm)
+        :quant(mấy)
+        :mod(nay)))
+
+
+#::snt tôi cũng có suy nghĩ như đồng chí .
+AMR_NO_VAR: (có
+    :pivot(tôi)
+    :theme(suy nghĩ
+        :compared-to(đồng chí)
+        :degree(equal)))
+
+
+#::snt phú yên : cán bộ làm sai , dân lãnh đủ .
+AMR_NO_VAR: (and
+    :op1(làm
+        :agent(cán bộ
+            :mod(person
+                :name(name
+                    :op1(phú)
+                    :op2(yên))
+                :wiki(Phú_Yên)))
+        :manner(sai))
+    :op2(lãnh
+        :agent(dân)
+        :theme(đủ)))
+
+
+#::snt chỉ còn vợ chồng anh cùng bốn người khác trong nhóm công nhân 20 người đó còn bám trụ lại ở Sài Gòn .
+AMR_NO_VAR: (bám trụ
+    :theme(vợ chồng
+        :mod(anh)
+        :accompanier(người
+            :mod(khác)
+            :quant 4))
+    :location(Sài Gòn
+        :prep(ở))
+    :time(after
+        :op1(có
+            :degree(chỉ)
+            :theme v)))
+
+
+#::snt tây nguyên và Nam bộ : có khả năng thiếu nước trên diện rộng .
+AMR_NO_VAR: (có
+    :theme(khả năng
+        :theme(thiếu
+            :theme(nước)
+            :location(diện
+                :mod(rộng))))
+    :location(and
+        :op1(province
+            :name(name
+                :op1(tây)
+                :op2(nguyên))
+            :wiki(Tây_Nguyên))
+        :op2(provice
+            :wiki(Nam_Bộ)
+            :name(name
+                :op1(Nam)
+                :op2(bộ)))))
+
+
+#::snt viết tiếp về vụ anh Trương Xuân Đại .
+AMR_NO_VAR: (viết
+    :compound(tiếp)
+    :topic(vụ
+        :about(person
+            :name(name
+                :op1(anh)
+                :op2(Trương)
+                :op3(Xuân)
+                :op4(Đại))
+            :wiki -)))
+
+
+#::snt và cũng chính vì nỗi đau này , anh đã quyết định đi kiện báo Pháp Luật tp .hcm để đòi lại danh dự cho mình .
+AMR_NO_VAR: (and
+    :op2(quyết định
+        :cause(nỗi đau
+            :mod(cái
+                :mod(này)))
+        :agent(anh)
+        :tense(đã)
+        :theme(đi
+            :compound(kiện
+                :compound(báo
+                    :mod(pháp luật
+                        :mod(city
+                            :wiki(Tp.HCM)
+                            :name(name
+                                :op1(tp.)
+                                :op2(hcm))))))))
+        :purpose(demand
+            :theme(danh dự
+                :poss a)
+            :agent a)))
+
+
+#::snt hơn nữa giá cả phải được ủy ban tỉnh cho phép .
+AMR_NO_VAR: (obligate-01
+    :topic(cho phép
+        :patient(giá cả)
+        :modality(được)
+        :agent(uỷ ban
+            :mod(tỉnh))))
+
+
+#::snt có thể coi đây là hợp đồng vô hiệu .
+AMR_NO_VAR: (possible-01
+    :theme(coi
+        :theme(đây)
+        :result(hợp đồng
+            :mod(vô hiệu))))
+
+
+#::snt chúng tôi xem đây như một vụ đấu tranh chống tiêu cực trong bộ máy nhà nước của chúng tôi .
+AMR_NO_VAR: (xem
+    :agent(chúng tôi)
+    :theme(đây)
+    :compared-to(vụ
+        :mod(đấu tranh)
+        :purpose(chống
+            :theme(tiêu cực))
+        :quant 1)
+    :setting(bộ máy
+        :prep(trong)
+        :mod(nhà nước)
+        :poss(chúng tôi)))
+
+
+#::snt thế rồi hết vụ chống tiêu cực đến việc anh Đại đeo đuổi vụ kiện , của cải trong nhà lần lượt đội nón ra đi .
+AMR_NO_VAR: (and
+    :op2(đội
+        :theme(của cải
+            :location(nhà
+                :prep(trong)))
+        :manner(lần lượt)
+        :compound(nón)
+        :purpose(ra
+            :compound(đi))
+        :time(vụ
+            :mod(kiện)
+            :agent-of(đeo đuổi
+                :agent(anh
+                    :mod(Đại))
+                :theme v1))
+        :degree(hết)
+        :agent v1))
+
+
+#::snt thưa ông , sổ đỏ đã được giao cho người dân .
+AMR_NO_VAR: (giao
+    :patient(sổ đỏ)
+    :tense(đã)
+    :beneficiary-arg1(người
+        :compound(dân))
+    :modality +
+    :polite+(sir))
+
+
+#::snt công nhân Trương Xuân Đại kiện báo Pháp Luật tp hcm .
+AMR_NO_VAR: (kiện
+    :agent(công nhân
+        :mod(person
+            :name(name
+                :op1(Trương)
+                :op2(Xuân)
+                :op3(Đại))
+            :wiki -))
+    :compound(báo)
+    :goal(company
+        :name(name
+            :op1(Pháp)
+            :op2(Luật)
+            :op3(tp)
+            :op4(hcm))
+        :wiki(PhapLuatTphcm)))
+
+
+#::snt tôi mong mỏi sự công bằng được thực hiện và trả lại cho họ .
+AMR_NO_VAR: (and
+    :op1(mong mỏi
+        :pivot(tôi)
+        :theme(sự
+            :mod(công bằng)
+            :patient-of(thực hiện
+                :modality(được))))
+    :op2(trả
+        :compound(lại)
+        :beneficiary(họ)
+        :theme s))
+
+
+#::snt tôi rất vui khi thấy việc tố cáo tiêu cực của các anh được làm sáng tỏ và được pháp luật bảo vệ .
+AMR_NO_VAR: (vui
+    :pivot(tôi)
+    :degree(rất)
+    :time(thấy
+        :topic(việc
+            :mod(tố cáo
+                :mod(tiêu cực))
+            :poss(anh))
+        :agent t)
+    :topic(and
+        :op1(làm
+            :modality(được)
+            :result(sáng tỏ)
+            :agent a)
+        :op2(bảo vệ
+            :modality(được)
+            :agent(pháp luật)
+            :beneficiary v)))
+
+
+#::snt đề nghị anh Đại liên hệ với chúng tôi : công ty xây lắp & vật tư xây dựng , 93 nguyễn công trứ , q.1 , tp hcm .
+AMR_NO_VAR: (đề nghị
+    :theme(liên hệ
+        :agent(anh
+            :mod(person
+                :name(name
+                    :op1(Đại))
+                :wiki -))
+        :goal(chúng tôi
+            :op1(công ty
+                :mod(and
+                    :op1(xây lắp)
+                    :op2(vật tư
+                        :mod(xây dựng))))
+            :address(address
+                :street(nguyễn công trứ
+                    :mod(temporal-quantity
+                        :quant 93))
+                :district(q.1)
+                :city(tp hcm)))
+        :mode imperative))
+
+
+#::snt luật sư bảo vệ quyền lợi báo Pháp Luật đề nghị hòa giải .
+AMR_NO_VAR: (bảo vệ
+    :agent(luật sư)
+    :theme(quyền lợi
+        :poss(báo
+            :compound(Pháp Luật)))
+    :purpose(đề nghị
+        :theme(hòa giải)
+        :agent b))
+
+
+#::snt theo ông Hải , đây là vấn đề bức xúc của tp. .
+AMR_NO_VAR: (theo
+    :topic(vấn đề
+        :domain(đây)
+        :mod(bức xúc)
+        :poss(tp.))
+    :source(person
+        :name(name
+            :op1(ông)
+            :op2(Hải))
+        :wiki -))
+
+
+#::snt thân mình chịu cực , chịu khổ đã quen không màng đến , nhưng thương nhất là hai đứa con .
+AMR_NO_VAR: (contrast-01
+    :ARG1(quen
+        :pivot(thân mình)
+        :theme(and
+            :op1(cực)
+            :op2(khổ))
+        :tense(đã)
+        :manner(màng
+            :polarity -
+            :goal(con
+                :quant 2
+                    :classifier(đứa))))
+    :ARG2(thương
+        :degree(nhất)
+        :pivot(thân mình)
+        :theme(con
+            :quant 2
+                :classifier(đứa))))
+
+
+#::snt khoán tự ái mang cưa ra về , Hải đuổi theo và hai bên có cãi vã nhau .
+AMR_NO_VAR: (and
+    :op1(đuổi
+        :theme(khoán
+            :mod(tự ái)
+            :agent-of(mang
+                :theme(cưa)
+                :direction(ra)
+                :location(về)))
+        :agent(Hải)
+        :compound(theo))
+    :op2(cãi vã
+        :agent(bên
+            :quant 2)
+        :patient(have-rel-role-91
+            :ARG1 b
+            :ARG2 a)))
+
+
+#::snt khoán đã dùng cưa đang nổ gí vào người Hải , Hải đưa tay trái lên đỡ nên đã bị cắt trọng thương ...
+AMR_NO_VAR: (cắt
+    :time(dùng
+        :tense(đã)
+        :agent(khoán)
+        :instrument(cưa))
+    :tense(đang)
+    :patient(người
+        :mod(Hải))
+    :cause(đưa
+        :tense(đã)
+        :modality(bị)
+        :agent(Hải)
+        :theme(tay
+            :mod(trái))
+        :direction(lên
+            :purpose(đỡ)))
+    :degree(trọng thương))
+
+
+#::snt nhìn căn chòi tạm bợ mà gia đình anh Đại cùng nhóm công nhân chống tiêu cực đang tá túc , chúng tôi không khỏi chạnh lòng .
+AMR_NO_VAR: (chạnh lòng
+    :cause(nhìn
+        :goal(chòi
+            :classifier(căn)
+            :mod(tạm bợ))
+        :agent g)
+    :pivot(chúng tôi)
+    :polarity -)
+    
+    (contrast-01
+        :ARG2(tá túc
+            :agent(grup
+                :mod(công nhân)
+                :topic(chống
+                    :theme(tiêu cực)))
+            :tense(đang))))
+
+
+#::snt để rồi bây giờ họ rơi vào cảnh túng quẫn , bần hàn đến vậy sao ?
+AMR_NO_VAR: (rơi
+    :purpose(vậy)
+    :time(bây giờ)
+    :pivot(họ)
+    :setting(cảnh
+        :mod(and
+            :op1(túng quẫn)
+            :op2(bần hàn)))
+    :mode interrogative)
+
+
+#::snt trong khi đó số người nhiễm hiv tại vn vẫn tiếp tục gia tăng .
+AMR_NO_VAR: (tiếp tục
+    :pivot(số
+        :mod(người
+            :pivot-of(nhiễm
+                :theme(hiv)))
+        :location(country
+            :wiki(VN)
+            :name(name
+                :op1(vn))))
+    :manner(gia tăng)
+    :time(concession
+        :ARG2(now)))
+
+
+#::snt chỉ còn anh Đại và bốn người khác .
+AMR_NO_VAR: (còn
+    :degree(chỉ)
+    :theme(and
+        :op1(person
+            :name(name
+                :op1(anh)
+                :op2(Đại))
+            :wiki -)
+        :op2(người
+            :mod(khác)
+            :quant 4)))
+
+
+#::snt ubnd tp đã chính thức kết luận hoan nghênh và biểu dương những việc làm tốt của họ .
+AMR_NO_VAR: (kết luận
+    :agent(ubnd
+        :mod(tp))
+    :tense(đã)
+    :manner(chính thức)
+    :topic(and
+        :op1(hoan nghênh
+            :theme(việc làm
+                :mod(tốt)
+                :poss(họ)))
+        :op2(biểu dương
+            :theme v)))
+
+
+#::snt tuy nhiên chính quyền tp không nên dừng ở đó .
+AMR_NO_VAR: (contrast-01
+    :ARG2(recommend-01
+        :topic(dừng
+            :agent(chính quyền
+                :mod(tp))
+            :location(đó)
+            :polarity -)))
+
+
+#::snt 206 ngày đêm khốn khổ .
+AMR_NO_VAR: (khốn khổ
+    :duration(temporal-quantity
+        :quant 206
+            :unit(ngày đêm)))
+
+
+#::snt lao động tiếp tục bị bán tứ tán .
+AMR_NO_VAR: (bán
+    :patient(lao động
+        :agent-of(tiếp tục))
+    :manner(tứ tán)
+    :modality -)
+
+
+#::snt ông Trực nói tiếp : Dân gặp tôi kêu quá trời !
+AMR_NO_VAR: (nói
+    :agent(ông
+        :mod(trực))
+    :compound(tiếp)
+    :topic(kêu
+        :agent(dân
+            :agent-of(gặp
+                :goal(tôi)))
+        :degree(quá
+            :mod(trời))))
+
+
+#::snt bị cáo Lã Thị Kim Oanh khẳng định khoản vay của nh đều đi kèm với những dự án đầu tư hoặc kinh doanh cụ thể .
+AMR_NO_VAR: (khánh định
+    :agent(bị cáo
+        :mod(person
+            :name(name
+                :op1(Lã)
+                :op2-Thị)
+            :wiki -))
+    :topic(đi
+        :theme(khoản
+            :compound(vay)
+            :poss(nh))
+        :compound(kèm)
+        :accompanier(and
+            :op1(dự án
+                :mod(đầu tư))
+            :op2(kinh doanh
+                :mod(cụ thể)))))
+
+
+#::snt hai anh em tôi ra xem bảng thông báo .
+AMR_NO_VAR: (ra
+    :agent(anh em
+        :domain(tôi)
+        :quant 2)
+    :purpose(xem
+        :theme(bảng
+            :mod(thông báo))))
+
+
+#::snt một cảnh tượng hỗn loạn , chen lấn nhau diễn ra .
+AMR_NO_VAR: (diễn
+    :theme(cảnh tượng
+        :mod(hỗn loạn)
+        :agent-of(chen lấn
+            :patient(nhau)))
+    :compound(ra))
+
+
+#::snt tôi trình bày lý do , rồi xuất trình giấy tờ để chứng minh là anh em tôi lên sứ quán đổi hộ chiếu .
+AMR_NO_VAR: (and
+    :op1(trình bày
+        :agent(tôi)
+        :theme(lý do))
+    :op2(xuất trình
+        :theme(giấy tờ)
+        :purpose(chứng minh
+            :topic(lên
+                :agent(anh em
+                    :poss(tôi))
+                :location(sứ quán)
+                :purpose(đổi
+                    :theme(hộ chiếu))))))
+
+
+#::snt đổi hộ chiếu hả , hay làm giấy thông hành về nước ?
+AMR_NO_VAR: (and
+    :op1(đổi
+        :theme(hộ chiếu)
+        :mode interrogative)
+    :op2(làm
+        :theme(giấy
+            :mod(thông hành))
+        :purpose(về
+            :finalLocation(nước)
+            :agent h)
+        :mode interrogative))
+
+
+#::snt anh em tôi chỉ còn biết nhìn nhau .
+AMR_NO_VAR: (biết
+    :pivot(anh em
+        :poss(tôi))
+    :degree(chỉ)
+    :theme(nhìn
+        :goal(nhau)))
+
+
+#::snt chị ta đon đả cầm hộ chiếu và tiền rồi bấm điện thoại .
+AMR_NO_VAR: (and
+    :op1(cầm
+        :agent(chị
+            :mod(ta))
+        :manner(đon đả)
+        :theme(and
+            :op1(hộ chiếu)
+            :op2(tiền)))
+    :op2(bấm
+        :patient(điện thoại)
+        :agent c))
+
+
+#::snt trong thâm tâm tôi bỗng thấy vừa buồn , vừa tủi , vừa xót xa .
+AMR_NO_VAR: (thấy
+    :pivot(tâm
+        :prep(trong)
+        :part-of(tôi))
+    :manner(bỗng)
+    :topic(and
+        :op1(buồn
+            :degree(vừa))
+        :op2(tủi
+            :degree(vừa))
+        :op3(xót xa
+            :degree(vừa))))
+
+
+#::snt anh chị em chỗ tôi sống đều rất vui mừng , nhưng có lẽ đó chỉ là những chính sách .
+AMR_NO_VAR: (contrast-01
+    :ARG1(vui mừng
+        :pivot(anh
+            :compound(chịu)
+            :compound(em)
+            :location(chỗ
+                :poss(tôi)
+                :theme-of(sống)))
+        :degree(rất))
+    :ARG2(chính sách
+        :modality(có lẽ)
+        :domain(đó)
+        :quant(chỉ)))
+
+
+#::snt thấy chúng tôi , ông hỏi đúng giọng bảo vệ chuyên nghiệp :
+AMR_NO_VAR: (hỏi
+    :topic(thấy
+        :goal(chúng tôi)
+        :agent ô)
+    :agent(ông)
+    :manner(đúng
+        :compound(giọng)
+        :mod(bảo vệ
+            :degree(chuyên nghiệp))))
+
+
+#::snt nói rồi anh cán bộ ôm tập hồ sơ đi .
+AMR_NO_VAR: (and
+    :op1(nói
+        :agent a)
+    :op2(ôm
+        :agent(anh
+            :mod(cán bộ))
+        :theme(tập
+            :mod(hồ sơ))
+        :manner(đi)))
+
+
+#::snt bộ trưởng ra tòa làm nhân chứng .
+AMR_NO_VAR: (ra
+    :agent(bộ trưởng)
+    :location(tòa)
+    :purpose(làm
+        :role(nhân chứng)
+        :agent b))
+
+
+#::snt để có các số liệu trên , công an tp trước đó đã có văn bản đề nghị ubnd tp HCM thành lập hội đồng giám định xây dựng công trình này .
+AMR_NO_VAR: (có
+    :purpose(có
+        :theme(số liệu
+            :location(trên)))
+    :pivot(công an
+        :mod(tp
+            :mod(trước
+                :mod(đó))))
+    :tense(đã)
+    :topic(văn bản
+        :topic(đề nghị
+            :topic(thành lập
+                :theme(hội đồng
+                    :mod(giám định
+                        :topic(xây dựng
+                            :theme(công trình
+                                :mod(này)))))
+                :agent c)
+            :agent u)
+        :quant 1)
+    :setting(city
+        :name(name
+            :op1(HCM))
+        :wiki(HCM)))
+
+
+#::snt việc ký xác nhận này , theo ông Luân , diễn ra " sau khi vụ trưởng vụ tài chính kế toán Phan Văn Quán đã xác nhận " .
+AMR_NO_VAR: (theo
+    :topic(diễn ra
+        :topic(vụ
+            :mod(trưởng)
+            :mod(vụ
+                :mod(tài chính
+                    :mod(kế toán)))
+            :mod(name)
+            :time(xác nhận
+                :tense(đã)
+                :agent(person
+                    :name(name
+                        :op1(Phan)
+                        :op2(Văn)
+                        :op3(Quán))
+                    :wiki -)))
+        :agent(ông
+            :mod(Luân)))
+    :time(after))
+
+
+#::snt ông Nguyễn Thế Khanh , chi cục phó , cho biết đây là những mặt hàng điện tử cũ đã có qui định cấm nhập khẩu dưới mọi hình thức .
+AMR_NO_VAR: (cho biết
+    :agent(ông
+        :mod(chi cục phó)
+        :mod(person
+            :name(name
+                :op1(Nguyễn)
+                :op2(The世)
+                :op3(Khanh))
+            :wiki -))
+    :topic(mặt hàng
+        :domain(đây)
+        :mod(điện tử
+            :mod(cũ))
+        :theme-of(có
+            :tense(đã)
+            :theme(quy định
+                :mod(cấm
+                    :theme(nhập khẩu
+                        :manner(hình thức
+                            :mod(all)))))
+            :pivot m)))
+
+
+#::snt hợp đồng lao động được thực hiện từ tháng 8 – 2003 , thời hạn 36 tháng với loại công việc là công nhân xây dựng .
+AMR_NO_VAR: (thực hiện
+    :theme(hợp đồng
+        :mod(lao động))
+    :modality(được)
+    :initialTime(date-entity
+        :month(8)
+        :year 2003)
+    :duration(temporal-quantity
+        :unit(tháng)
+        :quant 36)
+    :setting(loại
+        :mod(công việc)
+        :exp(công nhân
+            :compound(xây dựng))))
+
+
+#::snt trường hợp nghiên cứu của vn mang tựa đề " tác động của phát triển cơ sở hạ tầng đối với giảm nghèo nông thôn " .
+AMR_NO_VAR: (mang
+    :theme(trường hợp
+        :mod(nghiên cứu)
+        :poss(vn))
+    :theme(tựa đề
+        :topic(tác động
+            :source(phát triển
+                :mod(cơ sở hạ tầng))
+            :goal(giảm nghèo
+                :mod(nông thôn)))))
+
+
+#::snt đừng để người dân đặt cược cho niềm tin !
+AMR_NO_VAR: (obligate-01
+    :theme(đặt cược
+        :agent(người dân)
+        :theme(niềm tin))
+    :mode imperative
+    :polarity -)
+
+
+#::snt muốn biết đúng hay sai tòa phải nhờ ... hội đồng thẩm định .
+AMR_NO_VAR: (muốn
+    :pivot(tôi)
+    :topic(biết
+        :topic(đúng
+            :compound(hay)
+            :compound(sai)
+            :theme(tòa
+                :agent-of(nhờ
+                    :theme(hội đồng
+                        :mod(thẩm định))))))
+        :mode interrogative))
+
+
+#::snt ông Hải cũng chỉ đạo sở gtcc báo cáo về xử lý tiêu cực ở công trình này .
+AMR_NO_VAR: (chỉ đạo
+    :agent(ông
+        :mod(Hải))
+    :modality(cũng)
+    :topic(báo cáo
+        :agent(sở
+            :mod(gtcc))
+        :topic(xử lý
+            :theme(tiêu cực)
+            :location(công trình
+                :mod(này)))))
+
+
+#::snt làm cho dân thấy và nói cho dân hiểu ! " .
+AMR_NO_VAR: (and
+    :op1(làm
+        :beneficiary(thấy
+            :pivot(dân))
+        :beneficiary(nói
+            :beneficiary-arg1(dân)
+            :purpose(hiểu
+                :pivot d)))
+    :mode imperative)
+
+
+#::snt trở về đời thường , đôi bạn cựu chiến binh phan văn đu và Phạm Văn Thanh ngồi bên ấm trà .
+AMR_NO_VAR: (and
+    :op1(trở
+        :compound(về)
+        :target(đời thường)
+        :agent b
+            :mod(cựu
+                :compound(chiến binh))
+            :quant 2
+            :name(name
+                :op1(phan)
+                :op2(văn)
+                :op3(đu)))
+    :op2(ngồi
+        :location(bên
+            :mod(ấm
+                :mod(trà)))
+        :agent b))
+
+
+#::snt cả đoàn mang mì gói ra ăn , lượm các lon bia để nấu nước sôi .
+AMR_NO_VAR: (and
+    :op1(mang
+        :agent(đoàn)
+        :theme(mì gói)
+        :purpose(ra
+            :compound(ăn)))
+    :op2(lượm
+        :theme(lon
+            :mod(bia))
+        :purpose(nấu
+            :result-arg1(nước
+                :mod(sôi))
+            :agent d)
+        :agent đ))
+
+
+#::snt sơ đồ qui hoạch được chính quyền sở tại công bố công khai , hiện vẫn được dựng công khai cách trụ sở ubnd xã Xuân Hải khoảng 2 km .
+AMR_NO_VAR: (dựng
+    :theme(sơ đồ
+        :mod(quy hoạch)
+        :modality(được)
+        :agent(chính quyền
+            :mod(sở tại)))
+    :modality(công bố
+        :manner(công khai)
+        :agent c)
+    :agent(từ
+        :op1(khoảng)
+        :op2(cách)
+        :mod(trụ sở)
+        :mod(ubnd
+            :compound(xã)
+            :mod(name
+                :op1(Xuân)
+                :op2(Hải))))
+    :quant(distance-quantity
+        :unit(km)
+        :quant 2)
+    :time(now))
+
+
+#::snt người dân tuân thủ đúng pháp luật , chính quyền sai phạm về thủ tục quản lý , sao người dân phải gánh chịu hậu quả ?
+AMR_NO_VAR: (contrast-01
+    :ARG1(tuân thủ
+        :agent(người dân)
+        :theme(pháp luật)
+        :manner(đúng))
+    :ARG2(sai phạm
+        :agent(chính quyền)
+        :theme(thủ tục
+            :mod(quản lý)))
+    :RESULT(gánh chịu
+        :agent(người dân)
+        :theme(hậu quả)
+        :mode interrogative))
+
+
+#::snt chính quyền sai thì sửa , chứ sao lại chỉ sửa chính quyền mà không sửa bên dân ?
+AMR_NO_VAR: (contrast-01
+    :ARG1(sửa
+        :condition(sai
+            :theme(chính quyền))
+        :agent ch)
+    :ARG2(sửa
+        :reason(bên
+            :mod(dân))
+        :polarity -
+        :agent c))
+
+
+#::snt bởi giá hồi đó không phải là giá vì không ai cho phép , chắc chắn là có cái gì bên trong nữa ...
+AMR_NO_VAR: (có
+    :reason(giá
+        :mod(hồi
+            :mod(đó))
+        :domain(ai
+            :polarity -)
+        :theme(giá))
+    :theme(gì
+        :classifier(cái)
+        :location(bên
+            :mod(trong))))
+
+
+#::snt ngoài ra , đáng lẽ đổ cát lấp đường ống theo tiêu chuẩn về xây dựng hệ thống thoát nước thì đơn vị thi công lấp đất .
+AMR_NO_VAR: (and
+    :op2(lấp
+        :reason(đáng lẽ
+            :theme(cát)
+            :purpose(lấp
+                :theme(đường ống)
+                :concession(theo
+                    :source(tiêu chuẩn
+                        :topic(xây dựng
+                            :mod(hệ thống
+                                :mod(thoát nước)))))
+                :agent u))
+        :agent(đơn vị
+            :agent-of(thi công))
+        :theme(đất)))
+
+
+#::snt ngẫm sao mà thương thế !
+AMR_NO_VAR: (ngẫm
+    :manner(sao)
+    :topic(thương
+        :pivot(thế)))
+
+
+#::snt đáng lẽ phải được tôn vinh thì trái lại những con người ấy đã bị đẩy xuống đáy cùng của cuộc sống !
+AMR_NO_VAR: (contrast-01
+    :ARG1(tôn vinh
+        :modality(phải
+            :tense(đáng
+                :compound(lẽ)))
+        :patient(con người
+            :mod(ấy)))
+    :ARG2(đẩy
+        :patient(con người
+            :mod(ấy))
+        :tense(đã)
+        :direction(xuống)
+        :location(đáy
+            :mod(cùng)
+            :part-of(cuộc sống))))
+
+
+#::snt lại nữa khi thanh tra đã xác định sai phạm sao không xử lý mà để " ngâm " lâu ngày đến vậy ?
+AMR_NO_VAR: (xử lý
+    :time(xác định
+        :agent(thanh tra)
+        :tense(đã)
+        :theme(sai phạm))
+    :polarity -
+    :manner(để
+        :theme(ngâm
+            :degree(lâu
+                :time(ngày))))
+    :cause(vậy)
+    :mode interrogative)
+
+
+#::snt nhóm công nhân dũng cảm ấy gồm 20 người vậy mà hầu như nay đã lang bạt hết .
+AMR_NO_VAR: (lang bạt
+    :agent(nhóm
+        :consist-of(công nhân
+            :mod(dũng cảm)
+            :mod(ấy))
+        :quant 20)
+    :modality(hầu như)
+    :time(now)
+    :tense(đã)
+    :degree(hết))
+
+
+#::snt vì sao họ đã làm điều đó ?
+AMR_NO_VAR: (làm
+    :agent(họ)
+    :tense(đã)
+    :theme(điều
+        :mod(đó))
+    :cause(amr-unknown))
+
+
+#::snt đường đất nhỏ , vận động dân góp công góp của đắp đường bêtông .
+AMR_NO_VAR: (and
+    :op1(nhỏ
+        :domain(đường
+            :mod(đất)))
+    :op2(vận động
+        :agent(dân)
+        :theme(and
+            :op1(góp
+                :theme(công))
+            :op2(góp
+                :theme(vật))
+            :purpose(đắp
+                :result-arg1(đường
+                    :mod(bêtông))
+                :agent d))))
+
+
+#::snt và hôm nay , chúng ta cũng cần hỏi câu hỏi này với chính mình .
+AMR_NO_VAR: (and
+    :op2(cần
+        :pivot(chúng ta)
+        :theme(hỏi
+            :theme(câu hỏi
+                :mod(này))
+            :goal(mình
+                :mod(chính)))
+        :time(today)))
+
+
+#::snt vậy thì sự lầm than hôm nay của nhóm công nhân bảo vệ cái thiện kia minh chứng cho điều gì ?
+AMR_NO_VAR: (minh chứng
+    :theme(sự
+        :compound(lầm than)
+        :time(hôm nay)
+        :poss(grup
+            :mod(công nhân
+                :agent-of(bảo vệ
+                    :theme(thiện
+                        :classifier(cái)
+                        :mod(kia)))))
+    :topic(amr-unknown))
+
+
+#::snt tôi mong rằng sẽ có cái hậu đến sau cái kết quả " nhãn tiền " mà ba năm nay họ đã lãnh chịu .
+AMR_NO_VAR: (mong
+    :pivot(tôi)
+    :topic(có
+        :theme(hậu
+            :classifier(cái)
+            :time(after
+                :op1(kết quả
+                    :classifier(cái)
+                    :mod(nhãn tiền)
+                    :agent-of(lãnh chịu
+                        :agent(họ)
+                        :tense(đã))))
+        :tense(sẽ)))
+
+
+#::snt điều không thể hiểu nổi là tại sao họ lại mất việc ?
+AMR_NO_VAR: (possible-01
+    :result-arg1(hiểu
+        :pivot(điều)
+        :degree(nổi)
+        :agent(amr-unknown))
+    :cause(amr-unknown
+        :topic(mất
+            :pivot(họ)
+            :theme(việc))))
+
+
+#::snt " hai anh cứ ngồi đây uống nước , tí là xong thôi " .
+AMR_NO_VAR: (and
+    :op1(ngồi
+        :agent(anh
+            :quant 2)
+        :location(đây)
+        :purpose(uống
+            :theme(nước)))
+    :op2(xong
+        :time(tí)
+        :mode imperative))
+
+
+#::snt ngày thứ ba phúc thẩm vụ án Lã Thị Kim Oanh : .
+AMR_NO_VAR: (phúc thẩm
+    :ARG2(vụ án
+        :patient-of(person
+            :name(name
+                :op1(Lã)
+                :op2(Thị)
+                :op3(Kim)
+                :op4(Oanh))
+            :wiki -))
+    :time(date-entity
+        :day(3)))
+
+
+#::snt báo tt có thể là đầu tàu , qua đó rộng rãi độc giả , nhất là các doanh nghiệp , có thể lên tiếng và đưa ra biện pháp trợ giúp .
+AMR_NO_VAR: (possible-01
+    :theme(báo
+        :mod(tt))
+    :result(and
+        :op1(đầu tàu
+            :domain b)
+        :op2(rộng rãi
+            :beneficiary-arg1(độc giả
+                :mod(nhất
+                    :compound(là)
+                    :mod(doanh nghiệp)))
+            :degree(possible-01))
+        :op3(and
+            :op1(lên tiếng
+                :agent đ)
+            :op2(đưa ra
+                :theme(biện pháp
+                    :mod(trợ giúp))
+                :agent đ))))
+
+
+#::snt " anh hỏi ai " ?
+AMR_NO_VAR: (hỏi
+    :agent(anh)
+    :goal(amr-unknown))
+
+
+#::snt hay khai sinh cho con ?
+AMR_NO_VAR: (khai sinh
+    :beneficiary(con)
+    :mode interrogative)
+
+

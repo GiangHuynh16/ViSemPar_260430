@@ -26,6 +26,9 @@ from tqdm import tqdm
 from transformers import AutoModelForCausalLM, AutoTokenizer
 from peft import PeftModel
 
+sys.path.insert(0, str(Path(__file__).parent))
+from postprocess import postprocess_amr
+
 
 # ─────────────────────────────────────────────────────────────────────────────
 # Extraction logic per method
@@ -78,11 +81,11 @@ def extract_amr_B2(response: str) -> str:
 
 
 def extract_amr_MTUP2(response: str) -> str:
-    """Extract Task 2 (final AMR with variables)."""
-    marker = response.rfind('Task 2:')
+    """Extract Step 2 (final AMR with variables)."""
+    marker = response.rfind('[STEP 2: AMR_WITH_VAR]')
     if marker == -1:
-        # Fallback: try Task 1 as rough output
-        marker = response.rfind('Task 1:')
+        # Fallback: step 1 no-var
+        marker = response.rfind('[STEP 1: AMR_NO_VAR]')
     if marker == -1:
         return '(a / amr-unknown)'
     amr = extract_balanced_amr(response, marker)
@@ -263,6 +266,7 @@ def main():
         full_outputs.append(response)
 
         amr = extractor(response)
+        amr = postprocess_amr(amr)
         # Flatten to single line for eval
         amr_flat = re.sub(r'\s+', ' ', amr).strip()
         predictions.append(amr_flat)

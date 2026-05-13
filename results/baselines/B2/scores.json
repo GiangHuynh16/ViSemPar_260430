@@ -1,0 +1,41 @@
+{
+  "s42": {
+    "method": "B2",
+    "seed": 42,
+    "group": "baselines",
+    "n_samples": 149,
+    "parsable": 18,
+    "parsable_rate": 0.1208,
+    "avg_output_len": 154.6,
+    "root_acc": 0.0,
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1": 0.0
+  },
+  "s123": {
+    "method": "B2",
+    "seed": 123,
+    "group": "baselines",
+    "n_samples": 149,
+    "parsable": 23,
+    "parsable_rate": 0.1544,
+    "avg_output_len": 156.2,
+    "root_acc": 0.0,
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1": 0.0
+  },
+  "s456": {
+    "method": "B2",
+    "seed": 456,
+    "group": "baselines",
+    "n_samples": 149,
+    "parsable": 21,
+    "parsable_rate": 0.1409,
+    "avg_output_len": 155.1,
+    "root_acc": 0.0,
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1": 0.0
+  }
+}

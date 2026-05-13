@@ -471,11 +471,9 @@ def make_B2(sentence: str, amr: str) -> str:
 
 
 def make_MTUP2(sentence: str, amr: str) -> str:
-    """MTUP2: task1 list → full AMR."""
-    task1 = build_task1_list(amr)
-    if task1 is None:
-        return None
-    assistant = f"Task 1:\n{task1}\nTask 2: {amr}"
+    """MTUP2: no-var → full AMR (closer intermediate, easier for model to add variables)."""
+    no_var = strip_variables(amr)
+    assistant = f"[STEP 1: AMR_NO_VAR]\n{no_var}\n\n[STEP 2: AMR_WITH_VAR]\n{amr}"
     return _wrap(SYSTEM_PROMPT_MULTISTEP, sentence, assistant)
 
 

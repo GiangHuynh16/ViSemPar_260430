@@ -63,14 +63,12 @@ def read_gold(path: str) -> list:
 # ─────────────────────────────────────────────────────────────────────────────
 
 def is_parsable(amr: str) -> bool:
-    """Check if AMR is valid PENMAN."""
-    if HAS_PENMAN:
-        try:
-            penman.decode(amr)
-            return True
-        except Exception:
-            return False
-    # Fallback: basic structural check
+    """Check if AMR is structurally valid.
+
+    Uses basic structural check instead of penman.decode() because penman
+    rejects multi-word Vietnamese concepts (e.g. 'c / cách nghĩ') which are
+    valid in this dataset's annotation scheme.
+    """
     s = amr.strip()
     if not s.startswith('(') or '/' not in s:
         return False

@@ -4,4 +4,4 @@ group: mtup_2tasks
 data:
   train: MTUP2_train.txt
 decoding:
-  max_new_tokens: 1024
+  max_new_tokens: 1536
