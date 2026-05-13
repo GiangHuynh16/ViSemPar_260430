@@ -21,7 +21,7 @@ from pathlib import Path
 
 
 def fix_duplicate_variables(amr: str) -> str:
-    """Rename duplicate variable definitions (x / concept) → (x1 / concept)."""
+    """Rename duplicate variable definitions and their references."""
     definitions = re.findall(r'\((\w+)\s*/', amr)
     seen = {}
     for var in definitions:
@@ -33,21 +33,27 @@ def fix_duplicate_variables(amr: str) -> str:
 
     result = amr
     for var in duplicates:
+        # Build mapping: original occurrence index → new name
         counter = [0]
+        rename_map = {}
 
         def replacer(m):
             counter[0] += 1
             new_var = f"{var}{counter[0]}"
+            rename_map[counter[0]] = new_var
             return f"({new_var} /"
 
-        # Replace definitions
+        # Step 1: rename definitions
         result = re.sub(r'\(' + re.escape(var) + r'\s*/', replacer, result)
 
-        # Replace references (standalone var after whitespace, not followed by /)
-        # We do a second pass after definitions are already renamed
-        # References are the original var appearing as a value (e.g. ":agent d")
-        # Since definitions are now renamed, remaining occurrences are references
-        # This is a best-effort fix; Smatch is tolerant of variable issues
+        # Step 2: rename references (":role var" where var is not followed by " /")
+        # After step 1, original var only appears as references
+        result = re.sub(
+            r'(?<!\w)' + re.escape(var) + r'(?!\s*/)(?!\w)',
+            f"{var}1",
+            result
+        )
+
     return result
 
 

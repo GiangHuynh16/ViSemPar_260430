@@ -34,6 +34,6 @@ training:
 data:
   amr1_weight: 1
   amr2_weight: 3
-  syn_weight: 10
+  syn_weight: 0
 
 seeds: [42, 123, 456]

@@ -106,6 +106,8 @@ def extract_amr_MTUP3A(response: str) -> str:
 def extract_amr_MTUP3B(response: str) -> str:
     marker = response.rfind('[STEP 3: AMR_WITH_VAR]')
     if marker == -1:
+        marker = response.rfind('[STEP 2: RELATIONS]')
+    if marker == -1:
         return '(a / amr-unknown)'
     amr = extract_balanced_amr(response, marker)
     return amr or '(a / amr-unknown)'
