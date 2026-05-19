@@ -28,6 +28,7 @@ from peft import PeftModel
 
 sys.path.insert(0, str(Path(__file__).parent))
 from postprocess import postprocess_amr
+from var_binder import bind_no_var_amr
 
 
 # ─────────────────────────────────────────────────────────────────────────────
@@ -268,6 +269,8 @@ def main():
         full_outputs.append(response)
 
         amr = extractor(response)
+        if method == 'B2':
+            amr = bind_no_var_amr(amr)
         amr = postprocess_amr(amr)
         # Flatten to single line for eval
         amr_flat = re.sub(r'\s+', ' ', amr).strip()
