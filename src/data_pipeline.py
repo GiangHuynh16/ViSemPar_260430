@@ -54,6 +54,22 @@ QUY TẮC QUAN TRỌNG:
 
 SYSTEM_PROMPT_B1 = SYSTEM_PROMPT_MULTISTEP  # identical per plan
 
+SYSTEM_PROMPT_EN = """You are an AMR (Abstract Meaning Representation) parsing assistant for English.
+
+RULES:
+1. Follow the requested output format exactly.
+2. Use standard AMR concepts, variables, and relations.
+3. Keep AMR parentheses balanced.
+4. Each variable must be unique within the graph.
+5. Reuse variables for reentrancies when producing full AMR.
+6. Output only the requested labels and AMR content."""
+
+
+def get_system_prompt(language: str) -> str:
+    if language == 'en':
+        return SYSTEM_PROMPT_EN
+    return SYSTEM_PROMPT_MULTISTEP
+
 # ─────────────────────────────────────────────────────────────────────────────
 # Synthetic examples (frozen – never change after first run)
 # ─────────────────────────────────────────────────────────────────────────────
@@ -103,9 +119,34 @@ def validate_amr(amr: str) -> bool:
     return True
 
 
-def strip_variables(amr: str) -> str:
-    """Convert full AMR to no-var form: (x / concept ...) → (concept ...)."""
+def _extract_var_to_concept(amr: str) -> dict:
+    """Build variable -> concept map from AMR node definitions."""
+    var_to_concept = {}
+    for var, concept in re.findall(r'\(\s*([A-Za-z][A-Za-z0-9_-]*)\s*/\s*([^\s:()]+)', amr):
+        var_to_concept[var] = concept
+    return var_to_concept
+
+
+def strip_variables(amr: str, mode: str = 'legacy') -> str:
+    """Convert full AMR to no-var form.
+
+    legacy: remove only node declarations, preserving current Vietnamese setup.
+    clean: additionally replace bare reentrancy variables with their concepts.
+    """
+    if mode not in {'legacy', 'clean'}:
+        raise ValueError(f"Unsupported no-var mode: {mode}")
+
+    var_to_concept = _extract_var_to_concept(amr) if mode == 'clean' else {}
     result = re.sub(r'\(\s*\w+\s*/\s*', '(', amr)
+
+    if mode == 'clean':
+        for var, concept in sorted(var_to_concept.items(), key=lambda x: len(x[0]), reverse=True):
+            result = re.sub(
+                r'(:[A-Za-z0-9_-]+\s+)' + re.escape(var) + r'(?=\s|\))',
+                rf'\1({concept})',
+                result,
+            )
+
     return result
 
 
@@ -237,37 +278,42 @@ def _wrap(system: str, user: str, assistant: str) -> str:
             f"<|im_start|>assistant\n{assistant}\n<|im_end|>")
 
 
-def make_B1(sentence: str, amr: str) -> str:
+def make_B1(sentence: str, amr: str, no_var_mode: str = 'legacy',
+            language: str = 'vi') -> str:
     """B1: direct sentence → AMR."""
-    return _wrap(SYSTEM_PROMPT_B1, sentence, f"AMR: {amr}")
+    return _wrap(get_system_prompt(language), sentence, f"AMR: {amr}")
 
 
-def make_B2(sentence: str, amr: str) -> str:
+def make_B2(sentence: str, amr: str, no_var_mode: str = 'legacy',
+            language: str = 'vi') -> str:
     """B2: sentence → AMR-no-var."""
-    no_var = strip_variables(amr)
-    return _wrap(SYSTEM_PROMPT_MULTISTEP, sentence, f"AMR_NO_VAR: {no_var}")
+    no_var = strip_variables(amr, mode=no_var_mode)
+    return _wrap(get_system_prompt(language), sentence, f"AMR_NO_VAR: {no_var}")
 
 
-def make_MTUP2(sentence: str, amr: str) -> str:
+def make_MTUP2(sentence: str, amr: str, no_var_mode: str = 'legacy',
+               language: str = 'vi') -> str:
     """MTUP2: no-var → full AMR (closer intermediate, easier for model to add variables)."""
-    no_var = strip_variables(amr)
+    no_var = strip_variables(amr, mode=no_var_mode)
     assistant = f"[STEP 1: AMR_NO_VAR]\n{no_var}\n\n[STEP 2: AMR_WITH_VAR]\n{amr}"
-    return _wrap(SYSTEM_PROMPT_MULTISTEP, sentence, assistant)
+    return _wrap(get_system_prompt(language), sentence, assistant)
 
 
-def make_MTUP3A(sentence: str, amr: str) -> str:
+def make_MTUP3A(sentence: str, amr: str, no_var_mode: str = 'legacy',
+                language: str = 'vi') -> str:
     """MTUP3A: concepts → no-var → AMR."""
     concepts = build_concept_list(amr)
-    no_var = strip_variables(amr)
+    no_var = strip_variables(amr, mode=no_var_mode)
     if concepts is None:
         return None
     assistant = (f"[STEP 1: CONCEPTS]\n{concepts}\n\n"
                  f"[STEP 2: AMR_NO_VAR]\n{no_var}\n\n"
                  f"[STEP 3: AMR_WITH_VAR]\n{amr}")
-    return _wrap(SYSTEM_PROMPT_MULTISTEP, sentence, assistant)
+    return _wrap(get_system_prompt(language), sentence, assistant)
 
 
-def make_MTUP3B(sentence: str, amr: str) -> str:
+def make_MTUP3B(sentence: str, amr: str, no_var_mode: str = 'legacy',
+                language: str = 'vi') -> str:
     """MTUP3B: concepts → relations → AMR."""
     concepts = build_concept_list(amr)
     relations = build_relation_list(amr)
@@ -276,21 +322,22 @@ def make_MTUP3B(sentence: str, amr: str) -> str:
     assistant = (f"[STEP 1: CONCEPTS]\n{concepts}\n\n"
                  f"[STEP 2: RELATIONS]\n{relations}\n\n"
                  f"[STEP 3: AMR_WITH_VAR]\n{amr}")
-    return _wrap(SYSTEM_PROMPT_MULTISTEP, sentence, assistant)
+    return _wrap(get_system_prompt(language), sentence, assistant)
 
 
-def make_MTUP4(sentence: str, amr: str) -> str:
+def make_MTUP4(sentence: str, amr: str, no_var_mode: str = 'legacy',
+               language: str = 'vi') -> str:
     """MTUP4: concepts → relations → no-var → AMR."""
     concepts = build_concept_list(amr)
     relations = build_relation_list(amr)
-    no_var = strip_variables(amr)
+    no_var = strip_variables(amr, mode=no_var_mode)
     if concepts is None or relations is None:
         return None
     assistant = (f"[STEP 1: CONCEPTS]\n{concepts}\n\n"
                  f"[STEP 2: RELATIONS]\n{relations}\n\n"
                  f"[STEP 3: AMR_NO_VAR]\n{no_var}\n\n"
                  f"[STEP 4: AMR_WITH_VAR]\n{amr}")
-    return _wrap(SYSTEM_PROMPT_MULTISTEP, sentence, assistant)
+    return _wrap(get_system_prompt(language), sentence, assistant)
 
 
 BUILDERS = {
@@ -318,8 +365,9 @@ def parse_amr_file(path: str):
         sentence = None
         amr_lines = []
         for line in block.split('\n'):
-            if line.startswith('#::snt'):
-                sentence = line.replace('#::snt', '').strip()
+            snt_match = re.match(r'#\s*::snt\s+(.+)', line)
+            if snt_match:
+                sentence = snt_match.group(1).strip()
             elif not line.startswith('#'):
                 amr_lines.append(line)
         if sentence and amr_lines:
@@ -344,7 +392,9 @@ def dedup(examples):
 # ─────────────────────────────────────────────────────────────────────────────
 
 def build_dataset(method: str, examples_1, examples_2, syn_weight: int,
-                  amr1_weight: int, amr2_weight: int) -> list:
+                  amr1_weight: int, amr2_weight: int,
+                  no_var_mode: str = 'legacy',
+                  language: str = 'vi') -> list:
     builder = BUILDERS[method]
     chat_examples = []
 
@@ -355,7 +405,8 @@ def build_dataset(method: str, examples_1, examples_2, syn_weight: int,
                 amr = fix_polarity_format(amr)
                 if not validate_amr(amr):
                     continue
-                result = builder(ex['sentence'], amr)
+                result = builder(ex['sentence'], amr, no_var_mode=no_var_mode,
+                                 language=language)
                 if result:
                     chat_examples.append(result)
 
@@ -368,7 +419,8 @@ def build_dataset(method: str, examples_1, examples_2, syn_weight: int,
             amr = fix_polarity_format(amr)
             if not validate_amr(amr):
                 continue
-            result = builder(syn['sentence'], amr)
+            result = builder(syn['sentence'], amr, no_var_mode=no_var_mode,
+                             language=language)
             if result:
                 chat_examples.append(result)
 
@@ -382,22 +434,31 @@ def main():
     parser.add_argument('--syn_weight',  type=int, default=10)
     parser.add_argument('--methods', nargs='+',
                         default=['B1', 'B2', 'MTUP2', 'MTUP3A', 'MTUP3B', 'MTUP4'])
+    parser.add_argument('--no_var_mode', choices=['legacy', 'clean'], default='legacy',
+                        help='legacy keeps the current Vietnamese no-var format; clean also expands bare variable references for English experiments')
+    parser.add_argument('--raw_dir', default='data/raw',
+                        help='Directory containing train_amr_1.txt and train_amr_2.txt')
+    parser.add_argument('--formatted_dir', default='data/formatted',
+                        help='Output directory for formatted training files')
+    parser.add_argument('--no_dedup', action='store_true',
+                        help='Keep all AMR blocks instead of deduplicating by sentence')
+    parser.add_argument('--language', choices=['vi', 'en'], default='vi')
     parser.add_argument('--verify', action='store_true',
                         help='Print 2 examples per method and exit')
     args = parser.parse_args()
 
     root = Path(__file__).parent.parent
-    raw_dir = root / 'data' / 'raw'
-    fmt_dir = root / 'data' / 'formatted'
+    raw_dir = root / args.raw_dir
+    fmt_dir = root / args.formatted_dir
     fmt_dir.mkdir(parents=True, exist_ok=True)
 
     print("Loading data...")
     ex1_raw = parse_amr_file(str(raw_dir / 'train_amr_1.txt'))
     ex2_raw = parse_amr_file(str(raw_dir / 'train_amr_2.txt'))
 
-    # Deduplicate each file independently (cross-file overlap already 0)
-    ex1 = dedup(ex1_raw)
-    ex2 = dedup(ex2_raw)
+    # Deduplicate each file independently by default (current Vietnamese setup).
+    ex1 = ex1_raw if args.no_dedup else dedup(ex1_raw)
+    ex2 = ex2_raw if args.no_dedup else dedup(ex2_raw)
 
     print(f"  train_amr_1: {len(ex1_raw)} raw → {len(ex1)} after dedup")
     print(f"  train_amr_2: {len(ex2_raw)} raw → {len(ex2)} after dedup")
@@ -407,7 +468,9 @@ def main():
     stats = {}
     for method in args.method if hasattr(args, 'method') else args.methods:
         examples = build_dataset(method, ex1, ex2, args.syn_weight,
-                                 args.amr1_weight, args.amr2_weight)
+                                 args.amr1_weight, args.amr2_weight,
+                                 no_var_mode=args.no_var_mode,
+                                 language=args.language)
         out_path = fmt_dir / f"{method}_train.txt"
         with open(out_path, 'w', encoding='utf-8') as f:
             f.write('\n\n'.join(examples))
@@ -429,6 +492,9 @@ def main():
             'amr2_examples': len(ex2),
             'synthetic_examples': len(SYNTHETIC_EXAMPLES),
             'weights': {'amr1': args.amr1_weight, 'amr2': args.amr2_weight, 'syn': args.syn_weight},
+            'no_var_mode': args.no_var_mode,
+            'dedup': not args.no_dedup,
+            'language': args.language,
             'methods': stats,
         }, f, indent=2)
     print(f"\nStats saved to {stats_path}")

@@ -197,6 +197,22 @@ QUY TẮC QUAN TRỌNG:
 17. :domain cho tính từ/trạng thái khi subject không chủ động hành động
 18. "X nói/khẳng định/cho biết: ..." → (s / say-01 :agent X :topic(mệnh đề))"""
 
+SYSTEM_PROMPT_EN = """You are an AMR (Abstract Meaning Representation) parsing assistant for English.
+
+RULES:
+1. Follow the requested output format exactly.
+2. Use standard AMR concepts, variables, and relations.
+3. Keep AMR parentheses balanced.
+4. Each variable must be unique within the graph.
+5. Reuse variables for reentrancies when producing full AMR.
+6. Output only the requested labels and AMR content."""
+
+
+def get_system_prompt(cfg: dict) -> str:
+    if cfg.get('language') == 'en' or cfg.get('data', {}).get('language') == 'en':
+        return SYSTEM_PROMPT_EN
+    return SYSTEM_PROMPT
+
 
 def main():
     parser = argparse.ArgumentParser()
@@ -229,9 +245,11 @@ def main():
 
     # Select test file
     if args.split == 'test':
-        test_file = root / 'data' / 'raw' / 'public_test.txt'
+        configured_test = cfg.get('data', {}).get('test')
+        test_file = root / configured_test if configured_test else root / 'data' / 'raw' / 'public_test.txt'
     else:
-        test_file = root / 'data' / 'raw' / cfg['data'].get('val', 'public_test.txt')
+        configured_val = cfg.get('data', {}).get('val', 'data/raw/public_test.txt')
+        test_file = root / configured_val
 
     out_dir = root / 'results' / group / method
     out_dir.mkdir(parents=True, exist_ok=True)
@@ -246,12 +264,13 @@ def main():
     sentences = load_sentences(str(test_file))
     extractor = EXTRACTORS[method]
     max_new_tokens = cfg.get('decoding', {}).get('max_new_tokens', 1024)
+    system_prompt = get_system_prompt(cfg)
 
     predictions = []
     full_outputs = []
 
     for sentence in tqdm(sentences, desc=f"Inference {method} s{args.seed}"):
-        inputs = build_prompt(tokenizer, SYSTEM_PROMPT, sentence)
+        inputs = build_prompt(tokenizer, system_prompt, sentence)
         input_ids = inputs['input_ids'].to(model.device)
 
         with torch.no_grad():

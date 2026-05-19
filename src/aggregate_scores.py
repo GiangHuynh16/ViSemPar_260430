@@ -23,7 +23,7 @@ def main():
     summary_dir.mkdir(parents=True, exist_ok=True)
 
     # Collect all scores.json
-    all_data = {}  # method -> {seed -> scores_dict}
+    all_data = {}  # (group, method) -> {seed -> scores_dict}
 
     for scores_file in sorted(results_dir.rglob('scores.json')):
         with open(scores_file) as f:
@@ -31,10 +31,12 @@ def main():
 
         for seed_key, scores in data.items():
             method = scores.get('method', '?')
+            group = scores.get('group', '')
             seed   = scores.get('seed', 0)
-            if method not in all_data:
-                all_data[method] = {}
-            all_data[method][seed] = scores
+            key = (group, method)
+            if key not in all_data:
+                all_data[key] = {}
+            all_data[key][seed] = scores
 
     if not all_data:
         print("No scores.json found under results/")
@@ -50,12 +52,12 @@ def main():
         'root_acc_mean', 'avg_len_mean',
     ]
 
-    methods = [m for m in METHODS_ORDER if m in all_data]
-    methods += [m for m in sorted(all_data) if m not in methods]
+    methods = [k for name in METHODS_ORDER for k in all_data if k[1] == name]
+    methods += [k for k in sorted(all_data) if k not in methods]
 
-    for method in methods:
-        seed_data = all_data[method]
-        row = {'method': method, 'group': next(iter(seed_data.values())).get('group', '')}
+    for group, method in methods:
+        seed_data = all_data[(group, method)]
+        row = {'method': method, 'group': group}
 
         f1s = []
         parsables = []

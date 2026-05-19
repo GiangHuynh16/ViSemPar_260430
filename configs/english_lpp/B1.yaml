@@ -1,0 +1,10 @@
+base: ../base.yaml
+method: B1
+group: english_lpp_baselines
+language: en
+data:
+  train: english_lpp/B1_train.txt
+  val: data/english/little_prince/raw/dev.txt
+  test: data/english/little_prince/raw/test.txt
+decoding:
+  max_new_tokens: 512
