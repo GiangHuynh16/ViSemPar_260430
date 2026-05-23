@@ -33,7 +33,8 @@ def set_seed(seed: int):
     random.seed(seed)
     np.random.seed(seed)
     torch.manual_seed(seed)
-    torch.cuda.manual_seed_all(seed)
+    if torch.cuda.is_available():
+        torch.cuda.manual_seed_all(seed)
 
 
 def load_config(config_path: str, seed: int) -> dict:
@@ -169,9 +170,19 @@ def main():
 
     # ── Model ──────────────────────────────────────────────────────────────
     print(f"\nLoading model: {model_name}")
+    if not torch.cuda.is_available():
+        raise RuntimeError(
+            "CUDA GPU is not available. This training setup requires a GPU; "
+            "check nvidia-smi, CUDA_VISIBLE_DEVICES, and the PyTorch CUDA build."
+        )
+
+    use_bf16 = torch.cuda.is_bf16_supported()
+    model_dtype = torch.bfloat16 if use_bf16 else torch.float16
+    print(f"Precision: {'bf16' if use_bf16 else 'fp16'}")
+
     model = AutoModelForCausalLM.from_pretrained(
         model_name,
-        torch_dtype=torch.bfloat16,
+        torch_dtype=model_dtype,
         device_map='auto',
         trust_remote_code=True,
     )
@@ -209,7 +220,8 @@ def main():
         weight_decay=tr_cfg.get('weight_decay', 0.01),
         max_grad_norm=tr_cfg.get('max_grad_norm', 1.0),
         optim=tr_cfg.get('optimizer', 'adamw_torch'),
-        bf16=True,
+        bf16=use_bf16,
+        fp16=not use_bf16,
         # Do NOT set gradient_checkpointing=True here – already enabled above
         gradient_checkpointing=False,
         logging_steps=10,
