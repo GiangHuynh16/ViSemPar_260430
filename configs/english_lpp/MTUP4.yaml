@@ -1,0 +1,10 @@
+base: ../base.yaml
+method: MTUP4
+group: english_lpp_mtup_4tasks
+language: en
+data:
+  train: english_lpp/MTUP4_train.txt
+  val: data/english/little_prince/raw/dev.txt
+  test: data/english/little_prince/raw/test.txt
+decoding:
+  max_new_tokens: 2048

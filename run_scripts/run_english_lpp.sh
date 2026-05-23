@@ -5,7 +5,7 @@ set -e
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 cd "$ROOT"
 
-METHODS=${METHODS:-"B1 B2 MTUP2"}
+METHODS=${METHODS:-"B1 B2 MTUP2 MTUP3A MTUP3B MTUP4"}
 SEEDS=${SEEDS:-"42"}
 GOLD="$ROOT/data/english/little_prince/raw/test_ground_truth.txt"
 
