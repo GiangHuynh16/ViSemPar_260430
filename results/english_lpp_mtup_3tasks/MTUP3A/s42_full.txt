@@ -1,0 +1,4859 @@
+#::snt Chapter 4 .
+[STEP 1: CONCEPTS]
+concept_1 | chapter
+
+[STEP 2: AMR_NO_VAR]
+(chapter :mod 4)
+
+[STEP 3: AMR_WITH_VAR]
+(c / chapter :mod 4)
+
+
+#::snt I had thus learned a second fact of great importance : this was that the planet the little prince came from was scarcely any larger than a house !
+[STEP 1: CONCEPTS]
+concept_1 | learn-01
+concept_2 | i
+concept_3 | fact
+concept_4 | important
+concept_5 | great
+concept_6 | planet
+concept_7 | come-01
+concept_8 | prince
+concept_9 | little
+concept_10 | large
+concept_11 | house
+concept_12 | scarce
+concept_13 | thus
+
+[STEP 2: AMR_NO_VAR]
+(learn-01
+      :ARG0 (i)
+      :ARG1 (fact
+            :mod (important
+                  :degree (great))
+            :domain (planet
+                  :ARG3-of (come-01
+                        :ARG1 (prince
+                              :mod (little))))
+            :ARG1-of (large
+                  :compared-to (house)
+                  :degree (scarce)))
+      :manner (thus))
+
+[STEP 3: AMR_WITH_VAR]
+(l / learn-01
+      :ARG0 (i / i)
+      :ARG1 (f / fact
+            :mod (i2 / important
+                  :degree (g / great))
+            :domain (p / planet
+                  :ARG3-of (c / come-01
+                        :ARG1 (p2 / prince
+                              :mod (l2 / little))))
+            :ARG1-of (l3 / large
+                  :compared-to (h / house)
+                  :degree (s / scarce)))
+      :manner (t / thus))
+
+
+#::snt But that did not really surprise me much .
+[STEP 1: CONCEPTS]
+concept_1 | contrast-01
+concept_2 | surprise-01
+concept_3 | that
+concept_4 | i
+concept_5 | much
+concept_6 | real-04
+
+[STEP 2: AMR_NO_VAR]
+(contrast-01
+      :ARG2 (surprise-01 :polarity -
+            :ARG0 (that)
+            :ARG1 (i)
+            :degree (much)
+            :ARG1-of (real-04)))
+
+[STEP 3: AMR_WITH_VAR]
+(c / contrast-01
+      :ARG2 (s / surprise-01 :polarity -
+            :ARG0 (t / that)
+            :ARG1 (i / i)
+            :degree (m / much)
+            :ARG1-of (r / real-04)))
+
+
+#::snt I knew very well that in addition to the great planets -- such as the Earth , Jupiter , Mars , Venus -- to which we have given names , there are also hundreds of others , some of which are so small that one has a hard time seeing them through the telescope .
+[STEP 1: CONCEPTS]
+concept_1 | know-01
+concept_2 | i
+concept_3 | planet
+concept_4 | include-91
+concept_5 | name-01
+concept_6 | we
+concept_7 | great
+concept_8 | exemplify-01
+concept_9 | and
+concept_10 | earth
+concept_11 | jupiter
+concept_12 | mars
+concept_13 | venus
+concept_14 | add-02
+concept_15 | other
+concept_16 | multiple
+concept_17 | hundred
+concept_18 | see-01
+concept_19 | p
+concept_20 | telescope
+concept_21 | hard
+concept_22 | c
+concept_23 | small
+concept_24 | very
+
+[STEP 2: AMR_NO_VAR]
+(know-01
+      :ARG0 (i)
+      :ARG1 (planet
+            :ARG1-of (include-91
+                  :ARG2 (planet :quant 1
+                        :ARG1-of (name-01
+                              :ARG0 (we))
+                        :mod (great)
+                        :ARG1-of (exemplify-01)))
+            :op1 (add-02
+                  :ARG2 (other
+                        :quant (multiple
+                              :op1 (hundred))
+                        :mod (see-01
+                              :ARG1 p
+                              :instrument (telescope)
+                              :mod (hard
+                                    :degree (c)))
+                        :mod (small
+                              :degree (very)))))
+      :mod (well
+            :degree (very)))
+
+[STEP 3: AMR_WITH_VAR]
+(k / know-01
+      :ARG0 (i / i)
+      :ARG1 (p / planet
+            :ARG1-of (i2 / include-91
+                  :ARG2 (p2 / planet :quant 1
+                        :ARG1-of (n / name-01
+                              :ARG0 (w / we))
+                        :mod (g / great)
+                        :ARG1-of (e / exemplify-01)))
+            :op1 (a / add-02
+                  :ARG2 (o / other
+                        :quant (m / multiple
+                              :op1 (h2 / hundred))
+                        :mod (s / see-01
+                              :ARG1 p
+                              :instrument (t / telescope)
+                              :mod (h / hard
+                                    :degree (c / c)))
+                        :mod (s2 / small
+                              :degree (v / very)))))
+      :mod (w2 / well
+            :degree (v2 / very)))
+
+
+#::snt When an astronomer discovers one of these he does not give it a name , but only a number .
+[STEP 1: CONCEPTS]
+concept_1 | contrast-01
+concept_2 | give-01
+concept_3 | person
+concept_4 | astronomy-01
+concept_5 | discover-01
+concept_6 | x
+concept_7 | include-91
+concept_8 | this
+concept_9 | name-01
+concept_10 | it
+concept_11 | number-01
+concept_12 | only
+
+[STEP 2: AMR_NO_VAR]
+(contrast-01
+      :ARG1 (give-01
+            :ARG0 (person
+                  :ARG0-of (astronomy-01))
+            :ARG1 (discover-01
+                  :ARG0 x
+                  :ARG1 (thing
+                        :ARG1-of (include-91
+                              :ARG2 (this))))
+            :ARG2 (name-01
+                  :ARG0 x
+                  :ARG1 i
+                  :polarity -))
+      :ARG2 (number-01
+            :ARG0 x
+            :ARG1 i
+            :mod (only)))
+
+[STEP 3: AMR_WITH_VAR]
+(c / contrast-01
+      :ARG1 (g / give-01
+            :ARG0 (p / person
+                  :ARG0-of (a / astronomy-01))
+            :ARG1 (d / discover-01
+                  :ARG0 x
+                  :ARG1 (t / thing
+                        :ARG1-of (i / include-91
+                              :ARG2 (h / this))))
+            :ARG2 (n / name-01
+                  :ARG0 x
+                  :ARG1 i
+                  :polarity -))
+      :ARG2 (n2 / number-01
+            :ARG0 x
+            :ARG1 i
+            :mod (o / only)))
+
+
+#::snt He might call it , for example , " Asteroid 325 . "
+[STEP 1: CONCEPTS]
+concept_1 | possible-01
+concept_2 | call-07
+concept_3 | he
+concept_4 | name
+concept_5 | asteroid
+concept_6 | ordinal-entity
+concept_7 | exemplify-01
+
+[STEP 2: AMR_NO_VAR]
+(possible-01
+      :ARG1 (call-07
+            :ARG0 (he)
+            :ARG1 (name
+                  :poss (asteroid
+                        :ord (ordinal-entity :value 325))
+                  :ARG0-of (exemplify-01))))
+
+[STEP 3: AMR_WITH_VAR]
+(p / possible-01
+      :ARG1 (c / call-07
+            :ARG0 (h / he)
+            :ARG1 (n / name
+                  :poss (a / asteroid
+                        :ord (o / ordinal-entity :value 325))
+                  :ARG0-of (e / exemplify-01))))
+
+
+#::snt I have serious reason to believe that the planet from which the little prince came is the asteroid known as B-612 .
+[STEP 1: CONCEPTS]
+concept_1 | have-03
+concept_2 | i
+concept_3 | reason
+concept_4 | serious
+concept_5 | cause-01
+concept_6 | believe-01
+concept_7 | planet
+concept_8 | come-01
+concept_9 | prince
+concept_10 | little
+concept_11 | asteroid
+concept_12 | name
+concept_13 | b612
+
+[STEP 2: AMR_NO_VAR]
+(have-03
+      :ARG0 (i)
+      :ARG1 (reason
+            :mod (serious)
+            :ARG1-of (cause-01
+                  :ARG0 (believe-01
+                        :ARG0 i
+                        :ARG1 (planet
+                              :ARG1-of (come-01
+                                    :ARG1 (prince
+                                          :mod (little)))
+                              :domain (asteroid :wiki "B-612"
+                                    :name (name :op1 b612)))))))
+
+[STEP 3: AMR_WITH_VAR]
+(h / have-03
+      :ARG0 (i / i)
+      :ARG1 (r / reason
+            :mod (s / serious)
+            :ARG1-of (c / cause-01
+                  :ARG0 (b / believe-01
+                        :ARG0 i
+                        :ARG1 (p / planet
+                              :ARG1-of (c2 / come-01
+                                    :ARG1 (p2 / prince
+                                          :mod (l / little)))
+                              :domain (a2 / asteroid :wiki "B-612"
+                                    :name (n / name :op1 b612))))))
+)
+
+#::snt This asteroid has only once been seen through the telescope .
+[STEP 1: CONCEPTS]
+concept_1 | see-01
+concept_2 | asteroid
+concept_3 | this
+concept_4 | telescope
+concept_5 | only
+
+[STEP 2: AMR_NO_VAR]
+(see-01 :frequency 1
+      :ARG1 (asteroid
+            :mod (this))
+      :instrument (telescope)
+      :mod (only))
+
+[STEP 3: AMR_WITH_VAR]
+(s / see-01 :frequency 1
+      :ARG1 (a / asteroid
+            :mod (t2 / this))
+      :instrument (t / telescope)
+      :mod (o / only))
+
+
+#::snt That was by a Turkish astronomer , in 1909 .
+[STEP 1: CONCEPTS]
+concept_1 | that
+concept_2 | observe-01
+concept_3 | person
+concept_4 | country
+concept_5 | name
+concept_6 | astronomer
+concept_7 | year
+
+[STEP 2: AMR_NO_VAR]
+(that
+      :ARG1-of (observe-01
+            :ARG0 (person
+                  :source (country :wiki "Turkey"
+                        :name (name :op1 "Turkish"))
+                  :mod (astronomer))
+            :time (year :wiki 1909)))
+
+[STEP 3: AMR_WITH_VAR]
+(t / that
+      :ARG1-of (o / observe-01
+            :ARG0 (p / person
+                  :source (c / country :wiki "Turkey"
+                        :name (n / name :op1 "Turkish"))
+                  :mod (a / astronomer))
+            :time (y / year :wiki 1909)))
+
+
+#::snt On making his discovery , the astronomer had presented it to the International Astronomical Congress , in a great demonstration .
+[STEP 1: CONCEPTS]
+concept_1 | present-01
+concept_2 | astronomer
+concept_3 | discover-01
+concept_4 | a
+concept_5 | congress
+concept_6 | name
+concept_7 | international
+concept_8 | demonstrate-01
+concept_9 | great
+
+[STEP 2: AMR_NO_VAR]
+(present-01
+      :ARG0 (astronomer)
+      :ARG1 (discover-01
+            :ARG0 a
+            :ARG1 (congress
+                  :name (name
+                        :mod (international))))
+      :time (demonstrate-01
+            :ARG0 a
+            :manner (great)))
+
+[STEP 3: AMR_WITH_VAR]
+(p / present-01
+      :ARG0 (a / astronomer)
+      :ARG1 (d / discover-01
+            :ARG0 a
+            :ARG1 (c / congress
+                  :name (n / name
+                        :mod (i / international))))
+      :time (d2 / demonstrate-01
+            :ARG0 a
+            :manner (g / great)))
+
+
+#::snt But he was in Turkish costume , and so nobody would believe what he said .
+[STEP 1: CONCEPTS]
+concept_1 | contrast-01
+concept_2 | and
+concept_3 | costumize-01
+concept_4 | he
+concept_5 | turkey
+concept_6 | believe-01
+concept_7 | nobody
+concept_8 | say-01
+concept_9 | h
+
+[STEP 2: AMR_NO_VAR]
+(contrast-01
+      :ARG2 (and
+            :op1 (costumize-01
+                  :ARG1 (he)
+                  :ARG2 (turkey))
+            :op2 (believe-01 :polarity -
+                  :ARG0 (nobody)
+                  :ARG1 (say-01
+                        :ARG0 h))))
+
+[STEP 3: AMR_WITH_VAR]
+(c / contrast-01
+      :ARG2 (a / and
+            :op1 (c2 / costumize-01
+                  :ARG1 (h / he)
+                  :ARG2 (t / turkey))
+            :op2 (b / believe-01 :polarity -
+                  :ARG0 (n / nobody)
+                  :ARG1 (s / say-01
+                        :ARG0 h))))
+
+
+#::snt Grown - ups are like that ...
+[STEP 1: CONCEPTS]
+concept_1 | resemble-01
+concept_2 | grown-up
+concept_3 | that
+
+[STEP 2: AMR_NO_VAR]
+(resemble-01
+      :ARG1 (grown-up)
+      :ARG2 (that))
+
+[STEP 3: AMR_WITH_VAR]
+(r / resemble-01
+      :ARG1 (g / grown-up)
+      :ARG2 (t / that))
+
+
+#::snt Fortunately , however , for the reputation of Asteroid B-612 , a Turkish dictator made a law that his subjects , under pain of death , should change to European costume .
+[STEP 1: CONCEPTS]
+concept_1 | have-concession-91
+concept_2 | contrast-01
+concept_3 | law-01
+concept_4 | change-01
+concept_5 | person
+concept_6 | subject
+concept_7 | dictate-01
+concept_8 | country
+concept_9 | name
+concept_10 | costume
+concept_11 | european
+concept_12 | suffer-01
+concept_13 | penalty
+concept_14 | die-01
+concept_15 | rep-01
+concept_16 | asteroid
+concept_17 | b612
+
+[STEP 2: AMR_NO_VAR]
+(have-concession-91
+      :ARG1 (contrast-01)
+      :beneficiary (rep-01
+            :ARG0 (asteroid
+                  :name (b612))
+            :ARG1-of (change-01
+                  :ARG2 (costume
+                        :mod (european))))
+      :ARG2 (law-01
+            :ARG0 (person
+                  :ARG0-of (dictate-01)
+                  :source (country :wiki "Turkey"))
+            :ARG1 (change-01
+                  :ARG0 (person
+                        :ARG1-of (subject
+                              :poss (person
+                                    :ARG0-of (dictate-01)))
+                        :ARG2 (costume
+                              :mod (european))))
+            :ARG2 (suffer-01
+                  :ARG1 (penalty
+                        :mod (die-01)))))
+
+[STEP 3: AMR_WITH_VAR]
+(h / have-concession-91
+      :ARG1 (c / contrast-01)
+      :beneficiary (r / rep-01
+            :ARG0 (a / asteroid
+                  :name (b612))
+            :ARG1-of (c2 / change-01
+                  :ARG2 (c3 / costume
+                        :mod (e / european))))
+      :ARG2 (l / law-01
+            :ARG0 (p / person
+                  :ARG0-of (d / dictate-01)
+                  :source (c4 / country :wiki "Turkey"))
+            :ARG1 (c5 / change-01
+                  :ARG0 (p2 / person
+                        :ARG1-of (s / subject
+                              :poss (p3 / person
+                                    :ARG0-of (d2 / dictate-01)))
+                        :ARG2 (c6 / costume
+                              :mod (e2 / european))))
+            :ARG2 (s2 / suffer-01
+                  :ARG1 (p4 / penalty
+                        :mod (d3 / die-01)))))
+
+
+#::snt So in 1920 the astronomer gave his demonstration all over again , dressed with impressive style and elegance .
+[STEP 1: CONCEPTS]
+concept_1 | give-01
+concept_2 | astronomer
+concept_3 | demonstrate-01
+concept_4 | a
+concept_5 | again
+concept_6 | dress-01
+concept_7 | and
+concept_8 | style
+concept_9 | impressive
+concept_10 | elegant
+
+[STEP 2: AMR_NO_VAR]
+(give-01
+      :ARG0 (astronomer)
+      :ARG1 (demonstrate-01
+            :ARG0 a
+            :mod (again))
+      :manner (dress-01
+            :ARG0 a
+            :ARG1 (and
+                  :op1 (style
+                        :mod (impressive))
+                  :op2 (elegant))))
+
+[STEP 3: AMR_WITH_VAR]
+(g / give-01
+      :ARG0 (a / astronomer)
+      :ARG1 (d / demonstrate-01
+            :ARG0 a
+            :mod (a2 / again))
+      :manner (d2 / dress-01
+            :ARG0 a
+            :ARG1 (a3 / and
+                  :op1 (s / style
+                        :mod (i / impressive))
+                  :op2 (e / elegant))))
+
+
+#::snt And this time everybody accepted his report .
+[STEP 1: CONCEPTS]
+concept_1 | and
+concept_2 | accept-01
+concept_3 | person
+concept_4 | everybody
+concept_5 | report-01
+concept_6 | he
+concept_7 | time
+concept_8 | this
+
+[STEP 2: AMR_NO_VAR]
+(and
+      :op2 (accept-01
+            :ARG0 (person
+                  :mod (everybody))
+            :ARG1 (report-01
+                  :ARG0 (he))
+            :time (time
+                  :mod (this))))
+
+[STEP 3: AMR_WITH_VAR]
+(a / and
+      :op2 (a2 / accept-01
+            :ARG0 (p / person
+                  :mod (e / everybody))
+            :ARG1 (r / report-01
+                  :ARG0 (h / he))
+            :time (t / time
+                  :mod (t2 / this))))
+
+
+#::snt If I have told you these details about the asteroid , and made a note of its number for you , it is on account of the grown - ups and their ways .
+[STEP 1: CONCEPTS]
+concept_1 | cause-01
+concept_2 | and
+concept_3 | tell-01
+concept_4 | i
+concept_5 | you
+concept_6 | detail
+concept_7 | asteroid
+concept_8 | make-01
+concept_9 | note
+concept_10 | number
+concept_11 | a
+concept_12 | grown-up
+concept_13 | way
+
+[STEP 2: AMR_NO_VAR]
+(cause-01
+      :ARG0 (and
+            :op1 (tell-01
+                  :ARG0 (i)
+                  :ARG1 (you)
+                  :ARG2 (detail
+                        :topic (asteroid)))
+            :op2 (make-01
+                  :ARG0 i
+                  :ARG1 (note
+                        :poss y
+                        :about (number
+                              :part-of a))))
+      :ARG1 (grown-up
+            :mod (way)))
+
+[STEP 3: AMR_WITH_VAR]
+(c / cause-01
+      :ARG0 (a / and
+            :op1 (t / tell-01
+                  :ARG0 (i / i)
+                  :ARG1 (y / you)
+                  :ARG2 (d / detail
+                        :topic (a2 / asteroid)))
+            :op2 (m / make-01
+                  :ARG0 i
+                  :ARG1 (n / note
+                        :poss y
+                        :about (n2 / number
+                              :part-of a))))
+      :ARG1 (g / grown-up
+            :mod (w / way)))
+
+
+#::snt WHen you tell them that you have made a new friend , they never ask you any questions about essential matters .
+[STEP 1: CONCEPTS]
+concept_1 | ask-01
+concept_2 | they
+concept_3 | thing
+concept_4 | matter
+concept_5 | essential
+concept_6 | you
+concept_7 | question-01
+concept_8 | t
+concept_9 | ever
+concept_10 | tell-01
+concept_11 | y
+concept_12 | have-03
+concept_13 | friend
+concept_14 | new-01
+
+[STEP 2: AMR_NO_VAR]
+(ask-01 :polarity -
+      :ARG0 (they)
+      :ARG1 (thing
+            :domain (matter
+                  :mod (essential)))
+      :ARG2 (you)
+      :time (question-01
+            :ARG0 t
+            :time (ever))
+      :time (tell-01
+            :ARG0 y
+            :ARG1 (have-03
+                  :ARG0 y
+                  :ARG1 (friend
+                        :ARG1-of (new-01)))))
+
+[STEP 3: AMR_WITH_VAR]
+(a / ask-01 :polarity -
+      :ARG0 (t / they)
+      :ARG1 (t2 / thing
+            :domain (m / matter
+                  :mod (e / essential)))
+      :ARG2 (y / you)
+      :time (q / question-01
+            :ARG0 t
+            :time (e2 / ever))
+      :time (t3 / tell-01
+            :ARG0 y
+            :ARG1 (h / have-03
+                  :ARG0 y
+                  :ARG1 (f / friend
+                        :ARG1-of (n / new-01)))))
+
+
+#::snt They never say to you , " What does his voice sound like ?
+[STEP 1: CONCEPTS]
+concept_1 | say-01
+concept_2 | they
+concept_3 | have-sound-91
+concept_4 | voice
+concept_5 | he
+concept_6 | amr-unknown
+concept_7 | you
+concept_8 | ever
+
+[STEP 2: AMR_NO_VAR]
+(say-01 :polarity -
+      :ARG0 (they)
+      :ARG1 (have-sound-91
+            :ARG1 (voice
+                  :poss (he))
+            :ARG2 (amr-unknown))
+      :ARG2 (you)
+      :time (ever))
+
+[STEP 3: AMR_WITH_VAR]
+(s / say-01 :polarity -
+      :ARG0 (t / they)
+      :ARG1 (h / have-sound-91
+            :ARG1 (v / voice
+                  :poss (h2 / he))
+            :ARG2 (a / amr-unknown))
+      :ARG2 (y / you)
+      :time (e / ever))
+
+
+#::snt What games does he love best ?
+[STEP 1: CONCEPTS]
+concept_1 | love-01
+concept_2 | he
+concept_3 | game
+concept_4 | amr-unknown
+concept_5 | best
+
+[STEP 2: AMR_NO_VAR]
+(love-01
+      :ARG0 (he)
+      :ARG1 (game
+            :domain (amr-unknown))
+      :degree (best))
+
+[STEP 3: AMR_WITH_VAR]
+(l / love-01
+      :ARG0 (h / he)
+      :ARG1 (g / game
+            :domain (a / amr-unknown))
+      :degree (b / best))
+
+
+#::snt Does he collect butterflies ? "
+[STEP 1: CONCEPTS]
+concept_1 | collect-01
+concept_2 | he
+concept_3 | butterfly
+concept_4 | interrogative
+
+[STEP 2: AMR_NO_VAR]
+(collect-01
+  :ARG0 (he)
+  :ARG1 (butterfly)
+  :mode interrogative)
+
+[STEP 3: AMR_WITH_VAR]
+(c / collect-01
+  :ARG0 (h / he)
+  :ARG1 (b / butterfly)
+  :mode interrogative)
+
+
+#::snt Instead , they demand : " How old is he ?
+[STEP 1: CONCEPTS]
+concept_1 | demand-01
+concept_2 | they
+concept_3 | contrast-01
+concept_4 | old
+concept_5 | he
+concept_6 | amr-unknown
+
+[STEP 2: AMR_NO_VAR]
+(demand-01
+      :ARG0 (they)
+      :ARG1 (contrast-01
+            :ARG2 (old
+                  :domain (he)
+                  :degree (amr-unknown))))
+
+[STEP 3: AMR_WITH_VAR]
+(d / demand-01
+      :ARG0 (t / they)
+      :ARG1 (c / contrast-01
+            :ARG2 (o / old
+                  :domain (h / he)
+                  :degree (a / amr-unknown))))
+
+
+#::snt How many brothers has he ?
+[STEP 1: CONCEPTS]
+concept_1 | have-03
+concept_2 | he
+concept_3 | brother
+
+[STEP 2: AMR_NO_VAR]
+(have-03
+      :ARG0 (he)
+      :ARG1 (brother
+            :quant ?q))
+
+[STEP 3: AMR_WITH_VAR]
+(h / have-03
+      :ARG0 (h2 / he)
+      :ARG1 (b / brother
+            :quant ?q))
+
+
+#::snt How much does he weigh ?
+[STEP 1: CONCEPTS]
+concept_1 | weight-01
+concept_2 | he
+concept_3 | amr-unknown
+
+[STEP 2: AMR_NO_VAR]
+(weight-01
+      :ARG1 (he)
+      :quant (amr-unknown))
+
+[STEP 3: AMR_WITH_VAR]
+(w / weight-01
+      :ARG1 (h / he)
+      :quant (a / amr-unknown))
+
+
+#::snt How much money does his father make ? "
+[STEP 1: CONCEPTS]
+concept_1 | earn-01
+concept_2 | father
+concept_3 | he
+concept_4 | money
+concept_5 | amr-unknown
+
+[STEP 2: AMR_NO_VAR]
+(earn-01
+      :ARG0 (father
+            :poss (he))
+      :ARG1 (money
+            :quant (amr-unknown)))
+
+[STEP 3: AMR_WITH_VAR]
+(e / earn-01
+      :ARG0 (f / father
+            :poss (h / he))
+      :ARG1 (m / money
+            :quant (a / amr-unknown)))
+
+
+#::snt Only from these figures do they think they have learned anything about him .
+[STEP 1: CONCEPTS]
+concept_1 | think-01
+concept_2 | they
+concept_3 | learn-01
+concept_4 | t
+concept_5 | anything
+concept_6 | figure
+concept_7 | this
+concept_8 | only
+concept_9 | he
+
+[STEP 2: AMR_NO_VAR]
+(think-01
+      :ARG0 (they)
+      :ARG1 (learn-01
+            :ARG0 t
+            :ARG1 (anything)
+            :source (figure
+                  :mod (this)
+                  :mod (only))
+            :topic (he)))
+
+[STEP 3: AMR_WITH_VAR]
+(t / think-01
+      :ARG0 (t2 / they)
+      :ARG1 (l / learn-01
+            :ARG0 t
+            :ARG1 (a / anything)
+            :source (f / figure
+                  :mod (t3 / this)
+                  :mod (o / only))
+            :topic (h / he)))
+
+
+#::snt If you were to say to the grown - ups : " I saw a beautiful house made of rosy brick , with geraniums in the windows and doves on the roof , " they would not be able to get any idea of that house at all .
+[STEP 1: CONCEPTS]
+concept_1 | possible-01
+concept_2 | get-01
+concept_3 | they
+concept_4 | idea
+concept_5 | house
+concept_6 | that
+concept_7 | any
+concept_8 | grown-up
+concept_9 | say-01
+concept_10 | you
+concept_11 | see-01
+concept_12 | i
+concept_13 | beautiful-02
+concept_14 | house
+concept_15 | make-01
+concept_16 | brick
+concept_17 | rose
+concept_18 | contain-01
+concept_19 | geranium
+concept_20 | window
+concept_21 | dove
+concept_22 | roof
+concept_23 | w
+concept_24 | at-all
+
+[STEP 2: AMR_NO_VAR]
+(possible-01 :polarity -
+      :ARG1 (get-01
+            :ARG0 (they)
+            :ARG1 (idea
+                  :topic (house
+                        :mod (that))
+                  :mod (any))
+            :ARG2 (grown-up
+                  :ARG0-of (say-01
+                        :ARG0 (you)
+                        :ARG1 (see-01
+                              :ARG0 i
+                              :ARG1 (beautiful-02
+                                    :ARG1 (house
+                                          :ARG1-of (make-01
+                                                :ARG2 (brick
+                                                      :mod (rose)))
+                                          :ARG2-of (contain-01
+                                                :ARG1 (geranium)
+                                                :location (window))
+                                          :ARG2-of (contain-01
+                                                :ARG1 (dove)
+                                                :location (roof)))
+                                    :poss w))))))
+      :mod (at-all))
+
+[STEP 3: AMR_WITH_VAR]
+(p / possible-01 :polarity -
+      :ARG1 (g2 / get-01
+            :ARG0 (t / they)
+            :ARG1 (i / idea
+                  :topic (h / house
+                        :mod (t3 / that))
+                  :mod (a / any))
+            :ARG2 (g / grown-up
+                  :ARG0-of (s / say-01
+                        :ARG0 (y / you)
+                        :ARG1 (s2 / see-01
+                              :ARG0 i
+                              :ARG1 (b / beautiful-02
+                                    :ARG1 (h2 / house
+                                          :ARG1-of (m / make-01
+                                                :ARG2 (b2 / brick
+                                                      :mod (r / rose)))
+                                          :ARG2-of (c / contain-01
+                                                :ARG1 (g3 / geranium)
+                                                :location (w / window))
+                                          :ARG2-of (c2 / contain-01
+                                                :ARG1 (d / dove)
+                                                :location (r2 / roof)))
+                                    :poss w))))))
+      :mod (a2 / at-all))
+
+
+#::snt You would have to say to them : " I saw a house that cost $ 20,000 . "
+[STEP 1: CONCEPTS]
+concept_1 | obligate-01
+concept_2 | you
+concept_3 | say-01
+concept_4 | y
+concept_5 | see-01
+concept_6 | house
+concept_7 | cost-01
+concept_8 | h
+concept_9 | dollar
+concept_10 | they
+
+[STEP 2: AMR_NO_VAR]
+(obligate-01
+      :ARG1 (you)
+      :ARG2 (say-01
+            :ARG0 y
+            :ARG1 (see-01
+                  :ARG0 y
+                  :ARG1 (house
+                        :ARG1-of (cost-01
+                              :ARG2 h
+                              :quant (dollar :quant 20000))))
+            :ARG2 (they)))
+
+[STEP 3: AMR_WITH_VAR]
+(o / obligate-01
+      :ARG1 (y / you)
+      :ARG2 (s / say-01
+            :ARG0 y
+            :ARG1 (s2 / see-01
+                  :ARG0 y
+                  :ARG1 (h / house
+                        :ARG1-of (c / cost-01
+                              :ARG2 h
+                              :quant (d / dollar :quant 20000))))
+            :ARG2 (t / they)))
+
+
+#::snt Then they would exclaim : " Oh , what a pretty house that is ! "
+[STEP 1: CONCEPTS]
+concept_1 | exclaim-01
+concept_2 | they
+concept_3 | oh
+concept_4 | expressive
+concept_5 | house
+concept_6 | h
+concept_7 | pretty
+concept_8 | that
+concept_9 | then
+
+[STEP 2: AMR_NO_VAR]
+(exclaim-01
+      :ARG0 (they)
+      :ARG1 (oh :mode expressive
+            :domain (house
+                  :mod (pretty)
+                  :mod (that)))
+      :time (then))
+
+[STEP 3: AMR_WITH_VAR]
+(e / exclaim-01
+      :ARG0 (t / they)
+      :ARG1 (o / oh :mode expressive
+            :domain (h / house
+                  :mod (p / pretty)
+                  :mod (t2 / that)))
+      :time (t3 / then))
+
+
+#::snt Just so , you might say to them : " The proof that the little prince existed is that he was charming , that he laughed , and that he was looking for a sheep .
+[STEP 1: CONCEPTS]
+concept_1 | possible-01
+concept_2 | say-01
+concept_3 | you
+concept_4 | prove-01
+concept_5 | exist-01
+concept_6 | prince
+concept_7 | little
+concept_8 | and
+concept_9 | charm-01
+concept_10 | p2
+concept_11 | laugh-01
+concept_12 | look-01
+concept_13 | sheep
+concept_14 | they
+concept_15 | just
+
+[STEP 2: AMR_NO_VAR]
+(possible-01
+      :ARG1 (say-01
+            :ARG0 (you)
+            :ARG1 (prove-01
+                  :ARG1 (exist-01
+                        :ARG1 (prince
+                              :mod (little)))
+                  :ARG2 (and
+                        :op1 (charm-01
+                              :ARG0 p2)
+                        :op2 (laugh-01
+                              :ARG0 p2)
+                        :op3 (look-01
+                              :ARG0 p2
+                              :ARG1 (sheep))))
+            :ARG2 (they))
+      :mod (just))
+
+[STEP 3: AMR_WITH_VAR]
+(p / possible-01
+      :ARG1 (s / say-01
+            :ARG0 (y / you)
+            :ARG1 (p2 / prove-01
+                  :ARG1 (e / exist-01
+                        :ARG1 (p3 / prince
+                              :mod (l / little)))
+                  :ARG2 (a / and
+                        :op1 (c / charm-01
+                              :ARG0 p2)
+                        :op2 (l2 / laugh-01
+                              :ARG0 p2)
+                        :op3 (l3 / look-01
+                              :ARG0 p2
+                              :ARG1 (s2 / sheep))))
+            :ARG2 (t / they))
+      :mod (j / just))
+
+
+#::snt If anybody wants a sheep , that is a proof that he exists . "
+[STEP 1: CONCEPTS]
+concept_1 | prove-01
+concept_2 | want-01
+concept_3 | anybody
+concept_4 | sheep
+concept_5 | exist-01
+concept_6 | s
+
+[STEP 2: AMR_NO_VAR]
+(prove-01
+      :ARG1 (want-01
+            :ARG0 (anybody)
+            :ARG1 (sheep))
+      :ARG2 (exist-01
+            :ARG1 s))
+
+[STEP 3: AMR_WITH_VAR]
+(p / prove-01
+      :ARG1 (w / want-01
+            :ARG0 (a / anybody)
+            :ARG1 (s / sheep))
+      :ARG2 (e / exist-01
+            :ARG1 s))
+
+
+#::snt And what good would it do to tell them that ?
+[STEP 1: CONCEPTS]
+concept_1 | and
+concept_2 | cause-01
+concept_3 | tell-01
+concept_4 | they
+concept_5 | good-04
+concept_6 | amr-unknown
+concept_7 | t
+
+[STEP 2: AMR_NO_VAR]
+(and
+      :op2 (cause-01
+            :ARG0 (tell-01
+                  :ARG0 (they)
+                  :ARG1 (good-04
+                        :ARG1 (amr-unknown)
+                        :ARG2 t))
+            :ARG1 t))
+
+[STEP 3: AMR_WITH_VAR]
+(a / and
+      :op2 (c / cause-01
+            :ARG0 (t / tell-01
+                  :ARG0 (t2 / they)
+                  :ARG1 (g / good-04
+                        :ARG1 (a2 / amr-unknown)
+                        :ARG2 t))
+            :ARG1 t))
+
+
+#::snt They would shrug their shoulders , and treat you like a child .
+[STEP 1: CONCEPTS]
+concept_1 | and
+concept_2 | shrug-01
+concept_3 | they
+concept_4 | shoulder
+concept_5 | t
+concept_6 | treat-01
+concept_7 | you
+concept_8 | child
+
+[STEP 2: AMR_NO_VAR]
+(and
+  :op1 (shrug-01
+         :ARG0 (they)
+         :ARG1 (shoulder
+                 :part-of t))
+  :op2 (treat-01
+         :ARG0 t
+         :ARG1 (you)
+         :manner (child)))
+
+[STEP 3: AMR_WITH_VAR]
+(a / and
+  :op1 (s / shrug-01
+         :ARG0 (t / they)
+         :ARG1 (s2 / shoulder
+                 :part-of t))
+  :op2 (t2 / treat-01
+         :ARG0 t
+         :ARG1 (y / you)
+         :manner (c / child)))
+
+
+#::snt But if you said to them : " The planet he came from is Asteroid B-612 , " then they would be convinced , and leave you in peace from their questions .
+[STEP 1: CONCEPTS]
+concept_1 | contrast-01
+concept_2 | convince-01
+concept_3 | they
+concept_4 | say-01
+concept_5 | you
+concept_6 | person
+concept_7 | include-91
+concept_8 | planet
+concept_9 | come-01
+concept_10 | he
+concept_11 | name
+concept_12 | asteroid
+concept_13 | b-612
+concept_14 | leave-14
+concept_15 | y
+concept_16 | peace
+concept_17 | question-01
+concept_18 | t
+
+[STEP 2: AMR_NO_VAR]
+(contrast-01
+      :ARG2 (convince-01
+            :ARG1 (they)
+            :condition (say-01
+                  :ARG0 (you)
+                  :ARG1 (person
+                        :ARG1-of (include-91
+                              :ARG2 (planet
+                                    :ARG1-of (come-01
+                                          :ARG1 (he))))
+                        :name (name :op1 "Asteroid B-612"))
+                  :ARG2 (they))
+            :concession (leave-14
+                  :ARG0 y
+                  :ARG1 (peace
+                        :topic (question-01
+                              :ARG0 t
+                              :ARG1 y)))))
+
+[STEP 3: AMR_WITH_VAR]
+(c / contrast-01
+      :ARG2 (c2 / convince-01
+            :ARG1 (t / they)
+            :condition (s / say-01
+                  :ARG0 (y / you)
+                  :ARG1 (p2 / person
+                        :ARG1-of (i / include-91
+                              :ARG2 (p3 / planet
+                                    :ARG1-of (c3 / come-01
+                                          :ARG1 (h / he))))
+                        :name (n / name :op1 "Asteroid B-612"))
+                  :ARG2 (t2 / they))
+            :concession (l / leave-14
+                  :ARG0 y
+                  :ARG1 (p / peace
+                        :topic (q / question-01
+                              :ARG0 t
+                              :ARG1 y)))))
+
+
+#::snt They are like that .
+[STEP 1: CONCEPTS]
+concept_1 | resemble-01
+concept_2 | they
+concept_3 | that
+
+[STEP 2: AMR_NO_VAR]
+(resemble-01
+      :ARG1 (they)
+      :ARG2 (that))
+
+[STEP 3: AMR_WITH_VAR]
+(r / resemble-01
+      :ARG1 (t / they)
+      :ARG2 (t2 / that))
+
+
+#::snt One must not hold it against them .
+[STEP 1: CONCEPTS]
+concept_1 | obligate-01
+concept_2 | hold-01
+concept_3 | one
+concept_4 | it
+concept_5 | they
+
+[STEP 2: AMR_NO_VAR]
+(obligate-01
+      :ARG1 (hold-01 :polarity -
+            :ARG0 (one)
+            :ARG1 (it)
+            :ARG2 (they)))
+
+[STEP 3: AMR_WITH_VAR]
+(o2 / obligate-01
+      :ARG1 (h / hold-01 :polarity -
+            :ARG0 (o / one)
+            :ARG1 (i / it)
+            :ARG2 (t / they)))
+
+
+#::snt Children should always show great forbearance toward grown - up people .
+[STEP 1: CONCEPTS]
+concept_1 | recommend-01
+concept_2 | show-01
+concept_3 | child
+concept_4 | forbear-01
+concept_5 | person
+concept_6 | grown-up
+concept_7 | great
+concept_8 | always
+
+[STEP 2: AMR_NO_VAR]
+(recommend-01
+      :ARG1 (show-01
+            :ARG0 (child)
+            :ARG1 (forbear-01
+                  :ARG0 p
+                  :ARG1 (person
+                        :mod (grown-up))
+                  :degree (great))
+            :time (always)))
+
+[STEP 3: AMR_WITH_VAR]
+(r / recommend-01
+      :ARG1 (s / show-01
+            :ARG0 (c / child)
+            :ARG1 (f / forbear-01
+                  :ARG0 p
+                  :ARG1 (p2 / person
+                        :mod (g / grown-up))
+                  :degree (g2 / great))
+            :time (a / always)))
+
+
+#::snt But certainly , for us who understand life , figures are a matter of indifference .
+[STEP 1: CONCEPTS]
+concept_1 | contrast-01
+concept_2 | certain
+concept_3 | figure
+concept_4 | matter
+concept_5 | indifferent
+concept_6 | we
+concept_7 | understand-01
+concept_8 | live-01
+
+[STEP 2: AMR_NO_VAR]
+(contrast-01
+      :ARG2 (certain
+            :domain (figure
+                  :ARG1-of (matter
+                        :mod (indifferent))
+                  :poss (we))
+            :condition (understand-01
+                  :ARG0 (we)
+                  :ARG1 (live-01))))
+
+[STEP 3: AMR_WITH_VAR]
+(c / contrast-01
+      :ARG2 (c2 / certain
+            :domain (f / figure
+                  :ARG1-of (m / matter
+                        :mod (i / indifferent))
+                  :poss (w / we))
+            :condition (u / understand-01
+                  :ARG0 (w2 / we)
+                  :ARG1 (l / live-01))))
+
+
+#::snt I should have liked to begin this story in the fashion of the fairy - tales .
+[STEP 1: CONCEPTS]
+concept_1 | recommend-01
+concept_2 | like-02
+concept_3 | i
+concept_4 | begin-01
+concept_5 | story
+concept_6 | i2
+concept_7 | fashion
+concept_8 | tale
+concept_9 | fairy
+
+[STEP 2: AMR_NO_VAR]
+(recommend-01
+      :ARG1 (like-02
+            :ARG0 (i)
+            :ARG1 (begin-01
+                  :ARG0 i
+                  :ARG1 (story
+                        :poss i2)
+                  :manner (fashion
+                        :mod (tale
+                              :mod (fairy))))))
+
+[STEP 3: AMR_WITH_VAR]
+(r / recommend-01
+      :ARG1 (l / like-02
+            :ARG0 (i / i)
+            :ARG1 (b / begin-01
+                  :ARG0 i
+                  :ARG1 (s / story
+                        :poss i2)
+                  :manner (f / fashion
+                        :mod (t / tale
+                              :mod (f2 / fairy))))))
+
+
+#::snt I should have like to say : " Once upon a time there was a little prince who lived on a planet that was scarcely any bigger than himself , and who had need of a sheep ... "
+[STEP 1: CONCEPTS]
+concept_1 | recommend-01
+concept_2 | say-01
+concept_3 | i
+concept_4 | prince
+concept_5 | little
+concept_6 | live-01
+concept_7 | planet
+concept_8 | big
+concept_9 | more
+concept_10 | only
+concept_11 | p
+concept_12 | sheep
+concept_13 | need-01
+concept_14 | once-upon-a-time
+
+[STEP 2: AMR_NO_VAR]
+(recommend-01
+      :ARG1 (say-01
+            :ARG0 (i)
+            :ARG1 (prince
+                  :mod (little)
+                  :ARG0-of (live-01
+                        :location (planet
+                              :mod (big
+                                    :degree (more
+                                          :mod (only)))
+                              :poss p))
+                  :ARG1-of (need-01
+                        :ARG2 (sheep)))
+            :time (once-upon-a-time)))
+
+[STEP 3: AMR_WITH_VAR]
+(r / recommend-01
+      :ARG1 (s / say-01
+            :ARG0 (i / i)
+            :ARG1 (p / prince
+                  :mod (l / little)
+                  :ARG0-of (l2 / live-01
+                        :location (p2 / planet
+                              :mod (b / big
+                                    :degree (m / more
+                                          :mod (o / only)))
+                              :poss p))
+                  :ARG1-of (n / need-01
+                        :ARG2 (s2 / sheep)))
+            :time (o2 / once-upon-a-time)))
+
+
+#::snt To those who understand life , that would have given a much greater air of truth to my story .
+[STEP 1: CONCEPTS]
+concept_1 | give-01
+concept_2 | thing
+concept_3 | air-of-truth
+concept_4 | great
+concept_5 | more
+concept_6 | that
+concept_7 | story
+concept_8 | i
+concept_9 | understand-01
+concept_10 | one
+concept_11 | live-01
+
+[STEP 2: AMR_NO_VAR]
+(give-01
+      :ARG0 (thing
+            :mod (air-of-truth
+                  :degree (great
+                        :degree (more))))
+      :ARG1 (that)
+      :ARG2 (story
+            :poss (i))
+      :condition (understand-01
+            :ARG0 (one
+                  :ARG0-of (live-01))))
+
+[STEP 3: AMR_WITH_VAR]
+(g / give-01
+      :ARG0 (t / thing
+            :mod (a / air-of-truth
+                  :degree (g2 / great
+                        :degree (m / more))))
+      :ARG1 (t2 / that)
+      :ARG2 (s / story
+            :poss (i / i))
+      :condition (u / understand-01
+            :ARG0 (o / one
+                  :ARG0-of (l / live-01))))
+
+
+#::snt For I do not want any one to read my book carelessly .
+[STEP 1: CONCEPTS]
+concept_1 | want-01
+concept_2 | i
+concept_3 | read-01
+concept_4 | person
+concept_5 | any
+concept_6 | book
+concept_7 | i
+concept_8 | careful
+
+[STEP 2: AMR_NO_VAR]
+(want-01 :polarity -
+      :ARG0 (i)
+      :ARG1 (read-01
+            :ARG0 (person
+                  :mod (any))
+            :ARG1 (book
+                  :poss i)
+            :manner (careful)))
+
+[STEP 3: AMR_WITH_VAR]
+(w / want-01 :polarity -
+      :ARG0 (i / i)
+      :ARG1 (r / read-01
+            :ARG0 (p / person
+                  :mod (a / any))
+            :ARG1 (b / book
+                  :poss i)
+            :manner (c / careful)))
+
+
+#::snt I have suffered too much grief in setting down these memories .
+[STEP 1: CONCEPTS]
+concept_1 | suffer-01
+concept_2 | i
+concept_3 | grieve-01
+concept_4 | much
+concept_5 | too
+concept_6 | remember-01
+concept_7 | this
+
+[STEP 2: AMR_NO_VAR]
+(suffer-01
+      :ARG0 (i)
+      :ARG1 (grieve-01
+            :ARG1 i
+            :degree (much
+                  :degree (too)))
+      :subevent-of (remember-01
+            :ARG0 i
+            :ARG1 (this)))
+
+[STEP 3: AMR_WITH_VAR]
+(s / suffer-01
+      :ARG0 (i / i)
+      :ARG1 (g / grieve-01
+            :ARG1 i
+            :degree (m / much
+                  :degree (t / too)))
+      :subevent-of (r / remember-01
+            :ARG0 i
+            :ARG1 (t2 / this)))
+
+
+#::snt Six years have already passed since my friend went away from me , with his sheep .
+[STEP 1: CONCEPTS]
+concept_1 | pass-03
+concept_2 | year
+concept_3 | since
+concept_4 | go-away-07
+concept_5 | i
+concept_6 | friend
+concept_7 | sheep
+concept_8 | already
+
+[STEP 2: AMR_NO_VAR]
+(pass-03
+      :ARG1 (year :quant 6)
+      :time (since
+            :op1 (go-away-07
+                  :ARG0 (i)
+                  :ARG1 (friend
+                        :poss i)
+                  :accompanier (sheep
+                        :poss (friend
+                              :poss i)))
+            :time (already)))
+
+[STEP 3: AMR_WITH_VAR]
+(p / pass-03
+      :ARG1 (y / year :quant 6)
+      :time (s / since
+            :op1 (g / go-away-07
+                  :ARG0 (i / i)
+                  :ARG1 (f / friend
+                        :poss i)
+                  :accompanier (s2 / sheep
+                        :poss (f2 / friend
+                              :poss i)))
+            :time (a / already)))
+
+
+#::snt If I try to describe him here , it is to make sure that I shall not forget him .
+[STEP 1: CONCEPTS]
+concept_1 | describe-01
+concept_2 | i
+concept_3 | he
+concept_4 | here
+concept_5 | try-01
+concept_6 | ensure-01
+concept_7 | forget-01
+
+[STEP 2: AMR_NO_VAR]
+(describe-01
+      :ARG0 (i)
+      :ARG1 (he)
+      :location (here)
+      :ARG1-of (try-01)
+      :purpose (ensure-01
+            :ARG0 i
+            :ARG1 (forget-01 :polarity -
+                  :ARG0 i
+                  :ARG1 h)))
+
+[STEP 3: AMR_WITH_VAR]
+(d / describe-01
+      :ARG0 (i / i)
+      :ARG1 (h / he)
+      :location (h2 / here)
+      :ARG1-of (t / try-01)
+      :purpose (e / ensure-01
+            :ARG0 i
+            :ARG1 (f / forget-01 :polarity -
+                  :ARG0 i
+                  :ARG1 h)))
+
+
+#::snt To forget a friend is sad .
+[STEP 1: CONCEPTS]
+concept_1 | sad-02
+concept_2 | forget-01
+concept_3 | person
+concept_4 | have-rel-role-91
+concept_5 | friend
+
+[STEP 2: AMR_NO_VAR]
+(sad-02
+      :ARG0 (forget-01
+            :ARG0 (person
+                  :ARG0-of (have-rel-role-91
+                        :ARG2 (friend))))
+
+[STEP 3: AMR_WITH_VAR]
+(s / sad-02
+      :ARG0 (f / forget-01
+            :ARG0 (p / person
+                  :ARG0-of (h / have-rel-role-91
+                        :ARG2 (f2 / friend))))
+)
+
+#::snt Not every one has had a friend .
+[STEP 1: CONCEPTS]
+concept_1 | have-03
+concept_2 | person
+concept_3 | every
+concept_4 | friend
+
+[STEP 2: AMR_NO_VAR]
+(have-03
+  :ARG0 (person
+          :mod (every))
+  :ARG1 (friend)
+  :polarity -)
+
+[STEP 3: AMR_WITH_VAR]
+(h / have-03
+  :ARG0 (p / person
+          :mod (e / every))
+  :ARG1 (f / friend)
+  :polarity -)
+
+
+#::snt And if I forget him , I may become like the grown - ups who are no longer interested in anything but figures ...
+[STEP 1: CONCEPTS]
+concept_1 | and
+concept_2 | possible-01
+concept_3 | become-01
+concept_4 | i
+concept_5 | resemble-01
+concept_6 | grown-up
+concept_7 | interest-01
+concept_8 | thing
+concept_9 | figure
+concept_10 | no-longer
+concept_11 | forget-01
+concept_12 | he
+
+[STEP 2: AMR_NO_VAR]
+(and
+      :op2 (possible-01
+            :ARG1 (become-01
+                  :ARG1 (i)
+                  :ARG2 (resemble-01
+                        :ARG2 (grown-up
+                              :ARG1-of (interest-01 :polarity -
+                                    :ARG0 (thing
+                                          :mod (figure))
+                                    :time (no-longer))))
+                  :condition (forget-01
+                        :ARG0 i
+                        :ARG1 (he)))))
+
+[STEP 3: AMR_WITH_VAR]
+(a / and
+      :op2 (p / possible-01
+            :ARG1 ( b / become-01
+                  :ARG1 (i / i)
+                  :ARG2 (r / resemble-01
+                        :ARG2 (g / grown-up
+                              :ARG1-of (i2 / interest-01 :polarity -
+                                    :ARG0 (t / thing
+                                          :mod (f2 / figure))
+                                    :time (n / no-longer))))
+                  :condition (f / forget-01
+                        :ARG0 i
+                        :ARG1 (h / he)))))
+
+
+#::snt It is for that purpose , again , that I have bought a box of paints and some pencils .
+[STEP 1: CONCEPTS]
+concept_1 | buy-01
+concept_2 | i
+concept_3 | and
+concept_4 | box
+concept_5 | paint-01
+concept_6 | pencil
+concept_7 | purpose
+concept_8 | that
+concept_9 | again
+
+[STEP 2: AMR_NO_VAR]
+(buy-01
+      :ARG0 (i)
+      :ARG1 (and
+            :op1 (box
+                  :ARG1-of (paint-01))
+            :op2 (pencil))
+      :purpose (purpose
+            :topic (that)
+            :mod (again)))
+
+[STEP 3: AMR_WITH_VAR]
+(b / buy-01
+      :ARG0 (i / i)
+      :ARG1 (a / and
+            :op1 (b2 / box
+                  :ARG1-of (p / paint-01))
+            :op2 (p2 / pencil))
+      :purpose (p3 / purpose
+            :topic (t / that)
+            :mod (a2 / again)))
+
+
+#::snt It is hard to take up drawing again at my age , when I have never made any pictures except those of the boa constrictor from the outside and the boa constrictor from the inside , since I was six .
+[STEP 1: CONCEPTS]
+concept_1 | hard
+concept_2 | take-up-09
+concept_3 | draw-01
+concept_4 | again
+concept_5 | age
+concept_6 | i
+concept_7 | picture
+concept_8 | make-01
+concept_9 | outside
+concept_10 | boa-constrictor
+concept_11 | inside
+concept_12 | since
+concept_13 | be-65
+concept_14 | six
+
+[STEP 2: AMR_NO_VAR]
+(hard
+      :ARG1 (take-up-09
+            :ARG0 (draw-01
+                  :ARG0 i)
+            :mod (again))
+      :domain (age
+            :poss (i)
+            :time-of (picture
+                  :ARG0-of (make-01
+                        :ARG0 i
+                        :location (outside)
+                        :ARG1 (boa-constrictor))
+                  :mod (and
+                        :op1 (picture
+                              :ARG0-of (make-01
+                                    :ARG0 i
+                                    :location (inside)
+                                    :ARG1 (boa-constrictor))
+                              :mod (since
+                                    :op1 (be-65
+                                          :ARG1 (six))))))))
+
+[STEP 3: AMR_WITH_VAR]
+(h / hard
+      :ARG1 (t / take-up-09
+            :ARG0 (d / draw-01
+                  :ARG0 i)
+            :mod (a / again))
+      :domain (a2 / age
+            :poss (i / i)
+            :time-of (p / picture
+                  :ARG0-of (m / make-01
+                        :ARG0 i
+                        :location (o / outside)
+                        :ARG1 (b / boa-constrictor))
+                  :mod (a3 / and
+                        :op1 (p2 / picture
+                              :ARG0-of (m2 / make-01
+                                    :ARG0 i
+                                    :location (i2 / inside)
+                                    :ARG1 (b2 / boa-constrictor))
+                              :mod (s / since
+                                    :op1 (b3 / be-65
+                                          :ARG1 (s2 / six))))))))
+
+
+#::snt I shall certainly try to make my portraits as true to life as possible .
+[STEP 1: CONCEPTS]
+concept_1 | try-01
+concept_2 | i
+concept_3 | make-01
+concept_4 | portrait
+concept_5 | true-07
+concept_6 | life
+concept_7 | possible-01
+concept_8 | certain
+
+[STEP 2: AMR_NO_VAR]
+(try-01
+      :ARG0 (i)
+      :ARG1 (make-01
+            :ARG0 i
+            :ARG1 (portrait
+                  :poss i)
+            :ARG2 (true-07
+                  :ARG1 (portrait
+                        :poss i)
+                  :ARG2 (life)
+                  :ARG1-of (possible-01)))
+      :mod (certain))
+
+[STEP 3: AMR_WITH_VAR]
+(t / try-01
+      :ARG0 (i / i)
+      :ARG1 (m / make-01
+            :ARG0 i
+            :ARG1 (p2 / portrait
+                  :poss i)
+            :ARG2 (t2 / true-07
+                  :ARG1 (p3 / portrait
+                        :poss i)
+                  :ARG2 (l / life)
+                  :ARG1-of (p / possible-01)))
+      :mod (c2 / certain))
+
+
+#::snt But I am not at all sure of success .
+[STEP 1: CONCEPTS]
+concept_1 | contrast-01
+concept_2 | sure-02
+concept_3 | i
+concept_4 | succeed-01
+concept_5 | at-all
+
+[STEP 2: AMR_NO_VAR]
+(contrast-01
+      :ARG2 (sure-02 :polarity -
+            :ARG0 (i)
+            :ARG1 (succeed-01
+                  :ARG1 i)
+            :degree (at-all)))
+
+[STEP 3: AMR_WITH_VAR]
+(c / contrast-01
+      :ARG2 (s / sure-02 :polarity -
+            :ARG0 (i / i)
+            :ARG1 (s2 / succeed-01
+                  :ARG1 i)
+            :degree (a / at-all)))
+
+
+#::snt One drawing goes along all right , and another has no resemblance to its subject .
+[STEP 1: CONCEPTS]
+concept_1 | and
+concept_2 | go-05
+concept_3 | drawing
+concept_4 | well
+concept_5 | resemble-01
+concept_6 | d2
+concept_7 | subject
+
+[STEP 2: AMR_NO_VAR]
+(and
+      :op1 (go-05
+            :ARG0 (drawing)
+            :mod (well))
+      :op2 (resemble-01 :polarity -
+            :ARG1 d2
+            :ARG2 (subject)))
+
+[STEP 3: AMR_WITH_VAR]
+(a / and
+      :op1 (g / go-05
+            :ARG0 (d2 / drawing)
+            :mod (w / well))
+      :op2 (r / resemble-01 :polarity -
+            :ARG1 d2
+            :ARG2 (s / subject)))
+
+
+#::snt I make some errors , too , in the little prince 's height : in one place he is too tall and in another too short .
+[STEP 1: CONCEPTS]
+concept_1 | error-01
+concept_2 | i
+concept_3 | prince
+concept_4 | little
+concept_5 | height
+concept_6 | place
+concept_7 | have-03
+concept_8 | contrast-01
+concept_9 | tall
+concept_10 | too
+concept_11 | short
+concept_12 | too
+
+[STEP 2: AMR_NO_VAR]
+(error-01
+      :ARG0 (i)
+      :ARG1 (prince
+            :mod (little)
+            :part (height))
+      :location (place
+            :ARG0-of (have-03
+                  :ARG1 (contrast-01
+                        :ARG1 (tall
+                              :degree (too))
+                        :ARG2 (short
+                              :degree (too)))))
+
+[STEP 3: AMR_WITH_VAR]
+(e / error-01
+      :ARG0 (i / i)
+      :ARG1 (p / prince
+            :mod (l / little)
+            :part (h / height))
+      :location (p2 / place
+            :ARG0-of (h2 / have-03
+                  :ARG1 (c / contrast-01
+                        :ARG1 (t / tall
+                              :degree (t2 / too))
+                        :ARG2 (s / short
+                              :degree (t3 / too)))))
+
+
+#::snt And I feel some doubts about the color of his costume .
+[STEP 1: CONCEPTS]
+concept_1 | and
+concept_2 | feel-01
+concept_3 | i
+concept_4 | doubt-01
+concept_5 | color
+concept_6 | costume
+concept_7 | he
+
+[STEP 2: AMR_NO_VAR]
+(and
+  :op2 (feel-01
+         :ARG0 (i)
+         :ARG1 (doubt-01
+                 :ARG1 (color
+                         :poss (costume
+                                 :poss (he))))))
+
+[STEP 3: AMR_WITH_VAR]
+(a / and
+  :op2 (f / feel-01
+         :ARG0 (i / i)
+         :ARG1 (d / doubt-01
+                 :ARG1 (c / color
+                         :poss (c2 / costume
+                                 :poss (h / he))))))
+
+
+#::snt So I fumble along as best I can , now good , now bad , and I hope generally fair - to - middling .
+[STEP 1: CONCEPTS]
+concept_1 | fumble-01
+concept_2 | i
+concept_3 | along
+concept_4 | good-02
+concept_5 | now
+concept_6 | bad-02
+concept_7 | hope-01
+concept_8 | fair-02
+concept_9 | to
+concept_10 | middle-class
+concept_11 | general
+
+[STEP 2: AMR_NO_VAR]
+(fumble-01
+      :ARG0 (i)
+      :direction (along)
+      :mod (good-02
+            :time (now))
+      :concession (bad-02
+            :time (now))
+      :ARG0-of (hope-01
+            :ARG1 (fair-02
+                  :ARG1-to (to
+                        :op1 (middle-class))
+                  :mod (general))))
+
+[STEP 3: AMR_WITH_VAR]
+(f / fumble-01
+      :ARG0 (i / i)
+      :direction (a / along)
+      :mod (g / good-02
+            :time (n / now))
+      :concession (b / bad-02
+            :time (n2 / now))
+      :ARG0-of (h / hope-01
+            :ARG1 (f2 / fair-02
+                  :ARG1-to (t / to
+                        :op1 (m / middle-class))
+                  :mod (g2 / general))))
+
+
+#::snt In certain more important details I shall make mistakes , also .
+[STEP 1: CONCEPTS]
+concept_1 | mistake-01
+concept_2 | i
+concept_3 | detail
+concept_4 | certain
+concept_5 | important
+concept_6 | more
+concept_7 | also
+
+[STEP 2: AMR_NO_VAR]
+(mistake-01
+      :ARG0 (i)
+      :ARG1 (detail
+            :mod (certain)
+            :mod (important
+                  :degree (more)))
+      :mod (also))
+
+[STEP 3: AMR_WITH_VAR]
+(m / mistake-01
+      :ARG0 (i / i)
+      :ARG1 (d / detail
+            :mod (c / certain)
+            :mod (i2 / important
+                  :degree (m2 / more)))
+      :mod (a / also))
+
+
+#::snt But that is something that will not be my fault .
+[STEP 1: CONCEPTS]
+concept_1 | contrast-01
+concept_2 | fault-01
+concept_3 | i
+concept_4 | that
+concept_5 | something
+
+[STEP 2: AMR_NO_VAR]
+(contrast-01
+      :ARG2 (fault-01 :polarity -
+            :ARG0 (i)
+            :ARG1 (that
+                  :domain (something))))
+
+[STEP 3: AMR_WITH_VAR]
+(c / contrast-01
+      :ARG2 (f / fault-01 :polarity -
+            :ARG0 (i / i)
+            :ARG1 (t / that
+                  :domain (s / something))))
+
+
+#::snt My friend never explained anything to me .
+[STEP 1: CONCEPTS]
+concept_1 | explain-01
+concept_2 | i
+concept_3 | anything
+concept_4 | friend
+concept_5 | have-rel-role-91
+concept_6 | ever
+
+[STEP 2: AMR_NO_VAR]
+(explain-01 :polarity -
+      :ARG0 (i)
+      :ARG1 (anything)
+      :ARG2 (friend
+            :ARG0-of (have-rel-role-91
+                  :ARG1 i))
+      :time (ever))
+
+[STEP 3: AMR_WITH_VAR]
+(e / explain-01 :polarity -
+      :ARG0 (i / i)
+      :ARG1 (a / anything)
+      :ARG2 (f / friend
+            :ARG0-of (h / have-rel-role-91
+                  :ARG1 i))
+      :time (e2 / ever))
+
+
+#::snt He thought , perhaps , that I was like himself .
+[STEP 1: CONCEPTS]
+concept_1 | think-01
+concept_2 | he
+concept_3 | resemble-01
+concept_4 | i
+concept_5 | h
+concept_6 | possible-01
+
+[STEP 2: AMR_NO_VAR]
+(think-01
+      :ARG0 (he)
+      :ARG1 (resemble-01
+            :ARG1 (i)
+            :ARG2 h)
+      :mod (possible-01))
+
+[STEP 3: AMR_WITH_VAR]
+(t / think-01
+      :ARG0 (h / he)
+      :ARG1 (r / resemble-01
+            :ARG1 (i / i)
+            :ARG2 h)
+      :mod (p2 / possible-01))
+
+
+#::snt But I , alas , do not know how to see sheep through the walls of boxes .
+[STEP 1: CONCEPTS]
+concept_1 | contrast-01
+concept_2 | know-01
+concept_3 | i
+concept_4 | see-01
+concept_5 | sheep
+concept_6 | through
+concept_7 | wall
+concept_8 | box
+concept_9 | alas
+
+[STEP 2: AMR_NO_VAR]
+(contrast-01
+      :ARG2 (know-01 :polarity -
+            :ARG0 (i)
+            :manner (see-01
+                  :ARG0 i
+                  :ARG1 (sheep)
+                  :path (through
+                        :op1 (wall
+                              :part-of (box))))
+            :mod (alas)))
+
+[STEP 3: AMR_WITH_VAR]
+(c / contrast-01
+      :ARG2 (k / know-01 :polarity -
+            :ARG0 (i / i)
+            :manner (s / see-01
+                  :ARG0 i
+                  :ARG1 (s2 / sheep)
+                  :path (t / through
+                        :op1 (w / wall
+                              :part-of (b / box))))
+            :mod (a / alas)))
+
+
+#::snt Perhaps I am a little like the grown - ups .
+[STEP 1: CONCEPTS]
+concept_1 | possible-01
+concept_2 | resemble-01
+concept_3 | i
+concept_4 | grown-up
+concept_5 | little
+
+[STEP 2: AMR_NO_VAR]
+(possible-01
+      :ARG1 (resemble-01
+            :ARG1 (i)
+            :ARG2 (grown-up)
+            :degree (little)))
+
+[STEP 3: AMR_WITH_VAR]
+(p / possible-01
+      :ARG1 (r / resemble-01
+            :ARG1 (i / i)
+            :ARG2 (g / grown-up)
+            :degree (l / little)))
+
+
+#::snt I have had to grow old .
+[STEP 1: CONCEPTS]
+concept_1 | obligate-01
+concept_2 | i
+concept_3 | age-out-03
+
+[STEP 2: AMR_NO_VAR]
+(obligate-01
+      :ARG1 (i)
+      :ARG2 (age-out-03
+            :ARG1 i))
+
+[STEP 3: AMR_WITH_VAR]
+(o / obligate-01
+      :ARG1 (i / i)
+      :ARG2 (a / age-out-03
+            :ARG1 i))
+
+
+#::snt Chapter 5 .
+[STEP 1: CONCEPTS]
+concept_1 | chapter
+
+[STEP 2: AMR_NO_VAR]
+(chapter :mod 5)
+
+[STEP 3: AMR_WITH_VAR]
+(c / chapter :mod 5)
+
+
+#::snt As each day passed I would learn , in our talk , something about the little prince 's planet , his departure from it , his journey .
+[STEP 1: CONCEPTS]
+concept_1 | learn-01
+concept_2 | i
+concept_3 | something
+concept_4 | and
+concept_5 | planet
+concept_6 | prince
+concept_7 | little
+concept_8 | depart-01
+concept_9 | p
+concept_10 | journey-01
+concept_11 | pass-03
+concept_12 | day
+concept_13 | each
+concept_14 | talk-01
+concept_15 | we
+
+[STEP 2: AMR_NO_VAR]
+(learn-01
+      :ARG0 (i)
+      :ARG1 (something
+            :topic (and
+                  :op1 (planet
+                        :poss (prince
+                              :mod (little)))
+                  :op2 (depart-01
+                        :ARG0 p)
+                  :op3 (journey-01
+                        :ARG0 p)))
+      :time (pass-03
+            :ARG1 (day
+                  :mod (each)))
+      :location (talk-01
+            :ARG0 i
+            :ARG2 (we)))
+
+[STEP 3: AMR_WITH_VAR]
+(l / learn-01
+      :ARG0 (i / i)
+      :ARG1 (s / something
+            :topic (a / and
+                  :op1 (p2 / planet
+                        :poss (p / prince
+                              :mod (l2 / little)))
+                  :op2 (d / depart-01
+                        :ARG0 p)
+                  :op3 (j / journey-01
+                        :ARG0 p)))
+      :time (p3 / pass-03
+            :ARG1 (d2 / day
+                  :mod (e / each)))
+      :location (t / talk-01
+            :ARG0 i
+            :ARG2 (w / we)))
+
+
+#::snt The information would come very slowly , as it might chance to fall from his thoughts .
+[STEP 1: CONCEPTS]
+concept_1 | come-01
+concept_2 | information
+concept_3 | slow-05
+concept_4 | very
+concept_5 | chance-01
+concept_6 | fall-01
+concept_7 | thing
+concept_8 | think-01
+concept_9 | he
+
+[STEP 2: AMR_NO_VAR]
+(come-01
+      :ARG1 (information)
+      :ARG1-of (slow-05
+            :degree (very))
+      :ARG1-of (chance-01
+            :ARG2 (fall-01
+                  :ARG1 (thing
+                        :ARG1-of (think-01
+                              :ARG0 (he))))))
+
+[STEP 3: AMR_WITH_VAR]
+(c / come-01
+      :ARG1 (i / information)
+      :ARG1-of (s / slow-05
+            :degree (v / very))
+      :ARG1-of (c2 / chance-01
+            :ARG2 (f / fall-01
+                  :ARG1 (t / thing
+                        :ARG1-of (t2 / think-01
+                              :ARG0 (h / he))))))
+
+
+#::snt It was in this way that I heard , on the third day , about the catastrophe of the baobabs .
+[STEP 1: CONCEPTS]
+concept_1 | hear-01
+concept_2 | i
+concept_3 | event
+concept_4 | catastrophe-01
+concept_5 | baobab
+concept_6 | date-entity
+concept_7 | day
+concept_8 | ordinal-entity
+concept_9 | this
+
+[STEP 2: AMR_NO_VAR]
+(hear-01
+      :ARG0 (i)
+      :ARG1 (event
+            :ARG1-of (catastrophe-01
+                  :ARG1 (baobab)))
+      :time (date-entity
+            :dayperiod (day)
+            :ord (ordinal-entity :value 3))
+      :manner (this))
+
+[STEP 3: AMR_WITH_VAR]
+(h / hear-01
+      :ARG0 (i / i)
+      :ARG1 (e / event
+            :ARG1-of (c2 / catastrophe-01
+                  :ARG1 (b / baobab)))
+      :time (d / date-entity
+            :dayperiod (d2 / day)
+            :ord (o / ordinal-entity :value 3))
+      :manner (t / this))
+
+
+#::snt This time , once more , I had the sheep to thank for it .
+[STEP 1: CONCEPTS]
+concept_1 | have-03
+concept_2 | i
+concept_3 | thank-01
+concept_4 | sheep
+concept_5 | it
+concept_6 | more
+concept_7 | this
+
+[STEP 2: AMR_NO_VAR]
+(have-03
+      :ARG0 (i)
+      :ARG1 (thank-01
+            :ARG0 (sheep)
+            :ARG1 (it))
+      :mod (more)
+      :time (this))
+
+[STEP 3: AMR_WITH_VAR]
+(h / have-03
+      :ARG0 (i / i)
+      :ARG1 (t / thank-01
+            :ARG0 (s / sheep)
+            :ARG1 (i2 / it))
+      :mod (m / more)
+      :time (t2 / this))
+
+
+#::snt For the little prince asked me abruptly -- as if seized by a grave doubt -- " It is true , is n't it , that sheep eat little bushes ? "
+[STEP 1: CONCEPTS]
+concept_1 | ask-01
+concept_2 | prince
+concept_3 | little
+concept_4 | true-01
+concept_5 | eat-01
+concept_6 | sheep
+concept_7 | bush
+concept_8 | little2
+concept_9 | p
+concept_10 | interrogative
+concept_11 | abrupt
+concept_12 | resemble-01
+concept_13 | seize-01
+concept_14 | doubt-01
+concept_15 | grave
+concept_16 | i
+
+[STEP 2: AMR_NO_VAR]
+(ask-01
+      :ARG0 (prince
+            :mod (little))
+      :ARG1 (true-01
+            :ARG1 (eat-01
+                  :ARG0 (sheep)
+                  :ARG1 (bush
+                        :mod (little2)))
+            :mode interrogative)
+      :ARG2 (p)
+      :manner (abrupt)
+      :ARG1-of (resemble-01
+            :ARG2 (seize-01
+                  :ARG0 (doubt-01
+                        :mod (grave))
+                  :ARG1 p)))
+
+[STEP 3: AMR_WITH_VAR]
+(a / ask-01
+      :ARG0 (p / prince
+            :mod (l / little))
+      :ARG1 (t / true-01
+            :ARG1 (e / eat-01
+                  :ARG0 (s / sheep)
+                  :ARG1 (b / bush
+                        :mod (l2 / little2)))
+            :mode interrogative)
+      :ARG2 (p2 / p)
+      :manner (a2 / abrupt)
+      :ARG1-of (r / resemble-01
+            :ARG2 (s2 / seize-01
+                  :ARG0 (d / doubt-01
+                        :mod (g / grave))
+                  :ARG1 p)))
+
+
+#::snt " Yes , that is true . "
+[STEP 1: CONCEPTS]
+concept_1 | true-01
+concept_2 | that
+
+[STEP 2: AMR_NO_VAR]
+(true-01
+      :ARG1 (that))
+
+[STEP 3: AMR_WITH_VAR]
+(t / true-01
+      :ARG1 (t2 / that))
+
+
+#::snt " Ah !
+[STEP 1: CONCEPTS]
+concept_1 | ah
+concept_2 | expressive
+
+[STEP 2: AMR_NO_VAR]
+(ah :mode expressive)
+
+[STEP 3: AMR_WITH_VAR]
+(a / ah :mode expressive)
+
+
+#::snt I am glad ! "
+[STEP 1: CONCEPTS]
+concept_1 | glad-02
+concept_2 | i
+
+[STEP 2: AMR_NO_VAR]
+(glad-02
+      :ARG1 (i))
+
+[STEP 3: AMR_WITH_VAR]
+(g / glad-02
+      :ARG1 (i / i))
+
+
+#::snt I did not understand why it was so important that sheep should eat little bushes .
+[STEP 1: CONCEPTS]
+concept_1 | understand-01
+concept_2 | i
+concept_3 | important
+concept_4 | eat-01
+concept_5 | sheep
+concept_6 | bush
+concept_7 | little
+concept_8 | so
+concept_9 | cause-01
+concept_10 | amr-unknown
+
+[STEP 2: AMR_NO_VAR]
+(understand-01 :polarity -
+      :ARG0 (i)
+      :ARG1 (important
+            :domain (eat-01
+                  :ARG0 (sheep)
+                  :ARG1 (bush
+                        :mod (little))
+                  :degree (so))
+            :ARG1-of (cause-01
+                  :ARG0 (amr-unknown))))
+
+[STEP 3: AMR_WITH_VAR]
+(u / understand-01 :polarity -
+      :ARG0 (i / i)
+      :ARG1 (i2 / important
+            :domain (e / eat-01
+                  :ARG0 (s / sheep)
+                  :ARG1 (b / bush
+                        :mod (l / little))
+                  :degree (s2 / so))
+            :ARG1-of (c / cause-01
+                  :ARG0 (a / amr-unknown))))
+
+
+#::snt But the little prince added : " Then it follows that they also eat baobabs ? "
+[STEP 1: CONCEPTS]
+concept_1 | contrast-01
+concept_2 | add-01
+concept_3 | prince
+concept_4 | little
+concept_5 | follow-02
+concept_6 | it
+concept_7 | cause-01
+concept_8 | eat-01
+concept_9 | they
+concept_10 | baobab
+concept_11 | also
+concept_12 | interrogative
+
+[STEP 2: AMR_NO_VAR]
+(contrast-01
+      :ARG2 (add-01
+            :ARG0 (prince
+                  :mod (little))
+            :ARG1 (follow-02
+                  :ARG0 (it)
+                  :ARG1 (cause-01
+                        :ARG0 (eat-01
+                              :ARG0 (they)
+                              :ARG1 (baobab)
+                              :mod (also)))
+                  :mode interrogative)))
+
+[STEP 3: AMR_WITH_VAR]
+(c / contrast-01
+      :ARG2 (a / add-01
+            :ARG0 (p / prince
+                  :mod (l / little))
+            :ARG1 (f / follow-02
+                  :ARG0 (i / it)
+                  :ARG1 (c2 / cause-01
+                        :ARG0 (e / eat-01
+                              :ARG0 (t / they)
+                              :ARG1 (b / baobab)
+                              :mod (a2 / also)))
+                  :mode interrogative)))
+
+
+#::snt I pointed out to the little prince that baobabs were not little bushes , but , on the contrary , trees as big as castles ; and that even if he took a whole herd of elephants away with him , the herd would not eat up one single baobab .
+[STEP 1: CONCEPTS]
+concept_1 | and
+concept_2 | point-out-02
+concept_3 | i
+concept_4 | contrast-01
+concept_5 | bush
+concept_6 | little
+concept_7 | baobab
+concept_8 | tree
+concept_9 | big
+concept_10 | equal
+concept_11 | castle
+concept_12 | prince
+concept_13 | young
+concept_14 | eat-up-01
+concept_15 | herd
+concept_16 | elephant
+concept_17 | whole
+concept_18 | take-away-03
+concept_19 | h
+concept_20 | p
+
+[STEP 2: AMR_NO_VAR]
+(and
+      :op1 (point-out-02
+            :ARG0 (i)
+            :ARG1 (contrast-01
+                  :ARG1 (bush
+                        :mod (little)
+                        :domain (baobab))
+                  :ARG2 (tree
+                        :mod (big
+                              :degree (equal)
+                              :compared-to (castle))
+                        :domain (baobab))))
+      :op2 (eat-up-01 :polarity -
+            :ARG0 (herd
+                  :consist-of (elephant
+                        :mod (whole)))
+            :ARG1 (baobab
+                  :quant (one
+                        :mod (little)))
+            :condition (take-away-03
+                  :ARG0 p
+                  :ARG1 h
+                  :ARG2 p)))
+
+[STEP 3: AMR_WITH_VAR]
+(a / and
+      :op1 (p / point-out-02
+            :ARG0 (i / i)
+            :ARG1 (c / contrast-01
+                  :ARG1 (b2 / bush
+                        :mod (l3 / little)
+                        :domain (b / baobab))
+                  :ARG2 (t / tree
+                        :mod (b4 / big
+                              :degree (e / equal)
+                              :compared-to (c2 / castle))
+                        :domain (b / baobab))))
+      :op2 (e2 / eat-up-01 :polarity -
+            :ARG0 (h / herd
+                  :consist-of (e3 / elephant
+                        :mod (w / whole)))
+            :ARG1 (b3 / baobab
+                  :quant (o / one
+                        :mod (l2 / little)))
+            :condition (t3 / take-away-03
+                  :ARG0 p
+                  :ARG1 h
+                  :ARG2 p)))
+
+
+#::snt The idea of the herd of elephants made the little prince laugh .
+[STEP 1: CONCEPTS]
+concept_1 | laugh-01
+concept_2 | prince
+concept_3 | little
+concept_4 | make-02
+concept_5 | herd
+concept_6 | elephant
+concept_7 | idea
+
+[STEP 2: AMR_NO_VAR]
+(laugh-01
+      :ARG0 (prince
+            :mod (little))
+      :ARG1-of (make-02
+            :ARG0 (herd
+                  :consist-of (elephant))
+            :ARG1 (idea)))
+
+[STEP 3: AMR_WITH_VAR]
+(l / laugh-01
+      :ARG0 (p / prince
+            :mod (l2 / little))
+      :ARG1-of (m / make-02
+            :ARG0 (h / herd
+                  :consist-of (e / elephant))
+            :ARG1 (i / idea)))
+
+
+#::snt " We would have to put them one on top of the other , " he said .
+[STEP 1: CONCEPTS]
+concept_1 | say-01
+concept_2 | he
+concept_3 | obligate-01
+concept_4 | we
+concept_5 | put-01
+concept_6 | they
+concept_7 | above
+concept_8 | t
+
+[STEP 2: AMR_NO_VAR]
+(say-01
+      :ARG0 (he)
+      :ARG1 (obligate-01
+            :ARG1 (we)
+            :ARG2 (put-01
+                  :ARG0 w
+                  :ARG1 (they)
+                  :location (above
+                        :op1 t))))
+
+[STEP 3: AMR_WITH_VAR]
+(s / say-01
+      :ARG0 (h / he)
+      :ARG1 (o / obligate-01
+            :ARG1 (w / we)
+            :ARG2 (p / put-01
+                  :ARG0 w
+                  :ARG1 (t / they)
+                  :location (a / above
+                        :op1 t))))
+
+
+#::snt But he made a wise comment : " Before they grow so big , the baobabs start out by being little . "
+[STEP 1: CONCEPTS]
+concept_1 | contrast-01
+concept_2 | comment-01
+concept_3 | he
+concept_4 | wise
+concept_5 | start-01
+concept_6 | baobab
+concept_7 | little
+concept_8 | before
+concept_9 | grow-01
+concept_10 | b
+concept_11 | big
+concept_12 | so
+
+[STEP 2: AMR_NO_VAR]
+(contrast-01
+      :ARG2 (comment-01
+            :ARG0 (he)
+            :mod (wise)
+            :ARG1 (start-01
+                  :ARG0 (baobab)
+                  :ARG1 (little)
+                  :time (before
+                        :op1 (grow-01
+                              :ARG1 b
+                              :degree (big
+                                    :degree (so)))))))
+
+[STEP 3: AMR_WITH_VAR]
+(c / contrast-01
+      :ARG2 (c2 / comment-01
+            :ARG0 (h / he)
+            :mod (w / wise)
+            :ARG1 (s / start-01
+                  :ARG0 (b / baobab)
+                  :ARG1 (l / little)
+                  :time (b2 / before
+                        :op1 (g / grow-01
+                              :ARG1 b
+                              :degree (b3 / big
+                                    :degree (s2 / so)))))))
+
+
+#::snt " That is strictly correct , "
+[STEP 1: CONCEPTS]
+concept_1 | correct-07
+concept_2 | that
+concept_3 | strict-02
+
+[STEP 2: AMR_NO_VAR]
+(correct-07
+      :ARG1 (that)
+      :ARG1-of (strict-02))
+
+[STEP 3: AMR_WITH_VAR]
+(c / correct-07
+      :ARG1 (t / that)
+      :ARG1-of (s / strict-02))
+
+
+#::snt I said .
+[STEP 1: CONCEPTS]
+concept_1 | say-01
+concept_2 | i
+
+[STEP 2: AMR_NO_VAR]
+(say-01
+  :ARG0 (i))
+
+[STEP 3: AMR_WITH_VAR]
+(s / say-01
+  :ARG0 (i / i))
+
+
+#::snt " But why do you want the sheep to eat the little baobabs ? "
+[STEP 1: CONCEPTS]
+concept_1 | contrast-01
+concept_2 | want-01
+concept_3 | you
+concept_4 | eat-01
+concept_5 | sheep
+concept_6 | baobab
+concept_7 | little
+concept_8 | amr-unknown
+
+[STEP 2: AMR_NO_VAR]
+(contrast-01
+  :ARG2 (want-01
+          :ARG0 (you)
+          :ARG1 (eat-01
+                  :ARG0 (sheep)
+                  :ARG1 (baobab
+                          :mod (little))
+                  :manner (amr-unknown))))
+
+[STEP 3: AMR_WITH_VAR]
+(c / contrast-01
+  :ARG2 (w / want-01
+          :ARG0 (y / you)
+          :ARG1 (e / eat-01
+                  :ARG0 (s / sheep)
+                  :ARG1 (b / baobab
+                          :mod (l / little))
+                  :manner (a / amr-unknown))))
+
+
+#::snt He answered me at once , " Oh , come , come ! " , as if he were speaking of something that was self - evident .
+[STEP 1: CONCEPTS]
+concept_1 | answer-01
+concept_2 | he
+concept_3 | come-01
+concept_4 | imperative
+concept_5 | you
+concept_6 | h
+concept_7 | and
+concept_8 | oh
+concept_9 | expressive
+concept_10 | come-01
+concept_11 | y
+concept_12 | once
+concept_13 | speak-01
+concept_14 | something
+concept_15 | evident-01
+concept_16 | self-01
+
+[STEP 2: AMR_NO_VAR]
+(answer-01
+      :ARG0 (he)
+      :ARG1 (come-01 :mode imperative
+            :ARG1 (you)
+            :ARG2 h
+            :op1 (and
+                  :op1 (oh :mode expressive)
+                  :op2 (come-01 :mode imperative
+                        :ARG1 y)))
+      :time (once)
+      :manner (speak-01
+            :ARG0 h
+            :ARG1 (something
+                  :ARG1-of (evident-01
+                        :ARG1-of (self-01)))))
+
+[STEP 3: AMR_WITH_VAR]
+(a / answer-01
+      :ARG0 (h / he)
+      :ARG1 (c / come-01 :mode imperative
+            :ARG1 (y / you)
+            :ARG2 h
+            :op1 (a2 / and
+                  :op1 (o / oh :mode expressive)
+                  :op2 (c2 / come-01 :mode imperative
+                        :ARG1 y)))
+      :time (o2 / once)
+      :manner (s / speak-01
+            :ARG0 h
+            :ARG1 (s2 / something
+                  :ARG1-of (e / evident-01
+                        :ARG1-of (s3 / self-01)))))
+
+
+#::snt And I was obliged to make a great mental effort to solve this problem , without any assistance .
+[STEP 1: CONCEPTS]
+concept_1 | and
+concept_2 | obligate-01
+concept_3 | i
+concept_4 | effort-01
+concept_5 | mental
+concept_6 | great
+concept_7 | solve-01
+concept_8 | problem
+concept_9 | this
+concept_10 | assist-01
+concept_11 | any
+
+[STEP 2: AMR_NO_VAR]
+(and
+      :op2 (obligate-01
+            :ARG1 (i)
+            :ARG2 (effort-01
+                  :ARG0 i
+                  :mod (mental)
+                  :degree (great)
+                  :purpose (solve-01
+                        :ARG0 i
+                        :ARG1 (problem
+                              :mod (this)))
+                  :manner (assist-01 :polarity -
+                        :ARG0 (any)))))
+
+[STEP 3: AMR_WITH_VAR]
+(a / and
+      :op2 (o / obligate-01
+            :ARG1 (i / i)
+            :ARG2 (e / effort-01
+                  :ARG0 i
+                  :mod (m / mental)
+                  :degree (g / great)
+                  :purpose (s / solve-01
+                        :ARG0 i
+                        :ARG1 (p / problem
+                              :mod (t / this)))
+                  :manner (a2 / assist-01 :polarity -
+                        :ARG0 (a3 / any)))))
+
+
+#::snt Indeed , as I learned , there were on the planet where the little prince lived -- as on all planets -- good plants and bad plants .
+[STEP 1: CONCEPTS]
+concept_1 | have-03
+concept_2 | plant
+concept_3 | good-02
+concept_4 | bad-02
+concept_5 | planet
+concept_6 | live-01
+concept_7 | prince
+concept_8 | little
+concept_9 | equal
+concept_10 | all
+concept_11 | learn-01
+concept_12 | i
+
+[STEP 2: AMR_NO_VAR]
+(have-03
+      :ARG0 (plant
+            :ARG1-of (good-02)
+            :mod (and
+                  :op1 (plant
+                        :ARG1-of (bad-02))
+                  :op2 (planet
+                        :location-of (live-01
+                              :ARG0 (prince
+                                    :mod (little)))
+                        :equal (all))))
+      :time (learn-01
+            :ARG0 (i)))
+
+[STEP 3: AMR_WITH_VAR]
+(h / have-03
+      :ARG0 (p / plant
+            :ARG1-of (g / good-02)
+            :mod (a / and
+                  :op1 (p2 / plant
+                        :ARG1-of (b / bad-02))
+                  :op2 (p3 / planet
+                        :location-of (l / live-01
+                              :ARG0 (p4 / prince
+                                    :mod (l2 / little)))
+                        :equal (a2 / all))))
+      :time (l3 / learn-01
+            :ARG0 (i / i)))
+
+
+#::snt In consequence , there were good seeds from good plants , and bad seeds from bad plants .
+[STEP 1: CONCEPTS]
+concept_1 | and
+concept_2 | seed
+concept_3 | good-04
+concept_4 | plant
+concept_5 | bad-04
+concept_6 | cause-01
+
+[STEP 2: AMR_NO_VAR]
+(and
+      :op1 (seed
+            :ARG1-of (good-04)
+            :source (plant
+                  :ARG1-of (good-04)))
+      :op2 (seed
+            :ARG1-of (bad-04)
+            :source (plant
+                  :ARG1-of (bad-04)))
+      :ARG1-of (cause-01))
+
+[STEP 3: AMR_WITH_VAR]
+(a / and
+      :op1 (s / seed
+            :ARG1-of (g / good-04)
+            :source (p / plant
+                  :ARG1-of (g2 / good-04)))
+      :op2 (s2 / seed
+            :ARG1-of (b / bad-04)
+            :source (p2 / plant
+                  :ARG1-of (b2 / bad-04)))
+      :ARG1-of (c / cause-01))
+
+
+#::snt But seeds are invisible .
+[STEP 1: CONCEPTS]
+concept_1 | contrast-01
+concept_2 | visible-01
+concept_3 | seed
+
+[STEP 2: AMR_NO_VAR]
+(contrast-01
+      :ARG2 (visible-01 :polarity -
+            :ARG1 (seed)))
+
+[STEP 3: AMR_WITH_VAR]
+(c / contrast-01
+      :ARG2 (v / visible-01 :polarity -
+            :ARG1 (s / seed)))
+
+
+#::snt They sleep deep in the heart of the earth 's darkness , until some one among them is seized with the desire to awaken .
+[STEP 1: CONCEPTS]
+concept_1 | sleep-01
+concept_2 | they
+concept_3 | deep-02
+concept_4 | heart
+concept_5 | dark-01
+concept_6 | earth
+concept_7 | until
+concept_8 | seize-01
+concept_9 | t
+concept_10 | desire-01
+concept_11 | awaken-01
+concept_12 | someone
+
+[STEP 2: AMR_NO_VAR]
+(sleep-01
+      :ARG0 (they)
+      :ARG1-of (deep-02
+            :ARG2 (heart
+                  :part-of (dark-01
+                        :ARG1 (earth))))
+      :time (until
+            :op1 (seize-01
+                  :ARG0 t
+                  :ARG1 (desire-01
+                        :ARG0 t
+                        :ARG1 (awaken-01))
+                  :ARG2 (someone
+                        :domain (they)))))
+
+[STEP 3: AMR_WITH_VAR]
+(s / sleep-01
+      :ARG0 (t / they)
+      :ARG1-of (d / deep-02
+            :ARG2 (h / heart
+                  :part-of (d2 / dark-01
+                        :ARG1 (e / earth))))
+      :time (u / until
+            :op1 (s2 / seize-01
+                  :ARG0 t
+                  :ARG1 (d3 / desire-01
+                        :ARG0 t
+                        :ARG1 (a / awaken-01))
+                  :ARG2 (s3 / someone
+                        :domain (t2 / they)))))
+
+
+#::snt Then this little seed will stretch itself and begin -- timidly at first -- to push a charming little sprig inoffensively upward toward the sun .
+[STEP 1: CONCEPTS]
+concept_1 | begin-01
+concept_2 | seed
+concept_3 | stretch-01
+concept_4 | s2
+concept_5 | push-01
+concept_6 | sprig
+concept_7 | little
+concept_8 | charm-01
+concept_9 | sun
+concept_10 | up
+concept_11 | towards
+concept_12 | then
+concept_13 | timidity
+concept_14 | first
+
+[STEP 2: AMR_NO_VAR]
+(begin-01
+      :ARG0 (seed
+            :ARG1-of (stretch-01
+                  :ARG2 s2)
+            :ARG0-of (push-01
+                  :ARG1 (sprig
+                        :mod (little)
+                        :ARG1-of (charm-01))
+                  :direction (up
+                        :op1 (towards
+                              :ARG2 (sun)))
+                  :manner (timidly
+                        :mod (first))))
+      :time (then))
+
+[STEP 3: AMR_WITH_VAR]
+(b / begin-01
+      :ARG0 (s2 / seed
+            :ARG1-of (s / stretch-01
+                  :ARG2 s2)
+            :ARG0-of (p / push-01
+                  :ARG1 (s4 / sprig
+                        :mod (l / little)
+                        :ARG1-of (c / charm-01))
+                  :direction (u / up
+                        :op1 (t / towards
+                              :ARG2 (s3 / sun)))
+                  :manner (t2 / timidly
+                        :mod (f / first))))
+      :time (t3 / then))
+
+
+#::snt If it is only a sprout of radish or the sprig of a rose - bush , one would let it grow wherever it might wish .
+[STEP 1: CONCEPTS]
+concept_1 | grow-01
+concept_2 | imperative
+concept_3 | one
+concept_4 | sprout
+concept_5 | radish
+concept_6 | only
+concept_7 | or
+concept_8 | sprig
+concept_9 | bush
+concept_10 | rose
+concept_11 | wish-01
+concept_12 | o2
+concept_13 | anywhere
+
+[STEP 2: AMR_NO_VAR]
+(grow-01 :mode imperative
+      :ARG0 (one)
+      :ARG1 (sprout
+            :part-of (radish)
+            :mod (only)
+            :domain (or
+                  :op1 (sprig
+                        :part-of (bush
+                              :mod (rose))))
+            :ARG0-of (wish-01
+                  :ARG1 o2
+                  :location (anywhere))))
+
+[STEP 3: AMR_WITH_VAR]
+(g / grow-01 :mode imperative
+      :ARG0 (o / one)
+      :ARG1 (s / sprout
+            :part-of (r / radish)
+            :mod (o2 / only)
+            :domain (o3 / or
+                  :op1 (s2 / sprig
+                        :part-of (b / bush
+                              :mod (r2 / rose))))
+            :ARG0-of (w / wish-01
+                  :ARG1 o2
+                  :location (a / anywhere))))
+
+
+#::snt But when it is a bad plant , one must destroy it as soon as possible , the very first instant that one recognizes it .
+[STEP 1: CONCEPTS]
+concept_1 | contrast-01
+concept_2 | obligate-01
+concept_3 | one
+concept_4 | destroy-01
+concept_5 | o
+concept_6 | plant
+concept_7 | bad-07
+concept_8 | recognize-02
+concept_9 | p
+concept_10 | possible-01
+concept_11 | soonest
+concept_12 | first
+
+[STEP 2: AMR_NO_VAR]
+(contrast-01
+      :ARG2 (obligate-01
+            :ARG1 (one)
+            :ARG2 (destroy-01
+                  :ARG0 o
+                  :ARG1 (plant
+                        :ARG1-of (bad-07))
+                  :time (recognize-02
+                        :ARG0 p
+                        :ARG1-of (possible-01)
+                        :time (soonest
+                              :mod (first))))))
+
+[STEP 3: AMR_WITH_VAR]
+(c / contrast-01
+      :ARG2 (o / obligate-01
+            :ARG1 (o2 / one)
+            :ARG2 (d / destroy-01
+                  :ARG0 o
+                  :ARG1 (p / plant
+                        :ARG1-of (b / bad-07))
+                  :time (r / recognize-02
+                        :ARG0 p
+                        :ARG1-of (p2 / possible-01)
+                        :time (s / soonest
+                              :mod (f / first))))))
+
+
+#::snt Now there were some terrible seeds on the planet that was the home of the little prince ; and these were the seeds of the baobab .
+[STEP 1: CONCEPTS]
+concept_1 | and
+concept_2 | be-located-at-91
+concept_3 | seed
+concept_4 | some
+concept_5 | terrible-01
+concept_6 | planet
+concept_7 | home
+concept_8 | prince
+concept_9 | little
+concept_10 | now
+concept_11 | baobab
+
+[STEP 2: AMR_NO_VAR]
+(and
+      :op1 (be-located-at-91
+            :ARG1 (seed
+                  :mod (some)
+                  :ARG1-of (terrible-01))
+            :ARG2 (planet
+                  :poss (home
+                        :poss (prince
+                              :mod (little))))
+            :time (now))
+      :op2 (seed
+            :domain (baobab)))
+
+[STEP 3: AMR_WITH_VAR]
+(a / and
+      :op1 (b / be-located-at-91
+            :ARG1 (s / seed
+                  :mod (s2 / some)
+                  :ARG1-of (t / terrible-01))
+            :ARG2 (p / planet
+                  :poss (h / home
+                        :poss (p2 / prince
+                              :mod (l / little))))
+            :time (n / now))
+      :op2 (s3 / seed
+            :domain (b2 / baobab)))
+
+
+#::snt The soil of that planet was infested with them .
+[STEP 1: CONCEPTS]
+concept_1 | infest-01
+concept_2 | they
+concept_3 | soil
+concept_4 | planet
+concept_5 | that
+
+[STEP 2: AMR_NO_VAR]
+(infest-01
+      :ARG0 (they)
+      :ARG1 (soil
+            :poss (planet
+                  :mod (that))))
+
+[STEP 3: AMR_WITH_VAR]
+(i / infest-01
+      :ARG0 (t / they)
+      :ARG1 (s / soil
+            :poss (p / planet
+                  :mod (t2 / that))))
+
+
+#::snt A baobab is something you will never , never be able to get rid of if you attend to it too late .
+[STEP 1: CONCEPTS]
+concept_1 | possible-01
+concept_2 | get-rid-of-03
+concept_3 | you
+concept_4 | baobab
+concept_5 | ever
+concept_6 | late
+concept_7 | attend-01
+concept_8 | b
+
+[STEP 2: AMR_NO_VAR]
+(possible-01 :polarity -
+      :ARG1 (get-rid-of-03
+            :ARG0 (you)
+            :ARG1 (baobab))
+      :time (ever)
+      :condition (late
+            :domain (attend-01
+                  :ARG0 y
+                  :ARG1 b)))
+
+[STEP 3: AMR_WITH_VAR]
+(p / possible-01 :polarity -
+      :ARG1 (g / get-rid-of-03
+            :ARG0 (y / you)
+            :ARG1 (b / baobab))
+      :time (e / ever)
+      :condition (l / late
+            :domain (a / attend-01
+                  :ARG0 y
+                  :ARG1 b)))
+
+
+#::snt It spreads over the entire planet .
+[STEP 1: CONCEPTS]
+concept_1 | spread-01
+concept_2 | it
+concept_3 | planet
+concept_4 | entire
+
+[STEP 2: AMR_NO_VAR]
+(spread-01
+      :ARG1 (it)
+      :ARG2 (planet
+            :extent (entire)))
+
+[STEP 3: AMR_WITH_VAR]
+(s / spread-01
+      :ARG1 (i / it)
+      :ARG2 (p / planet
+            :extent (e / entire)))
+
+
+#::snt It bores clear through it with its roots .
+[STEP 1: CONCEPTS]
+concept_1 | bore-01
+concept_2 | it
+concept_3 | clear-05
+concept_4 | through
+concept_5 | i
+concept_6 | root
+
+[STEP 2: AMR_NO_VAR]
+(bore-01
+      :ARG0 (it)
+      :ARG1 (clear-05
+            :ARG1 i
+            :ARG2 (through))
+      :instrument (root
+            :part-of i))
+
+[STEP 3: AMR_WITH_VAR]
+(b / bore-01
+      :ARG0 (i / it)
+      :ARG1 (c / clear-05
+            :ARG1 i
+            :ARG2 (t / through))
+      :instrument (r / root
+            :part-of i))
+
+
+#::snt And if the planet is too small , and the baobabs are too many , they split it in pieces ...
+[STEP 1: CONCEPTS]
+concept_1 | and
+concept_2 | split-01
+concept_3 | they
+concept_4 | piece
+concept_5 | planet
+concept_6 | cause-01
+concept_7 | small
+concept_8 | too
+concept_9 | baobab
+concept_10 | many
+concept_11 | t
+
+[STEP 2: AMR_NO_VAR]
+(and
+      :op2 (split-01
+            :ARG0 (they)
+            :ARG1 (piece)
+            :ARG2 (planet)
+            :condition (cause-01
+                  :ARG0 (and
+                        :op1 (small
+                              :degree (too)
+                              :domain (planet))
+                        :op2 (many
+                              :degree (too)
+                              :domain (baobab))))
+            :ARG1 t))
+
+[STEP 3: AMR_WITH_VAR]
+(a / and
+      :op2 (s / split-01
+            :ARG0 (t / they)
+            :ARG1 (p / piece)
+            :ARG2 (p2 / planet)
+            :condition (c / cause-01
+                  :ARG0 (a2 / and
+                        :op1 (s2 / small
+                              :degree (t2 / too)
+                              :domain (p3 / planet))
+                        :op2 (m / many
+                              :degree (t3 / too)
+                              :domain (b / baobab))))
+            :ARG1 t))
+
+
+#::snt " It is a question of discipline , " the little prince said to me later on .
+[STEP 1: CONCEPTS]
+concept_1 | say-01
+concept_2 | prince
+concept_3 | little
+concept_4 | question-01
+concept_5 | discipline
+concept_6 | p
+concept_7 | i
+concept_8 | later-on
+
+[STEP 2: AMR_NO_VAR]
+(say-01
+      :ARG0 (prince
+            :mod (little))
+      :ARG1 (question-01
+            :ARG1 (discipline))
+      :ARG2 (p)
+      :ARG3 (i)
+      :time (later-on))
+
+[STEP 3: AMR_WITH_VAR]
+(s / say-01
+      :ARG0 (p / prince
+            :mod (l / little))
+      :ARG1 (q / question-01
+            :ARG1 (d / discipline))
+      :ARG2 (i / p
+            :poss p)
+      :time (l2 / later-on))
+
+
+#::snt " When you 've finished your own toilet in the morning , then it is time to attend to the toilet of your planet , just so , with the greatest care .
+[STEP 1: CONCEPTS]
+concept_1 | have-concession-91
+concept_2 | attend-01
+concept_3 | imperative
+concept_4 | y
+concept_5 | toilet
+concept_6 | planet
+concept_7 | you
+concept_8 | finish-01
+concept_9 | t
+concept_10 | morning
+concept_11 | one's
+concept_12 | care-01
+concept_13 | great
+concept_14 | most
+
+[STEP 2: AMR_NO_VAR]
+(have-concession-91
+      :ARG1 (attend-01 :mode imperative
+            :ARG0 y
+            :ARG1 (toilet
+                  :poss (planet
+                        :poss (you)))
+            :manner (finish-01
+                  :ARG1 t
+                  :time (morning)
+                  :ARG0 (you)
+                  :mod (one's))
+            :manner (care-01
+                  :degree (great
+                        :degree (most)))))
+
+[STEP 3: AMR_WITH_VAR]
+(h / have-concession-91
+      :ARG1 (a / attend-01 :mode imperative
+            :ARG0 y
+            :ARG1 (t / toilet
+                  :poss (p / planet
+                        :poss (y / you)))
+            :manner (f / finish-01
+                  :ARG1 t
+                  :time (m / morning)
+                  :ARG0 (y2 / you)
+                  :mod (o / ones))
+            :manner (c / care-01
+                  :degree (g / great
+                        :degree (m2 / most)))))
+
+
+#::snt You must see to it that you pull up regularly all the baobabs , at the very first moment when they can be distinguished from the rosebushes which they resemble so closely in their earliest youth .
+[STEP 1: CONCEPTS]
+concept_1 | obligate-01
+concept_2 | you
+concept_3 | see-to-03
+concept_4 | y
+concept_5 | pull-up-03
+concept_6 | baobab
+concept_7 | all
+concept_8 | resemble-01
+concept_9 | rosebush
+concept_10 | moment
+concept_11 | distinguish-01
+concept_12 | b
+concept_13 | young
+concept_14 | early
+concept_15 | close-10
+concept_16 | regular
+
+[STEP 2: AMR_NO_VAR]
+(obligate-01
+      :ARG1 (you)
+      :ARG2 (see-to-03
+            :ARG0 y
+            :ARG1 (pull-up-03
+                  :ARG0 y
+                  :ARG1 (baobab
+                        :mod (all))
+                  :time (resemble-01
+                        :ARG1 b
+                        :ARG2 (rosebush
+                              :ARG1-of (distinguish-01
+                                    :ARG0 y
+                                    :ARG1 b
+                                    :manner (resemble-01
+                                          :ARG1 b
+                                          :ARG2 (rosebush
+                                                :mod (young
+                                                      :mod (early)
+                                                      :degree (close-10))))))
+                        :frequency (regular))))))
+
+[STEP 3: AMR_WITH_VAR]
+(o / obligate-01
+      :ARG1 (y / you)
+      :ARG2 (s / see-to-03
+            :ARG0 y
+            :ARG1 (p / pull-up-03
+                  :ARG0 y
+                  :ARG1 (b / baobab
+                        :mod (a / all))
+                  :time (r2 / resemble-01
+                        :ARG1 b
+                        :ARG2 (r / rosebush
+                              :ARG1-of (d / distinguish-01
+                                    :ARG0 y
+                                    :ARG1 b
+                                    :manner (r3 / resemble-01
+                                          :ARG1 b
+                                          :ARG2 (r4 / rosebush
+                                                :mod (y2 / young
+                                                      :mod (e / early)
+                                                      :degree (c / close-10))))))
+                        :frequency (r5 / regular))))))
+
+
+#::snt It is very tedious work , " the little prince added , " but very easy . "
+[STEP 1: CONCEPTS]
+concept_1 | add-01
+concept_2 | prince
+concept_3 | little
+concept_4 | contrast-01
+concept_5 | tire-01
+concept_6 | it
+concept_7 | work-01
+concept_8 | very
+concept_9 | easy-05
+concept_10 | i
+
+[STEP 2: AMR_NO_VAR]
+(add-01
+      :ARG0 (prince
+            :mod (little))
+      :ARG1 (contrast-01
+            :ARG1 (tire-01
+                  :ARG1 (it)
+                  :ARG2 (work-01)
+                  :degree (very))
+            :ARG2 (easy-05
+                  :ARG1 i
+                  :degree (very))))
+
+[STEP 3: AMR_WITH_VAR]
+(a / add-01
+      :ARG0 (p / prince
+            :mod (l / little))
+      :ARG1 (c / contrast-01
+            :ARG1 (t / tire-01
+                  :ARG1 (i / it)
+                  :ARG2 (w / work-01)
+                  :degree (v / very))
+            :ARG2 (e / easy-05
+                  :ARG1 i
+                  :degree (v2 / very))))
+
+
+#::snt And one day he said to me : " You ought to make a beautiful drawing , so that the children where you live can see exactly how all this is .
+[STEP 1: CONCEPTS]
+concept_1 | and
+concept_2 | say-01
+concept_3 | he
+concept_4 | obligate-01
+concept_5 | draw-01
+concept_6 | h
+concept_7 | beautiful-02
+concept_8 | see-01
+concept_9 | child
+concept_10 | live-01
+concept_11 | c
+concept_12 | manner
+concept_13 | exact
+concept_14 | this
+concept_15 | all
+concept_16 | day
+concept_17 | one
+
+[STEP 2: AMR_NO_VAR]
+(and
+      :op2 (say-01
+            :ARG0 (he)
+            :ARG1 (obligate-01
+                  :ARG2 (draw-01
+                        :ARG0 h
+                        :ARG1 (beautiful-02))
+                  :purpose (see-01
+                        :ARG0 (child
+                              :location (live-01
+                                    :ARG0 c))
+                        :ARG1 (manner
+                              :manner-of (exact)
+                              :domain (this
+                                    :mod (all))))
+                  :time (day
+                        :mod (one))))
+            :ARG2 (i)))
+
+[STEP 3: AMR_WITH_VAR]
+(a / and
+      :op2 (s / say-01
+            :ARG0 (h / he)
+            :ARG1 (o / obligate-01
+                  :ARG2 (d / draw-01
+                        :ARG0 h
+                        :ARG1 (b / beautiful-02))
+                  :purpose (s2 / see-01
+                        :ARG0 (c / child
+                              :location (l / live-01
+                                    :ARG0 c))
+                        :ARG1 (m / manner
+                              :manner-of (e / exact)
+                              :domain (t / this
+                                    :mod (a2 / all))))
+                  :time (d2 / day
+                        :mod (o2 / one))))
+            :ARG2 (i / i)))
+
+
+#::snt That would be very useful to them if they were to travel some day .
+[STEP 1: CONCEPTS]
+concept_1 | cause-01
+concept_2 | travel-01
+concept_3 | they
+concept_4 | day
+concept_5 | some
+concept_6 | use-01
+concept_7 | t
+concept_8 | very
+
+[STEP 2: AMR_NO_VAR]
+(cause-01
+      :ARG0 (travel-01
+            :ARG0 (they)
+            :time (day
+                  :mod (some)))
+      :ARG1 (use-01
+            :ARG1 t
+            :degree (very)))
+
+[STEP 3: AMR_WITH_VAR]
+(c / cause-01
+      :ARG0 (t / travel-01
+            :ARG0 (t2 / they)
+            :time (d / day
+                  :mod (s / some)))
+      :ARG1 (u / use-01
+            :ARG1 t
+            :degree (v / very)))
+
+
+#::snt Sometimes , " he added , " there is no harm in putting off a piece of work until another day .
+[STEP 1: CONCEPTS]
+concept_1 | add-01
+concept_2 | he
+concept_3 | harm-01
+concept_4 | put-off-01
+concept_5 | w
+concept_6 | day
+concept_7 | another
+concept_8 | sometimes
+
+[STEP 2: AMR_NO_VAR]
+(add-01
+      :ARG0 (he)
+      :ARG1 (harm-01 :polarity -
+            :ARG1 (put-off-01
+                  :ARG1 w
+                  :ARG2 (day
+                        :mod (another))))
+      :time (sometimes))
+
+[STEP 3: AMR_WITH_VAR]
+(a / add-01
+      :ARG0 (h / he)
+      :ARG1 (h2 / harm-01 :polarity -
+            :ARG1 (p / put-off-01
+                  :ARG1 w
+                  :ARG2 (d / day
+                        :mod (a2 / another))))
+      :time (s / sometimes))
+
+
+#::snt But when it is a matter of baobabs , that always means a catastrophe .
+[STEP 1: CONCEPTS]
+concept_1 | contrast-01
+concept_2 | mean-01
+concept_3 | catastrophe
+concept_4 | matter-01
+concept_5 | baobab
+concept_6 | always
+
+[STEP 2: AMR_NO_VAR]
+(contrast-01
+      :ARG2 (mean-01
+            :ARG1 (catastrophe)
+            :ARG2 (matter-01
+                  :ARG1 (baobab))
+            :time (always)))
+
+[STEP 3: AMR_WITH_VAR]
+(c / contrast-01
+      :ARG2 (m / mean-01
+            :ARG1 (c2 / catastrophe)
+            :ARG2 (m2 / matter-01
+                  :ARG1 (b / baobab))
+            :time (a / always)))
+
+
+#::snt I knew a planet that was inhabited by a lazy man .
+[STEP 1: CONCEPTS]
+concept_1 | know-02
+concept_2 | i
+concept_3 | planet
+concept_4 | inhabit-01
+concept_5 | man
+concept_6 | lazy
+
+[STEP 2: AMR_NO_VAR]
+(know-02
+      :ARG0 (i)
+      :ARG1 (planet
+            :ARG1-of (inhabit-01
+                  :ARG0 (man
+                        :mod (lazy)))))
+
+[STEP 3: AMR_WITH_VAR]
+(k / know-02
+      :ARG0 (i / i)
+      :ARG1 (p / planet
+            :ARG1-of (i2 / inhabit-01
+                  :ARG0 (m / man
+                        :mod (l / lazy)))))
+
+
+#::snt He neglected three little bushes ... "
+[STEP 1: CONCEPTS]
+concept_1 | neglect-01
+concept_2 | he
+concept_3 | bush
+concept_4 | little
+concept_5 | neglect-01
+
+[STEP 2: AMR_NO_VAR]
+(neglect-01
+      :ARG0 (he)
+      :ARG1 (bush :quant 3
+            :mod (little)))
+
+[STEP 3: AMR_WITH_VAR]
+(n / neglect-01
+      :ARG0 (h / he)
+      :ARG1 (b / bush :quant 3
+            :mod (l / little)))
+
+
+#::snt So , as the little prince described it to me , I have made a drawing of that planet .
+[STEP 1: CONCEPTS]
+concept_1 | draw-01
+concept_2 | i
+concept_3 | planet
+concept_4 | that
+concept_5 | describe-01
+concept_6 | prince
+concept_7 | little
+concept_8 | p2
+concept_9 | cause-01
+
+[STEP 2: AMR_NO_VAR]
+(draw-01
+      :ARG0 (i)
+      :ARG1 (planet
+            :mod (that))
+      :ARG1-of (describe-01
+            :ARG0 (prince
+                  :mod (little))
+            :ARG2 p2)
+      :ARG0-of (cause-01))
+
+[STEP 3: AMR_WITH_VAR]
+(d2 / draw-01
+      :ARG0 (i / i)
+      :ARG1 (p / planet
+            :mod (t / that))
+      :ARG1-of (d3 / describe-01
+            :ARG0 (p2 / prince
+                  :mod (l / little))
+            :ARG2 p2)
+      :ARG0-of (c / cause-01))
+
+
+#::snt I do not much like to take the tone of a moralist .
+[STEP 1: CONCEPTS]
+concept_1 | like-01
+concept_2 | i
+concept_3 | take-01
+concept_4 | tone
+concept_5 | moralist
+concept_6 | much
+
+[STEP 2: AMR_NO_VAR]
+(like-01 :polarity -
+      :ARG0 (i)
+      :ARG1 (take-01
+            :ARG0 i
+            :ARG1 (tone
+                  :poss (moralist)))
+      :degree (much))
+
+[STEP 3: AMR_WITH_VAR]
+(l / like-01 :polarity -
+      :ARG0 (i / i)
+      :ARG1 (t / take-01
+            :ARG0 i
+            :ARG1 (t2 / tone
+                  :poss (m / moralist)))
+      :degree (m2 / much))
+
+
+#::snt But the danger of the baobabs is so little understood , and such considerable risks would be run by anyone who might get lost on an asteroid , that for once I am breaking through my reserve .
+[STEP 1: CONCEPTS]
+concept_1 | contrast-01
+concept_2 | and
+concept_3 | understand-01
+concept_4 | dangerous
+concept_5 | baobab
+concept_6 | so
+concept_7 | risk-01
+concept_8 | person
+concept_9 | lose-02
+concept_10 | p
+concept_11 | asteroid
+concept_12 | considerable
+concept_13 | cause-01
+concept_14 | break-02
+concept_15 | i
+concept_16 | reserve-02
+concept_17 | once
+
+[STEP 2: AMR_NO_VAR]
+(contrast-01
+      :ARG2 (and
+            :op1 (understand-01 :polarity -
+                  :ARG1 (dangerous
+                        :domain (baobab))
+                  :degree (so))
+            :op2 (risk-01
+                  :ARG0 (person
+                        :ARG1-of (lose-02
+                              :ARG2 (asteroid)))
+                  :ARG1 (considerable)
+                  :ARG1-of (cause-01)))
+      :ARG1 (break-02
+            :ARG0 (i)
+            :ARG1 (reserve-02
+                  :ARG0 i)
+            :time (once)))
+
+[STEP 3: AMR_WITH_VAR]
+(c / contrast-01
+      :ARG2 (a / and
+            :op1 (u / understand-01 :polarity -
+                  :ARG1 (d / dangerous
+                        :domain (b / baobab))
+                  :degree (s / so))
+            :op2 (r2 / risk-01
+                  :ARG0 (p / person
+                        :ARG1-of (l / lose-02
+                              :ARG2 (a2 / asteroid)))
+                  :ARG1 (c2 / considerable)
+                  :ARG1-of (c3 / cause-01)))
+      :ARG1 (b2 / break-02
+            :ARG0 (i / i)
+            :ARG1 (r / reserve-02
+                  :ARG0 i)
+            :time (o / once)))
+
+
+#::snt " Children , "
+[STEP 1: CONCEPTS]
+concept_1 | child
+
+[STEP 2: AMR_NO_VAR]
+(child)
+
+[STEP 3: AMR_WITH_VAR]
+(c / child)
+
+
+#::snt I say plainly , " watch out for the baobabs ! "
+[STEP 1: CONCEPTS]
+concept_1 | say-01
+concept_2 | i
+concept_3 | watch-out-03
+concept_4 | imperative
+concept_5 | you
+concept_6 | baobab
+concept_7 | plain-02
+
+[STEP 2: AMR_NO_VAR]
+(say-01
+      :ARG0 (i)
+      :ARG1 (watch-out-03 :mode imperative
+            :ARG0 (you)
+            :ARG1 (baobab))
+      :ARG1-of (plain-02))
+
+[STEP 3: AMR_WITH_VAR]
+(s / say-01
+      :ARG0 (i / i)
+      :ARG1 (w / watch-out-03 :mode imperative
+            :ARG0 (y / you)
+            :ARG1 (b / baobab))
+      :ARG1-of (p / plain-02))
+
+
+#::snt My friends , like myself , have been skirting this danger for a long time , without ever knowing it ; and so it is for them that I have worked so hard over this drawing .
+[STEP 1: CONCEPTS]
+concept_1 | and
+concept_2 | skirt-01
+concept_3 | person
+concept_4 | have-rel-role-91
+concept_5 | i
+concept_6 | friend
+concept_7 | danger
+concept_8 | this
+concept_9 | long-03
+concept_10 | know-01
+concept_11 | p
+concept_12 | ever
+concept_13 | work-01
+concept_14 | hard
+concept_15 | draw-01
+concept_16 | t
+
+[STEP 2: AMR_NO_VAR]
+(and
+      :op1 (skirt-01
+            :ARG0 (person
+                  :ARG0-of (have-rel-role-91
+                        :ARG1 i
+                        :ARG2 (friend)))
+            :ARG1 (danger
+                  :mod (this))
+            :ARG1-of (long-03)
+            :manner (know-01 :polarity -
+                  :ARG0 p
+                  :time (ever)))
+      :op2 (work-01
+            :ARG0 i
+            :degree (hard
+                  :degree极)
+            :ARG1 (draw-01
+                  :ARG1 t)))
+
+[STEP 3: AMR_WITH_VAR]
+(a / and
+      :op1 (s / skirt-01
+            :ARG0 (p / person
+                  :ARG0-of (h / have-rel-role-91
+                        :ARG1 i
+                        :ARG2 (f / friend)))
+            :ARG1 (d / danger
+                  :mod (t / this))
+            :ARG1-of (l / long-03)
+            :manner (k / know-01 :polarity -
+                  :ARG0 p
+                  :time (e / ever)))
+      :op2 (w / work-01
+            :ARG0 i
+            :degree (h2 / hard
+                  :degree极)
+            :ARG1 (d2 / draw-01
+                  :ARG1 t)))
+
+
+#::snt The lesson which I pass on by this means is worth all the trouble it has cost me .
+[STEP 1: CONCEPTS]
+concept_1 | worth-02
+concept_2 | lesson
+concept_3 | pass-02
+concept_4 | i
+concept_5 | mean-01
+concept_6 | cause-01
+concept_7 | trouble-01
+concept_8 | all
+concept_9 | cost-01
+concept_10 | l
+
+[STEP 2: AMR_NO_VAR]
+(worth-02
+      :ARG1 (lesson
+            :ARG1-of (pass-02
+                  :ARG0 (i)
+                  :ARG1-of (mean-01)))
+      :ARG2 (cause-01
+            :ARG0 (trouble-01
+                  :extent (all)
+                  :ARG1-of (cost-01
+                        :ARG2 l))))
+
+[STEP 3: AMR_WITH_VAR]
+(w / worth-02
+      :ARG1 (l / lesson
+            :ARG1-of (p / pass-02
+                  :ARG0 (i / i)
+                  :ARG1-of (m / mean-01)))
+      :ARG2 (c / cause-01
+            :ARG0 (t / trouble-01
+                  :extent (a / all)
+                  :ARG1-of (c2 / cost-01
+                        :ARG2 l))))
+
+
+#::snt Perhaps you will ask me , " Why are there no other drawing in this book as magnificent and impressive as this drawing of the baobabs ? "
+[STEP 1: CONCEPTS]
+concept_1 | possible-01
+concept_2 | ask-01
+concept_3 | you
+concept_4 | i
+concept_5 | draw-01
+concept_6 | interrogative
+concept_7 | cause-01
+concept_8 | magnificent
+concept_9 | this
+concept_10 | baobab
+concept_11 | impress-01
+concept_12 | other
+concept_13 | book
+concept_14 | thisagain
+
+[STEP 2: AMR_NO_VAR]
+(possible-01
+      :ARG1 (ask-01
+            :ARG0 (you)
+            :ARG1 (i)
+            :ARG2 (draw-01 :mode interrogative
+                  :ARG1-of (cause-01
+                        :ARG0 (magnificent
+                              :domain (this)
+                              :mod (baobab)
+                              :ARG1-of (impress-01)))
+                  :mod (other
+                        :domain (book
+                              :mod (thisagain))))))
+
+[STEP 3: AMR_WITH_VAR]
+(p / possible-01
+      :ARG1 (a / ask-01
+            :ARG0 (y / you)
+            :ARG1 (i / i)
+            :ARG2 (d / draw-01 :mode interrogative
+                  :ARG1-of (c / cause-01
+                        :ARG0 (m / magnificent
+                              :domain (t / this)
+                              :mod (b / baobab)
+                              :ARG1-of (i2 / impress-01)))
+                  :mod (o / other
+                        :domain (b2 / book
+                              :mod (t2 / thisagain))))))
+
+
+#::snt The reply is simple .
+[STEP 1: CONCEPTS]
+concept_1 | simple
+concept_2 | reply
+
+[STEP 2: AMR_NO_VAR]
+(simple
+  :domain (reply))
+
+[STEP 3: AMR_WITH_VAR]
+(s / simple
+  :domain (r / reply))
+
+
+#::snt I have tried .
+[STEP 1: CONCEPTS]
+concept_1 | try-01
+concept_2 | i
+
+[STEP 2: AMR_NO_VAR]
+(try-01
+      :ARG0 (i))
+
+[STEP 3: AMR_WITH_VAR]
+(t / try-01
+      :ARG0 (i / i))
+
+
+#::snt But with the others I have not been successful .
+[STEP 1: CONCEPTS]
+concept_1 | contrast-01
+concept_2 | succeed-01
+concept_3 | i
+concept_4 | other
+
+[STEP 2: AMR_NO_VAR]
+(contrast-01
+      :ARG2 (succeed-01 :polarity -
+            :ARG0 (i)
+            :ARG1 (other)))
+
+[STEP 3: AMR_WITH_VAR]
+(c / contrast-01
+      :ARG2 (s / succeed-01 :polarity -
+            :ARG0 (i / i)
+            :ARG1 (o / other)))
+
+
+#::snt When I made the drawing of the baobabs I was carried beyond myself by the inspiring force of urgent necessity .
+[STEP 1: CONCEPTS]
+concept_1 | carry-01
+concept_2 | force-02
+concept_3 | inspire-01
+concept_4 | need-01
+concept_5 | urgent
+concept_6 | beyond
+concept_7 | i
+concept_8 | draw-01
+concept_9 | baobab
+
+[STEP 2: AMR_NO_VAR]
+(carry-01
+      :ARG0 (force-02
+            :ARG1-of (inspire-01)
+            :ARG2 (need-01
+                  :mod (urgent)))
+      :ARG1 (beyond
+            :op1 (i))
+      :time (draw-01
+            :ARG0 i
+            :ARG1 (baobab)))
+
+[STEP 3: AMR_WITH_VAR]
+(c / carry-01
+      :ARG0 (f / force-02
+            :ARG1-of (i2 / inspire-01)
+            :ARG2 (n / need-01
+                  :mod (u / urgent)))
+      :ARG1 (b / beyond
+            :op1 (i / i))
+      :time (d / draw-01
+            :ARG0 i
+            :ARG1 (b2 / baobab)))
+
+
+#::snt Chapter 6 .
+[STEP 1: CONCEPTS]
+concept_1 | chapter
+
+[STEP 2: AMR_NO_VAR]
+(chapter :mod 6)
+
+[STEP 3: AMR_WITH_VAR]
+(c / chapter :mod 6)
+
+
+#::snt Oh , little prince !
+[STEP 1: CONCEPTS]
+concept_1 | oh
+concept_2 | expressive
+concept_3 | prince
+concept_4 | little
+
+[STEP 2: AMR_NO_VAR]
+(oh :mode expressive
+      :domain (prince
+            :mod (little)))
+
+[STEP 3: AMR_WITH_VAR]
+(o / oh :mode expressive
+      :domain (p / prince
+            :mod (l / little)))
+
+
+#::snt Bit by bit I came to understand the secrets of your sad little life ...
+[STEP 1: CONCEPTS]
+concept_1 | come-04
+concept_2 | i
+concept_3 | understand-01
+concept_4 | secret
+concept_5 | live-01
+concept_6 | you
+concept_7 | little
+concept_8 | sad-02
+concept_9 | bit-by-bit
+
+[STEP 2: AMR_NO_VAR]
+(come-04
+      :ARG1 (i)
+      :ARG2 (understand-01
+            :ARG0 i
+            :ARG1 (secret
+                  :poss (live-01
+                        :ARG0 (you)
+                        :mod (little)
+                        :ARG1-of (sad-02))))
+      :manner (bit-by-bit))
+
+[STEP 3: AMR_WITH_VAR]
+(c / come-04
+      :ARG1 (i / i)
+      :ARG2 (u / understand-01
+            :ARG0 i
+            :ARG1 (s / secret
+                  :poss (l / live-01
+                        :ARG0 (y / you)
+                        :mod (l2 / little)
+                        :ARG1-of (s2 / sad-02))))
+      :manner (b / bit-by-bit))
+
+
+#::snt For a long time you had found your only entertainment in the quiet pleasure of looking at the sunset .
+[STEP 1: CONCEPTS]
+concept_1 | have-03
+concept_2 | you
+concept_3 | entertain-01
+concept_4 | y
+concept_5 | please-01
+concept_6 | quiet-02
+concept_7 | look-01
+concept_8 | sunset
+concept_9 | only
+concept_10 | long-03
+
+[STEP 2: AMR_NO_VAR]
+(have-03
+      :ARG0 (you)
+      :ARG1 (entertain-01
+            :ARG1 y
+            :ARG2 (please-01
+                  :ARG1-of (quiet-02)
+                  :ARG2 (look-01
+                        :ARG0 y
+                        :ARG1 (sunset))))
+      :mod (only)
+      :ARG1-of (long-03))
+
+[STEP 3: AMR_WITH_VAR]
+(h / have-03
+      :ARG0 (y / you)
+      :ARG1 (e / entertain-01
+            :ARG1 y
+            :ARG2 (p / please-01
+                  :ARG1-of (q / quiet-02)
+                  :ARG2 (l2 / look-01
+                        :ARG0 y
+                        :ARG1 (s / sunset))))
+      :mod (o / only)
+      :ARG1-of (l / long-03))
+
+
+#::snt I learned that new detail on the morning of the fourth day , when you said to me : " I am very fond of sunsets .
+[STEP 1: CONCEPTS]
+concept_1 | learn-01
+concept_2 | i
+concept_3 | detail
+concept_4 | new-01
+concept_5 | date-entity
+concept_6 | morning
+concept_7 | day
+concept_8 | say-01
+concept_9 | you
+concept_10 | fond-01
+concept_11 | y
+concept_12 | sunset
+concept_13 | very
+
+[STEP 2: AMR_NO_VAR]
+(learn-01
+      :ARG0 (i)
+      :ARG1 (detail
+            :ARG1-of (new-01)
+            :time (date-entity
+                  :dayperiod (morning)
+                  :mod (day :order 4)))
+      :time (say-01
+            :ARG0 (you)
+            :ARG1 (fond-01
+                  :ARG1 y
+                  :ARG2 (sunset)
+                  :degree (very))
+            :ARG2 (i)))
+
+[STEP 3: AMR_WITH_VAR]
+(l / learn-01
+      :ARG0 (i / i)
+      :ARG1 (d / detail
+            :ARG1-of (n / new-01)
+            :time (d2 / date-entity
+                  :dayperiod (m / morning)
+                  :mod (d3 / day :order 4)))
+      :time (s / say-01
+            :ARG0 (y / you)
+            :ARG1 (f / fond-01
+                  :ARG1 y
+                  :ARG2 (s2 / sunset)
+                  :degree (v / very))
+            :ARG2 (i2 / i)))
+
+
+#::snt Come , let us go look at a sunset now . "
+[STEP 1: CONCEPTS]
+concept_1 | come-01
+concept_2 | you
+concept_3 | we
+concept_4 | look-01
+concept_5 | y
+concept_6 | sunset
+concept_7 | now
+
+[STEP 2: AMR_NO_VAR]
+(come-01
+      :ARG1 (you)
+      :ARG2 (we)
+      :purpose (look-01
+            :ARG0 y
+            :ARG1 (sunset)
+            :time (now)))
+
+[STEP 3: AMR_WITH_VAR]
+(c / come-01
+      :ARG1 (y / you)
+      :ARG2 (w / we)
+      :purpose (l / look-01
+            :ARG0 y
+            :ARG1 (s / sunset)
+            :time (n / now)))
+
+
+#::snt " But we must wait , "
+[STEP 1: CONCEPTS]
+concept_1 | contrast-01
+concept_2 | obligate-01
+concept_3 | we
+concept_4 | wait-01
+
+[STEP 2: AMR_NO_VAR]
+(contrast-01
+      :ARG2 (obligate-01
+            :ARG1 w
+            :ARG2 (wait-01)))
+
+[STEP 3: AMR_WITH_VAR]
+(c / contrast-01
+      :ARG2 (o / obligate-01
+            :ARG1 w
+            :ARG2 (w / wait-01)))
+
+
+#::snt I said .
+[STEP 1: CONCEPTS]
+concept_1 | say-01
+concept_2 | i
+
+[STEP 2: AMR_NO_VAR]
+(say-01
+  :ARG0 (i))
+
+[STEP 3: AMR_WITH_VAR]
+(s / say-01
+  :ARG0 (i / i))
+
+
+#::snt " Wait ?
+[STEP 1: CONCEPTS]
+concept_1 | wait-01
+concept_2 | imperative
+concept_3 | interrogative
+
+[STEP 2: AMR_NO_VAR]
+(wait-01 :mode imperative :mode interrogative)
+
+[STEP 3: AMR_WITH_VAR]
+(w / wait-01 :mode imperative :mode interrogative)
+
+
+#::snt For what ? "
+[STEP 1: CONCEPTS]
+concept_1 | amr-unknown
+
+[STEP 2: AMR_NO_VAR]
+(amr-unknown)
+
+[STEP 3: AMR_WITH_VAR]
+(f / amr-unknown)
+
+
+#::snt " For the sunset .
+[STEP 1: CONCEPTS]
+concept_1 | cause-01
+concept_2 | sunset
+
+[STEP 2: AMR_NO_VAR]
+(cause-01
+  :ARG0 (sunset))
+
+[STEP 3: AMR_WITH_VAR]
+(c / cause-01
+  :ARG0 (s / sunset))
+
+
+#::snt We must wait until it is time . "
+[STEP 1: CONCEPTS]
+concept_1 | obligate-01
+concept_2 | we
+concept_3 | wait-01
+concept_4 | w
+concept_5 | time-01
+concept_6 | it
+
+[STEP 2: AMR_NO_VAR]
+(obligate-01
+      :ARG1 (we)
+      :ARG2 (wait-01
+            :ARG1 w
+            :time (time-01
+                  :ARG1 (it))))
+
+[STEP 3: AMR_WITH_VAR]
+(o / obligate-01
+      :ARG1 (w / we)
+      :ARG2 (w2 / wait-01
+            :ARG1 w
+            :time (t / time-01
+                  :ARG1 (i / it))))
+
+
+#::snt At first you seemed to be very much surprised .
+[STEP 1: CONCEPTS]
+concept_1 | seem-01
+concept_2 | surprise-01
+concept_3 | you
+concept_4 | much
+concept_5 | very
+
+[STEP 2: AMR_NO_VAR]
+(seem-01
+      :ARG1 (surprise-01
+            :ARG1 (you)
+            :degree (much
+                  :degree (very))))
+
+[STEP 3: AMR_WITH_VAR]
+(s / seem-01
+      :ARG1 (s2 / surprise-01
+            :ARG1 (y / you)
+            :degree (m / much
+                  :degree (v / very))))
+
+
+#::snt And then you laughed to yourself .
+[STEP 1: CONCEPTS]
+concept_1 | and
+concept_2 | laugh-01
+concept_3 | you
+concept_4 | y
+concept_5 | then
+
+[STEP 2: AMR_NO_VAR]
+(and
+  :op2 (laugh-01
+         :ARG0 (you)
+         :ARG2 y
+         :time (then)))
+
+[STEP 3: AMR_WITH_VAR]
+(a / and
+  :op2 (l / laugh-01
+         :ARG0 (y / you)
+         :ARG2 y
+         :time (t / then)))
+
+
+#::snt You said to me : " I am always thinking that I am at home ! "
+[STEP 1: CONCEPTS]
+concept_1 | say-01
+concept_2 | you
+concept_3 | think-01
+concept_4 | i
+concept_5 | home
+concept_6 | always
+concept_7 | i2
+concept_8 | m
+
+[STEP 2: AMR_NO_VAR]
+(say-01
+      :ARG0 (you)
+      :ARG1 (think-01
+            :ARG0 (i)
+            :ARG1 (home
+                  :location-of i)
+            :time (always))
+      :ARG2 (i2))
+
+[STEP 3: AMR_WITH_VAR]
+(s / say-01
+      :ARG0 (y / you)
+      :ARG1 (t / think-01
+            :ARG0 (i / i)
+            :ARG1 (h / home
+                  :location-of i)
+            :time (a / always))
+      :ARG2 (i2 / i))
+
+
+#::snt Just so .
+[STEP 1: CONCEPTS]
+concept_1 | cause-01
+concept_2 | thing
+concept_3 | just
+
+[STEP 2: AMR_NO_VAR]
+(cause-01
+      :ARG0 (thing)
+      :mod (just))
+
+[STEP 3: AMR_WITH_VAR]
+(c / cause-01
+      :ARG0 (t / thing)
+      :mod (j / just))
+
+
+#::snt Everybody knows that when it is noon in the United States the sun is setting over France .
+[STEP 1: CONCEPTS]
+concept_1 | know-01
+concept_2 | person
+concept_3 | everybody
+concept_4 | cause-01
+concept_5 | set-11
+concept_6 | sun
+concept_7 | over
+concept_8 | france
+concept_9 | date-entity
+concept_10 | noon
+concept_11 | country
+concept_12 | name
+
+[STEP 2: AMR_NO_VAR]
+(know-01
+      :ARG0 (person
+            :mod (everybody))
+      :ARG1 (cause-01
+            :ARG0 (set-11
+                  :ARG1 (sun)
+                  :location (over
+                        :op1 (france))
+                  :time (date-entity
+                        :dayperiod (noon)
+                        :country (country :wiki "United_States" :name (name :op1 "United" :op2 "States"))))))
+
+[STEP 3: AMR_WITH_VAR]
+(k / know-01
+      :ARG0 (p / person
+            :mod (e / everybody))
+      :ARG1 (c / cause-01
+            :ARG0 (s / set-11
+                  :ARG1 (s2 / sun)
+                  :location (o / over
+                        :op1 (f / france))
+                  :time (d / date-entity
+                        :dayperiod (n / noon)
+                        :country (c2 / country :wiki "United_States" :name (n2 / name :op1 "United" :op2 "States"))))))
+
+
+#::snt If you could fly to France in one minute , you could go straight into the sunset , right from noon .
+[STEP 1: CONCEPTS]
+concept_1 | possible-01
+concept_2 | and
+concept_3 | go-02
+concept_4 | you
+concept_5 | sunset
+concept_6 | straight-06
+concept_7 | date-entity
+concept_8 | noon
+concept_9 | right
+concept_10 | fly-01
+concept_11 | y
+concept_12 | country
+concept_13 | name
+concept_14 | minute
+
+[STEP 2: AMR_NO_VAR]
+(possible-01
+      :ARG1 (and
+            :op1 (go-02
+                  :ARG0 (you)
+                  :ARG4 (sunset)
+                  :manner (straight-06)
+                  :time (date-entity :time "noon")
+                  :mod (right))
+            :op2 (fly-01
+                  :ARG0 y
+                  :ARG1 (country :wiki "France" :name (name :op1 "France"))
+                  :duration (minute :quant 1))))
+
+[STEP 3: AMR_WITH_VAR]
+(p / possible-01
+      :ARG1 (a / and
+            :op1 (g / go-02
+                  :ARG0 (y / you)
+                  :ARG4 (s / sunset)
+                  :manner (s2 / straight-06)
+                  :time (d / date-entity :time "noon")
+                  :mod (r / right))
+            :op2 (f / fly-01
+                  :ARG0 y
+                  :ARG1 (c / country :wiki "France" :name (n / name :op1 "France"))
+                  :duration (m / minute :quant 1))))
+
+
+#::snt Unfortunately , France is too far away for that .
+[STEP 1: CONCEPTS]
+concept_1 | far
+concept_2 | away
+concept_3 | france
+concept_4 | that
+concept_5 | unfortunate
+
+[STEP 2: AMR_NO_VAR]
+(far
+      :direction (away)
+      :location (france)
+      :compared-to (that)
+      :mod (unfortunate))
+
+[STEP 3: AMR_WITH_VAR]
+(f / far
+      :direction (a / away)
+      :location (f2 / france)
+      :compared-to (t / that)
+      :mod (u / unfortunate))
+
+
+#::snt But on your tiny planet , my little prince , all you need do is move your chair a few steps .
+[STEP 1: CONCEPTS]
+concept_1 | contrast-01
+concept_2 | do-02
+concept_3 | you
+concept_4 | all
+concept_5 | move-01
+concept_6 | y
+concept_7 | chair
+concept_8 | step-01
+concept_9 | few
+concept_10 | prince
+concept_11 | little
+concept_12 | planet
+concept_13 | tiny
+
+[STEP 2: AMR_NO_VAR]
+(contrast-01
+      :ARG2 (do-02
+            :ARG0 (you)
+            :mod (all)
+            :ARG1 (move-01
+                  :ARG0 y
+                  :ARG1 (chair
+                        :poss y)
+                  :ARG2 (step-01
+                        :quant (few)))
+            :location (planet
+                  :poss (prince
+                        :mod (little))
+                  :mod (tiny))))
+
+[STEP 3: AMR_WITH_VAR]
+(c / contrast-01
+      :ARG2 (d / do-02
+            :ARG0 (y / you)
+            :mod (a / all)
+            :ARG1 (m / move-01
+                  :ARG0 y
+                  :ARG1 (c2 / chair
+                        :poss y)
+                  :ARG2 (s / step-01
+                        :quant (f / few)))
+            :location (p / planet
+                  :poss (p2 / prince
+                        :mod (l / little))
+                  :mod (t / tiny))))
+
+
+#::snt You can see the day end and the twilight falling whenever you like ...
+[STEP 1: CONCEPTS]
+concept_1 | possible-01
+concept_2 | see-01
+concept_3 | you
+concept_4 | and
+concept_5 | end-01
+concept_6 | day
+concept_7 | fall-02
+concept_8 | twilight
+concept_9 | like-02
+concept_10 | y
+
+[STEP 2: AMR_NO_VAR]
+(possible-01
+      :ARG1 (see-01
+            :ARG0 (you)
+            :ARG1 (and
+                  :op1 (end-01
+                        :ARG1 (day))
+                  :op2 (fall-02
+                        :ARG1 (twilight)))
+            :time (like-02
+                  :ARG0 y)))
+
+[STEP 3: AMR_WITH_VAR]
+(p / possible-01
+      :ARG1 (s / see-01
+            :ARG0 (y / you)
+            :ARG1 (a / and
+                  :op1 (e / end-01
+                        :ARG1 (d / day))
+                  :op2 (f / fall-02
+                        :ARG1 (t / twilight)))
+            :time (l / like-02
+                  :ARG0 y)))
+
+
+#::snt " One day , " you said to me , " I saw the sunset forty - four times ! "
+[STEP 1: CONCEPTS]
+concept_1 | say-01
+concept_2 | you
+concept_3 | see-01
+concept_4 | y
+concept_5 | sunset
+concept_6 | have-frequency-91
+concept_7 | temporal-quantity
+concept_8 | day
+concept_9 | i
+
+[STEP 2: AMR_NO_VAR]
+(say-01
+      :ARG0 (you)
+      :ARG1 (see-01
+            :ARG0 y
+            :ARG1 (sunset)
+            :ARG1-of (have-frequency-91
+                  :ARG2 44)
+            :time (temporal-quantity :quant 1
+                  :unit (day)))
+      :ARG2 (i))
+
+[STEP 3: AMR_WITH_VAR]
+(s / say-01
+      :ARG0 (y / you)
+      :ARG1 (s2 / see-01
+            :ARG0 y
+            :ARG1 (s3 / sunset)
+            :ARG1-of (h / have-frequency-91
+                  :ARG2 44)
+            :time (t / temporal-quantity :quant 1
+                  :unit (d / day)))
+      :ARG2 (i / i))
+
+
+#::snt And a little later you added : " You know -- one loves the sunset , when one is so sad ... "
+[STEP 1: CONCEPTS]
+concept_1 | and
+concept_2 | add-01
+concept_3 | you
+concept_4 | contrast-01
+concept_5 | love-01
+concept_6 | one
+concept_7 | sunset
+concept_8 | sad-02
+concept_9 | o
+concept_10 | so
+concept_11 | later
+concept_12 | little
+
+[STEP 2: AMR_NO_VAR]
+(and
+      :op2 (add-01
+            :ARG0 (you)
+            :ARG1 (contrast-01
+                  :ARG1 (love-01
+                        :ARG0 (one)
+                        :ARG1 (sunset)
+                        :condition (sad-02
+                              :ARG1 o
+                              :degree (so)))
+                  :ARG2 (later
+                        :mod (little)))))
+
+[STEP 3: AMR_WITH_VAR]
+(a / and
+      :op2 (a2 / add-01
+            :ARG0 (y / you)
+            :ARG1 (c / contrast-01
+                  :ARG1 (l2 / love-01
+                        :ARG0 (o / one)
+                        :ARG1 (s / sunset)
+                        :condition (s2 / sad-02
+                              :ARG1 o
+                              :degree (s3 / so)))
+                  :ARG2 (l / later
+                        :mod (l3 / little)))))
+
+
+#::snt " Were you so sad , then ? "
+[STEP 1: CONCEPTS]
+concept_1 | sad-02
+concept_2 | interrogative
+concept_3 | you
+concept_4 | so
+concept_5 | then
+
+[STEP 2: AMR_NO_VAR]
+(sad-02 :mode interrogative
+      :ARG1 (you)
+      :degree (so)
+      :time (then))
+
+[STEP 3: AMR_WITH_VAR]
+(s / sad-02 :mode interrogative
+      :ARG1 (y / you)
+      :degree (s2 / so)
+      :time (t / then))
+
+
+#::snt I asked , " on the day of the forty - four sunsets ? "
+[STEP 1: CONCEPTS]
+concept_1 | ask-01
+concept_2 | i
+concept_3 | have-condition-91
+concept_4 | day
+concept_5 | sunset
+concept_6 | ordinal-entity
+
+[STEP 2: AMR_NO_VAR]
+(ask-01
+      :ARG0 (i)
+      :ARG1 (have-condition-91
+            :ARG1 (day
+                  :mod (sunset
+                        :quant (ordinal-entity :value 44)))))
+
+[STEP 3: AMR_WITH_VAR]
+(a / ask-01
+      :ARG0 (i / i)
+      :ARG1 (h / have-condition-91
+            :ARG1 (d / day
+                  :mod (s / sunset
+                        :quant (o / ordinal-entity :value 44)))))
+
+
+#::snt But the little prince made no reply .
+[STEP 1: CONCEPTS]
+concept_1 | contrast-01
+concept_2 | reply-01
+concept_3 | prince
+concept_4 | little
+
+[STEP 2: AMR_NO_VAR]
+(contrast-01
+      :ARG2 (reply-01 :polarity -
+            :ARG0 (prince
+                  :mod (little))))
+
+[STEP 3: AMR_WITH_VAR]
+(c / contrast-01
+      :ARG2 (r / reply-01 :polarity -
+            :ARG0 (p / prince
+                  :mod (l / little))))
+
+

@@ -1,0 +1,5949 @@
+#::snt tôi nhớ lời anh chủ tịch xã Bùi Văn Luyến nhắc đi nhắc lại : " coi bộ nhỏ nhưng quan trọng lắm !
+[STEP 1: CONCEPTS]
+concept_1 | nhớ
+concept_2 | tôi
+concept_3 | lời
+concept_4 | nhắc
+concept_5 | anh
+concept_6 | chủ tịch
+concept_7 | xã
+concept_8 | person
+concept_9 | name
+concept_10 | Bùi
+concept_11 | Văn
+concept_12 | Luyến
+concept_13 | coi
+concept_14 | bộ
+concept_15 | nhỏ
+concept_16 | quan trọng
+concept_17 | lắm
+
+[STEP 2: RELATIONS]
+nhớ | :pivot | tôi
+nhớ | :theme | lời
+lời | :topic | nhắc
+nhắc | :agent | anh
+anh | :mod | chủ tịch
+chủ tịch | :mod | xã
+xã | :mod | person
+person | :name | name
+name | :op1 | Bùi
+name | :op2 | Văn
+name | :op3 | Luyến
+person | :wiki | -
+lời | :topic | coi
+coi | :compound | bộ
+coi | :manner | nhỏ
+coi | :topic | quan trọng
+quan trọng | :degree | lắm
+
+[STEP 3: AMR_WITH_VAR]
+(n / nhớ
+    :pivot(t / tôi)
+    :theme(l / lời
+        :topic(n1 / nhắc
+            :agent(a / anh
+                :mod(c / chủ tịch
+                    :mod(x / xã
+                        :mod(p / person
+                            :name(n3 / name
+                                :op1(wz1 / Bùi)
+                                :op2(wz2 / Văn)
+                                :op3(wz3 / Luyến))
+                            :wiki -))))
+        :topic(c1 / coi
+            :compound(b / bộ)
+            :manner(n2 / nhỏ)
+            :topic(q / quan trọng
+                :degree(l1 / lắm)))))
+
+
+#::snt hiện nay xã có 68 tổ nhân dân , mỗi tổ phụ trách 40 gia đình .
+[STEP 1: CONCEPTS]
+concept_1 | có
+concept_2 | xã
+concept_3 | tổ
+concept_4 | nhân dân
+concept_5 | now
+concept_6 | phụ trách
+concept_7 | gia đình
+
+[STEP 2: RELATIONS]
+có | :location | xã
+có | :theme | tổ
+tổ | :mod | nhân dân
+tổ | :quant | 68
+có | :time | now
+tổ | :agent-of | phụ trách
+phụ trách | :theme | gia đình
+gia đình | :quant | 40
+
+[STEP 3: AMR_WITH_VAR]
+(c / có
+    :location(x / xã)
+    :theme(t / tổ
+        :mod(n1 / nhân dân)
+        :quant 68)
+    :time(n / now)
+    :theme(t2 / phụ trách
+        :agent(t1 / tổ)
+        :theme(g / gia đình
+            :quant 40)))
+
+
+#::snt chủ trương tốt nhưng dân không hiểu , không hưởng ứng thì cũng chịu thua !
+[STEP 1: CONCEPTS]
+concept_1 | contrast-01
+concept_2 | chủ trương
+concept_3 | tốt
+concept_4 | hiểu
+concept_5 | dân
+concept_6 | hưởng ứng
+concept_7 | chịu
+concept_8 | thua
+
+[STEP 2: RELATIONS]
+contrast-01 | :ARG1 | chủ trương
+chủ trương | :mod | tốt
+contrast-01 | :ARG2 | hiểu
+hiểu | :pivot | dân
+hiểu | :polarity | -
+hiểu | :compound | hưởng ứng
+hiểu | :polarity | -
+contrast-01 | :ARG4 | chịu
+chịu | :compound | thua
+
+[STEP 3: AMR_WITH_VAR]
+(c1 / contrast-01
+    :ARG1(c / chủ trương
+        :mod(t / tốt))
+    :ARG2(h / hiểu
+        :pivot(d / dân)
+        :polarity -
+        :compound(h1 / hưởng ứng)
+        :polarity -)
+    :ARG4(c2 / chịu
+        :compound(t1 / thua)))
+
+
+#::snt nên trước nhất người đảng viên phải làm gương .
+[STEP 1: CONCEPTS]
+concept_1 | recommend-01
+concept_2 | làm gương
+concept_3 | người
+concept_4 | đảng viên
+concept_5 | before
+
+[STEP 2: RELATIONS]
+recommend-01 | :topic | làm gương
+làm gương | :agent | người
+người | :mod | đảng viên
+làm gương | :time | before
+
+[STEP 3: AMR_WITH_VAR]
+(r / recommend-01
+    :topic(l / làm gương
+        :agent(n1 / người
+            :mod(đ / đảng viên))
+        :time(b / before)))
+
+
+#::snt riêng về xuất khẩu lao động , anh Luyến có cách nghĩ riêng : " du học sinh đi nước ngoài để mở mang kiến thức .
+[STEP 1: CONCEPTS]
+concept_1 | có
+concept_2 | anh
+concept_3 | Luyến
+concept_4 | cách
+concept_5 | nghĩ
+concept_6 | riêng
+concept_7 | du học sinh
+concept_8 | đi
+concept_9 | nước ngoài
+concept_10 | mở mang
+concept_11 | kiến thức
+
+[STEP 2: RELATIONS]
+có | :pivot | anh
+anh | :mod | Luyến
+có | :theme | cách
+cách | :compound | nghĩ
+cách | :mod | riêng
+có | :topic | du học sinh
+du học sinh | :agent-of | đi
+đi | :location | nước ngoài
+đi | :purpose | mở mang
+mở mang | :theme | kiến thức
+
+[STEP 3: AMR_WITH_VAR]
+(c1 / có
+    :pivot(a / anh
+        :mod(L / Luyến))
+    :theme(c2 / cách
+        :compound(n / nghĩ)
+        :mod(r / riêng))
+    :topic(d / du học sinh
+        :agent-of(đ / đi
+            :location(n1 / nước ngoài)
+            :purpose(m / mở mang
+                :theme(k / kiến thức)))))
+
+
+#::snt người lao động cũng vậy .
+[STEP 1: CONCEPTS]
+concept_1 | vậy
+concept_2 | người
+concept_3 | lao động
+
+[STEP 2: RELATIONS]
+vậy | :domain | người
+người | :compound | lao động
+
+[STEP 3: AMR_WITH_VAR]
+(v / vậy
+    :domain(n / người
+        :compound(l / lao động)))
+
+
+#::snt sau ba năm làm việc ở nước ngoài , bên cạnh việc tạo vốn giúp gia đình thoát nghèo , họ còn tiếp cận một môi trường làm việc công nghiệp .
+[STEP 1: CONCEPTS]
+concept_1 | and
+concept_2 | làm việc
+concept_3 | bên cạnh
+concept_4 | tạo
+concept_5 | vốn
+concept_6 | giúp
+concept_7 | thoát
+concept_8 | nghèo
+concept_9 | gia đình
+concept_10 | họ
+concept_11 | tiếp cận
+concept_12 | môi trường
+concept_13 | công nghiệp
+concept_14 | h
+concept_15 | after
+concept_16 | temporal-quantity
+concept_17 | năm
+
+[STEP 2: RELATIONS]
+and | :op1 | làm việc
+làm việc | :duration | làm việc
+làm việc | :location | nước ngoài
+làm việc | :bên-cạnh | tạo
+tạo | :result-arg1 | vốn
+tạo | :purpose | giúp
+giúp | :topic | thoát
+thoát | :compound | nghèo
+thoát | :beneficiary | gia đình
+giúp | :agent | họ
+làm việc | :agent | h
+làm việc | :time | after
+after | :duration | temporal-quantity
+temporal-quantity | :quant | 3
+temporal-quantity | :unit | năm
+
+and | :op2 | tiếp cận
+tiếp cận | :theme | môi trường
+môi trường | :mod | làm việc
+làm việc | :setting | công nghiệp
+tiếp cận | :agent | h
+
+[STEP 3: AMR_WITH_VAR]
+(a / and
+    :op1(l / làm việc
+        :duration(l1 / làm việc
+            :location(n / nước ngoài)
+            :bên-cạnh(t / tạo
+                :result-arg1(v / vốn)
+                :purpose(g / giúp
+                    :topic(t1 / thoát
+                        :compound(n1 / nghèo)
+                        :beneficiary(g1 / gia đình))
+                    :agent(h / họ))))
+        :agent h
+        :time(a1 / after
+            :duration(t2 / temporal-quantity
+                :quant 3
+                    :unit(n2 / năm))))
+    :op2(t3 / tiếp cận
+        :theme(m / môi trường
+            :mod(l2 / làm việc
+                :setting(c1 / công nghiệp)))
+        :agent h))
+
+
+#::snt đến nay xã có 672 người đi làm việc ở nước ngoài .
+[STEP 1: CONCEPTS]
+concept_1 | có
+concept_2 | đến
+concept_3 | nay
+concept_4 | xã
+concept_5 | người
+concept_6 | đi
+concept_7 | làm việc
+concept_8 | nước ngoài
+concept_9 | ở
+
+[STEP 2: RELATIONS]
+có | :time | đến
+đến | :compound | nay
+có | :location | xã
+có | :theme | người
+người | :agent-of | đi
+đi | :compound | làm việc
+đi | :location | nước ngoài
+nước ngoài | :prep | ở
+người | :quant | 672
+
+[STEP 3: AMR_WITH_VAR]
+(c / có
+    :time(đ / đến
+        :compound(n / nay))
+    :location(x / xã)
+    :theme(n1 / người
+        :agent-of(đ1 / đi
+            :compound(l / làm việc)
+            :location(n2 / nước ngoài
+                :prep(ở / ở)))
+        :quant 672))
+
+
+#::snt khi trở về , hầu hết tiếp tục làm việc tốt .
+[STEP 1: CONCEPTS]
+concept_1 | làm việc
+concept_2 | trở về
+concept_3 | hầu hết
+concept_4 | tiếp tục
+concept_5 | tốt
+
+[STEP 2: RELATIONS]
+làm việc | :time | trở về
+làm việc | :agent | hầu hết
+làm việc | :manner | tiếp tục
+làm việc | :manner | tốt
+
+[STEP 3: AMR_WITH_VAR]
+(l / làm việc
+    :time(t / trở về)
+    :agent(h / hầu hết)
+    :manner(t1 / tiếp tục)
+    :manner(t2 / tốt))
+
+
+#::snt nhiều người từ nghèo khó nhất xã đã có vốn mở cơ sở , lập trang trại , tạo công ăn việc làm cho nhiều lao động .
+[STEP 1: CONCEPTS]
+concept_1 | and
+concept_2 | có
+concept_3 | người
+concept_4 | giàu
+concept_5 | nhất
+concept_6 | xã
+concept_7 | đã
+concept_8 | vốn
+concept_9 | mở
+concept_10 | cơ sở
+concept_11 | lập
+concept_12 | trang trại
+concept_13 | tạo
+concept_14 | công ăn việc làm
+concept_15 | lao động
+
+[STEP 2: RELATIONS]
+and | :op1 | có
+có | :pivot | người
+người | :mod | giàu
+giàu | :degree | nhất
+giàu | :location | xã
+có | :tense | đã
+có | :theme | vốn
+có | :purpose | and
+and | :op1 | mở
+mở | :theme | cơ sở
+and | :op2 | lập
+lập | :theme | trang trại
+and | :op3 | tạo
+tạo | :result-arg1 | công ăn việc làm
+công ăn việc làm | :beneficiary | lao động
+
+[STEP 3: AMR_WITH_VAR]
+(a / and
+    :op1(c / có
+        :pivot(n1 / người
+            :mod(g / giàu
+                :degree(n2 / nhất)
+                :location(x / xã)))
+        :tense(đ / đã)
+        :theme(v / vốn)
+        :purpose(z1 / and
+            :op1(m1 / mở
+                :theme(c1 / cơ sở))
+            :op2(l1 / lập
+                :theme(t1 / trang trại))
+            :op3(t3 / tạo
+                :result-arg1(c3 / công ăn việc làm
+                    :beneficiary(l3 / lao động)))))
+
+
+#::snt mất hai cánh tay , một mắt .
+[STEP 1: CONCEPTS]
+concept_1 | mất
+concept_2 | tay
+concept_3 | cánh
+concept_4 | mắt
+
+[STEP 2: RELATIONS]
+mất | :theme | tay
+tay | :quant | 2
+tay | :classifier | cánh
+mất | :theme | mắt
+mắt | :quant | 1
+
+[STEP 3: AMR_WITH_VAR]
+(m / mất
+    :theme(t / tay
+        :quant 2
+            :classifier(c / cánh))
+    :theme(m1 / mắt
+        :quant 1))
+
+
+#::snt một tập thể vững mạnh còn nhờ " đầu tàu " .
+[STEP 1: CONCEPTS]
+concept_1 | nhờ
+concept_2 | tập thể
+concept_3 | vững mạnh
+concept_4 | đầu tàu
+
+[STEP 2: RELATIONS]
+nhờ | :pivot | tập thể
+tập thể | :mod | vững mạnh
+nhờ | :theme | đầu tàu
+
+[STEP 3: AMR_WITH_VAR]
+(n / nhờ
+    :pivot(t / tập thể
+        :mod(v / vững mạnh))
+    :theme(đ / đầu tàu))
+
+
+#::snt hai lão nông - một cánh tay còn nguyên vẹn - đã dựng lên hai gia đình gương mẫu .
+[STEP 1: CONCEPTS]
+concept_1 | dựng
+concept_2 | lão nông
+concept_3 | còn
+concept_4 | cánh tay
+concept_5 | nguyên vẹn
+concept_6 | đã
+concept_7 | lên
+concept_8 | gia đình
+concept_9 | gương mẫu
+
+[STEP 2: RELATIONS]
+dựng | :agent | lão nông
+lão nông | :quant | 2
+lão nông | :mod | còn
+còn | :theme | cánh tay
+cánh tay | :quant | 1
+cánh tay | :mod | nguyên vẹn
+dựng | :tense | đã
+dựng | :compound | lên
+dựng | :result-arg1 | gia đình
+gia đình | :quant | 2
+gia đình | :mod | gương mẫu
+
+[STEP 3: AMR_WITH_VAR]
+(d / dựng
+    :agent(l / lão nông
+        :quant 2
+        :mod(c / còn
+            :theme(c1 / cánh tay
+                :quant 1
+                :mod(n1 / nguyên vẹn))))
+    :tense(đ / đã)
+    :compound(l1 / lên)
+    :result-arg1(g / gia đình
+        :quant 2
+        :mod(g1 / gương mẫu)))
+
+
+#::snt có em trở về còn quyết tâm dùng tiền dành dụm tiếp tục học văn hóa , vào đại học " .
+[STEP 1: CONCEPTS]
+concept_1 | and
+concept_2 | trở về
+concept_3 | em
+concept_4 | quyết tâm
+concept_5 | dùng
+concept_6 | tiền
+concept_7 | dành dụm
+concept_8 | học
+concept_9 | tiếp tục
+concept_10 | văn hóa
+concept_11 | e
+concept_12 | đại học
+concept_13 | name
+concept_14 | vào
+
+[STEP 2: RELATIONS]
+and | :op1 | trở về
+trở về | :pivot | em
+trở về | :purpose | quyết tâm
+quyết tâm | :topic | dùng
+dùng | :theme | tiền
+tiền | :mod | dành dụm
+dùng | :purpose | học
+học | :manner | tiếp tục
+học | :topic | văn hóa
+học | :agent | e
+and | :op2 | đại học
+đại học | :prep | vào
+đại học | :name | name
+name | :op1 | đại
+name | :op2 | học
+đại học | :mode | e
+
+[STEP 3: AMR_WITH_VAR]
+(a / and
+    :op1(t / trở về
+        :pivot(e / em)
+        :purpose(q / quyết tâm
+            :topic(d / dùng
+                :theme(t1 / tiền
+                    :mod(đ / dành dụm))
+                :purpose(h / học
+                    :manner(t2 / tiếp tục)
+                    :topic(v1 / văn hóa)
+                    :agent e))))
+    :op2(đ1 / đại học
+        :prep(v / vào)
+        :name(n / name
+            :op1(đ2 / đại)
+            :op2(h1 / học))
+        :mode e))
+
+
+#::snt có em trở về còn quyết tâm dùng tiền dành dụm tiếp tục học văn hóa , vào đại học " .
+[STEP 1: CONCEPTS]
+concept_1 | and
+concept_2 | trở về
+concept_3 | em
+concept_4 | quyết tâm
+concept_5 | dùng
+concept_6 | tiền
+concept_7 | dành dụm
+concept_8 | học
+concept_9 | tiếp tục
+concept_10 | văn hóa
+concept_11 | e
+concept_12 | đại học
+concept_13 | name
+concept_14 | vào
+
+[STEP 2: RELATIONS]
+and | :op1 | trở về
+trở về | :pivot | em
+trở về | :purpose | quyết tâm
+quyết tâm | :topic | dùng
+dùng | :theme | tiền
+tiền | :mod | dành dụm
+dùng | :purpose | học
+học | :manner | tiếp tục
+học | :topic | văn hóa
+học | :agent | e
+and | :op2 | đại học
+đại học | :prep | vào
+đại học | :name | name
+name | :op1 | đại
+name | :op2 | học
+đại học | :mode | e
+
+[STEP 3: AMR_WITH_VAR]
+(a / and
+    :op1(t / trở về
+        :pivot(e / em)
+        :purpose(q / quyết tâm
+            :topic(d / dùng
+                :theme(t1 / tiền
+                    :mod(đ / dành dụm))
+                :purpose(h / học
+                    :manner(t2 / tiếp tục)
+                    :topic(v1 / văn hóa)
+                    :agent e))))
+    :op2(đ1 / đại học
+        :prep(v / vào)
+        :name(n / name
+            :op1(đ2 / đại)
+            :op2(h1 / học))
+        :mode e))
+
+
+#::snt dự kiến từ nay đến năm 2007 sẽ hoàn thành phổ cập thpt .
+[STEP 1: CONCEPTS]
+concept_1 | dự kiến
+concept_2 | hoàn thành
+concept_3 | sẽ
+concept_4 | phổ cập
+concept_5 | thpt
+concept_6 | date-entity
+concept_7 | từ
+concept_8 | nay
+concept_9 | năm
+concept_10 | before
+
+[STEP 2: RELATIONS]
+dự kiến | :topic | hoàn thành
+hoàn thành | :tense | sẽ
+hoàn thành | :theme | phổ cập
+pưc cập | :theme | thpt
+hoàn thành | :time | date-entity
+date-entity | :initialTime | từ
+từ | :op1 | nay
+date-entity | :finalTime | năm
+năm | :year | 2007
+date-entity | :direction | before
+
+[STEP 3: AMR_WITH_VAR]
+(d / dự kiến
+    :topic(h / hoàn thành
+        :tense(s / sẽ)
+        :theme(p / phổ cập
+            :theme(t1 / thpt))
+        :time(d2 / date-entity
+            :initialTime(t / từ
+                :op1(n / nay))
+            :finalTime(n1 / năm
+                :year 2007)
+            :direction(b / before))))
+
+
+#::snt con của " thép " .
+[STEP 1: CONCEPTS]
+concept_1 | con
+concept_2 | thép
+
+[STEP 2: RELATIONS]
+con | :poss | thép
+
+[STEP 3: AMR_WITH_VAR]
+(c / con
+    :poss(t / thép))
+
+
+#::snt tôi nghe câu chuyện anh Thanh cho anh Đu mượn chú heo con .
+[STEP 1: CONCEPTS]
+concept_1 | nghe
+concept_2 | tôi
+concept_3 | câu chuyện
+concept_4 | cho
+concept_5 | anh
+concept_6 | Thanh
+concept_7 | mượn
+concept_8 | Đu
+concept_9 | heo
+concept_10 | chú
+concept_11 | con
+
+[STEP 2: RELATIONS]
+nghe | :agent | tôi
+nghe | :theme | câu chuyện
+câu chuyện | :agent-of | cho
+cho | :agent | anh
+anh | :mod | Thanh
+cho | :beneficiary-arg2 | mượn
+mượn | :agent | anh
+anh | :mod | Đu
+mượn | :theme | heo
+heo | :classifier | chú
+heo | :mod | con
+
+[STEP 3: AMR_WITH_VAR]
+(n / nghe
+    :agent(t / tôi)
+    :theme(c / câu chuyện
+        :agent-of(c1 / cho
+            :agent(a / anh
+                :mod(t1 / Thanh))
+            :beneficiary-arg2(m / mượn
+                :agent(á / anh
+                    :mod(đ / Đu))
+                :theme(h / heo
+                    :classifier(c2 / chú)
+                    :mod(c3 / con))))))
+
+
+#::snt ai trồng lúa , xã mời các cán bộ về tập huấn cho trồng lúa .
+[STEP 1: CONCEPTS]
+concept_1 | mời
+concept_2 | ai
+concept_3 | trồng
+concept_4 | lúa
+concept_5 | cán bộ
+concept_6 | xã
+concept_7 | về
+concept_8 | tập huấn
+
+[STEP 2: RELATIONS]
+mời | :agent | ai
+ai | :agent-of | trồng
+trồng | :patient | lúa
+mời | :goal | cán bộ
+cán bộ | :source | xã
+mời | :purpose | về
+về | :compound | tập huấn
+tập huấn | :topic | trồng
+trồng | :patient | lúa
+
+[STEP 3: AMR_WITH_VAR]
+(m / mời
+    :agent(a / ai
+        :agent-of(t / trồng
+            :patient(l / lúa)))
+    :goal(c1 / cán bộ
+        :source(x / xã))
+    :purpose(v / về
+        :compound(t1 / tập huấn
+            :topic(t2 / trồng
+                :patient(l1 / lúa)))))
+
+
+#::snt ai nuôi cá , nuôi bò thì được tập huấn về chăn nuôi .
+[STEP 1: CONCEPTS]
+concept_1 | and
+concept_2 | nuôi
+concept_3 | ai
+concept_4 | cá
+concept_5 | bò
+concept_6 | được
+concept_7 | tập huấn
+concept_8 | chăn nuôi
+concept_9 | a
+
+[STEP 2: RELATIONS]
+and | :op1 | nuôi
+nuôi | :agent | ai
+nuôi | :theme | cá
+and | :op2 | nuôi
+nuôi | :theme | bò
+and | :op3 | được
+được | :result-arg1 | tập huấn
+tập huấn | :topic | chăn nuôi
+tập huấn | :agent | a
+
+[STEP 3: AMR_WITH_VAR]
+(a1 / and
+    :op1(n / nuôi
+        :agent(a / ai)
+        :theme(c / cá))
+    :op2(n1 / nuôi
+        :theme(b / bò))
+    :op3(đ / được
+        :result-arg1(t1 / tập huấn
+            :topic(c1 / chăn nuôi)
+            :agent a)))
+
+
+#::snt ai muốn giữ nghề truyền thống được tạo điều kiện vay vốn .
+[STEP 1: CONCEPTS]
+concept_1 | muốn
+concept_2 | ai
+concept_3 | giữ
+concept_4 | nghề
+concept_5 | truyền thống
+concept_6 | tạo
+concept_7 | được
+concept_8 | điều kiện
+concept_9 | vay
+concept_10 | vốn
+
+[STEP 2: RELATIONS]
+muốn | :pivot | ai
+muốn | :topic | giữ
+giữ | :theme | nghề
+nghề | :mod | truyền thống
+giữ | :manner | tạo
+tạo | :modality | được
+tạo | :theme | điều kiện
+tạo | :purpose | vay
+vay | :theme | vốn
+
+[STEP 3: AMR_WITH_VAR]
+(m / muốn
+    :pivot(a / ai)
+    :topic(g / giữ
+        :theme(n / nghề
+            :mod(t / truyền thống))
+        :manner(t1 / tạo
+            :modality(đ / được)
+            :theme(đ1 / điều kiện)
+            :purpose(v / vay
+                :theme(v1 / vốn)))))
+
+
+#::snt nhưng không !
+[STEP 1: CONCEPTS]
+concept_1 | contrast-01
+concept_2 | không
+concept_3 | expressive
+
+[STEP 2: RELATIONS]
+contrast-01 | :ARG2 | không
+không | :mode | expressive
+
+[STEP 3: AMR_WITH_VAR]
+(c / contrast-01
+    :ARG2(k / không
+        :mode expressive))
+
+
+#::snt gặp những đứa con của quê hương này , tôi bị bất ngờ bởi sức sống mãnh liệt .
+[STEP 1: CONCEPTS]
+concept_1 | bất ngờ
+concept_2 | gặp
+concept_3 | con
+concept_4 | đứa
+concept_5 | quê hương
+concept_6 | này
+concept_7 | tôi
+concept_8 | bị
+concept_9 | sức
+concept_10 | sống
+concept_11 | mãnh liệt
+
+[STEP 2: RELATIONS]
+bất ngờ | :time | gặp
+gặp | :goal | con
+con | :classifier | đứa
+con | :poss | quê hương
+quê hương | :mod | này
+gặp | :agent | tôi
+bất ngờ | :modality | bị
+bất ngờ | :reason | sức
+sức | :compound | sống
+sức | :mod | mãnh liệt
+
+[STEP 3: AMR_WITH_VAR]
+(b / bất ngờ
+    :time(g / gặp
+        :goal(c / con
+            :classifier(đ / đứa)
+            :poss(q / quê hương
+                :mod(n1 / này)))
+        :agent(t / tôi))
+    :modality(b1 / bị)
+    :reason(s / sức
+        :compound(s1 / sống)
+        :mod(m / mãnh liệt)))
+
+
+#::snt mình còn sống .
+[STEP 1: CONCEPTS]
+concept_1 | sống
+concept_2 | mình
+
+[STEP 2: RELATIONS]
+sống | :domain | mình
+
+[STEP 3: AMR_WITH_VAR]
+(s / sống
+    :domain(m / mình))
+
+
+#::snt hên thiệt !
+[STEP 1: CONCEPTS]
+concept_1 | hên
+concept_2 | thiệt
+concept_3 | expressive
+
+[STEP 2: RELATIONS]
+hên | :modality | thiệt
+hên | :mode | expressive
+
+[STEP 3: AMR_WITH_VAR]
+(h / hên
+    :modality(t / thiệt)
+    :mode expressive)
+
+
+#::snt à , mà chuyện đó cũ hết rồi ... " .
+[STEP 1: CONCEPTS]
+concept_1 | and
+concept_2 | cũ
+concept_3 | chuyện
+concept_4 | đó
+concept_5 | hết
+concept_6 | đã
+
+[STEP 2: RELATIONS]
+and | :op2 | cũ
+cũ | :domain | chuyện
+chuyện | :mod | đó
+cũ | :manner | hết
+hết | :tense | đã
+
+[STEP 3: AMR_WITH_VAR]
+(a / and
+    :op2(c1 / cũ
+        :domain(c / chuyện
+            :mod(đ / đó))
+        :manner(h / hết
+            :tense(đ1 / đã))))
+
+
+#::snt sau chiến tranh đi tháo gỡ bom mìn .
+[STEP 1: CONCEPTS]
+concept_1 | đi
+concept_2 | sau
+concept_3 | chiến tranh
+concept_4 | tháo gỡ
+concept_5 | bom mìn
+
+[STEP 2: RELATIONS]
+đi | :time | sau
+sau | :mod | chiến tranh
+đi | :purpose | tháo gỡ
+tháo gỡ | :theme | bom mìn
+
+[STEP 3: AMR_WITH_VAR]
+(đ / đi
+    :time(s / sau
+        :mod(c / chiến tranh))
+    :purpose(t / tháo gỡ
+        :theme(b / bom mìn)))
+
+
+#::snt tháo gỡ đến trái 223 thì bị nổ .
+[STEP 1: CONCEPTS]
+concept_1 | nổ
+concept_2 | tháo gỡ
+concept_3 | trái
+concept_4 | bị
+
+[STEP 2: RELATIONS]
+nổ | :time | tháo gỡ
+tháo gỡ | :location | trái
+trái | :quant | 223
+nổ | :modality | bị
+
+[STEP 3: AMR_WITH_VAR]
+(n / nổ
+    :time(t1 / tháo gỡ
+        :location(t2 / trái
+            :quant 223))
+    :modality(b / bị))
+
+
+#::snt có người đã là cô giáo dạy thcs .
+[STEP 1: CONCEPTS]
+concept_1 | người
+concept_2 | có
+concept_3 | cô giáo
+concept_4 | đã
+concept_5 | dạy
+concept_6 | thcs
+
+[STEP 2: RELATIONS]
+người | :mode | có
+người | :domain-of | cô giáo
+cô giáo | :tense | đã
+cô giáo | :agent-of | dạy
+dạy | :theme | thcs
+
+[STEP 3: AMR_WITH_VAR]
+(n / người
+    :mode(c / có)
+    :domain-of(c1 / cô giáo
+        :tense(đ / đã)
+        :agent-of(d / dạy
+            :theme(t / thcs))))
+
+
+#::snt gần đó cũng vừa mọc lên một nhà văn hóa trị giá khoảng 5 tỉ đồng .
+[STEP 1: CONCEPTS]
+concept_1 | mọc
+concept_2 | đó
+concept_3 | gần
+concept_4 | vừa
+concept_5 | lên
+concept_6 | nhà
+concept_7 | văn hóa
+concept_8 | worth
+concept_9 | monetary-quantity
+concept_10 | tỉ
+concept_11 | đồng
+
+[STEP 2: RELATIONS]
+mọc | :location | đó
+đó | :mod | gần
+mọc | :time | vừa
+mọc | :direction | lên
+mọc | :result-arg1 | nhà
+nhà | :mod | văn hóa
+nhà | :mod | worth
+worth | :numeric-value | monetary-quantity
+monetary-quantity | :quant | 5000000000
+monetary-quantity | :unit | đồng
+nhà | :quant | 1
+
+[STEP 3: AMR_WITH_VAR]
+(m / mọc
+    :location(đ / đó
+        :mod(g / gần))
+    :time(v / vừa)
+    :direction(l / lên)
+    :result-arg1(n / nhà
+        :mod(v1 / văn hóa)
+        :mod(w / worth
+            :numeric-value(m1 / monetary-quantity
+                :quant 5000000000
+                    :unit(đ1 / đồng)))
+        :quant 1))
+
+
+#::snt ngôi nhà của Ama Công .
+[STEP 1: CONCEPTS]
+concept_1 | nhà
+concept_2 | ngôi
+concept_3 | Ama
+concept_4 | Công
+
+[STEP 2: RELATIONS]
+nhà | :classifier | ngôi
+nhà | :poss | Ama_Công
+Ama_Công | :name | name
+name | :op1 | Ama
+name | :op2 | Công
+
+[STEP 3: AMR_WITH_VAR]
+(n1 / nhà
+    :classifier(n / ngôi)
+    :poss(a / Ama_Công
+        :name(n2 / name
+            :op1(wz1 / Ama)
+            :op2(wz2 / Công))))
+
+
+#::snt đó là ngôi nhà của một gia đình người Kinh dưới chân núi chư pah ( Gia Lai ) .
+[STEP 1: CONCEPTS]
+concept_1 | nhà
+concept_2 | đó
+concept_3 | ngôi
+concept_4 | gia đình
+concept_5 | người
+concept_6 | Kinh
+concept_7 | chân
+concept_8 | dưới
+concept_9 | núi
+concept_10 | name
+concept_11 | chư
+concept_12 | pa
+concept_13 | chư pah
+concept_14 | Gia_Lai
+concept_15 | city
+concept_16 | Gia
+concept_17 | Lai
+
+[STEP 2: RELATIONS]
+nhà | :domain | đó
+nhà | :classifier | ngôi
+nhà | :poss | gia đình
+gia đình | :consist-of | người
+người | :mod | Kinh
+người | :location | chân
+chân | :prep | dưới
+chân | :mod | núi
+núi | :name | name
+name | :op1 | chư
+name | :op2 | pa
+name | :op3 | chư pah
+núi | :location | city
+city | :wiki | Gia_Lai
+city | :name | name
+name | :op1 | Gia
+name | :op2 | Lai
+
+[STEP 3: AMR_WITH_VAR]
+(n / nhà
+    :domain(đ / đó)
+    :classifier(n1 / ngôi)
+    :poss(g / gia đình
+        :consist-of(n2 / người
+            :mod(K / Kinh)
+            :location(c1 / chân
+                :prep(d / dưới)
+                :mod(n3 / núi
+                    :name(n4 / name
+                        :op1(c2 / chư)
+                        :op2(p / pa)
+                        :op3(c3 / chư pah))
+                    :location(c4 / city
+                        :wiki(wz1 / Gia_Lai)
+                        :name(n5 / name
+                            :op1(G / Gia)
+                            :op2(L / Lai))))))))
+
+
+#::snt cứ nhà nào có người ốm đau , bệnh hoạn anh đều có mặt .
+[STEP 1: CONCEPTS]
+concept_1 | có
+concept_2 | nhà
+concept_3 | nào
+concept_4 | người
+concept_5 | ốm đau
+concept_6 | bệnh hoạn
+concept_7 | anh
+concept_8 | đều
+concept_9 | mặt
+
+[STEP 2: RELATIONS]
+có | :location | nhà
+nhà | :mod | nào
+có | :theme | người
+người | :mod | ốm đau
+người | :source | bệnh hoạn
+có | :pivot | anh
+có | :degree | đều
+có | :manner | mặt
+
+[STEP 3: AMR_WITH_VAR]
+(c1 / có
+    :location(n / nhà
+        :mod(n1 / nào))
+    :theme(n2 / người
+        :mod(ố / ốm đau)
+        :source(b / bệnh hoạn))
+    :pivot(a / anh)
+    :degree(đ / đều)
+    :manner(m / mặt))
+
+
+#::snt " hồi ấy đây là vùng giao tranh ác liệt - ông kể - ngày nào cũng có người chết vì bom đạn .
+[STEP 1: CONCEPTS]
+concept_1 | kể
+concept_2 | ông
+concept_3 | and
+concept_4 | vùng
+concept_5 | đây
+concept_6 | giao tranh
+concept_7 | ác liệt
+concept_8 | hồi
+concept_9 | ấy
+concept_10 | die
+concept_11 | ngày
+concept_12 | nào
+concept_13 | người
+concept_14 | chết
+concept_15 | bom đạn
+
+[STEP 2: RELATIONS]
+kể | :agent | ông
+kể | :topic | and
+and | :op1 | vùng
+vùng | :domain | đây
+vùng | :mod | giao tranh
+giao tranh | :manner | ác liệt
+vùng | :time | hồi
+hồi | :mod | ấy
+and | :op2 | die
+die | :time | ngày
+ngày | :mod | nào
+die | :patient | người
+người | :patient-of | chết
+chết | :instrument | bom đạn
+
+[STEP 3: AMR_WITH_VAR]
+(k / kể
+    :agent(ô / ông)
+    :topic(a / and
+        :op1(v / vùng
+            :domain(đ / đây)
+            :mod(g / giao tranh
+                :manner(á / ác liệt))
+            :time(h / hồi
+                :mod(ấ / ấy)))
+        :op2(d / die
+            :time(n / ngày
+                :mod(n1 / nào))
+            :patient(n2 / người
+                :patient-of(c1 / chết
+                    :instrument(b / bom đạn))))))
+
+
+#::snt nay thì mô hình đã thành công .
+[STEP 1: CONCEPTS]
+concept_1 | thành công
+concept_2 | mô hình
+concept_3 | đã
+concept_4 | now
+
+[STEP 2: RELATIONS]
+thành công | :theme | mô hình
+thành công | :tense | đã
+thành công | :time | now
+
+[STEP 3: AMR_WITH_VAR]
+(t1 / thành công
+    :theme(m / mô hình)
+    :tense(đ / đã)
+    :time(n / now))
+
+
+#::snt tất cả chỉ với hai cùi tay cụt .
+[STEP 1: CONCEPTS]
+concept_1 | with
+concept_2 | tất cả
+concept_3 | chỉ
+concept_4 | tay
+concept_5 | cùi
+concept_6 | cụt
+
+[STEP 2: RELATIONS]
+with | :theme | tất cả
+with | :degree | chỉ
+with | :instrument | tay
+tay | :part-of | cùi
+cùi | :mod | cụt
+tay | :quant | 2
+
+[STEP 3: AMR_WITH_ALL]
+(w / with
+    :theme(t / tất cả)
+    :degree(c / chỉ)
+    :instrument(t2 / tay
+        :part-of(c1 / cùi
+            :mod(c2 / cụt))
+        :quant 2))
+
+
+#::snt sẽ tổ chức phố đi bộ tại Hội An .
+[STEP 1: CONCEPTS]
+concept_1 | tổ chức
+concept_2 | sẽ
+concept_3 | phố
+concept_4 | đi
+concept_5 | bộ
+concept_6 | street
+concept_7 | Hội_An
+concept_8 | name
+concept_9 | hội
+concept_10 | an
+
+[STEP 2: RELATIONS]
+tổ chức | :tense | sẽ
+tổ chức | :theme | phố
+phố | :compound | đi
+đi | :compound | bộ
+phố | :domain | street
+street | :location | Hội_An
+Hội_An | :name | name
+name | :op1 | hội
+name | :op2 | an
+
+[STEP 3: AMR_WITH_VAR]
+(t / tổ chức
+    :tense(s / sẽ)
+    :theme(p / phố
+        :compound(đ / đi
+            :compound(b / bộ))
+        :domain(s1 / street
+            :location(h / Hội_An
+                :name(n / name
+                    :op1(h1 / hội)
+                    :op2(a / an))))))
+
+
+#::snt công ty đồng ý , cụ mãn nguyện , yên tâm sống ở đây suốt quãng đời còn lại .
+[STEP 1: CONCEPTS]
+concept_1 | đồng ý
+concept_2 | công ty
+concept_3 | mãn nguyện
+concept_4 | cụ
+concept_5 | yên tâm
+concept_6 | sống
+concept_7 | đây
+concept_8 | ở
+concept_9 | quãng đời
+concept_10 | còn
+concept_11 | lại
+concept_12 | c
+
+[STEP 2: RELATIONS]
+đồng ý | :agent | công ty
+đồng ý | :manner | mãn nguyện
+mãn nguyện | :domain | cụ
+đồng ý | :manner | yên tâm
+yên tâm | :purpose | sống
+sống | :location | đây
+đây | :prep | ở
+sống | :time | quãng đời
+quãng đời | :mod | còn
+còn | :compound | lại
+sống | :pivot | c
+
+[STEP 3: AMR_WITH_VAR]
+(đ / đồng ý
+    :agent(c / công ty)
+    :manner(m / mãn nguyện
+        :domain(c1 / cụ))
+    :manner(y / yên tâm
+        :purpose(s / sống
+            :location(đ1 / đây
+                :prep(ở / ở))
+            :time(q / quãng đời
+                :mod(c2 / còn
+                    :compound(l / lại)))
+            :pivot c)))
+
+
+#::snt một điểm chung là người thương binh ít chạm vào quá khứ .
+[STEP 1: CONCEPTS]
+concept_1 | điểm
+concept_2 | chung
+concept_3 | người
+concept_4 | thương binh
+concept_5 | chạm
+concept_6 | ít
+concept_7 | quá khứ
+
+[STEP 2: RELATIONS]
+điểm | :mod | chung
+điểm | :topic | người
+người | :mod | thương binh
+người | :agent-of | chạm
+chạm | :degree | ít
+chạm | :theme | quá khứ
+
+[STEP 3: AMR_WITH_VAR]
+(đ / điểm
+    :mod(c / chung)
+    :topic(n / người
+        :mod(t / thương binh)
+        :agent-of(c1 / chạm
+            :degree(í / ít)
+            :theme(q / quá khứ))))
+
+
+#::snt giờ nó đi làm có chút vốn , lấy đó mà học tiếp " .
+[STEP 1: CONCEPTS]
+concept_1 | đi
+concept_2 | giờ
+concept_3 | nó
+concept_4 | làm
+concept_5 | có
+concept_6 | một chút
+concept_7 | vốn
+concept_8 | lấy
+concept_9 | đó
+concept_10 | học
+concept_11 | tiếp
+
+[STEP 2: RELATIONS]
+đi | :time | giờ
+đi | :agent | nó
+đi | :purpose | làm
+làm | :quant | có
+có | :degree | một chút
+có | :theme | vốn
+làm | :means | lấy
+lấy | :theme | đó
+lấy | :purpose | học
+học | :compound | tiếp
+
+[STEP 3: AMR_WITH_VAR]
+(đ / đi
+    :time(g / giờ)
+    :agent(n / nó)
+    :purpose(l / làm
+        :quant(c / có
+            :degree(m / một chút)
+            :theme(v / vốn))
+        :means(l1 / lấy
+            :theme(đ1 / đó)
+            :purpose(h / học
+                :compound(t / tiếp)))))
+
+
+#::snt đấy là phòng giá cao nhất : 3, 5 triệu / tháng .
+[STEP 1: CONCEPTS]
+concept_1 | phòng
+concept_2 | đấy
+concept_3 | giá
+concept_4 | cao
+concept_5 | nhất
+concept_6 | rate-entity-91
+concept_7 | tiền tệ
+concept_8 | triệu
+concept_9 | tháng
+
+[STEP 2: RELATIONS]
+phòng | :domain | đấy
+phòng | :mod | giá
+giá | :mod | cao
+cao | :degree | nhất
+giá | :quant | rate-entity-91
+rate-entity-91 | :ARG2 | tiền tệ
+tiền tệ | :example | triệu
+triệu | :time | tháng
+rate-entity-91 | :quant | 3500000
+
+[STEP 3: AMR_WITH_VAR]
+(p / phòng
+    :domain(đ / đấy)
+    :mod(g / giá
+        :mod(c / cao
+            :degree(n / nhất))
+        :quant(r / rate-entity-91
+            :ARG2(t / tiền tệ
+                :example(t1 / triệu
+                    :time(t2 / tháng)))
+            :quant 3500000)))
+
+
+#::snt mẹ anh là cụ g . , có năm con .
+[STEP 1: CONCEPTS]
+concept_1 | mẹ
+concept_2 | anh
+concept_3 | cụ
+concept_4 | g
+concept_5 | have-rel-role-91
+concept_6 | con
+
+[STEP 2: RELATIONS]
+mẹ | :poss | anh
+mẹ | :mod | cụ
+cụ | :mod | g
+mẹ | :agent-of | have-rel-role-91
+have-rel-role-91 | :ARG2 | con
+con | :quant | 5
+
+[STEP 3: AMR_WITH_VAR]
+(m / mẹ
+    :poss(a / anh)
+    :mod(c / cụ
+        :mod(g / g))
+    :agent-of(h / have-rel-role-91
+        :ARG2(c1 / con
+            :quant 5)))
+
+
+#::snt bán thuốc giá cao , công ty Sanofi phải giải trình .
+[STEP 1: CONCEPTS]
+concept_1 | obligate-01
+concept_2 | bán
+concept_3 | thuốc
+concept_4 | giá
+concept_5 | cao
+concept_6 | công ty
+concept_7 | Sanofi
+concept_8 | giải trình
+
+[STEP 2: RELATIONS]
+obligate-01 | :topic | bán
+bán | :theme | thuốc
+bán | :result | giá
+giá | :degree | cao
+obligate-01 | :agent | công ty
+công ty | :wiki | Sanofi
+obligate-01 | :purpose | giải trình
+
+[STEP 3: AMR_WITH_VAR]
+(o / obligate-01
+    :topic(b / bán
+        :theme(t / thuốc)
+        :result(g / giá
+            :degree(c / cao)))
+    :agent(c2 / công ty
+        :wiki(s / Sanofi))
+    :purpose(g1 / giải trình))
+
+
+#::snt không phải phép thần kỳ biến quê hương từ chỗ cay cực nhất vinh dự nhận danh hiệu tập thể " anh hùng lao động thời kỳ đổi mới " sau 15 năm đổi mới .
+[STEP 1: CONCEPTS]
+concept_1 | phải
+concept_2 | phép
+concept_3 | thần kỳ
+concept_4 | biến
+concept_5 | quê hương
+concept_6 | chỗ
+concept_7 | cay
+concept_8 | cực
+concept_9 | nhất
+concept_10 | nhận
+concept_11 | vinh dự
+concept_12 | danh hiệu
+concept_13 | tập thể
+concept_14 | anh hùng
+concept_15 | lao động
+concept_16 | thời kỳ
+concept_17 | đổi mới
+concept_18 | after
+concept_19 | temporal-quantity
+concept_20 | năm
+
+[STEP 2: RELATIONS]
+phải | :theme | phép
+phép | :modality | thần kỳ
+phép | :theme-of | biến
+biến | :patient | quê hương
+quê hương | :location | chỗ
+chỗ | :mod | cay
+cay | :degree | cực
+cay | :degree | nhất
+quê hương | :agent-of | nhận
+nhận | :mode | vinh dự
+nhận | :theme | danh hiệu
+danh hiệu | :poss | tập thể
+tập thể | :mod | anh hùng
+anh hùng | :compound | lao động
+anh hùng | :time | thời kỳ
+thời kỳ | :mod | đổi mới
+nhận | :time | after
+after | :duration | temporal-quantity
+temporal-quantity | :quant | 15
+temporal-quantity | :unit | năm
+phải | :polarity | -
+
+[STEP 3: AMR_WITH_VAR]
+(p1 / phải
+    :theme(p / phép
+        :modality(t / thần kỳ)
+        :theme-of(b / biến
+            :patient(q / quê hương
+                :location(c / chỗ
+                    :mod(c1 / cay
+                        :degree(c2 / cực)
+                        :degree(n / nhất)))
+                :agent-of(n1 / nhận
+                    :mode(v / vinh dự)
+                    :theme(d / danh hiệu
+                        :poss(t1 / tập thể
+                            :mod(a1 / anh hùng
+                                :compound(l / lao động)
+                                :time(t2 / thời kỳ
+                                    :mod(đ1 / đổi mới))))
+                    :time(a / after
+                        :duration(t3 / temporal-quantity
+                            :quant 15
+                                :unit(n2 / năm)))))
+        :polarity -))
+
+
+#::snt ăn xong chị lại quày quả ra đi với chiếc xe đạp cọc cạch và hai cái bao nhỏ .
+[STEP 1: CONCEPTS]
+concept_1 | ăn
+concept_2 | xong
+concept_3 | chị
+concept_4 | quày quả
+concept_5 | ra
+concept_6 | đi
+concept_7 | xe đạp
+concept_8 | chiếc
+concept_9 | cọc cạch
+concept_10 | and
+concept_11 | bao
+concept_12 | cái
+concept_13 | nhỏ
+
+[STEP 2: RELATIONS]
+ăn | :mod | xong
+ăn | :agent | chị
+ăn | :result | quày quả
+quày quả | :compound | ra
+quày quả | :purpose | đi
+quày quả | :vehicle | xe đạp
+xe đạp | :classifier | chiếc
+xe đạp | :mod | cọc cạch
+quày quả | :accompanier | and
+and | :op1 | bao
+bao | :quant | 2
+bao | :classifier | cái
+bao | :mod | nhỏ
+
+[STEP 3: AMR_WITH_VAR]
+(ă / ăn
+    :mod(x / xong)
+    :agent(c / chị)
+    :result(q / quày quả
+        :compound(r / ra)
+        :purpose(đ / đi)
+        :vehicle(x1 / xe đạp
+            :classifier(c1 / chiếc)
+            :mod(c2 / cọc cạch))
+        :accompanier(a / and
+            :op1(b / bao
+                :quant 2
+                    :classifier(c3 / cái)
+                :mod(n1 / nhỏ)))))
+
+
+#::snt tối 21 - 3 , chúng tôi tìm đến chỗ trọ của vợ chồng anh trong ngôi nhà nhỏ của người em gái chị Xoan .
+[STEP 1: CONCEPTS]
+concept_1 | tìm
+concept_2 | chúng tôi
+concept_3 | đến
+concept_4 | chỗ
+concept_5 | trọ
+concept_6 | vợ chồng
+concept_7 | anh
+concept_8 | nhà
+concept_9 | trong
+concept_10 | ngôi
+concept_11 | nhỏ
+concept_12 | người
+concept_13 | em gái
+concept_14 | woman
+concept_15 | name
+concept_16 | Xoan
+concept_17 | ngày
+concept_18 | tháng
+
+[STEP 2: RELATIONS]
+tìm | :agent | chúng tôi
+tìm | :compound | đến
+tìm | :location | chỗ
+chỗ | :mod | trọ
+chỗ | :poss | vợ chồng
+vợ chồng | :mod | anh
+chỗ | :location | nhà
+nhà | :prep | trong
+nhà | :classifier | ngôi
+nhà | :mod | nhỏ
+nhà | :poss | người
+người | :mod | em gái
+người | :mod | woman
+woman | :name | name
+name | :op1 | Xoan
+woman | :wiki | -
+tìm | :time | ngày
+ngày | :date | tháng
+tháng | :op1 | 3
+ngày | :op1 | 21
+
+[STEP 3: AMR_WITH_VAR]
+(t1 / tìm
+    :agent(c / chúng tôi)
+    :compound(đ / đến)
+    :location(c1 / chỗ
+        :mod(t2 / trọ)
+        :poss(v / vợ chồng
+            :mod(a / anh))
+        :location(n1 / nhà
+            :prep(t3 / trong)
+            :classifier(n / ngôi)
+            :mod(n2 / nhỏ)
+            :poss(n3 / người
+                :mod(e / em gái)
+                :mod(w1 / woman
+                    :name(n4 / name
+                        :op1(x / Xoan))
+                    :wiki -))))
+    :time(n11 / ngày
+        :date(t11 / tháng
+            :op1 3)
+        :op1 21))
+
+
+#::snt đứa lớn theo vợ chồng chị vào tp hcm .
+[STEP 1: CONCEPTS]
+concept_1 | theo
+concept_2 | đứa
+concept_3 | lớn
+concept_4 | vợ chồng
+concept_5 | person
+concept_6 | wife
+concept_7 | husband
+concept_8 | city
+concept_9 | name
+concept_10 | tp
+concept_11 | hcm
+concept_12 | Đ
+
+[STEP 2: RELATIONS]
+theo | :theme | đứa
+đứa | :mod | lớn
+theo | :agent | vợ chồng
+vợ chồng | :consist-of | person
+person | :relationship | wife
+person | :quant | 1
+vợ chồng | :consist-of | person
+person | :relationship | husband
+person | :quant | 1
+theo | :location | city
+city | :name | name
+name | :op1 | tp
+name | :op2 | hcm
+city | :wiki | Đ
+
+[STEP 3: AMR_WITH_VAR]
+(t / theo
+    :theme(đ / đứa
+        :mod(l / lớn))
+    :agent(v / vợ chồng
+        :consist-of(p / person
+            :relationship(w / wife)
+            :quant 1)
+        :consist-of(p / person
+            :relationship(h / husband)
+            :quant 1))
+    :location(c / city
+        :name(n / name
+            :op1(t1 / tp)
+            :op2(h1 / hcm))
+        :wiki Đ))
+
+
+#::snt hà nội : 98 % - 100 % người nghiện tái nghiện .
+[STEP 1: CONCEPTS]
+concept_1 | người
+concept_2 | district
+concept_3 | name
+concept_4 | hà
+concept_5 | nội
+concept_6 | Hà_Nội
+concept_7 | nghiện
+concept_8 | tái
+concept_9 | percent-entity
+
+[STEP 2: RELATIONS]
+người | :location | district
+district | :name | name
+name | :op1 | hà
+name | :op2 | nội
+district | :wiki | Hà_Nội
+người | :pivot-of | nghiện
+nghiện | :mod | tái
+nghiện | :pivot-of | người
+người | :percentage | percent-entity
+percent-entity | :from | 98
+percent-entity | :to | 100
+
+[STEP 3: AMR_WITH_VAR]
+(n1 / người
+    :location(d / district
+        :name(n / name
+            :op1(h / hà)
+            :op2(n11 / nội))
+        :wiki(wz1 / Hà_Nội))
+    :pivot-of(n2 / nghiện
+        :mod(t / tái)
+        :pivot-of(n3 / người
+            :percentage(p / percent-entity
+                :from 98
+                :to 100))))
+
+
+#::snt lập tức các mặt hàng trên bị lập biên bản thu giữ .
+[STEP 1: CONCEPTS]
+concept_1 | lập
+concept_2 | lập tức
+concept_3 | mặt hàng
+concept_4 | bị
+concept_5 | biên bản
+concept_6 | thu giữ
+
+[STEP 2: RELATIONS]
+lập | :manner | lập tức
+lập | :patient | mặt hàng
+mặt hàng | :mod | bị
+lập | :compound | biên bản
+lập | :purpose | thu giữ
+
+[STEP 3: AMR_WITH_VAR]
+(l / lập
+    :manner(l1 / lập tức)
+    :patient(m / mặt hàng
+        :mod(b / bị))
+    :compound(b1 / biên bản)
+    :purpose(t1 / thu giữ))
+
+
+#::snt ai muốn lao động ở nước ngoài , xã làm cầu nối ... 500 liệt sĩ ! 750 hộ gia đình chính sách ! 176 thương binh ! ...
+[STEP 1: CONCEPTS]
+concept_1 | multi-sentence
+concept_2 | muốn
+concept_3 | ai
+concept_4 | lao động
+concept_5 | nước ngoài
+concept_6 | làm
+concept_7 | xã
+concept_8 | cầu
+concept_9 | nối
+concept_10 | and
+concept_11 | liệt sĩ
+concept_12 | hộ gia đình
+concept_13 | chính sách
+concept_14 | thương binh
+
+[STEP 2: RELATIONS]
+multi-sentence | :snt1 | muốn
+muốn | :pivot | ai
+muốn | :theme | lao động
+lao động | :location | nước ngoài
+multi-sentence | :snt2 | làm
+làm | :agent | xã
+làm | :theme | cầu
+cầu | :compound | nối
+multi-sentence | :snt3 | and
+and | :op1 | liệt sĩ
+liệt sĩ | :quant | 500
+and | :op2 | hộ gia đình
+hộ gia đình | :mod | chính sách
+hộ gia đình | :quant | 750
+and | :op3 | thương binh
+thương binh | :quant | 176
+
+[STEP 3: AMR_WITH_VAR]
+(w1 / multi-sentence
+    :snt1(m / muốn
+        :pivot(a / ai)
+        :theme(l / lao động
+            :location(n / nước ngoài)))
+    :snt2(l1 / làm
+        :agent(x / xã)
+        :theme(c / cầu
+            :compound(n1 / nối)))
+    :snt3(a2 / and
+        :op1(l2 / liệt sĩ
+            :quant 500)
+        :op2(h / hộ gia đình
+            :mod(c1 / chính sách)
+            :quant 750)
+        :op3(t / thương binh
+            :quant 176)))
+
+
+#::snt 17 lao động trở về từ Malaysia vì không có việc làm .
+[STEP 1: CONCEPTS]
+concept_1 | trở về
+concept_2 | lao động
+concept_3 | Malaysia
+concept_4 | có
+concept_5 | việc làm
+
+[STEP 2: RELATIONS]
+trở về | :agent | lao động
+trở về | :initialLocation | Malaysia
+trở về | :reason | có
+có | :polarity | -
+có | :theme | việc làm
+
+[STEP 3: AMR_WITH_VAR]
+(t / trở về
+    :agent(l / lao động)
+    :initialLocation(M / Malaysia)
+    :reason(c / có
+        :polarity -
+        :theme(v1 / việc làm)))
+
+
+#::snt thực chất là đổi đất lấy hạ tầng .
+[STEP 1: CONCEPTS]
+concept_1 | đổi
+concept_2 | thực chất
+concept_3 | đất
+concept_4 | hạ tầng
+
+[STEP 2: RELATIONS]
+đổi | :theme | thực chất
+thực chất | :topic | đổi
+đổi | :theme | đất
+đổi | :result-arg2 | hạ tầng
+
+[STEP 3: AMR_WITH_VAR]
+(đ / đổi
+    :theme(t / thực chất
+        :topic(đ1 / đổi
+            :theme(đ2 / đất)
+            :result-arg2(h / hạ tầng))))
+
+
+#::snt anh Đu nuôi đến khi heo lớn , bán thịt thì mới trả heo con lại cho anh Thanh , không tính lời lãi .
+[STEP 1: CONCEPTS]
+concept_1 | nuôi
+concept_2 | anh
+concept_3 | Đu
+concept_4 | khi
+concept_5 | đến
+concept_6 | lớn
+concept_7 | heo
+concept_8 | bán
+concept_9 | thịt
+concept_10 | trả
+concept_11 | mới
+concept_12 | con
+concept_13 | lại
+concept_14 | a2
+concept_15 | name
+concept_16 | Thanh
+concept_17 | tính
+concept_18 | lời lãi
+
+[STEP 2: RELATIONS]
+nuôi | :agent | anh
+anh | :wiki | Đu
+nuôi | :duration | khi
+khi | :prep | đến
+khi | :op1 | lớn
+lớn | :pivot | heo
+nuôi | :result | bán
+bán | :theme | thịt
+bán | :time | trả
+trả | :time | mới
+trả | :patient | heo
+heo | :classifier | con
+trả | :direction | lại
+trả | :beneficiary-arg2 | a2
+a2 | :name | name
+name | :op1 | Thanh
+trả | :purpose | tính
+tính | :polarity | -
+tính | :theme | lời lãi
+
+[STEP 3: AMR_WITH_VAR]
+(n / nuôi
+    :agent(a / anh
+        :wiki(wz1 / Đu))
+    :duration(k / khi
+        :prep(đ / đến)
+        :op1(l / lớn
+            :pivot(h / heo)))
+    :result(b / bán
+        :theme(t / thịt)
+        :time(t2 / trả
+            :time(m / mới)
+            :patient(h1 / heo
+                :classifier(c1 / con))
+            :direction(l2 / lại)
+            :beneficiary-arg2(a2 / a2
+                :name(n2 / name
+                    :op1(wz2 / Thanh)))
+            :purpose(t3 / tính
+                :polarity -
+                :theme(l3 / lời lãi)))))
+
+
+#::snt anh Đu thì vui mừng thông báo con heo con đi mượn ấy giờ đã thành mẹ của một bầy con ...
+[STEP 1: CONCEPTS]
+concept_1 | thông báo
+concept_2 | vui mừng
+concept_3 | anh
+concept_4 | Đu
+concept_5 | đi
+concept_6 | heo
+concept_7 | con
+concept_8 | mượn
+concept_9 | ấy
+concept_10 | thành
+concept_11 | giờ
+concept_12 | đã
+concept_13 | mẹ
+concept_14 | bầy
+concept_15 | con
+
+[STEP 2: RELATIONS]
+thông báo | :manner | vui mừng
+vui mừng | :pivot | anh
+anh | :wiki | Đu
+thông báo | :topic | đi
+đi | :agent | heo
+heo | :classifier | con
+đi | :compound | mượn
+đi | :mod | ấy
+thông báo | :topic | thành
+thành | :time | giờ
+giờ | :mod | đã
+thành | :result-arg1 | mẹ
+mẹ | :poss | bầy
+bầy | :consist-of | con
+con | :quant | 1
+
+[STEP 3: AMR_WITH_VAR]
+(t1 / thông báo
+    :manner(v / vui mừng
+        :pivot(a / anh
+            :wiki(wz1 / Đu)))
+    :topic(đ1 / đi
+        :agent(h / heo
+            :classifier(c / con))
+        :compound(m / mượn)
+        :mod(ấ / ấy))
+    :topic(t2 / thành
+        :time(g / giờ
+            :mod(đ2 / đã))
+        :result-arg1(m1 / mẹ
+            :poss(b / bầy
+                :consist-of(c2 / con
+                    :quant 1)))))
+
+
+#::snt còn anh Đu thì : " ngày 30-4-1975 tui còn y nguyên .
+[STEP 1: CONCEPTS]
+concept_1 | y nguyên
+concept_2 | anh
+concept_3 | Đu
+concept_4 | date-entity
+concept_5 | ngày
+concept_6 | tui
+
+[STEP 2: RELATIONS]
+y nguyên | :pivot | anh
+anh | :mod | Đu
+y nguyên | :time | date-entity
+date-entity | :day | 30
+date-entity | :month | 4
+date-entity | :year | 1975
+y nguyên | :domain | tui
+
+[STEP 3: AMR_WITH_VAR]
+(y / y nguyên
+    :pivot(a / anh
+        :mod(Đ / Đu))
+    :time(d / date-entity
+        :day(30 / 30)
+        :month(4 / 4)
+        :year(1975 / 1975))
+    :domain(t1 / tui))
+
+
+#::snt chuyện mới là từ chỗ đất anh gửi lại một phần thân thể ấy đang xây một trụ sở ubnd xã mới .
+[STEP 1: CONCEPTS]
+concept_1 | chuyện
+concept_2 | mới
+concept_3 | từ
+concept_4 | chỗ
+concept_5 | đất
+concept_6 | gửi
+concept_7 | anh
+concept_8 | lại
+concept_9 | thân thể
+concept_10 | phần
+concept_11 | đang
+concept_12 | xây
+concept_13 | trụ sở
+concept_14 | ubnd
+concept_15 | xã
+concept_16 | name
+concept_17 | new
+
+[STEP 2: RELATIONS]
+chuyện | :mod | mới
+chuyện | :initialLocation | từ
+từ | :location | chỗ
+chỗ | :mod | đất
+đất | :patient-of | gửi
+gửi | :agent | anh
+gửi | :compound | lại
+gửi | :theme | thân thể
+thân thể | :quant | một phần
+thân thể | :patient-of | đang
+đang | :agent-of | xây
+xây | :result-arg1 | trụ sở
+trụ sở | :mod | ubnd
+ubnd | :mod | xã
+xã | :name | name
+name | :op1 | new
+
+[STEP 3: AMR_WITH_VAR]
+(c / chuyện
+    :mod(m / mới)
+    :initialLocation(t / từ
+        :location(c1 / chỗ
+            :mod(đ / đất
+                :patient-of(g / gửi
+                    :agent(a / anh)
+                    :compound(l / lại)
+                    :theme(t1 / thân thể
+                        :quant(m1 / một phần)
+                        :patient-of(đ1 / đang
+                            :agent-of(x / xây
+                                :result-arg1(t2 / trụ sở
+                                    :mod(u / ubnd
+                                        :mod(x1 / xã
+                                            :name(n / name
+                                                :op1(wz1 / new)))))))))))))
+
+
+#::snt cũng qua rồi thời thức suốt trong bưng , đội mít , đội thúng mua đi bán lại nuôi con ăn học .
+[STEP 1: CONCEPTS]
+concept_1 | qua
+concept_2 | thời
+concept_3 | thức
+concept_4 | luôn
+concept_5 | trong
+concept_6 | bưng
+concept_7 | đội
+concept_8 | mít
+concept_9 | thúng
+concept_10 | mua
+concept_11 | đi
+concept_12 | bán
+concept_13 | lại
+concept_14 | nuôi
+concept_15 | con
+concept_16 | ăn học
+concept_17 | ever
+
+[STEP 2: RELATIONS]
+qua | :theme | thời
+thời | :theme-of | thức
+thức | :mod | luôn
+thức | :location | trong
+trong | :mod | bưng
+thức | :instrument | đội
+đội | :mod | mít
+đội | :quant | 1
+thức | :instrument | đội
+đội | :mod | thúng
+đội | :quant | 1
+thức | :purpose | mua
+mua | :compound | đi
+mua | :purpose | bán
+bán | :compound | lại
+mua | :agent | nuôi
+nuôi | :patient | con
+con | :agent-of | ăn học
+ăn học | :time | ever
+
+[STEP 3: AMR_WITH_VAR]
+(q / qua
+    :theme(t / thời
+        :theme-of(t1 / thức
+            :mod(l / luôn)
+            :location(t2 / trong
+                :mod(b / bưng))
+            :instrument(đ / đội
+                :mod(m1 / mít)
+                :quant 1)
+            :instrument(đ1 / đội
+                :mod(t3 / thúng)
+                :quant 1)
+            :purpose(m / mua
+                :compound(đ2 / đi)
+                :purpose(b1 / bán
+                    :compound(l1 / lại))
+                :agent(n / nuôi
+                    :patient(c2 / con
+                        :agent-of(ă / ăn học
+                            :time(e / ever))))))))
+
+
+#::snt họ lập tức thông báo với người thân và bạn bè đến nộp đơn xin mua đất xây dựng .
+[STEP 1: CONCEPTS]
+concept_1 | thông báo
+concept_2 | họ
+concept_3 | lập tức
+concept_4 | nộp
+concept_5 | người thân
+concept_6 | bạn bè
+concept_7 | đến
+concept_8 | đơn
+concept_9 | xin
+concept_10 | mua
+concept_11 | đất
+concept_12 | xây dựng
+concept_13 | h
+
+[STEP 2: RELATIONS]
+thông báo | :agent | họ
+thông báo | :manner | lập tức
+thông báo | :topic | nộp
+nộp | :beneficiary | người thân
+nộp | :beneficiary | bạn bè
+bạn bè | :prep | đến
+nộp | :theme | đơn
+đơn | :topic | xin
+xin | :topic | mua
+mua | :theme | đất
+đất | :purpose | xây dựng
+nộp | :agent | h
+
+[STEP 3: AMR_WITH_VAR]
+(t / thông báo
+    :agent(h / họ)
+    :manner(l / lập tức)
+    :topic(n / nộp
+        :beneficiary(n1 / người thân)
+        :beneficiary(b / bạn bè
+            :prep(đ / đến))
+        :theme(đ1 / đơn
+            :topic(x / xin
+                :topic(m1 / mua
+                    :theme(đ2 / đất
+                        :purpose(x1 / xây dựng)))))
+        :agent h))
+
+
+#::snt đến nay ngôi nhà ngói ba gian vững chãi xây trên nền căn nhà lá .
+[STEP 1: CONCEPTS]
+concept_1 | xây
+concept_2 | đến
+concept_3 | nay
+concept_4 | nhà
+concept_5 | ngói
+concept_6 | gian
+concept_7 | vững chãi
+concept_8 | nền
+concept_9 | trên
+concept_10 | căn
+concept_11 | lá
+
+[STEP 2: RELATIONS]
+xây | :time | đến
+đến | :compound | nay
+xây | :result-arg1 | nhà
+nhà | :mod | ngói
+nhà | :quant | 3
+nhà | :mod | gian
+nhà | :mod | vững chãi
+xây | :location | nền
+nền | :prep | trên
+nền | :mod | căn
+căn | :mod | nhà
+nhà | :mod | lá
+căn | :quant | 1
+
+[STEP 3: AMR_WITH_VAR]
+(x / xây
+    :time(đ / đến
+        :compound(n / nay))
+    :result-arg1(n1 / nhà
+        :mod(n2 / ngói)
+        :quant 3
+            :classifier(g / gian)
+        :mod(v / vững chãi))
+    :location(n3 / nền
+        :prep(t / trên)
+        :mod(c / căn
+            :mod(n4 / nhà
+                :mod(l / lá))
+            :quant 1)))
+
+
+#::snt công trình mẫu ... thi công bê bối .
+[STEP 1: CONCEPTS]
+concept_1 | thi công
+concept_2 | công trình
+concept_3 | mẫu
+concept_4 | bê bối
+
+[STEP 2: RELATIONS]
+thi công | :theme | công trình
+công trình | :mod | mẫu
+thi công | :manner | bê bối
+
+[STEP 3: AMR_WITH_VAR]
+(t / thi công
+    :theme(c / công trình
+        :mod(m / mẫu))
+    :manner(b / bê bối))
+
+
+#::snt hiện chúng tôi vẫn tiếp tục điều tra làm rõ động cơ của cán bộ địa phương .
+[STEP 1: CONCEPTS]
+concept_1 | tiếp tục
+concept_2 | chúng tôi
+concept_3 | vẫn
+concept_4 | điều tra
+concept_5 | làm rõ
+concept_6 | động cơ
+concept_7 | cán bộ
+concept_8 | địa phương
+
+[STEP 2: RELATIONS]
+tiếp tục | :agent | chúng tôi
+tiếp tục | :modality | vẫn
+tiếp tục | :topic | điều tra
+điều tra | :manner | làm rõ
+làm rõ | :theme | động cơ
+động cơ | :poss | cán bộ
+cán bộ | :mod | địa phương
+
+[STEP 3: AMR_WITH_VAR]
+(t / tiếp tục
+    :agent(c / chúng tôi)
+    :modality(v / vẫn)
+    :topic(đ / điều tra
+        :manner(l / làm rõ
+            :theme(đ1 / động cơ
+                :poss(c1 / cán bộ
+                    :mod(đ2 / địa phương))))))
+
+
+#::snt 80 triệu đồng ủng hộ bệnh nhân nghèo .
+[STEP 1: CONCEPTS]
+concept_1 | ủng hộ
+concept_2 | tiền
+concept_3 | monetary-quantity
+concept_4 | bệnh nhân
+concept_5 | nghèo
+
+[STEP 2: RELATIONS]
+ủng hộ | :theme | tiền
+tiền | :quant | monetary-quantity
+monetary-quantity | :value | 80000000
+tiền | :beneficiary | bệnh nhân
+bệnh nhân | :mod | nghèo
+
+[STEP 3: AMR_WITH_VAR]
+(ư / ủng hộ
+    :theme(t / tiền
+        :quant(m / monetary-quantity
+            :value 80000000)
+        :beneficiary(b / bệnh nhân
+            :mod(n / nghèo))))
+
+
+#::snt trong các trường học đã phát hiện 652 học sinh và 229 giáo viên nghiện ma túy .
+[STEP 1: CONCEPTS]
+concept_1 | phát hiện
+concept_2 | trường
+concept_3 | học
+concept_4 | đã
+concept_5 | and
+concept_6 | học sinh
+concept_7 | nghiện
+concept_8 | ma túy
+concept_9 | giáo viên
+
+[STEP 2: RELATIONS]
+phát hiện | :location | trường
+trường | :compound | học
+phát hiện | :tense | đã
+phát hiện | :theme | and
+and | :op1 | học sinh
+học sinh | :mod | nghiện
+nghiện | :theme | ma túy
+and | :op2 | giáo viên
+giáo viên | :mod | nghiện
+nghiện | :theme | ma túy
+học sinh | :quant | 652
+giáo viên | :quant | 229
+
+[STEP 3: AMR_WITH_VAR]
+(p / phát hiện
+    :location(t1 / trường
+        :compound(h / học))
+    :tense(đ / đã)
+    :theme(a / and
+        :op1(h1 / học sinh
+            :mod(n / nghiện
+                :theme(m / ma túy))
+            :quant 652)
+        :op2(g / giáo viên
+            :mod(n1 / nghiện
+                :theme(m1 / ma túy))
+            :quant 229)))
+
+
+#::snt dân Thái Mỹ cũng quen lắm hình ảnh phó chủ tịch hội cựu chiến binh xã kiêm tổ trưởng tổ nhân dân một mắt , lái xe máy bằng hai cùi tay .
+[STEP 1: CONCEPTS]
+concept_1 | quen
+concept_2 | dân
+concept_3 | country
+concept_4 | Thái_Mỹ
+concept_5 | name
+concept_6 | Thái
+concept_7 | Mỹ
+concept_8 | lắm
+concept_9 | hình ảnh
+concept_10 | and
+concept_11 | phó
+concept_12 | chủ tịch
+concept_13 | hội
+concept_14 | cựu
+concept_15 | chiến binh
+concept_16 | xã
+concept_17 | kiêm
+concept_18 | tổ trưởng
+concept_19 | tổ
+concept_20 | nhân dân
+concept_21 | một mắt
+concept_22 | lái
+concept_23 | xe máy
+concept_24 | cùi
+concept_25 | tay
+
+[STEP 2: RELATIONS]
+quen | :pivot | dân
+dân | :mod | country
+country | :wiki | Thái_Mỹ
+country | :name | name
+name | :op1 | Thái
+name | :op2 | Mỹ
+quen | :degree | lắm
+quen | :theme | hình ảnh
+hình ảnh | :mod | and
+and | :op1 | phó
+phó | :compound | chủ tịch
+phó | :poss | hội
+hội | :mod | cựu
+cựu | :compound | chiến binh
+hội | :measuring-unit | xã
+phó | :mod | kiêm
+kiêm | :op1 | tổ trưởng
+tổ trưởng | :compound | tổ
+tổ | :mod | nhân dân
+tổ | :quant | 1
+tổ | :mod | một mắt
+and | :op2 | lái
+lái | :instrument | xe máy
+lái | :means | cùi
+cùi | :part-of | tay
+cùi | :quant | 2
+
+[STEP 3: AMR_WITH_VAR]
+(q / quen
+    :pivot(d / dân
+        :mod(wz1 / country
+            :wiki(wz2 / Thái_Mỹ)
+            :name(wz3 / name
+                :op1(wz4 / Thái)
+                :op2(wz5 / Mỹ))))
+    :degree(l / lắm)
+    :theme(h / hình ảnh
+        :mod(w1 / and
+            :op1(p / phó
+                :compound(c1 / chủ tịch)
+                :poss(h1 / hội
+                    :mod(c2 / cựu
+                        :compound(c3 / chiến binh))
+                    :measuring-unit(x / xã))
+                :mod(k / kiêm
+                    :op1(t1 / tổ trưởng
+                        :compound(t2 / tổ
+                            :mod(n / nhân dân)
+                            :quant 1
+                            :mod(m1 / một mắt)))))
+            :op2(l1 / lái
+                :instrument(x1 / xe máy)
+                :means(c4 / cùi
+                    :part-of(t3 / tay)
+                    :quant 2)))))
+
+
+#::snt dự án này đã được ubnd tỉnh Phú Yên phê duyệt và giao cho ubnd huyện Sông Cầu thực hiện .
+[STEP 1: CONCEPTS]
+concept_1 | and
+concept_2 | phê duyệt
+concept_3 | dự án
+concept_4 | này
+concept_5 | đã
+concept_6 | được
+concept_7 | ubnd
+concept_8 | tỉnh
+concept_9 | Phú_Yên
+concept_10 | name
+concept_11 | Phú
+concept_12 | Yên
+concept_13 | giao
+concept_14 | thực hiện
+concept_15 | huyện
+concept_16 | Sông_Cầu
+concept_17 | river
+
+[STEP 2: RELATIONS]
+and | :op1 | phê duyệt
+phê duyệt | :theme | dự án
+dự án | :mod | này
+phê duyệt | :tense | đã
+phê duyệt | :modality | được
+phê duyệt | :agent | ubnd
+ubnd | :compound | tỉnh
+tỉnh | :wiki | Phú_Yên
+tỉnh | :name | name
+name | :op1 | Phú
+name | :op2 | Yên
+and | :op2 | giao
+giao | :topic | thực hiện
+thực hiện | :agent | ubnd
+ubnd | :compound | huyện
+huyện | :wiki | Sông_Cầu
+huyện | :name | name
+name | :op1 | Sông
+name | :op2 | Cầu
+
+[STEP 3: AMR_WITH_VAR]
+(a / and
+    :op1(p / phê duyệt
+        :theme(d / dự án
+            :mod(n / này))
+        :tense(đ / đã)
+        :modality(đ1 / được)
+        :agent(u / ubnd
+            :compound(t / tỉnh
+                :wiki(wz1 / Phú_Yên)
+                :name(n1 / name
+                    :op1(wz2 / Phú)
+                    :op2(wz3 / Yên)))))
+    :op2(g / giao
+        :topic(t1 / thực hiện
+            :agent(u1 / ubnd
+                :compound(h / huyện
+                    :wiki(wz4 / Sông_Cầu)
+                    :name(n2 / name
+                        :op1(wz5 / Sông)
+                        :op2(wz6 / Cầu)))))))
+
+
+#::snt mỗi thước " đất thép " đều thấm máu xương và mồ hôi nên chuyện con người lạ kỳ trên xã anh hùng vẫn còn dài .
+[STEP 1: CONCEPTS]
+concept_1 | cause-01
+concept_2 | thấm
+concept_3 | thước
+concept_4 | đất
+concept_5 | thép
+concept_6 | máu
+concept_7 | xương
+concept_8 | mồ hôi
+concept_9 | chuyện
+concept_10 | con người
+concept_11 | lạ kỳ
+concept_12 | xã
+concept_13 | anh hùng
+concept_14 | dài
+concept_15 | still
+
+[STEP 2: RELATIONS]
+cause-01 | :cause | thấm
+thấm | :pivot | thước
+thước | :mod | đất
+đất | :compound | thép
+thấm | :theme | và
+and | :op1 | máu
+máu | :mod | xương
+and | :op2 | mồ hôi
+thấm | :result | chuyện
+chuyện | :mod | con người
+con người | :mod | lạ kỳ
+chuyện | :location | xã
+xã | :mod | anh hùng
+chuyện | :manner | dài
+dài | :mod | still
+
+[STEP 3: AMR_WITH_VAR]
+(c1 / cause-01
+    :cause(t1 / thấm
+        :pivot(t / thước
+            :mod(đ / đất
+                :compound(t2 / thép)))
+        :theme(v / and
+            :op1(m1 / máu
+                :mod(x / xương))
+            :op2(m2 / mồ hôi))
+        :result(c / chuyện
+            :mod(c2 / con người
+                :mod(l / lạ kỳ))
+            :location(x1 / xã
+                :mod(a / anh hùng))
+            :manner(d / dài
+                :mod(s / still)))))
+
+
+#::snt như chuyện dân chắt chiu xây dựng gần 500 căn nhà tình nghĩa , tình thương ...
+[STEP 1: CONCEPTS]
+concept_1 | resemble-01
+concept_2 | xây dựng
+concept_3 | dân
+concept_4 | chắt chiu
+concept_5 | nhà
+concept_6 | tình nghĩa
+concept_7 | tình thương
+concept_8 | căn
+
+[STEP 2: RELATIONS]
+resemble-01 | :compared-to | xây dựng
+xây dựng | :agent | dân
+dân | :mod | chắt chiu
+xây dựng | :result-arg1 | nhà
+nhà | :mod | tình nghĩa
+nhà | :mod | tình thương
+nhà | :quant | 500
+nhà | :classifier | căn
+
+[STEP 3: AMR_WITH_VAR]
+(r / resemble-01
+    :compared-to(x / xây dựng
+        :agent(d / dân
+            :mod(c / chắt chiu))
+        :result-arg1(n1 / nhà
+            :mod(t / tình nghĩa)
+            :mod(t1 / tình thương)
+            :quant 500
+                :classifier(c1 / căn))))
+
+
+#::snt chị già đi rất nhiều so với cái tuổi 35 của mình .
+[STEP 1: CONCEPTS]
+concept_1 | già
+concept_2 | chị
+concept_3 | đi
+concept_4 | nhiều
+concept_5 | rất
+concept_6 | tuổi
+concept_7 | cái
+concept_8 | mình
+
+[STEP 2: RELATIONS]
+già | :domain | chị
+già | :manner | đi
+già | :degree | nhiều
+nhiều | :degree | rất
+già | :compared-to | tuổi
+tuổi | :classifier | cái
+tuổi | :poss | mình
+tuổi | :quant | 35
+
+[STEP 3: AMR_WITH_VAR]
+(g / già
+    :domain(c / chị)
+    :manner(đ / đi)
+    :degree(n / nhiều
+        :degree(r / rất))
+    :compared-to(t / tuổi
+        :classifier(c1 / cái)
+        :poss(m / mình)
+        :quant 35))
+
+
+#::snt anh khẳng định : " trong vụ kiện này , tiền bạc đối với tôi không phải là tất cả , dù gia đình tôi đang rất túng quẫn " .
+[STEP 1: CONCEPTS]
+concept_1 | khẳng định
+concept_2 | anh
+concept_3 | tiền bạc
+concept_4 | vụ
+concept_5 | trong
+concept_6 | kiện
+concept_7 | này
+concept_8 | tôi
+concept_9 | phải
+concept_10 | tất cả
+concept_11 | dù
+concept_12 | túng quẫn
+concept_13 | đang
+concept_14 | rất
+concept_15 | family
+
+[STEP 2: RELATIONS]
+khẳng định | :agent | anh
+khẳng định | :topic | tiền bạc
+tiền bạc | :location | vụ
+vụ | :prep | trong
+vụ | :mod | kiện
+vụ | :mod | này
+tiền bạc | :poss | tôi
+tiền bạc | :domain-of | phải
+phải | :polarity | -
+phải | :theme | tất cả
+phải | :concession | dù
+dù | :topic | túng quẫn
+túng quẫn | :tense | đang
+túng quẫn | :degree | rất
+túng quẫn | :pivot | family
+family | :poss | tôi
+
+[STEP 3: AMR_WITH_VAR]
+(k / khẳng định
+    :agent(a / anh)
+    :topic(t1 / tiền bạc
+        :location(v / vụ
+            :prep(t / trong)
+            :mod(k1 / kiện)
+            :mod(n / này))
+        :poss(t2 / tôi)
+        :domain-of(p / phải
+            :polarity -
+            :theme(t3 / tất cả)
+            :concession(d / dù
+                :topic(t4 / túng quẫn
+                    :tense(đ / đang)
+                    :degree(r / rất)
+                    :pivot(f / family
+                        :poss(t5 / tôi)))))))
+
+
+#::snt nhiều gia đình trong số họ đã dắt díu nhau đi đâu , chính anh Đại bây giờ cũng không rõ .
+[STEP 1: CONCEPTS]
+concept_1 | rõ
+concept_2 | dắt díu
+concept_3 | gia đình
+concept_4 | số
+concept_5 | họ
+concept_6 | đi
+concept_7 | nhau
+concept_8 | amr-unknown
+concept_9 | anh
+concept_10 | Đại
+concept_11 | now
+
+[STEP 2: RELATIONS]
+rõ | :theme | dắt díu
+dắt díu | :agent | gia đình
+gia đình | :quant | nhiều
+gia đình | :poss | số
+số | :mod | họ
+dắt díu | :purpose | đi
+đi | :agent | nhau
+đi | :location | amr-unknown
+rõ | :pivot | anh
+anh | :mod | Đại
+rõ | :time | now
+rõ | :polarity | -
+
+[STEP 3: AMR_WITH_VAR]
+(r / rõ
+    :theme(d / dắt díu
+        :agent(g / gia đình
+            :quant(n / nhiều)
+            :poss(s / số
+                :mod(h / họ)))
+        :purpose(đ1 / đi
+            :agent(n1 / nhau)
+            :location(a / amr-unknown)))
+    :pivot(a1 / anh
+        :mod(Đ / Đại))
+    :time(n2 / now)
+    :polarity -)
+
+
+#::snt nỗi oan chưa được giải nên cháu cũng phải sống trong sự ngờ vực của bạn bè .
+[STEP 1: CONCEPTS]
+concept_1 | obligate-01
+concept_2 | sống
+concept_3 | cháu
+concept_4 | sự
+concept_5 | trong
+concept_6 | ngờ vực
+concept_7 | bạn bè
+concept_8 | ch
+
+[STEP 2: RELATIONS]
+obligate-01 | :topic | sống
+sống | :pivot | cháu
+sống | :setting | sự
+sự | :prep | trong
+sự | :mod | ngờ vực
+sự | :poss | bạn bè
+sống | :reason | ch
+obligate-01 | :cause | giải
+giải | :polarity | -
+giải | :theme | nỗi
+nỗi | :compound | oan
+giải | :agent | ch
+
+[STEP 3: AMR_WITH_VAR]
+(o2 / obligate-01
+    :topic(s / sống
+        :pivot(c1 / cháu)
+        :setting(s1 / sự
+            :prep(t / trong)
+            :mod(k / ngờ vực)
+            :poss(b / bạn bè))
+        :reason ch)
+    :cause(g / giải
+        :polarity -
+        :theme(n / nỗi
+            :compound(o / oan))
+        :agent ch))
+
+
+#::snt chị Xoan vừa đi nhặt ve chai , giấy vụn trở về đang cùng chồng và đứa con gái ăn vội miếng cơm đạm bạc .
+[STEP 1: CONCEPTS]
+concept_1 | ăn
+concept_2 | đi
+concept_3 | Xoan
+concept_4 | chị
+concept_5 | nhặt
+concept_6 | ve
+concept_7 | chai
+concept_8 | giấy
+concept_9 | vụn
+concept_10 | trở về
+concept_11 | đang
+concept_12 | chồng
+concept_13 | con gái
+concept_14 | đứa
+concept_15 | vội
+concept_16 | miếng
+concept_17 | cơm
+concept_18 | đạm bạc
+
+[STEP 2: RELATIONS]
+ăn | :time | đi
+đi | :agent | Xoan
+Xoan | :classifier | chị
+đi | :purpose | nhặt
+nhặt | :patient | ve
+ve | :compound | chai
+nhặt | :patient | giấy
+giấy | :mod | vụn
+đi | :compound | trở về
+trở về | :tense | đang
+trở về | :accompanier | ăn
+ăn | :agent | cùng
+cùng | :arg1 | chồng
+cùng | :arg2 | con gái
+con gái | :classifier | đứa
+ăn | :manner | vội
+ăn | :patient | miếng
+miếng | :mod | cơm
+miếng | :mod | đạm bạc
+
+[STEP 3: AMR_WITH_VAR]
+(ă / ăn
+    :time(đ / đi
+        :agent(X / Xoan
+            :classifier(c / chị))
+        :purpose(n / nhặt
+            :patient(v1 / ve
+                :compound(c1 / chai))
+            :patient(g / giấy
+                :mod(v2 / vụn)))
+        :compound(t / trở về
+            :tense(đ1 / đang)
+            :accompanier(ă1 / ăn
+                :agent(c2 / cùng
+                    :arg1(c3 / chồng)
+                    :arg2(c4 / con gái
+                        :classifier(đ2 / đứa)))
+                :manner(v3 / vội)
+                :patient(m1 / miếng
+                    :mod(c5 / cơm)
+                    :mod(đ3 / đạm bạc)))))
+
+
+#::snt cũng như số phận của vợ chồng anh Đại , những công nhân đứng ra tố cáo tiêu cực ở đường liên cảng a5 ngày xưa bây giờ phiêu bạt khắp nơi .
+[STEP 1: CONCEPTS]
+concept_1 | phiêu bạt
+concept_2 | tố cáo
+concept_3 | công nhân
+concept_4 | đứng
+concept_5 | ra
+concept_6 | tiêu cực
+concept_7 | đường
+concept_8 | liên
+concept_9 | cảng
+concept_10 | a5
+concept_11 | ngày xưa
+concept_12 | now
+concept_13 | everywhere
+concept_14 | công
+concept_15 | nhân
+concept_16 | and
+concept_17 | số phận
+concept_18 | vợ chồng
+concept_19 | person
+concept_20 | name
+concept_21 | anh
+concept_22 | Đại
+
+[STEP 2: RELATIONS]
+phiêu bạt | :compared-to | tố cáo
+tố cáo | :agent | công nhân
+công nhân | :agent-of | đứng
+đứng | :compound | ra
+tố cáo | :manner | tiêu cực
+tố cáo | :location | đường
+đường | :mod | liên
+liên | :compound | cảng
+đường | :mod | a5
+đường | :time | ngày xưa
+phiêu bạt | :time | now
+phiêu bạt | :location | everywhere
+phiêu bạt | :agent | công
+công | :compound | nhân
+tố cáo | :agent | and
+and | :op1 | số phận
+số phận | :poss | vợ chồng
+vợ chồng | :mod | person
+person | :name | name
+name | :op1 | anh
+person | :wiki | -
+person | :name | name
+name | :op1 | Đại
+and | :op2 | công
+công | :compound | nhân
+
+[STEP 3: AMR_WITH_VAR]
+(p1 / phiêu bạt
+    :compared-to(t / tố cáo
+        :agent(c2 / công nhân
+            :agent-of(đ1 / đứng
+                :compound(r / ra)))
+        :manner(t1 / tiêu cực)
+        :location(đ2 / đường
+            :mod(l / liên
+                :compound(c3 / cảng))
+            :mod(a5 / a5)
+            :time(n1 / ngày xưa)))
+    :time(n2 / now)
+    :location(e / everywhere)
+    :agent(c1 / công
+        :compound(n3 / nhân)))
+AND
+(s / số phận
+    :poss(v / vợ chồng
+        :mod(p / person
+            :name(n / name
+                :op1(a / anh))
+            :wiki -
+            :name(n11 / name
+                :op1(Đ / Đại)))))
+AND
+(c4 / and
+    :op1(s1 / công
+        :compound(n4 / nhân))
+    :op2(c5 / công
+        :compound(n5 / nhân)))
+
+
+#::snt rùi đồng bào bị lũ lụt , hỏa hoạn , người thương binh ấy cũng lặn lội đi vận động ...
+[STEP 1: CONCEPTS]
+concept_1 | and
+concept_2 | lặn lội
+concept_3 | người
+concept_4 | thương binh
+concept_5 | ấy
+concept_6 | đi
+concept_7 | vận động
+concept_8 | after
+concept_9 | bị
+concept_10 | lũ lụt
+concept_11 | đồng bào
+concept_12 | lữa hoạn
+
+[STEP 2: RELATIONS]
+and | :op2 | lặn lội
+lặn lội | :agent | người
+người | :mod | thương binh
+thương binh | :mod | ấy
+người | :agent-of | đi
+đi | :purpose | vận động
+đi | :time | after
+after | :op1 | bị
+bị | :theme | lũ lụt
+lũ lụt | :op1 | đồng bào
+bị | :agent | lữa hoạn
+
+[STEP 3: AMR_WITH_VAR]
+(a / and
+    :op2(l1 / lặn lội
+        :agent(n / người
+            :mod(t / thương binh
+                :mod(ấ / ấy))
+            :agent-of(đ1 / đi
+                :purpose(v / vận động)
+                :time(a1 / after
+                    :op1(b / bị
+                        :theme(l / lũ lụt
+                            :op1(đ / đồng bào))
+                        :agent(l2 / lữa hoạn)))))))
+
+
+#::snt tôi rất lấy làm lạ là vì sao tôi không cho phép mà ở dưới vẫn làm .
+[STEP 1: CONCEPTS]
+concept_1 | lấy làm
+concept_2 | tôi
+concept_3 | rất
+concept_4 | lạ
+concept_5 | contrast-01
+concept_6 | cho phép
+concept_7 | dưới
+concept_8 | làm
+
+[STEP 2: RELATIONS]
+lấy làm | :pivot | tôi
+lấy làm | :degree | rất
+lấy làm | :compound | lạ
+lấy làm | :theme | contrast-01
+contrast-01 | :ARG2 | cho phép
+cho phép | :agent | tôi
+cho phép | :polarity | -
+cho phép | :location | dưới
+dưới | :agent-of | làm
+làm | :agent | tôi
+
+[STEP 3: AMR_WITH_VAR]
+(l / lấy làm
+    :pivot(t / tôi)
+    :degree(r / rất)
+    :compound(l1 / lạ)
+    :theme(c / contrast-01
+        :ARG2(c1 / cho phép
+            :agent(t1 / tôi)
+            :polarity -
+            :location(d / dưới
+                :agent-of(l2 / làm
+                    :agent(t2 / tôi))))))
+
+
+#::snt ở đó có đến 13 con người chen chúc nhau sống trong đó .
+[STEP 1: CONCEPTS]
+concept_1 | có
+concept_2 | đó
+concept_3 | con người
+concept_4 | chen
+concept_5 | chúc
+concept_6 | sống
+concept_7 | nhau
+concept_8 | đó
+concept_9 | con
+
+[STEP 2: RELATIONS]
+có | :location | đó
+có | :theme | con người
+con người | :theme-of | chen
+chen | :compound | chúc
+chen | :purpose | sống
+sống | :beneficiary | nhau
+sống | :location | đó
+con người | :quant | 13
+con người | :classifier | con
+
+[STEP 3: AMR_WITH_VAR]
+(c / có
+    :location(đ / đó)
+    :theme(c1 / con người
+        :theme-of(c2 / chen
+            :compound(c3 / chúc)
+            :purpose(s / sống
+                :beneficiary(n / nhau)
+                :location(đ1 / đó)))
+        :quant 13
+            :classifier(c4 / con)))
+
+
+#::snt wb giới thiệu mô hình xóa đói giảm nghèo của vn cho các nước đang phát triển .
+[STEP 1: CONCEPTS]
+concept_1 | giới thiệu
+concept_2 | wb
+concept_3 | mô hình
+concept_4 | xóa
+concept_5 | đói
+concept_6 | giảm
+concept_7 | nghèo
+concept_8 | country
+concept_9 | đang
+concept_10 | phát triển
+
+[STEP 2: RELATIONS]
+giới thiệu | :agent | wb
+giới thiệu | :theme | mô hình
+mô hình | :topic | xóa
+xóa | :theme | đói
+xóa | :means | giảm
+giảm | :theme | nghèo
+mô hình | :beneficiary | country
+country | :mod | đang
+đang | :compound | phát triển
+
+[STEP 3: AMR_WITH_VAR]
+(g / giới thiệu
+    :agent(wb / wb)
+    :theme(m / mô hình
+        :topic(x / xóa
+            :theme(đ / đói)
+            :means(g1 / giảm
+                :theme(n / nghèo)))
+        :beneficiary(c1 / country
+            :mod(đ1 / đang
+                :compound(p / phát triển)))))
+
+
+#::snt tôi đã chấp nhận cho trả lại tiền và lãi ngân hàng từ mấy năm nay .
+[STEP 1: CONCEPTS]
+concept_1 | chấp nhận
+concept_2 | tôi
+concept_3 | đã
+concept_4 | and
+concept_5 | trả
+concept_6 | tiền
+concept_7 | lãi
+concept_8 | ngân hàng
+concept_9 | multiple
+concept_10 | temporal-quantity
+concept_11 | năm
+
+[STEP 2: RELATIONS]
+chấp nhận | :agent | tôi
+chấp nhận | :tense | đã
+chấp nhận | :theme | and
+and | :op1 | trả
+trả | :theme | tiền
+trả | :theme | lãi
+lãi | :poss | ngân hàng
+trả | :time | multiple
+multiple | :op1 | temporal-quantity
+temporal-quantity | :unit | năm
+temporal-quantity | :quant | 1
+
+[STEP 3: AMR_WITH_VAR]
+(c / chấp nhận
+    :agent(t / tôi)
+    :tense(đ / đã)
+    :theme(a / and
+        :op1(t1 / trả
+            :theme(t2 / tiền)
+            :theme(l / lãi
+                :poss(n / ngân hàng))
+            :time(m / multiple
+                :op1(t4 / temporal-quantity
+                    :unit(n1 / năm)
+                    :quant 1)))))
+
+
+#::snt tôi cũng có suy nghĩ như đồng chí .
+[STEP 1: CONCEPTS]
+concept_1 | có
+concept_2 | tôi
+concept_3 | suy nghĩ
+concept_4 | đồng chí
+concept_5 | equal
+
+[STEP 2: RELATIONS]
+có | :pivot | tôi
+có | :theme | suy nghĩ
+có | :compared-to | đồng chí
+có | :degree | equal
+
+[STEP 3: AMR_WITH_VAR]
+(c1 / có
+    :pivot(t / tôi)
+    :theme(s / suy nghĩ)
+    :compared-to(đ / đồng chí)
+    :degree(e / equal))
+
+
+#::snt phú yên : cán bộ làm sai , dân lãnh đủ .
+[STEP 1: CONCEPTS]
+concept_1 | làm
+concept_2 | cán bộ
+concept_3 | sai
+concept_4 | dân
+concept_5 | lãnh
+concept_6 | đủ
+concept_7 | province
+concept_8 | name
+concept_9 | phú
+concept_10 | yên
+concept_11 | Phú_Yên
+
+[STEP 2: RELATIONS]
+làm | :agent | cán bộ
+cán bộ | :location | province
+province | :name | name
+name | :op1 | phú
+name | :op2 | yên
+province | :wiki | Phú_Yên
+làm | :manner | sai
+làm | :beneficiary | dân
+dân | :agent-of | lãnh
+lãnh | :degree | đủ
+
+[STEP 3: AMR_WITH_VAR]
+(l / làm
+    :agent(c / cán bộ
+        :location(p / province
+            :name(n / name
+                :op1(p1 / phú)
+                :op2(y / yên))
+            :wiki(wz1 / Phú_Yên)))
+    :manner(s / sai)
+    :beneficiary(d / dân
+        :agent-of(l1 / lãnh
+            :degree(đ / đủ))))
+
+
+#::snt chỉ còn vợ chồng anh cùng bốn người khác trong nhóm công nhân 20 người đó còn bám trụ lại ở Sài Gòn .
+[STEP 1: CONCEPTS]
+concept_1 | bám trụ
+concept_2 | còn
+concept_3 | vợ chồng
+concept_4 | anh
+concept_5 | người
+concept_6 | khác
+concept_7 | nhóm
+concept_8 | trong
+concept_9 | công nhân
+concept_10 | đó
+concept_11 |-city
+concept_12 | Sài_Gòn
+concept_13 | name
+concept_14 | Gòn
+concept_15 | Sài
+
+[STEP 2: RELATIONS]
+bám trụ | :mod | còn
+bám trụ | :pivot | vợ chồng
+vợ chồng | :consist-of | anh
+vợ chồng | :quant | 2
+bám trụ | :accompanier | người
+người | :mod | khác
+người | :quant | 4
+bám trụ | :location | nhóm
+nhóm | :prep | trong
+nhóm | :mod | công nhân
+công nhân | :mod | đó
+công nhân | :quant | 20
+bám trụ | :location | -city
+-city | :wiki | Sài_Gòn
+-city | :name | name
+name | :op2 | Gòn
+name | :op1 | Sài
+
+[STEP 3: AMR_WITH_VAR]
+(b / bám trụ
+    :mod(c1 / còn)
+    :pivot(v / vợ chồng
+        :consist-of(a / anh)
+        :quant 2)
+    :accompanier(n / người
+        :mod(k / khác)
+        :quant 4)
+    :location(n1 / nhóm
+        :prep(t / trong)
+        :mod(c2 / công nhân
+            :mod(đ / đó)
+            :quant 20))
+    :location(s / -city
+        :wiki(wz2 / Sài_Gòn)
+        :name(n2 / name
+            :op2(wz3 / Gòn)
+            :op1(wz4 / Sài))))
+
+
+#::snt tây nguyên và Nam bộ : có khả năng thiếu nước trên diện rộng .
+[STEP 1: CONCEPTS]
+concept_1 | có
+concept_2 | khả năng
+concept_3 | thiếu
+concept_4 | nước
+concept_5 | diện
+concept_6 | rộng
+concept_7 | and
+concept_8 | region
+concept_9 | name
+concept_10 | tây
+concept_11 | nguyên
+concept_12 | Nam
+concept_13 | bộ
+
+[STEP 2: RELATIONS]
+có | :theme | khả năng
+khả năng | :mod | thiếu
+thiếu | :theme | nước
+thiếu | :location | diện
+diện | :mod | rộng
+có | :location | and
+and | :op1 | region
+region | :name | name
+name | :op1 | tây
+name | :op2 | nguyên
+region | :wiki | -
+and | :op2 | region
+region | :wiki | -
+region | :name | name
+name | :op1 | Nam
+name | :op2 | bộ
+
+[STEP 3: AMR_WITH_VAR]
+(c / có
+    :theme(k / khả năng
+        :mod(t1 / thiếu
+            :theme(n1 / nước)
+            :location(d / diện
+                :mod(r / rộng))))
+    :location(a / and
+        :op1(r1 / region
+            :name(n2 / name
+                :op1(t / tây)
+                :op2(n / nguyên))
+            :wiki -)
+        :op2(r2 / region
+            :wiki -
+            :name(n3 / name
+                :op1(N / Nam)
+                :op2(b / bộ)))))
+
+
+#::snt viết tiếp về vụ anh Trương Xuân Đại .
+[STEP 1: CONCEPTS]
+concept_1 | viết
+concept_2 | tiếp
+concept_3 | vụ
+concept_4 | person
+concept_5 | name
+concept_6 | anh
+concept_7 | Trương
+concept_8 | Xuân
+concept_9 | Đại
+
+[STEP 2: RELATIONS]
+viết | :compound | tiếp
+viết | :topic | vụ
+vụ | :mod | person
+person | :name | name
+name | :op1 | anh
+name | :op2 | Trương
+name | :op3 | Xuân
+name | :op4 | Đại
+person | :wiki | -
+
+[STEP 3: AMR_WITH_VAR]
+(v1 / viết
+    :compound(t / tiếp)
+    :topic(v / vụ
+        :mod(p / person
+            :name(n / name
+                :op1(a / anh)
+                :op2(t1 / Trương)
+                :op3(x / Xuân)
+                :op4(đ / Đại))
+            :wiki -)))
+
+
+#::snt và cũng chính vì nỗi đau này , anh đã quyết định đi kiện báo Pháp Luật tp .hcm để đòi lại danh dự cho mình .
+[STEP 1: CONCEPTS]
+concept_1 | and
+concept_2 | quyết định
+concept_3 | anh
+concept_4 | đã
+concept_5 | đi
+concept_6 | kiện báo
+concept_7 | Pháp Luật
+concept_8 | tp
+concept_9 | hcm
+concept_10 | Danh_dự
+concept_11 | đòi
+concept_12 | a
+concept_13 | nỗi
+concept_14 | đau
+concept_15 | này
+
+[STEP 2: RELATIONS]
+and | :op2 | quyết định
+quyết định | :agent | anh
+quyết định | :tense | đã
+quyết định | :result | đi
+đi | :purpose | kiện báo
+kiện báo | :title | Pháp Luật
+Pháp Luật | :mod | tp
+tp | :mod | hcm
+kiện báo | :purpose | đòi
+đòi | :theme | Danh_dự
+đòi | :beneficiary | a
+quyết định | :cause | nỗi
+nỗi | :compound | đau
+nỗi | :mod | này
+
+[STEP 3: AMR_WITH_VAR]
+(w1 / and
+    :op2(q / quyết định
+        :agent(a / anh)
+        :tense(đ / đã)
+        :result(đ1 / đi
+            :purpose(k / kiện báo
+                :title(p / Pháp Luật
+                    :mod(t / tp
+                        :mod(h / hcm)))
+                :purpose(đ2 / đòi
+                    :theme(D / Danh_dự)
+                    :beneficiary a)))
+        :cause(n1 / nỗi
+            :compound(đ3 / đau)
+            :mod(n2 / này))))
+
+
+#::snt hơn nữa giá cả phải được ủy ban tỉnh cho phép .
+[STEP 1: CONCEPTS]
+concept_1 | and
+concept_2 | obligate-01
+concept_3 | cho phép
+concept_4 | price
+concept_5 | commission
+concept_6 | provincial
+
+[STEP 2: RELATIONS]
+and | :op2 | obligate-01
+obligate-01 | :topic | cho phép
+cho phép | :theme | price
+cho phép | :agent | commission
+commission | :mod | provincial
+
+[STEP 3: AMR_WITH_VAR]
+(a / and
+    :op2(o / obligate-01
+        :topic(c1 / cho phép
+            :theme(p / price)
+            :agent(c / commission
+                :mod(provincial / provincial)))))
+
+
+#::snt có thể coi đây là hợp đồng vô hiệu .
+[STEP 1: CONCEPTS]
+concept_1 | coi
+concept_2 | có thể
+concept_3 | đây
+concept_4 | hợp đồng
+concept_5 | vô hiệu
+
+[STEP 2: RELATIONS]
+coi | :modality | có thể
+coi | :theme | đây
+coi | :result-arg1 | hợp đồng
+hợp đồng | :mod | vô hiệu
+
+[STEP 3: AMR_WITH_VAR]
+(c1 / coi
+    :modality(c / có thể)
+    :theme(đ / đây)
+    :result-arg1(h / hợp đồng
+        :mod(v / vô hiệu)))
+
+
+#::snt chúng tôi xem đây như một vụ đấu tranh chống tiêu cực trong bộ máy nhà nước của chúng tôi .
+[STEP 1: CONCEPTS]
+concept_1 | xem
+concept_2 | chúng tôi
+concept_3 | đây
+concept_4 | resemble
+concept_5 | vụ
+concept_6 | đấu tranh
+concept_7 | chống
+concept_8 | tiêu cực
+concept_9 | bộ máy
+concept_10 | nhà nước
+concept_11 | trong
+concept_12 | c
+
+[STEP 2: RELATIONS]
+xem | :agent | chúng tôi
+xem | :theme | đây
+xem | :mode | resemble
+resemble | :compared-to | vụ
+vụ | :mod | đấu tranh
+đấu tranh | :mod | chống
+chống | :theme | tiêu cực
+chống | :source | bộ máy
+bộ máy | :mod | nhà nước
+bộ máy | :prep | trong
+vụ | :quant | 1
+resemble | :pivot | c
+
+[STEP 3: AMR_WITH_VAR]
+(x / xem
+    :agent(c / chúng tôi)
+    :theme(đ / đây)
+    :mode(w1 / resemble
+        :compared-to(v / vụ
+            :mod(đ1 / đấu tranh
+                :mod(c1 / chống
+                    :theme(t / tiêu cực)
+                    :source(b / bộ máy
+                        :mod(n1 / nhà nước)
+                        :prep(t1 / trong))))
+            :quant 1)
+        :pivot c))
+
+
+#::snt thế rồi hết vụ chống tiêu cực đến việc anh Đại đeo đuổi vụ kiện , của cải trong nhà lần lượt đội nón ra đi .
+[STEP 1: CONCEPTS]
+concept_1 | and
+concept_2 | đến
+concept_3 | vụ
+concept_4 | chống
+concept_5 | tiêu cực
+concept_6 | person
+concept_7 | name
+concept_8 | anh
+concept_9 | Đại
+concept_10 | đeo đuổi
+concept_11 | kiện
+concept_12 | an
+concept_13 | lần lượt
+concept_14 | đội
+concept_15 | nón
+concept_16 | ra
+concept_17 | đi
+
+[STEP 2: RELATIONS]
+and | :op2 | đến
+đến | :theme | vụ
+vụ | :mod | chống
+chống | :theme | tiêu cực
+vụ | :cause | person
+person | :name | name
+name | :op1 | anh
+name | :op2 | Đại
+person | :wiki | -
+vụ | :mod | đeo đuổi
+đeo đuổi | :topic | vụ
+vụ | :mod | kiện
+kiện | :poss | an
+vụ | :quant | 1
+and | :op1 | lần lượt
+lần lượt | :topic | đội
+đội | :theme | nón
+đội | :direction | ra
+ra | :compound | đi
+
+[STEP 3: AMR_WITH_VAR]
+(a / and
+    :op2(đ / đến
+        :theme(v / vụ
+            :mod(c / chống
+                :theme(t1 / tiêu cực))
+            :cause(p / person
+                :name(n / name
+                    :op1(a1 / anh)
+                    :op2(Đ / Đại))
+                :wiki -)
+            :mod(đ1 / đeo đuổi
+                :topic(v1 / vụ
+                    :mod(k / kiện
+                        :poss an)
+                    :quant 1))))
+    :op1(l / lần lượt
+        :topic(đ2 / đội
+            :theme(n1 / nón)
+            :direction(r / ra
+                :compound(đ3 / đi)))))
+
+
+#::snt thưa ông , sổ đỏ đã được giao cho người dân .
+[STEP 1: CONCEPTS]
+concept_1 | thưa
+concept_2 | ông
+concept_3 | giao
+concept_4 | sổ
+concept_5 | đỏ
+concept_6 | đã
+concept_7 | được
+concept_8 | người dân
+
+[STEP 2: RELATIONS]
+thưa | :goal | ông
+thưa | :topic | giao
+giao | :theme | sổ
+sổ | :mod | đỏ
+giao | :tense | đã
+giao | :modality | được
+giao | :beneficiary-arg2 | người dân
+
+[STEP 3: AMR_WITH_VAR]
+(t / thưa
+    :goal(ô / ông)
+    :topic(g / giao
+        :theme(s / sổ
+            :mod(đ / đỏ))
+        :tense(đ1 / đã)
+        :modality(đ2 / được)
+        :beneficiary-arg2(n / người dân)))
+
+
+#::snt công nhân Trương Xuân Đại kiện báo Pháp Luật tp hcm .
+[STEP 1: CONCEPTS]
+concept_1 | kiện báo
+concept_2 | công nhân
+concept_3 | person
+concept_4 | name
+concept_5 | Trương
+concept_6 | Xuân
+concept_7 | Đại
+concept_8 | Pháp Luật
+concept_9 | tp
+concept_10 | hcm
+
+[STEP 2: RELATIONS]
+kiện báo | :agent | công nhân
+công nhân | :mod | person
+person | :name | name
+name | :op1 | Trương
+name | :op2 | Xuân
+name | :op3 | Đại
+person | :wiki | -
+kiện báo | :topic | Pháp Luật
+Pháp Luật | :location | tp
+tp | :wiki | hcm
+tp | :name | name
+name | :op1 | h
+name | :op2 | cm
+
+[STEP 3: AMR_WITH_VAR]
+(k / kiện báo
+    :agent(c / công nhân
+        :mod(p / person
+            :name(n / name
+                :op1(wz1 / Trương)
+                :op2(wz2 / Xuân)
+                :op3(wz3 / Đại))
+            :wiki -))
+    :topic(p1 / Pháp Luật
+        :location(t1 / tp
+            :wiki(hcm / hcm
+                :name(n1 / name
+                    :op1(h / h)
+                    :op2(cm / cm))))
+        ))
+
+
+#::snt tôi mong mỏi sự công bằng được thực hiện và trả lại cho họ .
+[STEP 1: CONCEPTS]
+concept_1 | and
+concept_2 | mong mỏi
+concept_3 | tôi
+concept_4 | thực hiện
+concept_5 | sự
+concept_6 | công bằng
+concept_7 | được
+concept_8 | trả lại
+concept_9 | họ
+
+[STEP 2: RELATIONS]
+and | :op1 | mong mỏi
+mong mỏi | :pivot | tôi
+mong mỏi | :topic | thực hiện
+thực hiện | :theme | sự
+sự | :mod | công bằng
+thực hiện | :modality | được
+and | :op2 | trả lại
+trả lại | :beneficiary | họ
+
+[STEP 3: AMR_WITH_VAR]
+(a / and
+    :op1(m / mong mỏi
+        :pivot(t / tôi)
+        :topic(t1 / thực hiện
+            :theme(s / sự
+                :mod(c / công bằng))
+            :modality(đ / được)))
+    :op2(t2 / trả lại
+        :beneficiary(h / họ)))
+
+
+#::snt tôi rất vui khi thấy việc tố cáo tiêu cực của các anh được làm sáng tỏ và được pháp luật bảo vệ .
+[STEP 1: CONCEPTS]
+concept_1 | vui
+concept_2 | tôi
+concept_3 | rất
+concept_4 | thấy
+concept_5 | làm
+concept_6 | việc
+concept_7 | tố cáo
+concept_8 | tiêu cực
+concept_9 | anh
+concept_10 | được
+concept_11 | sáng tỏ
+concept_12 | bảo vệ
+concept_13 | pháp luật
+concept_14 | t
+
+[STEP 2: RELATIONS]
+vui | :pivot | tôi
+vui | :degree | rất
+vui | :time | thấy
+thấy | :topic | làm
+làm | :theme | việc
+việc | :mod | tố cáo
+tố cáo | :mod | tiêu cực
+tố cáo | :poss | anh
+làm | :modality | được
+làm | :result | sáng tỏ
+làm | :agent | t
+làm | :beneficiary | được
+được | :topic | bảo vệ
+bảo vệ | :agent | pháp luật
+được | :pivot | t
+
+[STEP 3: AMR_WITH_VAR]
+(v / vui
+    :pivot(t / tôi)
+    :degree(r / rất)
+    :time(t1 / thấy
+        :topic(l / làm
+            :theme(v1 / việc
+                :mod(t2 / tố cáo
+                    :mod(t3 / tiêu cực)
+                    :poss(a / anh)))
+            :modality(đ / được)
+            :result(s / sáng tỏ)
+            :agent t
+            :beneficiary(đ1 / được
+                :topic(b / bảo vệ
+                    :agent(p / pháp luật))
+                :pivot t))))
+
+
+#::snt đề nghị anh Đại liên hệ với chúng tôi : công ty xây lắp & vật tư xây dựng , 93 nguyễn công trứ , q.1 , tp hcm .
+[STEP 1: CONCEPTS]
+concept_1 | đề nghị
+concept_2 | liên hệ
+concept_3 | anh
+concept_4 | name
+concept_5 | Đại
+concept_6 | công ty
+concept_7 | xây lắp
+concept_8 | vật tư
+concept_9 | xây dựng
+concept_10 | street
+concept_11 | Nguyễn_Công_Trứ
+concept_12 | q
+concept_13 | district
+concept_14 | I
+concept_15 | city
+concept_16 | TP_HCM
+
+[STEP 2: RELATIONS]
+đề nghị | :topic | liên hệ
+liên hệ | :agent | anh
+anh | :name | name
+name | :op1 | Đại
+liên hệ | :goal | công ty
+công ty | :and | xây lắp
+xây lắp | :compound | vật tư
+vật tư | :compound | xây dựng
+công ty | :address | street
+street | :name | Nguyễn_Công_Trứ
+street | :district | q
+q | :value | district
+district | :op1 | I
+street | :city | city
+city | :wiki | TP_HCM
+
+[STEP 3: AMR_WITH_VAR]
+(đ1 / đề nghị
+    :topic(l / liên hệ
+        :agent(a / anh
+            :name(n / name
+                :op1(Đ / Đại)))
+        :goal(c / công ty
+            :and(x / xây lắp
+                :compound(v1 / vật tư
+                    :compound(x1 / xây dựng)))
+            :address(s / street
+                :name(wz1 / Nguyễn_Công_Trứ)
+                :district(q / q
+                    :value(d / district
+                        :op1(i / I)))
+                :city(c1 / city
+                    :wiki(wz2 / TP_HCM))))))
+
+
+#::snt luật sư bảo vệ quyền lợi báo Pháp Luật đề nghị hòa giải .
+[STEP 1: CONCEPTS]
+concept_1 | bảo vệ
+concept_2 | luật sư
+concept_3 | quyền lợi
+concept_4 | person
+concept_5 | name
+concept_6 | báo
+concept_7 | Pháp Luật
+concept_8 | đề nghị
+concept_9 | hòa giải
+
+[STEP 2: RELATIONS]
+bảo vệ | :agent | luật sư
+bảo vệ | :theme | quyền lợi
+quyền lợi | :poss | person
+person | :name | name
+name | :op1 | báo
+báo | :wiki | Pháp Luật
+person | :agent-of | đề nghị
+đề nghị | :topic | hòa giải
+
+[STEP 3: AMR_WITH_VAR]
+(b / bảo vệ
+    :agent(l / luật sư)
+    :theme(q / quyền lợi
+        :poss(p / person
+            :name(n / name
+                :op1(b1 / báo
+                    :wiki(wz1 / Pháp Luật)))
+            :agent-of(đ / đề nghị
+                :topic(h / hòa giải)))))
+
+
+#::snt theo ông Hải , đây là vấn đề bức xúc của tp. .
+[STEP 1: CONCEPTS]
+concept_1 | vấn đề
+concept_2 | theo
+concept_3 | ông
+concept_4 | Hải
+concept_5 | bức xúc
+concept_6 | tp
+concept_7 | here
+
+[STEP 2: RELATIONS]
+vấn đề | :topic | theo
+theo | :agent | ông
+ông | :mod | Hải
+vấn đề | :mod | bức xúc
+bức xúc | :poss | tp
+vấn đề | :domain | here
+
+[STEP 3: AMR_WITH_VAR]
+(v / vấn đề
+    :topic(t / theo
+        :agent(ô / ông
+            :mod(H / Hải)))
+    :mod(b / bức xúc
+        :poss(t1 / tp))
+    :domain(h / here))
+
+
+#::snt thân mình chịu cực , chịu khổ đã quen không màng đến , nhưng thương nhất là hai đứa con .
+[STEP 1: CONCEPTS]
+concept_1 | contrast-01
+concept_2 | màng
+concept_3 | chịu
+concept_4 | thân mình
+concept_5 | cực
+concept_6 | khổ
+concept_7 | quen
+concept_8 | already
+concept_9 | con
+concept_10 | thương
+concept_11 | nhất
+concept_12 | đứa
+
+[STEP 2: RELATIONS]
+contrast-01 | :ARG1 | màng
+màng | :pivot | chịu
+chịu | :pivot-of | thân mình
+chịu | :theme | cực
+chịu | :compound | khổ
+màng | :polarity | -
+màng | :manner | quen
+quen | :time | already
+màng | :goal | con
+con | :quant | 2
+con | :classifier | đứa
+contrast-01 | :ARG2 | thương
+thương | :degree | nhất
+thương | :pivot | con
+con | :quant | 2
+con | :classifier | đứa
+
+[STEP 3: AMR_WITH_VAR]
+(c1 / contrast-01
+    :ARG1(m2 / màng
+        :pivot(c / chịu
+            :pivot-of(t / thân mình)
+            :theme(c11 / cực)
+            :compound(k / khổ))
+        :polarity -
+        :manner(q / quen
+            :time(a / already))
+        :goal(c3 / con
+            :quant 2
+                :classifier(đ1 / đứa)))
+    :ARG2(t1 / thương
+        :degree(n1 / nhất)
+        :pivot(c4 / con
+            :quant 2
+                :classifier(đ2 / đứa))))
+
+
+#::snt khoán tự ái mang cưa ra về , Hải đuổi theo và hai bên có cãi vã nhau .
+[STEP 1: CONCEPTS]
+concept_1 | and
+concept_2 | đuổi
+concept_3 | Hải
+concept_4 | theo
+concept_5 | cãi vã
+concept_6 | bên
+concept_7 | nhau
+concept_8 | ra
+concept_9 | mang
+concept_10 | tự ái
+concept_11 | cưa
+
+[STEP 2: RELATIONS]
+and | :op2 | đuổi
+đuổi | :agent | Hải
+đuổi | :compound | theo
+and | :op2 | cãi vã
+cãi vã | :agent | bên
+bên | :quant | 2
+cãi vã | :compound | nhau
+cãi vã | :topic | ra
+ra | :agent-of | mang
+mang | :agent | tự ái
+mang | :theme | cưa
+
+[STEP 3: AMR_WITH_VAR]
+(a / and
+    :op2(đ / đuổi
+        :agent(H / Hải)
+        :compound(t1 / theo))
+    :op2(c2 / cãi vã
+        :agent(b1 / bên
+            :quant 2)
+        :compound(n1 / nhau)
+        :topic(r / ra
+            :agent-of(m1 / mang
+                :agent(t / tự ái)
+                :theme(c / cưa)))))
+
+
+#::snt khoán đã dùng cưa đang nổ gí vào người Hải , Hải đưa tay trái lên đỡ nên đã bị cắt trọng thương ...
+[STEP 1: CONCEPTS]
+concept_1 |-cut-
+concept_2 | dùng
+concept_3 | khoán
+concept_4 | đã
+concept_5 | cưa
+concept_6 | nổ
+concept_7 | đang
+concept_8 | gí
+concept_9 | người
+concept_10 | Hải
+concept_11 | đưa
+concept_12 | tay
+concept_13 | trái
+concept_14 | lên
+concept_15 | đỡ
+concept_16 | bị
+concept_17 | nặng nề
+
+[STEP 2: RELATIONS]
+cut | :time | dùng
+dùng | :agent | khoán
+dùng | :tense | đã
+dùng | :patient | cưa
+cưa | :agent-of | nổ
+nổ | :tense | đang
+nổ | :theme | gí
+gí | :patient-of | người
+người | :part-of | Hải
+người | :quant | 1
+cut | :agent | Hải
+Hải | :agent-of | đưa
+đưa | :theme | tay
+tay | :part-of | Hải
+tay | :mod | trái
+đưa | :direction | lên
+lên | :purpose | đỡ
+cut | :modality | bị
+cut | :result-arg1 | nặng nề
+
+[STEP 3: AMR_WITH_VAR]
+(c1 / cut
+    :time(d / dùng
+        :agent(k / khoán)
+        :tense(đ / đã)
+        :patient(c / cưa
+            :agent-of(n / nổ
+                :tense(đ1 / đang)
+                :theme(g / gí
+                    :patient-of(n1 / người
+                        :part-of(h / Hải)
+                        :quant 1)))))
+    :agent(h1 / Hải
+        :agent-of(đ2 / đưa
+            :theme(t / tay
+                :part-of(h2 / Hải)
+                :mod(t1 / trái))
+            :direction(l / lên
+                :purpose(s / đỡ))))
+    :modality(b / bị)
+    :result-arg1(n2 / nặng nề))
+
+
+#::snt nhìn căn chòi tạm bợ mà gia đình anh Đại cùng nhóm công nhân chống tiêu cực đang tá túc , chúng tôi không khỏi chạnh lòng .
+[STEP 1: CONCEPTS]
+concept_1 | chạnh lòng
+concept_2 | nhìn
+concept_3 | chòi
+concept_4 | căn
+concept_5 | tạm bợ
+concept_6 | chống
+concept_7 | gia đình
+concept_8 | person
+concept_9 | name
+concept_10 | đại
+concept_11 | anh
+concept_12 | công nhân
+concept_13 | nhóm
+concept_14 | đang
+concept_15 | tá túc
+concept_16 | chúng tôi
+
+[STEP 2: RELATIONS]
+chạnh lòng | :time | nhìn
+nhìn | :goal | chòi
+chòi | :classifier | căn
+chòi | :mod | tạm bợ
+chòi | :goal-of | chống
+chống | :agent | gia đình
+gia đình | :mod | person
+person | :name | name
+name | :op1 | đại
+person | :mod | anh
+chống | :accompanier | công nhân
+công nhân | :classifier | nhóm
+chống | :tense | đang
+chống | :purpose | tá túc
+chạnh lòng | :pivot | chúng tôi
+chạnh lòng | :polarity | -
+
+[STEP 3: AMR_WITH_VAR]
+(c3 / chạnh lòng
+    :time(n / nhìn
+        :goal(c1 / chòi
+            :classifier(c / căn)
+            :mod(t / tạm bợ)
+            :goal-of(c2 / chống
+                :agent(g / gia đình
+                    :mod(p / person
+                        :name(n1 / name
+                            :op1(đ / đại))
+                        :mod(a / anh)))
+                :accompanier(c4 / công nhân
+                    :classifier(n2 / nhóm))
+                :tense(đ1 / đang)
+                :purpose(t1 / tá túc))))
+    :pivot(c5 / chúng tôi)
+    :polarity -)
+
+
+#::snt để rồi bây giờ họ rơi vào cảnh túng quẫn , bần hàn đến vậy sao ?
+[STEP 1: CONCEPTS]
+concept_1 | rơi
+concept_2 | họ
+concept_3 | cảnh
+concept_4 | bây giờ
+concept_5 | túng quẫn
+concept_6 | bần hàn
+concept_7 | sao
+concept_8 | interrogative
+
+[STEP 2: RELATIONS]
+rơi | :agent | họ
+rơi | :setting | cảnh
+cảnh | :time | bây giờ
+cảnh | :mod | túng quẫn
+túng quẫn | :degree | bần hàn
+rơi | :modality | sao
+rơi | :mode | interrogative
+
+[STEP 3: AMR_WITH_VAR]
+(r1 / rơi
+    :agent(h / họ)
+    :setting(c / cảnh
+        :time(b / bây giờ)
+        :mod(t / túng quẫn
+            :degree(b1 / bần hàn)))
+    :modality(s / sao)
+    :mode interrogative)
+
+
+#::snt trong khi đó số người nhiễm hiv tại vn vẫn tiếp tục gia tăng .
+[STEP 1: CONCEPTS]
+concept_1 | contrast-01
+concept_2 | tiếp tục
+concept_3 | số
+concept_4 | người
+concept_5 | nhiễm
+concept_6 | hiv
+concept_7 | country
+concept_8 | name
+concept_9 | vn
+concept_10 | gia tăng
+
+[STEP 2: RELATIONS]
+contrast-01 | :ARG2 | tiếp tục
+tiếp tục | :theme | số
+số | :mod | người
+người | :pivot-of | nhiễm
+nhiễm | :theme | hiv
+người | :location | country
+country | :name | name
+name | :op1 | vn
+country | :wiki | +
+tiếp tục | :manner | gia tăng
+
+[STEP 3: AMR_WITH_VAR]
+(c / contrast-01
+    :ARG2(t1 / tiếp tục
+        :theme(s / số
+            :mod(n / người
+                :pivot-of(n1 / nhiễm
+                    :theme(h / hiv))
+                :location(c1 / country
+                    :name(n2 / name
+                        :op1(v / vn))
+                    :wiki +)))
+        :manner(g / gia tăng)))
+
+
+#::snt chỉ còn anh Đại và bốn người khác .
+[STEP 1: CONCEPTS]
+concept_1 | còn
+concept_2 | chỉ
+concept_3 | person
+concept_4 | and
+concept_5 | name
+concept_6 | anh
+concept_7 | Đại
+concept_8 | khác
+
+[STEP 2: RELATIONS]
+còn | :degree | chỉ
+còn | :pivot | person
+person | :concession | and
+and | :op1 | person
+person | :name | name
+name | :op1 | anh
+name | :op2 | Đại
+and | :op2 | person
+person | :quant | 4
+person | :mod | khác
+
+[STEP 3: AMR_WITH_VAR]
+(c1 / còn
+    :degree(c / chỉ)
+    :pivot(p / person
+        :concession(a / and
+            :op1(px / person
+                :name(n / name
+                    :op1(a1 / anh)
+                    :op2(Đ / Đại))
+                :mod(k / khác))
+            :op2(p1 / person
+                :quant 4
+                :mod(k1 / khác)))))
+
+
+#::snt ubnd tp đã chính thức kết luận hoan nghênh và biểu dương những việc làm tốt của họ .
+[STEP 1: CONCEPTS]
+concept_1 | kết luận
+concept_2 | ubnd
+concept_3 | tp
+concept_4 | đã
+concept_5 | chính thức
+concept_6 | and
+concept_7 | hoan nghênh
+concept_8 | biểu dương
+concept_9 | việc làm
+concept_10 | tốt
+concept_11 | họ
+
+[STEP 2: RELATIONS]
+kết luận | :agent | ubnd
+ubnd | :mod | tp
+kết luận | :tense | đã
+kết luận | :manner | chính thức
+kết luận | :topic | and
+and | :op1 | hoan nghênh
+and | :op2 | biểu dương
+biểu dương | :theme | việc làm
+việc làm | :mod | tốt
+việc làm | :poss | họ
+
+[STEP 3: AMR_WITH_VAR]
+(k / kết luận
+    :agent(u / ubnd
+        :mod(t / tp))
+    :tense(đ / đã)
+    :manner(c / chính thức)
+    :topic(a / and
+        :op1(h / hoan nghênh)
+        :op2(b / biểu dương
+            :theme(v / việc làm
+                :mod(t1 / tốt)
+                :poss(h1 / họ)))))
+
+
+#::snt tuy nhiên chính quyền tp không nên dừng ở đó .
+[STEP 1: CONCEPTS]
+concept_1 | contrast-01
+concept_2 | recommend-01
+concept_3 | chính quyền
+concept_4 | city
+concept_5 | name
+concept_6 | tp
+concept_7 | dừng
+concept_8 | đó
+
+[STEP 2: RELATIONS]
+contrast-01 | :ARG2 | recommend-01
+recommend-01 | :topic | chính quyền
+chính quyền | :location | city
+city | :name | name
+name | :op1 | tp
+recommend-01 | :polarity | -
+recommend-01 | :theme | dừng
+dừng | :location | đó
+
+[STEP 3: AMR_WITH_VAR]
+(c2 / contrast-01
+    :ARG2(r / recommend-01
+        :topic(c / chính quyền
+            :location(c1 / city
+                :name(n / name
+                    :op1(t1 / tp))))
+        :polarity -
+        :theme(d / dừng
+            :location(đ / đó))))
+
+
+#::snt 206 ngày đêm khốn khổ .
+[STEP 1: CONCEPTS]
+concept_1 | khốn khổ
+concept_2 | ngày đêm
+
+[STEP 2: RELATIONS]
+khốn khổ | :duration | ngày đêm
+ngày đêm | :quant | 206
+
+[STEP 3: AMR_WITH_VAR]
+(k / khốn khổ
+    :duration(n / ngày đêm
+        :quant 206))
+
+
+#::snt lao động tiếp tục bị bán tứ tán .
+[STEP 1: CONCEPTS]
+concept_1 | bán
+concept_2 | lao động
+concept_3 | tiếp tục
+concept_4 | bị
+concept_5 | tứ tán
+
+[STEP 2: RELATIONS]
+bán | :patient | lao động
+bán | :mod | tiếp tục
+bán | :modality | bị
+bán | :manner | tứ tán
+
+[STEP 3: AMR_WITH_VAR]
+(b / bán
+    :patient(l / lao động)
+    :mod(t / tiếp tục)
+    :modality(b1 / bị)
+    :manner(t1 / tứ tán))
+
+
+#::snt ông Trực nói tiếp : Dân gặp tôi kêu quá trời !
+[STEP 1: CONCEPTS]
+concept_1 | nói
+concept_2 | ông
+concept_3 | Trực
+concept_4 | tiếp
+concept_5 | gặp
+concept_6 | dân
+concept_7 | tôi
+concept_8 | kêu
+concept_9 | quá trời
+
+[STEP 2: RELATIONS]
+nói | :agent | ông
+ông | :mod | Trực
+nói | :compound | tiếp
+nói | :topic | gặp
+gặp | :agent | dân
+gặp | :goal | tôi
+gặp | :manner | kêu
+kêu | :degree | quá trời
+
+[STEP 3: AMR_WITH_VAR]
+(n / nói
+    :agent(ô / ông
+        :mod(T / Trực))
+    :compound(t / tiếp)
+    :topic(g / gặp
+        :agent(d / dân)
+        :goal(t1 / tôi)
+        :manner(k / kêu
+            :degree(q / quá trời))))
+
+
+#::snt bị cáo Lã Thị Kim Oanh khẳng định khoản vay của nh đều đi kèm với những dự án đầu tư hoặc kinh doanh cụ thể .
+[STEP 1: CONCEPTS]
+concept_1 | khẳng định
+concept_2 | bị cáo
+concept_3 | person
+concept_4 | name
+concept_5 | Lã
+concept_6 | Thị
+concept_7 | Kim
+concept_8 | Oanh
+concept_9 | đi
+concept_10 | khoản
+concept_11 | vay
+concept_12 | nh
+concept_13 | kèm
+concept_14 | dự án
+concept_15 | and
+concept_16 | đầu tư
+concept_17 | kinh doanh
+concept_18 | cụ thể
+
+[STEP 2: RELATIONS]
+khẳng định | :agent | bị cáo
+bị cáo | :mod | person
+person | :name | name
+name | :op1 | Lã
+name | :op2 | Thị
+name | :op3 | Kim
+name | :op4 | Oanh
+person | :wiki | -
+khẳng định | :topic | đi
+đi | :theme | khoản
+khoản | :compound | vay
+khoản | :poss | nh
+đi | :compound | kèm
+đi | :accompanier | dự án
+dự án | :mod | and
+and | :op1 | đầu tư
+and | :op2 | kinh doanh
+dự án | :mod | cụ thể
+
+[STEP 3: AMR_WITH_VAR]
+(k1 / khẳng định
+    :agent(b / bị cáo
+        :mod(p / person
+            :name(n3 / name
+                :op1(wz1 / Lã)
+                :op2(wz2 / Thị)
+                :op3(wz3 / Kim)
+                :op4(wz4 / Oanh))
+            :wiki -))
+    :topic(đ1 / đi
+        :theme(k / khoản
+            :compound(v / vay)
+            :poss(n / nh))
+        :compound(k2 / kèm)
+        :accompanier(d / dự án
+            :mod(a / and
+                :op1(đ2 / đầu tư)
+                :op2(k3 / kinh doanh))
+            :mod(c1 / cụ thể))))
+
+
+#::snt hai anh em tôi ra xem bảng thông báo .
+[STEP 1: CONCEPTS]
+concept_1 | ra
+concept_2 | anh em
+concept_3 | tôi
+concept_4 | xem
+concept_5 | bảng
+concept_6 | thông báo
+
+[STEP 2: RELATIONS]
+ra | :agent | anh em
+anh em | :part-of | tôi
+anh em | :quant | 2
+ra | :purpose | xem
+xem | :theme | bảng
+bảng | :mod | thông báo
+
+[STEP 3: AMR_WITH_VAR]
+(r / ra
+    :agent(a / anh em
+        :part-of(t / tôi)
+        :quant 2)
+    :purpose(x / xem
+        :theme(b / bảng
+            :mod(t1 / thông báo))))
+
+
+#::snt một cảnh tượng hỗn loạn , chen lấn nhau diễn ra .
+[STEP 1: CONCEPTS]
+concept_1 | diễn ra
+concept_2 | cảnh tượng
+concept_3 | hỗn loạn
+concept_4 | chen lấn
+concept_5 | nhau
+
+[STEP 2: RELATIONS]
+diễn ra | :theme | cảnh tượng
+cảnh tượng | :mod | hỗn loạn
+cảnh tượng | :agent-of | chen lấn
+chen lấn | :agent | nhau
+
+[STEP 3: AMR_WITH_VAR]
+(d / diễn ra
+    :theme(c / cảnh tượng
+        :mod(h / hỗn loạn)
+        :agent-of(c1 / chen lấn
+            :agent(n1 / nhau))))
+
+
+#::snt tôi trình bày lý do , rồi xuất trình giấy tờ để chứng minh là anh em tôi lên sứ quán đổi hộ chiếu .
+[STEP 1: CONCEPTS]
+concept_1 | and
+concept_2 | trình bày
+concept_3 | tôi
+concept_4 | lý do
+concept_5 | xuất trình
+concept_6 | giấy tờ
+concept_7 | chứng minh
+concept_8 | lên
+concept_9 | anh em
+concept_10 | t
+concept_11 | sứ quán
+concept_12 | đổi
+concept_13 | hộ chiếu
+
+[STEP 2: RELATIONS]
+and | :op1 | trình bày
+trình bày | :agent | tôi
+trình bày | :theme | lý do
+and | :op2 | xuất trình
+xuất trình | :theme | giấy tờ
+xuất trình | :purpose | chứng minh
+chứng minh | :topic | lên
+lên | :agent | anh em
+anh em | :poss | t
+lên | :location | sứ quán
+lên | :purpose | đổi
+đổi | :theme | hộ chiếu
+đổi | :agent | t
+
+[STEP 3: AMR_WITH_VAR]
+(a / and
+    :op1(t1 / trình bày
+        :agent(t / tôi)
+        :theme(l / lý do))
+    :op2(x / xuất trình
+        :theme(g / giấy tờ)
+        :purpose(c / chứng minh
+            :topic(l1 / lên
+                :agent(a1 / anh em
+                    :poss t)
+                :location(s / sứ quán)
+                :purpose(đ1 / đổi
+                    :theme(h / hộ chiếu)
+                    :agent t)))))
+
+
+#::snt đổi hộ chiếu hả , hay làm giấy thông hành về nước ?
+[STEP 1: CONCEPTS]
+concept_1 | or
+concept_2 | đổi
+concept_3 | hộ chiếu
+concept_4 | interrogative
+concept_5 | làm
+concept_6 | giấy thông hành
+concept_7 | nước
+concept_8 | về
+
+[STEP 2: RELATIONS]
+or | :op1 | đổi
+đổi | :theme | hộ chiếu
+đổi | :mode | interrogative
+or | :op2 | làm
+làm | :theme | giấy thông hành
+giấy thông hành | :purpose | nước
+nước | :prep | về
+
+[STEP 3: AMR_WITH_VAR]
+(o / or
+    :op1(đ / đổi
+        :theme(h / hộ chiếu)
+        :mode interrogative)
+    :op2(l / làm
+        :theme(g / giấy thông hành
+            :purpose(n / nước
+                :prep(v / về)))))
+
+
+#::snt anh em tôi chỉ còn biết nhìn nhau .
+[STEP 1: CONCEPTS]
+concept_1 | biết
+concept_2 | anh em
+concept_3 | tôi
+concept_4 | chỉ
+concept_5 | nhìn
+concept_6 | nhau
+
+[STEP 2: RELATIONS]
+biết | :pivot | anh em
+anh em | :poss | tôi
+biết | :degree | chỉ
+biết | :theme | nhìn
+nhìn | :goal | nhau
+
+[STEP 3: AMR_WITH_VAR]
+(b / biết
+    :pivot(a / anh em
+        :poss(t / tôi))
+    :degree(c / chỉ)
+    :theme(n / nhìn
+        :goal(n1 / nhau)))
+
+
+#::snt chị ta đon đả cầm hộ chiếu và tiền rồi bấm điện thoại .
+[STEP 1: CONCEPTS]
+concept_1 | and
+concept_2 | đon đả
+concept_3 | cầm
+concept_4 | chị
+concept_5 | ta
+concept_6 | hộ chiếu
+concept_7 | tiền
+concept_8 | bấm
+concept_9 | điện thoại
+concept_10 | c
+
+[STEP 2: RELATIONS]
+and | :op1 | đon đả
+đon đả | :manner-of | cầm
+cầm | :agent | chị
+chị | :mod | ta
+cầm | :theme | and
+and | :op1 | hộ chiếu
+and | :op2 | tiền
+and | :op2 | bấm
+bấm | :patient | điện thoại
+bấm | :agent | c
+
+[STEP 3: AMR_WITH_VAR]
+(a / and
+    :op1(đ / đon đả
+        :manner-of(c1 / cầm
+            :agent(c / chị
+                :mod(t / ta))
+            :theme(a2 / and
+                :op1(h / hộ chiếu)
+                :op2(t1 / tiền))))
+    :op2(b / bấm
+        :patient(đ1 / điện thoại)
+        :agent c))
+
+
+#::snt trong thâm tâm tôi bỗng thấy vừa buồn , vừa tủi , vừa xót xa .
+[STEP 1: CONCEPTS]
+concept_1 | thấy
+concept_2 | thâm tâm
+concept_3 | tôi
+concept_4 | bỗng
+concept_5 | and
+concept_6 | buồn
+concept_7 | tủi
+concept_8 | xót xa
+
+[STEP 2: RELATIONS]
+thấy | :location | thâm tâm
+thâm tâm | :part-of | tôi
+thấy | :manner | bỗng
+thấy | :pivot | and
+and | :op1 | buồn
+and | :op2 | tủi
+and | :op3 | xót xa
+
+[STEP 3: AMR_WITH_VAR]
+(t1 / thấy
+    :location(t / thâm tâm
+        :part-of(t2 / tôi))
+    :manner(b / bỗng)
+    :pivot(a / and
+        :op1(b1 / buồn)
+        :op2(t3 / tủi)
+        :op3(x / xót xa)))
+
+
+#::snt anh chị em chỗ tôi sống đều rất vui mừng , nhưng có lẽ đó chỉ là những chính sách .
+[STEP 1: CONCEPTS]
+concept_1 | contrast-01
+concept_2 | vui mừng
+concept_3 | anh chị em
+concept_4 | chỗ
+concept_5 | sống
+concept_6 | tôi
+concept_7 | rất
+concept_8 | đó
+concept_9 | chỉ
+concept_10 | chính sách
+
+[STEP 2: RELATIONS]
+contrast-01 | :ARG1 | vui mừng
+vui mừng | :pivot | anh chị em
+anh chị em | :location | chỗ
+chỗ | :mod | sống
+sống | :pivot | tôi
+vui mừng | :degree | rất
+contrast-01 | :ARG2 | chính sách
+chính sách | :domain | đó
+chính sách | :degree | chỉ
+
+[STEP 3: AMR_WITH_VAR]
+(c11 / contrast-01
+    :ARG1(v / vui mừng
+        :pivot(a / anh chị em
+            :location(c / chỗ
+                :mod(s / sống
+                    :pivot(t / tôi))))
+        :degree(r / rất))
+    :ARG2(c2 / chính sách
+        :domain(đ1 / đó)
+        :degree(c3 / chỉ)))
+
+
+#::snt thấy chúng tôi , ông hỏi đúng giọng bảo vệ chuyên nghiệp :
+[STEP 1: CONCEPTS]
+concept_1 | hỏi
+concept_2 | thấy
+concept_3 | chúng tôi
+concept_4 | ông
+concept_5 | giọng
+concept_6 | đúng
+concept_7 | bảo vệ
+concept_8 | chuyên nghiệp
+
+[STEP 2: RELATIONS]
+hỏi | :time | thấy
+thấy | :goal | chúng tôi
+hỏi | :agent | ông
+hỏi | :manner | giọng
+giọng | :degree | đúng
+giọng | :poss | bảo vệ
+bảo vệ | :mod | chuyên nghiệp
+
+[STEP 3: AMR_WITH_VAR]
+(h / hỏi
+    :time(t / thấy
+        :goal(c / chúng tôi))
+    :agent(ô / ông)
+    :manner(g / giọng
+        :degree(đ / đúng)
+        :poss(b / bảo vệ
+            :mod(c1 / chuyên nghiệp))))
+
+
+#::snt nói rồi anh cán bộ ôm tập hồ sơ đi .
+[STEP 1: CONCEPTS]
+concept_1 | nói
+concept_2 | ôm
+concept_3 | anh
+concept_4 | cán bộ
+concept_5 | tập
+concept_6 | hồ sơ
+concept_7 | đi
+
+[STEP 2: RELATIONS]
+nói | :manner | ôm
+ôm | :agent | anh
+anh | :mod | cán bộ
+ôm | :theme | tập
+tập | :mod | hồ sơ
+ôm | :purpose | đi
+
+[STEP 3: AMR_WITH_VAR]
+(n / nói
+    :manner(ô / ôm
+        :agent(a / anh
+            :mod(c / cán bộ))
+        :theme(t / tập
+            :mod(h / hồ sơ))
+        :purpose(đ / đi)))
+
+
+#::snt bộ trưởng ra tòa làm nhân chứng .
+[STEP 1: CONCEPTS]
+concept_1 | ra
+concept_2 | bộ trưởng
+concept_3 | tòa
+concept_4 | làm
+concept_5 | nhân chứng
+
+[STEP 2: RELATIONS]
+ra | :agent | bộ trưởng
+ra | :location | tòa
+ra | :purpose | làm
+làm | :role | nhân chứng
+
+[STEP 3: AMR_WITH_VAR]
+(r / ra
+    :agent(b / bộ trưởng)
+    :location(t / tòa)
+    :purpose(l / làm
+        :role(n / nhân chứng)))
+
+
+#::snt để có các số liệu trên , công an tp trước đó đã có văn bản đề nghị ubnd tp HCM thành lập hội đồng giám định xây dựng công trình này .
+[STEP 1: CONCEPTS]
+concept_1 | có
+concept_2 | số liệu
+concept_3 | trên
+concept_4 | công an
+concept_5 | tp
+concept_6 | trước
+concept_7 | đó
+concept_8 | đã
+concept_9 | văn bản
+concept_10 | đề nghị
+concept_11 | ubnd
+concept_12 | thành lập
+concept_13 | hội đồng
+concept_14 | giám định
+concept_15 | xây dựng
+concept_16 | công trình
+concept_17 | này
+
+[STEP 2: RELATIONS]
+có | :purpose | số liệu
+số liệu | :location | trên
+có | :agent | công an
+công an | :mod | tp
+có | :time | trước
+trước | :mod | đó
+có | :tense | đã
+có | :theme | văn bản
+văn bản | :topic | đề nghị
+đề nghị | :goal | ubnd
+ubnd | :mod | tp
+tp | :wiki | HCM
+đề nghị | :topic | thành lập
+thành lập | :theme | hội đồng
+hội đồng | :agent-of | giám định
+giám định | :topic | xây dựng
+xây dựng | :theme | công trình
+công trình | :mod | này
+
+[STEP 3: AMR_WITH_VAR]
+(c3 / có
+    :purpose(s / số liệu
+        :location(t / trên))
+    :agent(c1 / công an
+        :mod(t1 / tp))
+    :time(t2 / trước
+        :mod(đ1 / đó))
+    :tense(đ2 / đã)
+    :theme(v / văn bản
+        :topic(đ3 / đề nghị
+            :goal(u / ubnd
+                :mod(t3 / tp
+                    :wiki(wz1 / HCM)))
+            :topic(t4 / thành lập
+                :theme(h / hội đồng
+                    :agent-of(g / giám định
+                        :topic(x / xây dựng
+                            :theme(c4 / công trình
+                                :mod(n / này)))))))))
+
+
+#::snt việc ký xác nhận này , theo ông Luân , diễn ra " sau khi vụ trưởng vụ tài chính kế toán Phan Văn Quán đã xác nhận " .
+[STEP 1: CONCEPTS]
+concept_1 | diễn
+concept_2 | việc
+concept_3 | ký
+concept_4 | xác nhận
+concept_5 | này
+concept_6 | ông
+concept_7 | Luân
+concept_8 | ra
+concept_9 | after
+concept_10 | xác nhận
+concept_11 | vụ trưởng
+concept_12 | vụ
+concept_13 | tài chính
+concept_14 | kế toán
+concept_15 | person
+concept_16 | name
+concept_17 | Phan
+concept_18 | Văn
+concept_19 | Quán
+
+[STEP 2: RELATIONS]
+diễn | :topic | việc
+việc | :mod | ký
+ký | :theme | xác nhận
+xác nhận | :mod | này
+việc | :agent | ông
+ông | :mod | Luân
+diễn | :compound | ra
+diễn | :time | after
+after | :op1 | xác nhận
+xác nhận | :agent | vụ trưởng
+vụ trưởng | :mod | vụ
+vụ | :mod | tài chính
+tài chính | :mod | kế toán
+vụ trưởng | :mod | person
+person | :name | name
+name | :op1 | Phan
+name | :op2 | Văn
+name | :op3 | Quán
+person | :wiki | -
+
+[STEP 3: AMR_WITH_VAR]
+(d / diễn
+    :topic(v / việc
+        :mod(k / ký
+            :theme(x / xác nhận
+                :mod(n / này)))
+        :agent(ô / ông
+            :mod(l / Luân)))
+    :compound(r / ra)
+    :time(a / after
+        :op1(x1 / xác nhận
+            :agent(v1 / vụ trưởng
+                :mod(v2 / vụ
+                    :mod(t1 / tài chính
+                        :mod(k1 / kế toán)))
+                :mod(p / person
+                    :name(n1 / name
+                        :op1(wz1 / Phan)
+                        :op2(wz2 / Văn)
+                        :op3(wz3 / Quán))
+                    :wiki -)))))
+
+
+#::snt ông Nguyễn Thế Khanh , chi cục phó , cho biết đây là những mặt hàng điện tử cũ đã có qui định cấm nhập khẩu dưới mọi hình thức .
+[STEP 1: CONCEPTS]
+concept_1 | cho biết
+concept_2 | ông
+concept_3 | person
+concept_4 | name
+concept_5 | Nguyễn
+concept_6 | Thế
+concept_7 | Khanh
+concept_8 | chi cục phó
+concept_9 | mặt hàng
+concept_10 | đây
+concept_11 | điện tử
+concept_12 | cũ
+concept_13 | có
+concept_14 | qui định
+concept_15 | cấm
+concept_16 | nhập khẩu
+concept_17 | dưới
+concept_18 | mọi
+concept_19 | hình thức
+
+[STEP 2: RELATIONS]
+cho biết | :agent | ông
+ông | :mod | person
+person | :name | name
+name | :op1 | Nguyễn
+name | :op2 | Thế
+name | :op3 | Khanh
+person | :wiki | -
+cho biết | :topic | mặt hàng
+mặt hàng | :domain | đây
+mặt hàng | :mod | điện tử
+điện tử | :mod | cũ
+mặt hàng | :agent-of | có
+có | :result-arg1 | qui định
+qui định | :topic | cấm
+cấm | :theme | nhập khẩu
+nhập khẩu | :manner | dưới
+dưới | :mod | mọi
+dưới | :mod | hình thức
+
+[STEP 3: AMR_WITH_VAR]
+(c1 / cho biết
+    :agent(ô / ông
+        :mod(p / person
+            :name(n1 / name
+                :op1(wz1 / Nguyễn)
+                :op2(wz2 / Thế)
+                :op3(wz3 / Khanh))
+            :wiki -))
+    :topic(m / mặt hàng
+        :domain(đ / đây)
+        :mod(đ1 / điện tử
+            :mod(c2 / cũ))
+        :agent-of(c3 / có
+            :result-arg1(q / qui định
+                :topic(c4 / cấm
+                    :theme(n3 / nhập khẩu
+                        :manner(d / dưới
+                            :mod(m1 / mọi)
+                            :mod(h / hình thức))))))))
+
+
+#::snt hợp đồng lao động được thực hiện từ tháng 8 – 2003 , thời hạn 36 tháng với loại công việc là công nhân xây dựng .
+[STEP 1: CONCEPTS]
+concept_1 | thực hiện
+concept_2 | hợp đồng
+concept_3 | lao động
+concept_4 | được
+concept_5 | date-entity
+concept_6 | tháng
+concept_7 | eight
+concept_8 | công việc
+concept_9 | loại
+concept_10 | công nhân
+concept_11 | xây dựng
+concept_12 | duration
+concept_13 | Thời_hạn
+
+[STEP 2: RELATIONS]
+thực hiện | :theme | hợp đồng
+hợp đồng | :mod | lao động
+thực hiện | :modality | được
+thực hiện | :time | date-entity
+date-entity | :initialTime | tháng
+tháng | :value | eight
+eight | :year | 2003
+thực hiện | :purpose | công việc
+công việc | :classifier | loại
+công việc | :mod | công nhân
+công nhân | :compound | xây dựng
+thực hiện | :duration | duration
+duration | :unit | tháng
+duration | :quant | 36
+duration | :name | Thời_hạn
+
+[STEP 3: AMR_WITH_VAR]
+(t1 / thực hiện
+    :theme(h / hợp đồng
+        :mod(l / lao động))
+    :modality(đ / được)
+    :time(d / date-entity
+        :initialTime(t / tháng
+            :value(e / eight
+                :year 2003)))
+    :purpose(c1 / công việc
+        :classifier(l1 / loại)
+        :mod(c / công nhân
+            :compound(x / xây dựng)))
+    :duration(d1 / duration
+        :unit(t2 / tháng)
+        :quant 36
+            :name(wz1 / Thời_hạn)))
+
+
+#::snt trường hợp nghiên cứu của vn mang tựa đề " tác động của phát triển cơ sở hạ tầng đối với giảm nghèo nông thôn " .
+[STEP 1: CONCEPTS]
+concept_1 | mang
+concept_2 | trường hợp
+concept_3 | nghiên cứu
+concept_4 | vn
+concept_5 | tựa đề
+concept_6 | tác động
+concept_7 | phát triển
+concept_8 | cơ sở
+concept_9 | hạ tầng
+concept_10 | giảm
+concept_11 | nông thôn
+concept_12 | v
+
+[STEP 2: RELATIONS]
+mang | :theme | trường hợp
+trường hợp | :mod | nghiên cứu
+trường hợp | :poss | vn
+mang | :compound | tựa đề
+tựa đề | :topic | tác động
+tác động | :topic | phát triển
+phát triển | :theme | cơ sở
+cơ sở | :mod | hạ tầng
+tác động | :goal | giảm
+giảm | :theme | nông thôn
+mang | :agent | v
+
+[STEP 3: AMR_WITH_VAR]
+(m / mang
+    :theme(t / trường hợp
+        :mod(n / nghiên cứu)
+        :poss(v / vn))
+    :compound(t1 / tựa đề
+        :topic(t2 / tác động
+            :topic(p / phát triển
+                :theme(c1 / cơ sở
+                    :mod(h / hạ tầng)))
+            :goal(g / giảm
+                :theme(n1 / nông thôn))))
+    :agent v)
+
+
+#::snt đừng để người dân đặt cược cho niềm tin !
+[STEP 1: CONCEPTS]
+concept_1 | obligate-01
+concept_2 | đặt cược
+concept_3 | người dân
+concept_4 | niềm
+concept_5 | tin
+concept_6 | n
+concept_7 | imperative
+
+[STEP 2: RELATIONS]
+obligate-01 | :theme | đặt cược
+đặt cược | :agent | người dân
+đặt cược | :purpose | niềm
+niềm | :compound | tin
+niềm | :poss | n
+obligate-01 | :mode | imperative
+obligate-01 | :polarity | -
+
+[STEP 3: AMR_WITH_VAR]
+(o / obligate-01
+    :theme(đ1 / đặt cược
+        :agent(n / người dân)
+        :purpose(n1 / niềm
+            :compound(t / tin)
+            :poss n))
+    :mode imperative
+    :polarity -)
+
+
+#::snt muốn biết đúng hay sai tòa phải nhờ ... hội đồng thẩm định .
+[STEP 1: CONCEPTS]
+concept_1 | muốn
+concept_2 | biết
+concept_3 | đúng
+concept_4 | hoặc
+concept_5 | sai
+concept_6 | nhờ
+concept_7 | tòa
+concept_8 | phải
+concept_9 | hội đồng
+concept_10 | thẩm định
+
+[STEP 2: RELATIONS]
+muốn | :theme | biết
+biết | :theme | đúng
+đúng | :or | sai
+biết | :pivot | nhờ
+nhờ | :beneficiary-arg0 | tòa
+nhờ | :modality | phải
+nhờ | :beneficiary-arg1 | hội đồng
+hội đồng | :compound | thẩm định
+
+[STEP 3: AMR_WITH_VAR]
+(m / muốn
+    :theme(b / biết
+        :theme(đ / đúng
+            :or(s / sai))
+        :pivot(n / nhờ
+            :beneficiary-arg0(t / tòa)
+            :modality(p / phải)
+            :beneficiary-arg1(h / hội đồng
+                :compound(t1 / thẩm định)))))
+
+
+#::snt ông Hải cũng chỉ đạo sở gtcc báo cáo về xử lý tiêu cực ở công trình này .
+[STEP 1: CONCEPTS]
+concept_1 | chỉ đạo
+concept_2 | ông
+concept_3 | Hải
+concept_4 | sở
+concept_5 | gtcc
+concept_6 | báo cáo
+concept_7 | xử lý
+concept_8 | tiêu cực
+concept_9 | công trình
+concept_10 | này
+
+[STEP 2: RELATIONS]
+chỉ đạo | :agent | ông
+ông | :mod | Hải
+chỉ đạo | :topic | sở
+sở | :mod | gtcc
+chỉ đạo | :topic | báo cáo
+báo cáo | :topic | xử lý
+xử lý | :theme | tiêu cực
+xử lý | :setting | công trình
+công trình | :mod | này
+
+[STEP 3: AMR_WITH_VAR]
+(c1 / chỉ đạo
+    :agent(ô / ông
+        :mod(h / Hải))
+    :topic(s / sở
+        :mod(g / gtcc))
+    :topic(b / báo cáo
+        :topic(x / xử lý
+            :theme(t / tiêu cực)
+            :setting(c2 / công trình
+                :mod(n / này)))))
+
+
+#::snt làm cho dân thấy và nói cho dân hiểu ! " .
+[STEP 1: CONCEPTS]
+concept_1 | and
+concept_2 | làm
+concept_3 | thấy
+concept_4 | dân
+concept_5 | nói
+concept_6 | hiểu
+concept_7 | d
+
+[STEP 2: RELATIONS]
+and | :op1 | làm
+làm | :purpose | thấy
+thấy | :pivot | dân
+and | :op2 | nói
+nói | :purpose | hiểu
+hiểu | :pivot | d
+nói | :agent | d
+
+[STEP 3: AMR_WITH_VAR]
+(a / and
+    :op1(l / làm
+        :purpose(t / thấy
+            :pivot(d / dân)))
+    :op2(n / nói
+        :purpose(h / hiểu
+            :pivot d)
+        :agent d))
+
+
+#::snt trở về đời thường , đôi bạn cựu chiến binh phan văn đu và Phạm Văn Thanh ngồi bên ấm trà .
+[STEP 1: CONCEPTS]
+concept_1 | ngồi
+concept_2 | trở về
+concept_3 | đời thường
+concept_4 | person
+concept_5 | have-org-role-91
+concept_6 | organization
+concept_7 | cựu chiến binh
+concept_8 | name
+concept_9 | phan
+concept_10 | văn
+concept_11 | đu
+concept_12 | Phạm
+concept_13 | Văn
+concept_14 | Thanh
+concept_15 | bên
+concept_16 | ấm
+concept_17 | trà
+
+[STEP 2: RELATIONS]
+ngồi | :purpose | trở về
+trở về | :setting | đời thường
+ngồi | :agent | person
+person | :agent-of | have-org-role-91
+have-org-role-91 | :ARG1 | organization
+organization | :mod | cựu chiến binh
+have-org-role-91 | :ARG2 | name
+name | :op1 | phan
+name | :op2 | văn
+name | :op3 | đu
+person | :wiki | -
+person | :name | name
+name | :op1 | Phạm
+name | :op2 | Văn
+name | :op3 | Thanh
+ngồi | :location | bên
+bên | :mod | ấm
+ấm | :mod | trà
+
+[STEP 3: AMR_WITH_VAR]
+(n / ngồi
+    :purpose(t / trở về
+        :setting(đ1 / đời thường))
+    :agent(px / person
+        :agent-of(h / have-org-role-91
+            :ARG1(o / organization
+                :mod(c / cựu chiến binh))
+            :ARG2(n1 / name
+                :op1(p1 / phan)
+                :op2(v1 / văn)
+                :op3(đ / đu)))
+        :wiki -
+        :name(n2 / name
+            :op1(p2 / Phạm)
+            :op2(v2 / Văn)
+            :op3(t1 / Thanh)))
+    :location(b / bên
+        :mod(ấ / ấm
+            :mod(t2 / trà))))
+
+
+#::snt cả đoàn mang mì gói ra ăn , lượm các lon bia để nấu nước sôi .
+[STEP 1: CONCEPTS]
+concept_1 | and
+concept_2 | mang
+concept_3 | đoàn
+concept_4 | mì gói
+concept_5 | ra
+concept_6 | ăn
+concept_7 | lượm
+concept_8 | lon
+concept_9 | bia
+concept_10 | nấu
+concept_11 | nước
+concept_12 | sôi
+
+[STEP 2: RELATIONS]
+and | :op1 | mang
+mang | :agent | đoàn
+mang | :theme | mì gói
+mang | :direction | ra
+mang | :purpose | ăn
+and | :op2 | lượm
+lượm | :theme | lon
+lon | :mod | bia
+lượm | :purpose | nấu
+nấu | :theme | nước
+nước | :mod | sôi
+
+[STEP 3: AMR_WITH_VAR]
+(a / and
+    :op1(m / mang
+        :agent(đ / đoàn)
+        :theme(m1 / mì gói)
+        :direction(r / ra)
+        :purpose(ă / ăn))
+    :op2(l / lượm
+        :theme(l1 / lon
+            :mod(b / bia))
+        :purpose(n / nấu
+            :theme(n1 / nước
+                :mod(s / sôi)))))
+
+
+#::snt sơ đồ qui hoạch được chính quyền sở tại công bố công khai , hiện vẫn được dựng công khai cách trụ sở ubnd xã Xuân Hải khoảng 2 km .
+[STEP 1: CONCEPTS]
+concept_1 | công bố
+concept_2 | sơ đồ
+concept_3 | qui hoạch
+concept_4 | công khai
+concept_5 | chính quyền
+concept_6 | sở tại
+concept_7 | vẫn
+concept_8 | dựng
+concept_9 | khoảng
+concept_10 | distance-quantity
+concept_11 | km
+concept_12 | way
+concept_13 | Trụ sở
+concept_14 | ubnd
+concept_15 | xã
+concept_16 | name
+concept_17 | xuân
+concept_18 | hải
+concept_19 | Xuân_Hải
+
+[STEP 2: RELATIONS]
+công bố | :theme | sơ đồ
+sơ đồ | :mod | qui hoạch
+công bố | :manner | công khai
+công bố | :agent | chính quyền
+chính quyền | :mod | sở tại
+công bố | :manner | vẫn
+vẫn | :compound | dựng
+vẫn | :location | khoảng
+khoảng | :op1 | distance-quantity
+distance-quantity | :quant | 2
+distance-quantity | :unit | km
+khoảng | :direction | way
+way | :op1 | Trụ sở
+Trụ sở | :compound | ubnd
+ubnd | :compound | xã
+xã | :name | name
+name | :op1 | xuân
+name | :op2 | hải
+xã | :wiki | Xuân_Hải
+
+[STEP 3: AMR_WITH_VAR]
+(c1 / công bố
+    :theme(s / sơ đồ
+        :mod(q / qui hoạch))
+    :manner(c2 / công khai)
+    :agent(c / chính quyền
+        :mod(s1 / sở tại))
+    :manner(v / vẫn
+        :compound(d / dựng)
+        :location(k / khoảng
+            :op1(d1 / distance-quantity
+                :quant 2
+                    :unit(k1 / km)))
+            :direction(w1 / way
+                :op1(t / Trụ sở
+                    :compound(u / ubnd
+                        :compound(x / xã
+                            :name(n2 / name
+                                :op1(x1 / xuân)
+                                :op2(h / hải))
+                            :wiki(wz1 / Xuân_Hải))))))))
+
+
+#::snt người dân tuân thủ đúng pháp luật , chính quyền sai phạm về thủ tục quản lý , sao người dân phải gánh chịu hậu quả ?
+[STEP 1: CONCEPTS]
+concept_1 | obligate-01
+concept_2 | gánh chịu
+concept_3 | người dân
+concept_4 | hậu quả
+concept_5 | and
+concept_6 | tuân thủ
+concept_7 | người
+concept_8 | pháp luật
+concept_9 | chính quyền
+concept_10 | sai phạm
+concept_11 | thủ tục
+concept_12 | quản lý
+
+[STEP 2: RELATIONS]
+obligate-01 | :reason | gánh chịu
+gánh chịu | :agent | người dân
+gánh chịu | :theme | hậu quả
+gánh chịu | :cause | and
+and | :op1 | tuân thủ
+tuân thủ | :agent | người
+người | :quant | 1
+tuân thủ | :theme | pháp luật
+and | :op2 | sai phạm
+sai phạm | :agent | chính quyền
+sai phạm | :topic | thủ tục
+thủ tục | :mod | quản lý
+
+[STEP 3: AMR_WITH_VAR]
+(o / obligate-01
+    :reason(g / gánh chịu
+        :agent(n1 / người dân)
+        :theme(h / hậu quả)
+        :cause(a / and
+            :op1(t / tuân thủ
+                :agent(n / người
+                    :quant 1)
+                :theme(p / pháp luật))
+            :op2(s1 / sai phạm
+                :agent(c / chính quyền)
+                :topic(t1 / thủ tục
+                    :mod(q / quản lý))))))
+
+
+#::snt chính quyền sai thì sửa , chứ sao lại chỉ sửa chính quyền mà không sửa bên dân ?
+[STEP 1: CONCEPTS]
+concept_1 | and
+concept_2 | sai
+concept_3 | chính quyền
+concept_4 | sửa
+concept_5 | interrogative
+concept_6 | chỉ
+concept_7 | bên
+concept_8 | dân
+
+[STEP 2: RELATIONS]
+and | :op1 | sai
+sai | :domain | chính quyền
+sai | :theme | sửa
+and | :op2 | interrogative
+interrogative | :cause | chỉ
+cỉ | :theme | sửa
+sửa | :beneficiary | bên
+bên | :mod | dân
+cỉ | :polarity | -
+interrogative | :goal | sửa
+sửa | :beneficiary | chính quyền
+
+[STEP 3: AMR_WITH_VAR]
+(a / and
+    :op1(s / sai
+        :domain(c / chính quyền)
+        :theme(s1 / sửa))
+    :op2(i / interrogative
+        :cause(c1 / chỉ
+            :theme(s2 / sửa
+                :beneficiary(b / bên
+                    :mod(d / dân)))
+            :polarity -)
+        :goal(s3 / sửa
+            :beneficiary(c2 / chính quyền))))
+
+
+#::snt bởi giá hồi đó không phải là giá vì không ai cho phép , chắc chắn là có cái gì bên trong nữa ...
+[STEP 1: CONCEPTS]
+concept_1 | cause-01
+concept_2 | phải
+concept_3 | giá
+concept_4 | hồi
+concept_5 | đó
+concept_6 | ai
+concept_7 | cho phép
+concept_8 | chắc chắn
+concept_9 | có
+concept_10 | gì
+concept_11 | cái
+concept_12 | bên
+concept_13 | trong
+
+[STEP 2: RELATIONS]
+cause-01 | :ARG0 | phải
+phải | :theme | giá
+giá | :time | hồi
+hồi | :mod | đó
+phải | :reason | cho phép
+cho phép | :agent | ai
+ai | :polarity | -
+cho phép | :polarity | -
+phải | :polarity | -
+cause-01 | :ARG1 | chắc chắn
+chắc chắn | :topic | có
+có | :theme | gì
+gì | :classifier | cái
+có | :location | bên
+bên | :mod | trong
+
+[STEP 3: AMR_WITH_VAR]
+(c1 / cause-01
+    :ARG0(p / phải
+        :theme(g / giá
+            :time(h / hồi
+                :mod(đ / đó)))
+        :reason(c4 / cho phép
+            :agent(a / ai
+                :polarity -)
+            :polarity -)
+        :polarity -)
+    :ARG1(c3 / chắc chắn
+        :topic(c5 / có
+            :theme(g1 / gì
+                :classifier(c2 / cái))
+            :location(b1 / bên
+                :mod(t / trong)))))
+
+
+#::snt ngoài ra , đáng lẽ đổ cát lấp đường ống theo tiêu chuẩn về xây dựng hệ thống thoát nước thì đơn vị thi công lấp đất .
+[STEP 1: CONCEPTS]
+concept_1 | and
+concept_2 | đổ
+concept_3 | cát
+concept_4 | lấp
+concept_5 | đường ống
+concept_6 | tiêu chuẩn
+concept_7 | xây dựng
+concept_8 | hệ thống
+concept_9 | thoát nước
+concept_10 | đơn vị
+concept_11 | thi công
+concept_12 | đất
+
+[STEP 2: RELATIONS]
+and | :op2 | đổ
+đổ | :theme | cát
+đổ | :purpose | lấp
+lấp | :theme | đường ống
+lấp | :mode | tiêu chuẩn
+tiêu chuẩn | :topic | xây dựng
+xây dựng | :result-arg1 | hệ thống
+hệ thống | :mod | thoát nước
+đổ | :agent | đơn vị
+đơn vị | :agent-of | thi công
+thi công | :theme | lấp
+lấp | :theme | đất
+
+[STEP 3: AMR_WITH_VAR]
+(a / and
+    :op2(đ2 / đổ
+        :theme(c / cát)
+        :purpose(l / lấp
+            :theme(đ / đường ống)
+            :mode(t / tiêu chuẩn
+                :topic(x / xây dựng
+                    :result-arg1(h / hệ thống
+                        :mod(t1 / thoát nước)))))
+        :agent(đ1 / đơn vị
+            :agent-of(t2 / thi công
+                :theme(l1 / lấp
+                    :theme(đ3 / đất))))))
+
+
+#::snt ngẫm sao mà thương thế !
+[STEP 1: CONCEPTS]
+concept_1 | ngẫm
+concept_2 | sao
+concept_3 | thương
+concept_4 | thế
+
+[STEP 2: RELATIONS]
+ngẫm | :manner | sao
+ngẫm | :purpose | thương
+thương | :manner | thế
+
+[STEP 3: AMR_WITH_VAR]
+(n / ngẫm
+    :manner(s / sao)
+    :purpose(t / thương
+        :manner(t1 / thế)))
+
+
+#::snt đáng lẽ phải được tôn vinh thì trái lại những con người ấy đã bị đẩy xuống đáy cùng của cuộc sống !
+[STEP 1: CONCEPTS]
+concept_1 | contrast-01
+concept_2 | obligate-01
+concept_3 | tôn vinh
+concept_4 | được
+concept_5 | con người
+concept_6 | ấy
+concept_7 | đẩy
+concept_8 | đã
+concept_9 | xuống
+concept_10 | đáy
+concept_11 | cùng
+concept_12 | cuộc sống
+
+[STEP 2: RELATIONS]
+contrast-01 | :ARG1 | obligate-01
+obligate-01 | :result-arg1 | tôn vinh
+tôn vinh | :modality | được
+contrast-01 | :ARG2 | đẩy
+đẩy | :patient | con người
+con người | :mod | ấy
+đẩy | :tense | đã
+đẩy | :direction | xuống
+xuống | :location | đáy
+đáy | :mod | cùng
+đáy | :part-of | cuộc sống
+
+[STEP 3: AMR_WITH_VAR]
+(c3 / contrast-01
+    :ARG1(o / obligate-01
+        :result-arg1(t / tôn vinh
+            :modality(đ1 / được)))
+    :ARG2(đ2 / đẩy
+        :patient(c1 / con người
+            :mod(ấ / ấy))
+        :tense(đ3 / đã)
+        :direction(x / xuống
+            :location(đ4 / đáy
+                :mod(c2 / cùng)
+                :part-of(c31 / cuộc sống)))))
+
+
+#::snt lại nữa khi thanh tra đã xác định sai phạm sao không xử lý mà để " ngâm " lâu ngày đến vậy ?
+[STEP 1: CONCEPTS]
+concept_1 | xử lý
+concept_2 | xác định
+concept_3 | thanh tra
+concept_4 | đã
+concept_5 | sai phạm
+concept_6 | ngâm
+concept_7 | lâu ngày
+concept_8 | vậy
+concept_9 | t
+
+[STEP 2: RELATIONS]
+xử lý | :time | xác định
+xác định | :agent | thanh tra
+xác định | :tense | đã
+xác định | :theme | sai phạm
+xử lý | :polarity | -
+xử lý | :purpose | ngâm
+ngâm | :duration | lâu ngày
+ngâm | :mod | vậy
+ngâm | :patient | t
+
+[STEP 3: AMR_WITH_VAR]
+(x / xử lý
+    :time(x1 / xác định
+        :agent(t / thanh tra)
+        :tense(đ / đã)
+        :theme(s / sai phạm))
+    :polarity -
+    :purpose(n1 / ngâm
+        :duration(l1 / lâu ngày)
+        :mod(v / vậy)
+        :patient t))
+
+
+#::snt nhóm công nhân dũng cảm ấy gồm 20 người vậy mà hầu như nay đã lang bạt hết .
+[STEP 1: CONCEPTS]
+concept_1 | lang bạt
+concept_2 | nhóm
+concept_3 | công nhân
+concept_4 | dũng cảm
+concept_5 | ấy
+concept_6 | người
+concept_7 | hầu như
+concept_8 | now
+concept_9 | đã
+concept_10 | hết
+
+[STEP 2: RELATIONS]
+lang bạt | :agent | nhóm
+nhóm | :consist-of | công nhân
+công nhân | :mod | dũng cảm
+nhóm | :mod | ấy
+nhóm | :quant | 20
+nhóm | :theme-of | lang bạt
+lang bạt | :modality | hầu như
+lang bạt | :time | now
+lang bạt | :tense | đã
+lang bạt | :degree | hết
+
+[STEP 3: AMR_WITH_VAR]
+(l / lang bạt
+    :agent(n / nhóm
+        :consist-of(c / công nhân
+            :mod(d / dũng cảm))
+        :mod(ấ / ấy)
+        :quant 20
+        :theme-of(l1 / lang bạt
+            :modality(h / hầu như)
+            :time(n1 / now)
+            :tense(đ / đã)
+            :degree(h1 / hết))))
+
+
+#::snt vì sao họ đã làm điều đó ?
+[STEP 1: CONCEPTS]
+concept_1 | làm
+concept_2 | họ
+concept_3 | đã
+concept_4 | điều
+concept_5 | đó
+concept_6 | amr-unknown
+
+[STEP 2: RELATIONS]
+làm | :agent | họ
+làm | :tense | đã
+làm | :theme | điều
+điều | :mod | đó
+làm | :reason | amr-unknown
+
+[STEP 3: AMR_WITH_VAR]
+(l / làm
+    :agent(h / họ)
+    :tense(đ / đã)
+    :theme(đ1 / điều
+        :mod(đ2 / đó))
+    :reason(a / amr-unknown))
+
+
+#::snt đường đất nhỏ , vận động dân góp công góp của đắp đường bêtông .
+[STEP 1: CONCEPTS]
+concept_1 | vận động
+concept_2 | đường
+concept_3 | đất
+concept_4 | nhỏ
+concept_5 | dân
+concept_6 | góp
+concept_7 | công
+concept_8 | của
+concept_9 | đắp
+concept_10 | bêtông
+
+[STEP 2: RELATIONS]
+vận động | :patient | đường
+đường | :mod | đất
+đất | :mod | nhỏ
+đường | :agent-of | dân
+dân | :agent-of | góp
+góp | :theme | công
+công | :poss | dân
+góp | :theme | của
+của | :mod | đường
+đường | :consist-of | bêtông
+
+[STEP 3: AMR_WITH_VAR]
+(v / vận động
+    :patient(đ / đường
+        :mod(đ1 / đất
+            :mod(n / nhỏ))
+        :agent-of(d / dân
+            :agent-of(g / góp
+                :theme(c / công
+                    :poss(d1 / dân))
+                :theme(c1 / của
+                    :mod(đ2 / đường
+                        :consist-of(b / bêtông)))))))
+
+
+#::snt và hôm nay , chúng ta cũng cần hỏi câu hỏi này với chính mình .
+[STEP 1: CONCEPTS]
+concept_1 | and
+concept_2 | cần
+concept_3 | chúng ta
+concept_4 | cũng
+concept_5 | hỏi
+concept_6 | câu
+concept_7 | hỏi
+concept_8 | này
+concept_9 | mình
+concept_10 | today
+
+[STEP 2: RELATIONS]
+and | :op2 | cần
+cần | :pivot | chúng ta
+cần | :modality | cũng
+cần | :topic | hỏi
+hỏi | :theme | câu
+câu | :compound | hỏi
+câu | :mod | này
+hỏi | :goal | mình
+hỏi | :time | today
+
+[STEP 3: AMR_WITH_VAR]
+(a / and
+    :op2(c1 / cần
+        :pivot(c / chúng ta)
+        :modality(c2 / cũng)
+        :topic(h1 / hỏi
+            :theme(c3 / câu
+                :compound(h2 / hỏi)
+                :mod(n1 / này))
+            :goal(m / mình)
+            :time(t / today))))
+
+
+#::snt vậy thì sự lầm than hôm nay của nhóm công nhân bảo vệ cái thiện kia minh chứng cho điều gì ?
+[STEP 1: CONCEPTS]
+concept_1 | minh chứng
+concept_2 | sự
+concept_3 | lầm than
+concept_4 | hôm nay
+concept_5 | công nhân
+concept_6 | nhóm
+concept_7 | bảo vệ
+concept_8 | cái thiện
+concept_9 | kia
+concept_10 | điều
+concept_11 | amr-unknown
+
+[STEP 2: RELATIONS]
+minh chứng | :domain | sự
+sự | :mod | lầm than
+sự | :time | hôm nay
+sự | :poss | công nhân
+công nhân | :classifier | nhóm
+công nhân | :agent-of | bảo vệ
+bảo vệ | :theme | cái thiện
+cái thiện | :mod | kia
+minh chứng | :theme | điều
+điều | :mod | amr-unknown
+
+[STEP 3: AMR_WITH_VAR]
+(m1 / minh chứng
+    :domain(s / sự
+        :mod(l / lầm than)
+        :time(h / hôm nay)
+        :poss(c1 / công nhân
+            :classifier(n / nhóm)
+            :agent-of(b / bảo vệ
+                :theme(c2 / cái thiện
+                    :mod(k / kia)))))
+    :theme(đ / điều
+        :mod(a / amr-unknown)))
+
+
+#::snt tôi mong rằng sẽ có cái hậu đến sau cái kết quả " nhãn tiền " mà ba năm nay họ đã lãnh chịu .
+[STEP 1: CONCEPTS]
+concept_1 | mong
+concept_2 | tôi
+concept_3 | có
+concept_4 | hậu
+concept_5 | cái
+concept_6 | đến
+concept_7 | sau
+concept_8 | kết quả
+concept_9 | nhãn tiền
+concept_10 | lãnh chịu
+concept_11 | họ
+concept_12 | đã
+concept_13 | rate-entity-91
+concept_14 | temporal-quantity
+concept_15 | năm
+concept_16 | nay
+
+[STEP 2: RELATIONS]
+mong | :pivot | tôi
+mong | :topic | có
+có | :theme | hậu
+hậu | :classifier | cái
+có | :manner | đến
+đến | :compound | sau
+có | :theme | kết quả
+kết quả | :mod | nhãn tiền
+có | :time | lãnh chịu
+lãnh chịu | :agent | họ
+lãnh chịu | :tense | đã
+lãnh chịu | :rate | rate-entity-91
+rate-entity-91 | :time | temporal-quantity
+temporal-quantity | :unit | nam
+nam | :quant | 3
+temporal-quantity | :mod | nay
+
+[STEP 3: AMR_WITH_VAR]
+(m / mong
+    :pivot(t / tôi)
+    :topic(c1 / có
+        :theme(h / hậu
+            :classifier(c / cái))
+        :manner(đ / đến
+            :compound(s / sau))
+        :theme(k / kết quả
+            :mod(n / nhãn tiền))
+        :time(l / lãnh chịu
+            :agent(h1 / họ)
+            :tense(đ1 / đã)
+            :rate(r / rate-entity-91
+                :time(t2 / temporal-quantity
+                    :unit(n1 / nam
+                        :quant 3)
+                    :mod(n2 / nay))))))
+
+
+#::snt điều không thể hiểu nổi là tại sao họ lại mất việc ?
+[STEP 1: CONCEPTS]
+concept_1 | possible-01
+concept_2 | hiểu
+concept_3 | nổi
+concept_4 | mất
+concept_5 | họ
+concept_6 | việc
+concept_7 | amr-unknown
+
+[STEP 2: RELATIONS]
+possible-01 | :result-arg1 | hiểu
+hiểu | :degree | nổi
+hiểu | :topic | mất
+mất | :agent | họ
+mất | :theme | việc
+hiểu | :cause | amr-unknown
+
+[STEP 3: AMR_WITH_VAR]
+(p / possible-01
+    :result-arg1(h / hiểu
+        :degree(n / nổi)
+        :topic(m / mất
+            :agent(h1 / họ)
+            :theme(v / việc))
+        :cause(a / amr-unknown)))
+
+
+#::snt " hai anh cứ ngồi đây uống nước , tí là xong thôi " .
+[STEP 1: CONCEPTS]
+concept_1 | khuyên
+concept_2 | ngồi
+concept_3 | anh
+concept_4 | đây
+concept_5 | uống
+concept_6 | nước
+concept_7 | xong
+concept_8 | a
+
+[STEP 2: RELATIONS]
+khuyên | :topic | ngồi
+ngồi | :agent | anh
+anh | :quant | 2
+ngồi | :location | đây
+ngồi | :purpose | uống
+uống | :theme | nước
+uống | :agent | a
+ngồi | :manner | xong
+xong | :agent | a
+
+[STEP 3: AMR_WITH_VAR]
+(k / khuyên
+    :topic(n / ngồi
+        :agent(a / anh
+            :quant 2)
+        :location(đ / đây)
+        :purpose(u / uống
+            :theme(n1 / nước)
+            :agent a)
+        :manner(x / xong
+            :agent a)))
+
+
+#::snt ngày thứ ba phúc thẩm vụ án Lã Thị Kim Oanh : .
+[STEP 1: CONCEPTS]
+concept_1 | ngày
+concept_2 | phúc thẩm
+concept_3 | vụ án
+concept_4 | person
+concept_5 | name
+concept_6 | Lã
+concept_7 | Thị
+concept_8 | Kim
+concept_9 | Oanh
+concept_10 | ordinal-entity
+
+[STEP 2: RELATIONS]
+ngày | :topic | phúc thẩm
+phúc thẩm | :topic | vụ án
+vụ án | :name | person
+person | :name | name
+name | :op1 | Lã
+name | :op2 | Thị
+name | :op3 | Kim
+name | :op4 | Oanh
+vụ án | :ord | ordinal-entity
+ordinal-entity | :value | 3
+
+[STEP 3: AMR_WITH_VAR]
+(n / ngày
+    :topic(p / phúc thẩm
+        :topic(v / vụ án
+            :name(p1 / person
+                :name(n1 / name
+                    :op1(wz1 / Lã)
+                    :op2(wz2 / Thị)
+                    :op3(wz3 / Kim)
+                    :op4(wz4 / Oanh)))
+            :ord(o / ordinal-entity
+                :value 3))))
+
+
+#::snt báo tt có thể là đầu tàu , qua đó rộng rãi độc giả , nhất là các doanh nghiệp , có thể lên tiếng và đưa ra biện pháp trợ giúp .
+[STEP 1: CONCEPTS]
+concept_1 | possible-01
+concept_2 | báo
+concept_3 | tt
+concept_4 | đầu tàu
+concept_5 | đó
+concept_6 | rộng rãi
+concept_7 | độc giả
+concept_8 | doanh nghiệp
+concept_9 | lên tiếng
+concept_10 | đưa
+concept_11 | ra
+concept_12 | biện pháp
+concept_13 | trợ giúp
+
+[STEP 2: RELATIONS]
+possible-01 | :theme | báo
+báo | :mod | tt
+báo | :poss | đầu tàu
+đầu tàu | :location | đó
+possible-01 | :condition | rộng rãi
+rộng rãi | :beneficiary | độc giả
+độc giả | :mod | doanh nghiệp
+possible-01 | :theme | lên tiếng
+lên tiếng | :agent | độc giả
+lên tiếng | :theme | đưa
+đưa | :compound | ra
+đưa | :theme | biện pháp
+biện pháp | :mod | trợ giúp
+
+[STEP 3: AMR_WITH_VAR]
+(p1 / possible-01
+    :theme(b / báo
+        :mod(t / tt)
+        :poss(đ / đầu tàu
+            :location(đ1 / đó)))
+    :condition(r / rộng rãi
+        :beneficiary(đ2 / độc giả
+            :mod(d1 / doanh nghiệp)))
+    :theme(l1 / lên tiếng
+        :agent(đ3 / độc giả)
+        :theme(đ4 / đưa
+            :compound(r1 / ra)
+            :theme(b2 / biện pháp
+                :mod(t2 / trợ giúp)))))
+
+
+#::snt " anh hỏi ai " ?
+[STEP 1: CONCEPTS]
+concept_1 | hỏi
+concept_2 | anh
+concept_3 | ai
+
+[STEP 2: RELATIONS]
+hỏi | :agent | anh
+hỏi | :goal | ai
+
+[STEP 3: AMR_WITH_VAR]
+(h / hỏi
+    :agent(a / anh)
+    :goal(a1 / ai))
+
+
+#::snt hay khai sinh cho con ?
+[STEP 1: CONCEPTS]
+concept_1 | khai sinh
+concept_2 | hay
+concept_3 | con
+
+[STEP 2: RELATIONS]
+khai sinh | :modality | hay
+khai sinh | :beneficiary | con
+
+[STEP 3: AMR_WITH_VAR]
+(k / khai sinh
+    :modality(h / hay)
+    :beneficiary(c1 / con))
+
+

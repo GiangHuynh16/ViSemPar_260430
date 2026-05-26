@@ -1,0 +1,15 @@
+{
+  "s42": {
+    "method": "B2",
+    "seed": 42,
+    "group": "english_lpp_baselines",
+    "n_samples": 143,
+    "parsable": 143,
+    "parsable_rate": 1.0,
+    "avg_output_len": 172.0,
+    "root_acc": 0.7133,
+    "precision": 0.6881,
+    "recall": 0.6346,
+    "f1": 0.6603
+  }
+}

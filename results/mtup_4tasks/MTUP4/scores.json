@@ -1,0 +1,41 @@
+{
+  "s42": {
+    "method": "MTUP4",
+    "seed": 42,
+    "group": "mtup_4tasks",
+    "n_samples": 149,
+    "parsable": 149,
+    "parsable_rate": 1.0,
+    "avg_output_len": 197.9,
+    "root_acc": 0.6443,
+    "precision": 0.6029,
+    "recall": 0.5708,
+    "f1": 0.5864
+  },
+  "s123": {
+    "method": "MTUP4",
+    "seed": 123,
+    "group": "mtup_4tasks",
+    "n_samples": 149,
+    "parsable": 149,
+    "parsable_rate": 1.0,
+    "avg_output_len": 192.0,
+    "root_acc": 0.6577,
+    "precision": 0.617,
+    "recall": 0.5702,
+    "f1": 0.5927
+  },
+  "s456": {
+    "method": "MTUP4",
+    "seed": 456,
+    "group": "mtup_4tasks",
+    "n_samples": 149,
+    "parsable": 149,
+    "parsable_rate": 1.0,
+    "avg_output_len": 199.9,
+    "root_acc": 0.6577,
+    "precision": 0.6281,
+    "recall": 0.5963,
+    "f1": 0.6118
+  }
+}

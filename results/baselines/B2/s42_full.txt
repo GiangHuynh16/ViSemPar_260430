@@ -19,7 +19,7 @@ AMR_NO_VAR: (nhớ
                     :mod(bộ))
                 :op2(quan trọng
                     :degree(lắm)))
-            :agent t)))
+            :agent a)))
 
 
 #::snt hiện nay xã có 68 tổ nhân dân , mỗi tổ phụ trách 40 gia đình .
@@ -192,16 +192,7 @@ AMR_NO_VAR: (and
                     :location(đại học))
                 :agent e)))
     :op2(còn
-        :op2(quyết tâm
-            :topic(dùng
-                :theme(tiền
-                    :mod(nhận
-                        :compound(dành dụm)))
-                :purpose(học
-                    :degree(tiếp tục)
-                    :topic(văn hóa)
-                    :location(đại học))
-                :agent e))))
+        :op2 e))
 
 
 #::snt có em trở về còn quyết tâm dùng tiền dành dụm tiếp tục học văn hóa , vào đại học " .
@@ -219,16 +210,7 @@ AMR_NO_VAR: (and
                     :location(đại học))
                 :agent e)))
     :op2(còn
-        :op2(quyết tâm
-            :topic(dùng
-                :theme(tiền
-                    :mod(nhận
-                        :compound(dành dụm)))
-                :purpose(học
-                    :degree(tiếp tục)
-                    :topic(văn hóa)
-                    :location(đại học))
-                :agent e))))
+        :op2 e))
 
 
 #::snt dự kiến từ nay đến năm 2007 sẽ hoàn thành phổ cập thpt .
@@ -264,16 +246,17 @@ AMR_NO_VAR: (nghe
 
 #::snt ai trồng lúa , xã mời các cán bộ về tập huấn cho trồng lúa .
 AMR_NO_VAR: (mời
-    :agent(xã)
-    :theme(cán bộ
-        :agent-of(về
-            :purpose(tập huấn
+    :theme(trồng
+        :agent(ai
+            :agent-of(trồng
+                :patient(lúa)))
+        :topic(tập huấn
+            :agent(cán bộ
+                :member-of(xã))
+            :purpose(train-01
                 :topic(trồng
-                    :theme(lúa))
-                :agent c)))
-    :topic(person
-        :agent-of(trồng
-            :theme(lúa))))
+                    :patient(lúa)))))
+    :agent(xã))
 
 
 #::snt ai nuôi cá , nuôi bò thì được tập huấn về chăn nuôi .
@@ -336,9 +319,8 @@ AMR_NO_VAR: (multi-sentence
 
 
 #::snt à , mà chuyện đó cũ hết rồi ... " .
-AMR_NO_VAR: (multi-sentence
-    :snt1(à)
-    :snt2(cũ
+AMR_NO_VAR: (and
+    :op2(cũ
         :domain(chuyện
             :mod(đó))
         :degree(hết)
@@ -457,10 +439,11 @@ AMR_NO_VAR: (thành công
 #::snt tất cả chỉ với hai cùi tay cụt .
 AMR_NO_VAR: (chỉ
     :degree(tất cả)
-    :means(tay
-        :quant 2
-        :classifier(cùi)
-        :mod(cụt)))
+    :means(cùi
+        :prep(với)
+        :mod(tay)
+        :mod(cụt)
+        :quant 2))
 
 
 #::snt sẽ tổ chức phố đi bộ tại Hội An .
@@ -539,8 +522,7 @@ AMR_NO_VAR: (cụ
     :mod(g)
     :pivot-of(có
         :theme(con
-            :quant 5)
-        :pivot m))
+            :quant 5)))
 
 
 #::snt bán thuốc giá cao , công ty Sanofi phải giải trình .
@@ -634,7 +616,10 @@ AMR_NO_VAR: (theo
         :mod(chị))
     :direction(vào
         :location(tp
-            :mod(hcm))))
+            :wiki(Hồ_Chi_Minh)
+            :name(name
+                :op1(hcm))))
+    :time(now))
 
 
 #::snt hà nội : 98 % - 100 % người nghiện tái nghiện .
@@ -717,25 +702,20 @@ AMR_NO_VAR: (nuôi
         :op1(lớn
             :pivot(heo)))
     :theme(thịt
-        :theme-of(bán
-            :time(thì)
-            :agent a)
-        :theme-of(trả
-            :time(mới)
-            :patient(heo
-                :mod(con))
-            :goal(anh
-                :mod(person
-                    :name(name
-                        :op1(Thanh))
-                    :wiki -))
-            :manner(lại)
-            :agent a)
-        :manner(tính
+        :theme-of(bán)
+        :agent a)
+    :time(trả
+        :agent(anh
+            :mod(person
+                :name(name
+                    :op1(Thanh))
+                :wiki -))
+        :patient(heo
+            :mod(con))
+        :manner(lại)
+        :purpose(tính
             :polarity -
-            :theme(lời
-                :mod(lãi))))
-    :patient h)
+            :theme(lời lãi))))
 
 
 #::snt anh Đu thì vui mừng thông báo con heo con đi mượn ấy giờ đã thành mẹ của một bầy con ...
@@ -784,11 +764,11 @@ AMR_NO_VAR: (từ
                     :agent-of(xây
                         :tense(đang)
                         :result-arg1(trụ sở
-                            :part-of(ubnd
+                            :mod(ubnd
                                 :mod(xã)
                                 :mod(mới)))
-                        :agent t)
-                    :quant 1))))
+                        :agent t))))
+        :quant 1))
 
 
 #::snt cũng qua rồi thời thức suốt trong bưng , đội mít , đội thúng mua đi bán lại nuôi con ăn học .
@@ -801,18 +781,13 @@ AMR_NO_VAR: (qua
                     :op2(đội
                         :mod(mít))
                     :op3(đội
-                        :mod(thúng)
-                        :purpose(mua
-                            :purpose(bán
-                                :frequency(have-frequency-91
-                                    :unit(lần)))))
-                        :agent s)
-                    :agent s)))
-    :agent s
-    :purpose(nuôi
-        :beneficiary-arg2(con
-            :agent-of(ăn học))
-        :agent s))
+                        :mod(thúng))
+                    :op4(mua
+                        :purpose(nuôi
+                            :beneficiary-arg1(con)
+                            :topic(ăn học))
+                        :agent d))))
+        :mod(đến)))
 
 
 #::snt họ lập tức thông báo với người thân và bạn bè đến nộp đơn xin mua đất xây dựng .
@@ -861,8 +836,7 @@ AMR_NO_VAR: (tiếp tục
         :purpose(làm rõ
             :topic(động cơ
                 :poss(cán bộ
-                    :mod(địa phương))))
-        :agent c))
+                    :mod(địa phương))))))
 
 
 #::snt 80 triệu đồng ủng hộ bệnh nhân nghèo .
@@ -886,7 +860,10 @@ AMR_NO_VAR: (phát hiện
         :op2(giáo viên
             :mod(nghiên)
             :quant 229)
-        :op3.ma túy))
+        :op3(phòng
+            :mod(a)
+            :part-of(trường
+                :prep(trong)))))
 
 
 #::snt dân Thái Mỹ cũng quen lắm hình ảnh phó chủ tịch hội cựu chiến binh xã kiêm tổ trưởng tổ nhân dân một mắt , lái xe máy bằng hai cùi tay .
@@ -906,21 +883,21 @@ AMR_NO_VAR: (quen
                         :compound(chiến binh))
                     :location(xã))
                 :ARG2(kiêm
-                    :OP(tổ trưởng
+                    :OP1(tổ trưởng
                         :mod(tổ nhân dân))
-                    :agent p)
-                :quant 1)
-            :mod(drive-01
-                :instrument(xe máy)
-                :manner(bằng
-                    :manner(cùi
-                        :part-of(tay)
-                        :quant 2))
-                :agent p)
-            :goal eye
-                :mod(một
-                    :eye
-                        :part-of p)))))
+                    :ARG1(person
+                        :quant 1
+                            :eye
+                                :mod(mắt)
+                                    :quant 1)
+                        :agent-of(lái
+                            :instrument(xe máy)
+                            :manner(bằng
+                                :ARG1(cùi
+                                    :prep(với)
+                                    :part-of(tay)
+                                    :quant 2))
+                            :agent p)))))
 
 
 #::snt dự án này đã được ubnd tỉnh Phú Yên phê duyệt và giao cho ubnd huyện Sông Cầu thực hiện .
@@ -1056,7 +1033,8 @@ AMR_NO_VAR: (ăn
         :mod(đạm bạc))
     :agent g1)
     
-Note: I've assumed that "g1" is a placeholder for the person performing the action, which in this case could be either sister Xoan or her family members. The exact identity of the agent would depend on the context of the full sentence.
+Note: I've assumed that "g1" is a placeholder for the person performing the action, which in this case would be the woman who went out to collect recyclables. The exact identity of "g1" can be replaced with the appropriate name or identifier based on the context.
+
 
 #::snt cũng như số phận của vợ chồng anh Đại , những công nhân đứng ra tố cáo tiêu cực ở đường liên cảng a5 ngày xưa bây giờ phiêu bạt khắp nơi .
 AMR_NO_VAR: (tố cáo
@@ -1081,38 +1059,37 @@ AMR_NO_VAR: (tố cáo
     :result(phiêu bạt
         :degree(bây giờ)
         :location(nơi
-            :mod(khắp))
-        :theme c))
+            :mod(khắp))))
 
 
 #::snt rùi đồng bào bị lũ lụt , hỏa hoạn , người thương binh ấy cũng lặn lội đi vận động ...
 AMR_NO_VAR: (and
-    :op1(lụt
-        :patient(đồng bào)
-        :modality(bị))
-    :op2(hỏa hoạn
-        :patient(đồng bào)
-        :modality(bị))
-    :op3(vận động
+    :op2(lặn lội
         :agent(người
-            :mod(thương binh)
-            :mod(ấy))
-        :manner(lặn lội
-            :compound(đi))))
+            :mod(ấy)
+            :mod(tương binh))
+        :compound(đi)
+        :purpose(vận động)
+        :time(after
+            :op1(disaster
+                :modality(bị)
+                :theme(and
+                    :op1(lũ lụt)
+                    :op2(hỏa hoạn)))
+            :agent n)))
 
 
 #::snt tôi rất lấy làm lạ là vì sao tôi không cho phép mà ở dưới vẫn làm .
 AMR_NO_VAR: (lấy làm
     :pivot(tôi)
     :degree(rất)
-    :compound(lạ)
-    :cause(amr-unknown
-        :pivot-of(cho phép
+    :theme(lạ
+        :topic(cho phép
             :agent(tôi)
             :polarity -)
-        :location(beneath
-            :prep(vẫn)
-            :op1(làm))))
+        :manner(làm
+            :location(dưới)
+            :agent t)))
 
 
 #::snt ở đó có đến 13 con người chen chúc nhau sống trong đó .
@@ -1248,7 +1225,7 @@ AMR_NO_VAR: (and
         :theme(đi
             :compound(kiện
                 :patient(báo
-                    :poss(Pháp Luật
+                    :part-of(Pháp Luật
                         :city(tp.
                             :mod(hcm))))
                 :purpose(đòi
@@ -1297,13 +1274,19 @@ AMR_NO_VAR: (and
     :op2(đội
         :theme(của cải
             :poss(vụ
-                :mod(kiện)))
+                :mod(chống
+                    :theme(tiêu cực))
+                :mod(việc
+                    :agent-of(đeo đuổi
+                        :agent(anh
+                            :mod(Đại))
+                        :theme(vụ kiện))))
+            :location(nhà
+                :prep(trong)))
         :manner(lần lượt)
         :compound(nón)
         :purpose(ra
-            :compound(đi))
-        :location(nhà
-            :prep(trong))))
+            :compound(đi))))
 
 
 #::snt thưa ông , sổ đỏ đã được giao cho người dân .
@@ -1543,7 +1526,7 @@ AMR_NO_VAR: (kết luận
         :op2(biểu dương)
         :theme(việc làm
             :mod(tốt)
-            :poss h)))
+            :poss(họ))))
 
 
 #::snt tuy nhiên chính quyền tp không nên dừng ở đó .
@@ -1553,7 +1536,9 @@ AMR_NO_VAR: (contrast-01
             :location(tp))
         :polarity -
         :theme(dừng
-            :location(đó))))
+            :manner(ở
+                :location(đó))
+            :agent c)))
 
 
 #::snt 206 ngày đêm khốn khổ .
@@ -1636,12 +1621,15 @@ AMR_NO_VAR: (and
     :op2(xuất trình
         :theme(giấy tờ)
         :purpose(chứng minh
-            :topic(lên
-                :agent(anh em
+            :topic(have-rel-role-91
+                :ARG1(anh em
                     :poss(tôi))
-                :location(sứ quán)
-                :purpose(đổi
-                    :theme(hộ chiếu))))))
+                :ARG2(sứ quán
+                    :theme-of(lên
+                        :purpose(đổi
+                            :theme(hộ chiếu)
+                            :agent a)))))
+        :agent t))
 
 
 #::snt đổi hộ chiếu hả , hay làm giấy thông hành về nước ?
@@ -1831,7 +1819,7 @@ AMR_NO_VAR: (mang
         :poss(vn))
     :theme(tựa đề
         :topic(tác động
-            :theme(phát triển
+            :concession(phát triển
                 :theme(cơ sở
                     :mod(hạ tầng)))
             :goal(giảm
@@ -1843,7 +1831,7 @@ AMR_NO_VAR: (mang
 AMR_NO_VAR: (obligate-01
     :theme(đặt cược
         :agent(người dân)
-        :purpose(niềm tin))
+        :theme(niềm tin))
     :mode imperative
     :polarity -)
 
@@ -1884,8 +1872,8 @@ AMR_NO_VAR: (and
         :beneficiary(nói
             :topic(hiểu
                 :pivot d)
-            :agent d)
-        :agent e))
+            :agent d))
+    :mode imperative)
 
 
 #::snt trở về đời thường , đôi bạn cựu chiến binh phan văn đu và Phạm Văn Thanh ngồi bên ấm trà .
@@ -1896,12 +1884,19 @@ AMR_NO_VAR: (ngồi
     :agent(bạn
         :mod(cựu
             :compound(chiến binh)
-            :quant 2)
-        :wiki -
-        :name(name
-            :op1(phan)
-            :op2(văn)
-            :op3(đu)))
+            :quant 2
+                :referred-to(person
+                    :name(name
+                        :op1(phan)
+                        :op2(văn)
+                        :op3(đu))
+                    :wiki -))
+        :mod(person
+            :wiki -
+            :name(name
+                :op1(phạm)
+                :op2(văn)
+                :op3(thanh))))
     :location(bên
         :mod(ấm
             :mod(trà))))
@@ -1967,13 +1962,13 @@ AMR_NO_VAR: (contrast-01
     :ARG1(sửa
         :condition(sai
             :pivot(chính quyền))
-        :agent c)
+        :agent b)
     :ARG2(sửa
         :degree(chỉ)
-        :agent c
-        :patient(bên
-            :mod(dân))
-        :polarity -))
+        :agent b
+        :patient(chính quyền)
+        :polarity -
+        :cause(amr-unknown)))
 
 
 #::snt bởi giá hồi đó không phải là giá vì không ai cho phép , chắc chắn là có cái gì bên trong nữa ...
@@ -2110,7 +2105,7 @@ AMR_NO_VAR: (minh chứng
                         :compound(thiện)
                         :mod(kia))))
             :time(today)))
-    :theme(điều
+    :topic(điều
         :mod(gì))
     :mode interrogative)
 
@@ -2150,7 +2145,8 @@ AMR_NO_VAR: (and
         :purpose(uống
             :theme(nước)))
     :op2(xong
-        :time(tí)))
+        :time(trí)
+        :mode imperative))
 
 
 #::snt ngày thứ ba phúc thẩm vụ án Lã Thị Kim Oanh : .

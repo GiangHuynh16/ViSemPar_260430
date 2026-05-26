@@ -6,11 +6,11 @@
     "n_samples": 149,
     "parsable": 149,
     "parsable_rate": 1.0,
-    "avg_output_len": 195.6,
-    "root_acc": 0.7383,
-    "precision": 0.651,
-    "recall": 0.6065,
-    "f1": 0.628
+    "avg_output_len": 193.5,
+    "root_acc": 0.651,
+    "precision": 0.6092,
+    "recall": 0.568,
+    "f1": 0.5879
   },
   "s123": {
     "method": "B1",
@@ -19,11 +19,11 @@
     "n_samples": 149,
     "parsable": 149,
     "parsable_rate": 1.0,
-    "avg_output_len": 199.5,
-    "root_acc": 0.7181,
-    "precision": 0.6556,
-    "recall": 0.6217,
-    "f1": 0.6382
+    "avg_output_len": 198.0,
+    "root_acc": 0.6846,
+    "precision": 0.6117,
+    "recall": 0.5793,
+    "f1": 0.595
   },
   "s456": {
     "method": "B1",
@@ -32,10 +32,10 @@
     "n_samples": 149,
     "parsable": 149,
     "parsable_rate": 1.0,
-    "avg_output_len": 200.7,
-    "root_acc": 0.7315,
-    "precision": 0.661,
-    "recall": 0.6375,
-    "f1": 0.6491
+    "avg_output_len": 193.5,
+    "root_acc": 0.6174,
+    "precision": 0.6135,
+    "recall": 0.5722,
+    "f1": 0.5921
   }
 }

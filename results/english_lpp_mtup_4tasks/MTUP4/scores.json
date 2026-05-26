@@ -1,0 +1,15 @@
+{
+  "s42": {
+    "method": "MTUP4",
+    "seed": 42,
+    "group": "english_lpp_mtup_4tasks",
+    "n_samples": 143,
+    "parsable": 143,
+    "parsable_rate": 1.0,
+    "avg_output_len": 166.2,
+    "root_acc": 0.6853,
+    "precision": 0.6723,
+    "recall": 0.6261,
+    "f1": 0.6483
+  }
+}
