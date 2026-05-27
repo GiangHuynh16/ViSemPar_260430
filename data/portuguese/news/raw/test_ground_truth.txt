@@ -1,0 +1,521 @@
+# ::snt Tem razão .
+(t / ter-01 :ARG0 (e / ele) :ARG1 (r / razão))
+
+# ::snt Comecei bem .
+(c / começar-01 :ARG0 (e / eu) :manner (b / bem))
+
+# ::snt Bobagem .
+(b2 / bobagem)
+
+# ::snt Nada menos .
+(m / menos :polarity -)
+
+# ::snt Isso não está claro .
+(c / claro :polarity - :domain (i / isso))
+
+# ::snt Isso simplesmente não acontece .
+(a / acontecer-01 :polarity - :ARG0 (i2 / isso) :manner (s / simples))
+
+# ::snt São duas sendas paralelas .
+(s / senda :mod (p / paralela) :quant 2)
+
+# ::snt Pelo contrário ” .
+(c / contrast-01)
+
+# ::snt Há vândalos infiltrados .
+(i2 / infiltrar-01 :ARG0 (v / vândalo))
+
+# ::snt O que Trump alega ?
+(a / alegar-01 :ARG0 (p / person :name (n / name :op1 "Trump")) :ARG1 (a2 / amr-unknown))
+
+# ::snt Há algumas explicações para isso .
+(h / haver-01 :ARG1 (e / explicação :mod (a / algum)) :purpose (i / isso))
+
+# ::snt Reuters e Associated Press
+(e1 / e :op1 (a / agency :name (n / name :op1 "Reuters")) :op2 (a2 / agency :name (n2 / name :op1 "Associated" :op2 "Press")))
+
+# ::snt Mas existe um salário mínimo ?
+(c / contrast-01 :ARG2 (e / existir-01 :ARG0 (s / salário :mod (m / mínimo)) :polarity (a / amr-unknown)))
+
+# ::snt mexicano Enrique Peña Nieto .
+(p / person :name (n / name :op1 "Enrique" :op2 "Peña" :op2 "Nieto") :mod (c / country :name (n1 / name :op1 "México")))
+
+# ::snt O que é União Europeia ?
+(a / amr-unknown :domain (g / government-organization :name (n / name :op1 "União" :op2 "Europeia")))
+
+# ::snt O que foi acordado ?
+(a / acordar-02 :ARG1 (a2 / amr-unknown))
+
+# ::snt Luanda era nossa segunda escala .
+(c5 / country :name (n4 / name :op1 "Luanda") :mod (e / escala :poss (n7 / nós) :ord (o4 / ordinal-entity :value 2)))
+
+# ::snt Não será com a Lucille .
+(p / person :name (n / name :op1 "Lucille") :polarity - :domain (i / isso))
+
+# ::snt Não será com a Lucille .
+(a4 / accompany-01 :polarity - :ARG0 (p3 / person :name (n2 / name :op1 "Lucille")))
+
+# ::snt Entra em cena a comida .
+(e3 / entrar-01 :ARG0 (c / comida) :ARG1 (c2 / cena))
+
+# ::snt O de emergência não abriu .
+(a11 / abrir-01 :polarity - :ARG0 (a12 / thing :mod (e14 / emergência)))
+
+# ::snt No pequeno jardim , ficam as bicicletas .
+(b6 / be-located-at-91 :ARG1 (b7 / bicicleta) :ARG2 (j3 / jardim :mod (p13 / pequeno)))
+
+# ::snt Teve chance suficiente para se salvar .
+(t / ter-01 :ARG0 (e / ele) :ARG1 (c / chance :mod (s / suficiente)) :purpose (s1 / salvar-01 :ARG0 e))
+
+# ::snt Nos últimos anos , houve reveses .
+(r / reves :time (a / ano :mod (u / último)))
+
+# ::snt A vingança dos Bush viria em 2000 .
+(i / vir-01 :ARG1 (v / vingança :poss (p / person :name (n / name :op1 "Bush"))) :time (d / date-entity :year 2000))
+
+# ::snt Por muito tempo , manteve boa forma física .
+(m4 / manter-01 :ARG0 (e12 / ele) :ARG1 (f2 / forma :mod (b4 / bom) :mod (f3 / físico)) :duration (t4 / tempo :mod (m5 / muito)))
+
+# ::snt Na indústria , há maratonas para cumprir metas .
+(m / maratona :purpose (c / cumprir-01 :ARG1 (m1 / meta)) :prep-em (i / indústria))
+
+# ::snt Assim , La Coruña virou oficialmente A Coruña .
+(v / virar-01 :ARG1 (c / city :name (n / name :op1 "La" :op2 "Coruña")) :ARG2 (c1 / city :name (n1 / name :op1 "A" :op2 "Coruña")) :manner (o / oficial))
+
+# ::snt Homossexualidade é assunto inexistente no país .
+(a / assunto :domain (h / homossexualidade) :ARG1-of (e / existir-01 :polarity - :location (p / país)))
+
+# ::snt São 5 edifícios e 14 mil metros quadrados .
+(e1 / e :op1 (e2 / edifício :quant 5) :op2 (a / area-quantity :quant 14.000 :unit (m / metro-quadrado)))
+
+# ::snt As mariposas sempre retornavam para o front .
+(r / retornar-01 :ARG0 (m / mariposa) :ARG4 (f / front) :frequency (s / sempre))
+
+# ::snt O endereço é avenida Rotary , 624 , Ferrazópolis
+(s / street-address-91 :ARG1 "624" :ARG2 (r / road :name (n / name :op1 Rotary)) :ARG4 (c / city :name (n1 / name :op1 "Ferrazópolis")) :domain (e / endereço))
+
+# ::snt Muitos cientistas ficaram chocados , nos Estados Unidos .
+(c / chocar-02 :ARG1 (p / pessoa :ARG0-of (f / fazer-01 :ARG1 (c1 / ciência)) :quant (m / muito)) :location (c2 / country :name (n / name :op1 "Estados" :op2 "Unidos")))
+
+# ::snt Quem será esse João Filgueiras Lima ?
+(p / person :name (n / name :op1 "João" :op2 "Filgueiras" :op3 "Lima") :domain (a / amr-unknown))
+
+# ::snt A história do Hamilton é interessante .
+(i / interessar-01 :ARG1 (h / história :poss (p / person :name (n / name :op1 "Hamilton"))))
+
+# ::snt Corte de ministérios preocupa produtores e ambientalistas
+(p9 / preocupar-01 :ARG0 (c9 / cortar-01 :ARG1 (m6 / ministério)) :ARG1 (a9 / e :op1 (p11 / produtor) :op2 (a10 / ambientalista)))
+
+# ::snt Jornalista e consultora de qualidade de texto .
+(e1 / e :op1 (j / jornalista) :op2 (c / consultora :topic (q / qualidade :topic (t / texto))))
+
+# ::snt Corte de ministérios preocupa produtores e ambientalistas
+(p / preocupar-01 :ARG0 (c / cortar-01 :ARG1 (m / ministério)) :ARG1 (e1 / e :op1 (p2 / produtor) :op2 (a / ambientalista)))
+
+# ::snt Mas não sabia o que o aguardava .
+(x1 / contrast-01 :ARG2 (x3 / saber-01 :polarity - :ARG0 (e / ele) :ARG1 (x7 / aguardar-01 :ARG0 (c / thing) :ARG1 e)))
+
+# ::snt Houve conflitos e preferimos encerrar a parceria . ”
+(c / conflito :ARG0-of (c1 / cause-01 :ARG1 (p / preferir-01 :ARG0 (n / nós) :ARG1 (e / encerrar-01 :ARG0 n :ARG1 (p1 / parceria)))))
+
+# ::snt Conseguiram .
+(x1 / conseguir-03 :ARG0 (e / eles))
+
+# ::snt E acabou .
+(e1 / e :op1 (a / acabar-01))
+
+# ::snt Site : www.ekrbrasil.com
+(u / url-entity :value "www.ekrbrasil.com" :domain (s / site))
+
+# ::snt Lucas Veloso
+(p / person :name (n / name :op1 "Lucas" :op2 "Veloso"))
+
+# ::snt Sem agrotóxico ?
+(t / ter-01 :ARG1 (a / agrotóxico) :polarity (a1 / amr-unknown))
+
+# ::snt coluna.obituario@grupofolha.com.br
+(e / email-address-entity :value "coluna.obituario@grupofolha.com.br")
+
+# ::snt Internet das coisas
+(x4 / internet-das-coisas)
+
+# ::snt Ele não .
+(e / ele :polarity - :mode imperative)
+
+# ::snt Especialmente Domínguez .
+(p / person :name (n / name :op1 "Domínguez") :mod (e / especialmente))
+
+# ::snt Ninguém sabe .
+(s / saber-01 :ARG0 (n / ninguém))
+
+# ::snt Não entendo .
+(x2 / entender-01 :ARG0 (y / eu) :polarity -)
+
+# ::snt Não quer .
+(q / querer-01 :polarity - :ARG0 (e / ele))
+
+# ::snt Novo ciclo .
+(c / ciclo :mod (n / novo))
+
+# ::snt Todo mundo .
+(t / todo-mundo)
+
+# ::snt Não .
+(n / não)
+
+# ::snt Quais ?
+(x1 / qual :mode interrogative)
+
+# ::snt Foi tudo .
+(t / tudo)
+
+# ::snt Pelo contrário .
+(x3 / pelo-contrário)
+
+# ::snt Carne ?
+(c / carne :domain (i / isso) :polarity (a / amr-unknown))
+
+# ::snt Fotógrafo aéreo
+(f / fotógrafo :mod (a / aéreo))
+
+# ::snt Recessão econômica ?
+(r / recessão :mod (e / economia) :polarity (a / amr-unknown))
+
+# ::snt Esquerda e direita
+(a / e :op1 (e / esquerda :op2 (d / direita)))
+
+# ::snt Tivemos vitórias importantíssimas no conselho .
+(t / ter-03 :ARG1 (n / nós) :ARG2 (v / vitória :mod (h / have-degree-91 :ARG3 (m / muito))) :location (c / conselho))
+
+# ::snt Não quero chutes de três .
+(q / querer-01 :ARG0 (e / eu) :ARG1 (c / chutar-01 :ARG0 (v / você) :manner (t / de-três)))
+
+# ::snt Felipão fez duas alterações .
+(x2 / fazer-01 :ARG0 (p / person :name (n / name :op1 "Felipão")) :ARG1 (x4 / alterar-01 :quant 2))
+
+# ::snt A que atribui esse sucesso ?
+(a / atribuir-01 :ARG1 (s / sucesso) :ARG2 (a1 / amr-unknown))
+
+# ::snt Secretário Municipal de Esportes e Lazer
+(p / pessoa :ARG0-of (h / have-org-role-91 :ARG2 (s / secretário :mod (m / município) :topic (e1 / e :op1 "Esporte" :op2 "Lazer"))))
+
+# ::snt Foram feitos apenas oito acordos .
+(f / fazer-01 :ARG1 (a / acordar-02 :quant 8 :mod (a2 / apenas)))
+
+# ::snt Ele também tem por mim .
+(t / ter-05 :ARG0 (e / ele) :mod (t1 / também) :ARG2 (e1 /eu))
+
+# ::snt Depoimento a Walter Porto .
+(d / depor-01 :ARG2 (p / person :name (n / name :op1 "Walter" :op2 "Porto")))
+
+# ::snt Kim Ki-Taek é poeta coreano .
+(p / poeta :source (c / country :name (n / name :op1 "Corea")) :domain (p1 / person :name (n1 / name :op1 "Kim" :op2 "Ki-Taek")))
+
+# ::snt O que eu não faria
+(f / fazer-01 :polarity - :ARG0 (e / eu) :ARG1 (a / amr-unknown))
+
+# ::snt E a Câmara ?
+(a / amr-unknown :location-of (c / câmara))
+
+# ::snt Hoje , existe um cenário propício ?
+(e / existir-01 :ARG1 (c / cenário :ARG0-of (p / propiciar-01)) :polarity (a / amr-unknown) :time (h / hoje))
+
+# ::snt A tendência é continuar nesse padrão ?
+(t / tendência :polarity (a / amr-unknown) :domain (c / continuar-02 :manner (p / padrão :mod (e / esse))))
+
+# ::snt Foi isso o que aconteceu nessa primeira denúncia .
+(a / acontecer-01 :ARG1 (i2 / isso) :time (d / denunciar-01 :mod (e / esse) :ord (o / ordinal-entity :value 1)))
+
+# ::snt Mas não da forma que eles estão fazendo .
+(c / contrast-01 :ARG1 (f / forma :polarity - :manner-of (f2 / fazer-01 :ARG0 (e / eles))))
+
+# ::snt Não sirvo para esse negócio de ser burocrata .
+(s / servir-02 :ARG1 (e / eu) :ARG2 (b / burocracia :domain e) :polarity -)
+
+# ::snt Ele não quis fazer [ a coalizão ] .
+(x3 / querer-01 :ARG0 (x1 / ele) :polarity - :ARG1 (x4 / fazer-01 :ARG0 x1 :ARG1 (x7 / coalizão)))
+
+# ::snt A Polícia Federal infelizmente está com pouco efetivo .
+(t / ter-01 :ARG0 (g / government-organization :name (n / name :op1 "Polícia" :op2 "Federal")) :mod (f / feliz :polarity -) :ARG0 (e / efetivo :mod (p / pouco)))
+
+# ::snt De Haddad , não sai nada .
+(s / sair-01 :polarity - :ARG1 (n / nada) :ARG2 (p / person :name (n2 / name :op1 "Haddad")))
+
+# ::snt O Rio era nosso , apesar de tudo .
+(c / contrast-01 :ARG2 (c1 / cidade :poss (n / nós) :domain (c2 / city :name (n1 / name :op1 "Rio"))))
+
+# ::snt Um amigo veio aqui e o trouxe .
+(a / e :op1 (v / vir-01 :ARG0 (a1 / amigo) :ARG4 (a2 / aqui)) :op2 (t / trazer-01 :ARG0 a1 :ARG1 (e1 / ele)))
+
+# ::snt Quando mexerem nisso , vai ter gritaria .
+(t / ter-02 :ARG1 (g / gritar-01) :time (m / mexer-01 :ARG1 (i2 / isso)))
+
+# ::snt Isso valeria para alguns crimes de colarinho branco
+(v / valer-03 :ARG1 (i2 / isso) :ARG2 (c / crime :mod (c2 / corporação)))
+
+# ::snt O presidente não tem espaço na mídia ?
+(t / ter-01 :ARG0 (p / presidente) :ARG1 (e / espaço) :location (m / mídia) :polarity (a / amr-unknown))
+
+# ::snt As principais organizadas dos dois clubes são aliadas .
+(a / aliar-01 :domain (o / organizada :mod (p / principal) :poss (c / clube :quant 2)))
+
+# ::snt Desde 2010 , o empresário investe nos EUA .
+(d / desde :op1 (d1 / date-entity :year 2010) :time-of (i / investir-01 :ARG0 (e / empresário) :ARG2 (c / country :name (n / name :op1 "EUA"))))
+
+# ::snt A Chapecoense não quis fazer parte deste processo .
+(q / querer-01 :polarity - :ARG0 (t / team :name (n / name :op1 "Chapecoense")) :ARG1 (f / fazer-402 :ARG0 t :ARG1 (p / parte) :ARG2 (p2 / processar-02 :mod (e / este))))
+
+# ::snt Infantino deixou o Monumental de cara amarrada .
+(d / deixar-03 :ARG0 (p / person :name (n / name :op1 "Infantino")) :ARG1 (s / sports-facility :name (n2 / name :op1 "Monumental")) :ARG2 (c / cara-amarrada))
+
+# ::snt O clube ainda tem 25 jogadores emprestados .
+(t / ter-01 :ARG0 (c / clube) :ARG1 (j / jogador :quant 25 :ARG1-of (e / emprestar-01)) :mod (a / ainda))
+
+# ::snt Não há prazo para a resolução .
+(p / prazo :polarity - :purpose (r / resolver-01))
+
+# ::snt No Brasil , a Finview tem uma representação .
+(t / ter-01 :ARG0 (c / company :name (n / name :op1 "Finview")) :ARG1 (t1 / thing :ARG0-of (r / representar-03)) :location (c2 / country :name (n2 / name :op1 "Brasil")))
+
+# ::snt Dirão ainda que é o futebol raiz .
+(d / dizer-01 :ARG0 (e / eles) :ARG1 (f / futebol :mod (r / raíz)) :mod (a / ainda))
+
+# ::snt Na ocasião , a empresa tinha cinco funcionários .
+(t / ter-01 :ARG0 (e / empresa) :ARG1 (f / funcionário :quant 5) :time (o / ocasião))
+
+# ::snt Não existem garantias trabalhistas , nem previdenciárias .
+(a / e :op1 (e1 / existir-01 :polarity - :ARG1 (g / garantia :mod (t / trabalho))) :op2 (e2 / existir-01 :polarity - :ARG1 (g1 / garantia :mod (p / previdência))))
+
+# ::snt Kevin foi avaliado na quinta ( 29 ) .
+(a / avaliar-01 :ARG1 (p / person :name (n / name :op1 "Kevin")) :time (d / date-entity :day 29 :weekday (q / quinta-feira)))
+
+# ::snt Por décadas , a expectativa de vida nos EUA foi crescente .
+(c / crescer-01 :ARG1 (e / expectativa :topic (v / viver-01) :location (c2 / country :name (n / name :op1 "EUA"))) :duration (m / múltiplo :op1 (t / temporal-quantity :quant 1 :unit (d / década))))
+
+# ::snt As expedições para levar presentes aos sentinelas foram canceladas pelo governo .
+(c / cancelar-01 :ARG0 (g / governo) :ARG1 (e / expedição :purpose (l / levar-02 :ARG1 (p / presente) :ARG2 (s / sentinela))))
+
+# ::snt Estamos deixando a União Europeia , não a Europa .
+(c / contrast-01 :ARG1 (d / deixar-01 :ARG0 (n / nós) :ARG1 (g / government-organization :name (n1 / name :op1 "União" :op2 "Europeia"))) :ARG2 (d1 / deixar-01 :ARG0 n :ARG1 (c1 / continent :name (n2 / name :op3 "Europa"))))
+
+# ::snt Frequentou excelentes escolas , e se formou em economia por Yale .
+(a / e :op1 (f / frequentar-01 :ARG0 (e1 / ele) :ARG1 (e2 / escola :mod (e3 / excelente))) :op2 (f1 / formar-102 :ARG1 e1 :ARG2 (e4 / economia) :location (u / university :name (n / name :op1 "Yale"))))
+
+# ::snt Pandit acredita , no entanto , que a fama é injusta .
+(c / contrast-01 :ARG2 (a / acreditar-01 :ARG0 (p / person :name (n / name :op1 "Pandit")) :ARG1 (j / justo :polarity - :domain (f / fama))))
+
+# ::snt Nós vamos retirar justamente para evitar comentários ” , diz .
+(d / dizer-01 :ARG0 (e / ele) :ARG1 (r / retirar-01 :ARG0 (n / nós) :mod (j / justamente) :purpose (e1 / evitar-01 :ARG1 (c / comentário))))
+
+# ::snt Fiz um preço especial ” , disse Louie Bugarin , 62 .
+(d / dizer-01 :ARG0 (p / person :name (n / name :op1 "Louie" :op2 "Burgain") :age (t / temporal-quantity :quant 62 :unit (a / ano))) :ARG1 (f / fazer-06 :ARG0 p :ARG1 (p2 / preço :mod (e / especial))))
+
+# ::snt Araújo , “ como Trump ” , desacredita no aquecimento global .
+(a / acreditar-01 :polarity - :ARG0 (p / person :name (n / name :op1 "Araújo") :ARG1-of (s / same-01 :ARG2 (p2 / person :name (n2 / name :op1 "Trump")))) :ARG1 (a2 / aquecimento-global))
+
+# ::snt Não há orientação do regime sobre o número de filhos .
+(o / orientar-01 :polarity - :ARG0 (r / regime) :ARG2 (n / número :topic (f / filho)))
+
+# ::snt Não há um órgão específico para supervisionar os juízes .
+(o / órgão :mod (e / específico) :polarity - :ARG0-of (s / supervisionar-01 :ARG1 (j / juiz)))
+
+# ::snt Destaco uma : “ A realidade é a única verdade ” .
+(d / destacar-01 :ARG0 (e / eu) :ARG1 (t / thing :quant 1 :example (v / verdade :mod (u / único)) :domain (r / realidade)))
+
+# ::snt Aos 14 anos entram para a Liga da Juventude .
+(e / entrar-03 :ARG0 (e1 / eles) :ARG1 (o / organization :name (n / name :op1 "Liga" :op2 "da" :op3 "Juventude")) :time (a / age-01 :ARG1 e1 :ARG2 (t / temporal-quantity :quant 14 :unit (y / ano))))
+
+# ::snt Em áreas rurais , o vento alimentou focos de incêndio .
+(a / alimentar-01 :ARG0 (v / vento) :ARG1 (f / foco :topic (i2 / incêndio)) :location (a2 / área :mod (r / rural)))
+
+# ::snt Haddad falou ainda sobre o risco à democracia no país .
+(f / falar-01 :ARG0 (p / person :name (n / name :op1 "Haddad")) :ARG1 (r / risco :topic (d / democracia :location (p2 / país))) :mod (a / ainda))
+
+# ::snt Haddad falou ainda sobre a cobrança de uma autocrítica do PT .
+(f / falar-01 :ARG0 (p / person :name (n / name :op1 "Haddad")) :ARG1 (c / cobrar-02 :ARG1 (c2 / criticar-01 :ARG0 (p2 / political-party :name (n2 / name :op1 "PT")) :ARG1 p2)) :mod (a / ainda))
+
+# ::snt E ninguém quer um mundo obscurantista ” , afirmou .
+(a / afirmar-01 :ARG0 (e / ele) :ARG1 (e1 / e :op1 (q / querer-01 :ARG0 (n / ninguém) :ARG1 (m / mundo :mod (o / obscurantismo)))))
+
+# ::snt Esquema semelhante existe na Cooperativa Jangchon , no subúrbio de Pyangyong .
+(e / esquema :mod (s / semelhante) :ARG1-of (t / ter-01 :ARG0 (o / organization :name (n / name :op1 "Cooperativa" :op2 "Jangchon") :location (s1 / subúrbio :part (c / city :name (n1 / name :op1 "Pyangyong"))))))
+
+# ::snt Em 1981 , ocorreu o Primeiro Encontro Feminista Latino-Americano e Caribenho .
+(e / event :name (n / name :op1 "Encontro" :op2 "Feminista" :op3 "Latino-Americano" :op4 "e" :op5 "Caribenho") :ord (o / ordinal-entity :value 1) :time (d / date-entity :year 1981) :ARG1-of (o2 / ocorrer-01))
+
+# ::snt Os encontros entre arquitetos e atingidos acontecem desde 30 de maio .
+(e / encontrar-101 :ARG0 (a / arquiteto) :ARG1 (p / pessoa :ARG1-of (a2 / atingir-01)) :ARG1-of (a3 / acontecer-01 :time (d / desde :op1 (d2 / date-entity :day 30 :month 5))))
+
+# ::snt Trujillo foi assassinado no ano seguinte e veio a democratização .
+(e1 / e :op1 (a / assassinar-01 :ARG0 (p / person :name (n / name :op1 "Trujillo")) :time (a2 / ano :mod (s / seguinte))) :op2 (v / vir-01 :ARG1 (d / democratização)))
+
+# ::snt Sua linha como psicólogo é existencialista , de Sartre .
+(e / existencialismo :domain (l / linha :poss (e1 / ele) :topic (p / psicologia)) :ARG1-of (c / criar-01 :ARG0 (p2 / person :name (n / name :op1 "Sartre"))))
+
+# ::snt Isso não necessariamente demonstra uma realidade uniforme no país .
+(d / demonstrar-01 :polarity - :ARG0 (i2 / isso) :ARG1 (r / realidade :mod (u / uniforme) :location (p / país)) :manner (n / necessário))
+
+# ::snt Se ele não for renovado , várias escolas brasileiras vão parar .
+(p / parar-01 :ARG1 (e / escola :quant (v / vários) :source (c / country :name (n / name :op1 "Brasil"))) :condition (e1 / ele :ARG1-of (r / renovar-01 :polarity -)))
+
+# ::snt Leandro Beguoci é diretor editorial de Nova Escola ( novaescola.org.br ) .
+(p / pessoa :ARG0-of (d / dirigir-01 :mod (e / editora) :ARG1 (o / organization :name (n / name :op1 "Nova" :op2 "Escola") :ARG0-of (t / ter-01 :ARG1 (s / site :name (u / url-entity :value "novaescola.org.br"))))) :domain (p1 / person :name (n1 / name :op1 "Leandro" :op2 "Beguoci")))
+
+# ::snt Para qualquer médico português ou espanhol isso não conta . ”
+(c / contar-02 :polarity - :ARG0 (i2 / isso) :ARG1 (m / médico :location (o / or :op1 (c2 / country :name (n / name :op1 "Portugal")) :op2 (c3 / country :name (n2 / name :op1 "Spain"))) :mod (q / qualquer)))
+
+# ::snt Meu pai sempre foi presente ” , admite Lucas .
+(p / presente :time (s / sempre) :domain (p1 / pai :poss p2) :ARG1-of (a / admitir-01 :ARG0 (p2 / person :name (n / name :op1 "Lucas"))))
+
+# ::snt Do contrário , podem tornar-se os estupradores e abusadores de amanhã .
+(c / contrast-01 :ARG2 (p / possible-01 :ARG1 (t / tornar-101 :ARG1 (e1 / eles) :ARG2 (e2 / e :op1 (p2 / pessoa :ARG0-of (e3 / estuprar-01)) :op2 (p3 / pessoa :ARG0-of (a / abusar-01))))))
+
+# ::snt Então os chamaremos ou abriremos outro edital ” , afirma .
+(o / ou :op1 (c / chamar-02 :ARG0 (n / nós) :ARG1 (e / eles)) :op2 (a / abrir-01 :ARG0 n :ARG1 (e1 / edital :mod (o1 / outro))) :ARG1-of (a1 / afirmar-01 :ARG0 (e2 / ele)))
+
+# ::snt Essa foi a avaliação de professores do curso e colégio Objetivo .
+(e / essa :ARG1-of (a / avaliar-01 :ARG0 (p / professor :ARG0-of (h / have-org-role-91 :ARG1 (s / school :name (n / name :op1 "Objetivo") :domain (e2 / e :op1 (c / curso) :op2 (c2 / colégio)))))))
+
+# ::snt No entanto , sua revolução foi muito mais profunda .
+(x2 / contrast-01 :ARG2 (p / profunda :domain (r / revolução :poss (e / ele)) :degree (m / mais :degree (m1 / muito))))
+
+# ::snt Outra pergunta , por favor '' , respondeu o presidente eleito .
+(r / responder-01 :ARG0 (p / presidente :ARG1-of (e / eleger-01)) :ARG1 (p1 / pergunta :mod (o / outro) :mode imperative :polite +))
+
+# ::snt Vários pesquisadores consideraram o ato uma `` loucura '' .
+(c / considerar-01 :ARG0 (p / pessoa :ARG0-of (p2 / pesquisar-01) :mod (v / vários)) :ARG1 (a / ato) :ARG2 (l / loucura))
+
+# ::snt Muito pouca gente havia tido acesso ao livro .
+(a / acessar-01 :ARG0 (g / gente :quant (p / pouco :degree (m / muito))) :ARG1 (l / livro))
+
+# ::snt Deixava as formas se definirem pelos próprios materiais .
+(d / deixar-02 :ARG0 (e / ele) :ARG1 (d2 / definir-02 :ARG0 f :ARG1 f :instrument (m / material :poss f)) :ARG2 (f / forma))
+
+# ::snt A equipe também vem do mundo inteiro .
+(v / vir-01 :ARG1 (e / equipe) :ARG3 (m / mundo :mod (i2 / inteiro)) :mod (t / também))
+
+# ::snt Alguns desses experimentos estão na mostra .
+(e / experimento :mod (a / algum) :location (m / mostra) :ARG1-of (i2 / include-91 :ARG2 (e2 / experimento :mod (e3 / esse))))
+
+# ::snt Mas a questão não é só numérica .
+(c / contrast-01 :ARG1 (n2 / número :polarity - :domain (c2 / coisa :ARG1-of (q / questionar-01)) :mod (s / só)))
+
+# ::snt O personagem é feito de pulsões .
+(f / fazer-01 :ARG1 (p / personagem) :ARG2 (p2 / pulsão))
+
+# ::snt Isso , sim , é censura .
+(c / censura :domain (i2 / isso))
+
+# ::snt Não é um plano imediato , no entanto .
+(p / plano :mod (i / imediato) :polarity - :domain (i1 / isso) :ARG2-of (c / contrast-01))
+
+# ::snt Os anos 1960 foram difíceis para Matarazzo .
+(d / difícil :beneficiary (p / person :name (n / name :op1 "Matarazzo")) :domain (d2 / date-entity :decade 1960))
+
+# ::snt Ora , é só ir para o laboratório .
+(i2 / ir-01 :ARG4 (l / laboratório) :mod (s / só))
+
+# ::snt O caso ainda está sob investigação .
+(i2 / investigar-01 :ARG1 (c / caso) :mod (a / ainda))
+
+# ::snt Chama-se `` Sal Gordura Ácido Calor '' .
+(c / chamar-101 :ARG2 (p / publication :name (n / name :op1 "Sal" :op2 "Gordura" :op3 "Ácido" :op4 "Calor")))
+
+# ::snt A Microsoft valia US $ 822,90 bilhões .
+(v / valer-01 :ARG1 (c / company :name (n / name :op1 "Microsoft")) :ARG2 (m / monetary-quantity :quant 822900000000 :unit (d / dólar)))
+
+# ::snt Depende de onde vem o produto .
+(d / depender-01 :ARG2 (l / location :ARG3-of (v / vir-01 :ARG1 (p / produto))))
+
+# ::snt A maioria das causas de ginecomastia é fisiológica .
+(c / cause-01 :ARG0 (f / fisiologia) :ARG1 (m / medical-condition :name (n / name :op1 "ginecomastia")) :mod (m2 / maioria))
+
+# ::snt A guia chama-se Yumi e fala português .
+(a / e :op1 (c / chamar-01 :ARG1 (g / guia) :ARG2 (p / person :name (n / name :op1 "Yumi"))) :op2 (f / falar-01 :ARG0 g :ARG1 (p1 / português)))
+
+# ::snt Estadia em quarto duplo com café da manhã .
+(e / estadia :location (q / quarto :mod (d / duplo)) :accompanier (c / café-da-manhã))
+
+# ::snt O evento acontece das 10h às 18h .
+(a / acontecer-01 :ARG1 (e / evento) :time (d / date-interval :op1 (d2 / date-entity :time "10:00") :op2 (d3 / date-entity :time "18:00")))
+
+# ::snt Primeiro , o dono da peça a valoriza .
+(v / valorizar-01 :li 1 :ARG0 (p / pessoa :ARG0-of (t / ter-01 :ARG1 (p2 / peça))) :ARG1 p2)
+
+# ::snt Compartilhe .
+(c / compartilhar-01 :mode imperative)
+
+# ::snt Spoiler : não vai acontecer .
+(a / acontecer-01 :polarity - :domain (s / spoiler))
+
+# ::snt Leve à geladeira .
+(l / levar-02 :mode imperative :ARG2 (g / geladeira))
+
+# ::snt Tudo será feito de maneira a garantir os direitos adquiridos em o atual sistema .
+(f / fazer-01 :ARG1 (t / tudo) :purpose (g / garantir-02 :ARG1 (d / direito :ARG1-of (a / adquirir-01 :location (s / sistema :mod (a1 / atual))))))
+
+# ::snt A empresa considera os equipamentos ultrapassados e quer adquirir modelos modernos .
+(e1 / e :op1 (c / considerar-01 :ARG0 (e2 / empresa) :ARG1 (e3 / equipamento) :ARG2 (u / ultrapassado)) :op2 (q / querer-01 :ARG0 e2 :ARG1 (a / adquirir-01 :ARG0 e2 :ARG1 (m / modelo :mod (m1 / moderno)))))
+
+# ::snt A Folha preferiu aguardar em uma posição de distanciamento crítico .
+(p / preferir-01 :ARG0 (c / company :name (n / name :op1 "A" :op2 "Folha")) :ARG1 (a / aguardar-01 :ARG0 c :manner (p1 / posição :mod (d / distanciamento :mod (c1 / crítica)))))
+
+# ::snt Um outro relatório mostra que o 'ret ' defeituoso afeta rins e intestino de animais .
+(m / mostrar-01 :ARG0 (r / relatório :mod (o / outro)) :ARG1 (a / afetar-01 :ARG0 (g / gene :name (n / name :op1 "ret") :mod (d / defeito)) :ARG1 (e1 / e :op1 (r2 / rim :part-of (a1 / animal)) :op2 (i / intestino :part-of a1))))
+
+# ::snt Ele não treinava como devia , o que não admito .
+(a / admitir-02 :polarity - :ARG0 (e / eu) :ARG1 (t / treinar-01 :polarity - :ARG0 (e2 / ele) :manner (o / obligate-01 :ARG2 (t2 / treinar-01 :ARG0 e2))))
+
+# ::snt Ele afirma ter negros e judeus entre seus correligionários .
+(a / afirmar-01 :ARG0 (e1 / ele) :ARG1 (t / ter-01 :ARG0 e1 :ARG1 (i / include-91 :ARG1 (a1 / e :op1 (n / negro) :op2 (j / judeu)) :ARG2 (c / correligionário))))
+
+# ::snt Foi afastado de a Comissão de Arbitragem .
+(s / afastar-01 :ARG1 (e / ele) :ARG2 (o / organization :name (n / name :op1 "Comissão" :op2 "de" :op3 "Arbitragem")))
+
+# ::snt A quem podemos nos aliar ?
+(p / possible-01 :ARG1 (a / aliar-01 :ARG0 (n / nós) :ARG1 n :ARG2 (a1 / amr-unknown)))
+
+# ::snt Rússia veta documento sobre a Bósnia
+(v / vetar-01 :ARG0 (c / country :name (n / name :op1 "Rússia")) :ARG1 (d / documento :topic (c1 / country :name (n1 / name :op1 "Bósnia"))))
+
+# ::snt Saúde !
+(s / saúde :mode expressive)
+
+# ::snt Ela nos modifica .
+(m / modificar-01 :ARG0 (e / ela) :ARG1 (n / nós))
+
+# ::snt Não gostou ?
+(g / gostar-01 :polarity - :ARG0 (e / ele) :ARG1-of (r / request-confirmation-91))
+
+# ::snt A melhor maneira de chegar a Pedra Azul é de carro .
+(h / have-degree-91 :ARG1 (c / chegar-01 :ARG1 (l / location :name (n / name :op1 "Pedra" :op2 "Azul")) :instrument (c1 / carro)) :ARG2 (b / bom) :ARG3 (m / máximo))
+
+# ::snt No valesdauvagoethe.com.br é possível agendar um tour pelos vinhedos da região .
+(p / possible-01 :ARG1 (a / agendar-01 :ARG1 (t / tour :destination (v / vinhedo :location (r / região))) :medium (u / url-entity :value "valesdauvagoethe.com.br")))
+
+# ::snt The Wall Street Journal , traduzido do inglês por Paulo Migliacci
+(n / newspaper :name (n1 / name :op1 "The" :op2 "Wall" :op3 "Street" :op4 "Journal") :ARG1-of (t / traduzir-01 :ARG0 (p / person :name (n2 / name :op1 "Paulo" :op2 "Migliacci")) :ARG3 (i / inglês)))
+
+# ::snt Ele era técnico , profissional , dedicado e muito sério .
+(x8 / e :op1 (t / técnico) :op2 (p / profissional) :op3 (d / dedicado) :op4 (s / sério :degree (x9 / muito)) :domain (e1 / ele))
+
+# ::snt A empresa mencionada é a MC3 , de Paladino .
+(c / company :name (n / name :op1 "MC3") :poss (p / person :name (n1 / name :op1 "Paladino")) :domain (e / empresa :ARG1-of (m / mencionar-01)))
+
+# ::snt O PL 9054/17 tem pontos muito problemáticos '' , disse Moro .
+(d / dizer-01 :ARG0 (p / person :name (n / name :op1 "Moro")) :ARG1 (t / ter-01 :ARG0 (l / law :name (n1 / name :op1 "PL" :op2 "9054/17")) :ARG1 (p1 / ponto :mod (p2 / problema :degree (m / muito)))))
+
+# ::snt E a resposta foi [ a eleição de Donald ] Trump .
+(a / e :op1 (e1 / eleger-01 :ARG1 (p / person :name (n / name :op1 "Donald" :op2 "Trump")) :domain (r / resposta)))
+
+# ::snt Dados os limites de espaço , vou utilizar referências suficientes .
+(c / cause-01 :ARG0 (l / limite :mod (e / espaço)) :ARG1 (u / utilizar-01 :ARG0 (e1 / eu) :ARG1 (r / referência :mod (s / suficiente))))
+
+# ::snt E o mais importante : ovos fritos são mais gostosos .
+(a / e :op1 (h / have-degree-91 :ARG1 (h1 / have-degree-91 :ARG1 (o / ovo :mod (f / frito)) :ARG2 (g / gostar-01) :ARG3 (m1 / mais)) :ARG2 (i / importar-02) :ARG3 (m / máximo)))
+
+# ::snt Kilner , que pratica há seis anos , confirma .
+(p / person :name (n / name :op1 "Kilner") :ARG0-of (p1 / practicar-01 :time (a / antes :op1 (a1 / agora) :quant (t / temporal-quantity :quant 6 :unit (a2 / ano)))) :ARG0-of (c / confirmar-01))
+
+# ::snt Podemos chamar o fenômeno de " efeito Coca-Cola " .
+(p / possible-01 :ARG1 (c / chamar-01 :ARG0 (n / nós) :ARG1 (f / fenômeno) :ARG2 (e / efeito :mod (c1 / coca-cola))))

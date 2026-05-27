@@ -1,0 +1,1247 @@
+# ::snt Eu bem sabia que não adiantava interrogá-lo.
+(s / saber-01
+				:ARG0 (e / eu)
+				:ARG1 (a / adiantar-02 :polarity -
+					:ARG1 (i / interrogar-01
+						:ARG1 (e1 / ele)))
+				:degree (b / bem))
+
+# ::snt Ele estava cansado.
+(c / cansado
+				:domain (e / ele))
+
+# ::snt Sentou-se.
+(s / sentar-01)
+
+# ::snt Sentei-me junto dele.
+(s / sentar-01
+				:ARG0 (e / eu)
+				:location (j / junto
+					:op1 (e1 / ele)))
+
+# ::snt E, após um silêncio, disse ainda: - As estrelas são belas por causa de uma flor que não se vê...
+(e / e
+				:op2 (d / dizer-01
+					:ARG0 (e1 / ele)
+					:ARG1 (b / bela
+						:domain (e2 / estrela)
+						:cause (f / flor
+							:ARG1-of (v / ver-01 :polarity -)))
+					:time (a / após
+						:op1 (s / silêncio))
+					:mod (a1 / ainda)))
+
+# ::snt Eu respondi "é mesmo" e fitei, sem falar, a ondulação da areia enluarada.
+(e / e
+				:op1 (r / responder-01
+					:ARG0 (e1 / eu)
+					:ARG1 (e2 / é-mesmo))
+				:op2 (f / fitar-01
+					:ARG0 e1
+					:ARG1 (o / ondulação
+						:topic (a / areia
+							:mod (e3 / enluarada)))
+					:manner (m / medo :polarity -)))
+
+# ::snt - O deserto é belo, acrescentou...
+(a / acrescentar-02
+				:ARG0 (e / ele)
+				:ARG1 (b / belo
+					:domain (d / deserto)))
+
+# ::snt E era verdade.
+(e / e
+				:op2 (v / verdade))
+
+# ::snt Eu sempre amei o deserto.
+(a / amar-01
+				:ARG0 (e / eu)
+				:ARG1 (d / deserto)
+				:time (s / sempre))
+
+# ::snt A gente se senta numa duna de areia.
+(s / sentar-01
+				:ARG0 (a / a-agente)
+				:location (d / duna
+					:mod (a1 / areia)))
+
+# ::snt Não se vê nada.
+(v / ver-01 :polarity -
+				:ARG1 (n / nada))
+
+# ::snt Não se escuta nada.
+(e / escutar-01 :polarity -
+				:ARG1 (n / nada))
+
+# ::snt E no entanto, no silêncio, alguma coisa irradia...
+(e / e
+				:op2 (i / irradia
+					:domain (a / alguma
+						:mod (c / coisa))
+					:concession (s / silêncio)))
+
+# ::snt O que torna belo o deserto, disse o principezinho, é que ele esconde um poço nalgum lugar.
+(d / dizer-01
+				:ARG0 (p / principezinho)
+				:ARG1 (t / tornar-101
+					:ARG1 (d1 / deserto)
+					:ARG2 (b / belo)
+					:cause (e / esconder-01
+						:ARG0 (e1 / ele)
+						:ARG1 (p1 / poço)
+						:location (l /lugar
+							:mod (n / nalgum)))))
+
+# ::snt Fiquei surpreso por compreender de súbito essa misteriosa irradiação da areia.
+(f / ficar-201
+				:ARG1 (s / surpreso)
+				:ARG2 (c / compreender-01
+					:ARG0 (e / eu)
+					:ARG1 (i / irradiação
+						:mod (m / misteriosa)
+						:mod (a / areia))
+					:manner (s1 / súbito)))
+
+# ::snt Quando eu era pequeno, habitava  uma casa antiga, e diziam as lendas que ali fora enterrado um tesouro.
+(e / e
+				:op1 (h / habitar-01
+					:ARG0 (e1 / eu)
+					:ARG1 (c / casa
+						:mod (a / antiga))
+					:time (p / pequeno
+						:domain e1))
+				:op2 (d / dizer-01
+					:ARG0 (l / lendas)
+					:ARG1 (e2 / enterrar-01
+						:ARG1 (t / tesouro)
+						:location (f / fora))))
+
+# ::snt Ninguém, é claro, o conseguira descobrir, nem talvez mesmo o procurou.
+(e / e
+				:op1 (c / conseguir-01
+					:ARG0 (n / ninguém)
+					:ARG1 (d / descobrir-01
+						:ARG1 (e1 / ele)))
+				:op2 (p / procurar-01 :polarity -
+					:ARG0 n
+					:ARG1 e1))
+
+# ::snt Mas ele encantava a casa toda.
+(c / contrast-01
+				:ARG2 (e / encantar-01
+					:ARG0 (e1 / ele)
+					:ARG1 (c1 / casa
+						:mod (t / toda))))
+
+# ::snt Minha casa escondia um tesouro no fundo do coração...
+(e / esconder-01
+				:ARG0 (c / casa
+					:poss (e1 / eu))
+				:ARG1 (t / tesouro)
+				:location (c1 / coração :part-of c
+					:mod (f / fundo)))
+
+# ::snt - Quer se trate de casa, das estrelas ou do deserto, disse eu ao principezinho, o que faz sua beleza é invisível!
+(d / dizer-01
+				:ARG0 (e / eu)
+				:ARG1 (t / tratar-03
+					:ARG1 (o / ou
+						:op1 (c / casa)
+						:op2 (e1 / estrela)
+						:op3 (d1 / deserto)))
+				:ARG2 (p / principezinho))
+
+# ::snt - Estou contente, disse ele, que estejas de acordo com a raposa.
+(d / dizer-01
+				:ARG0 (e / ele)
+				:ARG1 (c / contente
+					:domain (e1 / eu)
+					:source (r / raposa)))
+
+# ::snt Como o principezinho adormecesse, tomei-o nos braços e prossegui a caminhada.
+(e / e
+				:op1 (t / tomar-01
+					:ARG0 (e1 / eu)
+					:ARG1 (p / principezinho)
+					:location (b / braços :part-of e1))
+				:op2 (p1 / prosseguir-01
+					:ARG0 e1
+					:ARG1 (c / caminhada))
+				:time (a / adormecer-01
+					:ARG0 p))
+
+# ::snt Eu estava comovido.
+(c / comovido
+				:domain (e / eu))
+
+# ::snt Tinha a impressão de carregar um frágil tesouro.
+(t / ter-01
+				:ARG0 (e / eu)
+				:ARG1 (i / impressão
+					:ARG0-of (c / carregar-01
+						:ARG0 e
+						:ARG1 (t1 / tesouso
+							:mod (f / frágil)))))
+
+# ::snt Parecia-me mesmo não haver na Terra nada mais frágil.
+(p / parecer-01
+				:ARG2 (h / haver-01 :polarity -
+					:ARG1 (f / frágil
+						:degree (m / mais)
+						:domain (n / nada
+							:location (p1 / planeta
+								:name (n1 / name :op1 "Terra")))))
+				:ARG3 (e / eu))
+
+# ::snt Considerava, à luz da lua, a fronte pálida, os olhos fechados, as mechas de cabelo que tremiam ao vento.
+(c / considerar-01
+				:ARG1 (e / e
+					:op1 (l / luz
+						:mod (l1 / lua))
+					:op2 (f / fronte
+						:mod (p / pálida))
+					:op3 (o / olhos
+						:mod (f1 / fechado))
+					:op4 (m / mechas
+						:mod (c1 / cabelo)
+						:ARG1-of (t / tremer-01
+							:ARG1 (v / vento)))))
+
+# ::snt E eu pensava: o que eu vejo não é mais que uma casca.
+(e / e
+				:op2 (p / pensar-01
+					:ARG0 (e1 / eu)
+					:ARG1 (v / ver-01
+						:ARG0 e1
+						:ARG1 (c / casca
+							:mod (n / não-é-mais-que)))))
+
+# ::snt O mais importante é invisível...
+(i / importante
+				:degree (m / mais)
+				:domain (i1 / invisível))
+
+# ::snt Como seus lábios entreabertos esboçassem um sorriso, pensei ainda: "O que tanto me comove nesse príncipe adormecido é sua fidelidade a uma flor; é a imagem de uma rosa que brilha nele como a chama de uma lâmpada, mesmo quando dorme..."
+(p / pensar-01
+				:ARG0 (e / eu)
+				:ARG1 (c / comover-01
+					:ARG0 (p1 / príncipe
+						:mod (a / adormecido))
+					:ARG1 e
+					:ARG2 (e1 / e
+						:op1 (f / fidelidade)
+						:op2 (i / imagem
+							:poss (r / rosa)
+							:mod (b / brilha
+								:location p))))
+				:manner (l / lábios
+					:mod (e2 / entreaberto)))
+
+# ::snt Eu o pressentia então mais frágil ainda.
+(p / pressentir-01
+				:ARG0 (e / eu)
+				:ARG1 (f / fágil
+					:degree (e1 / ele)))
+
+# ::snt É preciso proteger as lâmpadas com cuidado: um sopro as pode apagar...
+(p / precisar-01
+				:ARG2 (p1 / proteger-01
+					:ARG1 (l / lâmpada)
+					:manner (c / cuidado)
+					:ARG2 (s / sopro
+						:ARG1-of (a / apagar-01
+							:ARG1 l))))
+
+# ::snt E, caminhando assim, eu descobri o poço.
+(e / e
+				:op2 (d / descobrir-01
+					:ARG0 (e1 / eu)
+					:ARG1 (p / poço))
+				:time (c / caminhar-01
+					:mod (a / assim)))
+
+# ::snt O dia estava raiando.
+(r / raiando
+				:domain (d / dia))
+
+# ::snt Capítulo 25
+(c / capítulo
+				:mod 25)
+
+# ::snt - Os homens, disse o principezinho, se enfurnam nos rápidos, mas não sabem o que procuram.
+(d / dizer-01
+				:ARG0 (p / principezinho)
+				:ARG1 (e / enfurnar-01
+					:ARG0 (h / homem)
+					:ARG1 (r / rápido))
+				:concession (s / saber-01 :polarity -
+					:ARG0 h
+					:ARG1 (p1 / procurar-01)))
+
+# ::snt Então eles se agitam, ficam rodando à toa...
+(e / e
+				:op1 (a / agitar-01
+					:ARG0 (e1 / eles))
+				:op2 (f / ficar-202
+					:ARG1 (r / rodando)
+					:ARG2 (t / toa)))
+
+# ::snt E acrescentou: - E isso não adianta...
+(e / e
+				:op2 (a / acrescentar-02
+					:ARG1 (a1 / adiantar-02 :polarity -
+						:ARG1 (i / isso))))
+
+# ::snt O poço a que tínhamos chegado não se parecia de forma alguma com os poços do Saara.
+(c / chegar-01
+				:ARG0 (n / nós)
+				:ARG1 (p / poço)
+				:ARG2-of (p1 / parecer-101 :polarity -
+					:ARG1 p
+					:ARG2 (p2 / poço
+						:location (d / deserto
+							:name (n1 / name :op1 "Saara")))))
+
+# ::snt Os poços do Saara são simples buracos na areia.
+(b / buracos
+				:mod (s / simples)
+				:location (a / areia)
+				:domain (p / poços
+					:location (d / deserto
+						:name (n / name :op1 "Saara"))))
+
+# ::snt Aquele, parecia um poço de aldeia.
+(p / parecer-101
+				:ARG0 (a / aquele)
+				:ARG1 (p1 / poço
+					:mod (a1 / aldeia)))
+
+# ::snt Mas não havia ali aldeia alguma, e eu julgava sonhar.
+(c / contrast-01
+				:ARG2 (e / e
+					:op1 (h / haver-01 :polarity -
+						:ARG1 (a / aldeia
+							:mod (a1 / alguma))
+						:location (a2 / ali))
+					:op2 (j / julgar-01
+						:ARG0 (e1 / eu)
+						:ARG1 (s / sonhar-01
+							:ARG0 e1))))
+
+# ::snt - É estranho, disse eu ao principezinho, tudo está preparado: a roldana, o balde e a corda.
+(d / dizer-01
+				:ARG0 (e / eu)
+				:ARG1 (p / preparar-01
+					:ARG1 (e1 / e
+						:op1 (r / roldana)
+						:op2 (b / balde)
+						:op3 (c / corda)))
+				:ARG2 (p1 / principezinho))
+
+# ::snt Ele riu, pegou a corda, fez girar a roldana.
+(e / e
+				:op1 (r / rir-01
+					:ARG0 (e1 / ele))
+				:op2 (p / pegar-02
+					:ARG0 e1
+					:ARG1 (c / corda))
+				:op3 (g / girar-01
+					:ARG0 e1
+					:ARG1 (r1 / roldana)))
+
+# ::snt E a roldana gemeu como gemem os velhos cata-ventos quando o vento dormiu por muito tempo.
+(e / e
+				:op2 (g / gemer-01
+					:ARG0 (r / roldana)
+					:manner (g1 / gemer-01
+						:ARG0 (c / cata-vento
+							:mod (v / velhos))
+						:time (d / dormir-01
+							:ARG0 (v1 / vento)
+							:time (t / tempo
+								:op1 (m / muito))))))
+
+# ::snt - Tu escutas? disse o príncipe.
+(d / dizer-01
+				:ARG0 (p / príncipe)
+				:ARG1 (e / escutar-01 :mode interrogative
+					:ARG0 (t / tu)))
+
+# ::snt Estamos acordando o poço, ele canta...
+(e / e
+				:op1 (a / acordar-01
+					:ARG0 (n / nós)
+					:ARG1 (p / poço))
+				:op2 (c / cantar-01
+					:ARG0 (e1 / ele)))
+
+# ::snt Eu não queria que ele fizesse esforço:
+(q / querer-01 :polarity -
+				:ARG0 (e / eu)
+				:ARG1 (f / fazer-01
+					:ARG0 (e1 / ele)
+					:ARG1 (e2 / esforço)))
+
+# ::snt - Deixa que eu puxe, disse eu, é muito pesado para o teu tamanho.
+(d / dizer-01
+				:ARG0 (e / eu)
+				:ARG1 (d1 / deixar-02
+					:ARG0 e
+					:ARG1 (p / puxar-01)
+					:cause (p1 / pesado
+						:degree (m /muito)
+						:compared-to (t / tamanho
+							:domain (t1 / tu)))))
+
+# ::snt Lentamente, icei o balde até em cima, e o instalei com cuidado na borda do poço.
+(e / e
+				:op1 (i / içar-01
+					:ARG0 (e1 / eu)
+					:ARG1 (b / balde)
+					:destination (c / cima)
+					:manner (l / lentamente))
+				:op2 (i1 / instalar-01
+					:ARG0 e1
+					:ARG1 b
+					:ARG2 (b1 / borda
+						:part-of (p / poço))
+					:manner (c1 / cuidado)))
+
+# ::snt Nos meus ouvidos permanecia ainda o canto da roldana, e na água, que ainda brilhava, via tremer o sol.
+(e / e
+				:op1 (p / permanecer-301
+					:ARG1 (c / canto
+						:mod (r / roldana))
+					:location (o / ouvido
+						:poss (e1 / eu)))
+				:op2 (v / ver-01
+					:ARG0 e1
+					:ARG1 (t / tremer-01
+						:ARG1 (s / sol))
+					:location (a / água
+						:mod (b / brilhava))))
+
+# ::snt - Tenho sede dessa água, disse o principezinho.
+(d / dizer-01
+				:ARG0 (p / principezinho)
+				:ARG1 (t / ter-05
+					:ARG0 p
+					:ARG1 (s / sede
+						:topic (a / água
+							:mod (d1 / dessa)))))
+
+# ::snt Dá-me de beber...
+(d / dar-01
+				:ARG1 (b / beber-01)
+				:ARG2 (e / eu))
+
+# ::snt E eu compreendi o que ele havia buscado!
+(e / e
+				:op2 (c / compreender-01
+					:ARG0 (e1 / eu)
+					:ARG1 (h / haver-02
+						:ARG1 (b / buscado)
+						:ARG2 (e2 / ele))))
+
+# ::snt Levantei-lhe o balde até a boca.
+(l / levantar-01
+				:ARG0 (e / eu)
+				:ARG1 (b / balde)
+				:destination (b1 / boca
+					:part-of (e1 / ele)))
+
+# ::snt Ele bebeu, de olhos fechados.
+(b / beber-01
+				:ARG0 (e / ele)
+				:manner (f / fechado
+					:mod (o / olho
+						:part-of e)))
+
+# ::snt Era doce como uma festa.
+(d / doce
+				:compared-to (f / festa))
+
+# ::snt Essa água era muito mais que alimento.
+(m / muito
+				:degree (m1 / mais)
+				:domain (a / água)
+				:compared-to (a1 / alimento))
+
+# ::snt Nascera da caminhada sob as estrelas, do canto da roldana, do esforço do meu braço.
+(n / nascer-01
+				:ARG1 (e / e
+					:op1 (c / caminhada
+						:location (s / sob
+							:op1 (e1 / estrela)))
+					:op2 (c1 / cantar-01
+						:ARG0 (r / roldana))
+					:op3 (e2 / esforçar-01
+						:ARG0 (b / braço
+							:part-of (e3 / eu)))))
+
+# ::snt Era boa para o coração, como um  presente.
+(b / bom
+				:cause (c / coração)
+				:compared-to (p / presente))
+
+# ::snt Quando eu era pequeno, todo o esplendor do presente de Natal estava também na luz da árvore, na música da missa de meia-noite, na doçura dos risos...
+(e / e
+				:op1 (l / luz
+					:mod (a / árvore))
+				:op2 (m / música
+					:poss (m1 / missa)
+					:time (m2 / meia-noite))
+				:op3 (d / douçura
+					:mod (r / risos))
+				:domain (e1 / esplendor
+					:mod (p / presente
+						:poss (n / natal)))
+				:time (p1 / pequeno
+					:domain (e2 / eu)))
+
+# ::snt - Os homens do teu planeta, disse o principezinho, cultivam cinco mil rosas num mesmo jardim... e não encontram o que procuram...
+(d / dizer-01
+				:ARG0 (p / principezinho)
+				:ARG1 (e / e
+					:op1 (c / cultivar-01
+						:ARG0 (h / homem
+							:location (p1 / planeta
+								:poss (t / tu)))
+						:ARG1 (r / rosa :quant 5000)
+						:location (j / jardim
+							:mod (m / mesmo)))
+					:op2 (e1 / encontrar-01 :polarity -
+						:ARG0 h
+						:ARG1 (p2 / procurar-01
+							:ARG1 (a / amr-unknown)))))
+
+# ::snt - Não encontram, respondi...
+(r / responder-01
+				:ARG0 (e / eu)
+				:ARG1 (e1 / encontrar-01 :polarity -))
+
+# ::snt - E no entanto o que eles buscam poderia ser achado numa só rosa, ou num pouquinho d'água...
+(c / contrast-01
+				:ARG2 (b / buscar-01
+					:ARG0 (e / eles)
+					:ARG1 (p / poder-201
+						:ARG1 (a / ahcar-01
+							:location (o / ou
+								:op1 (r / rosa)
+								:op2 (a1 / água
+									:quant (p1 / pouquinho)))))))
+
+# ::snt - É verdade.
+(v / verddade)
+
+# ::snt E o principezinho acrescentou: - Mas os olhos são cegos.
+(e / e
+				:op2 (a / acrescentar-02
+					:ARG0 (p / principezinho)
+					:ARG1 (c / contrast-01
+						:ARG2 (c1 / cego
+							:domain (o / olho)))))
+
+# ::snt É preciso buscar com o coração...
+(p / precisar-01
+				:ARG2 (b / buscar-01
+					:instrument (c / coração)))
+
+# ::snt Eu havia bebido.
+(h / haver-01
+				:ARG1 (b / bebido))
+
+# ::snt Respirava facilmente.
+(r / respirar-01
+				:manner (f / facilmente))
+
+# ::snt A areia é cor de mel quando amanhece.
+(c / cor
+				:mod (m / mel)
+				:domain (a / areia)
+				:time (a1 / amanhece))
+
+# ::snt E a cor de mel me fazia feliz.
+(e / e
+				:op2 (f / fazer-11
+					:ARG0 (c / cor
+						:mod (m / mel))
+					:ARG1 (e1 / eu)
+					:ARG2 (f1 / feliz)))
+
+# ::snt Por que haveria eu de estar triste?...
+(t / triste :mode interrogative
+				:domain (e / eu))
+
+# ::snt - É preciso, disse baixinho o príncipe, que cumpras a tua promessa.
+(d / dizer-01
+				:ARG0 (p / principezinho)
+				:ARG1 (p1 / precisar-03
+					:ARG1 (c / cumprir-01
+						:ARG0 (t / tu)
+						:ARG1 (p2 / promessa
+							:poss t)))
+				:manner (b / baixinho))
+
+# ::snt - Que promessa?
+(p / promessa :mode interrogative)
+
+# ::snt - Tu sabes... a mordaça do meu carneiro...
+(s / saber-01
+				:ARG0 (t / tu)
+				:ARG1 (m / mordaça
+					:poss (c / carneiro
+						:poss (e / eu))))
+
+# ::snt eu sou responsável pela flor!
+(r / responsável
+				:domain (e / eu)
+				:topic (f / flor))
+
+# ::snt Tirei do bolso as minhas tentativas de desenho.
+(t / tirar-01
+				:ARG0 (e / eu)
+				:ARG1 (t1 / tentativa
+					:poss e
+					:mod (d / desenho))
+				:ARG2 (b / bolso))
+
+# ::snt O principezinho os viu e disse rindo: - Teus baobás parecem um pouco repolhos...
+(e / e
+				:op1 (v / ver-01
+					:ARG0 (p / principezinho)
+					:ARG1 (e1 / eles))
+				:op2 (d / dizer-01
+					:ARG0 p
+					:ARG1 (p1 / parecer-101
+						:ARG1 (b / baobá
+							:poss (t / tu))
+						:ARG2 (r / repolhos
+							:degree (p2 / pouco)))
+					:manner (r1 / rindo)))
+
+# ::snt - Oh!
+(o / oh :mode expressive)
+
+# ::snt Eu estava tão orgulhoso de meus baobás!
+(o / orgulhoso
+				:domain (e / eu)
+				:topic (b / baobá
+					:poss e))
+
+# ::snt - Tua raposa... as orelhas dela... parecem chifres... são compridas demais!
+(p / parecer-101
+				:ARG1 (o / orelha
+					:part-of (r / raposa
+						:poss (t / tu)))
+				:ARG2 (c / chifre)
+				:cause (c1 / comprida
+					:degree (d / demais)))
+
+# ::snt Ele riu outra vez.
+(r / rir-01
+				:ARG0 (e / ele)
+				:mod (o / outra-vez))
+
+# ::snt - Tu és injusto, meu bem, eu só sabia desenhar jibóias abertas e fechadas...
+(i / injusto
+				:domain (t / tu)
+				:cause (d / desenhar-01
+					:ARG0 (e / eu)
+					:ARG1 (e1 / e
+						:op1 (j / jibóia
+							:mod (a / aberta))
+						:op2 (j1 / jibóias
+							:mod (f / fechada)))))
+
+# ::snt - Não faz mal, disse ele, as crianças entendem.
+(d / dizer-01
+				:ARG0 (e / ele)
+				:ARG1 (f / fazer-15 :polarity -
+					:ARG1 (m / mal))
+				:cause (e1 / entender-01
+					:ARG0 (c / criança)))
+
+# ::snt Rabisquei, portanto, uma pequena mordaça.
+(r / rabiscar-01
+				:ARG0 (e / eu)
+				:ARG1 (m / mordaça
+					:mod (p / pequena)))
+
+# ::snt Mas sentia, ao entregá-la, um aperto no coração:
+(c / contrast-01
+				:ARG2 (s / sentir-01
+					:ARG0 (e / eu)
+					:ARG1 (a / aperto
+						:location (c1 / coração
+							:part-of e))
+					:time (e1 / entregar-01
+						:ARG0 e
+						:ARG1 (e2 / ela))))
+
+# ::snt - Tu tens projeto que eu ignoro...
+(t / ter-01
+				:ARG0 (t1 / tu)
+				:ARG1-of (i / ignorar-01
+					:ARG0 (e / eu)
+					:ARG1 (p / projeto)))
+
+# ::snt Ele não me respondeu.
+(r / responder-01 :polarity -
+				:ARG0 (e / ele)
+				:ARG2 (e1 / eu))
+
+# ::snt Mas disse: - Lembras-te da minha queda na Terra?
+(c / contrast-01
+				:ARG2 (d / dizer-01
+					:ARG1 (l / lembrar-01 :mode interrogative
+						:ARG0 (t / tu)
+						:ARG1 (q / queda
+							:poss (e / eu)
+							:location (p / planeta
+								:name (n / name :op1 "Terra"))))))
+
+# ::snt Amanhã será o aniversário...
+(a / aniversário
+				:time (a1 / amanhã))
+
+# ::snt Depois, após um silêncio, acrescentou: - Caí pertinho daqui...
+(a / acrescentar-02
+				:ARG0 (e / ele)
+				:ARG1 (c / cair-04
+					:ARG0 e
+					:ARG1 (p / pertinho
+						 :mod (d / daqui)))
+				:time (d1 / depois)
+				:time (a1 / após
+					:op1 (s / silêncio)))
+
+# ::snt E ficou vermelho ao dizê-lo.
+(e / e
+				:op2 (f / ficar-201
+					:ARG1 (v / vermelho)
+					:ARG2 (d / dizer-01
+						:ARG0 (e1 / ele))))
+
+# ::snt E de novo, sem compreender porque, eu sentia um estranho pesar.
+(e / e
+				:op2 (s / sentir-01
+					:ARG0 (e1 / eu)
+					:ARG1 (e2 / estranho
+						:mod (p / pesar))
+					:mod (d / de-novo)
+					:manner (c / compreender-01 :polarity -
+						:ARG0 e1)))
+
+# ::snt No entanto, ocorreu-me a pergunta: - Então não foi por acaso que vagavas sozinho, quando te encontrei, há oito dias, a milhas e milhas de qualquer região habitada!
+(c / contrast-01
+				:ARG2 (o / ocorrer-02
+					:ARG0 (e / eu)
+					:ARG1 (p / perguntar-01
+						:ARG0 e
+						:ARG1 (v / vagar-01
+							:ARG0 (t / tu)
+							:manner (s / dozinho)
+							:time (e1 / encontrar-01
+								:ARG0 e
+								:ARG1 t
+								:time (h / há
+									:op1 (t1 / temporal-quantity :quant 8
+										:unit (d / dia)))
+								:location (r / relative-position
+									:op1 (r1 / região
+										:ARG1-of (h1 / habitar-01
+											:mod (q / qualquer)))
+									:quant (d1 / distance-quantity :quant 1000
+										:unit (m / milha))))))))
+
+# ::snt Não estarias voltando ao ponto da queda?
+(v / voltar-01 :mode interrogative
+				:ARG0 (t / tu)
+				:ARG4 (p / ponto
+					:location-of (q / queda)))
+
+# ::snt O principezinho ficou vermelho de novo.
+(f / ficar-201
+				:ARG1 (p / principezinho)
+				:ARG2 (v / vermelho)
+				:mod (d / de-novo))
+
+# ::snt E eu acrescentei, hesitando: - Terá sido por causa do aniversário?...
+(e / e
+				:op2 (a / acrescentar-02
+					:ARG0 (e1 / eu)
+					:ARG1 (c / cause-01 :mode interrogative
+						:ARG0 (a1 / aniversário))
+					:manner (h / hesintar-01
+						:ARG0 e1)))
+
+# ::snt O principezinho ficou mais vermelho.
+(f / ficar-201
+				:ARG1 (p / principezinho)
+				:ARG2 (v / vermelho
+					:degree (m / mais)))
+
+# ::snt Não respondia nunca às perguntas.
+(r / responder-01 :polarity -
+				:ARG1 (p / pergunta)
+				:time (n / nunca))
+
+# ::snt Mas quando a gente fica vermelho, não é o mesmo que dizer "sim"?
+(c / contrast-01
+				:ARG2 (f / ficar-201
+					:ARG1 (a / a-gente)
+					:ARG2 (v / vermelho)
+					:compared-to (d / dizer-01 :polarity -
+						:ARG1 (s / sim))))
+
+# ::snt - Ah!
+(a / ah :mode expressive)
+
+# ::snt disse-lhe eu, eu tenho medo...
+(d / dizer-01
+				:ARG0 (e / eu)
+				:ARG1 (t / ter-01
+					:ARG0 e
+					:ARG1 (m / medo))
+				:ARG2 (e1 / ele))
+
+# ::snt Mas ele respondeu:
+(c / contrast-01
+				:ARG2 (r / responder-01
+					:ARG0 (e / ele)))
+
+# ::snt - Tu deves agora trabalhar.
+(d / dever-02
+				:ARG0 (t / tu)
+				:ARG1 (t1 / trabalhar)
+				:time (a / agora))
+
+# ::snt Ir em busca do teu aparelho.
+(i / ir-01
+				:ARG4 (b / buscar-01
+					:ARG1 (a / aparelho
+						:poss (t / tu))))
+
+# ::snt Espero-te aqui.
+(e / esperar-01
+				:ARG0 (e1 / eu)
+				:ARG1 (t / tu)
+				:location (a / aqui))
+
+# ::snt Volta amanhã de tarde...
+(v / voltar-01 :mode imperative
+				:time (d / date-entity
+					:dayperiod (t / tade)
+					:mod (a / amanhã)))
+
+# ::snt Mas eu não estava tranqüilo.
+(c / contrast-01
+				:ARG2 (t / tranquilo :polarity -
+					:domain (e / eu)))
+
+# ::snt Lembrava-me da raposa.
+(l / lembrar-01
+				:ARG0 (e / eu)
+				:ARG1 (r / raposa))
+
+# ::snt A gente corre o risco de chorar um pouco quando se deixou cativar...
+(c / correr-402
+				:ARG1 (a / a-gente)
+				:ARG2 (c1 / chorar-01
+					:ARG0 a
+						:degree (p / pouco)
+					:condition (d / deixar-02
+						:ARG0 a
+						:ARG1 (c2 / cativar-01
+							:ARG0 a))))
+
+# ::snt Capítulo 26
+(c / capítulo
+				:mod  26)
+
+# ::snt Havia, ao lado do poço, a ruína de um velho muro de pedra.
+(h / haver-01
+				:ARG1 (r / ruína
+					:mod (m / muro
+						:mod (v / velho)
+						:consist-of (p / pedra)))
+				:location (l / lado
+					:op1 (p1 / poço)))
+
+# ::snt Quando voltei do trabalho, no dia seguinte, vi, de longe, o principezinho sentado no alto, com as pernas balançando.
+(v / ver-01
+				:ARG0 (e / eu)
+				:ARG1 (s / sentar-01
+					:ARG0 (p / principezinho)
+					:location (a / alto)
+					:manner (b / balançar-01
+						:ARG0 p
+						:ARG1 (p1 / perna
+							:part-of p)))
+				:time (v1 / voltar-01
+					:ARG1 e
+					:ARG3 (t / trabalho)
+					:time (d / date-entity
+						:unit (d1 / dia
+							:mod (s1 / seguinte)))))
+
+# ::snt E eu o escutei dizer: - Tu não te lembras então?
+(e / e
+				:op2 (e1 / escutar-01
+					:ARG0 (e2 / eu)
+					:ARG1 (d / dizer-01
+						:ARG1 (l / lembrar-01 :polarity -
+							:ARG0 (t / tu)
+							:mod (e3 / então)
+							:mode interrogative))))
+
+# ::snt Não foi bem aqui o lugar!
+(i / ir-04 :polarity -
+				:ARG1 (a / aqui
+					:mod (b / bem))
+				:ARG2 (l / lugar))
+
+# ::snt Uma outra voz devia responder-lhe, porque replicou em seguida: - Não; não estou enganado.
+(d / dever-02
+				:ARG0 (v / voz
+					:mod (o / outra))
+				:ARG1 (r / responder-01
+					:ARG1 (e / ele)
+					:ARG0-of (c / cause-01
+						:ARG1 (r1 / replicar-01
+							:ARG0 e
+							:ARG1 (e1 / enganado :polarity -)))))
+
+# ::snt O dia é este, mas não o lugar...
+(c / contrast-01
+				:ARG1 (d / dia
+					:mod (e / este))
+				:ARG2 (l / lugar :polarity -))
+
+# ::snt Prossegui o caminho para o muro.
+(p / prosseguir-01
+				:ARG0 (e / eu)
+				:ARG1 (c / caminho
+					:direction (m / muro)))
+
+# ::snt Continuava a não ver ninguém.
+(c / continuar-02
+				:ARG1 (v / ver-01 :polarity -
+					:ARG1 (n / niguém)))
+
+# ::snt No entanto o principezinho replicou novamente: - ... Está bem.
+(c / contrast-01
+				:ARG2 (r / replicar-01
+					:ARG0 (p / principezinho)
+					:ARG1 (b / bem)
+					:mod (n / novamente)))
+
+# ::snt Tu verás onde começa, na areia, o sinal dos meus passos.
+(v / ver-01
+				:ARG0 (t / tu)
+				:ARG1 (c / começar-01
+					:ARG1 (s / sinal
+						:mod (p / passo
+							:poss (e / eu)))
+					:location (a / areia)))
+
+# ::snt Basta esperar-me.
+(b / bastar-01
+				:ARG1 (e / esperar-01
+					:ARG1 (e1 / eu)))
+
+# ::snt Estarei ali esta noite.
+(a / ali
+				:location-of (e / eu)
+				:time (d / date-entity
+					:dayperiod (n / noite)
+					:mod (e1 / esta)))
+
+# ::snt Eu me achava a vinte metros do muro e continuava a não ver nada.
+(e / e
+				:op1 (a / achar-01
+					:ARG0 (e1 / eu)
+					:ARG1 (r / relative-position
+						:op1 (m / muro)
+						:quant (d / distance-quantity :quant 20
+							:unit (m1 / metro))))
+				:op2 (c / continuar-02
+					:ARG0 e1
+					:ARG1 (v / ver-01 :polarity -
+						:ARG0 e
+						:ARG1 (n / nada))))
+
+# ::snt O principezinho disse ainda, após um silêncio: - O teu veneno é do bom?
+(d / dizer-01
+				:ARG0 (p / principezinho)
+				:ARG1 (b / bom :mode interrogative
+					:domain (v / veneno
+						:poss (t / tu)))
+				:time (a / após
+					:op1 (s / silêncio)))
+
+# ::snt Estás certa de que não vou sofrer muito tempo?
+(s / sofrer-01 :polarity -
+				:ARG0 (e / eu)
+				:mod (t / tempo
+					:degree (m / muito))
+				:mode interrogative)
+
+# ::snt Parei, o coração apertado, sem compreender ainda.
+(c / compreender-01 :polarity -
+				:mod (a / ainda)
+				:ARG1 (p / parar-01
+					:ARG0 (e / eu)
+					:ARG1 (c1 / coração
+						:part-of e
+						:mod (a1 / apertado))))
+
+# ::snt - Agora, vai-te embora, disse ele... eu quero descer!
+(d / dizer-01
+				:ARG0 (e / ele)
+				:ARG1 (i / ir-01
+					:ARG0 (t / tu)
+					:ARG1 (e1 / embora)
+					:time (a / agora))
+				:cause (q / querer-01 :mode imperative
+					:ARG0 e1
+					:ARG1 (d1 / descer-01
+						:ARG0 e1)))
+
+# ::snt Então baixei os olhos para o pé do muro, e dei um salto!
+(e / e
+				:op1 (b / baixar-01
+					:ARG0 (e1 / eu)
+					:ARG1 (o / olho
+						:part-of e1)
+					:ARG4 (p / pé
+						:part-of (m / muro))
+					:time (e2 / então))
+				:op2 (d / dar-03
+					:ARG0 e1
+					:ARG1 (s / salto)))
+
+# ::snt Lá estava, erguida para o principezinho, uma dessas serpentes amarelas que nos liquidam num minuto.
+(s / serpentes
+				:mod (a / amarela)
+				:ARG1-of (l / liquidar-01
+					:ARG1 (n / nós)
+					:time (t / temporal-quantity :quant 1
+						:unit (m / minuto)))
+				:ARG0-of (e / erguer-01
+					:ARG1 (p / principezinho)
+					:location (l1 / lá)))
+
+# ::snt Enquanto procurava o revólver no bolso, dei uma rápida corrida.
+(d / dar-03
+				:ARG0 (e / eu)
+				:ARG1 (c / corrida
+					:mod (r / rápida))
+				:time (p / procurar-01
+					:ARG0 e
+					:ARG1 (r1 / revólver)
+					:ARG2 (b / bolso)))
+
+# ::snt Mas, percebendo o barulho, a serpente se foi encolhendo lentamente, como um repuxo que morre.
+(c / contrast-01
+				:ARG2 (e / encolher-01
+					:ARG0 (s / serpente)
+					:manner (l / lentamente)
+					:compared-to (r / repuxo
+						:ARG1-of (m / morrer-01)))
+					:manner (p / perceber-01
+						:ARG0 s
+						:ARG1 (b / barulho)))
+
+# ::snt E, sem se apressar demais, enfiou-se entre as pedras, num leve tinir de metal.
+(e / e
+				:op2 (e1 / enfiar-01
+					:location (e2 / entre
+						:op1 (p / pedra))
+					:manner (t / tinir-01
+						:mod (l / leve)
+						:mod (m / metal))
+					:manner (a / apressar-02 :polarity -
+						:mod (d / demais))))
+
+# ::snt Cheguei ao muro a tempo de receber nos braços o meu caro principezinho, pálido como a neve.
+(c / chegar-01
+				:ARG0 (e / eu)
+				:ARG1 (m / muro)
+				:time (r / receber-01
+					:ARG0 e
+					:ARG1 (p / principezinho
+						:poss e
+						:manner (p1 / pálido
+							:compared-to (n / neve)))
+					:location (b / braço
+						:part-of e)))
+
+# ::snt - Que história é essa?
+(h / história :mode interrogative
+				:mod (e / essa))
+
+# ::snt Tu conversas agora com as serpentes?
+(c / conversar-01 :mode interrogative
+				:ARG0 (t / tu)
+				:ARG2 (s / serpente)
+				:time (a / agora))
+
+# ::snt Desatei o nó do seu eterno lenço dourado.
+(d / desatar-01
+				:ARG0 (e / eu)
+				:ARG1 (n / nó)
+				:location (l / lenço
+					:mod (e1 / eterno)))
+
+# ::snt Umedeci-lhe as têmporas.
+(u / umedecer-01
+				:ARG0 (e / eu)
+				:ARG1 (t / têmpora
+					:poss (e1 / ele)))
+
+# ::snt Dei-lhe água.
+(d / dar-01
+				:ARG0 (e / eu)
+				:ARG1 (a / água)
+				:ARG2 (e1 / ele))
+
+# ::snt E agora, não ousava perguntar-lhe coisa alguma.
+(e / e
+				:op2 (o / ousar-01
+					:ARG1 (p / perguntar-01
+						:ARG1 (c / coisa
+							:mod (a / alguma))
+						:ARG2 (e1 / ele))))
+
+# ::snt Olhou-me gravemente e passou-me os bracinhos no pescoço.
+(e / e
+				:op1 (o / olhar-01
+					:ARG0 (e1 / ele)
+					:ARG1 (e2 / eu)
+					:manner (g / gravemente))
+				:op2 (p / passar-10
+					:ARG0 e1
+					:ARG1 (b / bracinhos
+						:part-of e1)
+					:ARG2 (p1 / pescoço
+						:part-of e2)))
+
+# ::snt Sentia-lhe o coração bater de encontro ao meu, como o de um pássaro que morre, atingido pela carabina.
+(s / sentir-01
+				:ARG0 (e / eu)
+				:ARG1 (c / coração
+					:part-of (e1 / ele)
+					:ARG1-of (b / bataer-01
+						:ARG1-of (e2 / encontrar-02
+							:ARG1 (m / meu)
+							:compared-to (p / pássaro
+								:ARG1-of (m1 / morrer-01)
+								:ARG1-of (a / atingir-01
+									:ARG0 (c1 / carabina)))))))
+
+# ::snt Ele me disse: - Estou contente de teres descoberto o defeito do maquinismo.
+(d / dizer-01
+				:ARG0 (e / ele)
+				:ARG1 (d1 / descobrir-01
+					:ARG0 (t / tu)
+					:ARG1 (d2 / defeito
+						:poss (m / maquinismo))))
+
+# ::snt Vais poder voltar para casa...
+(p / poder-201
+				:ARG1 (v / voltar-01
+					:ARG1 (t / tu)
+					:ARG4 (c / casa)))
+
+# ::snt - Como soubeste disso?
+(s / saber-01 :mode interrogative
+				:ARG0 (t / tu)
+				:ARG1 (d / disso)
+				:manner (a / amr-unknown))
+
+# ::snt - Eu vinha justamente anunciar-lhe que, contra toda expectativa, havia realizado o conserto!
+(v / vir-01
+				:ARG0 (e / eu)
+				:purpose (a / anunciar-01
+					:ARG0 e
+					:ARG1 (h / haver-01
+						:ARG1 (r / realizar-01
+							:ARG0 e
+							:ARG1 (c / conserto)
+							:concession (e1 / expectativa
+								:mod (t / toda))))
+					:ARG2 (e2 / ele)))
+
+# ::snt Nada respondeu à minha pergunta, mas acrescentou: - Eu também volto hoje para casa...
+(c / contrast-01
+				:ARG1 (r / responder-01 :polarity -
+					:ARG1 (p / perguntar-01
+						:poss (e / eu)))
+				:ARG2 (a / acrescentar-02
+					:ARG0 (e1 / ele)
+					:ARG1 (v / voltar-01
+						:ARG1 e
+						:ARG4 (c1 / casa)
+						:time (h / hoje)
+						:mod (t / também))))
+
+# ::snt Depois, com melancolia, ele disse: - É bem mais longe... bem mais difícil...
+(d / dizer-01
+				:ARG0 (e / ele)
+				:ARG1 (e1 / e
+					:op1 (l / longe
+						:degree (b / bem
+							:degree (m / mais)))
+					:op2 (d1 / difícil
+						:degree (b1 / bem
+							:degree (m1 / mais))))
+				:time (d2 / depois)
+				:manner (m2 / melancolia))
+
+# ::snt Eu percebia claramente que algo de extraordinário se passava.
+(p / perceber-01
+				:ARG0 (e / eu)
+				:ARG1 (a / algo
+					:mod (e1 / extraordinário))
+				:manner (c / claramente))
+
+# ::snt Apertava-o nos braços como se fosse uma criancinha; mas tinha a impressão de que ele ia deslizando verticalmente no abismo, sem que eu nada pudesse fazer para detê-lo...
+(c / contrast-01
+				:ARG1 (a / apertar-01
+					:ARG0 (e / eu)
+					:ARG1 (e1 / ele)
+					:location (b / braço
+						:part-of e1)
+					:compared-to (c1 / criancinha))
+				:ARG2 (t / ter-10
+					:ARG0 e
+					:ARG1 (i / impressão)
+					:ARG2 (d / deslizar-01
+						:ARG0 e1
+						:ARG2 (v / verticalmente
+							:op1 (a1 / abismo
+								:ARG2-of (f / fazer-01 :polarity -
+									:ARG0 e
+									:ARG1 (n / nada)
+									:purpose (d1 / deter-02
+										:ARG1 e1)))))))
+
+# ::snt Seu olhar estava sério, perdido ao longe:
+(o / olhar-01
+				:manner (s / sério)
+				:mod (p / perder-02
+					:direction (l / longe
+						:mod (a / ao))))
+
+# ::snt - Tenho o teu carneiro.
+(t / ter-01
+				:ARG0 (e /eu)
+				:ARG1 (c / carneiro
+					:poss (e1 / ele)))
+
+# ::snt E a caixa para o carneiro.
+(e / e
+				:op2 (c / caixa
+					:destination (c1 / carneiro)))

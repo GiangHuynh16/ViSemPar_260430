@@ -1,0 +1,1085 @@
+# ::snt E a mordaça...
+(m / mordaça)
+
+# ::snt Ele sorriu com tristeza.
+(s / sorrir-01
+				:ARG0 (e / ele)
+				:manner (t / tristeza))
+
+# ::snt Esperei muito tempo.
+(e / esperar-01
+				:ARG0 (e1 / eu)
+				:degree (m / muito
+					:mod (t / tempo)))
+
+# ::snt Pareceu-me que ele ia se aquecendo de novo, pouco a pouco:
+(p / parecer-01
+				:ARG2  (a / aquecer-01
+					:ARG0 (e / ele)
+					:mod (d / de-novo)
+					:manner (p1 / pouco-a-pouco))
+				:ARG3 (e1 / eu))
+
+# ::snt - Meu querido, tu tiveste medo...
+(t / ter-05
+				:ARG0 (t1 / tu)
+				:ARG1 (m / medo))
+
+# ::snt É claro que tivera.
+(t / ter-01)
+
+# ::snt Mas ele sorriu docemente.
+(c / contrast-01
+				:ARG2 (s / sorrir-01
+					:ARG0 (e / ele)
+					:manner (d / docemente)))
+
+# ::snt - Terei mais medo ainda esta noite...
+(t / ter-05
+				:ARG0 (e / eu)
+				:ARG1 (m / medo
+					:degree (m1 / mais)
+					:mod (a / ainda))
+				:time (d / date-entity
+					:dayperiod (n / noite
+					:mod (e1 / esta))))
+
+# ::snt O sentimento do irreparável gelou-me de novo.
+(g / gelar-01
+				:ARG0 (e / eu)
+				:ARG1 (s / sentimento
+					:mod (i / irreparável))
+				:mod (d / de-novo))
+
+# ::snt E eu compreendi que não podia suportar a idéia de nunca mais escutar esse riso.
+(e / e
+				:op2 (c / compreender-01
+					:ARG0 (e1 / eu)
+					:ARG1 (p / poder-201 :polarity -
+						:ARG1 (s / suportar-02
+							:ARG0 e
+							:ARG1 (e2 / escutar-01 :polarity -
+								:ARG1 (r / riso)
+								:mod (e3 / esse)
+								:time (n / nuca
+									:mod (m / mais)))))))
+
+# ::snt Ele era para mim como uma fonte no deserto.
+(f / fonte
+				:location (d / deserto)
+				:domain (e / ele)
+				:beneficiary (e1 / eu))
+
+# ::snt - Meu bem, eu quero ainda escutar o teu riso...
+(q / querer-01
+				:ARG0 (e / eu)
+				:ARG1 (e1 / escutar-01
+					:ARG0 e
+					:ARG1 (r / riso
+						:poss (t / tu)))
+				:mod (a / ainda))
+
+# ::snt Mas ele me disse: - Faz um ano esta noite.
+(c / contrast-01
+				:ARG2 (d / dizer-01
+					:ARG0 (e / ele)
+					:ARG1 (f / fazer-04
+						:ARG2 (u / um-ano)
+						:time (d1 / date-entity
+							:dayperiod (n / noite)
+							:mod (e1 / esta)))))
+
+# ::snt Minha estrela se achará justamente em cima do lugar onde eu caí o ano passado...
+(a / achar-01
+				:ARG1 (e / estrela
+					:poss (e1 / eu))
+				:location (c / cima
+					:op1 (l / lugar
+						:location (c1 / cair-04
+							:ARG1 e1
+							:time (p / passado
+								:unit (a1 / ano))))))
+
+# ::snt - Meu bem, não será um sonho mau essa história de serpente, de encontro marcado, de estrela?
+(s / sonho :mode interrogative
+				:mod (m / mau)
+				:domain (e / e
+					:op1 (h / história
+						:mod (s1 / serpente))
+					:op2 (e1 / encontro
+						:mod (m1 / marcado))
+					:op3 (e2 / estrela)))
+
+# ::snt Mas não respondeu à minha pergunta.
+(c / contrast-01
+				:ARG2 (r / responder-01 :polarity -
+					:ARG1 (p / perguntar-01
+						:poss (e / eu))))
+
+# ::snt E disse: - O que é importante, a gente não vê...
+(e / e
+				:op2 (d / dizer-01
+					:ARG1 (i / importante
+						:ARG1-of (v / ver-01 :polarity -
+							:ARG0 (a / a-gente)))))
+
+# ::snt - A gente não vê...
+(v / ver-01 :polarity -
+				:ARG0 (a / a-gente))
+
+# ::snt - Será como a flor.
+(f / flor)
+
+# ::snt Se tu amas uma flor que se acha numa estrela, é doce, de noite, olhar o céu.
+(o / olhar-01
+				:ARG1 (c / céu
+					:time (d / date-entity
+						:dayperiod (n / noite)))
+				:condition (a / amar-01
+					:ARG0 (t / tu)
+					:ARG1 (f / flor
+						:ARG0-of (a1 / achar-01
+							:location (e / estrela))
+						:mod (d1 / doce))))
+
+# ::snt Todas as estrelas estão floridas.
+(f / florida
+				:domain (e / estrela
+					:mod (t / todas)))
+
+# ::snt - Todas as estrelas estão floridas.
+(f / florida
+				:domain (e / estrela
+					:mod (t / todas)))
+
+# ::snt - Será como a água.
+(a / água)
+
+# ::snt Aquela que me deste parecia música, por causa da roldana e da corda...
+(c / cause-01
+				:ARG0 (e / e
+					:op1 (r / roldana)
+					:op2 (c1 / corda))
+				:ARG1 (p / parecer-101
+					:ARG1 (a / aquela)
+					:ARG2 (m / música)))
+
+# ::snt Lembras-te como era boa?
+(l / lebrar-01 :mode interrogative
+				:ARG0 (t / tu)
+				:ARG1 (b / boa))
+
+# ::snt - Lembro-me...
+(l / lembrar-01
+				:ARG0 (e / eu))
+
+# ::snt - Tu olharás, de noite, as estrelas.
+(o / olhar-01
+				:ARG0 (t / tu)
+				:ARG1 (e / estrelas)
+				:time (d / date-entity
+					:dayperiod (n / noite)))
+
+# ::snt Onde eu moro é muito pequeno, para que eu possa te mostrar onde se encontra a minha.
+(m / morar-01
+				:ARG0 (e / eu)
+				:mod (p / pequeno
+					:degree (m1 / muito))
+				:purpose (p1 / poder-201
+					:ARG1 (m2 / mostrar-01
+						:ARG0 e
+						:ARG1 (e1 / encontrar-01
+							:ARG1 (m3 / minha))
+						:ARG2 (t / tu))))
+
+# ::snt É melhor assim,
+(m / melhor)
+
+# ::snt Minha estrela será então qualquer das estrelas.
+(e / estrela
+				:poss (e1 / eu)
+				:time (e2 / então)
+				:mod (q / qualquer))
+
+# ::snt Gostarás de olhar todas elas...
+(g / gostar-01
+				:ARG0 (t / tu)
+				:ARG1 (o / olhar-01
+					:ARG0 t
+					:ARG1 (e / elas
+						:mod (t1 / todas))))
+
+# ::snt Serão, todas, tuas amigas.
+(a / amigo
+				:poss (t / tu)
+				:mod (t1 / todas))
+
+# ::snt E depois, eu vou fazer-te um presente...
+(e / e
+				:op2 (i / ir-01
+					:ARG0 (e1 / eu)
+					:ARG4 (f / fazer-01
+						:ARG0 e
+						:ARG1 (p / presente)
+						:ARG3 (t / tu))
+					:time (d / depois)))
+
+# ::snt Ele riu outra vez.
+(s / sorrir-01
+				:ARG0 (e / ele)
+				:mod (o / outra
+					:mod (v / vez)))
+
+# ::snt - Ah! meu pedacinho de gente, meu amor, como eu gosto de ouvir esse riso!
+(g / gostar-01
+				:ARG0 (e / eu)
+				:ARG1 (o / ouvir-01
+					:ARG0 e
+					:ARG1 (r / riso
+						:mod (e1 / esse))))
+
+# ::snt - Pois é ele o meu presente...
+(p / presente
+				:poss (e / eu))
+
+# ::snt será como a água...
+(a / água)
+
+# ::snt - Que queres dizer?
+(q / querer-01 :mode interrogative
+				:ARG0 (t / tu)
+				:ARG1 (d / dizer-01
+					:ARG0 t
+					:ARG1 (a / amr-unknown)))
+
+# ::snt - As pessoas têm estrelas que não são as mesmas.
+(t / ter-01
+				:ARG0 (p / pessoa)
+				:ARG1 (e / estrela)
+				:mod (m / mesmas :polarity -))
+
+# ::snt para uns, que viajam, as estrelas são guias.
+(g / guia
+				:domain (e / estrela))
+
+# ::snt Para outros, elas não passam de pequenas luzes.
+(p / passar-07 :polarity -
+				:ARG0 (e / elas)
+				:ARG1 (l / luz
+					:mod (p1 / pequena)))
+
+# ::snt Para outros, os sábios, são problemas.
+(p / problema
+				:domain (s / sábio))
+
+# ::snt Para o meu negociante, eram ouro.
+(o / ouro
+				:domain (n / negociante
+					:poss (e / eu)))
+
+# ::snt mas todas essas estrelas se calam.
+(c / contrast-01
+				:ARG2 (c1 / calar-01
+					:ARG0 (e / estrela
+						:mod (e1 / essas)
+						:mod (t / todas))))
+
+# ::snt Tu, porém, terás estrelas como ninguém...
+(t / ter-01
+				:ARG0 (t1 / tu)
+				:ARG1 (e / estrela)
+				:compared-to (n / ninguém))
+
+# ::snt - Que queres dizer?
+(q / querer-01 :mode interrogative
+				:ARG0 (t / tu)
+				:ARG1 (d / dizer-01
+					:ARG0 t
+					:ARG1 (a / amr-unknown)))
+
+# ::snt - Quando olhares o céu de noite, porque habitarei uma delas, porque numa delas estarei rindo, então será como se todas as estrelas te rissem!
+(c / cause-01
+				:ARG0 (h / habitar-01
+					:ARG0 (e / eu)
+					:ARG1 (u / uma
+						:mod (d / delas)))
+				:ARG1 (r / rir-01
+					:ARG0 e
+					:location u)
+				:compared-to (r1 / rir-01
+					:ARG0 (e1 / estrela
+						:mod (t / todas)))
+				:time (o / olhar-01
+					:ARG0 (t1 / tu)
+					:ARG1 (c1 / céu)
+					:dayperiod (n / noite)))
+
+# ::snt E tu terás estrelas que sabem rir!
+(e / e
+				:op2 (t / ter-01
+					:ARG0 (t1 / tu)
+					:ARG1 (e1 / estrela
+						:ARG1 (s / saber-01
+							:ARG0 e1
+							:ARG1 (s1 / sorrir-01)))))
+
+# ::snt E ele riu mais uma vez.
+(e / e
+				:op2 (s / sorrir-01
+					:ARG0 (e1 / ele)
+					:mod (v / vez
+						:degree (m / mais))))
+
+# ::snt - E quando te houveres consolado (a gente sempre se consola), tu te sentirás contente por me teres conhecido.
+(e / e
+				:op2 (s / sentir-01
+					:ARG0 (t / tu)
+					:ARG1 (c / contente)
+					:cause (t1 / ter-03
+						:ARG1 t
+						:ARG2 (c1 / conhecer-01
+							:ARG0 t
+							:ARG1 (e1 / eu)))
+					:time (h / haver-01
+						:ARG1 (c2 / consolado))))
+
+# ::snt Tu serás sempre meu amigo.
+(h / have-rel-role-91
+				:ARG0 (t / tu)
+				:ARG1 (e / eu)
+				:ARG2 (a / amigo)
+				:time (s / sempre))
+
+# ::snt Terás vontade de rir comigo.
+(t / ter-01
+				:ARG0 (t1 / tu)
+				:ARG1 (s / sorrir-01
+					:ARG0 t1
+					:accompanier (e / eu)))
+
+# ::snt E abrirás às vezes a janela à toa, por gosto...
+(e / e
+				:op2 (a / abrir-01
+					:ARG0 (t / tu)
+					:ARG1 (j / janela)
+					:time (a1 / às-vezes)
+					:mod (t1 / toa)
+					:purpose (g / gosto)))
+
+# ::snt E teus amigos ficarão espantados de ouvir-te rir olhando o céu.
+(e / e
+				:op2 (f / ficar-201
+					:ARG1 (a / amigos
+						:poss (t / tu))
+					:ARG2 (e1 / espantados
+						:ARG1-of (o / ouvir-01
+							:ARG0 a
+							:ARG1 (s / sorrir-01
+								:ARG0 t
+								:time (o1 / olhar-01
+									:ARG1 (c / céu)))))))
+
+# ::snt Tu explicarás então: "Sim, as estrelas, elas sempre me fazem rir!" E eles te julgarão maluco.
+(e / e
+				:op1 (e1 / explicar-01
+					:ARG0 (t / tu)
+					:ARG1 (f / fazer-01
+						:ARG0 (e2 / estrela)
+						:ARG1 (s / sorrir-01
+							:ARG0 (e3 / eu)
+							:time (s1 / sempre))))
+				:op2 (j / julgar-01
+					:ARG0 (e4 / eles)
+					:manner (m / maluco)))
+
+# ::snt Será uma peça que te prego...
+(p / pregar-01
+				:ARG0 (e / eu)
+				:ARG1 (p1 / peça)
+				:ARG2 (t / tu))
+
+# ::snt E riu de novo.
+(e / e
+				:op2 (s / sorrir-01
+					:mod (d / de-novo)))
+
+# ::snt - Será como se eu te houvesse dado, em vez de estrelas, montões de guizos que riem...
+(d / dar-01
+				:ARG0 (e / eu)
+				:ARG1 (g / guizo
+					:degree (m / montão)
+					:ARG1-of (s / sorrir-01))
+				:ARG1-of (i / instead-of-91
+					:ARG2 (d1 / dar-01
+						:ARG0 e
+						:ARG1 (e1 / estrela)
+						:ARG2 (t / tu))))
+
+# ::snt E riu de novo, mais uma vez.
+(e / e
+				:op2 (s / sorrir-01
+					:ARG0 (e1 / ele)
+					:mod (d / de-novo)))
+
+# ::snt Depois, ficou sério: - Esta noite... tu sabes... não venhas.
+(s / saber-01
+				:ARG0 (t / tu)
+				:ARG1 (v / vir-01 :polarity -
+					:ARG1 t
+				:cause (f / ficar-201
+					:ARG2 (s1 / sério)
+					:time (d / date-entity
+						:dayperiod (n / noite)
+						:mod (e / esta)))))
+
+# ::snt - Eu não te deixarei.
+(d / deixar-01 :polarity -
+				:ARG0 (e / eu)
+				:ARG1 (t / tu))
+
+# ::snt - Eu parecerei sofrer...
+(p / parecer-01
+				:ARG1 (e / eu)
+				:ARG2 (s / sofrer-01))
+
+# ::snt eu parecerei morrer.
+(p / parecer-01
+				:ARG1 (e / eu)
+				:ARG2 (m / morrer-01))
+
+# ::snt É assim.
+(a / assim)
+
+# ::snt Não venhas ver.
+(v / vir-01
+				:ARG0 (t / tu)
+				:purpose (v1 / ver-01))
+
+# ::snt Não vale a pena...
+(v / valer-02 :polarity -)
+
+# ::snt - Eu não te deixarei.
+(d / deixar-01 :polarity -
+				:ARG0 (e / eu)
+				:ARG1 (t / tu))
+
+# ::snt Mas ele estava preocupado.
+(c / contrast-01
+				:ARG2 (p / preocupar-01
+					:ARG1 (e / ele)))
+
+# ::snt - Eu digo isto... também por causa da serpente.
+(d / dizer-01
+				:ARG0 (e / eu)
+				:ARG1 (c / cause-01
+					:ARG0 (s / serpente)
+					:mod (t / também)))
+
+# ::snt É preciso que não te morda.
+(p / precisar-01
+				:ARG1 (m / moder-01 :polarity -
+					:ARG1 (t / tu)))
+
+# ::snt As serpentes são más.
+(m / má
+				:domain (s / serpente))
+
+# ::snt Podem morder por gosto...
+(p / poder-201
+				:ARG1 (m / moder-01
+					:purpose (g / gosto)))
+
+# ::snt - Eu não te deixarei.
+(d / deixar-01 :polarity -
+				:ARG0 (e / eu)
+				:ARG1 (t / tu))
+
+# ::snt Mas uma coisa o tranqüilizou: - Elas não têm veneno, é verdade, para uma segunda mordida...
+(c / contrast-01
+				:ARG2 (t / tranquilizar-01
+					:ARG0 (c1 / coisa)
+					:ARG1 (t1 / ter-01 :polarity -
+						:ARG0 (e / elas)
+						:ARG1 (v / veneno)
+						:purpose (m / moder-01
+							:ord (o / ordinal-entity :value 2)))))
+
+# ::snt Essa noite, não o vi pôr-se a caminho.
+(v / ver-01 :polarity -
+				:ARG0 (e / eu)
+				:ARG1 (p / por-01
+					:ARG0 (e1 / ele)
+					:ARG2 (c / caminho))
+				:time (d / date-entity
+					:dayperiod (n / noite)
+					:mod (e2 / essa)))
+
+# ::snt Evadiu-se sem rumor.
+(e / evadir-01
+				:manner (r / rumor :polarity -))
+
+# ::snt Quando consegui apanhá-lo, caminhava decidido, a passo rápido.
+(c / caminhar-01
+				:ARG0 (e / ele)
+				:manner (d / decidido)
+				:manner (p / passo
+					:mod (r / rápido))
+				:time (c1 / conseguir-01
+					:ARG0 (e1 / eu)
+					:ARG1 (a / apanhar-01
+						:ARG0 e1
+						:ARG1 e)))
+
+# ::snt Disse-me apenas: - Ah! estás aqui...
+(d / dizer-01
+				:ARG1 (a / ah :mode expressive
+					:location (a1 / aqui
+						:domain (t / tu)))
+				:ARG2 (e / eu))
+
+# ::snt E ele me tomou pela mão.
+(e / e
+				:op2 (t / tomar-01
+					:ARG0 (e1 / ele)
+					:ARG1 (e2 / eu)
+					:manner (m / mão)))
+
+# ::snt Mas afligiu-se ainda: - Fizeste mal.
+(c / contrast-01
+				:ARG2 (a / aflingir-01
+					:ARG1-of (f / fazer-01
+						:ARG0 (t / tu)
+						:ARG1 (m / mal))
+					:time (a1 / ainda)))
+
+# ::snt Tu sofrerás.
+(s / sofrer-01
+				:ARG0 (t / tu))
+
+# ::snt Eu parecerei morto e não será verdade...
+(e / e
+				:op1 (p / parecer-01
+					:ARG0 (e1 / eu)
+					:ARG1 (m / morto))
+				:op2 (v / verdade :polarity -))
+
+# ::snt Eu me calava.
+(c / calar-01
+				:ARG0 (e / eu)
+				:ARG1 e)
+
+# ::snt - Tu compreendes.
+(c / compreender-01
+				:ARG0 (t / tu))
+
+# ::snt É longe demais.
+(l / longe
+				:degree (d / demain))
+
+# ::snt Eu não posso carregar este corpo.
+(p / poder-201 :polarity -
+				:ARG1 (c / carregar-01
+					:ARG0 (e / eu)
+					:ARG1 (c1 / corpo
+						:mod (e1 / este))))
+
+# ::snt É muito pesado.
+(p / pesado
+				:degree (m / muito))
+
+# ::snt Eu me calava.
+(c / calar-01
+				:ARG0 (e / eu)
+				:ARG1 e)
+
+# ::snt - Mas será como uma velha casca abandonada.
+(c / contrast-01
+				:ARG2 (c1 / casca
+					:mod (v / velha)
+					:mod (a / abandonada)))
+
+# ::snt Uma casca de árvore não é triste...
+(t / triste :polarity -
+				:domain (c / casca
+					:mod (a / árvore)))
+
+# ::snt Eu me calava.
+(c / calar-01
+				:ARG0 (e / eu)
+				:ARG1 e)
+
+# ::snt Perdeu um pouco de coragem.
+(p / perder-01
+				:ARG0 (e / ele)
+				:ARG1 (c / coragem
+					:degree (p1 / pouco)))
+
+# ::snt Mas fez ainda um esforço: - Será bonito, sabes?
+(c / contrast-01
+				:ARG2 (f / fazer-01
+					:ARG0 (e / ele)
+					:ARG1 (e1 / esforço)
+					:time (a / ainda)))
+
+# ::snt Eu também olharei as estrelas.
+(o / olhar-01
+				:ARG0 (e / eu
+					:mod (t / também))
+				:ARG1 (e1 / estrela))
+
+# ::snt Todas as estrelas serão poços com uma roldana enferrujada.
+(e / estrelas
+				:domain (p / poço
+					:compared-to (r / roldana
+						:mod (e1 / enferrujada)))
+				:mod (t / todas))
+
+# ::snt Todas as estrelas me darão de beber...
+(d / dar-01
+				:ARG0 (e / estrela
+					:mod (t / todas))
+				:ARG1 (b / beber-01
+					:ARG0 (e1 / eu))
+				:ARG2 e1)
+
+# ::snt Eu me calava.
+(c / calar-01
+				:ARG0 (e / eu)
+				:ARG1 e)
+
+# ::snt - Será tão divertido!
+(d / divertido
+				:degree (t / tão))
+
+# ::snt Tu terás quinhentos milhões de guizos, eu terei quinhentos milhões de fontes...
+(e / e
+				:op1 (t / ter-01
+					:ARG0 (t1 / tu)
+					:ARG1 (g / guizo
+						:quant 500000000))
+				:op2 (t2 / ter-01
+					:ARG0 (e1 / eu)
+					:ARG1 (f / fonte
+						:quant 500000000)))
+
+# ::snt E ele se calou também, porque estava chorando...
+(e / e
+				:op2 (c / calar-01
+					:ARG0 (e1 / ele)
+					:ARG1 e1
+					:mod (t / também
+					:cause (c1 / chorar-01
+						:ARG0 e1))))
+
+# ::snt - É aqui.
+(a / aqui)
+
+# ::snt Deixa-me dar um passo sozinho.
+(d / deixar-02
+				:ARG1 (d1 / dar-03
+					:ARG0 (e / eu)
+					:ARG1 (p / passo
+						:mod (s / sozinho)))
+				:ARG2 e)
+
+# ::snt E sentou-se, porque tinha medo.
+(e / e
+				:op2 (s / sentar
+					:cause (t / ter-01
+						:ARG1 (m / medo))))
+
+# ::snt Disse ainda: - Tu sabes... minha flor... eu sou responsável por ela!
+(d / dizer-01
+				:ARG1 (s / saber-01
+					:ARG0 (f / flor
+						:poss (e / eu))
+					:ARG1 (r / responsabilizar-01
+						:ARG1 e
+						:ARG2 (e1 / ela))))
+
+# ::snt Ela é tão frágil!
+(f / frágil
+				:domain (e / ela)
+				:degree (t / tão))
+
+# ::snt Tão ingênua!
+(i / igênua
+				:degree (t / tão))
+
+# ::snt Tem quatro espinhos de nada para defendê-la do mundo...
+(t / ter-01
+				:ARG1 (e / espinho :quant 4)
+				:purpose (d / defender-01
+					:ARG0 (e1 / ela)
+					:source (m / mundo)))
+
+# ::snt Eu sentei-me também, pois não podia mais ficar de pé.
+(s / sentar-01
+				:ARG0 (e / eu)
+				:mod  (t / também)
+				:cause (p / poder-201 :polarity -
+					:ARG1 (f / ficar
+						:ARG1 e
+						:ARG2 (p1 / pé)
+						:mod (m / mais))))
+
+# ::snt Ele disse: - Pronto... Acabou-se...
+(d / dizer-01
+				:ARG0 (e / ele)
+				:ARG1 (a / acabar-01)
+				:mod (p / pronto))
+
+# ::snt Hesitou ainda um pouco, depois ergueu-se.
+(h / hesitar-01
+				:degree (p / pouco)
+				:time (d / depois
+					:op1 (e / erguer-01)))
+
+# ::snt Deu um passo.
+(d / dar-03
+				:ARG1 (p / passo))
+
+# ::snt Eu... eu não podia mover-me.
+(p / poder-201 :polarity -
+				:ARG1 (m / mover-01
+					:ARG0 (e / eu)))
+
+# ::snt Houve apenas um clarão amarelo perto da sua perna.
+(h / haver-01
+				:ARG1 (c / clarão
+					:mod (a / amarelo))
+				:location (p / perto
+					:op1 (p1 / perna
+						:part-of (t / tu))))
+
+# ::snt Permaneceu, por um instante, imóvel.
+(p / permanecer-01
+				:ARG2 (i / imóvel)
+				:duration (i1 / instante))
+
+# ::snt Não gritou.
+(g / gritar-01 :polarity -)
+
+# ::snt Tombou devagarinho como uma árvore tomba.
+(t / tombar-01
+				:manner (d / devagarinho)
+				:compared-to (t1 / tombar-01
+					:ARG1 (a / árvore)))
+
+# ::snt Nem fez sequer barulho, por causa da areia.
+(f / fazer-01 :polarity -
+				:ARG1 (b / barulho
+					:mod (s / sequer))
+				:cause (a / areia))
+
+# ::snt Capítulo 27
+(c / capítulo
+				:mod 27)
+
+# ::snt E agora, certamente, já se vão seis anos...
+(e / e
+				:op2 (i / ir-102
+					:ARG1 (t / temporal-quantity :quant 6
+						:unit (a / ano))
+					:time (j / já))
+				:time (a1 / agora))
+
+# ::snt Jamais contara essa história.
+(c / contar-01 :polarity -
+				:ARG1 (h / história
+					:mod (e / essa)))
+
+# ::snt Os camaradas ficaram contentes de ver-me são e salvo.
+(f / ficar-201
+				:ARG1 (c / camarada)
+				:ARG2 (c1 / contente)
+				:cause (v / ver-01
+					:ARG0 c
+					:ARG1 (e / eu)
+					:ARG2 (e1 / e
+						:op1 (s / são)
+						:op2 (s1 / salvo))))
+
+# ::snt Eu estava triste, mas dizia: É o cansaço...
+(c / contrast-01
+				:ARG1 (t / triste
+					:domain (e / eu))
+				:ARG2 (d / dizer-01
+					:ARG0 e
+					:ARG1 (c1 / cansaço)))
+
+# ::snt Agora já me consolei um pouco.
+(c / consolar-01
+				:ARG0 (e / eu)
+				:time (a / agora)
+				:degree (p / pouco))
+
+# ::snt Mas não de todo.
+(c / contrast-01
+				:ARG2 (d / de-todo :polarity -))
+
+# ::snt Sei que ele voltou ao seu planeta; pois, ao raiar do dia, não lhe encontrei o corpo.
+(s / saber-01
+				:ARG0 (e / eu)
+				:ARG1 (v / voltar-01
+					:ARG1 (e1 / ele)
+					:ARG4 (p / planeta
+						:poss e1))
+				:cause (e2 / encontrar-01 :polarity -
+					:ARG0 e
+					:ARG1 (c / corpo
+						:poss e1)
+					:time (r / raiar
+						:mod (d / dia))))
+
+# ::snt Não era um corpo tão pesado assim...
+(c / corpo :polarity -
+				:mod (p / pesado
+					:degree (t / tão)))
+
+# ::snt E gosto, à noite, de escutar as estrelas.
+(e / e
+				:op2 (g / gostar-01
+					:ARG0 (e1 / eu)
+					:ARG1 (e2 / escutar-01
+						:ARG0 e1
+						:ARG1 (e3 / estrela)))
+					:time (d / date-entity
+						:dayperiod (n / noite)))
+
+# ::snt Quinhentos milhões de guizos...
+(g / guizo
+				:quant 500000000)
+
+# ::snt Mas eis que sucede uma coisa extraordinária.
+(c / contrast-01
+				:ARG2 (s / suceder-01
+					:ARG1 (c1 / coisa
+						:mod (e / extraordinária))))
+
+# ::snt Na mordaça que desenhei para o principezinho, esqueci de juntar a correia!
+(d / desenhar-01
+				:ARG0 (e / eu)
+				:ARG2 (p / principezinho)
+				:location (m / mordaça
+					:ARG1-of (e1 / esquecer-01
+						:ARG0 e
+						:ARG1 (j / juntar-01
+							:ARG1 (c / correia)))))
+
+# ::snt Não poderá jamais prendê-la ao carneiro.
+(p / poder-201 :polarity -
+				:mod (j / jamais)
+				:ARG1 (p1 / prender-01
+					:ARG1 (e / ela)
+					:ARG2 (c / carneiro)))
+
+# ::snt E eu pergunto então: "Que se terá passado no planeta?
+(e / e
+				:op2 (p / prguntar-01
+					:ARG0 (e1 / eu)
+					:ARG1 (t / ter :mode interrogative
+						:ARG1 (a / amr-unknown)
+						:location (p1 / planeta))))
+
+# ::snt Pode bem ser que o carneiro tenha comido a flor..."
+(c / comer-01
+				:ARG0 (c1 / carneiro)
+				:ARG1 (f / flor))
+
+# ::snt Ora eu penso: "Certamente que não!
+(p / pensar-01
+				:ARG0 (e / eu)
+				:ARG1 (c / certamente
+					:mod (n / não)))
+
+# ::snt O principezinho encerra a flor todas as noites na redoma de vidro e vigia bem o carneiro..."
+(e / e
+				:op1 (e1 / encerrar-01
+					:ARG0 (p / principezinho)
+					:ARG1 (f / flor)
+					:time (d / date-entity
+						:dayperiod (n / noite)
+						:mod (t / todas))
+					:location (r / redoma
+						:consist-of (v / vidro)))
+				:op2 (v1 / vigiar-01
+					:ARG0 p
+					:ARG1 (c / carneiro)
+					:manner (b / bem)))
+
+# ::snt Então, eu me sinto feliz.
+(s / sentir-01
+				:ARG0 (e / eu)
+				:ARG1 (f / feliz)
+				:time (e1 / então))
+
+# ::snt E todas as estrelas riem docemente.
+(e / e
+				:op2 (r / rir-01
+					:ARG0 (e1 / estrela
+						:mod (t / todas))
+					:manner (d / docemente)))
+
+# ::snt Ora eu digo: "Uma vez ou outra a gente se distrai e basta isto!
+(e / e
+				:op1 (d / dizer-01
+					:ARG0 (e1 / eu)
+					:ARG1 (d1 / distrair-01
+						:ARG0 (a / a-gente)
+						:time (o / ou
+							:op1 (v / vez)
+							:op2 (o1 / outra))))
+				:op2 (b / bastar-01
+					:ARG1 (i / isso)))
+
+# ::snt Esqueceu uma noite a redoma de vidro ou o carneiro saiu de mansinho, sem que fosse notado..."
+(o / ou
+				:op1 (e / esquecer-01
+					:ARG1 (r / redoma
+						:consist-of (v / vidro))
+					:time (d / date-entity
+						:dayperiod (n / noite)))
+				:op2 (s / sair-01
+					:ARG0 (c / carneiro)
+					:manner (m / mansinho)
+					:ARG4 (n1 / notado :polarity -)))
+
+# ::snt Então os guizos se transformam todos em lágrimas!...
+(t / transformar-01
+				:ARG1 (g / guizo
+					:mod (t1 / todos))
+				:ARG2 (l / lágrima)
+				:time (e / então))
+
+# ::snt Eis aí um mistério bem grande.
+(m / mistério
+				:degree (g / grande
+					:mod (b / bem))
+				:location (a / aí))
+
+# ::snt Para vocês, que amam também o principezinho, como para mim, todo o universo muda de sentido, se num lugar, que não sabemos onde, um carneiro, que não conhecemos, comeu ou não uma rosa...
+(m / mudar-01
+				:ARG1 (u / universo
+					:mod (t / todo))
+				:ARG3 (s / sentido)
+				:condition (c / comer-01
+					:ARG0 (c1 / carneiro)
+					:ARG1 (r / rosa)
+					:location (s1 / saber-01 :polarity -
+						:ARG1 (c2 / conhecer-01
+							:ARG1 (a / amr-unknow)))))
+
+# ::snt Olhem o céu.
+(o / olhar-01
+				:ARG1 (c / céu))
+
+# ::snt Perguntem: Terá ou não terá o carneiro comido a flor?
+(p / perguntar-01
+				:ARG1 (c / comer-01 :polarity -
+					:ARG0 (c1 / carneiro)
+					:ARG1 (f / flor)))
+
+# ::snt E verão como tudo fica diferente...
+(e / e
+				:op2 (v / ver-01
+					:ARG1 (d / diferente
+						:mod (t / tudo))))
+
+# ::snt E nenhuma pessoa grande jamais compreenderá que isso tenha tanta importância.
+(e / e
+				:op2 (c / compreender-01 :polarity -
+					:ARG0 (p / pessoa
+						:mod (g / grande))
+					:ARG1 (t / ter-01
+						:ARG0 (i / isso)
+						:ARG1 (i1 / importântica
+							:degree (t1 / tanta)))
+					:time (j / jamais)))
+
+# ::snt Esta é, para mim, a mais bela paisagem do mundo, e também a mais triste.
+(e / e
+				:op1 (b / bela
+					:degree (m / mais)
+					:domain (p / paisagem
+						:mod (m1 / mundo)))
+				:op2 (t / triste
+					:degree (m2 / mais)
+					:mod (t1 / também)))
+
+# ::snt É a mesma da página precedente.
+(p / página
+				:mod (p1 / precedente))
+
+# ::snt Mas desenhei-a de novo para mostrá-la bem.
+(c / contrast-01
+				:ARG2 (d / desenhar-01
+					:ARG0 (e / eu)
+					:ARG1 (e1 / ela)
+					:mod (d1 / de-novo)
+					:purpose (m / mostrar-01
+						:ARG0 e
+						:ARG1 (b / bem)
+						:ARG2 e1)))
+
+# ::snt Foi aqui que o principezinho apareceu na terra, e desapareceu depois.
+(e / e
+				:op1 (a / aparecer-01
+					:ARG1 (p / principezinho)
+					:location (t / terra))
+				:op2 (d / desaparecer-01
+					:ARG1 p
+					:time (d1 / depois))
+				:location (a1 / aqui))
+
+# ::snt Olhem atentamente esta paisagem para que estejam certos de reconhecê-la, se viajarem um dia na África, através do deserto.
+(o / olhar-01
+				:ARG1 (p / paisagem)
+				:manner (a / atentamente)
+				:purpose (r / reconhecer-02
+					:ARG1 p
+					:condition (v / viajar-01
+						:ARG1 (c / continente
+							:name (n / name :op1 "África"))
+						:direction (d / deserto)
+						:time (d1 / dia))))
+
+# ::snt E se acontecer passarem por ali, eu lhes suplico que não tenham pressa e que esperem um pouco bem debaixo da estrela!
+(e / e
+				:op1 (a / acontecer-01
+					:ARG1 (p / passar-09
+						:ARG2 (a1 / ali))
+					:ARG2 (s / suplicar-01
+						:ARG0 (e1 / eu)
+						:ARG1 (t / ter-01 :polarity -
+							:ARG0 (e2 / eles)
+							:ARG1 (p1 / pressa))))
+				:op2 (e3 / esperar-01
+					:ARG0 e2
+					:location (d / debaixo
+						:op1 (e4 / estrela))
+					:degree (p2 / pouco)))
+
+# ::snt Se então um menino vem ao encontro de vocês, se ele ri, se tem cabelos de ouro, se não responde quando interrogam, adivinharão quem é.
+(a / adivinhar-01
+				:ARG0 (e1 / eles)
+				:ARG1 (m / menino)
+				:condition (e / encontrar-01
+					:ARG1 m
+					:ARG0-of (s / sorrir-01
+					:ARG0-of (t / ter-01
+						:ARG1 (c / cabelo
+							:mod (o / outro)))
+					:ARG0-of (r / responder-01
+						:ARG1 (i / interrogar-01)))))
+
+# ::snt Então, por favor, não me deixem tão triste: escrevam-me depressa que ele voltou...
+(e / escrever-01
+				:ARG1 (v / voltar-01
+					:ARG1 (e1 / ele))
+				:ARG2 (e2 / eu)
+				:manner (d / depressa)
+				:purpose (d1 / deixar :polarity - :polite +
+					:ARG1 e2
+					:ARG2 (t / triste
+						:degree (t1 / tão))))
