@@ -64,10 +64,22 @@ RULES:
 5. Reuse variables for reentrancies when producing full AMR.
 6. Output only the requested labels and AMR content."""
 
+SYSTEM_PROMPT_PT = """You are an AMR (Abstract Meaning Representation) parsing assistant for Brazilian Portuguese.
+
+RULES:
+1. Follow the requested output format exactly.
+2. Use standard AMR concepts, variables, and relations (in English, as per AMR convention).
+3. Keep AMR parentheses balanced.
+4. Each variable must be unique within the graph.
+5. Reuse variables for reentrancies when producing full AMR.
+6. Output only the requested labels and AMR content."""
+
 
 def get_system_prompt(language: str) -> str:
     if language == 'en':
         return SYSTEM_PROMPT_EN
+    if language == 'pt':
+        return SYSTEM_PROMPT_PT
     return SYSTEM_PROMPT_MULTISTEP
 
 # ─────────────────────────────────────────────────────────────────────────────
@@ -442,7 +454,7 @@ def main():
                         help='Output directory for formatted training files')
     parser.add_argument('--no_dedup', action='store_true',
                         help='Keep all AMR blocks instead of deduplicating by sentence')
-    parser.add_argument('--language', choices=['vi', 'en'], default='vi')
+    parser.add_argument('--language', choices=['vi', 'en', 'pt'], default='vi')
     parser.add_argument('--verify', action='store_true',
                         help='Print 2 examples per method and exit')
     args = parser.parse_args()

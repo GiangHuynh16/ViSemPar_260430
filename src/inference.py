@@ -207,10 +207,23 @@ RULES:
 5. Reuse variables for reentrancies when producing full AMR.
 6. Output only the requested labels and AMR content."""
 
+SYSTEM_PROMPT_PT = """You are an AMR (Abstract Meaning Representation) parsing assistant for Brazilian Portuguese.
+
+RULES:
+1. Follow the requested output format exactly.
+2. Use standard AMR concepts, variables, and relations (in English, as per AMR convention).
+3. Keep AMR parentheses balanced.
+4. Each variable must be unique within the graph.
+5. Reuse variables for reentrancies when producing full AMR.
+6. Output only the requested labels and AMR content."""
+
 
 def get_system_prompt(cfg: dict) -> str:
-    if cfg.get('language') == 'en' or cfg.get('data', {}).get('language') == 'en':
+    lang = cfg.get('language') or cfg.get('data', {}).get('language', 'vi')
+    if lang == 'en':
         return SYSTEM_PROMPT_EN
+    if lang == 'pt':
+        return SYSTEM_PROMPT_PT
     return SYSTEM_PROMPT
 
 
