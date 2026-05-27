@@ -1,0 +1,11 @@
+base: ../base.yaml
+method: B2
+group: portuguese_lpp_baselines
+language: pt
+no_var_mode: clean
+data:
+  train: portuguese_lpp/B2_train.txt
+  val: data/portuguese/little_prince/raw/dev.txt
+  test: data/portuguese/little_prince/raw/test.txt
+decoding:
+  max_new_tokens: 512
