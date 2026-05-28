@@ -1,0 +1,11 @@
+base: ../base_v2.yaml
+method: MTUP4
+group: vietnamese_v2_mtup_4tasks
+language: vi
+no_var_mode: clean
+data:
+  train: vietnamese_v2/MTUP4_train.txt
+  dev_formatted: vietnamese_v2/MTUP4_dev.txt
+  test: data/raw/public_test.txt
+decoding:
+  max_new_tokens: 2048

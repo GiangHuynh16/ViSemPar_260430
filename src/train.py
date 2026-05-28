@@ -151,8 +151,14 @@ def main():
     output_dir = root / 'checkpoints' / group / method / f"s{args.seed}"
     output_dir.mkdir(parents=True, exist_ok=True)
 
+    # Dev dataset: optional, derived from data.dev key in config
+    dev_key = cfg.get('data', {}).get('dev_formatted')
+    dev_path = (root / 'data' / 'formatted' / dev_key) if dev_key else None
+
     print(f"Method: {method} | Seed: {args.seed} | Group: {group}")
     print(f"Train data: {train_path}")
+    if dev_path:
+        print(f"Dev data:   {dev_path}")
     print(f"Output dir: {output_dir}")
 
     # ── Tokenizer ──────────────────────────────────────────────────────────
@@ -167,6 +173,13 @@ def main():
         str(train_path), tokenizer,
         max_length=tr_cfg.get('max_length', 2048))
     print(f"Train examples: {len(dataset)}")
+
+    eval_dataset = None
+    if dev_path and dev_path.exists():
+        eval_dataset = load_chat_dataset(
+            str(dev_path), tokenizer,
+            max_length=tr_cfg.get('max_length', 2048))
+        print(f"Dev examples:  {len(eval_dataset)}")
 
     # ── Model ──────────────────────────────────────────────────────────────
     print(f"\nLoading model: {model_name}")
@@ -226,11 +239,16 @@ def main():
         gradient_checkpointing=False,
         logging_steps=10,
         save_strategy='epoch',
-        save_total_limit=3,
+        save_total_limit=tr_cfg.get('save_total_limit', 3),
         seed=args.seed,
         report_to='none',
         remove_unused_columns=False,
         dataloader_num_workers=0,
+        # Eval settings — only active when eval_dataset is provided
+        eval_strategy='epoch' if eval_dataset is not None else 'no',
+        load_best_model_at_end=eval_dataset is not None,
+        metric_for_best_model='eval_loss' if eval_dataset is not None else None,
+        greater_is_better=False if eval_dataset is not None else None,
     )
 
     data_collator = DataCollatorForSeq2Seq(
@@ -244,6 +262,7 @@ def main():
         model=model,
         args=training_args,
         train_dataset=dataset,
+        eval_dataset=eval_dataset,
         data_collator=data_collator,
     )
 

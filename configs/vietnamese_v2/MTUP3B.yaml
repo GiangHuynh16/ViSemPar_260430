@@ -1,0 +1,11 @@
+base: ../base_v2.yaml
+method: MTUP3B
+group: vietnamese_v2_mtup_3tasks
+language: vi
+no_var_mode: clean
+data:
+  train: vietnamese_v2/MTUP3B_train.txt
+  dev_formatted: vietnamese_v2/MTUP3B_dev.txt
+  test: data/raw/public_test.txt
+decoding:
+  max_new_tokens: 1536

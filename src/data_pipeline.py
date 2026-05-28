@@ -270,16 +270,6 @@ def build_relation_list(amr: str) -> str:
     return '\n'.join(f"{p} | {r} | {c}" for p, r, c in triples)
 
 
-def build_task1_list(amr: str) -> str:
-    """Task-1 triples for MTUP2/v13 style: 'root: X\\nX -> :role -> Y'."""
-    root, triples = parse_amr_tree(amr)
-    if not root:
-        return None
-    lines = [f"root: {root}"]
-    lines += [f"{p} -> {r} -> {c}" for p, r, c in triples]
-    return '\n'.join(lines)
-
-
 # ─────────────────────────────────────────────────────────────────────────────
 # Chat example builders per method
 # ─────────────────────────────────────────────────────────────────────────────
@@ -455,6 +445,9 @@ def main():
     parser.add_argument('--no_dedup', action='store_true',
                         help='Keep all AMR blocks instead of deduplicating by sentence')
     parser.add_argument('--language', choices=['vi', 'en', 'pt'], default='vi')
+    parser.add_argument('--dev_split', type=float, default=0.0,
+                        help='Fraction of examples to hold out as dev set (e.g. 0.1). '
+                             'Written to {method}_dev.txt. 0 = disabled.')
     parser.add_argument('--verify', action='store_true',
                         help='Print 2 examples per method and exit')
     args = parser.parse_args()
@@ -483,18 +476,31 @@ def main():
                                  args.amr1_weight, args.amr2_weight,
                                  no_var_mode=args.no_var_mode,
                                  language=args.language)
+
+        if args.dev_split > 0:
+            n_dev = max(1, int(len(examples) * args.dev_split))
+            dev_examples = examples[-n_dev:]
+            train_examples = examples[:-n_dev]
+            dev_path = fmt_dir / f"{method}_dev.txt"
+            with open(dev_path, 'w', encoding='utf-8') as f:
+                f.write('\n\n'.join(dev_examples))
+            print(f"  {method}: {len(train_examples)} train + {len(dev_examples)} dev → {fmt_dir}")
+        else:
+            train_examples = examples
+
         out_path = fmt_dir / f"{method}_train.txt"
         with open(out_path, 'w', encoding='utf-8') as f:
-            f.write('\n\n'.join(examples))
-        stats[method] = len(examples)
-        print(f"  {method}: {len(examples)} examples → {out_path}")
+            f.write('\n\n'.join(train_examples))
+        stats[method] = len(train_examples)
 
         if args.verify:
             print(f"\n--- {method} sample 1 ---")
-            print(examples[0][:600])
-            print(f"\n--- {method} sample 2 (synthetic) ---")
-            print(examples[-1][:600])
+            print(train_examples[0][:600])
+            print(f"\n--- {method} sample 2 ---")
+            print(train_examples[-1][:600])
             print()
+        elif args.dev_split == 0:
+            print(f"  {method}: {len(train_examples)} examples → {out_path}")
 
     # Save stats
     stats_path = fmt_dir / 'dataset_stats.json'

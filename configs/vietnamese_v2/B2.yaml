@@ -1,0 +1,11 @@
+base: ../base_v2.yaml
+method: B2
+group: vietnamese_v2_baselines
+language: vi
+no_var_mode: clean
+data:
+  train: vietnamese_v2/B2_train.txt
+  dev_formatted: vietnamese_v2/B2_dev.txt
+  test: data/raw/public_test.txt
+decoding:
+  max_new_tokens: 512

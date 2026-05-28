@@ -1,0 +1,46 @@
+# base_v2.yaml – improved shared params for v2 experiments
+#
+# Changes vs base.yaml:
+#   - epochs: 25 → 10  (conference-defensible for ~1.8K examples)
+#   - save_total_limit: 3 → 1  (saves disk space)
+#   - amr2_weight: 3 → 1  (no data duplication, use dev split instead)
+#   - no_var_mode: legacy → clean  (Penman format, no v13)
+#   - train.py reads data.dev_formatted for eval + load_best_model_at_end
+
+model:
+  name: Qwen/Qwen2.5-7B-Instruct
+  flash_attn: true
+
+lora:
+  r: 128
+  alpha: 256
+  dropout: 0.05
+  bias: none
+  target_modules:
+    - q_proj
+    - k_proj
+    - v_proj
+    - o_proj
+    - gate_proj
+    - up_proj
+    - down_proj
+
+training:
+  optimizer: adamw_torch
+  lr: 5.0e-5
+  scheduler: cosine
+  warmup_ratio: 0.05
+  epochs: 10
+  batch_per_device: 1
+  grad_accum: 16
+  weight_decay: 0.01
+  max_grad_norm: 1.0
+  max_length: 2048
+  save_total_limit: 1
+
+data:
+  amr1_weight: 1
+  amr2_weight: 1
+  syn_weight: 0
+
+seeds: [42, 123, 456]
