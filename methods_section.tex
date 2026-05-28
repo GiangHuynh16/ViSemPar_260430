@@ -1,0 +1,204 @@
+\subsection{Task Formulation}
+\label{sec:task}
+
+Formally, given an input sentence $s = w_1, w_2, \ldots, w_n$, AMR parsing
+requires predicting a directed graph $G = (V, E, L_v, L_e)$ where $V$ is a
+set of concept nodes, $E$ is a set of directed edges, $L_v : V \to \mathcal{C}$
+assigns concept labels from an open vocabulary $\mathcal{C}$, and
+$L_e : E \to \mathcal{R}$ assigns relation labels from a closed set $\mathcal{R}$
+(e.g., \texttt{:ARG0}, \texttt{:ARG1}, \texttt{:mod}). Variable identifiers
+(e.g., $l$, $b$) are auxiliary; their specific values do not affect graph
+semantics, but they are necessary to encode reentrancy---the case where a single
+node participates as the argument of multiple relations.
+
+\begin{figure}[h]
+\begin{lstlisting}[style=amrstyle, basicstyle=\small\ttfamily]
+Input: "The boy left."
+
+AMR: (l / leave-01
+        :ARG0 (b / boy))
+\end{lstlisting}
+\caption{A minimal AMR graph. The root concept \texttt{leave-01} is linked
+to \texttt{boy} via the \texttt{:ARG0} (agent) relation. Variables $l$ and
+$b$ are arbitrary identifiers; reentrancy is encoded by reusing a variable in
+multiple edge positions.}
+\label{fig:amr-example}
+\end{figure}
+
+End-to-end parsers produce $G$ directly from $s$ in a single decoding pass,
+conflating concept identification, relation labelling, and variable assignment.
+We argue that this joint formulation imposes an unnecessarily high structural
+load on the decoder, and propose to factor it into explicit intermediate
+representations.
+
+\subsection{Multi-Task Unified Prompting (MTUP)}
+\label{sec:mtup}
+
+\paragraph{Overview.}
+MTUP is a supervised fine-tuning framework in which a single instruction-tuned
+language model is trained to produce a \emph{sequence of intermediate
+representations} culminating in the final AMR graph, all within one assistant
+turn. Decomposition is implemented through structured step markers embedded in
+the target text (e.g., \texttt{[STEP 1: AMR\_NO\_VAR]},
+\texttt{[STEP 2: AMR\_WITH\_VAR]}). At inference time, the model generates
+all steps autoregressively; only the final step is extracted for evaluation.
+
+\paragraph{Training objective.}
+Each training example is formatted as a multi-turn chat sequence using
+Qwen's \texttt{<|im\_start|>...<|im\_end|>} template. The system turn provides
+task instructions and language-specific AMR conventions; the user turn contains
+the input sentence; the assistant turn contains the multi-step target. Loss is
+computed exclusively over assistant tokens, masking both the system and user
+turns. This ensures the model learns to generate structured semantic outputs
+rather than to reproduce instructions.
+
+\paragraph{Advantage of unified prompting.}
+Training a single model over all steps---rather than a pipeline of separate
+models---allows the model to learn cross-step dependencies during training, and
+requires only a single adapter at inference time. The same training codebase
+and model architecture applies without modification to Vietnamese, English, and
+any future target language.
+
+\subsection{MTUP Variants}
+\label{sec:variants}
+
+We evaluate four decomposition configurations. All share the same base model
+and LoRA configuration; they differ only in the number and type of intermediate
+steps.
+
+\subsubsection{MTUP2: Two-Step Decomposition}
+
+\begin{lstlisting}[style=amrstyle, basicstyle=\scriptsize\ttfamily]
+[STEP 1: AMR_NO_VAR]
+(leave-01 :ARG0 (boy))
+
+[STEP 2: AMR_WITH_VAR]
+(l / leave-01 :ARG0 (b / boy))
+\end{lstlisting}
+
+MTUP2 separates the \emph{structural} sub-problem---predicting the set of
+concept nodes and their relational skeleton---from the \emph{binding}
+sub-problem of assigning variable identifiers. In the no-variable form,
+reentrancy is represented by repeating the concept label at each occurrence,
+which eliminates the requirement to track global variable scope during the
+first generation step. We hypothesise that this factorisation reduces the
+probability of syntactic errors (unbalanced parentheses, undefined variables)
+by deferring their most frequent source to the final step.
+
+Among all tested variants, MTUP2 achieves the best SMATCH score on Vietnamese
+(0.6494 mean over 3 seeds). We therefore treat it as our primary proposed
+method, while acknowledging that the advantage over B2 (0.6466) is small and
+not statistically established under our evaluation protocol.
+
+\subsubsection{MTUP3A: Three Steps with Implicit Relations}
+
+\begin{lstlisting}[style=amrstyle, basicstyle=\scriptsize\ttfamily]
+[STEP 1: CONCEPTS]
+concept_1 | leave-01
+concept_2 | boy
+
+[STEP 2: AMR_NO_VAR]
+(leave-01 :ARG0 (boy))
+
+[STEP 3: AMR_WITH_VAR]
+(l / leave-01 :ARG0 (b / boy))
+\end{lstlisting}
+
+MTUP3A adds an explicit concept enumeration step before graph construction.
+By committing to the set of semantic elements prior to relation assignment, we
+hypothesised that the model could avoid generating spurious concepts. Empirically,
+MTUP3A achieves SMATCH 0.6354 on Vietnamese---below MTUP2 by 1.4pp---suggesting
+that the concept-listing step introduces noise or over-constrains the subsequent
+generation.
+
+\subsubsection{MTUP3B: Three Steps with Explicit Relations}
+
+\begin{lstlisting}[style=amrstyle, basicstyle=\scriptsize\ttfamily]
+[STEP 1: CONCEPTS]
+concept_1 | leave-01
+concept_2 | boy
+
+[STEP 2: RELATIONS]
+leave-01 | :ARG0 | boy
+
+[STEP 3: AMR_WITH_VAR]
+(l / leave-01 :ARG0 (b / boy))
+\end{lstlisting}
+
+MTUP3B makes both concepts and relations explicit before final graph
+generation, replacing the no-variable AMR intermediate with a flat relation
+list. The hypothesis was that an explicit relation-prediction step would focus
+model attention on edge labels and reduce argument attachment errors.
+MTUP3B achieves 0.5891 SMATCH on Vietnamese, the lowest among all MTUP
+variants, performing similarly to the weaker B1 baseline. We attribute this to
+the flat relation list format being a novel output form not represented in
+pre-training data, increasing the effective learning burden.
+
+\subsubsection{MTUP4: Four-Step Full Decomposition}
+
+\begin{lstlisting}[style=amrstyle, basicstyle=\scriptsize\ttfamily]
+[STEP 1: CONCEPTS]
+concept_1 | leave-01
+concept_2 | boy
+
+[STEP 2: RELATIONS]
+leave-01 :ARG0 boy
+
+[STEP 3: AMR_NO_VAR]
+(leave-01 :ARG0 (boy))
+
+[STEP 4: AMR_WITH_VAR]
+(l / leave-01 :ARG0 (b / boy))
+\end{lstlisting}
+
+MTUP4 combines explicit concept and relation enumeration (as in MTUP3B) with
+an intermediate graph reconstruction step (as in MTUP2). It achieves SMATCH
+0.5970 on Vietnamese---better than MTUP3B but below MTUP2---suggesting that
+the additional Penman intermediate step partially mitigates the errors
+introduced by explicit list steps, without recovering to the MTUP2 level.
+
+\subsection{Baselines}
+\label{sec:baselines}
+
+\paragraph{B1: Direct generation.}
+The model generates the full AMR with variable bindings in a single step,
+prefixed by the token \texttt{AMR:}. This represents the standard end-to-end
+decoding paradigm and provides the lower reference point for decomposition.
+
+\paragraph{B2: No-variable generation with post-processing.}
+The model generates AMR without variable bindings (\texttt{AMR\_NO\_VAR:}),
+and a deterministic post-processing routine greedily assigns variables by
+first-mention order. This isolates the structural generation quality from
+variable assignment and serves as an ablation of MTUP2's first step.
+
+\subsection{Implementation}
+\label{sec:implementation}
+
+\paragraph{Model.}
+All experiments use Qwen2.5-7B-Instruct with LoRA \citep{hu2021lora}:
+rank $r=128$, $\alpha=256$, dropout 0.05, applied to all attention and
+feed-forward projection matrices. Flash Attention 2 is enabled for GPU memory
+efficiency.
+
+\paragraph{Training.}
+We use AdamW with a peak learning rate of $5 \times 10^{-5}$ and cosine decay,
+warmup ratio 0.05, effective batch size 16 (1 example per device,
+16 gradient accumulation steps), and 25 epochs. Mixed precision uses
+\texttt{bf16} where available, with \texttt{fp16} fallback. All experiments
+are replicated with three random seeds (42, 123, 456). Loss is masked to
+assistant tokens only.
+
+\textbf{Caveat on epoch count.} Training for 25 epochs on $\sim$2{,}950
+examples is aggressive relative to standard convention for datasets of this
+size. Vietnamese experiments lack a held-out development set for early stopping,
+so convergence cannot be monitored during training. Results should be
+interpreted in light of this potential for overfitting, and future work should
+incorporate a development split with early stopping.
+
+\paragraph{Inference.}
+At inference time, each test sentence is formatted as a user turn with the
+same system prompt used during training. The model generates autoregressively
+up to a method-specific token budget (B1/B2: 512; MTUP2/MTUP3A/MTUP3B: 1536;
+MTUP4: 2048). A method-specific extraction routine identifies the final AMR
+step in the output; malformed or incomplete outputs are replaced with the
+placeholder \texttt{(a / amr-unknown)}.
