@@ -11,5 +11,31 @@
     "precision": 0.6602,
     "recall": 0.6278,
     "f1": 0.6436
+  },
+  "s123": {
+    "method": "MTUP2",
+    "seed": 123,
+    "group": "english_lpp_mtup_2tasks",
+    "n_samples": 143,
+    "parsable": 143,
+    "parsable_rate": 1.0,
+    "avg_output_len": 168.2,
+    "root_acc": 0.6993,
+    "precision": 0.6895,
+    "recall": 0.6505,
+    "f1": 0.6694
+  },
+  "s456": {
+    "method": "MTUP2",
+    "seed": 456,
+    "group": "english_lpp_mtup_2tasks",
+    "n_samples": 143,
+    "parsable": 143,
+    "parsable_rate": 1.0,
+    "avg_output_len": 166.2,
+    "root_acc": 0.7063,
+    "precision": 0.6868,
+    "recall": 0.6469,
+    "f1": 0.6663
   }
 }

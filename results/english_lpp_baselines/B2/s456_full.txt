@@ -1,0 +1,1757 @@
+#::snt Chapter 4 .
+AMR_NO_VAR: (chapter :mod 4)
+
+
+#::snt I had thus learned a second fact of great importance : this was that the planet the little prince came from was scarcely any larger than a house !
+AMR_NO_VAR: (learn-01
+      :ARG0 (i)
+      :ARG1 (fact-01
+            :ord (ordinal-entity :value 2)
+            :mod (important
+                  :degree (great))
+            :domain (come-01
+                  :ARG1 (planet
+                        :source (came-01
+                              :ARG1 (prince
+                                    :mod (little))))
+                  :ARG1-of (differ-02
+                        :ARG2 (house)
+                        :degree (scarce))))
+      :manner (thus))
+
+
+#::snt But that did not really surprise me much .
+AMR_NO_VAR: (contrast-01
+      :ARG2 (surprise-01 :polarity -
+            :ARG0 (that)
+            :ARG1 (i)
+            :degree (much)
+            :mod (real-04)))
+
+
+#::snt I knew very well that in addition to the great planets -- such as the Earth , Jupiter , Mars , Venus -- to which we have given names , there are also hundreds of others , some of which are so small that one has a hard time seeing them through the telescope .
+AMR_NO_VAR: (know-01
+      :ARG0 (i)
+      :ARG1 (planet
+            :mod (great
+                  :example (and
+                        :op1 (planet :wiki "Earth"
+                              :name (name :op1 "Earth"))
+                        :op2 (planet :wiki "Jupiter"
+                              :name (name :op1 "Jupiter"))
+                        :op3 (planet :wiki "Mars"
+                              :name (name :op1 "Mars"))
+                        :op4 (planet :wiki "Venus"
+                              :name (name :op1 "Venus"))))
+            :ARG1-of (add-02)
+            :quant (hundred
+                  :more (other)))
+      :degree (well
+            :degree (very))
+      :ARG1-of (cause-01
+            :ARG0 (see-01
+                  :ARG1 p
+                  :ARG3 (telescope)
+                  :ARG1-of (hard-03
+                        :ARG2 (one))
+                  :condition (small
+                        :degree (so)
+                        :domain (include
+                              :op1 o2))))
+      :time (present))
+
+
+#::snt When an astronomer discovers one of these he does not give it a name , but only a number .
+AMR_NO_VAR: (contrast-01
+      :ARG1 (give-01 :polarity -
+            :ARG0 (person
+                  :ARG0-of (observe-01
+                        :ARG1 (star)))
+            :ARG1 (name
+                  :ARG1 s)
+            :ARG2 (number
+                  :ARG1 s))
+      :ARG2 (discover-01
+            :ARG0 p
+            :ARG1 (star
+                  :mod (this))))
+
+
+#::snt He might call it , for example , " Asteroid 325 . "
+AMR_NO_VAR: (possible-01
+      :ARG1 (call-02
+            :ARG0 (he)
+            :ARG1 (name
+                  :op1 (asteroid :wiki -
+                        :name (name :op1 325))
+                  :ARG1-of (exemplify-01))
+            :ARG2 (it)))
+
+
+#::snt I have serious reason to believe that the planet from which the little prince came is the asteroid known as B-612 .
+AMR_NO_VAR: (have-03
+      :ARG0 (i)
+      :ARG1 (reason
+            :ARG1-of (serious-02)
+            :ARG0-of (cause-01
+                  :ARG1 (believe-01
+                        :ARG0 i
+                        :ARG1 (planet
+                              :source-of (come-01
+                                    :ARG1 (prince
+                                          :mod (little)))
+                              :domain (asteroid
+                                    :name (known-as :op1 "B-612")))))))
+
+
+#::snt This asteroid has only once been seen through the telescope .
+AMR_NO_VAR: (see-01 :frequency 1
+      :ARG1 (asteroid
+            :mod (this))
+      :instrument (telescope))
+
+
+#::snt That was by a Turkish astronomer , in 1909 .
+AMR_NO_VAR: (that
+      :time (year :op1 1909)
+      :ARG1-of (observe-01
+            :ARG0 (astronomer
+                  :source (country :wiki "Turkey" :name (name :op1 "Turkish"))))
+)
+
+#::snt On making his discovery , the astronomer had presented it to the International Astronomical Congress , in a great demonstration .
+AMR_NO_VAR: (present-01
+      :ARG0 (person
+            :ARG0-of (astronomy-01))
+      :ARG1 (thing
+            :ARG1-of (discover-01
+                  :ARG0 p))
+      :ARG2 (congress
+            :mod (international)
+            :domain (astronomy-01))
+      :manner (demonstrate-01
+            :ARG0 p
+            :mod (great))
+      :time (make-01
+            :ARG1 d))
+
+
+#::snt But he was in Turkish costume , and so nobody would believe what he said .
+AMR_NO_VAR: (contrast-01
+      :ARG2 (believe-01 :polarity -
+            :ARG0 (nobody)
+            :ARG1 (say-01
+                  :ARG0 (he))
+            :condition (costume
+                  :poss h
+                  :ARG2 (Turkish))))
+
+
+#::snt Grown - ups are like that ...
+AMR_NO_VAR: (resemble-01
+      :ARG1 (grown-up)
+      :ARG2 (that))
+
+
+#::snt Fortunately , however , for the reputation of Asteroid B-612 , a Turkish dictator made a law that his subjects , under pain of death , should change to European costume .
+AMR_NO_VAR: (have-concession-91
+      :ARG1 (make-01
+            :ARG0 (dictator
+                  :source (country :wiki "Turkey"
+                        :name (name :op1 "Turkish")))
+            :ARG1 (law
+                  :ARG1-of (cause-01
+                        :ARG0 (change-01
+                              :ARG1 (person
+                                    :poss d2
+                                    :ARG0-of (costume-01
+                                          :ARG1 (European)))
+                              :义务 (punish-01
+                                    :ARG1 p2
+                                    :ARG2 (die-01))))
+            :beneficiary (reputation
+                  :poss (asteroid :wiki "Asteroid_B-612"
+                        :name (name :op1 "B-612")))))
+
+
+#::snt So in 1920 the astronomer gave his demonstration all over again , dressed with impressive style and elegance .
+AMR_NO_VAR: (again-01
+      :ARG1 (demonstrate-01
+            :ARG0 (person
+                  :ARG0-of (astronomer-01))
+            :ARG1-of (dress-01
+                  :ARG1 p
+                  :manner (and
+                        :op1 (style
+                              :mod (impressive))
+                        :op2 (elegant))))
+      :time (year :op1 1920))
+
+
+#::snt And this time everybody accepted his report .
+AMR_NO_VAR: (and
+      :op2 (accept-01
+            :ARG0 (everybody)
+            :ARG1 (report
+                  :poss (he))
+            :time (time
+                  :mod (this))))
+
+
+#::snt If I have told you these details about the asteroid , and made a note of its number for you , it is on account of the grown - ups and their ways .
+AMR_NO_VAR: (cause-01
+      :ARG0 (and
+            :op1 (tell-01
+                  :ARG0 (i)
+                  :ARG1 (detail
+                        :mod (this))
+                  :ARG2 (you)
+                  :topic (asteroid))
+            :op2 (note-02
+                  :ARG0 i
+                  :ARG1 (number
+                        :poss a)
+                  :beneficiary y)))
+      :ARG1 (grown-up)
+      :ARG2 (way
+            :poss g))
+
+
+#::snt WHen you tell them that you have made a new friend , they never ask you any questions about essential matters .
+AMR_NO_VAR: (have-concession-91
+      :ARG1 (ask-01 :polarity -
+            :ARG0 (they)
+            :ARG1 (question-01
+                  :ARG0 t
+                  :ARG1 (matter
+                        :mod (essential)))
+            :ARG2 (you)
+            :time (tell-01
+                  :ARG0 y
+                  :ARG1 (have-rel-role-91
+                        :ARG0 y
+                        :ARG1 (person
+                              :ARG0-of (make-01
+                                    :ARG1 (friend
+                                          :ARG0 y))
+                              :ARG1-of (new-01)))
+                  :ARG2 t)))
+
+
+#::snt They never say to you , " What does his voice sound like ?
+AMR_NO_VAR: (say-01 :polarity -
+      :ARG0 (they)
+      :ARG1 (sound-01
+            :ARG1 (voice
+                  :poss (he))
+            :ARG2 (amr-unknown))
+      :ARG2 (you)
+      :time (ever))
+
+
+#::snt What games does he love best ?
+AMR_NO_VAR: (game
+      :domain (he)
+      :ARG1-of (love-01
+            :degree (most))
+      :ARG1-of (amr-unknown))
+
+
+#::snt Does he collect butterflies ? "
+AMR_NO_VAR: (collect-01
+  :ARG0 (he)
+  :ARG1 (butterfly)
+  :mode interrogative)
+
+
+#::snt Instead , they demand : " How old is he ?
+AMR_NO_VAR: (demand-01
+  :ARG0 (they)
+  :ARG1 (old
+          :domain (he)
+          :degree (so))
+  :ARG1-of (instead-of-91))
+
+
+#::snt How many brothers has he ?
+AMR_NO_VAR: (brother
+  :quant (amr-unknown)
+  :poss (he))
+
+
+#::snt How much does he weigh ?
+AMR_NO_VAR: (weight-01
+  :ARG1 (he)
+  :mode interrogative)
+
+
+#::snt How much money does his father make ? "
+AMR_NO_VAR: (earn-01
+  :ARG0 (father
+          :poss (he))
+  :manner (money
+            :quant (amr-unknown)))
+
+
+#::snt Only from these figures do they think they have learned anything about him .
+AMR_NO_VAR: (think-01
+      :ARG0 (they)
+      :ARG1 (learn-01
+            :ARG0 t
+            :ARG1 (anything
+                  :topic (he))
+            :source (figure
+                  :mod (this)))
+      :mod (only))
+
+
+#::snt If you were to say to the grown - ups : " I saw a beautiful house made of rosy brick , with geraniums in the windows and doves on the roof , " they would not be able to get any idea of that house at all .
+AMR_NO_VAR: (possible-01 :polarity -
+      :ARG1 (get-01
+            :ARG0 (grown-up)
+            :ARG1 (idea
+                  :topic (house
+                        :ARG1-of (see-01
+                              :ARG0 (i))
+                        :ARG1-of (make-01
+                              :ARG2 (brick
+                                    :mod (rosy)))
+                        :ARG0-of (have-03
+                              :ARG1 (window
+                                    :ARG1-of (have-03
+                                          :ARG0 (geranium)))
+                              :location (roof
+                                    :ARG1-of (have-03
+                                          :ARG0 (dove))))
+                        :ARG1-of (beautiful-02)))
+            :degree (at-all)))
+      :condition (say-01
+            :ARG0 (you)
+            :ARG1 h2
+            :ARG2 g))
+
+
+#::snt You would have to say to them : " I saw a house that cost $ 20,000 . "
+AMR_NO_VAR: (obligate-01
+      :ARG1 (you)
+      :ARG2 (say-01
+            :ARG0 y
+            :ARG1 (see-01
+                  :ARG0 (i)
+                  :ARG1 (house
+                        :ARG1-of (cost-01
+                              :ARG2 (dollar :quant 20000))))
+            :ARG2 (they)))
+
+
+#::snt Then they would exclaim : " Oh , what a pretty house that is ! "
+AMR_NO_VAR: (exclaim-01
+      :ARG0 (they)
+      :ARG1 (house
+            :mod (pretty
+                  :degree (oh))
+            :that)
+      :time (then))
+
+
+#::snt Just so , you might say to them : " The proof that the little prince existed is that he was charming , that he laughed , and that he was looking for a sheep .
+AMR_NO_VAR: (possible-01
+      :ARG1 (say-01
+            :ARG0 (you)
+            :ARG1 (prove-01
+                  :ARG1 (exist-01
+                        :ARG0 (prince
+                              :mod (little)))
+                  :ARG2 (and
+                        :op1 (charming-01
+                              :ARG1 p)
+                        :op2 (laugh-01
+                              :ARG0 p)
+                        :op3 (look-01
+                              :ARG0 p
+                              :ARG1 (sheep))))
+            :ARG2 (they))
+      :extent (just))
+
+
+#::snt If anybody wants a sheep , that is a proof that he exists . "
+AMR_NO_VAR: (want-01
+      :ARG0 (anybody)
+      :ARG1 (sheep)
+      :condition-of (prove-01
+            :ARG1 (exist-01
+                  :ARG0 (he))
+            :ARG2 w2))
+
+
+#::snt And what good would it do to tell them that ?
+AMR_NO_VAR: (and
+      :op2 (good-04
+            :ARG1 (tell-01
+                  :ARG0 (i)
+                  :ARG1 (that))
+            :ARG2 (they)))
+
+
+#::snt They would shrug their shoulders , and treat you like a child .
+AMR_NO_VAR: (and
+      :op1 (shrug-01
+            :ARG0 (they)
+            :ARG1 (shoulder
+                  :part-of t))
+      :op2 (treat-01
+            :ARG0 t
+            :ARG1 (you)
+            :manner (child)))
+
+
+#::snt But if you said to them : " The planet he came from is Asteroid B-612 , " then they would be convinced , and leave you in peace from their questions .
+AMR_NO_VAR: (contrast-01
+      :ARG2 (convince-01
+            :ARG0 (say-01
+                  :ARG0 (you)
+                  :ARG1 (planet
+                        :source-of (he)
+                        :ARG1-of (come-01))
+                  :ARG2 (they))
+            :ARG1 t2
+            :ARG2 (leave-14
+                  :ARG0 t2
+                  :ARG1 y
+                  :ARG2 (peace
+                        :topic (question-01
+                              :ARG0 t2
+                              :ARG2 y)))))
+
+
+#::snt They are like that .
+AMR_NO_VAR: (resemble-01
+  :ARG1 (they)
+  :ARG2 (that))
+
+
+#::snt One must not hold it against them .
+AMR_NO_VAR: (obligate-01
+      :ARG1 (one)
+      :ARG2 (hold-01 :polarity -
+            :ARG0 o
+            :ARG1 (it)
+            :ARG2 (they)))
+
+
+#::snt Children should always show great forbearance toward grown - up people .
+AMR_NO_VAR: (recommend-01
+      :ARG1 (show-01
+            :ARG0 (child)
+            :ARG1 (forbearance
+                  :degree (great))
+            :ARG2 (person
+                  :ARG1-of (grown-up-02))
+            :time (always)))
+
+
+#::snt But certainly , for us who understand life , figures are a matter of indifference .
+AMR_NO_VAR: (contrast-01
+      :ARG2 (indifferent
+            :domain (figure)
+            :ARG1-of (opine-01
+                  :ARG0 (we
+                        :ARG0-of (understand-01
+                              :ARG1 (life))))))
+
+
+#::snt I should have liked to begin this story in the fashion of the fairy - tales .
+AMR_NO_VAR: (recommend-01
+      :ARG1 (like-02
+            :ARG0 (i)
+            :ARG1 (begin-01
+                  :ARG0 i
+                  :ARG1 (story
+                        :mod (this))
+                  :manner (fashion
+                        :poss (fairytale)))))
+
+
+#::snt I should have like to say : " Once upon a time there was a little prince who lived on a planet that was scarcely any bigger than himself , and who had need of a sheep ... "
+AMR_NO_VAR: (recommend-01
+      :ARG1 (say-01
+            :ARG0 (i)
+            :ARG1 (and
+                  :op1 (prince
+                        :mod (little)
+                        :ARG0-of (live-01
+                              :location (planet
+                                    :ARG1-of (bigger-02
+                                          :ARG2 p
+                                          :degree (scarce))))
+                        :ARG1-of (need-01
+                              :ARG0 p
+                              :ARG1 (sheep)))
+                  :op2 (time
+                        :mod (once)
+                        :mod (upon)
+                        :mod (a)
+                        :domain (prince)))))
+
+
+#::snt To those who understand life , that would have given a much greater air of truth to my story .
+AMR_NO_VAR: (give-01
+      :ARG0 (that)
+      :ARG1 (air-02
+            :mod (truth
+                  :degree (great
+                        :degree (much))))
+      :ARG2 (story
+            :poss (i))
+      :ARG0-of (cause-01
+            :ARG1 (understand-01
+                  :ARG0 (person
+                        :ARG1-of (include-91
+                              :ARG2 (those)))
+                  :ARG1 (live-01))))
+
+
+#::snt For I do not want any one to read my book carelessly .
+AMR_NO_VAR: (want-01 :polarity -
+      :ARG0 (i)
+      :ARG1 (read-02
+            :ARG0 (person
+                  :mod (any))
+            :ARG1 (book
+                  :poss i)
+            :manner (careless)))
+
+
+#::snt I have suffered too much grief in setting down these memories .
+AMR_NO_VAR: (suffer-01
+      :ARG0 (i)
+      :ARG1 (grief
+            :degree (much
+                  :degree (too)))
+      :ARG2 (set-down-02
+            :ARG0 i
+            :ARG1 (memory
+                  :mod (this))))
+
+
+#::snt Six years have already passed since my friend went away from me , with his sheep .
+AMR_NO_VAR: (pass-03
+      :ARG1 (temporal-quantity :quant 6
+            :unit (year))
+      :time (since
+            :op1 (go-02
+                  :ARG0 (friend
+                        :poss (i))
+                  :direction (away
+                        :op1 i)
+                  :accompanier (sheep
+                        :poss f))))
+
+
+#::snt If I try to describe him here , it is to make sure that I shall not forget him .
+AMR_NO_VAR: (try-01
+      :ARG0 (i)
+      :ARG1 (describe-01
+            :ARG0 i
+            :ARG1 (he)
+            :location (here))
+      :purpose (make-02
+            :ARG1 (sure
+                  :degree (not
+                        :op1 (forget-01
+                              :ARG0 i
+                              :ARG1 h)))))
+
+
+#::snt To forget a friend is sad .
+AMR_NO_VAR: (sad-02
+      :ARG0 (forget-01
+            :ARG0 (i)
+            :ARG1 (person
+                  :ARG0-of (have-rel-role-91
+                        :ARG1 i
+                        :ARG2 (friend)))))
+
+
+#::snt Not every one has had a friend .
+AMR_NO_VAR: (have-rel-role-91 :polarity -
+      :ARG0 (one
+            :mod (every))
+      :ARG1 (person
+            :ARG0-of (have-rel-role-91
+                  :ARG1 o
+                  :ARG2 (friend))))
+
+
+#::snt And if I forget him , I may become like the grown - ups who are no longer interested in anything but figures ...
+AMR_NO_VAR: (and
+      :op2 (become-01
+            :ARG1 (i)
+            :ARG2 (person
+                  :ARG1-of (grow-up-01)
+                  :ARG1-of (interest-01
+                        :ARG2 (anything
+                              :mod (but)
+                              :ARG1-of (figure-01))))
+            :condition (forget-01
+                  :ARG0 i
+                  :ARG1 (he))))
+
+
+#::snt It is for that purpose , again , that I have bought a box of paints and some pencils .
+AMR_NO_VAR: (buy-01
+      :ARG0 (i)
+      :ARG1 (and
+            :op1 (box
+                  :ARG1-of (paint-01))
+            :op2 (pencil
+                  :quant (some)))
+      :purpose (purpose
+            :mod (that)
+            :mod (again)))
+
+
+#::snt It is hard to take up drawing again at my age , when I have never made any pictures except those of the boa constrictor from the outside and the boa constrictor from the inside , since I was six .
+AMR_NO_VAR: (hard
+      :domain (take-up-09
+            :ARG0 (i)
+            :ARG1 (draw-01))
+      :time (again
+            :mod (age
+                  :poss i))
+      :compared-to (possible-01
+            :ARG1 t
+            :condition (and
+                  :op1 (picture
+                        :ARG1-of (make-01
+                              :ARG0 i
+                              :polarity -)
+                        :mod (any))
+                  :op2 (picture
+                        :ARG1-of (make-01
+                              :ARG0 (i)
+                              :polarity +
+                              :mod (outside)
+                              :ARG1-of (include-91
+                                    :ARG2 (boa-constrictor)))
+                        :mod (only))
+                  :op3 (picture
+                        :ARG1-of (make-01
+                              :ARG0 i
+                              :polarity +
+                              :mod (inside)
+                              :ARG1-of (include-91
+                                    :ARG2 b))
+                        :mod (only))
+                  :time (since
+                        :op1 (six
+                              :quant (date-entity :unit year
+                                    :value 6
+                                    :mod (old
+                                          :op1 i))))))
+
+
+#::snt I shall certainly try to make my portraits as true to life as possible .
+AMR_NO_VAR: (try-01
+      :ARG0 (i)
+      :ARG1 (make-01
+            :ARG0 i
+            :ARG1 (portrait
+                  :poss i)
+            :ARG2-of (true-04
+                  :ARG1 p
+                  :degree (possible)))
+      :mod (certain))
+
+
+#::snt But I am not at all sure of success .
+AMR_NO_VAR: (contrast-01
+      :ARG2 (sure-02 :polarity -
+            :ARG0 (i)
+            :ARG1 (succeed-01)
+            :degree (at-all)))
+
+
+#::snt One drawing goes along all right , and another has no resemblance to its subject .
+AMR_NO_VAR: (and
+      :op1 (go-02
+            :ARG0 (draw-01
+                  :ord (ordinal-entity :value 1))
+            :path (along
+                  :manner (right
+                        :mod (all))))
+      :op2 (resemble-01 :polarity -
+            :ARG1 (draw-01
+                  :ord (ordinal-entity :value 2))
+            :ARG2 (subject
+                  :poss d)))
+
+
+#::snt I make some errors , too , in the little prince 's height : in one place he is too tall and in another too short .
+AMR_NO_VAR: (error-01
+      :ARG0 (i)
+      :ARG1 (and
+            :op1 (tall-01
+                  :ARG1 (prince
+                        :mod (little))
+                  :degree (too)
+                  :location (place
+                        :ARG1-of (same-01
+                              :ARG2 (another))))
+            :op2 (short-01
+                  :ARG1 p2
+                  :degree t2
+                  :location p3))
+      :mod (some)
+      :ARG2-of (too-09))
+
+
+#::snt And I feel some doubts about the color of his costume .
+AMR_NO_VAR: (and
+  :op2 (feel-01
+         :ARG0 (i)
+         :ARG1 (doubt-01
+                 :ARG1 (color
+                         :poss (costume
+                                 :poss (he)))
+                 :mod (some))))
+
+
+#::snt So I fumble along as best I can , now good , now bad , and I hope generally fair - to - middling .
+AMR_NO_VAR: (fumble-01
+      :ARG0 (i)
+      :ARG1-of (hope-01
+            :ARG1 (fair-02
+                  :ARG1 i
+                  :degree (middling)
+                  :mod (generally)))
+      :ARG1-of (resemble-01
+            :ARG2 (and
+                  :op1 (good
+                        :time (now))
+                  :op2 (bad
+                        :time (now))))
+      :ARG1-of (try-01
+            :manner (well
+                  :degree (most)
+                  :compared-to (possible-01))))
+
+
+#::snt In certain more important details I shall make mistakes , also .
+AMR_NO_VAR: (mistake-01
+      :ARG0 (i)
+      :location (detail
+            :mod (important
+                  :degree (more))
+            :mod (certain))
+      :mod (also))
+
+
+#::snt But that is something that will not be my fault .
+AMR_NO_VAR: (contrast-01
+      :ARG2 (fault-01 :polarity -
+            :ARG1 (i)
+            :ARG2 (that)))
+
+
+#::snt My friend never explained anything to me .
+AMR_NO_VAR: (explain-01
+  :ARG0 (person
+          :ARG0-of (have-rel-role-91
+                     :ARG1 (i)
+                     :ARG2 (friend)))
+  :ARG1 (anything)
+  :ARG2 i
+  :time (ever))
+
+
+#::snt He thought , perhaps , that I was like himself .
+AMR_NO_VAR: (think-01
+      :ARG0 (he)
+      :ARG1 (resemble-01
+            :ARG1 (i)
+            :ARG2 h
+            :mod (possible))
+      :ARG1-of (cause-01
+            :ARG0 i))
+
+
+#::snt But I , alas , do not know how to see sheep through the walls of boxes .
+AMR_NO_VAR: (contrast-01
+      :ARG2 (know-01 :polarity -
+            :ARG0 (i)
+            :manner (see-01
+                  :ARG0 i
+                  :ARG1 (sheep)
+                  :path (through
+                        :op1 (wall
+                              :consist-of (box))))
+            :mod (alas)))
+
+
+#::snt Perhaps I am a little like the grown - ups .
+AMR_NO_VAR: (possible-01
+      :ARG1 (resemble-01
+            :ARG1 (i)
+            :ARG2 (grown-up)
+            :degree (little)))
+
+
+#::snt I have had to grow old .
+AMR_NO_VAR: (obligate-01
+      :ARG1 (i)
+      :ARG2 (grow-02
+            :ARG1 i
+            :ARG2 (old)))
+
+
+#::snt Chapter 5 .
+AMR_NO_VAR: (chapter :mod 5)
+
+
+#::snt As each day passed I would learn , in our talk , something about the little prince 's planet , his departure from it , his journey .
+AMR_NO_VAR: (learn-01
+      :ARG0 (i)
+      :ARG1 (something
+            :topic (and
+                  :op1 (planet
+                        :poss (prince
+                              :mod (little)))
+                  :op2 (depart-01
+                        :ARG0 p
+                        :ARG1 p2)
+                  :op3 (journey-01
+                        :ARG0 p)))
+      :time (pass-01
+            :ARG1 (temporal-quantity :quant 1
+                  :unit (day)))
+      :frequency (rate-entity-91
+            :ARG4 i))
+
+
+#::snt The information would come very slowly , as it might chance to fall from his thoughts .
+AMR_NO_VAR: (come-01
+      :ARG1 (info)
+      :manner (slow-05
+            :degree (very))
+      :ARG1-of (cause-01
+            :ARG0 (chance-01
+                  :ARG1 (fall-01
+                        :ARG1 i
+                        :ARG3 (think-01
+                              :ARG0 (he))))))
+
+
+#::snt It was in this way that I heard , on the third day , about the catastrophe of the baobabs .
+AMR_NO_VAR: (hear-01
+      :ARG0 (i)
+      :ARG1 (catastrophe
+            :domain (baobab))
+      :time (day
+            :ord (ordinal-entity :value 3))
+      :manner (way
+            :mod (this)))
+
+
+#::snt This time , once more , I had the sheep to thank for it .
+AMR_NO_VAR: (thank-01
+      :ARG0 (i)
+      :ARG1 (sheep)
+      :ARG2 (it)
+      :time (again :frequency 1)
+      :mod (this))
+
+
+#::snt For the little prince asked me abruptly -- as if seized by a grave doubt -- " It is true , is n't it , that sheep eat little bushes ? "
+AMR_NO_VAR: (ask-01
+      :ARG0 (prince
+            :mod (little))
+      :ARG1 (true-01 :mode interrogative
+            :ARG1 (eat-01
+                  :ARG0 (sheep)
+                  :ARG1 (bush
+                        :mod (little)))
+            :polarity -)
+      :ARG2 (i)
+      :manner (abrupt)
+      :ARG1-of (seem-01
+            :ARG2 (doubt-01
+                  :ARG0 p
+                  :ARG1 (eat-01
+                        :ARG0 s
+                        :ARG1 b)
+                  :mod (grave))))
+
+
+#::snt " Yes , that is true . "
+AMR_NO_VAR: (true-01
+      :ARG1 (that))
+
+
+#::snt " Ah !
+AMR_NO_VAR: (ah :mode expressive)
+
+
+#::snt I am glad ! "
+AMR_NO_VAR: (glad
+      :domain (i))
+
+
+#::snt I did not understand why it was so important that sheep should eat little bushes .
+AMR_NO_VAR: (understand-01 :polarity -
+      :ARG0 (i)
+      :ARG1 (important
+            :degree (so)
+            :ARG1-of (cause-01
+                  :ARG0 (eat-01
+                        :ARG0 (sheep)
+                        :ARG1 (bush
+                              :mod (little))))))
+
+
+#::snt But the little prince added : " Then it follows that they also eat baobabs ? "
+AMR_NO_VAR: (contrast-01
+      :ARG2 (add-01
+            :ARG0 (prince
+                  :mod (little))
+            :ARG1 (follow-02
+                  :ARG1 (eat-01
+                        :ARG0 (they)
+                        :mod (also))
+                  :ARG2 (baobab))
+            :ARG2-of (have-concession-91)))
+
+
+#::snt I pointed out to the little prince that baobabs were not little bushes , but , on the contrary , trees as big as castles ; and that even if he took a whole herd of elephants away with him , the herd would not eat up one single baobab .
+AMR_NO_VAR: (point-out-01
+      :ARG0 (i)
+      :ARG1 (and
+            :op1 (contrast-01
+                  :ARG1 (bush
+                        :mod (little)
+                        :domain (baobab))
+                  :ARG2 (tree
+                        :ARG1-of (big-02
+                              :degree (equal)
+                              :compared-to (castle))
+                        :domain b))
+            :op2 (eat-up-03 :polarity -
+                  :ARG0 h2
+                  :ARG1 (baobab
+                        :quant (single))
+                  :condition (take-away-05
+                        :ARG0 (he)
+                        :ARG1 (herd
+                              :consist-of (elephant
+                                    :quant (whole)))
+                        :accompanier h2)))
+      :ARG2 (prince
+            :mod (little)))
+
+
+#::snt The idea of the herd of elephants made the little prince laugh .
+AMR_NO_VAR: (laugh-01
+      :ARG0 (prince
+            :mod (little))
+      :ARG1 (idea
+            :topic (herd
+                  :consist-of (elephant))))
+
+
+#::snt " We would have to put them one on top of the other , " he said .
+AMR_NO_VAR: (say-01
+  :ARG0 (he)
+  :ARG1 (obligate-01
+          :ARG1 (we)
+          :ARG2 (put-01
+                  :ARG0 w
+                  :ARG1 (they)
+                  :manner (one-on-top-of-the-other))))
+
+
+#::snt But he made a wise comment : " Before they grow so big , the baobabs start out by being little . "
+AMR_NO_VAR: (contrast-01
+      :ARG2 (comment-01
+            :ARG0 (he)
+            :ARG1 (start-out-07
+                  :ARG1 (baobab)
+                  :ARG2 (little)
+                  :time (before
+                        :op1 (grow-01
+                              :ARG1 b
+                              :degree (big)
+                              :mod (so))))
+            :ARG1-of (wise-05)))
+
+
+#::snt " That is strictly correct , "
+AMR_NO_VAR: (correct-01
+      :ARG1 (that)
+      :mod (strict))
+
+
+#::snt I said .
+AMR_NO_VAR: (say-01
+  :ARG0 (i))
+
+
+#::snt " But why do you want the sheep to eat the little baobabs ? "
+AMR_NO_VAR: (contrast-01
+      :ARG2 (want-01
+            :ARG0 (you)
+            :ARG1 (eat-01
+                  :ARG0 (sheep)
+                  :ARG1 (baobab
+                        :mod (little)))
+            :ARG1-of (cause-01
+                  :ARG0 (amr-unknown))))
+
+
+#::snt He answered me at once , " Oh , come , come ! " , as if he were speaking of something that was self - evident .
+AMR_NO_VAR: (answer-01
+      :ARG0 (he)
+      :ARG1 (come-01
+            :mode imperative
+            :mod (again))
+      :ARG2 (i)
+      :time (once)
+      :ARG1-of (resemble-01
+            :ARG2 (speak-01
+                  :ARG0 h
+                  :ARG1 (something
+                        :mod (evident
+                              :mod (self))))))
+
+
+#::snt And I was obliged to make a great mental effort to solve this problem , without any assistance .
+AMR_NO_VAR: (and
+      :op2 (obligate-01
+            :ARG1 i
+            :ARG2 (effort-01
+                  :ARG0 (i)
+                  :ARG1 (solve-01
+                        :ARG0 i
+                        :ARG1 (problem
+                              :mod (this)))
+                  :mod (great)
+                  :ARG1-of (assist-01 :polarity -
+                        :ARG0 (any)))))
+
+
+#::snt Indeed , as I learned , there were on the planet where the little prince lived -- as on all planets -- good plants and bad plants .
+AMR_NO_VAR: (learn-01
+      :ARG0 (i)
+      :ARG1 (and
+            :op1 (plant
+                  :ARG1-of (good-02))
+            :op2 (plant
+                  :ARG1-of (bad-02))
+            :location (planet
+                  :location-of (live-01
+                        :ARG0 (prince
+                              :mod (little)))
+                  :ARG1-of (include-91
+                        :ARG2 (planet
+                              :mod (all)))))
+      :ARG1-of (indeed-01))
+
+
+#::snt In consequence , there were good seeds from good plants , and bad seeds from bad plants .
+AMR_NO_VAR: (consequence-01
+      :ARG1 (and
+            :op1 (seed
+                  :ARG1-of (good-02)
+                  :source (plant
+                        :ARG1-of (good-02)))
+            :op2 (seed
+                  :ARG1-of (bad-02)
+                  :source (plant
+                        :ARG1-of (bad-02)))))
+
+
+#::snt But seeds are invisible .
+AMR_NO_VAR: (contrast-01
+      :ARG2 (see-01
+            :ARG1 (seed)
+            :ARG1-of (possible-01 :polarity -)))
+
+
+#::snt They sleep deep in the heart of the earth 's darkness , until some one among them is seized with the desire to awaken .
+AMR_NO_VAR: (sleep-01
+      :ARG0 (they)
+      :ARG1-of (deep-02)
+      :location (heart
+            :part-of (darkness
+                  :poss (earth)))
+      :time (until
+            :op1 (seize-01
+                  :ARG0 (someone
+                        :ARG1-of (include-91
+                              :ARG2 t))
+                  :ARG1 (desire-01
+                        :ARG0 s2
+                        :ARG1 (awaken-01
+                              :ARG1 s2)))))
+
+
+#::snt Then this little seed will stretch itself and begin -- timidly at first -- to push a charming little sprig inoffensively upward toward the sun .
+AMR_NO_VAR: (and
+      :op1 (stretch-01
+            :ARG1 (seed
+                  :mod (little)
+                  :mod (this))
+            :ARG2 s2)
+      :op2 (begin-01
+            :ARG0 s2
+            :ARG1 (push-01
+                  :ARG0 s2
+                  :ARG1 (sprig
+                        :mod (charming)
+                        :mod (little)
+                        :ARG1-of (inoffensive-02))
+                  :direction (upward
+                        :op1 (toward
+                              :op1 (sun))))
+            :manner (timid
+                  :degree (at-first))))
+
+
+#::snt If it is only a sprout of radish or the sprig of a rose - bush , one would let it grow wherever it might wish .
+AMR_NO_VAR: (possible-01
+      :ARG1 (let-01
+            :ARG0 (one)
+            :ARG1 (grow-01
+                  :ARG1 (it)
+                  :location (wish-01
+                        :ARG0 i
+                        :ARG1 (relative-position
+                              :op1 (everwhere))))
+            :condition (or
+                  :op1 (sprout
+                        :part-of (radish)
+                        :mod (only))
+                  :op2 (sprig
+                        :part-of (bush
+                              :mod (rose))))))
+
+
+#::snt But when it is a bad plant , one must destroy it as soon as possible , the very first instant that one recognizes it .
+AMR_NO_VAR: (contrast-01
+      :ARG2 (obligate-01
+            :ARG1 (one)
+            :ARG2 (destroy-01
+                  :ARG0 o2
+                  :ARG1 p
+                  :time (possible-01
+                        :degree (most-03)
+                        :time (instant
+                              :ord (ordinal-entity :value 1)
+                              :time-of (recognize-02
+                                    :ARG0 o2
+                                    :ARG1 p))))))
+
+
+#::snt Now there were some terrible seeds on the planet that was the home of the little prince ; and these were the seeds of the baobab .
+AMR_NO_VAR: (and
+      :op1 (seed
+            :mod (terrible)
+            :location (planet
+                  :ARG0-of (home-01
+                        :ARG1 (prince
+                              :mod (little))))
+            :time (now))
+      :op2 (seed
+            :ARG1-of (baobab-01)))
+
+
+#::snt The soil of that planet was infested with them .
+AMR_NO_VAR: (infest-01
+      :ARG0 (they)
+      :ARG1 (soil
+            :poss (planet
+                  :mod (that))))
+
+
+#::snt A baobab is something you will never , never be able to get rid of if you attend to it too late .
+AMR_NO_VAR: (possible-01 :polarity -
+      :ARG1 (get-rid-of-03
+            :ARG0 (you)
+            :ARG1 (baobab))
+      :condition (attend-to-02
+            :ARG0 y
+            :ARG1 b
+            :time (late
+                  :degree (too)))
+      :time (ever)
+      :mod (ever))
+
+
+#::snt It spreads over the entire planet .
+AMR_NO_VAR: (spread-01
+      :ARG1 (it)
+      :ARG2 (planet
+            :extent (entire)))
+
+
+#::snt It bores clear through it with its roots .
+AMR_NO_VAR: (bore-01
+      :ARG0 (it)
+      :ARG1 (clear-through
+            :op1 i)
+      :instrument (root
+            :part-of i))
+
+
+#::snt And if the planet is too small , and the baobabs are too many , they split it in pieces ...
+AMR_NO_VAR: (and
+      :op1 (split-01
+            :ARG0 (they)
+            :ARG1 (planet)
+            :ARG2 (piece
+                  :consist-of p))
+      :op2 (and
+            :op1 (small
+                  :degree (too)
+                  :domain (planet))
+            :op2 (many
+                  :degree (too)
+                  :domain (baobab))))
+
+
+#::snt " It is a question of discipline , " the little prince said to me later on .
+AMR_NO_VAR: (say-01
+      :ARG0 (prince
+            :mod (little))
+      :ARG1 (question-01
+            :topic (discipline))
+      :ARG2 (i)
+      :time (late
+            :degree (on)))
+
+
+#::snt " When you 've finished your own toilet in the morning , then it is time to attend to the toilet of your planet , just so , with the greatest care .
+AMR_NO_VAR: (time-to-attend-02
+      :ARG1 (toilet
+            :poss (planet
+                  :poss y))
+      :condition (finish-01
+            :ARG0 (you)
+            :ARG1 (toilet
+                  :poss y)
+            :time (date-entity :dayperiod (morning)))
+      :manner (care-04
+            :degree (great
+                  :degree (most)))
+      :mod (just))
+
+
+#::snt You must see to it that you pull up regularly all the baobabs , at the very first moment when they can be distinguished from the rosebushes which they resemble so closely in their earliest youth .
+AMR_NO_VAR: (obligate-01
+      :ARG1 (you)
+      :ARG2 (see-01
+            :ARG0 y
+            :ARG1 (pull-01
+                  :ARG0 y
+                  :ARG1 (baobab
+                        :mod (all))
+                  :frequency (regular)
+                  :time (moment
+                        :ord (ordinal-entity :value 1)
+                        :time (distinguish-01
+                              :ARG1 b
+                              :ARG2 (rosebush
+                                    :ARG1-of (resemble-01
+                                          :ARG2 b
+                                          :degree (close
+                                                :degree (so)))
+                                    :time (youth
+                                          :ord (ordinal-entity :value 1)
+                                          :mod (early))))))))
+
+
+#::snt It is very tedious work , " the little prince added , " but very easy . "
+AMR_NO_VAR: (add-01
+      :ARG0 (prince
+            :mod (little))
+      :ARG1 (contrast-01
+            :ARG1 (tedious-01
+                  :ARG1 (work-01)
+                  :degree (very))
+            :ARG2 (easy-05
+                  :ARG1 w
+                  :degree (very))))
+
+
+#::snt And one day he said to me : " You ought to make a beautiful drawing , so that the children where you live can see exactly how all this is .
+AMR_NO_VAR: (and
+      :op2 (say-01
+            :ARG0 (he)
+            :ARG1 (recommend-01
+                  :ARG1 (draw-01
+                        :ARG0 p
+                        :ARG1 (thing
+                              :mod (beautiful))
+                        :purpose (see-01
+                              :ARG0 (child
+                                    :location (live-01
+                                          :ARG0 p))
+                              :ARG1 (exact-02
+                                    :ARG2 (draw-01
+                                          :ARG0 p
+                                          :ARG1 (this
+                                                :mod (all))))))
+                  :ARG2 (i))
+            :time (day
+                  :mod (one))))
+
+
+#::snt That would be very useful to them if they were to travel some day .
+AMR_NO_VAR: (cause-01
+      :ARG0 (travel-01
+            :ARG0 (they)
+            :time (day
+                  :mod (some)))
+      :ARG1 (use-01
+            :ARG1 (that)
+            :degree (very)
+            :beneficiary t))
+
+
+#::snt Sometimes , " he added , " there is no harm in putting off a piece of work until another day .
+AMR_NO_VAR: (add-01
+      :ARG0 (he)
+      :ARG1 (harm-01 :polarity -
+            :ARG1 (put-off-01
+                  :ARG1 (work-01
+                        :ARG1 (piece))
+                  :ARG2 (day
+                        :mod (another))))
+      :time (sometimes))
+
+
+#::snt But when it is a matter of baobabs , that always means a catastrophe .
+AMR_NO_VAR: (contrast-01
+      :ARG2 (mean-01
+            :ARG1 (catastrophe)
+            :ARG2 (baobab
+                  :mod (always))
+            :time (matter
+                  :domain (baobab))))
+
+
+#::snt I knew a planet that was inhabited by a lazy man .
+AMR_NO_VAR: (know-02
+      :ARG0 (i)
+      :ARG1 (planet
+            :ARG1-of (inhabit-01
+                  :ARG0 (man
+                        :mod (lazy)))))
+
+
+#::snt He neglected three little bushes ... "
+AMR_NO_VAR: (neglect-01
+      :ARG0 (he)
+      :ARG1 (bush
+            :mod (little)
+            :quant 3))
+
+
+#::snt So , as the little prince described it to me , I have made a drawing of that planet .
+AMR_NO_VAR: (cause-01
+      :ARG1 (draw-01
+            :ARG0 (i)
+            :ARG1 (planet
+                  :mod (that))
+            :ARG1-of (resemble-01
+                  :ARG2 (describe-01
+                        :ARG0 (prince
+                              :mod (little))
+                        :ARG1 p
+                        :ARG2 i))))
+
+
+#::snt I do not much like to take the tone of a moralist .
+AMR_NO_VAR: (like-01
+  :ARG0 (i)
+  :ARG1 (take-01
+          :ARG0 i
+          :ARG1 (tone
+                  :poss (person
+                          :ARG0-of (moral-01))))
+  :degree (much)
+  :polarity -)
+
+
+#::snt But the danger of the baobabs is so little understood , and such considerable risks would be run by anyone who might get lost on an asteroid , that for once I am breaking through my reserve .
+AMR_NO_VAR: (contrast-01
+      :ARG2 (and
+            :op1 (understand-01
+                  :ARG1 (danger
+                        :poss (baobab))
+                  :degree (little
+                        :degree (so)))
+            :op2 (run-02
+                  :ARG0 (anyone
+                        :ARG1-of (lose-02
+                              :ARG2 (thing
+                                    :location (asteroid))))
+                  :ARG1 (risk-01
+                        :mod (considerable
+                              :degree (such))))
+            :ARG1-of (cause-01
+                  :ARG0 (break-01
+                        :ARG0 (i)
+                        :ARG1 (reserve
+                              :poss i)
+                        :mod (once)))))
+
+
+#::snt " Children , "
+AMR_NO_VAR: (child)
+
+
+#::snt I say plainly , " watch out for the baobabs ! "
+AMR_NO_VAR: (say-01
+      :ARG0 (i)
+      :ARG1 (watch-out-01
+            :ARG0 (you)
+            :ARG1 (baobab))
+      :manner (plain))
+
+
+#::snt My friends , like myself , have been skirting this danger for a long time , without ever knowing it ; and so it is for them that I have worked so hard over this drawing .
+AMR_NO_VAR: (and
+      :op1 (skirt-01
+            :ARG0 (person
+                  :ARG0-of (have-rel-role-91
+                        :ARG1 (friend
+                              :poss (i))
+                        :ARG2 i))
+            :ARG1 (danger
+                  :mod (this))
+            :duration (long)
+            :time (without
+                  :op1 (know-01
+                        :ARG0 p
+                        :ARG1 d
+                        :time (ever))))
+      :op2 (work-01
+            :ARG0 i
+            :ARG1 (hard
+                  :degree (so))
+            :beneficiary p2
+            :time (over
+                  :op1 (draw-01
+                        :ARG0 i
+                        :ARG1 p2
+                        :mod (this)))))
+
+
+#::snt The lesson which I pass on by this means is worth all the trouble it has cost me .
+AMR_NO_VAR: (worth-02
+      :ARG1 (lesson
+            :ARG1-of (pass-02
+                  :ARG0 (i)
+                  :instrument (mean-01
+                        :ARG1 (this))))
+      :ARG2 (trouble
+            :ARG0 i
+            :ARG1-of (cost-01
+                  :ARG2 l)))
+
+
+#::snt Perhaps you will ask me , " Why are there no other drawing in this book as magnificent and impressive as this drawing of the baobabs ? "
+AMR_NO_VAR: (possible-01
+      :ARG1 (ask-01
+            :ARG0 (you)
+            :ARG1 (draw-01 :mode interrogative
+                  :ARG0 y
+                  :ARG1 (cause-01
+                        :ARG0 (lack-01
+                              :ARG1 (drawing
+                                    :mod (other)
+                                    :location (book
+                                          :mod (this))
+                                    :ARG1-of (magnificent-02)
+                                    :mod (impressive))
+                              :compared-to d2)))
+            :ARG2 (i)))
+
+
+#::snt The reply is simple .
+AMR_NO_VAR: (simple-02
+      :ARG1 (reply))
+
+
+#::snt I have tried .
+AMR_NO_VAR: (try-01
+  :ARG0 (i))
+
+
+#::snt But with the others I have not been successful .
+AMR_NO_VAR: (contrast-01
+      :ARG2 (succeed-01 :polarity -
+            :ARG1 (i)
+            :ARG2 (other)))
+
+
+#::snt When I made the drawing of the baobabs I was carried beyond myself by the inspiring force of urgent necessity .
+AMR_NO_VAR: (carry-01
+      :ARG1 (i)
+      :ARG2 (beyond
+            :op1 i)
+      :time (make-01
+            :ARG0 i
+            :ARG1 (draw-01
+                  :ARG0 i
+                  :ARG1 (baobab)))
+      :ARG1-of (cause-01
+            :ARG0 (force
+                  :mod (inspire)
+                  :ARG0 (necessity
+                        :mod (urgent)))))
+
+
+#::snt Chapter 6 .
+AMR_NO_VAR: (chapter :mod 6)
+
+
+#::snt Oh , little prince !
+AMR_NO_VAR: (and :mode expressive
+      :op2 (prince
+            :mod (little)))
+
+
+#::snt Bit by bit I came to understand the secrets of your sad little life ...
+AMR_NO_VAR: (come-04
+      :ARG1 (i)
+      :ARG2 (understand-01
+            :ARG0 i
+            :ARG1 (secret
+                  :poss (life
+                        :mod (sad)
+                        :mod (little)
+                        :poss y)))
+      :manner (bit-by-bit))
+
+
+#::snt For a long time you had found your only entertainment in the quiet pleasure of looking at the sunset .
+AMR_NO_VAR: (find-01
+      :ARG0 (you)
+      :ARG1 (entertain-01
+            :ARG0 y
+            :ARG1 y
+            :ARG2 (look-01
+                  :ARG0 y
+                  :ARG1 (sunset)
+                  :manner (quiet)))
+      :time (long))
+
+
+#::snt I learned that new detail on the morning of the fourth day , when you said to me : " I am very fond of sunsets .
+AMR_NO_VAR: (learn-01
+      :ARG0 (i)
+      :ARG1 (detail
+            :mod (new)
+            :time (date-entity
+                  :dayperiod (morning)
+                  :mod (four)))
+      :time (say-01
+            :ARG0 (you)
+            :ARG1 (fond-01
+                  :ARG0 y
+                  :ARG1 (sunset)
+                  :degree (very))
+            :ARG2 i))
+
+
+#::snt Come , let us go look at a sunset now . "
+AMR_NO_VAR: (look-01
+      :ARG0 (we)
+      :ARG1 (sunset)
+      :time (now)
+      :mode imperative)
+
+
+#::snt " But we must wait , "
+AMR_NO_VAR: (contrast-01
+      :ARG2 (obligate-01
+            :ARG1 (we)
+            :ARG2 (wait-01
+                  :ARG1 w)))
+
+
+#::snt I said .
+AMR_NO_VAR: (say-01
+  :ARG0 (i))
+
+
+#::snt " Wait ?
+AMR_NO_VAR: (wait :mode interrogative)
+
+
+#::snt For what ? "
+AMR_NO_VAR: (amr-unknown)
+
+
+#::snt " For the sunset .
+AMR_NO_VAR: (cause-01
+      :ARG0 (sunset))
+
+
+#::snt We must wait until it is time . "
+AMR_NO_VAR: (obligate-01
+      :ARG1 (we)
+      :ARG2 (wait-01
+            :ARG1 w
+            :time (time
+                  :mod (it))))
+
+
+#::snt At first you seemed to be very much surprised .
+AMR_NO_VAR: (seem-01
+      :ARG1 (surprise-01
+            :ARG1 (you)
+            :degree (much
+                  :degree (very)))
+      :time (at-first))
+
+
+#::snt And then you laughed to yourself .
+AMR_NO_VAR: (and
+      :op2 (laugh-01
+            :ARG0 (you)
+            :beneficiary y
+            :time (then)))
+
+
+#::snt You said to me : " I am always thinking that I am at home ! "
+AMR_NO_VAR: (say-01
+      :ARG0 (you)
+      :ARG1 (think-01
+            :ARG0 y
+            :ARG1 (be-located-at-91
+                  :ARG1 y
+                  :ARG2 (home))
+            :time (always))
+      :ARG2 (i))
+
+
+#::snt Just so .
+AMR_NO_VAR: (so
+  :mod (just))
+
+
+#::snt Everybody knows that when it is noon in the United States the sun is setting over France .
+AMR_NO_VAR: (know-01
+      :ARG0 (everybody)
+      :ARG1 (setting-01
+            :ARG1 (sun)
+            :location (over
+                  :op1 (france))
+            :time (noon
+                  :time-zone (united-states))))
+
+
+#::snt If you could fly to France in one minute , you could go straight into the sunset , right from noon .
+AMR_NO_VAR: (possible-01
+      :ARG1 (go-02
+            :ARG0 (you)
+            :ARG1 (sunset)
+            :manner (straight)
+            :time (right-02
+                  :ARG1 (noon)))
+      :condition (fly-01
+            :ARG0 y
+            :ARG1 (country :wiki "France" :name (name :op1 "France"))
+            :duration (temporal-quantity :quant 1
+                  :unit (minute))))
+
+
+#::snt Unfortunately , France is too far away for that .
+AMR_NO_VAR: (far
+      :degree (too)
+      :domain (country
+            :wiki "France"
+            :name (name :op1 "France"))
+      :purpose (that))
+
+
+#::snt But on your tiny planet , my little prince , all you need do is move your chair a few steps .
+AMR_NO_VAR: (contrast-01
+      :ARG2 (need-01
+            :ARG0 (you)
+            :ARG1 (do-02
+                  :ARG1 (move-01
+                        :ARG0 y2
+                        :ARG1 (chair
+                              :poss y2)
+                        :quant (step
+                              :quant (few)))
+                  :mod (all))))
+
+
+#::snt You can see the day end and the twilight falling whenever you like ...
+AMR_NO_VAR: (possible-01
+      :ARG1 (and
+            :op1 (see-01
+                  :ARG0 (you)
+                  :ARG1 (end-01
+                        :ARG1 (day)))
+            :op2 (see-01
+                  :ARG0 y
+                  :ARG1 (fall-01
+                        :ARG1 (twilight))))
+      :time (like-02
+            :ARG0 y))
+
+
+#::snt " One day , " you said to me , " I saw the sunset forty - four times ! "
+AMR_NO_VAR: (say-01
+      :ARG0 (you)
+      :ARG1 (see-01
+            :ARG0 y
+            :ARG1 (sunset)
+            :frequency 44
+            :time (day
+                  :mod (one)))
+      :ARG2 (i))
+
+
+#::snt And a little later you added : " You know -- one loves the sunset , when one is so sad ... "
+AMR_NO_VAR: (and
+      :op2 (add-01
+            :ARG0 (you)
+            :ARG1 (love-01
+                  :ARG0 (one)
+                  :ARG1 (sunset)
+                  :time (sad-02
+                        :ARG1 o
+                        :degree (so)))
+            :time (late
+                  :degree (little))))
+
+
+#::snt " Were you so sad , then ? "
+AMR_NO_VAR: (sad-02 :mode interrogative
+      :ARG1 (you)
+      :degree (so)
+      :time (then))
+
+
+#::snt I asked , " on the day of the forty - four sunsets ? "
+AMR_NO_VAR: (ask-01
+      :ARG0 (i)
+      :ARG1 (pass-03
+            :ARG1 (temporal-quantity :quant 44
+                  :unit (sunset))
+            :mode interrogative))
+
+
+#::snt But the little prince made no reply .
+AMR_NO_VAR: (contrast-01
+      :ARG2 (reply-01 :polarity -
+            :ARG0 (prince
+                  :mod (little))))
+
+
