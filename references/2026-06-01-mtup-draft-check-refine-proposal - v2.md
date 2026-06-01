@@ -7,7 +7,7 @@ Purpose: define the next MTUP direction as a trajectory-conditioned unified prom
 ## Core Idea
 
 1. MTUP should train one model to follow different explicit output trajectories. The user prompt tells the model which trajectory to generate, and the output headers make extraction deterministic.
-2. The strongest MTUP trajectory is: `draft AMR -> graph check / subtasks -> final AMR`. The model first produces an AMR draft, then exposes semantic/graph checks and optional subtasks, then produces a corrected final AMR. Explicit subtasks help most when they supervise semantic error detection and graph repair, not just simply prepended before the final graph. Final AMR improves because the model is trained to repair imperfect drafts using supervised semantic checks.
+2. The strongest MTUP trajectory is likely: `draft AMR -> graph check / subtasks -> final AMR`. The model first produces an AMR draft, then exposes semantic/graph checks and optional subtasks, then produces a corrected final AMR. Explicit subtasks help most when they supervise semantic error detection and graph repair, not just simply prepended before the final graph. Final AMR improves because the model is trained to repair imperfect drafts using supervised semantic checks.
 
 The research will focus on this trajectory:
 
@@ -27,15 +27,15 @@ The research will focus on this trajectory:
 
 ## Trajectories
 
-| Trajectory | User Prompt Hint | Expected Output |
-|---|---|---|
-| `direct-amr` | `Generate one final AMR graph directly from the sentence.` | `[AMR]` |
-| `novar-then-amr` | `First generate a variable-free AMR, then generate the final AMR with variables.` | `[AMR_NO_VAR]`, `[AMR_FINAL]` |
-| `draft-check-final` | `First generate a draft AMR, then check semantic/graph errors, then generate a corrected final AMR.` | `[AMR_DRAFT]`, `[CHECK]`, `[AMR_FINAL]` |
-| `draft-subtasks-final` | `First generate a draft AMR, then generate AMR subtasks, then generate a corrected final AMR.` | `[AMR_DRAFT]`, `[SUBTASKS]`, `[AMR_FINAL]` |
-| `draft-check-subtasks-final` | `First generate a draft AMR, then check errors, then generate AMR subtasks, then generate a corrected final AMR.` | `[AMR_DRAFT]`, `[CHECK]`, `[SUBTASKS]`, `[AMR_FINAL]` |
+| Trajectory | User Prompt Hint | Expected Output | Notes |
+|---|---|---|---|
+| `direct-amr` | `Generate one final AMR graph directly from the sentence.` | `[AMR]` | Like the current B1 direct AMR baseline. |
+| `novar-then-amr` | `First generate a variable-free AMR, then generate the final AMR with variables.` | `[AMR_NO_VAR]`, `[AMR_FINAL]` | Like old MTUP2: generate no-var AMR first, then final AMR. |
+| `draft-check-final` | `First generate a draft AMR, then check semantic/graph errors, then generate a corrected final AMR.` | `[AMR_DRAFT]`, `[CHECK]`, `[AMR_FINAL]` | Based on draft-feedback-refine/self-correction, e.g. [Self-Refine](https://arxiv.org/abs/2303.17651) and critique/revision-style self-improvement in [Constitutional AI](https://arxiv.org/abs/2212.08073). |
+| `draft-subtasks-final` | `First generate a draft AMR, then generate AMR subtasks, then generate a corrected final AMR.` | `[AMR_DRAFT]`, `[SUBTASKS]`, `[AMR_FINAL]` | Based on AMR decomposition into explicit graph subtasks: concepts, relations, and no-var structure; related to structure-aware AMR modeling such as [Structure-aware AMR parsing](https://arxiv.org/abs/2110.15534) and [Graph Pre-training for AMR](https://arxiv.org/abs/2203.07836). |
+| `draft-check-subtasks-final` | `First generate a draft AMR, then check errors, then generate AMR subtasks, then generate a corrected final AMR.` | `[AMR_DRAFT]`, `[CHECK]`, `[SUBTASKS]`, `[AMR_FINAL]` | Main proposed MTUP trajectory; combines self-correction with AMR graph/subtask supervision. |
 
-Prompt hint alone is probably not enough. The user prompt should also include an explicit `### OUTPUT TRAJECTORY` block listing the exact required section headers. This reduces confusion and makes extraction deterministic.
+Prompt hint alone is not enough. The user prompt should include both `### TRAJECTORY` and an explicit `### OUTPUT TRAJECTORY` block listing the exact required section headers. The explicit section headers are what make generation steerable and extraction deterministic.
 
 Example user prompt shape:
 
@@ -62,8 +62,9 @@ draft-check-subtasks-final
   - gold AMR draft
   - corrupted-gold AMR draft
   - B1/B2 prediction draft
+- Checks and subtasks mixing.
 - Final AMR is always the gold AMR.
-- Loss weights:
+- Loss weights to focus learning:
   - `AMR_DRAFT`: `1.0`
   - `CHECK` / `SUBTASKS`: `0.5`
   - `AMR_FINAL`: `2.0`
