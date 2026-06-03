@@ -19,7 +19,7 @@ Purpose: questions to clarify before using the current results as evidence for M
 
 5. **Question:** Was Vietnamese `legacy` no-var mode intentional for B2 and old MTUP variants?
   **Note:** `legacy` mode may leave variable-like references, making the no-var baseline stronger or less clean than intended.
-  -> TODO: MANDATORY **B2 is very simple and weak, but got better results than all other methods --> check for possible error in B2 or in other methods**.
+  -> TODO: MANDATORY **B2 is very simple and weak, but got better results than all other methods --> check for possible error in B2 or in other methods**. **--> B2 training data is the same as MTUP2 Step 1 training data. B1 training data is the same as MTUP2 Step 2 training data.**
 
 6. **Question:** Did English and other cross-lingual results use all three seeds?
   **Note:** The protocol requires mean and standard deviation over three seeds; single-seed cross-lingual results are weaker evidence.
