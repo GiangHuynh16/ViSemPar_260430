@@ -15,7 +15,7 @@ Purpose: questions to clarify before using the current results as evidence for M
 
 4. **Question:** Did the main runs use a fixed dev split and validation-Smatch checkpoint selection?
   **Note:** The original experimental design required this for defensible model selection and to avoid tuning decisions based on the public test set.
-  -> TODO: **need to tune hyperparams using dev split or cross-validation (vd sklearn RandomSearchCV)**. Important hyperparams: learning rate, early stop epoch. At least, need to plot the train-validation curve to choose the early stop epoch.
+  -> TODO: **need to tune hyperparams using dev split or cross-validation (vd sklearn RandomSearchCV)**. Important hyperparams: learning rate, early stop epoch. **At least, need to plot the train-validation curve to choose the early stop epoch.**
 
 5. **Question:** Was Vietnamese `legacy` no-var mode intentional for B2 and old MTUP variants?
   **Note:** `legacy` mode may leave variable-like references, making the no-var baseline stronger or less clean than intended.
