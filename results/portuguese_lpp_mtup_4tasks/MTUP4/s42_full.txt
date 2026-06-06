@@ -1,0 +1,4598 @@
+#::snt E a mordaça...
+[STEP 1: CONCEPTS]
+concept_1 | e
+concept_2 | mordaça
+
+[STEP 2: RELATIONS]
+e | :op2 | mordaça
+
+[STEP 3: AMR_NO_VAR]
+(e
+				:op2 (mordaça))
+
+[STEP 4: AMR_WITH_VAR]
+(e / e
+				:op2 (m / mordaça))
+
+
+#::snt Ele sorriu com tristeza.
+[STEP 1: CONCEPTS]
+concept_1 | sorrir-01
+concept_2 | ele
+concept_3 | tristeza
+
+[STEP 2: RELATIONS]
+sorrir-01 | :ARG0 | ele
+sorrir-01 | :manner | tristeza
+
+[STEP 3: AMR_NO_VAR]
+(sorrir-01
+				:ARG0 (ele)
+				:manner (tristeza))
+
+[STEP 4: AMR_WITH_VAR]
+(s / sorrir-01
+				:ARG0 (e / ele)
+				:manner (t / tristeza))
+
+
+#::snt Esperei muito tempo.
+[STEP 1: CONCEPTS]
+concept_1 | esperar-01
+concept_2 | eu
+concept_3 | tempo
+concept_4 | muito
+
+[STEP 2: RELATIONS]
+esperar-01 | :ARG0 | eu
+esperar-01 | :ARG1 | tempo
+tempo | :quant | muito
+
+[STEP 3: AMR_NO_VAR]
+(esperar-01
+				:ARG0 (eu)
+				:ARG1 (tempo
+					:quant (muito)))
+
+[STEP 4: AMR_WITH_VAR]
+(e / esperar-01
+				:ARG0 (e1 / eu)
+				:ARG1 (t / tempo
+					:quant (m / muito)))
+
+
+#::snt Pareceu-me que ele ia se aquecendo de novo, pouco a pouco:
+[STEP 1: CONCEPTS]
+concept_1 | parecer-01
+concept_2 | eu
+concept_3 | aquecere-01
+concept_4 | ele
+concept_5 | de-novo
+concept_6 | pouco-a-pouco
+
+[STEP 2: RELATIONS]
+parecer-01 | :ARG0 | eu
+parecer-01 | :ARG1 | aquecere-01
+aquecere-01 | :ARG0 | ele
+aquecere-01 | :mod | de-novo
+aquecere-01 | :manner | pouco-a-pouco
+
+[STEP 3: AMR_NO_VAR]
+(parecer-01
+				:ARG0 (eu)
+				:ARG1 (aquecere-01
+					:ARG0 (ele)
+					:mod (de-novo)
+					:manner (pouco-a-pouco)))
+
+[STEP 4: AMR_WITH_VAR]
+(p / parecer-01
+				:ARG0 (e / eu)
+				:ARG1 (a / aquecere-01
+					:ARG0 (e1 / ele)
+					:mod (d / de-novo)
+					:manner (p1 / pouco-a-pouco)))
+
+
+#::snt - Meu querido, tu tiveste medo...
+[STEP 1: CONCEPTS]
+concept_1 | ter-01
+concept_2 | tu
+concept_3 | medo
+
+[STEP 2: RELATIONS]
+ter-01 | :ARG0 | tu
+ter-01 | :ARG1 | medo
+
+[STEP 3: AMR_NO_VAR]
+(ter-01
+				:ARG0 (tu)
+				:ARG1 (medo))
+
+[STEP 4: AMR_WITH_VAR]
+(t / ter-01
+				:ARG0 (t1 / tu)
+				:ARG1 (m / medo))
+
+
+#::snt É claro que tivera.
+[STEP 1: CONCEPTS]
+concept_1 | ter-01
+concept_2 | ele
+
+[STEP 2: RELATIONS]
+ter-01 | :ARG0 | ele
+
+[STEP 3: AMR_NO_VAR]
+(ter-01
+				:ARG0 (ele))
+
+[STEP 4: AMR_WITH_VAR]
+(t / ter-01
+				:ARG0 (e / ele))
+
+
+#::snt Mas ele sorriu docemente.
+[STEP 1: CONCEPTS]
+concept_1 | contrast-01
+concept_2 | sorrir-01
+concept_3 | ele
+concept_4 | docemente
+
+[STEP 2: RELATIONS]
+contrast-01 | :ARG2 | sorrir-01
+sorrir-01 | :ARG0 | ele
+sorrir-01 | :manner | docemente
+
+[STEP 3: AMR_NO_VAR]
+(contrast-01
+				:ARG2 (sorrir-01
+					:ARG0 (ele)
+					:manner (docemente)))
+
+[STEP 4: AMR_WITH_VAR]
+(c / contrast-01
+				:ARG2 (s / sorrir-01
+					:ARG0 (e / ele)
+					:manner (d / docemente)))
+
+
+#::snt - Terei mais medo ainda esta noite...
+[STEP 1: CONCEPTS]
+concept_1 | ter-05
+concept_2 | eu
+concept_3 | medo
+concept_4 | mais
+concept_5 | ainda
+concept_6 | noite
+
+[STEP 2: RELATIONS]
+ter-05 | :ARG0 | eu
+ter-05 | :ARG1 | medo
+medo | :degree | mais
+medo | :mod | ainda
+medo | :time | noite
+
+[STEP 3: AMR_NO_VAR]
+(ter-05
+				:ARG0 (eu)
+				:ARG1 (medo
+					:degree (mais)
+					:mod (ainda)
+					:time (noite)))
+
+[STEP 4: AMR_WITH_VAR]
+(t / ter-05
+				:ARG0 (e / eu)
+				:ARG1 (m / medo
+					:degree (m1 / mais)
+					:mod (a / ainda)
+					:time (n / noite)))
+
+
+#::snt O sentimento do irreparável gelou-me de novo.
+[STEP 1: CONCEPTS]
+concept_1 | gelar-01
+concept_2 | sentimento
+concept_3 | irreparável
+concept_4 | eu
+concept_5 | de-novo
+
+[STEP 2: RELATIONS]
+gelar-01 | :ARG0 | sentimento
+sentimento | :mod | irreparável
+gelar-01 | :ARG1 | eu
+gelar-01 | :mod | de-novo
+
+[STEP 3: AMR_NO_VAR]
+(gelar-01
+				:ARG0 (sentimento
+					:mod (irreparável))
+				:ARG1 (eu)
+				:mod (de-novo))
+
+[STEP 4: AMR_WITH_VAR]
+(g / gelar-01
+				:ARG0 (s / sentimento
+					:mod (i / irreparável))
+				:ARG1 (e / eu)
+				:mod (d / de-novo))
+
+
+#::snt E eu compreendi que não podia suportar a idéia de nunca mais escutar esse riso.
+[STEP 1: CONCEPTS]
+concept_1 | e
+concept_2 | compreender-01
+concept_3 | eu
+concept_4 | poder-201
+concept_5 | suportar-01
+concept_6 | e1
+concept_7 | idéia
+concept_8 | escutar-01
+concept_9 | riso
+concept_10 | esse
+
+[STEP 2: RELATIONS]
+e | :op2 | compreender-01
+compreender-01 | :ARG0 | eu
+compreender-01 | :ARG1 | poder-201
+poder-201 | :polarity | -
+poder-201 | :ARG1 | suportar-01
+suportar-01 | :ARG0 | e1
+suportar-01 | :ARG1 | idéia
+idéia | :topic | escutar-01
+escutar-01 | :polarity | -
+escutar-01 | :ARG0 | e1
+escutar-01 | :ARG1 | riso
+riso | :mod | esse
+
+[STEP 3: AMR_NO_VAR]
+(e
+				:op2 (compreender-01
+					:ARG0 (eu)
+					:ARG1 (poder-201 :polarity -
+						:ARG1 (suportar-01
+							:ARG0 (eu)
+							:ARG1 (idéia
+								:topic (escutar-01 :polarity -
+									:ARG0 (eu)
+									:ARG1 (riso
+										:mod (esse))))))))
+
+[STEP 4: AMR_WITH_VAR]
+(e / e
+				:op2 (c / compreender-01
+					:ARG0 (e1 / eu)
+					:ARG1 (p / poder-201 :polarity -
+						:ARG1 (s / suportar-01
+							:ARG0 e1
+							:ARG1 (i / idéia
+								:topic (e2 / escutar-01 :polarity -
+									:ARG0 e1
+									:ARG1 (r / riso
+										:mod (e3 / esse))))))))
+
+
+#::snt Ele era para mim como uma fonte no deserto.
+[STEP 1: CONCEPTS]
+concept_1 | fonte
+concept_2 | ele
+concept_3 | deserto
+concept_4 | eu
+
+[STEP 2: RELATIONS]
+fonte | :domain | ele
+fonte | :location | deserto
+fonte | :beneficiary | eu
+
+[STEP 3: AMR_NO_VAR]
+(fonte
+				:domain (ele)
+				:location (deserto)
+				:beneficiary (eu))
+
+[STEP 4: AMR_WITH_VAR]
+(f / fonte
+				:domain (e / ele)
+				:location (d / deserto)
+				:beneficiary (e1 / eu))
+
+
+#::snt - Meu bem, eu quero ainda escutar o teu riso...
+[STEP 1: CONCEPTS]
+concept_1 | querer-01
+concept_2 | eu
+concept_3 | escutar-01
+concept_4 | e
+concept_5 | riso
+concept_6 | tu
+concept_7 | ainda
+
+[STEP 2: RELATIONS]
+querer-01 | :ARG0 | eu
+querer-01 | :ARG1 | escutar-01
+escutar-01 | :ARG0 | e
+escutar-01 | :ARG1 | riso
+riso | :poss | tu
+escutar-01 | :time | ainda
+
+[STEP 3: AMR_NO_VAR]
+(querer-01
+				:ARG0 (eu)
+				:ARG1 (escutar-01
+					:ARG0 (eu)
+					:ARG1 (riso
+						:poss (tu))
+					:time (ainda)))
+
+[STEP 4: AMR_WITH_VAR]
+(q / querer-01
+				:ARG0 (e / eu)
+				:ARG1 (e1 / escutar-01
+					:ARG0 e
+					:ARG1 (r / riso
+						:poss (t / tu))
+					:time (a / ainda)))
+
+
+#::snt Mas ele me disse: - Faz um ano esta noite.
+[STEP 1: CONCEPTS]
+concept_1 | contrast-01
+concept_2 | dizer-01
+concept_3 | ele
+concept_4 | fazer-01
+concept_5 | temporal-quantity
+concept_6 | ano
+concept_7 | esta-noite
+
+[STEP 2: RELATIONS]
+contrast-01 | :ARG2 | dizer-01
+dizer-01 | :ARG0 | ele
+dizer-01 | :ARG1 | fazer-01
+fazer-01 | :ARG1 | temporal-quantity
+temporal-quantity | :quant | 1
+temporal-quantity | :unit | ano
+fazer-01 | :time | esta-noite
+
+[STEP 3: AMR_NO_VAR]
+(contrast-01
+				:ARG2 (dizer-01
+					:ARG0 (ele)
+					:ARG1 (fazer-01
+						:ARG1 (temporal-quantity :quant 1
+							:unit (ano))
+						:time (esta-noite))))
+
+[STEP 4: AMR_WITH_VAR]
+(c / contrast-01
+				:ARG2 (d / dizer-01
+					:ARG0 (e / ele)
+					:ARG1 (f / fazer-01
+						:ARG1 (t / temporal-quantity :quant 1
+							:unit (a / ano))
+						:time (e1 / esta-noite))))
+
+
+#::snt Minha estrela se achará justamente em cima do lugar onde eu caí o ano passado...
+[STEP 1: CONCEPTS]
+concept_1 | achar-01
+concept_2 | estrela
+concept_3 | eu
+concept_4 | lugar
+concept_5 | cima
+concept_6 | justamente
+concept_7 | passado
+concept_8 | ano
+
+[STEP 2: RELATIONS]
+achar-01 | :ARG0 | estrela
+achar-01 | :ARG1 | eu
+achar-01 | :location | lugar
+lugar | :mod | cima
+lugar | :mod | justamente
+lugar | :time | passado
+passado | :unit | ano
+
+[STEP 3: AMR_NO_VAR]
+(achar-01
+				:ARG0 (estrela)
+				:ARG1 (eu)
+				:location (lugar
+					:mod (cima)
+					:mod (justamente)
+					:time (passado
+						:unit (ano))))
+
+[STEP 4: AMR_WITH_VAR]
+(a / achar-01
+				:ARG0 (e / estrela)
+				:ARG1 (e1 / eu)
+				:location (l / lugar
+					:mod (c / cima)
+					:mod (j / justamente)
+					:time (p / passado
+						:unit (a1 / ano))))
+
+
+#::snt - Meu bem, não será um sonho mau essa história de serpente, de encontro marcado, de estrela?
+[STEP 1: CONCEPTS]
+concept_1 | sonho
+concept_2 | mau
+concept_3 | história
+concept_4 | serpente
+concept_5 | encontro
+concept_6 | marcado
+concept_7 | estrela
+
+[STEP 2: RELATIONS]
+sonho | :mod | mau
+sonho | :topic | história
+história | :poss | serpente
+história | :cause | encontro
+encontro | :mod | marcado
+história | :cause | estrela
+
+[STEP 3: AMR_NO_VAR]
+(sonho
+				:mod (mau)
+				:topic (história
+					:poss (serpente)
+					:cause (encontro
+						:mod (marcado))
+					:cause (estrela)))
+
+[STEP 4: AMR_WITH_VAR]
+(s / sonho
+				:mod (m / mau)
+				:topic (h / história
+					:poss (s1 / serpente)
+					:cause (e / encontro
+						:mod (m1 / marcado))
+					:cause (e1 / estrela)))
+
+
+#::snt Mas não respondeu à minha pergunta.
+[STEP 1: CONCEPTS]
+concept_1 | contrast-01
+concept_2 | responder-01
+concept_3 | ele
+concept_4 | pergunta
+concept_5 | e2
+
+[STEP 2: RELATIONS]
+contrast-01 | :ARG2 | responder-01
+responder-01 | :polarity | -
+responder-01 | :ARG0 | ele
+responder-01 | :ARG1 | pergunta
+pergunta | :poss | e2
+
+[STEP 3: AMR_NO_VAR]
+(contrast-01
+				:ARG2 (responder-01 :polarity -
+					:ARG0 (ele)
+					:ARG1 (pergunta
+						:poss (e2))))
+
+[STEP 4: AMR_WITH_VAR]
+(c / contrast-01
+				:ARG2 (r / responder-01 :polarity -
+					:ARG0 (e / ele)
+					:ARG1 (p / pergunta
+						:poss (e1 / e2))))
+
+
+#::snt E disse: - O que é importante, a gente não vê...
+[STEP 1: CONCEPTS]
+concept_1 | dizer-01
+concept_2 | ver-01
+concept_3 | a-gente
+concept_4 | importante
+
+[STEP 2: RELATIONS]
+dizer-01 | :ARG1 | ver-01
+ver-01 | :polarity | -
+ver-01 | :ARG0 | a-gente
+ver-01 | :ARG1 | importante
+
+[STEP 3: AMR_NO_VAR]
+(dizer-01
+				:ARG1 (ver-01 :polarity -
+					:ARG0 (a-gente)
+					:ARG1 (importante)))
+
+[STEP 4: AMR_WITH_VAR]
+(d / dizer-01
+				:ARG1 (v / ver-01 :polarity -
+					:ARG0 (a / a-gente)
+					:ARG1 (i / importante)))
+
+
+#::snt - A gente não vê...
+[STEP 1: CONCEPTS]
+concept_1 | ver-01
+concept_2 | a-gente
+
+[STEP 2: RELATIONS]
+ver-01 | :polarity | -
+ver-01 | :ARG0 | a-gente
+
+[STEP 3: AMR_NO_VAR]
+(ver-01 :polarity -
+				:ARG0 (a-gente))
+
+[STEP 4: AMR_WITH_VAR]
+(v / ver-01 :polarity -
+				:ARG0 (a / a-gente))
+
+
+#::snt - Será como a flor.
+[STEP 1: CONCEPTS]
+concept_1 | flor
+concept_2 | como
+
+[STEP 2: RELATIONS]
+flor | :mode | como
+
+[STEP 3: AMR_NO_VAR]
+(flor :mode como)
+
+[STEP 4: AMR_WITH_VAR]
+(f / flor :mode como)
+
+
+#::snt Se tu amas uma flor que se acha numa estrela, é doce, de noite, olhar o céu.
+[STEP 1: CONCEPTS]
+concept_1 | olhar-01
+concept_2 | tu
+concept_3 | céu
+concept_4 | amar-01
+concept_5 | t
+concept_6 | flor
+concept_7 | achar-01
+concept_8 | f
+concept_9 | estrela
+concept_10 | doce
+concept_11 | date-entity
+concept_12 | noite
+
+[STEP 2: RELATIONS]
+olhar-01 | :ARG0 | tu
+olhar-01 | :ARG1 | céu
+olhar-01 | :condition | amar-01
+amar-01 | :ARG0 | t
+amar-01 | :ARG1 | flor
+flor | :ARG1-of | achar-01
+achar-01 | :ARG1 | f
+achar-01 | :location | estrela
+olhar-01 | :mod | doce
+olhar-01 | :time | date-entity
+date-entity | :dayperiod | noite
+
+[STEP 3: AMR_NO_VAR]
+(olhar-01
+				:ARG0 (tu)
+				:ARG1 (céu)
+				:condition (amar-01
+					:ARG0 (tu)
+					:ARG1 (flor
+						:ARG1-of (achar-01
+							:ARG1 (flor)
+							:location (estrela))))
+				:mod (doce)
+				:time (date-entity :dayperiod (noite)))
+
+[STEP 4: AMR_WITH_VAR]
+(o / olhar-01
+				:ARG0 (t / tu)
+				:ARG1 (c / céu)
+				:condition (a / amar-01
+					:ARG0 t
+					:ARG1 (f / flor
+						:ARG1-of (a1 / achar-01
+							:ARG1 f
+							:location (e / estrela))))
+				:mod (d / doce)
+				:time (d1 / date-entity :dayperiod (n / noite)))
+
+
+#::snt Todas as estrelas estão floridas.
+[STEP 1: CONCEPTS]
+concept_1 | florir-01
+concept_2 | estrela
+concept_3 | todas
+
+[STEP 2: RELATIONS]
+florir-01 | :ARG1 | estrela
+estrela | :mod | todas
+
+[STEP 3: AMR_NO_VAR]
+(florir-01
+				:ARG1 (estrela
+					:mod (todas)))
+
+[STEP 4: AMR_WITH_VAR]
+(f / florir-01
+				:ARG1 (e / estrela
+					:mod (t / todas)))
+
+
+#::snt - Todas as estrelas estão floridas.
+[STEP 1: CONCEPTS]
+concept_1 | florir-01
+concept_2 | estrela
+concept_3 | todas
+
+[STEP 2: RELATIONS]
+florir-01 | :ARG1 | estrela
+estrela | :mod | todas
+
+[STEP 3: AMR_NO_VAR]
+(florir-01
+				:ARG1 (estrela
+					:mod (todas)))
+
+[STEP 4: AMR_WITH_VAR]
+(f / florir-01
+				:ARG1 (e / estrela
+					:mod (t / todas)))
+
+
+#::snt - Será como a água.
+[STEP 1: CONCEPTS]
+concept_1 | be-01
+concept_2 | água
+
+[STEP 2: RELATIONS]
+be-01 | :ARG2 | água
+
+[STEP 3: AMR_NO_VAR]
+(be-01
+				:ARG2 (água))
+
+[STEP 4: AMR_WITH_VAR]
+(b / be-01
+				:ARG2 (a / água))
+
+
+#::snt Aquela que me deste parecia música, por causa da roldana e da corda...
+[STEP 1: CONCEPTS]
+concept_1 | parecer-01
+concept_2 | música
+concept_3 | aquela
+concept_4 | dar-01
+concept_5 | tu
+concept_6 | eu
+concept_7 | e
+concept_8 | roldana
+concept_9 | corda
+
+[STEP 2: RELATIONS]
+parecer-01 | :ARG1 | música
+parecer-01 | :ARG2 | aquela
+parece-01 | :ARG0 | dar-01
+dar-01 | :ARG0 | tu
+dar-01 | :ARG1 | eu
+dar-01 | :ARG2 | aquela
+parecer-01 | :cause | e
+e | :op1 | roldana
+e | :op2 | corda
+
+[STEP 3: AMR_NO_VAR]
+(parecer-01
+				:ARG1 (música)
+				:ARG2 (aquela)
+				:ARG0 (dar-01
+					:ARG0 (tu)
+					:ARG1 (eu)
+					:ARG2 (aquela))
+				:cause (e
+					:op1 (roldana)
+					:op2 (corda)))
+
+[STEP 4: AMR_WITH_VAR]
+(p / parecer-01
+				:ARG1 (m / música)
+				:ARG2 (a / aquela)
+				:ARG0 (d / dar-01
+					:ARG0 (t / tu)
+					:ARG1 (e / eu)
+					:ARG2 a)
+				:cause (e1 / e
+					:op1 (r / roldana)
+					:op2 (c / corda)))
+
+
+#::snt Lembras-te como era boa?
+[STEP 1: CONCEPTS]
+concept_1 | lembrar-01
+concept_2 | tu
+concept_3 | boa
+concept_4 | interrogative
+
+[STEP 2: RELATIONS]
+lembrar-01 | :ARG0 | tu
+lembrar-01 | :ARG1 | boa
+lembrar-01 | :mode | interrogative
+
+[STEP 3: AMR_NO_VAR]
+(lembrar-01
+				:ARG0 (tu)
+				:ARG1 (boa)
+				:mode interrogative)
+
+[STEP 4: AMR_WITH_VAR]
+(l / lembrar-01
+				:ARG0 (t / tu)
+				:ARG1 (b / boa)
+				:mode interrogative)
+
+
+#::snt - Lembro-me...
+[STEP 1: CONCEPTS]
+concept_1 | lembrar-01
+concept_2 | eu
+
+[STEP 2: RELATIONS]
+lembrar-01 | :ARG0 | eu
+
+[STEP 3: AMR_NO_VAR]
+(lembrar-01
+				:ARG0 (eu))
+
+[STEP 4: AMR_WITH_VAR]
+(l / lembrar-01
+				:ARG0 (e / eu))
+
+
+#::snt - Tu olharás, de noite, as estrelas.
+[STEP 1: CONCEPTS]
+concept_1 | olhar-01
+concept_2 | tu
+concept_3 | estrela
+concept_4 | date-entity
+concept_5 | noite
+
+[STEP 2: RELATIONS]
+olhar-01 | :ARG0 | tu
+olhar-01 | :ARG1 | estrela
+olhar-01 | :time | date-entity
+date-entity | :dayperiod | noite
+
+[STEP 3: AMR_NO_VAR]
+(olhar-01
+				:ARG0 (tu)
+				:ARG1 (estrela)
+				:time (date-entity :dayperiod (noite)))
+
+[STEP 4: AMR_WITH_VAR]
+(o / olhar-01
+				:ARG0 (t / tu)
+				:ARG1 (e / estrela)
+				:time (d / date-entity :dayperiod (n / noite)))
+
+
+#::snt Onde eu moro é muito pequeno, para que eu possa te mostrar onde se encontra a minha.
+[STEP 1: CONCEPTS]
+concept_1 | pequeno
+concept_2 | morar-01
+concept_3 | eu
+concept_4 | muito
+concept_5 | permitir-01
+concept_6 | e
+concept_7 | mostrar-01
+concept_8 | m
+concept_9 | enconrar-01
+concept_10 | p
+
+[STEP 2: RELATIONS]
+pequeno | :domain | morar-01
+morar-01 | :ARG0 | eu
+pequeno | :degree | muito
+pequeno | :purpose | permitir-01
+permitir-01 | :ARG0 | e
+permitir-01 | :ARG1 | mostrar-01
+mostrar-01 | :ARG0 | e
+mostrar-01 | :ARG1 | m
+mostrar-01 | :topic | enconrar-01
+enconrar-01 | :ARG0 | e
+enconrar-01 | :ARG1 | p
+
+[STEP 3: AMR_NO_VAR]
+(pequeno
+				:domain (morar-01
+					:ARG0 (eu))
+				:degree (muito)
+				:purpose (permitir-01
+					:ARG0 (eu)
+					:ARG1 (mostrar-01
+						:ARG0 (eu)
+						:ARG1 (morar-01)
+						:topic (enconrar-01
+							:ARG0 (eu)
+							:ARG1 (pequeno)))))
+
+[STEP 4: AMR_WITH_VAR]
+(p / pequeno
+				:domain (m / morar-01
+					:ARG0 (e / eu))
+				:degree (m1 / muito)
+				:purpose (p1 / permitir-01
+					:ARG0 e
+					:ARG1 (m2 / mostrar-01
+						:ARG0 e
+						:ARG1 m
+						:topic (e1 / enconrar-01
+							:ARG0 e
+							:ARG1 p))))
+
+
+#::snt É melhor assim,
+[STEP 1: CONCEPTS]
+concept_1 | melhor
+concept_2 | assim
+
+[STEP 2: RELATIONS]
+melhor | :domain | assim
+
+[STEP 3: AMR_NO_VAR]
+(melhor
+				:domain (assim))
+
+[STEP 4: AMR_WITH_VAR]
+(m / melhor
+				:domain (a / assim))
+
+
+#::snt Minha estrela será então qualquer das estrelas.
+[STEP 1: CONCEPTS]
+concept_1 | estrela
+concept_2 | eu
+concept_3 | qualquer
+concept_4 | então
+
+[STEP 2: RELATIONS]
+estrela | :poss | eu
+estrela | :mod | qualquer
+estrela | :time | então
+
+[STEP 3: AMR_NO_VAR]
+(estrela
+				:poss (eu)
+				:mod (qualquer)
+				:time (então))
+
+[STEP 4: AMR_WITH_VAR]
+(e / estrela
+				:poss (e1 / eu)
+				:mod (q / qualquer)
+				:time (e2 / então))
+
+
+#::snt Gostarás de olhar todas elas...
+[STEP 1: CONCEPTS]
+concept_1 | gostar-01
+concept_2 | tu
+concept_3 | olhar-01
+concept_4 | t
+concept_5 | elas
+concept_6 | todas
+
+[STEP 2: RELATIONS]
+gostar-01 | :ARG0 | tu
+gostar-01 | :ARG1 | olhar-01
+olhar-01 | :ARG0 | t
+olhar-01 | :ARG1 | elas
+elas | :mod | todas
+
+[STEP 3: AMR_NO_VAR]
+(gostar-01
+				:ARG0 (tu)
+				:ARG1 (olhar-01
+					:ARG0 (tu)
+					:ARG1 (elas
+						:mod (todas))))
+
+[STEP 4: AMR_WITH_VAR]
+(g / gostar-01
+				:ARG0 (t / tu)
+				:ARG1 (o / olhar-01
+					:ARG0 t
+					:ARG1 (e / elas
+						:mod (t1 / todas))))
+
+
+#::snt Serão, todas, tuas amigas.
+[STEP 1: CONCEPTS]
+concept_1 | amiga
+concept_2 | todas
+concept_3 | tu
+
+[STEP 2: RELATIONS]
+amiga | :mod | todas
+amiga | :poss | tu
+
+[STEP 3: AMR_NO_VAR]
+(amiga
+				:mod (todas)
+				:poss (tu))
+
+[STEP 4: AMR_WITH_VAR]
+(a / amiga
+				:mod (t / todas)
+				:poss (t1 / tu))
+
+
+#::snt E depois, eu vou fazer-te um presente...
+[STEP 1: CONCEPTS]
+concept_1 | e
+concept_2 | ir-01
+concept_3 | eu
+concept_4 | fazer-01
+concept_5 | e1
+concept_6 | presente
+concept_7 | depois
+
+[STEP 2: RELATIONS]
+e | :op2 | ir-01
+ir-01 | :ARG0 | eu
+ir-01 | :ARG1 | fazer-01
+fazer-01 | :ARG0 | e1
+fazer-01 | :ARG1 | presente
+ir-01 | :time | depois
+
+[STEP 3: AMR_NO_VAR]
+(e
+				:op2 (ir-01
+					:ARG0 (eu)
+					:ARG1 (fazer-01
+						:ARG0 (eu)
+						:ARG1 (presente))
+					:time (depois)))
+
+[STEP 4: AMR_WITH_VAR]
+(e / e
+				:op2 (i / ir-01
+					:ARG0 (e1 / eu)
+					:ARG1 (f / fazer-01
+						:ARG0 e1
+						:ARG1 (p / presente))
+					:time (d / depois)))
+
+
+#::snt Ele riu outra vez.
+[STEP 1: CONCEPTS]
+concept_1 | rir-01
+concept_2 | ele
+concept_3 | outra
+concept_4 | vez
+
+[STEP 2: RELATIONS]
+rir-01 | :ARG0 | ele
+rir-01 | :mod | outra
+rir-01 | :time | vez
+
+[STEP 3: AMR_NO_VAR]
+(rir-01
+				:ARG0 (ele)
+				:mod (outra)
+				:time (vez))
+
+[STEP 4: AMR_WITH_VAR]
+(r / rir-01
+				:ARG0 (e / ele)
+				:mod (o / outra)
+				:time (v / vez))
+
+
+#::snt - Ah! meu pedacinho de gente, meu amor, como eu gosto de ouvir esse riso!
+[STEP 1: CONCEPTS]
+concept_1 | ouvir-01
+concept_2 | eu
+concept_3 | riso
+concept_4 | esse
+concept_5 | gostar-01
+concept_6 | e
+concept_7 | ouvir-01
+concept_8 | ah
+concept_9 | expressive
+concept_10 | gente
+concept_11 | eu1
+concept_12 | pedacinho
+concept_13 | amor
+
+[STEP 2: RELATIONS]
+ouvir-01 | :ARG0 | eu
+ouvir-01 | :ARG1 | riso
+riso | :mod | esse
+ouvir-01 | :cause | gostar-01
+gostar-01 | :ARG0 | e
+gostar-01 | :ARG1 | ouvir-01
+ouvir-01 | :manner | ah
+ah | :mode | expressive
+ouvir-01 | :ARG2 | gente
+gente | :poss | eu1
+gente | :mod | pedacinho
+gente | :domain | amor
+
+[STEP 3: AMR_NO_VAR]
+(ouvir-01
+				:ARG0 (eu)
+				:ARG1 (riso
+					:mod (esse))
+				:cause (gostar-01
+					:ARG0 (eu)
+					:ARG1 (ouvir-01))
+				:manner (ah :mode expressive)
+				:ARG2 (gente
+					:poss (eu)
+					:mod (pedacinho)
+					:domain (amor)))
+
+[STEP 4: AMR_WITH_VAR]
+(o / ouvir-01
+				:ARG0 (e / eu)
+				:ARG1 (r / riso
+					:mod (e1 / esse))
+				:cause (g / gostar-01
+					:ARG0 e
+					:ARG1 o)
+				:manner (a / ah :mode expressive)
+				:ARG2 (g1 / gente
+					:poss e
+					:mod (p / pedacinho)
+					:domain (a1 / amor)))
+
+
+#::snt - Pois é ele o meu presente...
+[STEP 1: CONCEPTS]
+concept_1 | presente
+concept_2 | ele
+concept_3 | eu
+
+[STEP 2: RELATIONS]
+presente | :poss | ele
+ele | :poss | eu
+
+[STEP 3: AMR_NO_VAR]
+(presente
+				:poss (ele
+					:poss (eu)))
+
+[STEP 4: AMR_WITH_VAR]
+(p / presente
+				:poss (e / ele
+					:poss (e1 / eu)))
+
+
+#::snt será como a água...
+[STEP 1: CONCEPTS]
+concept_1 | be-01
+concept_2 | água
+
+[STEP 2: RELATIONS]
+be-01 | :ARG2 | água
+
+[STEP 3: AMR_NO_VAR]
+(be-01
+				:ARG2 (água))
+
+[STEP 4: AMR_WITH_VAR]
+(b / be-01
+				:ARG2 (a / água))
+
+
+#::snt - Que queres dizer?
+[STEP 1: CONCEPTS]
+concept_1 | querer-01
+concept_2 | tu
+concept_3 | dizer-01
+concept_4 | interrogative
+concept_5 | t
+
+[STEP 2: RELATIONS]
+querer-01 | :ARG0 | tu
+querer-01 | :ARG1 | dizer-01
+dizer-01 | :mode | interrogative
+dizer-01 | :ARG0 | t
+
+[STEP 3: AMR_NO_VAR]
+(querer-01
+				:ARG0 (tu)
+				:ARG1 (dizer-01 :mode interrogative
+					:ARG0 (tu)))
+
+[STEP 4: AMR_WITH_VAR]
+(q / querer-01
+				:ARG0 (t / tu)
+				:ARG1 (d / dizer-01 :mode interrogative
+					:ARG0 t))
+
+
+#::snt - As pessoas têm estrelas que não são as mesmas.
+[STEP 1: CONCEPTS]
+concept_1 | ter-01
+concept_2 | pessoa
+concept_3 | estrela
+
+[STEP 2: RELATIONS]
+ter-01 | :ARG0 | pessoa
+ter-01 | :ARG1 | estrela
+
+[STEP 3: AMR_NO_VAR]
+(ter-01
+				:ARG0 (pessoa)
+				:ARG1 (estrela))
+
+[STEP 4: AMR_WITH_VAR]
+(t / ter-01
+				:ARG0 (p / pessoa)
+				:ARG1 (e / estrela))
+
+
+#::snt para uns, que viajam, as estrelas são guias.
+[STEP 1: CONCEPTS]
+concept_1 | guiar-01
+concept_2 | estrela
+concept_3 | viajar-01
+concept_4 | algum
+
+[STEP 2: RELATIONS]
+guiar-01 | :ARG0 | estrela
+guiar-01 | :ARG1 | viajar-01
+viajar-01 | :ARG0 | algum
+
+[STEP 3: AMR_NO_VAR]
+(guiar-01
+				:ARG0 (estrela)
+				:ARG1 (viajar-01
+					:ARG0 (algum)))
+
+[STEP 4: AMR_WITH_VAR]
+(g / guiar-01
+				:ARG0 (e / estrela)
+				:ARG1 (v / viajar-01
+					:ARG0 (a / algum)))
+
+
+#::snt Para outros, elas não passam de pequenas luzes.
+[STEP 1: CONCEPTS]
+concept_1 | passar-07
+concept_2 | ela
+concept_3 | pequena
+concept_4 | luz
+concept_5 | outro
+
+[STEP 2: RELATIONS]
+passar-07 | :polarity | -
+passar-07 | :ARG1 | ela
+passar-07 | :ARG2 | pequena
+pequena | :mod | luz
+passar-07 | :beneficiary | outro
+
+[STEP 3: AMR_NO_VAR]
+(passar-07 :polarity -
+				:ARG1 (ela)
+				:ARG2 (pequena
+					:mod (luz))
+				:beneficiary (outro))
+
+[STEP 4: AMR_WITH_VAR]
+(p / passar-07 :polarity -
+				:ARG1 (e / ela)
+				:ARG2 (p1 / pequena
+					:mod (l / luz))
+				:beneficiary (o / outro))
+
+
+#::snt Para outros, os sábios, são problemas.
+[STEP 1: CONCEPTS]
+concept_1 | problema
+concept_2 | sábio
+concept_3 | outro
+
+[STEP 2: RELATIONS]
+problema | :domain | sábio
+problema | :beneficiary | outro
+
+[STEP 3: AMR_NO_VAR]
+(problema
+				:domain (sábio)
+				:beneficiary (outro))
+
+[STEP 4: AMR_WITH_VAR]
+(p / problema
+				:domain (s / sábio)
+				:beneficiary (o / outro))
+
+
+#::snt Para o meu negociante, eram ouro.
+[STEP 1: CONCEPTS]
+concept_1 | ouro
+concept_2 | negociante
+concept_3 | eu
+
+[STEP 2: RELATIONS]
+ouro | :beneficiary | negociante
+negociante | :poss | eu
+
+[STEP 3: AMR_NO_VAR]
+(ouro
+				:beneficiary (negociante
+					:poss (eu)))
+
+[STEP 4: AMR_WITH_VAR]
+(o / ouro
+				:beneficiary (n / negociante
+					:poss (e / eu)))
+
+
+#::snt mas todas essas estrelas se calam.
+[STEP 1: CONCEPTS]
+concept_1 | contrast-01
+concept_2 | calar-01
+concept_3 | estrela
+concept_4 | todas
+concept_5 | essa
+
+[STEP 2: RELATIONS]
+contrast-01 | :ARG2 | calar-01
+calar-01 | :ARG1 | estrela
+estrela | :mod | todas
+estrela | :mod | essa
+
+[STEP 3: AMR_NO_VAR]
+(contrast-01
+				:ARG2 (calar-01
+					:ARG1 (estrela
+						:mod (todas)
+						:mod (essa))))
+
+[STEP 4: AMR_WITH_VAR]
+(c / contrast-01
+				:ARG2 (c1 / calar-01
+					:ARG1 (e / estrela
+						:mod (t / todas)
+						:mod (e1 / essa))))
+
+
+#::snt Tu, porém, terás estrelas como ninguém...
+[STEP 1: CONCEPTS]
+concept_1 | ter-01
+concept_2 | tu
+concept_3 | estrela
+concept_4 | ninguém
+
+[STEP 2: RELATIONS]
+ter-01 | :ARG0 | tu
+ter-01 | :ARG1 | estrela
+estrela | :compared-to | ninguém
+
+[STEP 3: AMR_NO_VAR]
+(ter-01
+				:ARG0 (tu)
+				:ARG1 (estrela
+					:compared-to (ninguém)))
+
+[STEP 4: AMR_WITH_VAR]
+(t / ter-01
+				:ARG0 (t1 / tu)
+				:ARG1 (e / estrela
+					:compared-to (n / ninguém)))
+
+
+#::snt - Que queres dizer?
+[STEP 1: CONCEPTS]
+concept_1 | querer-01
+concept_2 | tu
+concept_3 | dizer-01
+concept_4 | interrogative
+concept_5 | t
+
+[STEP 2: RELATIONS]
+querer-01 | :ARG0 | tu
+querer-01 | :ARG1 | dizer-01
+dizer-01 | :mode | interrogative
+dizer-01 | :ARG0 | t
+
+[STEP 3: AMR_NO_VAR]
+(querer-01
+				:ARG0 (tu)
+				:ARG1 (dizer-01 :mode interrogative
+					:ARG0 (tu)))
+
+[STEP 4: AMR_WITH_VAR]
+(q / querer-01
+				:ARG0 (t / tu)
+				:ARG1 (d / dizer-01 :mode interrogative
+					:ARG0 t))
+
+
+#::snt - Quando olhares o céu de noite, porque habitarei uma delas, porque numa delas estarei rindo, então será como se todas as estrelas te rissem!
+[STEP 1: CONCEPTS]
+concept_1 | cause-01
+concept_2 | habitar-01
+concept_3 | eu
+concept_4 | estrela
+concept_5 | rir-01
+concept_6 | e
+concept_7 | noite
+concept_8 | céu
+
+[STEP 2: RELATIONS]
+cause-01 | :ARG0 | habitar-01
+habitar-01 | :ARG0 | eu
+habitar-01 | :ARG1 | estrela
+cause-01 | :ARG2 | rir-01
+rir-01 | :ARG0 | e
+cause-01 | :time | noite
+cause-01 | :location | céu
+
+[STEP 3: AMR_NO_VAR]
+(cause-01
+				:ARG0 (habitar-01
+					:ARG0 (eu)
+					:ARG1 (estrela))
+				:ARG2 (rir-01
+					:ARG0 (eu))
+				:time (noite)
+				:location (céu))
+
+[STEP 4: AMR_WITH_VAR]
+(c / cause-01
+				:ARG0 (h / habitar-01
+					:ARG0 (e / eu)
+					:ARG1 (e1 / estrela))
+				:ARG2 (r / rir-01
+					:ARG0 e)
+				:time (n / noite)
+				:location (c1 / céu))
+
+
+#::snt E tu terás estrelas que sabem rir!
+[STEP 1: CONCEPTS]
+concept_1 | e
+concept_2 | ter-01
+concept_3 | tu
+concept_4 | estrela
+concept_5 | saber-01
+concept_6 | rir-01
+
+[STEP 2: RELATIONS]
+e | :op2 | ter-01
+ter-01 | :ARG0 | tu
+ter-01 | :ARG1 | estrela
+estrela | :ARG0-of | saber-01
+saber-01 | :ARG1 | rir-01
+
+[STEP 3: AMR_NO_VAR]
+(e
+				:op2 (ter-01
+					:ARG0 (tu)
+					:ARG1 (estrela
+						:ARG0-of (saber-01
+							:ARG1 (rir-01)))))
+
+[STEP 4: AMR_WITH_VAR]
+(e / e
+				:op2 (t / ter-01
+					:ARG0 (t1 / tu)
+					:ARG1 (e1 / estrela
+						:ARG0-of (s / saber-01
+							:ARG1 (r / rir-01)))))
+
+
+#::snt E ele riu mais uma vez.
+[STEP 1: CONCEPTS]
+concept_1 | e
+concept_2 | rir-01
+concept_3 | ele
+concept_4 | mais-uma-vez
+
+[STEP 2: RELATIONS]
+e | :op2 | rir-01
+rir-01 | :ARG0 | ele
+rir-01 | :mod | mais-uma-vez
+
+[STEP 3: AMR_NO_VAR]
+(e
+				:op2 (rir-01
+					:ARG0 (ele)
+					:mod (mais-uma-vez)))
+
+[STEP 4: AMR_WITH_VAR]
+(e / e
+				:op2 (r / rir-01
+					:ARG0 (e1 / ele)
+					:mod (m / mais-uma-vez)))
+
+
+#::snt - E quando te houveres consolado (a gente sempre se consola), tu te sentirás contente por me teres conhecido.
+[STEP 1: CONCEPTS]
+concept_1 | e
+concept_2 | sentir-01
+concept_3 | tu
+concept_4 | contente
+concept_5 | ter-01
+concept_6 | t
+concept_7 | conhecer-01
+concept_8 | a-gente
+concept_9 | consolar-01
+concept_10 | a
+
+[STEP 2: RELATIONS]
+e | :op2 | sentir-01
+sentir-01 | :ARG0 | tu
+sentir-01 | :ARG1 | contente
+sentir-01 | :cause | ter-01
+ter-01 | :ARG0 | t
+ter-01 | :ARG1 | conhecer-01
+conhecer-01 | :ARG0 | t
+conhecer-01 | :ARG1 | a-gente
+sentir-01 | :condition | consolar-01
+consolar-01 | :ARG0 | a
+
+[STEP 3: AMR_NO_VAR]
+(e
+				:op2 (sentir-01
+					:ARG0 (tu)
+					:ARG1 (contente)
+					:cause (ter-01
+						:ARG0 (tu)
+						:ARG1 (conhecer-01
+							:ARG0 (tu)
+							:ARG1 (a-gente)))
+					:condition (consolar-01
+						:ARG0 (a-gente))))
+
+[STEP 4: AMR_WITH_VAR]
+(e / e
+				:op2 (s / sentir-01
+					:ARG0 (t / tu)
+					:ARG1 (c / contente)
+					:cause (t1 / ter-01
+						:ARG0 t
+						:ARG1 (c1 / conhecer-01
+							:ARG0 t
+							:ARG1 (a / a-gente)))
+					:condition (c2 / consolar-01
+						:ARG0 a)))
+
+
+#::snt Tu serás sempre meu amigo.
+[STEP 1: CONCEPTS]
+concept_1 | amigo
+concept_2 | eu
+concept_3 | tu
+concept_4 | sempre
+
+[STEP 2: RELATIONS]
+amigo | :poss | eu
+amigo | :domain | tu
+amigo | :time | sempre
+
+[STEP 3: AMR_NO_VAR]
+(amigo
+				:poss (eu)
+				:domain (tu)
+				:time (sempre))
+
+[STEP 4: AMR_WITH_VAR]
+(a / amigo
+				:poss (e / eu)
+				:domain (t / tu)
+				:time (s / sempre))
+
+
+#::snt Terás vontade de rir comigo.
+[STEP 1: CONCEPTS]
+concept_1 | ter-01
+concept_2 | tu
+concept_3 | vontade
+concept_4 | rir-01
+concept_5 | t
+concept_6 | eu
+
+[STEP 2: RELATIONS]
+ter-01 | :ARG0 | tu
+ter-01 | :ARG1 | vontade
+vontade | :ARG0-of | rir-01
+rir-01 | :ARG0 | t
+rir-01 | :beneficiary | eu
+
+[STEP 3: AMR_NO_VAR]
+(ter-01
+				:ARG0 (tu)
+				:ARG1 (vontade
+					:ARG0-of (rir-01
+						:ARG0 (tu)
+						:beneficiary (eu))))
+
+[STEP 4: AMR_WITH_VAR]
+(t / ter-01
+				:ARG0 (t1 / tu)
+				:ARG1 (v / vontade
+					:ARG0-of (r / rir-01
+						:ARG0 t1
+						:beneficiary (e / eu))))
+
+
+#::snt E abrirás às vezes a janela à toa, por gosto...
+[STEP 1: CONCEPTS]
+concept_1 | e
+concept_2 | abrir-01
+concept_3 | tu
+concept_4 | janela
+concept_5 | às-vezes
+concept_6 | toa
+concept_7 | gostar-01
+concept_8 | t
+
+[STEP 2: RELATIONS]
+e | :op2 | abrir-01
+abrir-01 | :ARG0 | tu
+abrir-01 | :ARG1 | janela
+abrir-01 | :time | às-vezes
+abrir-01 | :manner | toa
+abrir-01 | :purpose | gostar-01
+gostar-01 | :ARG0 | t
+
+[STEP 3: AMR_NO_VAR]
+(e
+				:op2 (abrir-01
+					:ARG0 (tu)
+					:ARG1 (janela)
+					:time (às-vezes)
+					:manner (toa)
+					:purpose (gostar-01
+						:ARG0 (tu))))
+
+[STEP 4: AMR_WITH_VAR]
+(e / e
+				:op2 (a / abrir-01
+					:ARG0 (t / tu)
+					:ARG1 (j / janela)
+					:time (a1 / às-vezes)
+					:manner (t1 / toa)
+					:purpose (g / gostar-01
+						:ARG0 t)))
+
+
+#::snt E teus amigos ficarão espantados de ouvir-te rir olhando o céu.
+[STEP 1: CONCEPTS]
+concept_1 | e
+concept_2 | ficar-03
+concept_3 | amigo
+concept_4 | teu
+concept_5 | espantar-01
+concept_6 | ouvir-01
+concept_7 | a
+concept_8 | rir-01
+concept_9 | tu
+concept_10 | olhar-01
+concept_11 | c
+
+[STEP 2: RELATIONS]
+e | :op2 | ficar-03
+ficar-03 | :ARG1 | amigo
+amigo | :poss | teu
+ficar-03 | :ARG2 | espantar-01
+espantar-01 | :ARG0 | ouvir-01
+ouvir-01 | :ARG0 | a
+ouvir-01 | :ARG1 | rir-01
+rir-01 | :ARG0 | tu
+rir-01 | :manner | olhar-01
+olhar-01 | :ARG0 | t
+olhar-01 | :ARG1 | c
+
+[STEP 3: AMR_NO_VAR]
+(e
+				:op2 (ficar-03
+					:ARG1 (amigo
+						:poss (teu))
+					:ARG2 (espantar-01
+						:ARG0 (ouvir-01
+							:ARG0 (amigo)
+							:ARG1 (rir-01
+								:ARG0 (tu)
+								:manner (olhar-01
+									:ARG0 (tu)
+									:ARG1 (céu)))))))
+
+[STEP 4: AMR_WITH_VAR]
+(e / e
+				:op2 (f / ficar-03
+					:ARG1 (a / amigo
+						:poss (t / teu))
+					:ARG2 (e1 / espantar-01
+						:ARG0 (o / ouvir-01
+							:ARG0 a
+							:ARG1 (r / rir-01
+								:ARG0 t
+								:manner (o1 / olhar-01
+									:ARG0 t
+									:ARG1 (c / céu))))))
+)
+
+#::snt Tu explicarás então: "Sim, as estrelas, elas sempre me fazem rir!" E eles te julgarão maluco.
+[STEP 1: CONCEPTS]
+concept_1 | e
+concept_2 | explicar-01
+concept_3 | tu
+concept_4 | fazer-02
+concept_5 | estrela
+concept_6 | eu
+concept_7 | rir-01
+concept_8 | e1
+concept_9 | julgar-01
+concept_10 | eles
+concept_11 | t
+concept_12 | maluco
+
+[STEP 2: RELATIONS]
+e | :op1 | explicar-01
+explicar-01 | :ARG0 | tu
+explicar-01 | :ARG1 | fazer-02
+fazer-02 | :ARG0 | estrela
+fazer-02 | :ARG1 | eu
+fazer-02 | :ARG2 | rir-01
+rir-01 | :ARG0 | e1
+e | :op2 | julgar-01
+julgar-01 | :ARG0 | eles
+julgar-01 | :ARG1 | t
+julgar-01 | :ARG2 | maluco
+
+[STEP 3: AMR_NO_VAR]
+(e
+				:op1 (explicar-01
+					:ARG0 (tu)
+					:ARG1 (fazer-02
+						:ARG0 (estrela)
+						:ARG1 (eu)
+						:ARG2 (rir-01
+							:ARG0 (tu))))
+				:op2 (julgar-01
+					:ARG0 (eles)
+					:ARG1 (tu)
+					:ARG2 (maluco)))
+
+[STEP 4: AMR_WITH_VAR]
+(e / e
+				:op1 (e1 / explicar-01
+					:ARG0 (t / tu)
+					:ARG1 (f / fazer-02
+						:ARG0 (e2 / estrela)
+						:ARG1 (e3 / eu)
+						:ARG2 (r / rir-01
+							:ARG0 t)))
+				:op2 (j / julgar-01
+					:ARG0 (e4 / eles)
+					:ARG1 t
+					:ARG2 (m / maluco)))
+
+
+#::snt Será uma peça que te prego...
+[STEP 1: CONCEPTS]
+concept_1 | peça
+concept_2 | eu
+concept_3 | pregar-01
+
+[STEP 2: RELATIONS]
+peça | :domain | eu
+peça | :purpose | pregar-01
+
+[STEP 3: AMR_NO_VAR]
+(peça
+				:domain (eu)
+				:purpose (pregar-01))
+
+[STEP 4: AMR_WITH_VAR]
+(p / peça
+				:domain (e / eu)
+				:purpose (p1 / pregar-01))
+
+
+#::snt E riu de novo.
+[STEP 1: CONCEPTS]
+concept_1 | e
+concept_2 | rir-01
+concept_3 | ele
+concept_4 | de-novo
+
+[STEP 2: RELATIONS]
+e | :op2 | rir-01
+rir-01 | :ARG0 | ele
+rir-01 | :mod | de-novo
+
+[STEP 3: AMR_NO_VAR]
+(e
+				:op2 (rir-01
+					:ARG0 (ele)
+					:mod (de-novo)))
+
+[STEP 4: AMR_WITH_VAR]
+(e / e
+				:op2 (r / rir-01
+					:ARG0 (e1 / ele)
+					:mod (d / de-novo)))
+
+
+#::snt - Será como se eu te houvesse dado, em vez de estrelas, montões de guizos que riem...
+[STEP 1: CONCEPTS]
+concept_1 | ter-01
+concept_2 | eu
+concept_3 | dar-01
+concept_4 | e
+concept_5 | montão
+concept_6 | guizo
+concept_7 | rir-01
+concept_8 | em-vez-de
+concept_9 | estrela
+
+[STEP 2: RELATIONS]
+ter-01 | :ARG0 | eu
+ter-01 | :ARG1 | dar-01
+dar-01 | :ARG0 | e
+dar-01 | :ARG1 | montão
+montão | :mod | guizo
+guizo | :ARG0-of | rir-01
+dar-01 | :manner | em-vez-de
+em-vez-de | :ARG1 | estrela
+
+[STEP 3: AMR_NO_VAR]
+(ter-01
+				:ARG0 (eu)
+				:ARG1 (dar-01
+					:ARG0 (eu)
+					:ARG1 (montão
+						:mod (guizo
+							:ARG0-of (rir-01)))
+					:manner (em-vez-de
+						:ARG1 (estrela))))
+
+[STEP 4: AMR_WITH_VAR]
+(t / ter-01
+				:ARG0 (e / eu)
+				:ARG1 (d / dar-01
+					:ARG0 e
+					:ARG1 (m / montão
+						:mod (g / guizo
+							:ARG0-of (r / rir-01)))
+					:manner (e1 / em-vez-de
+						:ARG1 (e2 / estrela))))
+
+
+#::snt E riu de novo, mais uma vez.
+[STEP 1: CONCEPTS]
+concept_1 | e
+concept_2 | rir-01
+concept_3 | ele
+concept_4 | de-novo
+
+[STEP 2: RELATIONS]
+e | :op2 | rir-01
+rir-01 | :ARG0 | ele
+rir-01 | :mod | de-novo
+
+[STEP 3: AMR_NO_VAR]
+(e
+				:op2 (rir-01
+					:ARG0 (ele)
+					:mod (de-novo)))
+
+[STEP 4: AMR_WITH_VAR]
+(e / e
+				:op2 (r / rir-01
+					:ARG0 (e1 / ele)
+					:mod (d / de-novo)))
+
+
+#::snt Depois, ficou sério: - Esta noite... tu sabes... não venhas.
+[STEP 1: CONCEPTS]
+concept_1 | ficar-201
+concept_2 | ele
+concept_3 | sério
+concept_4 | depois
+
+[STEP 2: RELATIONS]
+ficar-201 | :ARG1 | ele
+ficar-201 | :ARG2 | sério
+ficar-201 | :time | depois
+
+[STEP 3: AMR_NO_VAR]
+(ficar-201
+				:ARG1 (ele)
+				:ARG2 (sério)
+				:time (depois))
+
+[STEP 4: AMR_WITH_VAR]
+(f / ficar-201
+				:ARG1 (e / ele)
+				:ARG2 (s / sério)
+				:time (d / depois))
+
+
+#::snt - Eu não te deixarei.
+[STEP 1: CONCEPTS]
+concept_1 | deixar-01
+concept_2 | eu
+concept_3 | tu
+
+[STEP 2: RELATIONS]
+deixar-01 | :polarity | -
+deixar-01 | :ARG0 | eu
+deixar-01 | :ARG1 | tu
+
+[STEP 3: AMR_NO_VAR]
+(deixar-01 :polarity -
+				:ARG0 (eu)
+				:ARG1 (tu))
+
+[STEP 4: AMR_WITH_VAR]
+(d / deixar-01 :polarity -
+				:ARG0 (e / eu)
+				:ARG1 (t / tu))
+
+
+#::snt - Eu parecerei sofrer...
+[STEP 1: CONCEPTS]
+concept_1 | parecer-01
+concept_2 | eu
+concept_3 | sofrer-01
+concept_4 | e
+
+[STEP 2: RELATIONS]
+parecer-01 | :ARG0 | eu
+parecer-01 | :ARG1 | sofrer-01
+sofrer-01 | :ARG0 | e
+
+[STEP 3: AMR_NO_VAR]
+(parecer-01
+				:ARG0 (eu)
+				:ARG1 (sofrer-01
+					:ARG0 (eu)))
+
+[STEP 4: AMR_WITH_VAR]
+(p / parecer-01
+				:ARG0 (e / eu)
+				:ARG1 (s / sofrer-01
+					:ARG0 e))
+
+
+#::snt eu parecerei morrer.
+[STEP 1: CONCEPTS]
+concept_1 | parecer-01
+concept_2 | eu
+concept_3 | morrer-01
+concept_4 | e
+
+[STEP 2: RELATIONS]
+parecer-01 | :ARG0 | eu
+parecer-01 | :ARG1 | morrer-01
+morrer-01 | :ARG0 | e
+
+[STEP 3: AMR_NO_VAR]
+(parecer-01
+				:ARG0 (eu)
+				:ARG1 (morrer-01
+					:ARG0 (eu)))
+
+[STEP 4: AMR_WITH_VAR]
+(p / parecer-01
+				:ARG0 (e / eu)
+				:ARG1 (m / morrer-01
+					:ARG0 e))
+
+
+#::snt É assim.
+[STEP 1: CONCEPTS]
+concept_1 | assim
+concept_2 | :op1 | assim
+
+[STEP 2: RELATIONS]
+assim | :op1 | assim
+
+[STEP 3: AMR_NO_VAR]
+(assim
+				:op1 (assim))
+
+[STEP 4: AMR_WITH_VAR]
+(a / assim
+				:op1 (a1 / assim))
+
+
+#::snt Não venhas ver.
+[STEP 1: CONCEPTS]
+concept_1 | vir-01
+concept_2 | tu
+concept_3 | ver-01
+concept_4 | t
+
+[STEP 2: RELATIONS]
+vir-01 | :polarity | -
+vir-01 | :ARG0 | tu
+vir-01 | :ARG1 | ver-01
+ver-01 | :ARG0 | t
+
+[STEP 3: AMR_NO_VAR]
+(vir-01 :polarity -
+				:ARG0 (tu)
+				:ARG1 (ver-01
+					:ARG0 (tu)))
+
+[STEP 4: AMR_WITH_VAR]
+(v / vir-01 :polarity -
+				:ARG0 (t / tu)
+				:ARG1 (v1 / ver-01
+					:ARG0 t))
+
+
+#::snt Não vale a pena...
+[STEP 1: CONCEPTS]
+concept_1 | valer-10
+concept_2 | pena
+
+[STEP 2: RELATIONS]
+valer-10 | :polarity | -
+valer-10 | :ARG1 | pena
+
+[STEP 3: AMR_NO_VAR]
+(valer-10 :polarity -
+				:ARG1 (pena))
+
+[STEP 4: AMR_WITH_VAR]
+(v / valer-10 :polarity -
+				:ARG1 (p / pena))
+
+
+#::snt - Eu não te deixarei.
+[STEP 1: CONCEPTS]
+concept_1 | deixar-01
+concept_2 | eu
+concept_3 | tu
+
+[STEP 2: RELATIONS]
+deixar-01 | :polarity | -
+deixar-01 | :ARG0 | eu
+deixar-01 | :ARG1 | tu
+
+[STEP 3: AMR_NO_VAR]
+(deixar-01 :polarity -
+				:ARG0 (eu)
+				:ARG1 (tu))
+
+[STEP 4: AMR_WITH_VAR]
+(d / deixar-01 :polarity -
+				:ARG0 (e / eu)
+				:ARG1 (t / tu))
+
+
+#::snt Mas ele estava preocupado.
+[STEP 1: CONCEPTS]
+concept_1 | contrast-01
+concept_2 | preocupar-01
+concept_3 | ele
+
+[STEP 2: RELATIONS]
+contrast-01 | :ARG2 | preocupar-01
+preocupar-01 | :ARG0 | ele
+
+[STEP 3: AMR_NO_VAR]
+(contrast-01
+				:ARG2 (preocupar-01
+					:ARG0 (ele)))
+
+[STEP 4: AMR_WITH_VAR]
+(c / contrast-01
+				:ARG2 (p / preocupar-01
+					:ARG0 (e / ele)))
+
+
+#::snt - Eu digo isto... também por causa da serpente.
+[STEP 1: CONCEPTS]
+concept_1 | dizer-01
+concept_2 | eu
+concept_3 | isto
+concept_4 | cause-01
+concept_5 | serpente
+
+[STEP 2: RELATIONS]
+dizer-01 | :ARG0 | eu
+dizer-01 | :ARG1 | isto
+dizer-01 | :cause | cause-01
+cause-01 | :ARG0 | serpente
+
+[STEP 3: AMR_NO_VAR]
+(dizer-01
+				:ARG0 (eu)
+				:ARG1 (isto)
+				:cause (cause-01
+					:ARG0 (serpente)))
+
+[STEP 4: AMR_WITH_VAR]
+(d / dizer-01
+				:ARG0 (e / eu)
+				:ARG1 (i / isto)
+				:cause (c / cause-01
+					:ARG0 (s / serpente)))
+
+
+#::snt É preciso que não te morda.
+[STEP 1: CONCEPTS]
+concept_1 | precisar-01
+concept_2 | morder-01
+concept_3 | tu
+
+[STEP 2: RELATIONS]
+precisar-01 | :ARG2 | morder-01
+morder-01 | :polarity | -
+morder-01 | :ARG0 | tu
+
+[STEP 3: AMR_NO_VAR]
+(precisar-01
+				:ARG2 (morder-01 :polarity -
+					:ARG0 (tu)))
+
+[STEP 4: AMR_WITH_VAR]
+(p / precisar-01
+				:ARG2 (m / morder-01 :polarity -
+					:ARG0 (t / tu)))
+
+
+#::snt As serpentes são más.
+[STEP 1: CONCEPTS]
+concept_1 | má
+concept_2 | serpente
+
+[STEP 2: RELATIONS]
+má | :domain | serpente
+
+[STEP 3: AMR_NO_VAR]
+(má
+				:domain (serpente))
+
+[STEP 4: AMR_WITH_VAR]
+(m / má
+				:domain (s / serpente))
+
+
+#::snt Podem morder por gosto...
+[STEP 1: CONCEPTS]
+concept_1 | poder-201
+concept_2 | morder-01
+
+[STEP 2: RELATIONS]
+poder-201 | :ARG1 | morder-01
+
+[STEP 3: AMR_NO_VAR]
+(poder-201
+				:ARG1 (morder-01))
+
+[STEP 4: AMR_WITH_VAR]
+(p / poder-201
+				:ARG1 (m / morder-01))
+
+
+#::snt - Eu não te deixarei.
+[STEP 1: CONCEPTS]
+concept_1 | deixar-01
+concept_2 | eu
+concept_3 | tu
+
+[STEP 2: RELATIONS]
+deixar-01 | :polarity | -
+deixar-01 | :ARG0 | eu
+deixar-01 | :ARG1 | tu
+
+[STEP 3: AMR_NO_VAR]
+(deixar-01 :polarity -
+				:ARG0 (eu)
+				:ARG1 (tu))
+
+[STEP 4: AMR_WITH_VAR]
+(d / deixar-01 :polarity -
+				:ARG0 (e / eu)
+				:ARG1 (t / tu))
+
+
+#::snt Mas uma coisa o tranqüilizou: - Elas não têm veneno, é verdade, para uma segunda mordida...
+[STEP 1: CONCEPTS]
+concept_1 | contrast-01
+concept_2 | tranqüilar-01
+concept_3 | coisa
+concept_4 | ter-01
+concept_5 | elas
+concept_6 | veneno
+concept_7 | mordida
+concept_8 | ordinal-entity
+
+[STEP 2: RELATIONS]
+contrast-01 | :ARG2 | tranqüilar-01
+tranqüilar-01 | :ARG0 | coisa
+tranqüilar-01 | :ARG1 | ter-01
+ter-01 | :polarity | -
+ter-01 | :ARG0 | elas
+ter-01 | :ARG1 | veneno
+tranqüilar-01 | :purpose | mordida
+mordida | :ord | ordinal-entity
+ordinal-entity | :value | 2
+
+[STEP 3: AMR_NO_VAR]
+(contrast-01
+				:ARG2 (tranqüilar-01
+					:ARG0 (coisa)
+					:ARG1 (ter-01 :polarity -
+						:ARG0 (elas)
+						:ARG1 (veneno))
+					:purpose (mordida
+						:ord (ordinal-entity :value 2))))
+
+[STEP 4: AMR_WITH_VAR]
+(c / contrast-01
+				:ARG2 (t / tranqüilar-01
+					:ARG0 (c1 / coisa)
+					:ARG1 (t1 / ter-01 :polarity -
+						:ARG0 (e / elas)
+						:ARG1 (v / veneno))
+					:purpose (m / mordida
+						:ord (o / ordinal-entity :value 2))))
+
+
+#::snt Essa noite, não o vi pôr-se a caminho.
+[STEP 1: CONCEPTS]
+concept_1 | ver-01
+concept_2 | eu
+concept_3 | ele
+concept_4 | pôr-03
+concept_5 | e
+concept_6 | caminhar-01
+concept_7 | date-entity
+concept_8 | noite
+concept_9 | essa
+
+[STEP 2: RELATIONS]
+ver-01 | :polarity | -
+ver-01 | :ARG0 | eu
+ver-01 | :ARG1 | ele
+ver-01 | :ARG2 | pôr-03
+pôr-03 | :ARG0 | e
+pôr-03 | :ARG1 | caminhar-01
+ver-01 | :time | date-entity
+date-entity | :dayperiod | noite
+date-entity | :mod | essa
+
+[STEP 3: AMR_NO_VAR]
+(ver-01 :polarity -
+				:ARG0 (eu)
+				:ARG1 (ele)
+				:ARG2 (pôr-03
+					:ARG0 (eu)
+					:ARG1 (caminhar-01))
+				:time (date-entity
+					:dayperiod (noite)
+					:mod (essa)))
+
+[STEP 4: AMR_WITH_VAR]
+(v / ver-01 :polarity -
+				:ARG0 (e / eu)
+				:ARG1 (e1 / ele)
+				:ARG2 (p / pôr-03
+					:ARG0 e
+					:ARG1 (c / caminhar-01))
+				:time (d / date-entity
+					:dayperiod (n / noite)
+					:mod (e2 / essa)))
+
+
+#::snt Evadiu-se sem rumor.
+[STEP 1: CONCEPTS]
+concept_1 | evadir-01
+concept_2 | rumor
+concept_3 | sem
+
+[STEP 2: RELATIONS]
+evadir-01 | :manner | rumor
+rumor | :polarity | -
+
+[STEP 3: AMR_NO_VAR]
+(evadir-01
+				:manner (rumor :polarity -))
+
+[STEP 4: AMR_WITH_VAR]
+(e / evadir-01
+				:manner (r / rumor :polarity -))
+
+
+#::snt Quando consegui apanhá-lo, caminhava decidido, a passo rápido.
+[STEP 1: CONCEPTS]
+concept_1 | caminhar-01
+concept_2 | eu
+concept_3 | decidido
+concept_4 | passo
+concept_5 | rápido
+concept_6 | conseguir-01
+concept_7 | e
+concept_8 | apanhar-01
+concept_9 | ele
+
+[STEP 2: RELATIONS]
+caminhar-01 | :ARG0 | eu
+caminhar-01 | :manner | decidido
+caminhar-01 | :quant | passo
+passo | :mod | rápido
+caminhar-01 | :time | conseguir-01
+conseguir-01 | :ARG0 | e
+conseguir-01 | :ARG1 | apanhar-01
+apanhar-01 | :ARG0 | e
+apanhar-01 | :ARG1 | ele
+
+[STEP 3: AMR_NO_VAR]
+(caminhar-01
+				:ARG0 (eu)
+				:manner (decidido)
+				:quant (passo
+					:mod (rápido))
+				:time (conseguir-01
+					:ARG0 (eu)
+					:ARG1 (apanhar-01
+						:ARG0 (eu)
+						:ARG1 (ele))))
+
+[STEP 4: AMR_WITH_VAR]
+(c / caminhar-01
+				:ARG0 (e / eu)
+				:manner (d / decidido)
+				:quant (p / passo
+					:mod (r / rápido))
+				:time (c1 / conseguir-01
+					:ARG0 e
+					:ARG1 (a / apanhar-01
+						:ARG0 e
+						:ARG1 (e1 / ele))))
+
+
+#::snt Disse-me apenas: - Ah! estás aqui...
+[STEP 1: CONCEPTS]
+concept_1 | dizer-01
+concept_2 | ele
+concept_3 | ah
+concept_4 | e
+concept_5 | aqui
+concept_6 | estás
+concept_7 | apenas
+
+[STEP 2: RELATIONS]
+dizer-01 | :ARG0 | ele
+dizer-01 | :ARG1 | ah
+ah | :op1 | e
+e | :location | aqui
+aqui | :domain | estás
+dizer-01 | :mod | apenas
+
+[STEP 3: AMR_NO_VAR]
+(dizer-01
+				:ARG0 (ele)
+				:ARG1 (ah
+					:op1 (e
+						:location (aqui
+							:domain (estás))))
+				:mod (apenas))
+
+[STEP 4: AMR_WITH_VAR]
+(d / dizer-01
+				:ARG0 (e / ele)
+				:ARG1 (a / ah
+					:op1 (e1 / e
+						:location (a1 / aqui
+							:domain (e2 / estás))))
+				:mod (a2 / apenas))
+
+
+#::snt E ele me tomou pela mão.
+[STEP 1: CONCEPTS]
+concept_1 | e
+concept_2 | tomar-03
+concept_3 | ele
+concept_4 | eu
+concept_5 | mão
+concept_6 | e1
+
+[STEP 2: RELATIONS]
+e | :op2 | tomar-03
+tomar-03 | :ARG0 | ele
+tomar-03 | :ARG1 | eu
+tomar-03 | :ARG2 | mão
+mão | :part-of | e1
+
+[STEP 3: AMR_NO_VAR]
+(e
+				:op2 (tomar-03
+					:ARG0 (ele)
+					:ARG1 (eu)
+					:ARG2 (mão
+						:part-of (ele))))
+
+[STEP 4: AMR_WITH_VAR]
+(e / e
+				:op2 (t / tomar-03
+					:ARG0 (e1 / ele)
+					:ARG1 (e2 / eu)
+					:ARG2 (m / mão
+						:part-of e1)))
+
+
+#::snt Mas afligiu-se ainda: - Fizeste mal.
+[STEP 1: CONCEPTS]
+concept_1 | contrast-01
+concept_2 | aflingir-01
+concept_3 | ele
+concept_4 | fazer-02
+concept_5 | tu
+concept_6 | mal
+
+[STEP 2: RELATIONS]
+contrast-01 | :ARG2 | aflingir-01
+aflingir-01 | :ARG0 | ele
+aflingir-01 | :ARG1 | fazer-02
+fazer-02 | :ARG0 | tu
+fazer-02 | :ARG2 | mal
+
+[STEP 3: AMR_NO_VAR]
+(contrast-01
+				:ARG2 (aflingir-01
+					:ARG0 (ele)
+					:ARG1 (fazer-02
+						:ARG0 (tu)
+						:ARG2 (mal))))
+
+[STEP 4: AMR_WITH_VAR]
+(c / contrast-01
+				:ARG2 (a / aflingir-01
+					:ARG0 (e / ele)
+					:ARG1 (f / fazer-02
+						:ARG0 (t / tu)
+						:ARG2 (m / mal))))
+
+
+#::snt Tu sofrerás.
+[STEP 1: CONCEPTS]
+concept_1 | sofrer-01
+concept_2 | tu
+
+[STEP 2: RELATIONS]
+sofrer-01 | :ARG0 | tu
+
+[STEP 3: AMR_NO_VAR]
+(sofrer-01
+				:ARG0 (tu))
+
+[STEP 4: AMR_WITH_VAR]
+(s / sofrer-01
+				:ARG0 (t / tu))
+
+
+#::snt Eu parecerei morto e não será verdade...
+[STEP 1: CONCEPTS]
+concept_1 | e
+concept_2 | parecer-01
+concept_3 | eu
+concept_4 | morto
+concept_5 | verdade
+
+[STEP 2: RELATIONS]
+e | :op1 | parecer-01
+parecer-01 | :ARG0 | eu
+parecer-01 | :ARG1 | morto
+e | :op2 | verdade
+verdade | :polarity | -
+
+[STEP 3: AMR_NO_VAR]
+(e
+				:op1 (parecer-01
+					:ARG0 (eu)
+					:ARG1 (morto))
+				:op2 (verdade :polarity -))
+
+[STEP 4: AMR_WITH_VAR]
+(e / e
+				:op1 (p / parecer-01
+					:ARG0 (e1 / eu)
+					:ARG1 (m / morto))
+				:op2 (v / verdade :polarity -))
+
+
+#::snt Eu me calava.
+[STEP 1: CONCEPTS]
+concept_1 | calar-01
+concept_2 | eu
+
+[STEP 2: RELATIONS]
+calar-01 | :ARG0 | eu
+
+[STEP 3: AMR_NO_VAR]
+(calar-01
+				:ARG0 (eu))
+
+[STEP 4: AMR_WITH_VAR]
+(c / calar-01
+				:ARG0 (e / eu))
+
+
+#::snt - Tu compreendes.
+[STEP 1: CONCEPTS]
+concept_1 | compreender-01
+concept_2 | tu
+
+[STEP 2: RELATIONS]
+compreender-01 | :ARG0 | tu
+
+[STEP 3: AMR_NO_VAR]
+(compreender-01
+				:ARG0 (tu))
+
+[STEP 4: AMR_WITH_VAR]
+(c / compreender-01
+				:ARG0 (t / tu))
+
+
+#::snt É longe demais.
+[STEP 1: CONCEPTS]
+concept_1 | longe
+concept_2 | demais
+
+[STEP 2: RELATIONS]
+longe | :degree | demais
+
+[STEP 3: AMR_NO_VAR]
+(longe
+				:degree (demais))
+
+[STEP 4: AMR_WITH_VAR]
+(l / longe
+				:degree (d / demais))
+
+
+#::snt Eu não posso carregar este corpo.
+[STEP 1: CONCEPTS]
+concept_1 | poder-201
+concept_2 | eu
+concept_3 | carregar-01
+concept_4 | e
+concept_5 | corpo
+concept_6 | este
+
+[STEP 2: RELATIONS]
+poder-201 | :polarity | -
+poder-201 | :ARG0 | eu
+poder-201 | :ARG1 | carregar-01
+carregar-01 | :ARG0 | e
+carregar-01 | :ARG1 | corpo
+corpo | :mod | este
+
+[STEP 3: AMR_NO_VAR]
+(poder-201 :polarity -
+				:ARG0 (eu)
+				:ARG1 (carregar-01
+					:ARG0 (eu)
+					:ARG1 (corpo
+						:mod (este))))
+
+[STEP 4: AMR_WITH_VAR]
+(p / poder-201 :polarity -
+				:ARG0 (e / eu)
+				:ARG1 (c / carregar-01
+					:ARG0 e
+					:ARG1 (c1 / corpo
+						:mod (e1 / este))))
+
+
+#::snt É muito pesado.
+[STEP 1: CONCEPTS]
+concept_1 | pesado
+concept_2 | muito
+
+[STEP 2: RELATIONS]
+pesado | :degree | muito
+
+[STEP 3: AMR_NO_VAR]
+(pesado
+				:degree (muito))
+
+[STEP 4: AMR_WITH_VAR]
+(p / pesado
+				:degree (m / muito))
+
+
+#::snt Eu me calava.
+[STEP 1: CONCEPTS]
+concept_1 | calar-01
+concept_2 | eu
+
+[STEP 2: RELATIONS]
+calar-01 | :ARG0 | eu
+
+[STEP 3: AMR_NO_VAR]
+(calar-01
+				:ARG0 (eu))
+
+[STEP 4: AMR_WITH_VAR]
+(c / calar-01
+				:ARG0 (e / eu))
+
+
+#::snt - Mas será como uma velha casca abandonada.
+[STEP 1: CONCEPTS]
+concept_1 | contrast-01
+concept_2 | ser-01
+concept_3 | velha
+concept_4 | casca
+concept_5 | abandonada
+
+[STEP 2: RELATIONS]
+contrast-01 | :ARG2 | ser-01
+ser-01 | :ARG1 | velha
+velha | :mod | casca
+casca | :mod | abandonada
+
+[STEP 3: AMR_NO_VAR]
+(contrast-01
+				:ARG2 (ser-01
+					:ARG1 (velha
+						:mod (casca
+							:mod (abandonada)))))
+
+[STEP 4: AMR_WITH_VAR]
+(c / contrast-01
+				:ARG2 (s / ser-01
+					:ARG1 (v / velha
+						:mod (c1 / casca
+							:mod (a / abandonada)))))
+
+
+#::snt Uma casca de árvore não é triste...
+[STEP 1: CONCEPTS]
+concept_1 | triste
+concept_2 | casca
+concept_3 | árvore
+
+[STEP 2: RELATIONS]
+triste | :polarity | -
+triste | :domain | casca
+casca | :mod | árvore
+
+[STEP 3: AMR_NO_VAR]
+(triste :polarity -
+				:domain (casca
+					:mod (árvore)))
+
+[STEP 4: AMR_WITH_VAR]
+(t / triste :polarity -
+				:domain (c / casca
+					:mod (a / árvore)))
+
+
+#::snt Eu me calava.
+[STEP 1: CONCEPTS]
+concept_1 | calar-01
+concept_2 | eu
+
+[STEP 2: RELATIONS]
+calar-01 | :ARG0 | eu
+
+[STEP 3: AMR_NO_VAR]
+(calar-01
+				:ARG0 (eu))
+
+[STEP 4: AMR_WITH_VAR]
+(c / calar-01
+				:ARG0 (e / eu))
+
+
+#::snt Perdeu um pouco de coragem.
+[STEP 1: CONCEPTS]
+concept_1 | perder-01
+concept_2 | ele
+concept_3 | coragem
+concept_4 | pouco
+
+[STEP 2: RELATIONS]
+perder-01 | :ARG0 | ele
+perder-01 | :ARG1 | coragem
+coragem | :degree | pouco
+
+[STEP 3: AMR_NO_VAR]
+(perder-01
+				:ARG0 (ele)
+				:ARG1 (coragem
+					:degree (pouco)))
+
+[STEP 4: AMR_WITH_VAR]
+(p / perder-01
+				:ARG0 (e / ele)
+				:ARG1 (c / coragem
+					:degree (p1 / pouco)))
+
+
+#::snt Mas fez ainda um esforço: - Será bonito, sabes?
+[STEP 1: CONCEPTS]
+concept_1 | contrast-01
+concept_2 | fazer-02
+concept_3 | ele
+concept_4 | esforço
+concept_5 | ainda
+concept_6 | bonito
+concept_7 | saber-01
+concept_8 | tu
+
+[STEP 2: RELATIONS]
+contrast-01 | :ARG2 | fazer-02
+fazer-02 | :ARG0 | ele
+fazer-02 | :ARG1 | esforço
+esforço | :mod | ainda
+fazer-02 | :purpose | bonito
+bonito | :domain | saber-01
+saber-01 | :ARG0 | tu
+
+[STEP 3: AMR_NO_VAR]
+(contrast-01
+				:ARG2 (fazer-02
+					:ARG0 (ele)
+					:ARG1 (esforço
+						:mod (ainda))
+					:purpose (bonito
+						:domain (saber-01
+							:ARG0 (tu)))))
+
+[STEP 4: AMR_WITH_VAR]
+(c / contrast-01
+				:ARG2 (f / fazer-02
+					:ARG0 (e / ele)
+					:ARG1 (e1 / esforço
+						:mod (a / ainda))
+					:purpose (b / bonito
+						:domain (s1 / saber-01
+							:ARG0 (t / tu)))))
+
+
+#::snt Eu também olharei as estrelas.
+[STEP 1: CONCEPTS]
+concept_1 | olhar-01
+concept_2 | eu
+concept_3 | estrela
+
+[STEP 2: RELATIONS]
+olhar-01 | :ARG0 | eu
+olhar-01 | :ARG1 | estrela
+
+[STEP 3: AMR_NO_VAR]
+(olhar-01
+				:ARG0 (eu)
+				:ARG1 (estrela))
+
+[STEP 4: AMR_WITH_VAR]
+(o / olhar-01
+				:ARG0 (e / eu)
+				:ARG1 (e1 / estrela))
+
+
+#::snt Todas as estrelas serão poços com uma roldana enferrujada.
+[STEP 1: CONCEPTS]
+concept_1 | poço
+concept_2 | estrela
+concept_3 | todas
+concept_4 | roldana
+concept_5 | enferrujada
+
+[STEP 2: RELATIONS]
+poço | :domain | estrela
+estrela | :mod | todas
+poço | :consist-of | roldana
+roldana | :mod | enferrujada
+
+[STEP 3: AMR_NO_VAR]
+(poço
+				:domain (estrela
+					:mod (todas))
+				:consist-of (roldana
+					:mod (enferrujada)))
+
+[STEP 4: AMR_WITH_VAR]
+(p / poço
+				:domain (e / estrela
+					:mod (t / todas))
+				:consist-of (r / roldana
+					:mod (e1 / enferrujada)))
+
+
+#::snt Todas as estrelas me darão de beber...
+[STEP 1: CONCEPTS]
+concept_1 | dar-01
+concept_2 | estrela
+concept_3 | todas
+concept_4 | eu
+concept_5 | beber-01
+
+[STEP 2: RELATIONS]
+dar-01 | :ARG0 | estrela
+estrela | :mod | todas
+dar-01 | :ARG1 | eu
+dar-01 | :ARG2 | beber-01
+
+[STEP 3: AMR_NO_VAR]
+(dar-01
+				:ARG0 (estrela
+					:mod (todas))
+				:ARG1 (eu)
+				:ARG2 (beber-01))
+
+[STEP 4: AMR_WITH_VAR]
+(d / dar-01
+				:ARG0 (e / estrela
+					:mod (t / todas))
+				:ARG1 (e1 / eu)
+				:ARG2 (b / beber-01))
+
+
+#::snt Eu me calava.
+[STEP 1: CONCEPTS]
+concept_1 | calar-01
+concept_2 | eu
+
+[STEP 2: RELATIONS]
+calar-01 | :ARG0 | eu
+
+[STEP 3: AMR_NO_VAR]
+(calar-01
+				:ARG0 (eu))
+
+[STEP 4: AMR_WITH_VAR]
+(c / calar-01
+				:ARG0 (e / eu))
+
+
+#::snt - Será tão divertido!
+[STEP 1: CONCEPTS]
+concept_1 | divertir-01
+concept_2 | tão
+
+[STEP 2: RELATIONS]
+divertir-01 | :degree | tão
+
+[STEP 3: AMR_NO_VAR]
+(divertir-01
+				:degree (tão))
+
+[STEP 4: AMR_WITH_VAR]
+(d / divertir-01
+				:degree (t / tão))
+
+
+#::snt Tu terás quinhentos milhões de guizos, eu terei quinhentos milhões de fontes...
+[STEP 1: CONCEPTS]
+concept_1 | ter-01
+concept_2 | tu
+concept_3 | guizo
+concept_4 | eu
+concept_5 | fonte
+
+[STEP 2: RELATIONS]
+ter-01 | :ARG0 | tu
+ter-01 | :ARG1 | guizo
+ter-01 | :ARG2 | eu
+ter-01 | :ARG1 | fonte
+
+[STEP 3: AMR_NO_VAR]
+(ter-01
+				:ARG0 (tu)
+				:ARG1 (guizo)
+				:ARG2 (eu)
+				:ARG1 (fonte))
+
+[STEP 4: AMR_WITH_VAR]
+(t / ter-01
+				:ARG0 (t1 / tu)
+				:ARG1 (g / guizo)
+				:ARG2 (e / eu)
+				:ARG1 (f / fonte))
+
+
+#::snt E ele se calou também, porque estava chorando...
+[STEP 1: CONCEPTS]
+concept_1 | e
+concept_2 | calar-01
+concept_3 | ele
+concept_4 | também
+concept_5 | chorar-01
+concept_6 | e1
+
+[STEP 2: RELATIONS]
+e | :op2 | calar-01
+calar-01 | :ARG0 | ele
+calar-01 | :mod | também
+calar-01 | :cause | chorar-01
+chorar-01 | :ARG0 | e1
+
+[STEP 3: AMR_NO_VAR]
+(e
+				:op2 (calar-01
+					:ARG0 (ele)
+					:mod (também)
+					:cause (chorar-01
+						:ARG0 (ele))))
+
+[STEP 4: AMR_WITH_VAR]
+(e / e
+				:op2 (c / calar-01
+					:ARG0 (e1 / ele)
+					:mod (t / também)
+					:cause (c1 / chorar-01
+						:ARG0 e1)))
+
+
+#::snt - É aqui.
+[STEP 1: CONCEPTS]
+concept_1 | aqui
+
+[STEP 2: RELATIONS]
+aqui | :domain | mundo
+
+[STEP 3: AMR_NO_VAR]
+(aqui
+				:domain (mundo))
+
+[STEP 4: AMR_WITH_VAR]
+(a / aqui
+				:domain (m / mundo))
+
+
+#::snt Deixa-me dar um passo sozinho.
+[STEP 1: CONCEPTS]
+concept_1 | deixar-02
+concept_2 | eu
+concept_3 | dar-01
+concept_4 | e
+concept_5 | passo
+concept_6 | sozinho
+
+[STEP 2: RELATIONS]
+deixar-02 | :ARG0 | eu
+deixar-02 | :ARG1 | dar-01
+dar-01 | :ARG0 | e
+dar-01 | :ARG1 | passo
+passo | :quant | 1
+dar-01 | :manner | sozinho
+
+[STEP 3: AMR_NO_VAR]
+(deixar-02
+				:ARG0 (eu)
+				:ARG1 (dar-01
+					:ARG0 (eu)
+					:ARG1 (passo :quant 1)
+					:manner (sozinho)))
+
+[STEP 4: AMR_WITH_VAR]
+(d / deixar-02
+				:ARG0 (e / eu)
+				:ARG1 (d1 / dar-01
+					:ARG0 e
+					:ARG1 (p / passo :quant 1)
+					:manner (s / sozinho)))
+
+
+#::snt E sentou-se, porque tinha medo.
+[STEP 1: CONCEPTS]
+concept_1 | e
+concept_2 | sentar-01
+concept_3 | ele
+concept_4 | ter-01
+concept_5 | e1
+concept_6 | medo
+
+[STEP 2: RELATIONS]
+e | :op2 | sentar-01
+sentar-01 | :ARG0 | ele
+e | :cause | ter-01
+ter-01 | :ARG0 | e1
+ter-01 | :ARG1 | medo
+
+[STEP 3: AMR_NO_VAR]
+(e
+				:op2 (sentar-01
+					:ARG0 (ele))
+				:cause (ter-01
+					:ARG0 (ele)
+					:ARG1 (medo)))
+
+[STEP 4: AMR_WITH_VAR]
+(e / e
+				:op2 (s / sentar-01
+					:ARG0 (e1 / ele))
+				:cause (t / ter-01
+					:ARG0 e1
+					:ARG1 (m / medo)))
+
+
+#::snt Disse ainda: - Tu sabes... minha flor... eu sou responsável por ela!
+[STEP 1: CONCEPTS]
+concept_1 | dizer-01
+concept_2 | ele
+concept_3 | saber-01
+concept_4 | tu
+concept_5 | flor
+concept_6 | e
+concept_7 | responsável
+
+[STEP 2: RELATIONS]
+dizer-01 | :ARG0 | ele
+dizer-01 | :ARG1 | saber-01
+saber-01 | :ARG0 | tu
+saber-01 | :ARG1 | flor
+flor | :poss | e
+saber-01 | :cause | responsável
+responsável | :domain | e
+responsável | :beneficiary | flor
+
+[STEP 3: AMR_NO_VAR]
+(dizer-01
+				:ARG0 (ele)
+				:ARG1 (saber-01
+					:ARG0 (tu)
+					:ARG1 (flor
+						:poss (ele))
+					:cause (responsável
+						:domain (ele)
+						:beneficiary (flor))))
+
+[STEP 4: AMR_WITH_VAR]
+(d / dizer-01
+				:ARG0 (e / ele)
+				:ARG1 (s / saber-01
+					:ARG0 (t / tu)
+					:ARG1 (f / flor
+						:poss e)
+					:cause (r / responsável
+						:domain e
+						:beneficiary f)))
+
+
+#::snt Ela é tão frágil!
+[STEP 1: CONCEPTS]
+concept_1 | frágil
+concept_2 | ela
+concept_3 | tão
+
+[STEP 2: RELATIONS]
+frágil | :domain | ela
+frágil | :degree | tão
+
+[STEP 3: AMR_NO_VAR]
+(frágil
+				:domain (ela)
+				:degree (tão))
+
+[STEP 4: AMR_WITH_VAR]
+(f / frágil
+				:domain (e / ela)
+				:degree (t / tão))
+
+
+#::snt Tão ingênua!
+[STEP 1: CONCEPTS]
+concept_1 | ingênua
+concept_2 | tão
+
+[STEP 2: RELATIONS]
+ingênua | :degree | tão
+
+[STEP 3: AMR_NO_VAR]
+(ingênua
+				:degree (tão))
+
+[STEP 4: AMR_WITH_VAR]
+(i / ingênua
+				:degree (t / tão))
+
+
+#::snt Tem quatro espinhos de nada para defendê-la do mundo...
+[STEP 1: CONCEPTS]
+concept_1 | ter-01
+concept_2 | espinho
+concept_3 | nada
+concept_4 | defender-02
+concept_5 | ela
+concept_6 | mundo
+
+[STEP 2: RELATIONS]
+ter-01 | :ARG1 | espinho
+espinho | :consist-of | nada
+ter-01 | :purpose | defender-02
+defender-02 | :ARG1 | ela
+defender-02 | :ARG2 | mundo
+
+[STEP 3: AMR_NO_VAR]
+(ter-01
+				:ARG1 (espinho
+					:consist-of (nada))
+				:purpose (defender-02
+					:ARG1 (ela)
+					:ARG2 (mundo)))
+
+[STEP 4: AMR_WITH_VAR]
+(t / ter-01
+				:ARG1 (e / espinho
+					:consist-of (n / nada))
+				:purpose (d / defender-02
+					:ARG1 (e1 / ela)
+					:ARG2 (m / mundo)))
+
+
+#::snt Eu sentei-me também, pois não podia mais ficar de pé.
+[STEP 1: CONCEPTS]
+concept_1 | sentar-01
+concept_2 | eu
+concept_3 | também
+concept_4 | poder-201
+concept_5 | e
+concept_6 | ficar-202
+concept_7 | pé
+
+[STEP 2: RELATIONS]
+sentar-01 | :ARG0 | eu
+sentar-01 | :mod | também
+sentar-01 | :cause | poder-201
+poder-201 | :polarity | -
+poder-201 | :ARG0 | e
+poder-201 | :ARG1 | ficar-202
+ficar-202 | :ARG1 | pé
+
+[STEP 3: AMR_NO_VAR]
+(sentar-01
+				:ARG0 (eu)
+				:mod (também)
+				:cause (poder-201 :polarity -
+					:ARG0 (eu)
+					:ARG1 (ficar-202
+						:ARG1 (pé))))
+
+[STEP 4: AMR_WITH_VAR]
+(s / sentar-01
+				:ARG0 (e / eu)
+				:mod (t / também)
+				:cause (p / poder-201 :polarity -
+					:ARG0 e
+					:ARG1 (f / ficar-202
+						:ARG1 (p1 / pé))))
+
+
+#::snt Ele disse: - Pronto... Acabou-se...
+[STEP 1: CONCEPTS]
+concept_1 | dizer-01
+concept_2 | ele
+concept_3 | e
+concept_4 | pronto
+concept_5 | acabar-01
+
+[STEP 2: RELATIONS]
+dizer-01 | :ARG0 | ele
+dizer-01 | :ARG1 | e
+e | :op1 | pronto
+e | :op2 | acabar-01
+
+[STEP 3: AMR_NO_VAR]
+(dizer-01
+				:ARG0 (ele)
+				:ARG1 (e
+					:op1 (pronto)
+					:op2 (acabar-01)))
+
+[STEP 4: AMR_WITH_VAR]
+(d / dizer-01
+				:ARG0 (e / ele)
+				:ARG1 (e1 / e
+					:op1 (p / pronto)
+					:op2 (a / acabar-01)))
+
+
+#::snt Hesitou ainda um pouco, depois ergueu-se.
+[STEP 1: CONCEPTS]
+concept_1 | e
+concept_2 | hesitar-01
+concept_3 | ele
+concept_4 | pouco
+concept_5 | depois
+concept_6 | erguer-01
+concept_7 | e1
+
+[STEP 2: RELATIONS]
+e | :op1 | hesitar-01
+hesitar-01 | :ARG0 | ele
+hesitar-01 | :degree | pouco
+hesitar-01 | :time | depois
+e | :op2 | erguer-01
+erguer-01 | :ARG0 | e1
+
+[STEP 3: AMR_NO_VAR]
+(e
+				:op1 (hesitar-01
+					:ARG0 (ele)
+					:degree (pouco)
+					:time (depois))
+				:op2 (erguer-01
+					:ARG0 (ele)))
+
+[STEP 4: AMR_WITH_VAR]
+(e / e
+				:op1 (h / hesitar-01
+					:ARG0 (e1 / ele)
+					:degree (p / pouco)
+					:time (d / depois))
+				:op2 (e2 / erguer-01
+					:ARG0 e1))
+
+
+#::snt Deu um passo.
+[STEP 1: CONCEPTS]
+concept_1 | dar-02
+concept_2 | ele
+concept_3 | passo
+
+[STEP 2: RELATIONS]
+dar-02 | :ARG0 | ele
+dar-02 | :ARG1 | passo
+
+[STEP 3: AMR_NO_VAR]
+(dar-02
+				:ARG0 (ele)
+				:ARG1 (passo))
+
+[STEP 4: AMR_WITH_VAR]
+(d / dar-02
+				:ARG0 (e / ele)
+				:ARG1 (p / passo))
+
+
+#::snt Eu... eu não podia mover-me.
+[STEP 1: CONCEPTS]
+concept_1 | poder-201
+concept_2 | eu
+concept_3 | mover-01
+concept_4 | e
+
+[STEP 2: RELATIONS]
+poder-201 | :polarity | -
+poder-201 | :ARG0 | eu
+poder-201 | :ARG1 | mover-01
+mover-01 | :ARG0 | e
+
+[STEP 3: AMR_NO_VAR]
+(poder-201 :polarity -
+				:ARG0 (eu)
+				:ARG1 (mover-01
+					:ARG0 (eu)))
+
+[STEP 4: AMR_WITH_VAR]
+(p / poder-201 :polarity -
+				:ARG0 (e / eu)
+				:ARG1 (m / mover-01
+					:ARG0 e))
+
+
+#::snt Houve apenas um clarão amarelo perto da sua perna.
+[STEP 1: CONCEPTS]
+concept_1 | haver-01
+concept_2 | clarão
+concept_3 | amarelo
+concept_4 | perto
+concept_5 | perna
+concept_6 | seu
+
+[STEP 2: RELATIONS]
+haver-01 | :ARG1 | clarão
+clarão | :mod | amarelo
+clarão | :location | perto
+perto | :op1 | perna
+perna | :poss | seu
+
+[STEP 3: AMR_NO_VAR]
+(haver-01
+				:ARG1 (clarão
+					:mod (amarelo)
+					:location (perto
+						:op1 (perna
+							:poss (seu)))))
+
+[STEP 4: AMR_WITH_VAR]
+(h / haver-01
+				:ARG1 (c / clarão
+					:mod (a / amarelo)
+					:location (p / perto
+						:op1 (p1 / perna
+							:poss (s / seu)))))
+
+
+#::snt Permaneceu, por um instante, imóvel.
+[STEP 1: CONCEPTS]
+concept_1 | permanecer-01
+concept_2 | ele
+concept_3 | imóvel
+concept_4 | instante
+
+[STEP 2: RELATIONS]
+permanecer-01 | :ARG1 | ele
+permanecer-01 | :manner | imóvel
+permanecer-01 | :duration | instante
+
+[STEP 3: AMR_NO_VAR]
+(permanecer-01
+				:ARG1 (ele)
+				:manner (imóvel)
+				:duration (instante))
+
+[STEP 4: AMR_WITH_VAR]
+(p / permanecer-01
+				:ARG1 (e / ele)
+				:manner (i / imóvel)
+				:duration (i1 / instante))
+
+
+#::snt Não gritou.
+[STEP 1: CONCEPTS]
+concept_1 | gritar-01
+concept_2 | ele
+
+[STEP 2: RELATIONS]
+gritar-01 | :polarity | -
+gritar-01 | :ARG0 | ele
+
+[STEP 3: AMR_NO_VAR]
+(gritar-01 :polarity -
+				:ARG0 (ele))
+
+[STEP 4: AMR_WITH_VAR]
+(g / gritar-01 :polarity -
+				:ARG0 (e / ele))
+
+
+#::snt Tombou devagarinho como uma árvore tomba.
+[STEP 1: CONCEPTS]
+concept_1 | tombar-01
+concept_2 | devagarinho
+concept_3 | árvore
+
+[STEP 2: RELATIONS]
+tombar-01 | :manner | devagarinho
+tombar-01 | :compared-to | árvore
+
+[STEP 3: AMR_NO_VAR]
+(tombar-01
+				:manner (devagarinho)
+				:compared-to (árvore))
+
+[STEP 4: AMR_WITH_VAR]
+(t / tombar-01
+				:manner (d / devagarinho)
+				:compared-to (a / árvore))
+
+
+#::snt Nem fez sequer barulho, por causa da areia.
+[STEP 1: CONCEPTS]
+concept_1 | fazer-01
+concept_2 | ele
+concept_3 | barulho
+concept_4 | areia
+
+[STEP 2: RELATIONS]
+fazer-01 | :polarity | -
+fazer-01 | :ARG0 | ele
+fazer-01 | :ARG1 | barulho
+barulho | :mod | areia
+
+[STEP 3: AMR_NO_VAR]
+(fazer-01 :polarity -
+				:ARG0 (ele)
+				:ARG1 (barulho
+					:mod (areia)))
+
+[STEP 4: AMR_WITH_VAR]
+(f / fazer-01 :polarity -
+				:ARG0 (e / ele)
+				:ARG1 (b / barulho
+					:mod (a / areia)))
+
+
+#::snt Capítulo 27
+[STEP 1: CONCEPTS]
+concept_1 | capítulo
+
+[STEP 2: RELATIONS]
+capítulo | :mod | 27
+
+[STEP 3: AMR_NO_VAR]
+(capítulo
+				:mod 27)
+
+[STEP 4: AMR_WITH_VAR]
+(c / capítulo
+				:mod 27)
+
+
+#::snt E agora, certamente, já se vão seis anos...
+[STEP 1: CONCEPTS]
+concept_1 | e
+concept_2 | ir-01
+concept_3 | temporal-quantity
+concept_4 | ano
+concept_5 | certamente
+concept_6 | já
+
+[STEP 2: RELATIONS]
+e | :op2 | ir-01
+ir-01 | :ARG1 | temporal-quantity
+temporal-quantity | :quant | 6
+temporal-quantity | :unit | ano
+ir-01 | :mod | certamente
+ir-01 | :time | já
+
+[STEP 3: AMR_NO_VAR]
+(e
+				:op2 (ir-01
+					:ARG1 (temporal-quantity :quant 6
+						:unit (ano))
+					:mod (certamente)
+					:time (já)))
+
+[STEP 4: AMR_WITH_VAR]
+(e / e
+				:op2 (i / ir-01
+					:ARG1 (t / temporal-quantity :quant 6
+						:unit (a / ano))
+					:mod (c / certamente)
+					:time (j / já)))
+
+
+#::snt Jamais contara essa história.
+[STEP 1: CONCEPTS]
+concept_1 | contar-01
+concept_2 | ele
+concept_3 | história
+concept_4 | essa
+
+[STEP 2: RELATIONS]
+contar-01 | :polarity | -
+contar-01 | :ARG0 | ele
+contar-01 | :ARG1 | história
+história | :mod | essa
+
+[STEP 3: AMR_NO_VAR]
+(contar-01 :polarity -
+				:ARG0 (ele)
+				:ARG1 (história
+					:mod (essa)))
+
+[STEP 4: AMR_WITH_VAR]
+(c / contar-01 :polarity -
+				:ARG0 (e / ele)
+				:ARG1 (h / história
+					:mod (e1 / essa)))
+
+
+#::snt Os camaradas ficaram contentes de ver-me são e salvo.
+[STEP 1: CONCEPTS]
+concept_1 | ficar-201
+concept_2 | camarada
+concept_3 | contente
+concept_4 | ver-01
+concept_5 | eles
+concept_6 | eu
+concept_7 | e
+concept_8 | salvo
+
+[STEP 2: RELATIONS]
+ficar-201 | :ARG1 | camarada
+ficar-201 | :ARG2 | contente
+ficar-201 | :ARG1-of | ver-01
+ver-01 | :ARG0 | eles
+ver-01 | :ARG1 | eu
+ficar-201 | :cause | e
+e | :op1 | salvo
+
+[STEP 3: AMR_NO_VAR]
+(ficar-201
+				:ARG1 (camarada)
+				:ARG2 (contente)
+				:ARG1-of (ver-01
+					:ARG0 (camarada)
+					:ARG1 (eu))
+				:cause (e
+					:op1 (salvo)))
+
+[STEP 4: AMR_WITH_VAR]
+(f / ficar-201
+				:ARG1 (c / camarada)
+				:ARG2 (c1 / contente)
+				:ARG1-of (v / ver-01
+					:ARG0 c
+					:ARG1 (e / eu))
+				:cause (e1 / e
+					:op1 (s / salvo)))
+
+
+#::snt Eu estava triste, mas dizia: É o cansaço...
+[STEP 1: CONCEPTS]
+concept_1 | dizer-01
+concept_2 | eu
+concept_3 | triste
+concept_4 | cansaço
+
+[STEP 2: RELATIONS]
+dizer-01 | :ARG0 | eu
+dizer-01 | :ARG1 | triste
+dizer-01 | :ARG2 | cansaço
+
+[STEP 3: AMR_NO_VAR]
+(dizer-01
+				:ARG0 (eu)
+				:ARG1 (triste)
+				:ARG2 (cansaço))
+
+[STEP 4: AMR_WITH_VAR]
+(d / dizer-01
+				:ARG0 (e / eu)
+				:ARG1 (t / triste)
+				:ARG2 (c / cansaço))
+
+
+#::snt Agora já me consolei um pouco.
+[STEP 1: CONCEPTS]
+concept_1 | consolar-01
+concept_2 | eu
+concept_3 | pouco
+concept_4 | agora
+
+[STEP 2: RELATIONS]
+consolar-01 | :ARG0 | eu
+consolar-01 | :degree | pouco
+consolar-01 | :time | agora
+
+[STEP 3: AMR_NO_VAR]
+(consolar-01
+				:ARG0 (eu)
+				:degree (pouco)
+				:time (agora))
+
+[STEP 4: AMR_WITH_VAR]
+(c / consolar-01
+				:ARG0 (e / eu)
+				:degree (p / pouco)
+				:time (a / agora))
+
+
+#::snt Mas não de todo.
+[STEP 1: CONCEPTS]
+concept_1 | contrast-01
+concept_2 | de-todo
+
+[STEP 2: RELATIONS]
+contrast-01 | :ARG2 | de-todo
+
+[STEP 3: AMR_NO_VAR]
+(contrast-01
+				:ARG2 (de-todo))
+
+[STEP 4: AMR_WITH_VAR]
+(c / contrast-01
+				:ARG2 (d / de-todo))
+
+
+#::snt Sei que ele voltou ao seu planeta; pois, ao raiar do dia, não lhe encontrei o corpo.
+[STEP 1: CONCEPTS]
+concept_1 | saber-01
+concept_2 | eu
+concept_3 | voltar-01
+concept_4 | ele
+concept_5 | planeta
+concept_6 | e
+concept_7 | encontrar-01
+concept_8 | corps
+concept_9 | date-entity
+concept_10 | raiar
+concept_11 | dia
+
+[STEP 2: RELATIONS]
+saber-01 | :ARG0 | eu
+saber-01 | :ARG1 | voltar-01
+voltar-01 | :ARG0 | ele
+voltar-01 | :ARG4 | planeta
+planeta | :poss | e
+saber-01 | :cause | encontrar-01
+encontrar-01 | :polarity | -
+encontrar-01 | :ARG1 | corps
+encontrar-01 | :ARG2 | e
+encontrar-01 | :time | date-entity
+date-entity | :raiar | raiar
+raiar | :mod | dia
+
+[STEP 3: AMR_NO_VAR]
+(saber-01
+				:ARG0 (eu)
+				:ARG1 (voltar-01
+					:ARG0 (ele)
+					:ARG4 (planeta
+						:poss (eu)))
+				:cause (encontrar-01 :polarity -
+					:ARG1 (corps)
+					:ARG2 (eu)
+					:time (date-entity
+						:raiar (raiar
+							:mod (dia)))))
+
+[STEP 4: AMR_WITH_VAR]
+(s / saber-01
+				:ARG0 (e / eu)
+				:ARG1 (v / voltar-01
+					:ARG0 (e1 / ele)
+					:ARG4 (p / planeta
+						:poss e))
+				:cause (e2 / encontrar-01 :polarity -
+					:ARG1 (c / corps)
+					:ARG2 e
+					:time (d / date-entity
+						:raiar (r / raiar
+							:mod (d1 / dia)))))
+
+
+#::snt Não era um corpo tão pesado assim...
+[STEP 1: CONCEPTS]
+concept_1 | pesado
+concept_2 | tão
+concept_3 | assim
+
+[STEP 2: RELATIONS]
+pesado | :polarity | -
+pesado | :degree | tão
+tão | :mod | assim
+
+[STEP 3: AMR_NO_VAR]
+(pesado :polarity -
+				:degree (tão
+					:mod (assim)))
+
+[STEP 4: AMR_WITH_VAR]
+(p / pesado :polarity -
+				:degree (t / tão
+					:mod (a / assim)))
+
+
+#::snt E gosto, à noite, de escutar as estrelas.
+[STEP 1: CONCEPTS]
+concept_1 | e
+concept_2 | gostar-01
+concept_3 | eu
+concept_4 | escutar-01
+concept_5 | e1
+concept_6 | estrela
+concept_7 | date-entity
+concept_8 | noite
+
+[STEP 2: RELATIONS]
+e | :op2 | gostar-01
+gostar-01 | :ARG0 | eu
+gostar-01 | :ARG1 | escutar-01
+escutar-01 | :ARG0 | e1
+escutar-01 | :ARG1 | estrela
+gostar-01 | :time | date-entity
+date-entity | :dayperiod | noite
+
+[STEP 3: AMR_NO_VAR]
+(e
+				:op2 (gostar-01
+					:ARG0 (eu)
+					:ARG1 (escutar-01
+						:ARG0 (eu)
+						:ARG1 (estrela))
+					:time (date-entity :dayperiod (noite))))
+
+[STEP 4: AMR_WITH_VAR]
+(e / e
+				:op2 (g / gostar-01
+					:ARG0 (e1 / eu)
+					:ARG1 (e2 / escutar-01
+						:ARG0 e1
+						:ARG1 (e3 / estrela))
+					:time (d / date-entity :dayperiod (n / noite))))
+
+
+#::snt Quinhentos milhões de guizos...
+[STEP 1: CONCEPTS]
+concept_1 | have-quant-91
+
+[STEP 2: RELATIONS]
+have-quant-91 | :ARG1 | 500000000
+have-quant-91 | :ARG2 | guizo
+
+[STEP 3: AMR_NO_VAR]
+(have-quant-91
+				:ARG1 500000000
+				:ARG2 (guizo))
+
+[STEP 4: AMR_WITH_VAR]
+(h / have-quant-91
+				:ARG1 500000000
+				:ARG2 (g / guizo))
+
+
+#::snt Mas eis que sucede uma coisa extraordinária.
+[STEP 1: CONCEPTS]
+concept_1 | contrast-01
+concept_2 | suceder-01
+concept_3 | coisa
+concept_4 | extraordinária
+
+[STEP 2: RELATIONS]
+contrast-01 | :ARG2 | suceder-01
+suceder-01 | :ARG1 | coisa
+coisa | :mod | extraordinária
+
+[STEP 3: AMR_NO_VAR]
+(contrast-01
+				:ARG2 (suceder-01
+					:ARG1 (coisa
+						:mod (extraordinária))))
+
+[STEP 4: AMR_WITH_VAR]
+(c / contrast-01
+				:ARG2 (s / suceder-01
+					:ARG1 (c1 / coisa
+						:mod (e / extraordinária))))
+
+
+#::snt Na mordaça que desenhei para o principezinho, esqueci de juntar a correia!
+[STEP 1: CONCEPTS]
+concept_1 | esquecer-01
+concept_2 | eu
+concept_3 | juntar-01
+concept_4 | e
+concept_5 | correia
+concept_6 | mordaça
+concept_7 | desenhar-01
+concept_8 | i
+concept_9 | principezinho
+
+[STEP 2: RELATIONS]
+esquecer-01 | :ARG0 | eu
+esquecer-01 | :ARG1 | juntar-01
+juntar-01 | :ARG0 | e
+juntar-01 | :ARG1 | correia
+esquecer-01 | :ARG2 | mordaça
+mordaça | :poss | desenhar-01
+desenhar-01 | :ARG0 | e
+desenhar-01 | :ARG1 | mordaça
+desenhar-01 | :ARG2 | principezinho
+
+[STEP 3: AMR_NO_VAR]
+(esquecer-01
+				:ARG0 (eu)
+				:ARG1 (juntar-01
+					:ARG0 (eu)
+					:ARG1 (correia))
+				:ARG2 (mordaça
+					:poss (desenhar-01
+						:ARG0 (eu)
+						:ARG1 (mordaça)
+						:ARG2 (principezinho))))
+
+[STEP 4: AMR_WITH_VAR]
+(e / esquecer-01
+				:ARG0 (e1 / eu)
+				:ARG1 (j / juntar-01
+					:ARG0 e1
+					:ARG1 (c / correia))
+				:ARG2 (m / mordaça
+					:poss (d / desenhar-01
+						:ARG0 e1
+						:ARG1 m
+						:ARG2 (p / principezinho))))
+
+
+#::snt Não poderá jamais prendê-la ao carneiro.
+[STEP 1: CONCEPTS]
+concept_1 | poder-201
+concept_2 | prender-01
+concept_3 | ele
+concept_4 | ela
+concept_5 | carneiro
+concept_6 | jamais
+
+[STEP 2: RELATIONS]
+poder-201 | :polarity | -
+poder-201 | :ARG1 | prender-01
+prnder-01 | :ARG0 | ele
+prnder-01 | :ARG1 | ela
+prnder-01 | :ARG2 | carneiro
+poder-201 | :time | jamais
+
+[STEP 3: AMR_NO_VAR]
+(poder-201 :polarity -
+				:ARG1 (prnder-01
+					:ARG0 (ele)
+					:ARG1 (ela)
+					:ARG2 (carneiro))
+				:time (jamais))
+
+[STEP 4: AMR_WITH_VAR]
+(p / poder-201 :polarity -
+				:ARG1 (p1 / prender-01
+					:ARG0 (e / ele)
+					:ARG1 (e1 / ela)
+					:ARG2 (c / carneiro))
+				:time (j / jamais))
+
+
+#::snt E eu pergunto então: "Que se terá passado no planeta?
+[STEP 1: CONCEPTS]
+concept_1 | perguntar-01
+concept_2 | eu
+concept_3 | ter-02
+concept_4 | interrogative
+concept_5 | passado
+concept_6 | planeta
+
+[STEP 2: RELATIONS]
+perguntar-01 | :ARG0 | eu
+perguntar-01 | :ARG1 | ter-02
+ter-02 | :mode | interrogative
+ter-02 | :ARG1 | passado
+ter-02 | :location | planeta
+
+[STEP 3: AMR_NO_VAR]
+(perguntar-01
+				:ARG0 (eu)
+				:ARG1 (ter-02 :mode interrogative
+					:ARG1 (passado)
+					:location (planeta)))
+
+[STEP 4: AMR_WITH_VAR]
+(p / perguntar-01
+				:ARG0 (e / eu)
+				:ARG1 (t / ter-02 :mode interrogative
+					:ARG1 (p1 / passado)
+					:location (p2 / planeta)))
+
+
+#::snt Pode bem ser que o carneiro tenha comido a flor..."
+[STEP 1: CONCEPTS]
+concept_1 | poder-201
+concept_2 | comer-01
+concept_3 | carneiro
+concept_4 | flor
+
+[STEP 2: RELATIONS]
+poder-201 | :ARG1 | comer-01
+comer-01 | :ARG0 | carneiro
+comer-01 | :ARG1 | flor
+
+[STEP 3: AMR_NO_VAR]
+(poder-201
+				:ARG1 (comer-01
+					:ARG0 (carneiro)
+					:ARG1 (flor)))
+
+[STEP 4: AMR_WITH_VAR]
+(p / poder-201
+				:ARG1 (c / comer-01
+					:ARG0 (c1 / carneiro)
+					:ARG1 (f / flor)))
+
+
+#::snt Ora eu penso: "Certamente que não!
+[STEP 1: CONCEPTS]
+concept_1 | pensar-01
+concept_2 | eu
+concept_3 | certamente
+concept_4 | não
+
+[STEP 2: RELATIONS]
+pensar-01 | :ARG0 | eu
+pensar-01 | :ARG1 | certamente
+certamente | :mod | não
+
+[STEP 3: AMR_NO_VAR]
+(pensar-01
+				:ARG0 (eu)
+				:ARG1 (certamente
+					:mod (não)))
+
+[STEP 4: AMR_WITH_VAR]
+(p / pensar-01
+				:ARG0 (e / eu)
+				:ARG1 (c / certamente
+					:mod (n / não)))
+
+
+#::snt O principezinho encerra a flor todas as noites na redoma de vidro e vigia bem o carneiro..."
+[STEP 1: CONCEPTS]
+concept_1 | e
+concept_2 | encerrar-01
+concept_3 | principezinho
+concept_4 | flor
+concept_5 | todas-as-noites
+concept_6 | redoma
+concept_7 | vidro
+concept_8 | vigiar-01
+concept_9 | p
+concept_10 | carneiro
+concept_11 | bem
+
+[STEP 2: RELATIONS]
+e | :op1 | encerrar-01
+encerrar-01 | :ARG0 | principezinho
+encerrar-01 | :ARG1 | flor
+encerrar-01 | :time | todas-as-noites
+encerrar-01 | :location | redoma
+redoma | :mod | vidro
+e | :op2 | vigiar-01
+vigiar-01 | :ARG0 | p
+vigiar-01 | :ARG1 | carneiro
+vigiar-01 | :manner | bem
+
+[STEP 3: AMR_NO_VAR]
+(e
+				:op1 (encerrar-01
+					:ARG0 (principezinho)
+					:ARG1 (flor)
+					:time (todas-as-noites)
+					:location (redoma
+						:mod (vidro)))
+				:op2 (vigiar-01
+					:ARG0 (principezinho)
+					:ARG1 (carneiro)
+					:manner (bem)))
+
+[STEP 4: AMR_WITH_VAR]
+(e / e
+				:op1 (e1 / encerrar-01
+					:ARG0 (p / principezinho)
+					:ARG1 (f / flor)
+					:time (t / todas-as-noites)
+					:location (r / redoma
+						:mod (v / vidro)))
+				:op2 (v1 / vigiar-01
+					:ARG0 p
+					:ARG1 (c / carneiro)
+					:manner (b / bem)))
+
+
+#::snt Então, eu me sinto feliz.
+[STEP 1: CONCEPTS]
+concept_1 | sentir-01
+concept_2 | eu
+concept_3 | feliz
+
+[STEP 2: RELATIONS]
+sentir-01 | :ARG0 | eu
+sentir-01 | :ARG1 | feliz
+
+[STEP 3: AMR_NO_VAR]
+(sentir-01
+				:ARG0 (eu)
+				:ARG1 (feliz))
+
+[STEP 4: AMR_WITH_VAR]
+(s / sentir-01
+				:ARG0 (e / eu)
+				:ARG1 (f / feliz))
+
+
+#::snt E todas as estrelas riem docemente.
+[STEP 1: CONCEPTS]
+concept_1 | e
+concept_2 | rir-01
+concept_3 | estrela
+concept_4 | todas
+concept_5 | docemente
+
+[STEP 2: RELATIONS]
+e | :op1 | rir-01
+rir-01 | :ARG0 | estrela
+estrela | :mod | todas
+rir-01 | :manner | docemente
+
+[STEP 3: AMR_NO_VAR]
+(e
+				:op1 (rir-01
+					:ARG0 (estrela
+						:mod (todas))
+					:manner (docemente)))
+
+[STEP 4: AMR_WITH_VAR]
+(e / e
+				:op1 (r / rir-01
+					:ARG0 (e1 / estrela
+						:mod (t / todas))
+					:manner (d / docemente)))
+
+
+#::snt Ora eu digo: "Uma vez ou outra a gente se distrai e basta isto!
+[STEP 1: CONCEPTS]
+concept_1 | dizer-01
+concept_2 | eu
+concept_3 | distrair-01
+concept_4 | a-gente
+concept_5 | ou
+concept_6 | outra
+
+[STEP 2: RELATIONS]
+dizer-01 | :ARG0 | eu
+dizer-01 | :ARG1 | distrair-01
+distrair-01 | :ARG0 | a-gente
+distrair-01 | :frequency | ou
+ou | :op1 | uma
+ou | :op2 | outra
+
+[STEP 3: AMR_NO_VAR]
+(dizer-01
+				:ARG0 (eu)
+				:ARG1 (distrair-01
+					:ARG0 (a-gente)
+					:frequency (ou
+						:op1 (uma)
+						:op2 (outra))))
+
+[STEP 4: AMR_WITH_VAR]
+(d / dizer-01
+				:ARG0 (e / eu)
+				:ARG1 (d1 / distrair-01
+					:ARG0 (a / a-gente)
+					:frequency (o / ou
+						:op1 (u / uma)
+						:op2 (o1 / outra))))
+
+
+#::snt Esqueceu uma noite a redoma de vidro ou o carneiro saiu de mansinho, sem que fosse notado..."
+[STEP 1: CONCEPTS]
+concept_1 | esquecer-01
+concept_2 | ele
+concept_3 | ou
+concept_4 | redoma
+concept_5 | vidro
+concept_6 | sair-02
+concept_7 | e
+concept_8 | carneiro
+concept_9 | mansinho
+concept_10 | notar-01
+
+[STEP 2: RELATIONS]
+esquecer-01 | :ARG0 | ele
+esquecer-01 | :ARG1 | ou
+ou | :op1 | redoma
+redoma | :mod | vidro
+ou | :op2 | sair-02
+sair-02 | :ARG0 | e
+sair-02 | :ARG1 | carneiro
+sair-02 | :manner | mansinho
+sair-02 | :ARG2 | notar-01
+notar-01 | :polarity | -
+
+[STEP 3: AMR_NO_VAR]
+(esquecer-01
+				:ARG0 (ele)
+				:ARG1 (ou
+					:op1 (redoma
+						:mod (vidro))
+					:op2 (sair-02
+						:ARG0 (ele)
+						:ARG1 (carneiro)
+						:manner (mansinho)
+						:ARG2 (notar-01 :polarity -))))
+
+[STEP 4: AMR_WITH_VAR]
+(e / esquecer-01
+				:ARG0 (e1 / ele)
+				:ARG1 (o / ou
+					:op1 (r / redoma
+						:mod (v / vidro))
+					:op2 (s / sair-02
+						:ARG0 e1
+						:ARG1 (c / carneiro)
+						:manner (m / mansinho)
+						:ARG2 (n / notar-01 :polarity -))))
+
+
+#::snt Então os guizos se transformam todos em lágrimas!...
+[STEP 1: CONCEPTS]
+concept_1 | transformar-01
+concept_2 | guizo
+concept_3 | lágrima
+concept_4 | todos
+
+[STEP 2: RELATIONS]
+transformar-01 | :ARG1 | guizo
+transformar-01 | :ARG2 | lágrima
+transformar-01 | :mod | todos
+
+[STEP 3: AMR_NO_VAR]
+(transformar-01
+				:ARG1 (guizo)
+				:ARG2 (lágrima)
+				:mod (todos))
+
+[STEP 4: AMR_WITH_VAR]
+(t / transformar-01
+				:ARG1 (g / guizo)
+				:ARG2 (l / lágrima)
+				:mod (t1 / todos))
+
+
+#::snt Eis aí um mistério bem grande.
+[STEP 1: CONCEPTS]
+concept_1 | mistério
+concept_2 | grande
+concept_3 | bem
+
+[STEP 2: RELATIONS]
+mistério | :mod | grande
+grande | :degree | bem
+
+[STEP 3: AMR_NO_VAR]
+(mistério
+				:mod (grande
+					:degree (bem)))
+
+[STEP 4: AMR_WITH_VAR]
+(m / mistério
+				:mod (g / grande
+					:degree (b / bem)))
+
+
+#::snt Para vocês, que amam também o principezinho, como para mim, todo o universo muda de sentido, se num lugar, que não sabemos onde, um carneiro, que não conhecemos, comeu ou não uma rosa...
+[STEP 1: CONCEPTS]
+concept_1 | mudar-01
+concept_2 | universo
+concept_3 | todo
+concept_4 | amar-01
+concept_5 | eles
+concept_6 | principezinho
+concept_7 | também
+concept_8 | eu
+concept_9 | comer-01
+concept_10 | carneiro
+concept_11 | rosa
+concept_12 | saber-01
+concept_13 | lugar
+concept_14 | num
+
+[STEP 2: RELATIONS]
+mudar-01 | :ARG1 | universo
+universo | :mod | todo
+mudar-01 | :condition | amar-01
+amar-01 | :ARG0 | eles
+amar-01 | :ARG1 | principezinho
+amar-01 | :mod | também
+amar-01 | :compared-to | eu
+mudar-01 | :cause | comer-01
+comer-01 | :ARG0 | carneiro
+comer-01 | :ARG1 | rosa
+comer-01 | :ARG2 | saber-01
+saber-01 | :polarity | -
+saber-01 | :ARG1 | lugar
+lugar | :mod | num
+
+[STEP 3: AMR_NO_VAR]
+(mudar-01
+				:ARG1 (universo
+					:mod (todo))
+				:condition (amar-01
+					:ARG0 (eles)
+					:ARG1 (principezinho)
+					:mod (também)
+					:compared-to (eu))
+				:cause (comer-01
+					:ARG0 (carneiro)
+					:ARG1 (rosa)
+					:ARG2 (saber-01 :polarity -
+						:ARG1 (lugar
+							:mod (num)))))
+
+[STEP 4: AMR_WITH_VAR]
+(m / mudar-01
+				:ARG1 (u / universo
+					:mod (t / todo))
+				:condition (a / amar-01
+					:ARG0 (e / eles)
+					:ARG1 (p / principezinho)
+					:mod (t1 / também)
+					:compared-to (e1 / eu))
+				:cause (c / comer-01
+					:ARG0 (c1 / carneiro)
+					:ARG1 (r / rosa)
+					:ARG2 (s / saber-01 :polarity -
+						:ARG1 (l / lugar
+							:mod (n / num)))))
+
+
+#::snt Olhem o céu.
+[STEP 1: CONCEPTS]
+concept_1 | olhar-01
+concept_2 | eles
+concept_3 | céu
+
+[STEP 2: RELATIONS]
+olhar-01 | :ARG0 | eles
+olhar-01 | :ARG1 | céu
+
+[STEP 3: AMR_NO_VAR]
+(olhar-01
+				:ARG0 (eles)
+				:ARG1 (céu))
+
+[STEP 4: AMR_WITH_VAR]
+(o / olhar-01
+				:ARG0 (e / eles)
+				:ARG1 (c / céu))
+
+
+#::snt Perguntem: Terá ou não terá o carneiro comido a flor?
+[STEP 1: CONCEPTS]
+concept_1 | perguntar-01
+concept_2 | ter-01
+concept_3 | carneiro
+concept_4 | comer-01
+concept_5 | c
+concept_6 | flor
+
+[STEP 2: RELATIONS]
+perguntar-01 | :ARG1 | ter-01
+ter-01 | :ARG0 | carneiro
+ter-01 | :ARG1 | comer-01
+comer-01 | :ARG0 | c
+comer-01 | :ARG1 | flor
+
+[STEP 3: AMR_NO_VAR]
+(perguntar-01
+				:ARG1 (ter-01
+					:ARG0 (carneiro)
+					:ARG1 (comer-01
+						:ARG0 (carneiro)
+						:ARG1 (flor))))
+
+[STEP 4: AMR_WITH_VAR]
+(p / perguntar-01
+				:ARG1 (t / ter-01
+					:ARG0 (c / carneiro)
+					:ARG1 (c1 / comer-01
+						:ARG0 c
+						:ARG1 (f / flor))))
+
+
+#::snt E verão como tudo fica diferente...
+[STEP 1: CONCEPTS]
+concept_1 | e
+concept_2 | ver-01
+concept_3 | futuro
+concept_4 | diferente
+concept_5 | tudo
+
+[STEP 2: RELATIONS]
+e | :op2 | ver-01
+ver-01 | :time | futuro
+ver-01 | :ARG1 | diferente
+diferente | :mod | tudo
+
+[STEP 3: AMR_NO_VAR]
+(e
+				:op2 (ver-01
+					:time (futuro)
+					:ARG1 (diferente
+						:mod (tudo))))
+
+[STEP 4: AMR_WITH_VAR]
+(e / e
+				:op2 (v / ver-01
+					:time (f / futuro)
+					:ARG1 (d / diferente
+						:mod (t / tudo))))
+
+
+#::snt E nenhuma pessoa grande jamais compreenderá que isso tenha tanta importância.
+[STEP 1: CONCEPTS]
+concept_1 | e
+concept_2 | compreender-01
+concept_3 | ninguém
+concept_4 | grande
+concept_5 | isso
+concept_6 | importância
+concept_7 | tão
+
+[STEP 2: RELATIONS]
+e | :op2 | compreender-01
+compreender-01 | :ARG0 | ninguém
+ninguém | :mod | grande
+compreender-01 | :ARG1 | isso
+isso | :domain | importância
+importância | :degree | tão
+
+[STEP 3: AMR_NO_VAR]
+(e
+				:op2 (compreender-01
+					:ARG0 (ninguém
+						:mod (grande))
+					:ARG1 (isso
+						:domain (importância
+							:degree (tão)))))
+
+[STEP 4: AMR_WITH_VAR]
+(e / e
+				:op2 (c / compreender-01
+					:ARG0 (n / ninguém
+						:mod (g / grande))
+					:ARG1 (i / isso
+						:domain (i1 / importância
+							:degree (t / tão)))))
+
+
+#::snt Esta é, para mim, a mais bela paisagem do mundo, e também a mais triste.
+[STEP 1: CONCEPTS]
+concept_1 | e
+concept_2 | bela
+concept_3 | paisagem
+concept_4 | mundial
+concept_5 | triste
+concept_6 | p
+concept_7 | eu
+
+[STEP 2: RELATIONS]
+e | :op1 | bela
+bela | :domain | paisagem
+paisagem | :mod | mundial
+e | :op2 | triste
+triste | :domain | p
+p | :poss | eu
+
+[STEP 3: AMR_NO_VAR]
+(e
+				:op1 (bela
+					:domain (paisagem
+						:mod (mundial)))
+				:op2 (triste
+					:domain (paisagem)
+						:poss (eu)))
+
+[STEP 4: AMR_WITH_VAR]
+(e / e
+				:op1 (b / bela
+					:domain (p / paisagem
+						:mod (m / mundial)))
+				:op2 (t / triste
+					:domain (p1 / paisagem)
+						:poss (e1 / eu)))
+
+
+#::snt É a mesma da página precedente.
+[STEP 1: CONCEPTS]
+concept_1 | mesma
+concept_2 | página
+concept_3 | precedente
+
+[STEP 2: RELATIONS]
+mesma | :domain | página
+página | :precedent | precedente
+
+[STEP 3: AMR_NO_VAR]
+(mesma
+				:domain (página
+					:precedent (precedente)))
+
+[STEP 4: AMR_WITH_VAR]
+(m / mesma
+				:domain (p / página
+					:precedent (p1 / precedente)))
+
+
+#::snt Mas desenhei-a de novo para mostrá-la bem.
+[STEP 1: CONCEPTS]
+concept_1 | contrast-01
+concept_2 | desenhar-01
+concept_3 | eu
+concept_4 | ela
+concept_5 | mostrar-01
+concept_6 | e
+concept_7 | bem
+
+[STEP 2: RELATIONS]
+contrast-01 | :ARG2 | desenhar-01
+desenhar-01 | :ARG0 | eu
+desenhar-01 | :ARG1 | ela
+desenhar-01 | :purpose | mostrar-01
+mostrar-01 | :ARG0 | e
+mostrar-01 | :ARG1 | ela
+mostrar-01 | :manner | bem
+
+[STEP 3: AMR_NO_VAR]
+(contrast-01
+				:ARG2 (desenhar-01
+					:ARG0 (eu)
+					:ARG1 (ela)
+					:purpose (mostrar-01
+						:ARG0 (eu)
+						:ARG1 (ela)
+						:manner (bem))))
+
+[STEP 4: AMR_WITH_VAR]
+(c / contrast-01
+				:ARG2 (d / desenhar-01
+					:ARG0 (e / eu)
+					:ARG1 (e1 / ela)
+					:purpose (m / mostrar-01
+						:ARG0 e
+						:ARG1 e1
+						:manner (b / bem))))
+
+
+#::snt Foi aqui que o principezinho apareceu na terra, e desapareceu depois.
+[STEP 1: CONCEPTS]
+concept_1 | e
+concept_2 | aparecer-01
+concept_3 | principezinho
+concept_4 | terra
+concept_5 | aqui
+concept_6 | desaparecer-01
+concept_7 | p
+concept_8 | depois
+
+[STEP 2: RELATIONS]
+e | :op1 | aparecer-01
+aparecer-01 | :ARG0 | principezinho
+aparecer-01 | :location | terra
+aparecer-01 | :location | aqui
+e | :op2 | desaparecer-01
+desaparecer-01 | :ARG0 | p
+desaparecer-01 | :time | depois
+
+[STEP 3: AMR_NO_VAR]
+(e
+				:op1 (aparecer-01
+					:ARG0 (principezinho)
+					:location (terra)
+					:location (aqui))
+				:op2 (desaparecer-01
+					:ARG0 (principezinho)
+					:time (depois)))
+
+[STEP 4: AMR_WITH_VAR]
+(e / e
+				:op1 (a / aparecer-01
+					:ARG0 (p / principezinho)
+					:location (t / terra)
+					:location (a1 / aqui))
+				:op2 (d / desaparecer-01
+					:ARG0 p
+					:time (d1 / depois)))
+
+
+#::snt Olhem atentamente esta paisagem para que estejam certos de reconhecê-la, se viajarem um dia na África, através do deserto.
+[STEP 1: CONCEPTS]
+concept_1 | olhar-01
+concept_2 | eles
+concept_3 | paisagem
+concept_4 | esta
+concept_5 | certos
+concept_6 | reconhecer-01
+concept_7 | p
+concept_8 | eles1
+concept_9 | viajar-01
+concept_10 | e
+concept_11 | deserto
+concept_12 | african
+
+[STEP 2: RELATIONS]
+olhar-01 | :ARG0 | eles
+olhar-01 | :ARG1 | paisagem
+paisagem | :mod | esta
+olhar-01 | :purpose | certos
+certos | :topic | reconhecer-01
+reconhecer-01 | :ARG1 | p
+reconhecer-01 | :condition | viajar-01
+viajar-01 | :ARG0 | e
+viajar-01 | :path | deserto
+deserto | :mod | african
+
+[STEP 3: AMR_NO_VAR]
+(olhar-01
+				:ARG0 (eles)
+				:ARG1 (paisagem
+					:mod (esta))
+				:purpose (certos
+					:topic (reconhecer-01
+						:ARG1 (paisagem)
+						:condition (viajar-01
+							:ARG0 (eles)
+							:path (deserto
+								:mod (africano))))))
+
+[STEP 4: AMR_WITH_VAR]
+(o / olhar-01
+				:ARG0 (e / eles)
+				:ARG1 (p / paisagem
+					:mod (e1 / esta))
+				:purpose (c / certos
+					:topic (r / reconhecer-01
+						:ARG1 p
+						:condition (v / viajar-01
+							:ARG0 e
+							:path (d / deserto
+								:mod (a / african))))))
+
+
+#::snt E se acontecer passarem por ali, eu lhes suplico que não tenham pressa e que esperem um pouco bem debaixo da estrela!
+[STEP 1: CONCEPTS]
+concept_1 | e
+concept_2 | suplicar-01
+concept_3 | eu
+concept_4 | ter-01
+concept_5 | eles
+concept_6 | pressa
+concept_7 | esperar-01
+concept_8 | e1
+concept_9 | estrela
+concept_10 | bem
+concept_11 | acontecer-01
+concept_12 | passar-07
+concept_13 | ali
+
+[STEP 2: RELATIONS]
+e | :op1 | suplicar-01
+suplicar-01 | :ARG0 | eu
+suplicar-01 | :ARG1 | ter-01
+ter-01 | :polarity | -
+ter-01 | :ARG0 | eles
+ter-01 | :ARG1 | pressa
+suplicar-01 | :ARG2 | esperar-01
+esperar-01 | :ARG0 | e1
+esperar-01 | :location | estrela
+estrela | :mod | bem
+suplicar-01 | :condition | acontecer-01
+acontecer-01 | :ARG1 | passar-07
+passar-07 | :path | ali
+
+[STEP 3: AMR_NO_VAR]
+(e
+				:op1 (suplicar-01
+					:ARG0 (eu)
+					:ARG1 (ter-01 :polarity -
+						:ARG0 (eles)
+						:ARG1 (pressa))
+					:ARG2 (esperar-01
+						:ARG0 (eu)
+						:location (estrela
+							:mod (bem)))
+					:condition (acontecer-01
+						:ARG1 (passar-07
+							:path (ali)))))
+
+[STEP 4: AMR_WITH_VAR]
+(e / e
+				:op1 (s / suplicar-01
+					:ARG0 (e1 / eu)
+					:ARG1 (t / ter-01 :polarity -
+						:ARG0 (e2 / eles)
+						:ARG1 (p / pressa))
+					:ARG2 (e3 / esperar-01
+						:ARG0 e1
+						:location (e4 / estrela
+							:mod (b / bem)))
+					:condition (a / acontecer-01
+						:ARG1 (p1 / passar-07
+							:path (a1 / ali)))))
+
+
+#::snt Se então um menino vem ao encontro de vocês, se ele ri, se tem cabelos de ouro, se não responde quando interrogam, adivinharão quem é.
+[STEP 1: CONCEPTS]
+concept_1 | adivinhar-01
+concept_2 | menino
+concept_3 | vir-01
+concept_4 | encontro
+concept_5 | vocês
+concept_6 | e
+concept_7 | rir-01
+concept_8 | m
+concept_9 | ter-01
+concept_10 | cabelo
+concept_11 | ouro
+concept_12 | responder-01
+concept_13 | interrogar-01
+
+[STEP 2: RELATIONS]
+adivinhar-01 | :ARG1 | menino
+menino | :ARG1-of | vir-01
+vir-01 | :ARG2 | encontro
+encontro | :mod | vocês
+adivinhar-01 | :condition | e
+e | :op1 | rir-01
+rir-01 | :ARG0 | m
+e | :op2 | ter-01
+ter-01 | :ARG0 | m
+ter-01 | :ARG1 | cabelo
+cabelo | :mod | ouro
+e | :op3 | responder-01
+responder-01 | :polarity | -
+responder-01 | :ARG0 | m
+responder-01 | :ARG1 | interrogar-01
+
+[STEP 3: AMR_NO_VAR]
+(adivinhar-01
+				:ARG1 (menino
+					:ARG1-of (vir-01
+						:ARG2 (encontro
+							:mod (vocês))))
+				:condition (e
+					:op1 (rir-01
+						:ARG0 (menino))
+					:op2 (ter-01
+						:ARG0 (menino)
+						:ARG1 (cabelo
+							:mod (ouro)))
+					:op3 (responder-01 :polarity -
+						:ARG0 (menino)
+						:ARG1 (interrogar-01))))
+
+[STEP 4: AMR_WITH_VAR]
+(a / adivinhar-01
+				:ARG1 (m / menino
+					:ARG1-of (v / vir-01
+						:ARG2 (e / encontro
+							:mod (v1 / vocês))))
+				:condition (e1 / e
+					:op1 (r / rir-01
+						:ARG0 m)
+					:op2 (t / ter-01
+						:ARG0 m
+						:ARG1 (c / cabelo
+							:mod (o / ouro)))
+					:op3 (r1 / responder-01 :polarity -
+						:ARG0 m
+						:ARG1 (i / interrogar-01))))
+
+
+#::snt Então, por favor, não me deixem tão triste: escrevam-me depressa que ele voltou...
+[STEP 1: CONCEPTS]
+concept_1 | deixar-03
+concept_2 | eu
+concept_3 | triste
+concept_4 | tão
+concept_5 | escrever-01
+concept_6 | e
+concept_7 | volta
+concept_8 | depressa
+
+[STEP 2: RELATIONS]
+deixar-03 | :ARG0 | eu
+deixar-03 | :ARG1 | triste
+triste | :degree | tão
+deixar-03 | :alternative | escrever-01
+escrever-01 | :ARG0 | e
+escrever-01 | :ARG1 | volta
+volta | :ARG1 | e
+escrever-01 | :manner | depressa
+
+[STEP 3: AMR_NO_VAR]
+(deixar-03
+				:ARG0 (eu)
+				:ARG1 (triste
+					:degree (tão))
+				:alternative (escrever-01
+					:ARG0 (eu)
+					:ARG1 (volta
+						:ARG1 (eu))
+					:manner (depressa)))
+
+[STEP 4: AMR_WITH_VAR]
+(d / deixar-03
+				:ARG0 (e / eu)
+				:ARG1 (t / triste
+					:degree (t1 / tão))
+				:alternative (e1 / escrever-01
+					:ARG0 e
+					:ARG1 (v / volta
+						:ARG1 e)
+					:manner (d1 / depressa)))
+
+

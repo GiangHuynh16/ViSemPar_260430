@@ -1,0 +1,41 @@
+{
+  "s42": {
+    "method": "B2",
+    "seed": 42,
+    "group": "portuguese_lpp_baselines",
+    "n_samples": 154,
+    "parsable": 154,
+    "parsable_rate": 1.0,
+    "avg_output_len": 102.8,
+    "root_acc": 0.7662,
+    "precision": 0.688,
+    "recall": 0.7226,
+    "f1": 0.7048
+  },
+  "s123": {
+    "method": "B2",
+    "seed": 123,
+    "group": "portuguese_lpp_baselines",
+    "n_samples": 154,
+    "parsable": 154,
+    "parsable_rate": 1.0,
+    "avg_output_len": 100.8,
+    "root_acc": 0.7662,
+    "precision": 0.6677,
+    "recall": 0.6923,
+    "f1": 0.6798
+  },
+  "s456": {
+    "method": "B2",
+    "seed": 456,
+    "group": "portuguese_lpp_baselines",
+    "n_samples": 154,
+    "parsable": 154,
+    "parsable_rate": 1.0,
+    "avg_output_len": 102.5,
+    "root_acc": 0.7727,
+    "precision": 0.7071,
+    "recall": 0.7413,
+    "f1": 0.7238
+  }
+}

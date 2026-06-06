@@ -1,8 +1,6 @@
 # Model checkpoints – lưu trên server, KHÔNG push GitHub
 checkpoints/
 
-# Large formatted data files – build lại bằng data_pipeline.py
-data/formatted/
 
 # Python cache
 __pycache__/
@@ -22,3 +20,7 @@ build/
 # Claude Code local settings (personal, not for repo)
 .claude/settings.json
 .claude/settings.local.json
+
+
+# Local drafts
+paper_doc/

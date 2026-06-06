@@ -1,0 +1,21 @@
+{
+  "amr1_examples": 610,
+  "amr2_examples": 610,
+  "synthetic_examples": 0,
+  "weights": {
+    "amr1": 1,
+    "amr2": 1,
+    "syn": 10
+  },
+  "no_var_mode": "clean",
+  "dedup": false,
+  "language": "pt",
+  "methods": {
+    "B1": 1220,
+    "B2": 1220,
+    "MTUP2": 1220,
+    "MTUP3A": 1220,
+    "MTUP3B": 1189,
+    "MTUP4": 1189
+  }
+}

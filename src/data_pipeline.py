@@ -22,6 +22,7 @@ Usage:
 import re
 import json
 import argparse
+import random
 from pathlib import Path
 from collections import OrderedDict
 
@@ -30,27 +31,16 @@ from collections import OrderedDict
 # Frozen system prompts (identical for ALL methods per plan)
 # ─────────────────────────────────────────────────────────────────────────────
 
-SYSTEM_PROMPT_MULTISTEP = """Bạn là chuyên gia phân tích AMR (Abstract Meaning Representation) cho tiếng Việt.
+SYSTEM_PROMPT_MULTISTEP = """Bạn là trợ lý phân tích AMR (Abstract Meaning Representation) cho tiếng Việt.
 
-QUY TẮC QUAN TRỌNG:
-1. Chỉ dùng từ tiếng Việt trong câu gốc làm concept. KHÔNG tự tạo từ mới.
-2. Concept AMR chuẩn được phép dùng (tiếng Anh): person, name, now, after, before, and, or, contrast-01, obligate-01, possible-01, rate-entity-91, temporal-quantity, percentage-entity, multi-sentence, have-rel-role-91, have-org-role-91, amr-unknown, province, city, mountain, country, company, ethnic-group, date-entity, date-interval, monetary-quantity, about
-3. :classifier cho lượng từ: người, anh, chị, cái, con, chiếc, đứa, ngôi, căn, cùi, ngọn, chú, cánh
-4. :polarity - (dấu trừ literal) cho phủ định
-5. :modality + cho được, :modality - cho bị
-6. multi-sentence cho câu có nhiều mệnh đề độc lập (phân tách bởi dấu phẩy)
-7. :wiki - cho tên riêng người/địa danh (dấu trừ literal)
-8. :pivot cho trạng thái/tính từ, :agent cho hành động
-9. "hiện nay", "đến nay", "nay" → (n / now)
-10. Từ ghép giữ nguyên: "làm việc", "chịu thua", "thoát nghèo", "vận động"
-11. Đảm bảo dấu ngoặc mở và đóng cân bằng
-12. Mỗi biến (chữ cái + số tùy chọn) phải DUY NHẤT trong toàn bộ AMR
-13. :prep cho giới từ: về, từ, ở, vào, trong, cho, tại, bởi, vì, để, với
-14. "theo X, ..." → root là (t / theo :source(X) :topic(mệnh đề chính))
-15. "thưa X, ..." → thêm :polite+(wz / sir) vào root verb của câu chính
-16. Động từ chuyển động sau main verb (đi, về, lại, tiếp, ra, vào) → :manner(đ / đi), KHÔNG dùng :compound
-17. :domain cho tính từ/trạng thái khi subject không chủ động hành động
-18. "X nói/khẳng định/cho biết: ..." → (s / say-01 :agent X :topic(mệnh đề))"""
+QUY TẮC:
+1. Tuân thủ đúng định dạng output được yêu cầu.
+2. Dùng concept, biến và quan hệ AMR nhất quán với dữ liệu huấn luyện.
+3. Không dùng ví dụ, câu, nhãn vàng hoặc quy tắc rút ra từ tập test.
+4. Giữ dấu ngoặc AMR cân bằng.
+5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
+6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
+7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu."""
 
 SYSTEM_PROMPT_B1 = SYSTEM_PROMPT_MULTISTEP  # identical per plan
 
@@ -134,15 +124,15 @@ def validate_amr(amr: str) -> bool:
 def _extract_var_to_concept(amr: str) -> dict:
     """Build variable -> concept map from AMR node definitions."""
     var_to_concept = {}
-    for var, concept in re.findall(r'\(\s*([A-Za-z][A-Za-z0-9_-]*)\s*/\s*([^\s:()]+)', amr):
+    for var, concept in re.findall(r'\(\s*([A-Za-zÀ-ỹ][A-Za-zÀ-ỹ0-9_-]*)\s*/\s*([^\s:()]+)', amr):
         var_to_concept[var] = concept
     return var_to_concept
 
 
-def strip_variables(amr: str, mode: str = 'legacy') -> str:
+def strip_variables(amr: str, mode: str = 'clean') -> str:
     """Convert full AMR to no-var form.
 
-    legacy: remove only node declarations, preserving current Vietnamese setup.
+    legacy: remove only node declarations, preserving historical Vietnamese setup.
     clean: additionally replace bare reentrancy variables with their concepts.
     """
     if mode not in {'legacy', 'clean'}:
@@ -158,6 +148,11 @@ def strip_variables(amr: str, mode: str = 'legacy') -> str:
                 rf'\1({concept})',
                 result,
             )
+        result = re.sub(
+            r'(:[A-Za-z0-9_-]+\s+)([A-Za-zÀ-ỹ][A-Za-zÀ-ỹ0-9_-]{0,2})(?=\s|\))',
+            r'\1(amr-unknown)',
+            result,
+        )
 
     return result
 
@@ -280,20 +275,20 @@ def _wrap(system: str, user: str, assistant: str) -> str:
             f"<|im_start|>assistant\n{assistant}\n<|im_end|>")
 
 
-def make_B1(sentence: str, amr: str, no_var_mode: str = 'legacy',
+def make_B1(sentence: str, amr: str, no_var_mode: str = 'clean',
             language: str = 'vi') -> str:
     """B1: direct sentence → AMR."""
     return _wrap(get_system_prompt(language), sentence, f"AMR: {amr}")
 
 
-def make_B2(sentence: str, amr: str, no_var_mode: str = 'legacy',
+def make_B2(sentence: str, amr: str, no_var_mode: str = 'clean',
             language: str = 'vi') -> str:
     """B2: sentence → AMR-no-var."""
     no_var = strip_variables(amr, mode=no_var_mode)
     return _wrap(get_system_prompt(language), sentence, f"AMR_NO_VAR: {no_var}")
 
 
-def make_MTUP2(sentence: str, amr: str, no_var_mode: str = 'legacy',
+def make_MTUP2(sentence: str, amr: str, no_var_mode: str = 'clean',
                language: str = 'vi') -> str:
     """MTUP2: no-var → full AMR (closer intermediate, easier for model to add variables)."""
     no_var = strip_variables(amr, mode=no_var_mode)
@@ -301,7 +296,7 @@ def make_MTUP2(sentence: str, amr: str, no_var_mode: str = 'legacy',
     return _wrap(get_system_prompt(language), sentence, assistant)
 
 
-def make_MTUP3A(sentence: str, amr: str, no_var_mode: str = 'legacy',
+def make_MTUP3A(sentence: str, amr: str, no_var_mode: str = 'clean',
                 language: str = 'vi') -> str:
     """MTUP3A: concepts → no-var → AMR."""
     concepts = build_concept_list(amr)
@@ -314,7 +309,7 @@ def make_MTUP3A(sentence: str, amr: str, no_var_mode: str = 'legacy',
     return _wrap(get_system_prompt(language), sentence, assistant)
 
 
-def make_MTUP3B(sentence: str, amr: str, no_var_mode: str = 'legacy',
+def make_MTUP3B(sentence: str, amr: str, no_var_mode: str = 'clean',
                 language: str = 'vi') -> str:
     """MTUP3B: concepts → relations → AMR."""
     concepts = build_concept_list(amr)
@@ -327,7 +322,7 @@ def make_MTUP3B(sentence: str, amr: str, no_var_mode: str = 'legacy',
     return _wrap(get_system_prompt(language), sentence, assistant)
 
 
-def make_MTUP4(sentence: str, amr: str, no_var_mode: str = 'legacy',
+def make_MTUP4(sentence: str, amr: str, no_var_mode: str = 'clean',
                language: str = 'vi') -> str:
     """MTUP4: concepts → relations → no-var → AMR."""
     concepts = build_concept_list(amr)
@@ -389,13 +384,29 @@ def dedup(examples):
     return out
 
 
+def split_train_dev(examples, dev_split: float, seed: int):
+    """Deterministically split raw examples before weighting/formatting."""
+    if dev_split <= 0:
+        return examples, []
+    if dev_split >= 1:
+        raise ValueError("--dev_split must be in [0, 1)")
+    rng = random.Random(seed)
+    indices = list(range(len(examples)))
+    rng.shuffle(indices)
+    n_dev = max(1, int(round(len(examples) * dev_split)))
+    dev_idx = set(indices[:n_dev])
+    train = [ex for i, ex in enumerate(examples) if i not in dev_idx]
+    dev = [ex for i, ex in enumerate(examples) if i in dev_idx]
+    return train, dev
+
+
 # ─────────────────────────────────────────────────────────────────────────────
 # Main
 # ─────────────────────────────────────────────────────────────────────────────
 
 def build_dataset(method: str, examples_1, examples_2, syn_weight: int,
                   amr1_weight: int, amr2_weight: int,
-                  no_var_mode: str = 'legacy',
+                  no_var_mode: str = 'clean',
                   language: str = 'vi') -> list:
     builder = BUILDERS[method]
     chat_examples = []
@@ -436,8 +447,8 @@ def main():
     parser.add_argument('--syn_weight',  type=int, default=10)
     parser.add_argument('--methods', nargs='+',
                         default=['B1', 'B2', 'MTUP2', 'MTUP3A', 'MTUP3B', 'MTUP4'])
-    parser.add_argument('--no_var_mode', choices=['legacy', 'clean'], default='legacy',
-                        help='legacy keeps the current Vietnamese no-var format; clean also expands bare variable references for English experiments')
+    parser.add_argument('--no_var_mode', choices=['legacy', 'clean'], default='clean',
+                        help='clean expands bare reentrancy variables; legacy preserves old Vietnamese historical outputs')
     parser.add_argument('--raw_dir', default='data/raw',
                         help='Directory containing train_amr_1.txt and train_amr_2.txt')
     parser.add_argument('--formatted_dir', default='data/formatted',
@@ -448,6 +459,8 @@ def main():
     parser.add_argument('--dev_split', type=float, default=0.0,
                         help='Fraction of examples to hold out as dev set (e.g. 0.1). '
                              'Written to {method}_dev.txt. 0 = disabled.')
+    parser.add_argument('--dev_seed', type=int, default=42,
+                        help='Random seed for deterministic train/dev split.')
     parser.add_argument('--verify', action='store_true',
                         help='Print 2 examples per method and exit')
     args = parser.parse_args()
@@ -468,25 +481,32 @@ def main():
     print(f"  train_amr_1: {len(ex1_raw)} raw → {len(ex1)} after dedup")
     print(f"  train_amr_2: {len(ex2_raw)} raw → {len(ex2)} after dedup")
     print(f"  synthetic:   {len(SYNTHETIC_EXAMPLES)} examples × {args.syn_weight}")
+    if args.dev_split > 0:
+        print(f"  dev split:   {args.dev_split:.3f} with seed {args.dev_seed}")
     print()
 
     stats = {}
     for method in args.method if hasattr(args, 'method') else args.methods:
-        examples = build_dataset(method, ex1, ex2, args.syn_weight,
-                                 args.amr1_weight, args.amr2_weight,
-                                 no_var_mode=args.no_var_mode,
-                                 language=args.language)
-
         if args.dev_split > 0:
-            n_dev = max(1, int(len(examples) * args.dev_split))
-            dev_examples = examples[-n_dev:]
-            train_examples = examples[:-n_dev]
+            ex1_train, ex1_dev = split_train_dev(ex1, args.dev_split, args.dev_seed)
+            ex2_train, ex2_dev = split_train_dev(ex2, args.dev_split, args.dev_seed + 1)
+            train_examples = build_dataset(method, ex1_train, ex2_train, 0,
+                                           args.amr1_weight, args.amr2_weight,
+                                           no_var_mode=args.no_var_mode,
+                                           language=args.language)
+            dev_examples = build_dataset(method, ex1_dev, ex2_dev, 0,
+                                         1, 1,
+                                         no_var_mode=args.no_var_mode,
+                                         language=args.language)
             dev_path = fmt_dir / f"{method}_dev.txt"
             with open(dev_path, 'w', encoding='utf-8') as f:
                 f.write('\n\n'.join(dev_examples))
             print(f"  {method}: {len(train_examples)} train + {len(dev_examples)} dev → {fmt_dir}")
         else:
-            train_examples = examples
+            train_examples = build_dataset(method, ex1, ex2, args.syn_weight,
+                                           args.amr1_weight, args.amr2_weight,
+                                           no_var_mode=args.no_var_mode,
+                                           language=args.language)
 
         out_path = fmt_dir / f"{method}_train.txt"
         with open(out_path, 'w', encoding='utf-8') as f:
@@ -513,6 +533,8 @@ def main():
             'no_var_mode': args.no_var_mode,
             'dedup': not args.no_dedup,
             'language': args.language,
+            'dev_split': args.dev_split,
+            'dev_seed': args.dev_seed if args.dev_split > 0 else None,
             'methods': stats,
         }, f, indent=2)
     print(f"\nStats saved to {stats_path}")

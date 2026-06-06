@@ -175,27 +175,16 @@ def build_prompt(tokenizer, system_prompt: str, sentence: str) -> torch.Tensor:
     return tokenizer(text, return_tensors='pt', add_special_tokens=False)
 
 
-SYSTEM_PROMPT = """Bạn là chuyên gia phân tích AMR (Abstract Meaning Representation) cho tiếng Việt.
+SYSTEM_PROMPT = """Bạn là trợ lý phân tích AMR (Abstract Meaning Representation) cho tiếng Việt.
 
-QUY TẮC QUAN TRỌNG:
-1. Chỉ dùng từ tiếng Việt trong câu gốc làm concept. KHÔNG tự tạo từ mới.
-2. Concept AMR chuẩn được phép dùng (tiếng Anh): person, name, now, after, before, and, or, contrast-01, obligate-01, possible-01, rate-entity-91, temporal-quantity, percentage-entity, multi-sentence, have-rel-role-91, have-org-role-91, amr-unknown, province, city, mountain, country, company, ethnic-group, date-entity, date-interval, monetary-quantity, about
-3. :classifier cho lượng từ: người, anh, chị, cái, con, chiếc, đứa, ngôi, căn, cùi, ngọn, chú, cánh
-4. :polarity - (dấu trừ literal) cho phủ định
-5. :modality + cho được, :modality - cho bị
-6. multi-sentence cho câu có nhiều mệnh đề độc lập (phân tách bởi dấu phẩy)
-7. :wiki - cho tên riêng người/địa danh (dấu trừ literal)
-8. :pivot cho trạng thái/tính từ, :agent cho hành động
-9. "hiện nay", "đến nay", "nay" → (n / now)
-10. Từ ghép giữ nguyên: "làm việc", "chịu thua", "thoát nghèo", "vận động"
-11. Đảm bảo dấu ngoặc mở và đóng cân bằng
-12. Mỗi biến (chữ cái + số tùy chọn) phải DUY NHẤT trong toàn bộ AMR
-13. :prep cho giới từ: về, từ, ở, vào, trong, cho, tại, bởi, vì, để, với
-14. "theo X, ..." → root là (t / theo :source(X) :topic(mệnh đề chính))
-15. "thưa X, ..." → thêm :polite+(wz / sir) vào root verb của câu chính
-16. Động từ chuyển động sau main verb (đi, về, lại, tiếp, ra, vào) → :manner(đ / đi), KHÔNG dùng :compound
-17. :domain cho tính từ/trạng thái khi subject không chủ động hành động
-18. "X nói/khẳng định/cho biết: ..." → (s / say-01 :agent X :topic(mệnh đề))"""
+QUY TẮC:
+1. Tuân thủ đúng định dạng output được yêu cầu.
+2. Dùng concept, biến và quan hệ AMR nhất quán với dữ liệu huấn luyện.
+3. Không dùng ví dụ, câu, nhãn vàng hoặc quy tắc rút ra từ tập test.
+4. Giữ dấu ngoặc AMR cân bằng.
+5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
+6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
+7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu."""
 
 SYSTEM_PROMPT_EN = """You are an AMR (Abstract Meaning Representation) parsing assistant for English.
 

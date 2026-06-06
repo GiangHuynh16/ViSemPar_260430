@@ -271,6 +271,36 @@ def main():
     print("=" * 60)
     trainer.train()
 
+    log_history = trainer.state.log_history
+    with open(output_dir / 'trainer_log_history.json', 'w') as f:
+        json.dump(log_history, f, indent=2)
+
+    if eval_dataset is not None:
+        try:
+            import matplotlib.pyplot as plt
+
+            train_epochs = [x['epoch'] for x in log_history if 'loss' in x and 'epoch' in x]
+            train_losses = [x['loss'] for x in log_history if 'loss' in x and 'epoch' in x]
+            eval_epochs = [x['epoch'] for x in log_history if 'eval_loss' in x and 'epoch' in x]
+            eval_losses = [x['eval_loss'] for x in log_history if 'eval_loss' in x and 'epoch' in x]
+
+            if train_losses or eval_losses:
+                plt.figure(figsize=(7, 4))
+                if train_losses:
+                    plt.plot(train_epochs, train_losses, marker='o', label='train loss')
+                if eval_losses:
+                    plt.plot(eval_epochs, eval_losses, marker='o', label='dev loss')
+                plt.xlabel('epoch')
+                plt.ylabel('loss')
+                plt.title(f'{method} seed={args.seed}')
+                plt.legend()
+                plt.tight_layout()
+                plt.savefig(output_dir / 'loss_curve.png', dpi=160)
+                plt.close()
+                print(f"Loss curve → {output_dir / 'loss_curve.png'}")
+        except Exception as exc:
+            print(f"WARNING: could not write loss curve: {exc}")
+
     # ── Save ───────────────────────────────────────────────────────────────
     final_dir = output_dir / 'final'
     trainer.model.save_pretrained(str(final_dir))
