@@ -96,8 +96,7 @@ Do not keep `25` epochs as the default decision for final runs. For v2, start wi
 Generate random-search learning-rate configs:
 
 ```bash
-python src/tune_lr.py \
-  --config configs/vietnamese_v2/MTUP2.yaml \
+python src/tune_all_methods.py \
   --seed 42 \
   --n_iter 5 \
   --lr_min 1e-6 \
@@ -105,16 +104,20 @@ python src/tune_lr.py \
   --epochs 50
 ```
 
-Run the printed train commands. Then summarize completed runs:
+Run the generated train script on the GPU server:
 
 ```bash
-python src/tune_lr.py \
-  --config configs/vietnamese_v2/MTUP2.yaml \
-  --seed 42 \
-  --summarize configs/tuning/MTUP2_lrsearch_manifest.json
+bash configs/tuning/vietnamese_v2_all/run_all_lrsearch.sh
 ```
 
-Pick the learning rate and epoch with the lowest dev loss from the summary and the healthiest train/dev curve. After selecting LR/epoch, run all seeds for the method.
+Then summarize completed runs for every method:
+
+```bash
+python src/tune_all_methods.py \
+  --summarize configs/tuning/vietnamese_v2_all/vietnamese_v2_all_lrsearch_manifest.json
+```
+
+Pick each method's learning rate and epoch with the lowest dev loss from the summary and the healthiest train/dev curve. After selecting LR/epoch, run all seeds for each method.
 
 ## Prompt Leakage Policy
 

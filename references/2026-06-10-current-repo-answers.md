@@ -57,6 +57,8 @@ Changed code:
 - `src/train.py`: optional sklearn auto split, epoch-level logging, dev loss metadata.
 - `src/tune_lr.py`: sklearn random LR sampler, 1e-6 to 5e-5 default range, 50-epoch search option,
   and summary selection by dev loss.
+- `src/tune_all_methods.py`: one-command LR-search config generation and summary for B1, B2,
+  MTUP2, MTUP3A, MTUP3B, and MTUP4 using the same sampled LR list.
 - `src/inference.py`: `--split val` no longer falls back to public test.
 - `configs/vietnamese_v2/*.yaml`: dev sentence path added.
 - `configs/base_v2.yaml`: v2 logging and dev seed defaults.
