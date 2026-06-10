@@ -496,9 +496,9 @@ def main():
     ex1 = ex1_raw if args.no_dedup else dedup(ex1_raw)
     ex2 = ex2_raw if args.no_dedup else dedup(ex2_raw)
 
-    print(f"  train_amr_1: {len(ex1_raw)} raw → {len(ex1)} after dedup")
-    print(f"  train_amr_2: {len(ex2_raw)} raw → {len(ex2)} after dedup")
-    print(f"  synthetic:   {len(SYNTHETIC_EXAMPLES)} examples × {args.syn_weight}")
+    print(f"  train_amr_1: {len(ex1_raw)} raw -> {len(ex1)} after dedup")
+    print(f"  train_amr_2: {len(ex2_raw)} raw -> {len(ex2)} after dedup")
+    print(f"  synthetic:   {len(SYNTHETIC_EXAMPLES)} examples x {args.syn_weight}")
     if args.dev_split > 0:
         print(f"  dev split:   {args.dev_split:.3f} with seed {args.dev_seed}")
     print()
@@ -509,8 +509,8 @@ def main():
         dev_raw_examples = ex1_dev + ex2_dev
         write_sentence_lines(fmt_dir / 'dev.txt', dev_raw_examples)
         write_amr_blocks(fmt_dir / 'dev_ground_truth.txt', dev_raw_examples)
-        print(f"  dev raw:     {len(dev_raw_examples)} sentences → {fmt_dir / 'dev.txt'}")
-        print(f"  dev gold:    {len(dev_raw_examples)} AMRs → {fmt_dir / 'dev_ground_truth.txt'}")
+        print(f"  dev raw:     {len(dev_raw_examples)} sentences -> {fmt_dir / 'dev.txt'}")
+        print(f"  dev gold:    {len(dev_raw_examples)} AMRs -> {fmt_dir / 'dev_ground_truth.txt'}")
     else:
         ex1_train, ex1_dev = ex1, []
         ex2_train, ex2_dev = ex2, []
@@ -529,7 +529,7 @@ def main():
             dev_path = fmt_dir / f"{method}_dev.txt"
             with open(dev_path, 'w', encoding='utf-8') as f:
                 f.write('\n\n'.join(dev_examples))
-            print(f"  {method}: {len(train_examples)} train + {len(dev_examples)} dev → {fmt_dir}")
+            print(f"  {method}: {len(train_examples)} train + {len(dev_examples)} dev -> {fmt_dir}")
         else:
             train_examples = build_dataset(method, ex1, ex2, args.syn_weight,
                                            args.amr1_weight, args.amr2_weight,
@@ -548,7 +548,7 @@ def main():
             print(train_examples[-1][:600])
             print()
         elif args.dev_split == 0:
-            print(f"  {method}: {len(train_examples)} examples → {out_path}")
+            print(f"  {method}: {len(train_examples)} examples -> {out_path}")
 
     # Save stats
     stats_path = fmt_dir / 'dataset_stats.json'

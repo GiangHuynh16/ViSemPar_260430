@@ -23,7 +23,9 @@ after the cleanup pass.
    dev loss, not public-test score.
 
 5. **B2 correctness**
-   B2 now uses the same `strip_variables(..., mode="clean")` path as MTUP2 step 1.
+   The earlier concern that B2 was not fully variable-free applies to historical formatted data
+   produced with the old no-var conversion. That data/checkpoint should not be used as final
+   evidence. B2 now uses the same `strip_variables(..., mode="clean")` path as MTUP2 step 1.
    `src/audit_b2.py` verified train and dev:
    B2 equals MTUP2 step 1, declaration violations = 0, bare full-AMR variable refs = 0.
    B2 inference still binds variables deterministically with `src/var_binder.py` before Smatch.
