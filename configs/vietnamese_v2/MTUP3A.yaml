@@ -6,6 +6,7 @@ no_var_mode: clean
 data:
   train: vietnamese_v2/MTUP3A_train.txt
   dev_formatted: vietnamese_v2/MTUP3A_dev.txt
+  val: data/formatted/vietnamese_v2/dev.txt
   test: data/raw/public_test.txt
 decoding:
   max_new_tokens: 1536

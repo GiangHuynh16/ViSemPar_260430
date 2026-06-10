@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Generate small RandomizedSearchCV-style learning-rate runs.
+"""Generate and summarize RandomizedSearchCV-style learning-rate runs.
 
 This helper keeps expensive LoRA training outside sklearn's estimator API, but
 uses sklearn's random search sampler so the search space and seed are explicit.
@@ -39,6 +39,85 @@ def load_config(path: Path) -> dict:
     return cfg
 
 
+def best_eval_from_log(log_path: Path) -> dict | None:
+    if not log_path.exists():
+        return None
+    with open(log_path) as f:
+        rows = json.load(f)
+    eval_rows = [row for row in rows if "eval_loss" in row and "epoch" in row]
+    if not eval_rows:
+        return None
+    best = min(eval_rows, key=lambda row: row["eval_loss"])
+    train_rows = [row for row in rows if "loss" in row and "epoch" in row]
+    train_at_epoch = None
+    same_epoch = [
+        row for row in train_rows
+        if round(float(row["epoch"]), 4) == round(float(best["epoch"]), 4)
+    ]
+    if same_epoch:
+        train_at_epoch = same_epoch[-1]["loss"]
+    return {
+        "best_epoch": best["epoch"],
+        "best_eval_loss": best["eval_loss"],
+        "train_loss_at_best_epoch": train_at_epoch,
+    }
+
+
+def summarize_runs(manifest_path: Path, seed: int) -> None:
+    with open(manifest_path) as f:
+        manifest = json.load(f)
+
+    rows = []
+    for config_name in manifest["configs"]:
+        config_path = Path(config_name)
+        cfg = load_config(config_path)
+        ckpt_dir = (
+            Path("checkpoints")
+            / cfg["group"]
+            / cfg["method"]
+            / f"s{seed}"
+        )
+        best = best_eval_from_log(ckpt_dir / "trainer_log_history.json")
+        rows.append({
+            "config": str(config_path),
+            "lr": cfg["training"]["lr"],
+            "checkpoint_dir": str(ckpt_dir),
+            **(best or {
+                "best_epoch": None,
+                "best_eval_loss": None,
+                "train_loss_at_best_epoch": None,
+            }),
+        })
+
+    complete = [row for row in rows if row["best_eval_loss"] is not None]
+    if complete:
+        selected = min(complete, key=lambda row: row["best_eval_loss"])
+    else:
+        selected = None
+
+    summary = {
+        "manifest": str(manifest_path),
+        "selection_metric": "lowest eval_loss; public test is not used",
+        "selected": selected,
+        "runs": rows,
+    }
+    summary_path = manifest_path.with_name(
+        manifest_path.stem.replace("_manifest", "_summary") + ".json"
+    )
+    with open(summary_path, "w") as f:
+        json.dump(summary, f, indent=2)
+
+    print(f"Summary: {summary_path}")
+    if selected:
+        print(
+            "Selected "
+            f"lr={selected['lr']:.6g} epoch={selected['best_epoch']} "
+            f"eval_loss={selected['best_eval_loss']:.6f}"
+        )
+    else:
+        print("No completed runs with eval_loss were found yet.")
+
+
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('--config', required=True)
@@ -46,9 +125,16 @@ def main():
     parser.add_argument('--n_iter', type=int, default=5)
     parser.add_argument('--lr_min', type=float, default=1e-6)
     parser.add_argument('--lr_max', type=float, default=5e-5)
-    parser.add_argument('--epochs', type=int, default=10)
+    parser.add_argument('--epochs', type=int, default=50,
+                        help='Train each sampled LR up to this many epochs; choose best epoch by dev loss.')
     parser.add_argument('--out_dir', default='configs/tuning')
+    parser.add_argument('--summarize', metavar='MANIFEST',
+                        help='Summarize completed runs from a manifest JSON instead of creating configs.')
     args = parser.parse_args()
+
+    if args.summarize:
+        summarize_runs(Path(args.summarize), args.seed)
+        return
 
     config_path = Path(args.config)
     cfg = load_config(config_path)
@@ -67,6 +153,7 @@ def main():
     out_dir = Path(args.out_dir)
     out_dir.mkdir(parents=True, exist_ok=True)
     commands = []
+    config_paths = []
 
     for i, params in enumerate(sampler, start=1):
         tuned = copy.deepcopy(cfg)
@@ -79,6 +166,7 @@ def main():
         tuned_path = out_dir / f"{config_path.stem}_lr{i}.yaml"
         with open(tuned_path, 'w') as f:
             yaml.safe_dump(tuned, f, sort_keys=False)
+        config_paths.append(str(tuned_path))
         commands.append(f"python src/train.py --config {tuned_path} --seed {args.seed}")
 
     manifest = {
@@ -88,6 +176,8 @@ def main():
         'lr_min': args.lr_min,
         'lr_max': args.lr_max,
         'epochs': args.epochs,
+        'selection_metric': 'lowest dev eval_loss; do not inspect public-test score',
+        'configs': config_paths,
         'commands': commands,
     }
     manifest_path = out_dir / f"{config_path.stem}_lrsearch_manifest.json"

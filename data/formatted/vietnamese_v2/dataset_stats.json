@@ -1,0 +1,23 @@
+{
+  "amr1_examples": 1235,
+  "amr2_examples": 572,
+  "synthetic_examples": 0,
+  "weights": {
+    "amr1": 1,
+    "amr2": 1,
+    "syn": 0
+  },
+  "no_var_mode": "clean",
+  "dedup": true,
+  "language": "vi",
+  "dev_split": 0.1,
+  "dev_seed": 42,
+  "methods": {
+    "B1": 1626,
+    "B2": 1626,
+    "MTUP2": 1626,
+    "MTUP3A": 1626,
+    "MTUP3B": 1616,
+    "MTUP4": 1616
+  }
+}

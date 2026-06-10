@@ -37,10 +37,12 @@ training:
   max_grad_norm: 1.0
   max_length: 2048
   save_total_limit: 1
+  logging_strategy: epoch
 
 data:
   amr1_weight: 1
   amr2_weight: 1
   syn_weight: 0
+  dev_seed: 42
 
 seeds: [42, 123, 456]

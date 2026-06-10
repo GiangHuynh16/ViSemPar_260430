@@ -250,7 +250,12 @@ def main():
         configured_test = cfg.get('data', {}).get('test')
         test_file = root / configured_test if configured_test else root / 'data' / 'raw' / 'public_test.txt'
     else:
-        configured_val = cfg.get('data', {}).get('val', 'data/raw/public_test.txt')
+        configured_val = cfg.get('data', {}).get('val')
+        if not configured_val:
+            raise SystemExit(
+                "Config has no data.val for --split val. Generate a dev split with "
+                "src/data_pipeline.py --dev_split ... and set data.val to the dev sentence file."
+            )
         test_file = root / configured_val
 
     out_dir = root / 'results' / group / method

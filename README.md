@@ -87,6 +87,7 @@ Training with a dev split writes:
 - `checkpoints/<group>/<method>/s<seed>/train_meta.json`
 
 Use the dev loss curve to detect overfitting and choose a defensible epoch/checkpoint before public-test inference.
+For validation inference, v2 configs use `data/formatted/vietnamese_v2/dev.txt`; public test is never the fallback for `--split val`.
 
 ## Learning-Rate Tuning
 
@@ -101,10 +102,19 @@ python src/tune_lr.py \
   --n_iter 5 \
   --lr_min 1e-6 \
   --lr_max 5e-5 \
-  --epochs 10
+  --epochs 50
 ```
 
-Run the printed train commands. Pick the learning rate with the lowest dev loss from `trainer_log_history.json` and the healthiest train/dev curve. After selecting LR, run all seeds for the method.
+Run the printed train commands. Then summarize completed runs:
+
+```bash
+python src/tune_lr.py \
+  --config configs/vietnamese_v2/MTUP2.yaml \
+  --seed 42 \
+  --summarize configs/tuning/MTUP2_lrsearch_manifest.json
+```
+
+Pick the learning rate and epoch with the lowest dev loss from the summary and the healthiest train/dev curve. After selecting LR/epoch, run all seeds for the method.
 
 ## Prompt Leakage Policy
 

@@ -28,6 +28,11 @@ from transformers import (
 )
 from peft import LoraConfig, get_peft_model, TaskType
 
+try:
+    from sklearn.model_selection import train_test_split
+except ImportError:
+    train_test_split = None
+
 
 def set_seed(seed: int):
     random.seed(seed)
@@ -134,10 +139,32 @@ def load_chat_dataset(data_path: str, tokenizer, max_length: int = 2048):
     return Dataset.from_list(tokenized)
 
 
+def split_dataset_for_dev(dataset: Dataset, dev_split: float, seed: int):
+    """Split a tokenized dataset with sklearn so model selection is not test-based."""
+    if dev_split <= 0:
+        return dataset, None
+    if train_test_split is None:
+        raise RuntimeError(
+            "scikit-learn is required for automatic train/dev splitting. "
+            "Install scikit-learn or generate *_dev.txt with src/data_pipeline.py."
+        )
+    indices = list(range(len(dataset)))
+    train_idx, dev_idx = train_test_split(
+        indices,
+        test_size=dev_split,
+        random_state=seed,
+        shuffle=True,
+    )
+    return dataset.select(train_idx), dataset.select(dev_idx)
+
+
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('--config', required=True)
     parser.add_argument('--seed', type=int, required=True)
+    parser.add_argument('--auto_dev_split', type=float, default=None,
+                        help='If no data.dev_formatted file exists, split this fraction '
+                             'from train with sklearn train_test_split.')
     args = parser.parse_args()
 
     cfg = load_config(args.config, args.seed)
@@ -180,6 +207,16 @@ def main():
             str(dev_path), tokenizer,
             max_length=tr_cfg.get('max_length', 2048))
         print(f"Dev examples:  {len(eval_dataset)}")
+    else:
+        auto_dev_split = args.auto_dev_split
+        if auto_dev_split is None:
+            auto_dev_split = cfg.get('data', {}).get('auto_dev_split', 0.0)
+        if auto_dev_split and auto_dev_split > 0:
+            dataset, eval_dataset = split_dataset_for_dev(
+                dataset, auto_dev_split, cfg.get('data', {}).get('dev_seed', args.seed))
+            print(f"Auto dev split: {auto_dev_split:.3f}")
+            print(f"Train examples after split: {len(dataset)}")
+            print(f"Dev examples after split:   {len(eval_dataset)}")
 
     # ── Model ──────────────────────────────────────────────────────────────
     print(f"\nLoading model: {model_name}")
@@ -237,7 +274,8 @@ def main():
         fp16=not use_bf16,
         # Do NOT set gradient_checkpointing=True here – already enabled above
         gradient_checkpointing=False,
-        logging_steps=10,
+        logging_strategy=tr_cfg.get('logging_strategy', 'epoch'),
+        logging_steps=tr_cfg.get('logging_steps', 10),
         save_strategy='epoch',
         save_total_limit=tr_cfg.get('save_total_limit', 3),
         seed=args.seed,
@@ -311,9 +349,12 @@ def main():
         'method': method, 'seed': args.seed, 'group': group,
         'config': args.config,
         'train_examples': len(dataset),
+        'dev_examples': len(eval_dataset) if eval_dataset is not None else 0,
         'epochs': tr_cfg['epochs'],
         'lora_r': lora_cfg['r'],
         'lr': tr_cfg['lr'],
+        'best_checkpoint': trainer.state.best_model_checkpoint,
+        'best_eval_loss': trainer.state.best_metric,
     }
     with open(output_dir / 'train_meta.json', 'w') as f:
         json.dump(meta, f, indent=2)

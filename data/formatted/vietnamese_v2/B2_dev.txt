@@ -1,0 +1,4584 @@
+<|im_start|>system
+Bạn là trợ lý phân tích AMR (Abstract Meaning Representation) cho tiếng Việt.
+
+QUY TẮC:
+1. Tuân thủ đúng định dạng output được yêu cầu.
+2. Dùng concept, biến và quan hệ AMR nhất quán với dữ liệu huấn luyện.
+3. Không dùng ví dụ, câu, nhãn vàng hoặc quy tắc rút ra từ tập test.
+4. Giữ dấu ngoặc AMR cân bằng.
+5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
+6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
+7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+<|im_end|>
+<|im_start|>user
+mỗi phút ta phải thắp đèn và phải tắt đèn một lần !
+<|im_end|>
+<|im_start|>assistant
+AMR_NO_VAR: (obligate-01
+    :agent(ta)
+    :frequency(rate-entity-91
+        :ARG2(temporal-quantity
+            :unit(phút)
+            :quant 1))
+    :theme(and
+        :op1(thắp
+            :patient(đèn)
+            :agent (ta))
+        :op2(tắt
+            :agent (ta)
+            :patient (đèn))))
+<|im_end|>
+
+<|im_start|>system
+Bạn là trợ lý phân tích AMR (Abstract Meaning Representation) cho tiếng Việt.
+
+QUY TẮC:
+1. Tuân thủ đúng định dạng output được yêu cầu.
+2. Dùng concept, biến và quan hệ AMR nhất quán với dữ liệu huấn luyện.
+3. Không dùng ví dụ, câu, nhãn vàng hoặc quy tắc rút ra từ tập test.
+4. Giữ dấu ngoặc AMR cân bằng.
+5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
+6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
+7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+<|im_end|>
+<|im_start|>user
+chúc một đêm tốt lành .
+<|im_end|>
+<|im_start|>assistant
+AMR_NO_VAR: (chúc
+    :topic(đêm
+        :mod(tốt lành)
+        :quant 1))
+<|im_end|>
+
+<|im_start|>system
+Bạn là trợ lý phân tích AMR (Abstract Meaning Representation) cho tiếng Việt.
+
+QUY TẮC:
+1. Tuân thủ đúng định dạng output được yêu cầu.
+2. Dùng concept, biến và quan hệ AMR nhất quán với dữ liệu huấn luyện.
+3. Không dùng ví dụ, câu, nhãn vàng hoặc quy tắc rút ra từ tập test.
+4. Giữ dấu ngoặc AMR cân bằng.
+5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
+6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
+7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+<|im_end|>
+<|im_start|>user
+tôi biết cách cho ông nghỉ ngơi khi nào ông muốn đấy ...
+<|im_end|>
+<|im_start|>assistant
+AMR_NO_VAR: (biết
+    :pivot(tôi)
+    :theme(cách
+        :purpose(nghỉ ngơi
+            :agent(ông)
+            :time(muốn
+                :pivot (ông)))))
+<|im_end|>
+
+<|im_start|>system
+Bạn là trợ lý phân tích AMR (Abstract Meaning Representation) cho tiếng Việt.
+
+QUY TẮC:
+1. Tuân thủ đúng định dạng output được yêu cầu.
+2. Dùng concept, biến và quan hệ AMR nhất quán với dữ liệu huấn luyện.
+3. Không dùng ví dụ, câu, nhãn vàng hoặc quy tắc rút ra từ tập test.
+4. Giữ dấu ngoặc AMR cân bằng.
+5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
+6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
+7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+<|im_end|>
+<|im_start|>user
+ông hoàng nhỏ hỏi tiếp :
+<|im_end|>
+<|im_start|>assistant
+AMR_NO_VAR: (hỏi
+    :agent(ông hoàng
+        :mod(nhỏ))
+    :compound(tiếp))
+<|im_end|>
+
+<|im_start|>system
+Bạn là trợ lý phân tích AMR (Abstract Meaning Representation) cho tiếng Việt.
+
+QUY TẮC:
+1. Tuân thủ đúng định dạng output được yêu cầu.
+2. Dùng concept, biến và quan hệ AMR nhất quán với dữ liệu huấn luyện.
+3. Không dùng ví dụ, câu, nhãn vàng hoặc quy tắc rút ra từ tập test.
+4. Giữ dấu ngoặc AMR cân bằng.
+5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
+6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
+7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+<|im_end|>
+<|im_start|>user
+cái ông này , ông hoàng nhỏ nghĩ thầm trong lúc tiếp tục cuộc hành trình .
+<|im_end|>
+<|im_start|>assistant
+AMR_NO_VAR: (nghĩ
+    :topic(ông
+        :mod(này))
+    :pivot(ông hoàng
+        :mod(nhỏ))
+    :compound(thầm)
+    :time(tiếp tục
+        :theme(cuộc
+            :mod(hành trình))
+        :agent (ông)))
+<|im_end|>
+
+<|im_start|>system
+Bạn là trợ lý phân tích AMR (Abstract Meaning Representation) cho tiếng Việt.
+
+QUY TẮC:
+1. Tuân thủ đúng định dạng output được yêu cầu.
+2. Dùng concept, biến và quan hệ AMR nhất quán với dữ liệu huấn luyện.
+3. Không dùng ví dụ, câu, nhãn vàng hoặc quy tắc rút ra từ tập test.
+4. Giữ dấu ngoặc AMR cân bằng.
+5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
+6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
+7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+<|im_end|>
+<|im_start|>user
+- nhà địa lý là người như thế nào ?
+<|im_end|>
+<|im_start|>assistant
+AMR_NO_VAR: (nhà
+    :compound(địa lý)
+    :mode interrogative
+    :domain(amr-unknown))
+<|im_end|>
+
+<|im_start|>system
+Bạn là trợ lý phân tích AMR (Abstract Meaning Representation) cho tiếng Việt.
+
+QUY TẮC:
+1. Tuân thủ đúng định dạng output được yêu cầu.
+2. Dùng concept, biến và quan hệ AMR nhất quán với dữ liệu huấn luyện.
+3. Không dùng ví dụ, câu, nhãn vàng hoặc quy tắc rút ra từ tập test.
+4. Giữ dấu ngoặc AMR cân bằng.
+5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
+6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
+7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+<|im_end|>
+<|im_start|>user
+- tinh cầu của ông đẹp quá .
+<|im_end|>
+<|im_start|>assistant
+AMR_NO_VAR: (đẹp
+    :domain(tinh cầu
+        :poss(ông))
+    :degree(quá))
+<|im_end|>
+
+<|im_start|>system
+Bạn là trợ lý phân tích AMR (Abstract Meaning Representation) cho tiếng Việt.
+
+QUY TẮC:
+1. Tuân thủ đúng định dạng output được yêu cầu.
+2. Dùng concept, biến và quan hệ AMR nhất quán với dữ liệu huấn luyện.
+3. Không dùng ví dụ, câu, nhãn vàng hoặc quy tắc rút ra từ tập test.
+4. Giữ dấu ngoặc AMR cân bằng.
+5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
+6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
+7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+<|im_end|>
+<|im_start|>user
+có đại dương không ông ?
+<|im_end|>
+<|im_start|>assistant
+AMR_NO_VAR: (có
+    :theme(đại dương)
+    :mode interrogative)
+<|im_end|>
+
+<|im_start|>system
+Bạn là trợ lý phân tích AMR (Abstract Meaning Representation) cho tiếng Việt.
+
+QUY TẮC:
+1. Tuân thủ đúng định dạng output được yêu cầu.
+2. Dùng concept, biến và quan hệ AMR nhất quán với dữ liệu huấn luyện.
+3. Không dùng ví dụ, câu, nhãn vàng hoặc quy tắc rút ra từ tập test.
+4. Giữ dấu ngoặc AMR cân bằng.
+5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
+6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
+7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+<|im_end|>
+<|im_start|>user
+nhà địa lý không phải là người đi đến các thành phố , sông biển , núi non , đại dương và sa mạc .
+<|im_end|>
+<|im_start|>assistant
+AMR_NO_VAR: (người
+    :domain(nhà
+        :compound(địa lý))
+    :agent-of(đi
+        :direction(đến)
+        :location(and
+            :op1(thành phố)
+            :op2(sông
+                :compound(biển))
+            :op3(núi non)
+            :op4(đại dương)
+            :op5(sa mạc))
+        :polarity -))
+<|im_end|>
+
+<|im_start|>system
+Bạn là trợ lý phân tích AMR (Abstract Meaning Representation) cho tiếng Việt.
+
+QUY TẮC:
+1. Tuân thủ đúng định dạng output được yêu cầu.
+2. Dùng concept, biến và quan hệ AMR nhất quán với dữ liệu huấn luyện.
+3. Không dùng ví dụ, câu, nhãn vàng hoặc quy tắc rút ra từ tập test.
+4. Giữ dấu ngoặc AMR cân bằng.
+5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
+6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
+7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+<|im_end|>
+<|im_start|>user
+nhà địa lý rất quan trọng không thể đi lung tung .
+<|im_end|>
+<|im_start|>assistant
+AMR_NO_VAR: (quan trọng
+    :domain(nhà
+        :compound(địa lý))
+    :degree(rất)
+    :result(possible-01
+        :theme(đi
+            :manner(lung tung)
+            :agent (nhà))
+        :polarity -))
+<|im_end|>
+
+<|im_start|>system
+Bạn là trợ lý phân tích AMR (Abstract Meaning Representation) cho tiếng Việt.
+
+QUY TẮC:
+1. Tuân thủ đúng định dạng output được yêu cầu.
+2. Dùng concept, biến và quan hệ AMR nhất quán với dữ liệu huấn luyện.
+3. Không dùng ví dụ, câu, nhãn vàng hoặc quy tắc rút ra từ tập test.
+4. Giữ dấu ngoặc AMR cân bằng.
+5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
+6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
+7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+<|im_end|>
+<|im_start|>user
+chẳng mấy khi một đại dương lại cạn nước .
+<|im_end|>
+<|im_start|>assistant
+AMR_NO_VAR: (cạn
+    :degree(chẳng mấy khi)
+    :pivot(đại dương
+        :quant 1)
+    :theme(nước
+        :poss (đại)))
+<|im_end|>
+
+<|im_start|>system
+Bạn là trợ lý phân tích AMR (Abstract Meaning Representation) cho tiếng Việt.
+
+QUY TẮC:
+1. Tuân thủ đúng định dạng output được yêu cầu.
+2. Dùng concept, biến và quan hệ AMR nhất quán với dữ liệu huấn luyện.
+3. Không dùng ví dụ, câu, nhãn vàng hoặc quy tắc rút ra từ tập test.
+4. Giữ dấu ngoặc AMR cân bằng.
+5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
+6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
+7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+<|im_end|>
+<|im_start|>user
+có thể dồn hết nhân loại lên một hòn đảo bé nhất trong Thái Bình Dương .
+<|im_end|>
+<|im_start|>assistant
+AMR_NO_VAR: (possible-01
+    :theme(dồn
+        :manner(hết)
+        :patient(nhân loại)
+        :direction(lên
+            :finalLocation(đảo
+                :mod(bé
+                    :degree(nhất))
+                :location(ocean
+                    :name(name
+                        :op1(Thái)
+                        :op2(Bình)
+                        :op3(Dương))
+                    :wiki(Thái_Bình_Dương))
+                :quant 1
+                    :classifier(hòn)))))
+<|im_end|>
+
+<|im_start|>system
+Bạn là trợ lý phân tích AMR (Abstract Meaning Representation) cho tiếng Việt.
+
+QUY TẮC:
+1. Tuân thủ đúng định dạng output được yêu cầu.
+2. Dùng concept, biến và quan hệ AMR nhất quán với dữ liệu huấn luyện.
+3. Không dùng ví dụ, câu, nhãn vàng hoặc quy tắc rút ra từ tập test.
+4. Giữ dấu ngoặc AMR cân bằng.
+5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
+6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
+7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+<|im_end|>
+<|im_start|>user
+- ngay giữa loài người , cũng bơ vơ , rắn nói .
+<|im_end|>
+<|im_start|>assistant
+AMR_NO_VAR: (nói
+    :topic(bơ vơ
+        :domain(be-located-at-91
+            :location(giữa
+                :mod(ngay)
+                :mod(loài người))))
+    :agent(rắn))
+<|im_end|>
+
+<|im_start|>system
+Bạn là trợ lý phân tích AMR (Abstract Meaning Representation) cho tiếng Việt.
+
+QUY TẮC:
+1. Tuân thủ đúng định dạng output được yêu cầu.
+2. Dùng concept, biến và quan hệ AMR nhất quán với dữ liệu huấn luyện.
+3. Không dùng ví dụ, câu, nhãn vàng hoặc quy tắc rút ra từ tập test.
+4. Giữ dấu ngoặc AMR cân bằng.
+5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
+6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
+7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+<|im_end|>
+<|im_start|>user
+- anh là một con vật buồn cười thật , em nói , mảnh khảnh cứ như một ngón tay ...
+<|im_end|>
+<|im_start|>assistant
+AMR_NO_VAR: (nói
+    :agent(em)
+    :topic(and
+        :op1(vật
+            :domain(anh)
+            :classifier(con)
+            :mod(buồn cười
+                :degree(thật)))
+        :op2(mảnh khảnh
+            :compared-to(ngón
+                :compound(tay)
+                :quant 1)
+            :degree(equal)
+            :domain (anh))))
+<|im_end|>
+
+<|im_start|>system
+Bạn là trợ lý phân tích AMR (Abstract Meaning Representation) cho tiếng Việt.
+
+QUY TẮC:
+1. Tuân thủ đúng định dạng output được yêu cầu.
+2. Dùng concept, biến và quan hệ AMR nhất quán với dữ liệu huấn luyện.
+3. Không dùng ví dụ, câu, nhãn vàng hoặc quy tắc rút ra từ tập test.
+4. Giữ dấu ngoặc AMR cân bằng.
+5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
+6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
+7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+<|im_end|>
+<|im_start|>user
+ông hoàng nhỏ đi qua sa mạc và chỉ gặp có một bông hoa .
+<|im_end|>
+<|im_start|>assistant
+AMR_NO_VAR: (and
+    :op1(đi
+        :agent(ông hoàng
+            :mod(nhỏ))
+        :compound(qua)
+        :location(sa mạc))
+    :op2(gặp
+        :degree(chỉ)
+        :goal(hoa
+            :quant 1
+                :classifier(bông))
+        :agent (ông)))
+<|im_end|>
+
+<|im_start|>system
+Bạn là trợ lý phân tích AMR (Abstract Meaning Representation) cho tiếng Việt.
+
+QUY TẮC:
+1. Tuân thủ đúng định dạng output được yêu cầu.
+2. Dùng concept, biến và quan hệ AMR nhất quán với dữ liệu huấn luyện.
+3. Không dùng ví dụ, câu, nhãn vàng hoặc quy tắc rút ra từ tập test.
+4. Giữ dấu ngoặc AMR cân bằng.
+5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
+6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
+7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+<|im_end|>
+<|im_start|>user
+- chúc một ngày tốt lành , ông hoàng nhỏ nói .
+<|im_end|>
+<|im_start|>assistant
+AMR_NO_VAR: (nói
+    :topic(chúc
+        :topic(ngày
+            :mod(tốt lành)
+            :quant 1))
+    :agent(ông hoàng
+        :mod(nhỏ)))
+<|im_end|>
+
+<|im_start|>system
+Bạn là trợ lý phân tích AMR (Abstract Meaning Representation) cho tiếng Việt.
+
+QUY TẮC:
+1. Tuân thủ đúng định dạng output được yêu cầu.
+2. Dùng concept, biến và quan hệ AMR nhất quán với dữ liệu huấn luyện.
+3. Không dùng ví dụ, câu, nhãn vàng hoặc quy tắc rút ra từ tập test.
+4. Giữ dấu ngoặc AMR cân bằng.
+5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
+6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
+7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+<|im_end|>
+<|im_start|>user
+gió thổi họ đi .
+<|im_end|>
+<|im_start|>assistant
+AMR_NO_VAR: (thổi
+    :theme(gió)
+    :patient(họ)
+    :direction(đi))
+<|im_end|>
+
+<|im_start|>system
+Bạn là trợ lý phân tích AMR (Abstract Meaning Representation) cho tiếng Việt.
+
+QUY TẮC:
+1. Tuân thủ đúng định dạng output được yêu cầu.
+2. Dùng concept, biến và quan hệ AMR nhất quán với dữ liệu huấn luyện.
+3. Không dùng ví dụ, câu, nhãn vàng hoặc quy tắc rút ra từ tập test.
+4. Giữ dấu ngoặc AMR cân bằng.
+5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
+6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
+7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+<|im_end|>
+<|im_start|>user
+ông hoàng nhỏ trèo lên một quả núi cao .
+<|im_end|>
+<|im_start|>assistant
+AMR_NO_VAR: (trèo
+    :agent(ông hoàng
+        :mod(nhỏ))
+    :compound(lên)
+    :location(núi
+        :mod(cao)
+        :quant 1
+            :classifier(quả)))
+<|im_end|>
+
+<|im_start|>system
+Bạn là trợ lý phân tích AMR (Abstract Meaning Representation) cho tiếng Việt.
+
+QUY TẮC:
+1. Tuân thủ đúng định dạng output được yêu cầu.
+2. Dùng concept, biến và quan hệ AMR nhất quán với dữ liệu huấn luyện.
+3. Không dùng ví dụ, câu, nhãn vàng hoặc quy tắc rút ra từ tập test.
+4. Giữ dấu ngoặc AMR cân bằng.
+5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
+6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
+7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+<|im_end|>
+<|im_start|>user
+chúc một ngày tốt lành !
+<|im_end|>
+<|im_start|>assistant
+AMR_NO_VAR: (chúc
+    :topic(ngày
+        :mod(tốt lành)
+        :quant 1))
+<|im_end|>
+
+<|im_start|>system
+Bạn là trợ lý phân tích AMR (Abstract Meaning Representation) cho tiếng Việt.
+
+QUY TẮC:
+1. Tuân thủ đúng định dạng output được yêu cầu.
+2. Dùng concept, biến và quan hệ AMR nhất quán với dữ liệu huấn luyện.
+3. Không dùng ví dụ, câu, nhãn vàng hoặc quy tắc rút ra từ tập test.
+4. Giữ dấu ngoặc AMR cân bằng.
+5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
+6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
+7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+<|im_end|>
+<|im_start|>user
+và những con người thì thiếu hẳn óc tưởng tượng .
+<|im_end|>
+<|im_start|>assistant
+AMR_NO_VAR: (and
+    :op2(thiếu
+        :domain(con người)
+        :degree(hẳn)
+        :theme(óc
+            :mod(tưởng tượng))))
+<|im_end|>
+
+<|im_start|>system
+Bạn là trợ lý phân tích AMR (Abstract Meaning Representation) cho tiếng Việt.
+
+QUY TẮC:
+1. Tuân thủ đúng định dạng output được yêu cầu.
+2. Dùng concept, biến và quan hệ AMR nhất quán với dữ liệu huấn luyện.
+3. Không dùng ví dụ, câu, nhãn vàng hoặc quy tắc rút ra từ tập test.
+4. Giữ dấu ngoặc AMR cân bằng.
+5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
+6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
+7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+<|im_end|>
+<|im_start|>user
+- các nàng là ai ?
+<|im_end|>
+<|im_start|>assistant
+AMR_NO_VAR: (amr-unknown
+    :domain(nàng)
+    :mode interrogative)
+<|im_end|>
+
+<|im_start|>system
+Bạn là trợ lý phân tích AMR (Abstract Meaning Representation) cho tiếng Việt.
+
+QUY TẮC:
+1. Tuân thủ đúng định dạng output được yêu cầu.
+2. Dùng concept, biến và quan hệ AMR nhất quán với dữ liệu huấn luyện.
+3. Không dùng ví dụ, câu, nhãn vàng hoặc quy tắc rút ra từ tập test.
+4. Giữ dấu ngoặc AMR cân bằng.
+5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
+6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
+7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+<|im_end|>
+<|im_start|>user
+đoá hoa của em đã kể với em rằng nàng là duy nhất trong giống nòi của nàng khắp trong vũ trụ .
+<|im_end|>
+<|im_start|>assistant
+AMR_NO_VAR: (kể
+    :agent(hoa
+        :classifier(đoá)
+        :poss(em))
+    :tense(đã)
+    :goal(em)
+    :topic(duy nhất
+        :domain(nàng)
+        :consist-of(giống nòi
+            :location(vũ trụ
+                :mod(khắp))
+            :poss (nàng))))
+<|im_end|>
+
+<|im_start|>system
+Bạn là trợ lý phân tích AMR (Abstract Meaning Representation) cho tiếng Việt.
+
+QUY TẮC:
+1. Tuân thủ đúng định dạng output được yêu cầu.
+2. Dùng concept, biến và quan hệ AMR nhất quán với dữ liệu huấn luyện.
+3. Không dùng ví dụ, câu, nhãn vàng hoặc quy tắc rút ra từ tập test.
+4. Giữ dấu ngoặc AMR cân bằng.
+5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
+6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
+7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+<|im_end|>
+<|im_start|>user
+- a !
+<|im_end|>
+<|im_start|>assistant
+AMR_NO_VAR: (a
+    :mode expressive)
+<|im_end|>
+
+<|im_start|>system
+Bạn là trợ lý phân tích AMR (Abstract Meaning Representation) cho tiếng Việt.
+
+QUY TẮC:
+1. Tuân thủ đúng định dạng output được yêu cầu.
+2. Dùng concept, biến và quan hệ AMR nhất quán với dữ liệu huấn luyện.
+3. Không dùng ví dụ, câu, nhãn vàng hoặc quy tắc rút ra từ tập test.
+4. Giữ dấu ngoặc AMR cân bằng.
+5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
+6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
+7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+<|im_end|>
+<|im_start|>user
+- và khi ông đã nguôi rồi ( người ta bao giờ cũng nguôi đi ) , ông sẽ bằng lòng đã từng được quen biết tôi .
+<|im_end|>
+<|im_start|>assistant
+AMR_NO_VAR: (and
+    :op2(bằng lòng
+        :time(nguôi
+            :pivot(ông)
+            :tense(đã)
+            :pivot-of(nguôi
+                :pivot(người ta)
+                :time(always)))
+        :tense(sẽ)
+        :result-arg1(quen biết
+            :tense(đã)
+            :modality(được)
+            :theme(tôi)
+            :pivot (ông))
+        :pivot (ông)))
+<|im_end|>
+
+<|im_start|>system
+Bạn là trợ lý phân tích AMR (Abstract Meaning Representation) cho tiếng Việt.
+
+QUY TẮC:
+1. Tuân thủ đúng định dạng output được yêu cầu.
+2. Dùng concept, biến và quan hệ AMR nhất quán với dữ liệu huấn luyện.
+3. Không dùng ví dụ, câu, nhãn vàng hoặc quy tắc rút ra từ tập test.
+4. Giữ dấu ngoặc AMR cân bằng.
+5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
+6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
+7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+<|im_end|>
+<|im_start|>user
+tôi sẽ có vẻ sắp chết .
+<|im_end|>
+<|im_start|>assistant
+AMR_NO_VAR: (chết
+    :pivot(tôi)
+    :tense(sẽ)
+    :tense(sắp))
+<|im_end|>
+
+<|im_start|>system
+Bạn là trợ lý phân tích AMR (Abstract Meaning Representation) cho tiếng Việt.
+
+QUY TẮC:
+1. Tuân thủ đúng định dạng output được yêu cầu.
+2. Dùng concept, biến và quan hệ AMR nhất quán với dữ liệu huấn luyện.
+3. Không dùng ví dụ, câu, nhãn vàng hoặc quy tắc rút ra từ tập test.
+4. Giữ dấu ngoặc AMR cân bằng.
+5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
+6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
+7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+<|im_end|>
+<|im_start|>user
+- tôi nói với ông ... là tại vì con rắn đây .
+<|im_end|>
+<|im_start|>assistant
+AMR_NO_VAR: (nói
+    :agent(tôi)
+    :goal(ông)
+    :topic(cause-01
+        :theme(rắn
+            :classifier(con)
+            :mod(đây))))
+<|im_end|>
+
+<|im_start|>system
+Bạn là trợ lý phân tích AMR (Abstract Meaning Representation) cho tiếng Việt.
+
+QUY TẮC:
+1. Tuân thủ đúng định dạng output được yêu cầu.
+2. Dùng concept, biến và quan hệ AMR nhất quán với dữ liệu huấn luyện.
+3. Không dùng ví dụ, câu, nhãn vàng hoặc quy tắc rút ra từ tập test.
+4. Giữ dấu ngoặc AMR cân bằng.
+5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
+6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
+7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+<|im_end|>
+<|im_start|>user
+đêm ấy , tôi không trông thấy em bỏ đi .
+<|im_end|>
+<|im_start|>assistant
+AMR_NO_VAR: (trông
+    :agent(tôi)
+    :polarity -
+    :compound(thấy)
+    :topic(bỏ
+        :agent(em)
+        :compound(đi))
+    :time(date-entity
+        :dayperiod(đêm
+            :mod(ấy))))
+<|im_end|>
+
+<|im_start|>system
+Bạn là trợ lý phân tích AMR (Abstract Meaning Representation) cho tiếng Việt.
+
+QUY TẮC:
+1. Tuân thủ đúng định dạng output được yêu cầu.
+2. Dùng concept, biến và quan hệ AMR nhất quán với dữ liệu huấn luyện.
+3. Không dùng ví dụ, câu, nhãn vàng hoặc quy tắc rút ra từ tập test.
+4. Giữ dấu ngoặc AMR cân bằng.
+5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
+6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
+7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+<|im_end|>
+<|im_start|>user
+các ngôi sao sẽ là những cái giếng với một cái ròng rọc han rỉ .
+<|im_end|>
+<|im_start|>assistant
+AMR_NO_VAR: (giếng
+    :domain(sao
+        :classifier(ngôi))
+    :tense(sẽ)
+    :classifier(cái)
+    :pivot-of(có
+        :theme(ròng rọc
+            :classifier(cái)
+            :mod(han
+                :compound(rỉ)))
+        :pivot (giếng)))
+<|im_end|>
+
+<|im_start|>system
+Bạn là trợ lý phân tích AMR (Abstract Meaning Representation) cho tiếng Việt.
+
+QUY TẮC:
+1. Tuân thủ đúng định dạng output được yêu cầu.
+2. Dùng concept, biến và quan hệ AMR nhất quán với dữ liệu huấn luyện.
+3. Không dùng ví dụ, câu, nhãn vàng hoặc quy tắc rút ra từ tập test.
+4. Giữ dấu ngoặc AMR cân bằng.
+5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
+6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
+7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+<|im_end|>
+<|im_start|>user
+em lưỡng lự một chút , rồi đứng lên .
+<|im_end|>
+<|im_start|>assistant
+AMR_NO_VAR: (multi-sentence
+    :snt1(lưỡng lự
+        :pivot(em)
+        :degree(một chút))
+    :snt2(đứng
+        :compound(lên)
+        :time(then)
+        :agent (em)))
+<|im_end|>
+
+<|im_start|>system
+Bạn là trợ lý phân tích AMR (Abstract Meaning Representation) cho tiếng Việt.
+
+QUY TẮC:
+1. Tuân thủ đúng định dạng output được yêu cầu.
+2. Dùng concept, biến và quan hệ AMR nhất quán với dữ liệu huấn luyện.
+3. Không dùng ví dụ, câu, nhãn vàng hoặc quy tắc rút ra từ tập test.
+4. Giữ dấu ngoặc AMR cân bằng.
+5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
+6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
+7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+<|im_end|>
+<|im_start|>user
+nghĩa là ... không hẳn là như thế .
+<|im_end|>
+<|im_start|>assistant
+AMR_NO_VAR: (nghĩa là
+    :topic(hẳn
+        :compared-to(thế)
+        :polarity -))
+<|im_end|>
+
+<|im_start|>system
+Bạn là trợ lý phân tích AMR (Abstract Meaning Representation) cho tiếng Việt.
+
+QUY TẮC:
+1. Tuân thủ đúng định dạng output được yêu cầu.
+2. Dùng concept, biến và quan hệ AMR nhất quán với dữ liệu huấn luyện.
+3. Không dùng ví dụ, câu, nhãn vàng hoặc quy tắc rút ra từ tập test.
+4. Giữ dấu ngoặc AMR cân bằng.
+5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
+6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
+7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+<|im_end|>
+<|im_start|>user
+khi thì tôi tự nhủ : " chắc là không !
+<|im_end|>
+<|im_start|>assistant
+AMR_NO_VAR: (tự nhủ
+    :pivot(tôi)
+    :topic(chắc
+        :polarity -)
+    :time(sometimes))
+<|im_end|>
+
+<|im_start|>system
+Bạn là trợ lý phân tích AMR (Abstract Meaning Representation) cho tiếng Việt.
+
+QUY TẮC:
+1. Tuân thủ đúng định dạng output được yêu cầu.
+2. Dùng concept, biến và quan hệ AMR nhất quán với dữ liệu huấn luyện.
+3. Không dùng ví dụ, câu, nhãn vàng hoặc quy tắc rút ra từ tập test.
+4. Giữ dấu ngoặc AMR cân bằng.
+5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
+6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
+7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+<|im_end|>
+<|im_start|>user
+nhưng cái hoạ baobab còn ít người biết quá , mà những nguy hiểm mà một cậu bé một mai lạc vào một tiểu tinh cầu sẽ gặp phải thì rất là đáng kể , cho nên , chỉ một lần thôi , tôi làm khác với nguyên tắc của tôi .
+<|im_end|>
+<|im_start|>assistant
+AMR_NO_VAR: (contrast-01
+    :ARG2(làm
+        :frequency(lần
+            :degree(chỉ)
+            :quant 1)
+        :agent(tôi)
+        :manner(khác
+            :topic(nguyên tắc
+                :poss(tôi)))
+        :cause(and
+            :op1(biết
+                :theme(hoạ
+                    :classifier(cái)
+                    :mod(baobab))
+                :pivot(người
+                    :degree(ít))
+                :degree(quá))
+            :op2(đáng kể
+                :theme(nguy hiểm
+                    :agent-of(gặp
+                        :agent-of(lạc
+                            :agent(bé
+                                :quant 1
+                                    :classifier(cậu))
+                            :time(một mai)
+                            :compound(vào)
+                            :location(tiểu tinh cầu
+                                :quant 1))
+                        :tense(sẽ)
+                        :compound(phải)))
+                :degree(rất)))))
+<|im_end|>
+
+<|im_start|>system
+Bạn là trợ lý phân tích AMR (Abstract Meaning Representation) cho tiếng Việt.
+
+QUY TẮC:
+1. Tuân thủ đúng định dạng output được yêu cầu.
+2. Dùng concept, biến và quan hệ AMR nhất quán với dữ liệu huấn luyện.
+3. Không dùng ví dụ, câu, nhãn vàng hoặc quy tắc rút ra từ tập test.
+4. Giữ dấu ngoặc AMR cân bằng.
+5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
+6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
+7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+<|im_end|>
+<|im_start|>user
+khi vẽ cây baobab , tôi bị thôi thúc bởi một tình cảm cấp bách .
+<|im_end|>
+<|im_start|>assistant
+AMR_NO_VAR: (thôi thúc
+    :time(vẽ
+        :result-arg1(baobab
+            :classifier(cây)))
+    :patient(tôi)
+    :modality(bị)
+    :reason(tình cảm
+        :mod(cấp bách)
+        :quant 1))
+<|im_end|>
+
+<|im_start|>system
+Bạn là trợ lý phân tích AMR (Abstract Meaning Representation) cho tiếng Việt.
+
+QUY TẮC:
+1. Tuân thủ đúng định dạng output được yêu cầu.
+2. Dùng concept, biến và quan hệ AMR nhất quán với dữ liệu huấn luyện.
+3. Không dùng ví dụ, câu, nhãn vàng hoặc quy tắc rút ra từ tập test.
+4. Giữ dấu ngoặc AMR cân bằng.
+5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
+6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
+7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+<|im_end|>
+<|im_start|>user
+thoạt nhiên em có vẻ kinh ngạc , và rồi em tự cười mình .
+<|im_end|>
+<|im_start|>assistant
+AMR_NO_VAR: (and
+    :op1(kinh ngạc
+        :time(thoạt nhiên)
+        :pivot(em))
+    :op2(cười
+        :pivot(em)))
+<|im_end|>
+
+<|im_start|>system
+Bạn là trợ lý phân tích AMR (Abstract Meaning Representation) cho tiếng Việt.
+
+QUY TẮC:
+1. Tuân thủ đúng định dạng output được yêu cầu.
+2. Dùng concept, biến và quan hệ AMR nhất quán với dữ liệu huấn luyện.
+3. Không dùng ví dụ, câu, nhãn vàng hoặc quy tắc rút ra từ tập test.
+4. Giữ dấu ngoặc AMR cân bằng.
+5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
+6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
+7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+<|im_end|>
+<|im_start|>user
+ông hoàng nhỏ lại làm sao lãng những suy nghĩ của tôi :
+<|im_end|>
+<|im_start|>assistant
+AMR_NO_VAR: (làm
+    :cause(ông hoàng
+        :mod(nhỏ))
+    :theme(sao lãng
+        :theme(suy nghĩ
+            :poss(tôi))))
+<|im_end|>
+
+<|im_start|>system
+Bạn là trợ lý phân tích AMR (Abstract Meaning Representation) cho tiếng Việt.
+
+QUY TẮC:
+1. Tuân thủ đúng định dạng output được yêu cầu.
+2. Dùng concept, biến và quan hệ AMR nhất quán với dữ liệu huấn luyện.
+3. Không dùng ví dụ, câu, nhãn vàng hoặc quy tắc rút ra từ tập test.
+4. Giữ dấu ngoặc AMR cân bằng.
+5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
+6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
+7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+<|im_end|>
+<|im_start|>user
+tôi trả lời đại thế thôi .
+<|im_end|>
+<|im_start|>assistant
+AMR_NO_VAR: (trả lời
+    :agent(tôi)
+    :manner(đại))
+<|im_end|>
+
+<|im_start|>system
+Bạn là trợ lý phân tích AMR (Abstract Meaning Representation) cho tiếng Việt.
+
+QUY TẮC:
+1. Tuân thủ đúng định dạng output được yêu cầu.
+2. Dùng concept, biến và quan hệ AMR nhất quán với dữ liệu huấn luyện.
+3. Không dùng ví dụ, câu, nhãn vàng hoặc quy tắc rút ra từ tập test.
+4. Giữ dấu ngoặc AMR cân bằng.
+5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
+6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
+7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+<|im_end|>
+<|im_start|>user
+tôi có biết một tinh cầu , trên ấy có một gã lười .
+<|im_end|>
+<|im_start|>assistant
+AMR_NO_VAR: (biết
+    :pivot(tôi)
+    :theme(tinh cầu
+        :location-of(có
+            :theme(gã
+                :mod(lười)
+                :quant 1))
+        :quant 1))
+<|im_end|>
+
+<|im_start|>system
+Bạn là trợ lý phân tích AMR (Abstract Meaning Representation) cho tiếng Việt.
+
+QUY TẮC:
+1. Tuân thủ đúng định dạng output được yêu cầu.
+2. Dùng concept, biến và quan hệ AMR nhất quán với dữ liệu huấn luyện.
+3. Không dùng ví dụ, câu, nhãn vàng hoặc quy tắc rút ra từ tập test.
+4. Giữ dấu ngoặc AMR cân bằng.
+5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
+6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
+7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+<|im_end|>
+<|im_start|>user
+em nghẹn ngào không nói được nữa .
+<|im_end|>
+<|im_start|>assistant
+AMR_NO_VAR: (and
+    :op1(nghẹn ngào
+        :pivot(em))
+    :op2(possible-01
+        :polarity -
+        :topic(nói
+            :agent (em))))
+<|im_end|>
+
+<|im_start|>system
+Bạn là trợ lý phân tích AMR (Abstract Meaning Representation) cho tiếng Việt.
+
+QUY TẮC:
+1. Tuân thủ đúng định dạng output được yêu cầu.
+2. Dùng concept, biến và quan hệ AMR nhất quán với dữ liệu huấn luyện.
+3. Không dùng ví dụ, câu, nhãn vàng hoặc quy tắc rút ra từ tập test.
+4. Giữ dấu ngoặc AMR cân bằng.
+5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
+6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
+7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+<|im_end|>
+<|im_start|>user
+tôi ôm em trong vòng tay .
+<|im_end|>
+<|im_start|>assistant
+AMR_NO_VAR: (ôm
+    :agent(tôi)
+    :theme(em)
+    :location(vòng tay
+        :prep(trong)
+        :part-of (tôi)))
+<|im_end|>
+
+<|im_start|>system
+Bạn là trợ lý phân tích AMR (Abstract Meaning Representation) cho tiếng Việt.
+
+QUY TẮC:
+1. Tuân thủ đúng định dạng output được yêu cầu.
+2. Dùng concept, biến và quan hệ AMR nhất quán với dữ liệu huấn luyện.
+3. Không dùng ví dụ, câu, nhãn vàng hoặc quy tắc rút ra từ tập test.
+4. Giữ dấu ngoặc AMR cân bằng.
+5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
+6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
+7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+<|im_end|>
+<|im_start|>user
+hoa không muốn hiện ra nhàu nát như cái mồng gà .
+<|im_end|>
+<|im_start|>assistant
+AMR_NO_VAR: (muốn
+    :pivot(hoa)
+    :polarity -
+    :theme(hiện
+        :compound(ra)
+        :manner(nhàu nát
+            :compared-to(mồng
+                :classifier(cái)
+                :part-of(gà)
+                :degree(equal)))))
+<|im_end|>
+
+<|im_start|>system
+Bạn là trợ lý phân tích AMR (Abstract Meaning Representation) cho tiếng Việt.
+
+QUY TẮC:
+1. Tuân thủ đúng định dạng output được yêu cầu.
+2. Dùng concept, biến và quan hệ AMR nhất quán với dữ liệu huấn luyện.
+3. Không dùng ví dụ, câu, nhãn vàng hoặc quy tắc rút ra từ tập test.
+4. Giữ dấu ngoặc AMR cân bằng.
+5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
+6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
+7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+<|im_end|>
+<|im_start|>user
+- ôi ! em chỉ vừa thức dậy ... em xinlỗi anh ...
+<|im_end|>
+<|im_start|>assistant
+AMR_NO_VAR: (multi-sentence
+    :snt1(ôi
+        :mode expressive)
+    :snt2(thức
+        :agent(em)
+        :degree(chỉ)
+        :compound(dậy))
+    :snt3(xinlỗi
+        :agent(em)
+        :patient(anh)))
+<|im_end|>
+
+<|im_start|>system
+Bạn là trợ lý phân tích AMR (Abstract Meaning Representation) cho tiếng Việt.
+
+QUY TẮC:
+1. Tuân thủ đúng định dạng output được yêu cầu.
+2. Dùng concept, biến và quan hệ AMR nhất quán với dữ liệu huấn luyện.
+3. Không dùng ví dụ, câu, nhãn vàng hoặc quy tắc rút ra từ tập test.
+4. Giữ dấu ngoặc AMR cân bằng.
+5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
+6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
+7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+<|im_end|>
+<|im_start|>user
+ông hoàng nhỏ biết ngay cô nàng không lấy gì làm khiêm tốn lắm , nhưng nàng thật là dễ thương !
+<|im_end|>
+<|im_start|>assistant
+AMR_NO_VAR: (contrast-01
+    :ARG1(biết
+        :pivot(ông hoàng
+            :mod(nhỏ))
+        :manner(ngay)
+        :topic(khiêm tốn
+            :pivot(nàng
+                :classifier(cô))
+            :polarity -
+            :degree(lắm)))
+    :ARG2(dễ thương
+        :domain(nàng)
+        :degree(thật)))
+<|im_end|>
+
+<|im_start|>system
+Bạn là trợ lý phân tích AMR (Abstract Meaning Representation) cho tiếng Việt.
+
+QUY TẮC:
+1. Tuân thủ đúng định dạng output được yêu cầu.
+2. Dùng concept, biến và quan hệ AMR nhất quán với dữ liệu huấn luyện.
+3. Không dùng ví dụ, câu, nhãn vàng hoặc quy tắc rút ra từ tập test.
+4. Giữ dấu ngoặc AMR cân bằng.
+5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
+6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
+7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+<|im_end|>
+<|im_start|>user
+- xin lỗi ...
+<|im_end|>
+<|im_start|>assistant
+AMR_NO_VAR: (xin lỗi)
+<|im_end|>
+
+<|im_start|>system
+Bạn là trợ lý phân tích AMR (Abstract Meaning Representation) cho tiếng Việt.
+
+QUY TẮC:
+1. Tuân thủ đúng định dạng output được yêu cầu.
+2. Dùng concept, biến và quan hệ AMR nhất quán với dữ liệu huấn luyện.
+3. Không dùng ví dụ, câu, nhãn vàng hoặc quy tắc rút ra từ tập test.
+4. Giữ dấu ngoặc AMR cân bằng.
+5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
+6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
+7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+<|im_end|>
+<|im_start|>user
+cô nàng này thật phức tạp ... "
+<|im_end|>
+<|im_start|>assistant
+AMR_NO_VAR: (phức tạp
+    :pivot(nàng
+        :classifier(cô)
+        :mod(này))
+    :degree(thật))
+<|im_end|>
+
+<|im_start|>system
+Bạn là trợ lý phân tích AMR (Abstract Meaning Representation) cho tiếng Việt.
+
+QUY TẮC:
+1. Tuân thủ đúng định dạng output được yêu cầu.
+2. Dùng concept, biến và quan hệ AMR nhất quán với dữ liệu huấn luyện.
+3. Không dùng ví dụ, câu, nhãn vàng hoặc quy tắc rút ra từ tập test.
+4. Giữ dấu ngoặc AMR cân bằng.
+5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
+6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
+7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+<|im_end|>
+<|im_start|>user
+chỗ anh rét lắm .
+<|im_end|>
+<|im_start|>assistant
+AMR_NO_VAR: (rét
+    :domain(chỗ
+        :poss(anh))
+    :degree(lắm))
+<|im_end|>
+
+<|im_start|>system
+Bạn là trợ lý phân tích AMR (Abstract Meaning Representation) cho tiếng Việt.
+
+QUY TẮC:
+1. Tuân thủ đúng định dạng output được yêu cầu.
+2. Dùng concept, biến và quan hệ AMR nhất quán với dữ liệu huấn luyện.
+3. Không dùng ví dụ, câu, nhãn vàng hoặc quy tắc rút ra từ tập test.
+4. Giữ dấu ngoặc AMR cân bằng.
+5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
+6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
+7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+<|im_end|>
+<|im_start|>user
+nên em cũng nạo vét cả quả núi lửa đã tắt nữa .
+<|im_end|>
+<|im_start|>assistant
+AMR_NO_VAR: (nạo vét
+    :agent(em)
+    :patient(núi lửa
+        :classifier(quả)
+        :pivot-of(tắt
+            :tense(đã))))
+<|im_end|>
+
+<|im_start|>system
+Bạn là trợ lý phân tích AMR (Abstract Meaning Representation) cho tiếng Việt.
+
+QUY TẮC:
+1. Tuân thủ đúng định dạng output được yêu cầu.
+2. Dùng concept, biến và quan hệ AMR nhất quán với dữ liệu huấn luyện.
+3. Không dùng ví dụ, câu, nhãn vàng hoặc quy tắc rút ra từ tập test.
+4. Giữ dấu ngoặc AMR cân bằng.
+5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
+6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
+7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+<|im_end|>
+<|im_start|>user
+nhưng mọi việc quen thuộc này buổi sáng hôm nay sao đối với em thật vô cùng êm đềm .
+<|im_end|>
+<|im_start|>assistant
+AMR_NO_VAR: (contrast-01
+    :ARG2(êm đềm
+        :pivot(việc
+            :mod(quen thuộc)
+            :mod(này))
+        :source(em)
+        :degree(vô cùng)
+        :time(date-entity
+            :dayperiod(buổi
+                :compound(sáng)
+                :mod(hôm nay)))))
+<|im_end|>
+
+<|im_start|>system
+Bạn là trợ lý phân tích AMR (Abstract Meaning Representation) cho tiếng Việt.
+
+QUY TẮC:
+1. Tuân thủ đúng định dạng output được yêu cầu.
+2. Dùng concept, biến và quan hệ AMR nhất quán với dữ liệu huấn luyện.
+3. Không dùng ví dụ, câu, nhãn vàng hoặc quy tắc rút ra từ tập test.
+4. Giữ dấu ngoặc AMR cân bằng.
+5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
+6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
+7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+<|im_end|>
+<|im_start|>user
+anh sẽ đi xa .
+<|im_end|>
+<|im_start|>assistant
+AMR_NO_VAR: (đi
+    :agent(anh)
+    :tense(sẽ)
+    :manner(xa))
+<|im_end|>
+
+<|im_start|>system
+Bạn là trợ lý phân tích AMR (Abstract Meaning Representation) cho tiếng Việt.
+
+QUY TẮC:
+1. Tuân thủ đúng định dạng output được yêu cầu.
+2. Dùng concept, biến và quan hệ AMR nhất quán với dữ liệu huấn luyện.
+3. Không dùng ví dụ, câu, nhãn vàng hoặc quy tắc rút ra từ tập test.
+4. Giữ dấu ngoặc AMR cân bằng.
+5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
+6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
+7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+<|im_end|>
+<|im_start|>user
+- đừng chần chờ như vậy nữa , khó chịu lắm .
+<|im_end|>
+<|im_start|>assistant
+AMR_NO_VAR: (chần chờ
+    :compared-to(vậy)
+    :reason(khó chịu
+        :degree(lắm)))
+<|im_end|>
+
+<|im_start|>system
+Bạn là trợ lý phân tích AMR (Abstract Meaning Representation) cho tiếng Việt.
+
+QUY TẮC:
+1. Tuân thủ đúng định dạng output được yêu cầu.
+2. Dùng concept, biến và quan hệ AMR nhất quán với dữ liệu huấn luyện.
+3. Không dùng ví dụ, câu, nhãn vàng hoặc quy tắc rút ra từ tập test.
+4. Giữ dấu ngoặc AMR cân bằng.
+5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
+6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
+7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+<|im_end|>
+<|im_start|>user
+- thế thì , vua phán , ta ra lệnh cho ngươi ngáp .
+<|im_end|>
+<|im_start|>assistant
+AMR_NO_VAR: (phán
+    :agent(vua)
+    :topic(ra lệnh
+        :agent(ta)
+        :patient(ngươi)
+        :theme(ngáp)))
+<|im_end|>
+
+<|im_start|>system
+Bạn là trợ lý phân tích AMR (Abstract Meaning Representation) cho tiếng Việt.
+
+QUY TẮC:
+1. Tuân thủ đúng định dạng output được yêu cầu.
+2. Dùng concept, biến và quan hệ AMR nhất quán với dữ liệu huấn luyện.
+3. Không dùng ví dụ, câu, nhãn vàng hoặc quy tắc rút ra từ tập test.
+4. Giữ dấu ngoặc AMR cân bằng.
+5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
+6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
+7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+<|im_end|>
+<|im_start|>user
+ngươi ngáp nữa đi .
+<|im_end|>
+<|im_start|>assistant
+AMR_NO_VAR: (ngáp
+    :agent(ngươi)
+    :mode imperative)
+<|im_end|>
+
+<|im_start|>system
+Bạn là trợ lý phân tích AMR (Abstract Meaning Representation) cho tiếng Việt.
+
+QUY TẮC:
+1. Tuân thủ đúng định dạng output được yêu cầu.
+2. Dùng concept, biến và quan hệ AMR nhất quán với dữ liệu huấn luyện.
+3. Không dùng ví dụ, câu, nhãn vàng hoặc quy tắc rút ra từ tập test.
+4. Giữ dấu ngoặc AMR cân bằng.
+5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
+6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
+7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+<|im_end|>
+<|im_start|>user
+nhưng , vì ngài rất tốt bụng , nên chỉ ra những cái lệnh hợp lý thôi .
+<|im_end|>
+<|im_start|>assistant
+AMR_NO_VAR: (contrast-01
+    :ARG2(ra
+        :reason(tốt bụng
+            :domain(ngài)
+            :degree(rất))
+        :degree(chỉ)
+        :theme(lệnh
+            :classifier(cái)
+            :mod(hợp lý))))
+<|im_end|>
+
+<|im_start|>system
+Bạn là trợ lý phân tích AMR (Abstract Meaning Representation) cho tiếng Việt.
+
+QUY TẮC:
+1. Tuân thủ đúng định dạng output được yêu cầu.
+2. Dùng concept, biến và quan hệ AMR nhất quán với dữ liệu huấn luyện.
+3. Không dùng ví dụ, câu, nhãn vàng hoặc quy tắc rút ra từ tập test.
+4. Giữ dấu ngoặc AMR cân bằng.
+5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
+6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
+7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+<|im_end|>
+<|im_start|>user
+thứ nước này còn là một cái gì khác hơn mọi thứ nước uống .
+<|im_end|>
+<|im_start|>assistant
+AMR_NO_VAR: (gì
+    :pivot(thứ
+        :mod(nước)
+        :mod(này))
+    :mod(khác
+        :compared-to(nước
+            :compound(uống))
+        :degree(more)
+        :quant 1
+            :classifier(cái)))
+<|im_end|>
+
+<|im_start|>system
+Bạn là trợ lý phân tích AMR (Abstract Meaning Representation) cho tiếng Việt.
+
+QUY TẮC:
+1. Tuân thủ đúng định dạng output được yêu cầu.
+2. Dùng concept, biến và quan hệ AMR nhất quán với dữ liệu huấn luyện.
+3. Không dùng ví dụ, câu, nhãn vàng hoặc quy tắc rút ra từ tập test.
+4. Giữ dấu ngoặc AMR cân bằng.
+5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
+6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
+7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+<|im_end|>
+<|im_start|>user
+- loài người nơi ông , ông hoàng nhỏ nói , trồng năm nghìn hoa hồng cũng trong một khu vườn ... thế mà họ chẳng tìm thấy cái họ tìm ...
+<|im_end|>
+<|im_start|>assistant
+AMR_NO_VAR: (nói
+    :agent(ông hoàng
+        :mod(nhỏ))
+    :topic(and
+        :op1(trồng
+            :agent(loài người
+                :location(nơi
+                    :mod(ông)))
+            :theme(hoa hồng
+                :quant 5000)
+            :location(khu
+                :prep(trong)
+                :mod(vườn)
+                :quant 1))
+        :op2(tìm
+            :agent(họ)
+            :polarity -
+            :compound(thấy
+                :theme(cái
+                    :theme-of(tìm
+                        :agent(họ)))))))
+<|im_end|>
+
+<|im_start|>system
+Bạn là trợ lý phân tích AMR (Abstract Meaning Representation) cho tiếng Việt.
+
+QUY TẮC:
+1. Tuân thủ đúng định dạng output được yêu cầu.
+2. Dùng concept, biến và quan hệ AMR nhất quán với dữ liệu huấn luyện.
+3. Không dùng ví dụ, câu, nhãn vàng hoặc quy tắc rút ra từ tập test.
+4. Giữ dấu ngoặc AMR cân bằng.
+5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
+6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
+7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+<|im_end|>
+<|im_start|>user
+vào lúc tinh mơ , cát một màu mật ong .
+<|im_end|>
+<|im_start|>assistant
+AMR_NO_VAR: (resemble
+    :time(lúc
+        :mod(tinh mơ))
+    :compared-to(màu
+        :poss(mật ong))
+    :degree(equal)
+    :domain(màu
+        :poss(cát)))
+<|im_end|>
+
+<|im_start|>system
+Bạn là trợ lý phân tích AMR (Abstract Meaning Representation) cho tiếng Việt.
+
+QUY TẮC:
+1. Tuân thủ đúng định dạng output được yêu cầu.
+2. Dùng concept, biến và quan hệ AMR nhất quán với dữ liệu huấn luyện.
+3. Không dùng ví dụ, câu, nhãn vàng hoặc quy tắc rút ra từ tập test.
+4. Giữ dấu ngoặc AMR cân bằng.
+5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
+6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
+7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+<|im_end|>
+<|im_start|>user
+hai tai nó ... trông giống như hai cái sừng ... và lại dài quá !
+<|im_end|>
+<|im_start|>assistant
+AMR_NO_VAR: (and
+    :op1(trông
+        :theme(tai
+            :part-of(nó)
+            :quant 2)
+        :theme(resemble
+            :compared-to(giống
+                :theme(sừng
+                    :quant 2
+                        :classifier(cái)))
+            :degree(equal)))
+    :op2(dài
+        :mod(quá)
+        :pivot (tai)))
+<|im_end|>
+
+<|im_start|>system
+Bạn là trợ lý phân tích AMR (Abstract Meaning Representation) cho tiếng Việt.
+
+QUY TẮC:
+1. Tuân thủ đúng định dạng output được yêu cầu.
+2. Dùng concept, biến và quan hệ AMR nhất quán với dữ liệu huấn luyện.
+3. Không dùng ví dụ, câu, nhãn vàng hoặc quy tắc rút ra từ tập test.
+4. Giữ dấu ngoặc AMR cân bằng.
+5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
+6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
+7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+<|im_end|>
+<|im_start|>user
+thế là tôi dùng bút chì phác một cái rọ mõm .
+<|im_end|>
+<|im_start|>assistant
+AMR_NO_VAR: (dùng
+    :agent(tôi)
+    :instrument(bút chì)
+    :purpose(phác
+        :theme(rọ mõm
+            :quant 1
+                :classifier(cái))))
+<|im_end|>
+
+<|im_start|>system
+Bạn là trợ lý phân tích AMR (Abstract Meaning Representation) cho tiếng Việt.
+
+QUY TẮC:
+1. Tuân thủ đúng định dạng output được yêu cầu.
+2. Dùng concept, biến và quan hệ AMR nhất quán với dữ liệu huấn luyện.
+3. Không dùng ví dụ, câu, nhãn vàng hoặc quy tắc rút ra từ tập test.
+4. Giữ dấu ngoặc AMR cân bằng.
+5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
+6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
+7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+<|im_end|>
+<|im_start|>user
+em bảo tôi :
+<|im_end|>
+<|im_start|>assistant
+AMR_NO_VAR: (bảo
+    :agent(em)
+    :goal(tôi))
+<|im_end|>
+
+<|im_start|>system
+Bạn là trợ lý phân tích AMR (Abstract Meaning Representation) cho tiếng Việt.
+
+QUY TẮC:
+1. Tuân thủ đúng định dạng output được yêu cầu.
+2. Dùng concept, biến và quan hệ AMR nhất quán với dữ liệu huấn luyện.
+3. Không dùng ví dụ, câu, nhãn vàng hoặc quy tắc rút ra từ tập test.
+4. Giữ dấu ngoặc AMR cân bằng.
+5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
+6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
+7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+<|im_end|>
+<|im_start|>user
+- tôi rơi xuống ngay gần đây ...
+<|im_end|>
+<|im_start|>assistant
+AMR_NO_VAR: (rơi
+    :agent(tôi)
+    :compound(xuống)
+    :location(gần
+        :degree(ngay)
+        :mod(đây)))
+<|im_end|>
+
+<|im_start|>system
+Bạn là trợ lý phân tích AMR (Abstract Meaning Representation) cho tiếng Việt.
+
+QUY TẮC:
+1. Tuân thủ đúng định dạng output được yêu cầu.
+2. Dùng concept, biến và quan hệ AMR nhất quán với dữ liệu huấn luyện.
+3. Không dùng ví dụ, câu, nhãn vàng hoặc quy tắc rút ra từ tập test.
+4. Giữ dấu ngoặc AMR cân bằng.
+5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
+6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
+7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+<|im_end|>
+<|im_start|>user
+- a , tôi nói , tôi sợ ...
+<|im_end|>
+<|im_start|>assistant
+AMR_NO_VAR: (nói
+    :agent(tôi)
+    :topic(and
+        :op1(a
+            :mode expressive)
+        :op2(sợ
+            :pivot(tôi))))
+<|im_end|>
+
+<|im_start|>system
+Bạn là trợ lý phân tích AMR (Abstract Meaning Representation) cho tiếng Việt.
+
+QUY TẮC:
+1. Tuân thủ đúng định dạng output được yêu cầu.
+2. Dùng concept, biến và quan hệ AMR nhất quán với dữ liệu huấn luyện.
+3. Không dùng ví dụ, câu, nhãn vàng hoặc quy tắc rút ra từ tập test.
+4. Giữ dấu ngoặc AMR cân bằng.
+5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
+6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
+7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+<|im_end|>
+<|im_start|>user
+không phải là chỗ này đâu !
+<|im_end|>
+<|im_start|>assistant
+AMR_NO_VAR: (phải
+    :polarity -
+    :theme(chỗ
+        :mod(này)))
+<|im_end|>
+
+<|im_start|>system
+Bạn là trợ lý phân tích AMR (Abstract Meaning Representation) cho tiếng Việt.
+
+QUY TẮC:
+1. Tuân thủ đúng định dạng output được yêu cầu.
+2. Dùng concept, biến và quan hệ AMR nhất quán với dữ liệu huấn luyện.
+3. Không dùng ví dụ, câu, nhãn vàng hoặc quy tắc rút ra từ tập test.
+4. Giữ dấu ngoặc AMR cân bằng.
+5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
+6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
+7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+<|im_end|>
+<|im_start|>user
+tôi vẫn không nhìn thấy , cũng chẳng nghe thấy ai .
+<|im_end|>
+<|im_start|>assistant
+AMR_NO_VAR: (and
+    :op1(nhìn
+        :agent(tôi)
+        :polarity -
+        :compound(thấy))
+    :op2(nghe
+        :mod(cũng)
+        :polarity -
+        :compound(thấy)
+        :theme(ai)
+        :agent (tôi)))
+<|im_end|>
+
+<|im_start|>system
+Bạn là trợ lý phân tích AMR (Abstract Meaning Representation) cho tiếng Việt.
+
+QUY TẮC:
+1. Tuân thủ đúng định dạng output được yêu cầu.
+2. Dùng concept, biến và quan hệ AMR nhất quán với dữ liệu huấn luyện.
+3. Không dùng ví dụ, câu, nhãn vàng hoặc quy tắc rút ra từ tập test.
+4. Giữ dấu ngoặc AMR cân bằng.
+5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
+6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
+7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+<|im_end|>
+<|im_start|>user
+- thôi bây giờ hãy đi đi , em nói .
+<|im_end|>
+<|im_start|>assistant
+AMR_NO_VAR: (nói
+    :topic(đi
+        :mode imperative
+        :time(now))
+    :agent(em))
+<|im_end|>
+
+<|im_start|>system
+Bạn là trợ lý phân tích AMR (Abstract Meaning Representation) cho tiếng Việt.
+
+QUY TẮC:
+1. Tuân thủ đúng định dạng output được yêu cầu.
+2. Dùng concept, biến và quan hệ AMR nhất quán với dữ liệu huấn luyện.
+3. Không dùng ví dụ, câu, nhãn vàng hoặc quy tắc rút ra từ tập test.
+4. Giữ dấu ngoặc AMR cân bằng.
+5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
+6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
+7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+<|im_end|>
+<|im_start|>user
+tôi tháo chiếc khăn vàng kim bao giờ cũng khoác ở cổ em .
+<|im_end|>
+<|im_start|>assistant
+AMR_NO_VAR: (tháo
+    :agent(tôi)
+    :patient(khăn
+        :classifier(chiếc)
+        :mod(vàng
+            :compound(kim))
+        :agent-of(khoác
+            :location(cổ
+                :prep(ở)
+                :part-of(em))
+            :agent (em)
+            :time(always))))
+<|im_end|>
+
+<|im_start|>system
+Bạn là trợ lý phân tích AMR (Abstract Meaning Representation) cho tiếng Việt.
+
+QUY TẮC:
+1. Tuân thủ đúng định dạng output được yêu cầu.
+2. Dùng concept, biến và quan hệ AMR nhất quán với dữ liệu huấn luyện.
+3. Không dùng ví dụ, câu, nhãn vàng hoặc quy tắc rút ra từ tập test.
+4. Giữ dấu ngoặc AMR cân bằng.
+5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
+6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
+7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+<|im_end|>
+<|im_start|>user
+tôi nghe tiếng tim em đập như tiếng đập của một con chim sắp chết , khi bị trúng đạn súng săn .
+<|im_end|>
+<|im_start|>assistant
+AMR_NO_VAR: (nghe
+    :agent(tôi)
+    :theme(tiếng
+        :mod(tim
+            :part-of(em)
+            :agent-of(đập
+                :resemble-01(resemble
+                    :compared-to(tiếng
+                        :compound(đập)
+                        :poss(chim
+                            :agent-of(chết
+                                :tense(sắp)
+                                :time(trúng
+                                    :modality(bị)
+                                    :instrument(đạn
+                                        :poss(súng
+                                            :compound(săn)))))
+                            :quant 1
+                                :classifier(con)))
+                    :degree(equal))))))
+<|im_end|>
+
+<|im_start|>system
+Bạn là trợ lý phân tích AMR (Abstract Meaning Representation) cho tiếng Việt.
+
+QUY TẮC:
+1. Tuân thủ đúng định dạng output được yêu cầu.
+2. Dùng concept, biến và quan hệ AMR nhất quán với dữ liệu huấn luyện.
+3. Không dùng ví dụ, câu, nhãn vàng hoặc quy tắc rút ra từ tập test.
+4. Giữ dấu ngoặc AMR cân bằng.
+5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
+6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
+7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+<|im_end|>
+<|im_start|>user
+- sao em biết ?
+<|im_end|>
+<|im_start|>assistant
+AMR_NO_VAR: (biết
+    :pivot(em)
+    :manner(arm-unknown))
+<|im_end|>
+
+<|im_start|>system
+Bạn là trợ lý phân tích AMR (Abstract Meaning Representation) cho tiếng Việt.
+
+QUY TẮC:
+1. Tuân thủ đúng định dạng output được yêu cầu.
+2. Dùng concept, biến và quan hệ AMR nhất quán với dữ liệu huấn luyện.
+3. Không dùng ví dụ, câu, nhãn vàng hoặc quy tắc rút ra từ tập test.
+4. Giữ dấu ngoặc AMR cân bằng.
+5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
+6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
+7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+<|im_end|>
+<|im_start|>user
+rồi , giọng ngậm ngùi :
+<|im_end|>
+<|im_start|>assistant
+AMR_NO_VAR: (ngậm ngùi
+    :domain(giọng))
+<|im_end|>
+
+<|im_start|>system
+Bạn là trợ lý phân tích AMR (Abstract Meaning Representation) cho tiếng Việt.
+
+QUY TẮC:
+1. Tuân thủ đúng định dạng output được yêu cầu.
+2. Dùng concept, biến và quan hệ AMR nhất quán với dữ liệu huấn luyện.
+3. Không dùng ví dụ, câu, nhãn vàng hoặc quy tắc rút ra từ tập test.
+4. Giữ dấu ngoặc AMR cân bằng.
+5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
+6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
+7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+<|im_end|>
+<|im_start|>user
+ánh mắt em nghiêm nghị , mất hút vào một nơi rất xa :
+<|im_end|>
+<|im_start|>assistant
+AMR_NO_VAR: (and
+    :op1(nghiêm nghị
+        :theme(ánh
+            :mod(mắt)
+            :poss(em)))
+    :op2(mất hút
+        :location(nơi
+            :prep(vào)
+            :mod(xa
+                :degree(rất))
+            :quant 1)
+        :theme (ánh)))
+<|im_end|>
+
+<|im_start|>system
+Bạn là trợ lý phân tích AMR (Abstract Meaning Representation) cho tiếng Việt.
+
+QUY TẮC:
+1. Tuân thủ đúng định dạng output được yêu cầu.
+2. Dùng concept, biến và quan hệ AMR nhất quán với dữ liệu huấn luyện.
+3. Không dùng ví dụ, câu, nhãn vàng hoặc quy tắc rút ra từ tập test.
+4. Giữ dấu ngoặc AMR cân bằng.
+5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
+6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
+7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+<|im_end|>
+<|im_start|>user
+em có sợ hãi , đúng rồi !
+<|im_end|>
+<|im_start|>assistant
+AMR_NO_VAR: (multi-sentence
+    :snt1(sợ hãi
+        :domain(em))
+    :snt2(đúng
+        :mode expressive))
+<|im_end|>
+
+<|im_start|>system
+Bạn là trợ lý phân tích AMR (Abstract Meaning Representation) cho tiếng Việt.
+
+QUY TẮC:
+1. Tuân thủ đúng định dạng output được yêu cầu.
+2. Dùng concept, biến và quan hệ AMR nhất quán với dữ liệu huấn luyện.
+3. Không dùng ví dụ, câu, nhãn vàng hoặc quy tắc rút ra từ tập test.
+4. Giữ dấu ngoặc AMR cân bằng.
+5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
+6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
+7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+<|im_end|>
+<|im_start|>user
+nhưng em cười dịu dàng :
+<|im_end|>
+<|im_start|>assistant
+AMR_NO_VAR: (contrast-01
+    :ARG2(cười
+        :agent(em)
+        :manner(dịu dàng)))
+<|im_end|>
+
+<|im_start|>system
+Bạn là trợ lý phân tích AMR (Abstract Meaning Representation) cho tiếng Việt.
+
+QUY TẮC:
+1. Tuân thủ đúng định dạng output được yêu cầu.
+2. Dùng concept, biến và quan hệ AMR nhất quán với dữ liệu huấn luyện.
+3. Không dùng ví dụ, câu, nhãn vàng hoặc quy tắc rút ra từ tập test.
+4. Giữ dấu ngoặc AMR cân bằng.
+5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
+6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
+7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+<|im_end|>
+<|im_start|>user
+nhưng em không trả lời câu tôi hỏi .
+<|im_end|>
+<|im_start|>assistant
+AMR_NO_VAR: (contrast-01
+    :ARG2(trả lời
+        :agent(em)
+        :polarity -
+        :goal(tôi)))
+<|im_end|>
+
+<|im_start|>system
+Bạn là trợ lý phân tích AMR (Abstract Meaning Representation) cho tiếng Việt.
+
+QUY TẮC:
+1. Tuân thủ đúng định dạng output được yêu cầu.
+2. Dùng concept, biến và quan hệ AMR nhất quán với dữ liệu huấn luyện.
+3. Không dùng ví dụ, câu, nhãn vàng hoặc quy tắc rút ra từ tập test.
+4. Giữ dấu ngoặc AMR cân bằng.
+5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
+6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
+7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+<|im_end|>
+<|im_start|>user
+nhưng chắc chắn rằng đối với bọn ta là những người hiểu đời , chúng ta cóc cần những con số !
+<|im_end|>
+<|im_start|>assistant
+AMR_NO_VAR: (contrast-01
+    :ARG2(chắc chắn
+        :topic(hiểu
+            :domain(bọn
+                :compound(ta))
+            :pivot(người)
+            :theme(đời))
+        :topic(cần
+            :polarity -
+            :theme(con số)
+            :pivot (bọn))))
+<|im_end|>
+
+<|im_start|>system
+Bạn là trợ lý phân tích AMR (Abstract Meaning Representation) cho tiếng Việt.
+
+QUY TẮC:
+1. Tuân thủ đúng định dạng output được yêu cầu.
+2. Dùng concept, biến và quan hệ AMR nhất quán với dữ liệu huấn luyện.
+3. Không dùng ví dụ, câu, nhãn vàng hoặc quy tắc rút ra từ tập test.
+4. Giữ dấu ngoặc AMR cân bằng.
+5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
+6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
+7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+<|im_end|>
+<|im_start|>user
+tôi lại cũng có sai lầm về tầm vóc .
+<|im_end|>
+<|im_start|>assistant
+AMR_NO_VAR: (có
+    :pivot(tôi)
+    :modality(cũng)
+    :manner(sai lầm)
+    :topic(tầm vóc))
+<|im_end|>
+
+<|im_start|>system
+Bạn là trợ lý phân tích AMR (Abstract Meaning Representation) cho tiếng Việt.
+
+QUY TẮC:
+1. Tuân thủ đúng định dạng output được yêu cầu.
+2. Dùng concept, biến và quan hệ AMR nhất quán với dữ liệu huấn luyện.
+3. Không dùng ví dụ, câu, nhãn vàng hoặc quy tắc rút ra từ tập test.
+4. Giữ dấu ngoặc AMR cân bằng.
+5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
+6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
+7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+<|im_end|>
+<|im_start|>user
+tôi cứ lần mò như thế này rồi như thế khác , khi được khi không .
+<|im_end|>
+<|im_start|>assistant
+AMR_NO_VAR: (lần mò
+    :agent(tôi)
+    :manner(thế
+        :mod(này))
+    :manner(thế
+        :mod(khác))
+    :time(khi
+        :mod(được))
+    :time(khi
+        :mod(không)))
+<|im_end|>
+
+<|im_start|>system
+Bạn là trợ lý phân tích AMR (Abstract Meaning Representation) cho tiếng Việt.
+
+QUY TẮC:
+1. Tuân thủ đúng định dạng output được yêu cầu.
+2. Dùng concept, biến và quan hệ AMR nhất quán với dữ liệu huấn luyện.
+3. Không dùng ví dụ, câu, nhãn vàng hoặc quy tắc rút ra từ tập test.
+4. Giữ dấu ngoặc AMR cân bằng.
+5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
+6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
+7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+<|im_end|>
+<|im_start|>user
+có lẽ tôi hơi giống những người lớn rồi .
+<|im_end|>
+<|im_start|>assistant
+AMR_NO_VAR: (resemble-01
+    :modality(có lẽ)
+    :domain(tôi)
+    :compared-to(người lớn)
+    :degree(less))
+<|im_end|>
+
+<|im_start|>system
+Bạn là trợ lý phân tích AMR (Abstract Meaning Representation) cho tiếng Việt.
+
+QUY TẮC:
+1. Tuân thủ đúng định dạng output được yêu cầu.
+2. Dùng concept, biến và quan hệ AMR nhất quán với dữ liệu huấn luyện.
+3. Không dùng ví dụ, câu, nhãn vàng hoặc quy tắc rút ra từ tập test.
+4. Giữ dấu ngoặc AMR cân bằng.
+5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
+6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
+7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+<|im_end|>
+<|im_start|>user
+- có thật đúng là con cừu ăn những bụi cây con không ?
+<|im_end|>
+<|im_start|>assistant
+AMR_NO_VAR: (thật
+    :compound(đúng)
+    :topic(ăn
+        :agent(cừu
+            :classifier(con))
+        :patient(cây
+            :classifier(bụi)
+            :mod(con)))
+    :mode interrogative)
+<|im_end|>
+
+<|im_start|>system
+Bạn là trợ lý phân tích AMR (Abstract Meaning Representation) cho tiếng Việt.
+
+QUY TẮC:
+1. Tuân thủ đúng định dạng output được yêu cầu.
+2. Dùng concept, biến và quan hệ AMR nhất quán với dữ liệu huấn luyện.
+3. Không dùng ví dụ, câu, nhãn vàng hoặc quy tắc rút ra từ tập test.
+4. Giữ dấu ngoặc AMR cân bằng.
+5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
+6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
+7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+<|im_end|>
+<|im_start|>user
+ý nghĩ về đàn voi làm cho ông hoàng nhỏ bật cười :
+<|im_end|>
+<|im_start|>assistant
+AMR_NO_VAR: (làm
+    :theme(ý nghĩ
+        :topic(đàn
+            :consist-of(voi)))
+    :patient(bật
+        :patient-of(ông hoàng
+            :mod(nhỏ))
+        :compound(cười)))
+<|im_end|>
+
+<|im_start|>system
+Bạn là trợ lý phân tích AMR (Abstract Meaning Representation) cho tiếng Việt.
+
+QUY TẮC:
+1. Tuân thủ đúng định dạng output được yêu cầu.
+2. Dùng concept, biến và quan hệ AMR nhất quán với dữ liệu huấn luyện.
+3. Không dùng ví dụ, câu, nhãn vàng hoặc quy tắc rút ra từ tập test.
+4. Giữ dấu ngoặc AMR cân bằng.
+5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
+6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
+7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+<|im_end|>
+<|im_start|>user
+nguyên là , trên hành tinh của ông hoàng nhỏ , cũng như trên mọi hành tinh khác , đều có những loại cỏ tốt và những loại cỏ xấu .
+<|im_end|>
+<|im_start|>assistant
+AMR_NO_VAR: (có
+    :degree(đều)
+    :theme(and
+        :op1(loại
+            :mod(cỏ)
+            :mod(tốt))
+        :op2(loại
+            :mod(cỏ)
+            :mod(xấu)))
+    :location(and
+        :op1(hành tinh
+            :prep(trên)
+            :poss(ông hoàng
+                :mod(nhỏ)))
+        :op2(hành tinh
+            :prep(trên)
+            :mod(khác)
+            :mod(all))))
+<|im_end|>
+
+<|im_start|>system
+Bạn là trợ lý phân tích AMR (Abstract Meaning Representation) cho tiếng Việt.
+
+QUY TẮC:
+1. Tuân thủ đúng định dạng output được yêu cầu.
+2. Dùng concept, biến và quan hệ AMR nhất quán với dữ liệu huấn luyện.
+3. Không dùng ví dụ, câu, nhãn vàng hoặc quy tắc rút ra từ tập test.
+4. Giữ dấu ngoặc AMR cân bằng.
+5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
+6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
+7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+<|im_end|>
+<|im_start|>user
+nếu là nhánh dưa hay một nhánh hồng , ta có thể muốn để cho nó mọc thế nào tuỳ ý .
+<|im_end|>
+<|im_start|>assistant
+AMR_NO_VAR: (possible-01
+    :topic(muốn
+        :pivot(ta)
+        :purpose(mọc
+            :theme(nó)
+            :manner(tuỳ ý))
+        :condition(or
+            :op1(nhánh
+                :part-of(dưa)
+                :domain (nó))
+            :op2(nhánh
+                :part-of(hồng)
+                :domain (nó)))))
+<|im_end|>
+
+<|im_start|>system
+Bạn là trợ lý phân tích AMR (Abstract Meaning Representation) cho tiếng Việt.
+
+QUY TẮC:
+1. Tuân thủ đúng định dạng output được yêu cầu.
+2. Dùng concept, biến và quan hệ AMR nhất quán với dữ liệu huấn luyện.
+3. Không dùng ví dụ, câu, nhãn vàng hoặc quy tắc rút ra từ tập test.
+4. Giữ dấu ngoặc AMR cân bằng.
+5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
+6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
+7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+<|im_end|>
+<|im_start|>user
+nhưng nếu là một cây xấu , ngay khi nhận ra là phải nhổ ngay .
+<|im_end|>
+<|im_start|>assistant
+AMR_NO_VAR: (contrast-01
+    :ARG2(obligate-01
+        :topic(nhổ
+            :condition(cây
+                :mod(xấu))
+            :time(khi
+                :time-of(nhận
+                    :compound(ra)))
+            :manner(ngay)
+            :patient (cây))))
+<|im_end|>
+
+<|im_start|>system
+Bạn là trợ lý phân tích AMR (Abstract Meaning Representation) cho tiếng Việt.
+
+QUY TẮC:
+1. Tuân thủ đúng định dạng output được yêu cầu.
+2. Dùng concept, biến và quan hệ AMR nhất quán với dữ liệu huấn luyện.
+3. Không dùng ví dụ, câu, nhãn vàng hoặc quy tắc rút ra từ tập test.
+4. Giữ dấu ngoặc AMR cân bằng.
+5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
+6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
+7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+<|im_end|>
+<|im_start|>user
+nó vẽ một con trăn đang nằm chờ tiêu hoá một con voi .
+<|im_end|>
+<|im_start|>assistant
+AMR_NO_VAR: (vẽ
+    :pivot(nó)
+    :result-arg1(nằm
+        :agent(trăn
+            :quant 1
+                :classifier(con))
+        :tense(đang)
+        :manner(chờ
+            :purpose(tiêu hoá
+                :patient(voi
+                    :quant 1
+                        :classifier(con))
+                :agent (trăn))
+            :pivot (trăn))))
+<|im_end|>
+
+<|im_start|>system
+Bạn là trợ lý phân tích AMR (Abstract Meaning Representation) cho tiếng Việt.
+
+QUY TẮC:
+1. Tuân thủ đúng định dạng output được yêu cầu.
+2. Dùng concept, biến và quan hệ AMR nhất quán với dữ liệu huấn luyện.
+3. Không dùng ví dụ, câu, nhãn vàng hoặc quy tắc rút ra từ tập test.
+4. Giữ dấu ngoặc AMR cân bằng.
+5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
+6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
+7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+<|im_end|>
+<|im_start|>user
+cái đó thật là ích lợi nếu như người ta bay lạc đường trong đêm tối .
+<|im_end|>
+<|im_start|>assistant
+AMR_NO_VAR: (ích lợi
+    :domain(cái
+        :mod(đó))
+    :degree(thật)
+    :condition(bay
+        :agent(người ta)
+        :manner(lạc
+            :path(đường)
+            :time(date-entity
+                :dayperiod(đêm tối
+                    :prep(trong))))))
+<|im_end|>
+
+<|im_start|>system
+Bạn là trợ lý phân tích AMR (Abstract Meaning Representation) cho tiếng Việt.
+
+QUY TẮC:
+1. Tuân thủ đúng định dạng output được yêu cầu.
+2. Dùng concept, biến và quan hệ AMR nhất quán với dữ liệu huấn luyện.
+3. Không dùng ví dụ, câu, nhãn vàng hoặc quy tắc rút ra từ tập test.
+4. Giữ dấu ngoặc AMR cân bằng.
+5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
+6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
+7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+<|im_end|>
+<|im_start|>user
+nhưng cái đó chẳng làm thay đổi ý kiến của tôi bao nhiêu .
+<|im_end|>
+<|im_start|>assistant
+AMR_NO_VAR: (contrast-01
+    :ARG2(làm
+        :theme(cái
+            :mod(đó))
+        :result-arg1(thay đổi
+            :theme(ý kiến
+                :poss(tôi))
+            :degree(bao nhiêu)
+            :agent (tôi))
+        :polarity -))
+<|im_end|>
+
+<|im_start|>system
+Bạn là trợ lý phân tích AMR (Abstract Meaning Representation) cho tiếng Việt.
+
+QUY TẮC:
+1. Tuân thủ đúng định dạng output được yêu cầu.
+2. Dùng concept, biến và quan hệ AMR nhất quán với dữ liệu huấn luyện.
+3. Không dùng ví dụ, câu, nhãn vàng hoặc quy tắc rút ra từ tập test.
+4. Giữ dấu ngoặc AMR cân bằng.
+5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
+6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
+7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+<|im_end|>
+<|im_start|>user
+tôi chỉ có đủ nước để uống trong nhiều nhất là tám ngày .
+<|im_end|>
+<|im_start|>assistant
+AMR_NO_VAR: (có
+    :pivot(tôi)
+    :degree(chỉ)
+    :theme(nước
+        :purpose(uống
+            :degree(đủ)
+            :quant(nhiều
+                :degree(nhất)
+                :time(temporal-quantity
+                    :unit(ngày)
+                    :quant 8))
+            :agent (tôi))))
+<|im_end|>
+
+<|im_start|>system
+Bạn là trợ lý phân tích AMR (Abstract Meaning Representation) cho tiếng Việt.
+
+QUY TẮC:
+1. Tuân thủ đúng định dạng output được yêu cầu.
+2. Dùng concept, biến và quan hệ AMR nhất quán với dữ liệu huấn luyện.
+3. Không dùng ví dụ, câu, nhãn vàng hoặc quy tắc rút ra từ tập test.
+4. Giữ dấu ngoặc AMR cân bằng.
+5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
+6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
+7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+<|im_end|>
+<|im_start|>user
+tôi nhảy dựng lên như là bị sét đánh .
+<|im_end|>
+<|im_start|>assistant
+AMR_NO_VAR: (nhảy
+    :agent(tôi)
+    :compound(dựng)
+    :direction(lên)
+    :compared-to(đánh
+        :modality(bị)
+        :theme(sét)
+        :patient (tôi))
+    :degree(equal))
+<|im_end|>
+
+<|im_start|>system
+Bạn là trợ lý phân tích AMR (Abstract Meaning Representation) cho tiếng Việt.
+
+QUY TẮC:
+1. Tuân thủ đúng định dạng output được yêu cầu.
+2. Dùng concept, biến và quan hệ AMR nhất quán với dữ liệu huấn luyện.
+3. Không dùng ví dụ, câu, nhãn vàng hoặc quy tắc rút ra từ tập test.
+4. Giữ dấu ngoặc AMR cân bằng.
+5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
+6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
+7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+<|im_end|>
+<|im_start|>user
+em trả lời tôi :
+<|im_end|>
+<|im_start|>assistant
+AMR_NO_VAR: (trả lời
+    :agent(em)
+    :goal(tôi))
+<|im_end|>
+
+<|im_start|>system
+Bạn là trợ lý phân tích AMR (Abstract Meaning Representation) cho tiếng Việt.
+
+QUY TẮC:
+1. Tuân thủ đúng định dạng output được yêu cầu.
+2. Dùng concept, biến và quan hệ AMR nhất quán với dữ liệu huấn luyện.
+3. Không dùng ví dụ, câu, nhãn vàng hoặc quy tắc rút ra từ tập test.
+4. Giữ dấu ngoặc AMR cân bằng.
+5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
+6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
+7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+<|im_end|>
+<|im_start|>user
+nó có sừng ...
+<|im_end|>
+<|im_start|>assistant
+AMR_NO_VAR: (có
+    :pivot(nó)
+    :theme(sừng))
+<|im_end|>
+
+<|im_start|>system
+Bạn là trợ lý phân tích AMR (Abstract Meaning Representation) cho tiếng Việt.
+
+QUY TẮC:
+1. Tuân thủ đúng định dạng output được yêu cầu.
+2. Dùng concept, biến và quan hệ AMR nhất quán với dữ liệu huấn luyện.
+3. Không dùng ví dụ, câu, nhãn vàng hoặc quy tắc rút ra từ tập test.
+4. Giữ dấu ngoặc AMR cân bằng.
+5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
+6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
+7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+<|im_end|>
+<|im_start|>user
+nhưng bức này cũng bị từ chối như các bức trước .
+<|im_end|>
+<|im_start|>assistant
+AMR_NO_VAR: (contrast-01
+    :ARG2(từ chối
+        :theme(bức
+            :mod(này))
+        :modality(bị)
+        :compared-to(bức
+            :mod(trước))
+        :degree(equal)))
+<|im_end|>
+
+<|im_start|>system
+Bạn là trợ lý phân tích AMR (Abstract Meaning Representation) cho tiếng Việt.
+
+QUY TẮC:
+1. Tuân thủ đúng định dạng output được yêu cầu.
+2. Dùng concept, biến và quan hệ AMR nhất quán với dữ liệu huấn luyện.
+3. Không dùng ví dụ, câu, nhãn vàng hoặc quy tắc rút ra từ tập test.
+4. Giữ dấu ngoặc AMR cân bằng.
+5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
+6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
+7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+<|im_end|>
+<|im_start|>user
+- con này già quá .
+<|im_end|>
+<|im_start|>assistant
+AMR_NO_VAR: (già
+    :domain(con
+        :mod(này))
+    :degree(quá))
+<|im_end|>
+
+<|im_start|>system
+Bạn là trợ lý phân tích AMR (Abstract Meaning Representation) cho tiếng Việt.
+
+QUY TẮC:
+1. Tuân thủ đúng định dạng output được yêu cầu.
+2. Dùng concept, biến và quan hệ AMR nhất quán với dữ liệu huấn luyện.
+3. Không dùng ví dụ, câu, nhãn vàng hoặc quy tắc rút ra từ tập test.
+4. Giữ dấu ngoặc AMR cân bằng.
+5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
+6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
+7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+<|im_end|>
+<|im_start|>user
+con cừu chú muốn nó ở trong ấy đấy .
+<|im_end|>
+<|im_start|>assistant
+AMR_NO_VAR: (ở
+    :theme(cừu
+        :classifier(con))
+    :mod(muốn
+        :pivot(chú))
+    :location(ấy
+        :prep(trong)
+        :modality(đấy)))
+<|im_end|>
+
+<|im_start|>system
+Bạn là trợ lý phân tích AMR (Abstract Meaning Representation) cho tiếng Việt.
+
+QUY TẮC:
+1. Tuân thủ đúng định dạng output được yêu cầu.
+2. Dùng concept, biến và quan hệ AMR nhất quán với dữ liệu huấn luyện.
+3. Không dùng ví dụ, câu, nhãn vàng hoặc quy tắc rút ra từ tập test.
+4. Giữ dấu ngoặc AMR cân bằng.
+5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
+6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
+7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+<|im_end|>
+<|im_start|>user
+- không nhỏ lắm đâu ... kìa !
+<|im_end|>
+<|im_start|>assistant
+AMR_NO_VAR: (multi-sentence
+    :snt1(nhỏ
+        :degree(lắm)
+        :modality(đâu)
+        :polarity -)
+    :snt2(kìa
+        :mode imperative))
+<|im_end|>
+
+<|im_start|>system
+Bạn là trợ lý phân tích AMR (Abstract Meaning Representation) cho tiếng Việt.
+
+QUY TẮC:
+1. Tuân thủ đúng định dạng output được yêu cầu.
+2. Dùng concept, biến và quan hệ AMR nhất quán với dữ liệu huấn luyện.
+3. Không dùng ví dụ, câu, nhãn vàng hoặc quy tắc rút ra từ tập test.
+4. Giữ dấu ngoặc AMR cân bằng.
+5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
+6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
+7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+<|im_end|>
+<|im_start|>user
+đó là chiếc máy bay của tôi .
+<|im_end|>
+<|im_start|>assistant
+AMR_NO_VAR: (máy bay
+    :domain(đó)
+    :classifier(chiếc)
+    :poss(tôi))
+<|im_end|>
+
+<|im_start|>system
+Bạn là trợ lý phân tích AMR (Abstract Meaning Representation) cho tiếng Việt.
+
+QUY TẮC:
+1. Tuân thủ đúng định dạng output được yêu cầu.
+2. Dùng concept, biến và quan hệ AMR nhất quán với dữ liệu huấn luyện.
+3. Không dùng ví dụ, câu, nhãn vàng hoặc quy tắc rút ra từ tập test.
+4. Giữ dấu ngoặc AMR cân bằng.
+5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
+6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
+7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+<|im_end|>
+<|im_start|>user
+ông ở hành tinh nào ?
+<|im_end|>
+<|im_start|>assistant
+AMR_NO_VAR: (ở
+    :pivot(ông)
+    :location(hành tinh
+        :name(amr-unknown)))
+<|im_end|>
+
+<|im_start|>system
+Bạn là trợ lý phân tích AMR (Abstract Meaning Representation) cho tiếng Việt.
+
+QUY TẮC:
+1. Tuân thủ đúng định dạng output được yêu cầu.
+2. Dùng concept, biến và quan hệ AMR nhất quán với dữ liệu huấn luyện.
+3. Không dùng ví dụ, câu, nhãn vàng hoặc quy tắc rút ra từ tập test.
+4. Giữ dấu ngoặc AMR cân bằng.
+5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
+6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
+7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+<|im_end|>
+<|im_start|>user
+em muốn mang con cừu của ta về đâu ?
+<|im_end|>
+<|im_start|>assistant
+AMR_NO_VAR: (muốn
+    :pivot(em)
+    :topic(mang
+        :theme(cừu
+            :classifier(con)
+            :poss(ta))
+        :manner(về
+            :finalLocation(amr-unknown))
+        :agent (em)))
+<|im_end|>
+
+<|im_start|>system
+Bạn là trợ lý phân tích AMR (Abstract Meaning Representation) cho tiếng Việt.
+
+QUY TẮC:
+1. Tuân thủ đúng định dạng output được yêu cầu.
+2. Dùng concept, biến và quan hệ AMR nhất quán với dữ liệu huấn luyện.
+3. Không dùng ví dụ, câu, nhãn vàng hoặc quy tắc rút ra từ tập test.
+4. Giữ dấu ngoặc AMR cân bằng.
+5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
+6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
+7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+<|im_end|>
+<|im_start|>user
+lời đề nghị đó có lẽ làm cho ông hoàng bé nhỏ không vừa lòng :
+<|im_end|>
+<|im_start|>assistant
+AMR_NO_VAR: (làm
+    :theme(lời
+        :mod(đề nghị)
+        :mod(đó))
+    :modality(có lẽ)
+    :patient(vừa lòng
+        :patient-of(ông hoàng
+            :mod(bé nhỏ))
+        :polarity -))
+<|im_end|>
+
+<|im_start|>system
+Bạn là trợ lý phân tích AMR (Abstract Meaning Representation) cho tiếng Việt.
+
+QUY TẮC:
+1. Tuân thủ đúng định dạng output được yêu cầu.
+2. Dùng concept, biến và quan hệ AMR nhất quán với dữ liệu huấn luyện.
+3. Không dùng ví dụ, câu, nhãn vàng hoặc quy tắc rút ra từ tập test.
+4. Giữ dấu ngoặc AMR cân bằng.
+5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
+6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
+7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+<|im_end|>
+<|im_start|>user
+may mắn cho tiểu tinh cầu B612 , một nhà độc tài Thổ Nhĩ Kỳ buộc dân Thổ phải mặc âu phục , ai không tuân theo sẽ bị tội chết .
+<|im_end|>
+<|im_start|>assistant
+AMR_NO_VAR: (buộc
+    :topic(may mắn
+        :beneficiary(planet
+            :name(name
+                :op1(tiểu tinh cầu)
+                :op2(B612))
+            :wiki(Tiểu_tinh_cầu_B612)))
+    :agent(nhà
+        :mod(độc tài)
+        :mod(country
+            :wiki(Thổ_Nhĩ_Kỳ)
+            :name(name
+                :op2(Nhĩ)
+                :op3(Kỳ)
+                :op1(Thổ)))
+        :quant 1)
+    :patient(dân
+        :topic(mặc
+            :modality(phải)
+            :theme(âu phục)
+            :patient-of (dân))
+        :manner(tuân
+            :agent(ai)
+            :polarity -
+            :compound(theo)
+            :topic(bị
+                :tense(sẽ)
+                :manner(tội
+                    :mod(chết))))
+        :mod (country)))
+<|im_end|>
+
+<|im_start|>system
+Bạn là trợ lý phân tích AMR (Abstract Meaning Representation) cho tiếng Việt.
+
+QUY TẮC:
+1. Tuân thủ đúng định dạng output được yêu cầu.
+2. Dùng concept, biến và quan hệ AMR nhất quán với dữ liệu huấn luyện.
+3. Không dùng ví dụ, câu, nhãn vàng hoặc quy tắc rút ra từ tập test.
+4. Giữ dấu ngoặc AMR cân bằng.
+5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
+6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
+7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+<|im_end|>
+<|im_start|>user
+hắn có sưu tầm bươm bướm không ? "
+<|im_end|>
+<|im_start|>assistant
+AMR_NO_VAR: (sưu tầm
+    :agent(hắn)
+    :theme(bươm bướm)
+    :mode interrogative)
+<|im_end|>
+
+<|im_start|>system
+Bạn là trợ lý phân tích AMR (Abstract Meaning Representation) cho tiếng Việt.
+
+QUY TẮC:
+1. Tuân thủ đúng định dạng output được yêu cầu.
+2. Dùng concept, biến và quan hệ AMR nhất quán với dữ liệu huấn luyện.
+3. Không dùng ví dụ, câu, nhãn vàng hoặc quy tắc rút ra từ tập test.
+4. Giữ dấu ngoặc AMR cân bằng.
+5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
+6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
+7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+<|im_end|>
+<|im_start|>user
+nhưng không thể nhìn thấy hạt .
+<|im_end|>
+<|im_start|>assistant
+AMR_NO_VAR: (contrast-01
+    :ARG2(possible-01
+        :topic(nhìn
+            :compound(thấy)
+            :goal(hạt))
+        :polarity -))
+<|im_end|>
+
+<|im_start|>system
+Bạn là trợ lý phân tích AMR (Abstract Meaning Representation) cho tiếng Việt.
+
+QUY TẮC:
+1. Tuân thủ đúng định dạng output được yêu cầu.
+2. Dùng concept, biến và quan hệ AMR nhất quán với dữ liệu huấn luyện.
+3. Không dùng ví dụ, câu, nhãn vàng hoặc quy tắc rút ra từ tập test.
+4. Giữ dấu ngoặc AMR cân bằng.
+5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
+6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
+7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+<|im_end|>
+<|im_start|>user
+- tâu bệ hạ , ngài trị vì trên cái gì ?
+<|im_end|>
+<|im_start|>assistant
+AMR_NO_VAR: (tâu
+    :patient(bệ hạ)
+    :topic(trị vì
+        :agent (bệ)
+        :theme(amr-unknown
+            :prep(trên)
+            :classifier(cái))))
+<|im_end|>
+
+<|im_start|>system
+Bạn là trợ lý phân tích AMR (Abstract Meaning Representation) cho tiếng Việt.
+
+QUY TẮC:
+1. Tuân thủ đúng định dạng output được yêu cầu.
+2. Dùng concept, biến và quan hệ AMR nhất quán với dữ liệu huấn luyện.
+3. Không dùng ví dụ, câu, nhãn vàng hoặc quy tắc rút ra từ tập test.
+4. Giữ dấu ngoặc AMR cân bằng.
+5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
+6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
+7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+<|im_end|>
+<|im_start|>user
+- trên tất cả những cái đó ...
+<|im_end|>
+<|im_start|>assistant
+AMR_NO_VAR: (cái
+    :prep(trên)
+    :mod(tất cả)
+    :mod(đó))
+<|im_end|>
+
+<|im_start|>system
+Bạn là trợ lý phân tích AMR (Abstract Meaning Representation) cho tiếng Việt.
+
+QUY TẮC:
+1. Tuân thủ đúng định dạng output được yêu cầu.
+2. Dùng concept, biến và quan hệ AMR nhất quán với dữ liệu huấn luyện.
+3. Không dùng ví dụ, câu, nhãn vàng hoặc quy tắc rút ra từ tập test.
+4. Giữ dấu ngoặc AMR cân bằng.
+5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
+6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
+7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+<|im_end|>
+<|im_start|>user
+một quyền lực như thế làm cho ông hoàng nhỏ thích mê .
+<|im_end|>
+<|im_start|>assistant
+AMR_NO_VAR: (làm
+    :agent(quyền lực
+        :compared-to(thế)
+        :degree(equal))
+    :result(thích
+        :pivot(ông hoàng
+            :mod(nhỏ))
+        :compound(mê)))
+<|im_end|>
+
+<|im_start|>system
+Bạn là trợ lý phân tích AMR (Abstract Meaning Representation) cho tiếng Việt.
+
+QUY TẮC:
+1. Tuân thủ đúng định dạng output được yêu cầu.
+2. Dùng concept, biến và quan hệ AMR nhất quán với dữ liệu huấn luyện.
+3. Không dùng ví dụ, câu, nhãn vàng hoặc quy tắc rút ra từ tập test.
+4. Giữ dấu ngoặc AMR cân bằng.
+5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
+6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
+7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+<|im_end|>
+<|im_start|>user
+- nếu ta ra lệnh cho một võ tướng bay từ đoá hoa này sang đoá hoa kia như một con bướm , hay lệnh cho ông ta viết một vở bi kịch , hay biến thành chim biển , và nếu vị võ tướng ấy không tuân lệnh , thì lỗi ấy ở ông ta hay ở ta ?
+<|im_end|>
+<|im_start|>assistant
+AMR_NO_VAR: (and
+    :op2(lỗi
+        :condition(tuân
+            :agent(võ tướng
+                :classifier(vị)
+                :mod(ấy))
+            :polarity -
+            :theme(lệnh))
+        :mod(ấy)
+        :cause(or
+            :op1(ông
+                :mod(ta))
+            :op2(ta)))
+    :op1(or
+        :condition(ra lệnh
+            :agent(ta)
+            :topic(bay
+                :agent(võ tướng
+                    :quant 1)
+                :initialLocation(hoa
+                    :classifier(đoá)
+                    :mod(này))
+                :finalLocation(hoa
+                    :classifier(đoá)
+                    :mod(kia))
+                :compared-to(bướm
+                    :quant 1
+                        :classifier(con))))
+        :op1(lệnh
+            :goal(ông
+                :mod(ta))
+            :topic(viết
+                :theme(vở
+                    :quant 1
+                        :mod(bi kịch))
+                :agent (ông)))
+        :op2(biến
+            :compound(thành)
+            :result-arg1(chim
+                :compound(biển)))))
+<|im_end|>
+
+<|im_start|>system
+Bạn là trợ lý phân tích AMR (Abstract Meaning Representation) cho tiếng Việt.
+
+QUY TẮC:
+1. Tuân thủ đúng định dạng output được yêu cầu.
+2. Dùng concept, biến và quan hệ AMR nhất quán với dữ liệu huấn luyện.
+3. Không dùng ví dụ, câu, nhãn vàng hoặc quy tắc rút ra từ tập test.
+4. Giữ dấu ngoặc AMR cân bằng.
+5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
+6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
+7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+<|im_end|>
+<|im_start|>user
+- đến bao giờ thì đủ ? ông hoàng nhỏ hỏi .
+<|im_end|>
+<|im_start|>assistant
+AMR_NO_VAR: (hỏi
+    :result(đủ)
+    :agent(ông hoàng
+        :mod(nhỏ))
+    :time(amr-unknown))
+<|im_end|>
+
+<|im_start|>system
+Bạn là trợ lý phân tích AMR (Abstract Meaning Representation) cho tiếng Việt.
+
+QUY TẮC:
+1. Tuân thủ đúng định dạng output được yêu cầu.
+2. Dùng concept, biến và quan hệ AMR nhất quán với dữ liệu huấn luyện.
+3. Không dùng ví dụ, câu, nhãn vàng hoặc quy tắc rút ra từ tập test.
+4. Giữ dấu ngoặc AMR cân bằng.
+5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
+6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
+7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+<|im_end|>
+<|im_start|>user
+vào lúc ...
+<|im_end|>
+<|im_start|>assistant
+AMR_NO_VAR: (vào
+    :time(lúc))
+<|im_end|>
+
+<|im_start|>system
+Bạn là trợ lý phân tích AMR (Abstract Meaning Representation) cho tiếng Việt.
+
+QUY TẮC:
+1. Tuân thủ đúng định dạng output được yêu cầu.
+2. Dùng concept, biến và quan hệ AMR nhất quán với dữ liệu huấn luyện.
+3. Không dùng ví dụ, câu, nhãn vàng hoặc quy tắc rút ra từ tập test.
+4. Giữ dấu ngoặc AMR cân bằng.
+5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
+6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
+7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+<|im_end|>
+<|im_start|>user
+em tiếc cho cảnh mặt trời lặn hụt của em .
+<|im_end|>
+<|im_start|>assistant
+AMR_NO_VAR: (tiếc
+    :pivot(em)
+    :theme(cảnh
+        :mod(lặn
+            :agent(mặt trời)
+            :manner(hụt))
+        :poss(em)))
+<|im_end|>
+
+<|im_start|>system
+Bạn là trợ lý phân tích AMR (Abstract Meaning Representation) cho tiếng Việt.
+
+QUY TẮC:
+1. Tuân thủ đúng định dạng output được yêu cầu.
+2. Dùng concept, biến và quan hệ AMR nhất quán với dữ liệu huấn luyện.
+3. Không dùng ví dụ, câu, nhãn vàng hoặc quy tắc rút ra từ tập test.
+4. Giữ dấu ngoặc AMR cân bằng.
+5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
+6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
+7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+<|im_end|>
+<|im_start|>user
+thỉnh thoảng ngươi ghép nó vào tội tử hình .
+<|im_end|>
+<|im_start|>assistant
+AMR_NO_VAR: (ghép
+    :agent(ngươi)
+    :patient(nó)
+    :setting(tội
+        :prep(vào)
+        :mod(tử hình))
+    :frequency(have-frequency-91
+        :unit(thỉnh thoảng)))
+<|im_end|>
+
+<|im_start|>system
+Bạn là trợ lý phân tích AMR (Abstract Meaning Representation) cho tiếng Việt.
+
+QUY TẮC:
+1. Tuân thủ đúng định dạng output được yêu cầu.
+2. Dùng concept, biến và quan hệ AMR nhất quán với dữ liệu huấn luyện.
+3. Không dùng ví dụ, câu, nhãn vàng hoặc quy tắc rút ra từ tập test.
+4. Giữ dấu ngoặc AMR cân bằng.
+5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
+6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
+7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+<|im_end|>
+<|im_start|>user
+nhưng mỗi lần buộc tội xong , thì ngươi lại nên ân xá để dành dụm chuột .
+<|im_end|>
+<|im_start|>assistant
+AMR_NO_VAR: (contrast-01
+    :ARG2(recommend-01
+        :result(buộc tội
+            :frequency(have-frequency-91
+                :quant(mỗi)
+                :unit(lần))
+            :agent (amr-unknown))
+        :agent(ân xá
+            :agent-of(ngươi)
+            :purpose(dành dụm
+                :theme(chuột)))))
+<|im_end|>
+
+<|im_start|>system
+Bạn là trợ lý phân tích AMR (Abstract Meaning Representation) cho tiếng Việt.
+
+QUY TẮC:
+1. Tuân thủ đúng định dạng output được yêu cầu.
+2. Dùng concept, biến và quan hệ AMR nhất quán với dữ liệu huấn luyện.
+3. Không dùng ví dụ, câu, nhãn vàng hoặc quy tắc rút ra từ tập test.
+4. Giữ dấu ngoặc AMR cân bằng.
+5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
+6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
+7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+<|im_end|>
+<|im_start|>user
+sau năm phút tập dượt , ông hoàng nhỏ thấy chán vì sự đơn điệu của cái trò chơi ấy :
+<|im_end|>
+<|im_start|>assistant
+AMR_NO_VAR: (thấy
+    :time(sau
+        :op1(tập dượt
+            :duration(temporal-quantity
+                :quant 5
+                    :unit(phút))))
+    :pivot(ông hoàng
+        :mod(nhỏ))
+    :manner(chán)
+    :cause(sự
+        :compound(đơn điệu)
+        :source(trò chơi
+            :classifier(cái)
+            :mod(ấy))))
+<|im_end|>
+
+<|im_start|>system
+Bạn là trợ lý phân tích AMR (Abstract Meaning Representation) cho tiếng Việt.
+
+QUY TẮC:
+1. Tuân thủ đúng định dạng output được yêu cầu.
+2. Dùng concept, biến và quan hệ AMR nhất quán với dữ liệu huấn luyện.
+3. Không dùng ví dụ, câu, nhãn vàng hoặc quy tắc rút ra từ tập test.
+4. Giữ dấu ngoặc AMR cân bằng.
+5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
+6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
+7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+<|im_end|>
+<|im_start|>user
+dẫu sao cứ hãy cứ khâm phục ta !
+<|im_end|>
+<|im_start|>assistant
+AMR_NO_VAR: (khâm phục
+    :modality(cứ)
+    :goal(ta)
+    :mode imperative)
+<|im_end|>
+
+<|im_start|>system
+Bạn là trợ lý phân tích AMR (Abstract Meaning Representation) cho tiếng Việt.
+
+QUY TẮC:
+1. Tuân thủ đúng định dạng output được yêu cầu.
+2. Dùng concept, biến và quan hệ AMR nhất quán với dữ liệu huấn luyện.
+3. Không dùng ví dụ, câu, nhãn vàng hoặc quy tắc rút ra từ tập test.
+4. Giữ dấu ngoặc AMR cân bằng.
+5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
+6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
+7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+<|im_end|>
+<|im_start|>user
+- xấu hổ vì cái gì ? ông hoàng nhỏ hỏi , đã muốn giúp đỡ hắn .
+<|im_end|>
+<|im_start|>assistant
+AMR_NO_VAR: (hỏi
+    :topic(xấu hổ
+        :pivot (hắn)
+        :reason(amr-unknown))
+    :agent(ông hoàng
+        :mod(nhỏ))
+    :setting(muốn
+        :tense(đã)
+        :topic(giúp đỡ
+            :beneficiary(hắn)
+            :agent (ông))
+        :pivot (ông)))
+<|im_end|>
+
+<|im_start|>system
+Bạn là trợ lý phân tích AMR (Abstract Meaning Representation) cho tiếng Việt.
+
+QUY TẮC:
+1. Tuân thủ đúng định dạng output được yêu cầu.
+2. Dùng concept, biến và quan hệ AMR nhất quán với dữ liệu huấn luyện.
+3. Không dùng ví dụ, câu, nhãn vàng hoặc quy tắc rút ra từ tập test.
+4. Giữ dấu ngoặc AMR cân bằng.
+5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
+6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
+7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+<|im_end|>
+<|im_start|>user
+chào chú .
+<|im_end|>
+<|im_start|>assistant
+AMR_NO_VAR: (chào
+    :goal(chú))
+<|im_end|>
+
+<|im_start|>system
+Bạn là trợ lý phân tích AMR (Abstract Meaning Representation) cho tiếng Việt.
+
+QUY TẮC:
+1. Tuân thủ đúng định dạng output được yêu cầu.
+2. Dùng concept, biến và quan hệ AMR nhất quán với dữ liệu huấn luyện.
+3. Không dùng ví dụ, câu, nhãn vàng hoặc quy tắc rút ra từ tập test.
+4. Giữ dấu ngoặc AMR cân bằng.
+5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
+6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
+7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+<|im_end|>
+<|im_start|>user
+ta cũng chẳng biết là cái gì nữa .
+<|im_end|>
+<|im_start|>assistant
+AMR_NO_VAR: (biết
+    :pivot(ta)
+    :modality(cũng)
+    :polarity -
+    :theme(gì
+        :classifier(cái))
+    :modality(nữa))
+<|im_end|>
+
+<|im_start|>system
+Bạn là trợ lý phân tích AMR (Abstract Meaning Representation) cho tiếng Việt.
+
+QUY TẮC:
+1. Tuân thủ đúng định dạng output được yêu cầu.
+2. Dùng concept, biến và quan hệ AMR nhất quán với dữ liệu huấn luyện.
+3. Không dùng ví dụ, câu, nhãn vàng hoặc quy tắc rút ra từ tập test.
+4. Giữ dấu ngoặc AMR cân bằng.
+5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
+6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
+7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+<|im_end|>
+<|im_start|>user
+nhà doanh nghiệp biết không hy vọng gì được yên thân :
+<|im_end|>
+<|im_start|>assistant
+AMR_NO_VAR: (biết
+    :pivot(nhà
+        :compound(doanh nghiệp))
+    :topic(hy vọng
+        :modality(gì)
+        :result(được
+            :manner(yên thân)
+            :domain (nhà))
+        :polarity -))
+<|im_end|>
+
+<|im_start|>system
+Bạn là trợ lý phân tích AMR (Abstract Meaning Representation) cho tiếng Việt.
+
+QUY TẮC:
+1. Tuân thủ đúng định dạng output được yêu cầu.
+2. Dùng concept, biến và quan hệ AMR nhất quán với dữ liệu huấn luyện.
+3. Không dùng ví dụ, câu, nhãn vàng hoặc quy tắc rút ra từ tập test.
+4. Giữ dấu ngoặc AMR cân bằng.
+5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
+6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
+7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+<|im_end|>
+<|im_start|>user
+- không mà ...
+<|im_end|>
+<|im_start|>assistant
+AMR_NO_VAR: (không
+    :modality(mà))
+<|im_end|>
+
+<|im_start|>system
+Bạn là trợ lý phân tích AMR (Abstract Meaning Representation) cho tiếng Việt.
+
+QUY TẮC:
+1. Tuân thủ đúng định dạng output được yêu cầu.
+2. Dùng concept, biến và quan hệ AMR nhất quán với dữ liệu huấn luyện.
+3. Không dùng ví dụ, câu, nhãn vàng hoặc quy tắc rút ra từ tập test.
+4. Giữ dấu ngoặc AMR cân bằng.
+5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
+6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
+7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+<|im_end|>
+<|im_start|>user
+- chẳng làm gì sất .
+<|im_end|>
+<|im_start|>assistant
+AMR_NO_VAR: (làm
+    :theme(gì)
+    :modality(sất)
+    :polarity -)
+<|im_end|>
+
+<|im_start|>system
+Bạn là trợ lý phân tích AMR (Abstract Meaning Representation) cho tiếng Việt.
+
+QUY TẮC:
+1. Tuân thủ đúng định dạng output được yêu cầu.
+2. Dùng concept, biến và quan hệ AMR nhất quán với dữ liệu huấn luyện.
+3. Không dùng ví dụ, câu, nhãn vàng hoặc quy tắc rút ra từ tập test.
+4. Giữ dấu ngoặc AMR cân bằng.
+5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
+6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
+7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+<|im_end|>
+<|im_start|>user
+- giàu giúp ông được gì ?
+<|im_end|>
+<|im_start|>assistant
+AMR_NO_VAR: (giúp
+    :pivot(giàu
+        :pivot-of (ông))
+    :beneficiary(được
+        :beneficiary-arg0(ông)
+        :theme(amr-unknown)))
+<|im_end|>
+
+<|im_start|>system
+Bạn là trợ lý phân tích AMR (Abstract Meaning Representation) cho tiếng Việt.
+
+QUY TẮC:
+1. Tuân thủ đúng định dạng output được yêu cầu.
+2. Dùng concept, biến và quan hệ AMR nhất quán với dữ liệu huấn luyện.
+3. Không dùng ví dụ, câu, nhãn vàng hoặc quy tắc rút ra từ tập test.
+4. Giữ dấu ngoặc AMR cân bằng.
+5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
+6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
+7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+<|im_end|>
+<|im_start|>user
+tuy thế em vẫn hỏi thêm :
+<|im_end|>
+<|im_start|>assistant
+AMR_NO_VAR: (contrast-01
+    :ARG2(hỏi
+        :agent(em)
+        :manner(vẫn)
+        :compound(thêm)))
+<|im_end|>
+
+<|im_start|>system
+Bạn là trợ lý phân tích AMR (Abstract Meaning Representation) cho tiếng Việt.
+
+QUY TẮC:
+1. Tuân thủ đúng định dạng output được yêu cầu.
+2. Dùng concept, biến và quan hệ AMR nhất quán với dữ liệu huấn luyện.
+3. Không dùng ví dụ, câu, nhãn vàng hoặc quy tắc rút ra từ tập test.
+4. Giữ dấu ngoặc AMR cân bằng.
+5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
+6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
+7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+<|im_end|>
+<|im_start|>user
+- chúng của ai nào ?
+<|im_end|>
+<|im_start|>assistant
+AMR_NO_VAR: (chúng
+    :modality(nào)
+    :poss(amr-unknown))
+<|im_end|>
+
+<|im_start|>system
+Bạn là trợ lý phân tích AMR (Abstract Meaning Representation) cho tiếng Việt.
+
+QUY TẮC:
+1. Tuân thủ đúng định dạng output được yêu cầu.
+2. Dùng concept, biến và quan hệ AMR nhất quán với dữ liệu huấn luyện.
+3. Không dùng ví dụ, câu, nhãn vàng hoặc quy tắc rút ra từ tập test.
+4. Giữ dấu ngoặc AMR cân bằng.
+5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
+6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
+7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+<|im_end|>
+<|im_start|>user
+nhà doanh nghiệp vặn lại , sửng cồ .
+<|im_end|>
+<|im_start|>assistant
+AMR_NO_VAR: (vặn
+    :agent(nhà
+        :compound(doanh nghiệp))
+    :compound(lại)
+    :manner(sửng cồ))
+<|im_end|>
+
+<|im_start|>system
+Bạn là trợ lý phân tích AMR (Abstract Meaning Representation) cho tiếng Việt.
+
+QUY TẮC:
+1. Tuân thủ đúng định dạng output được yêu cầu.
+2. Dùng concept, biến và quan hệ AMR nhất quán với dữ liệu huấn luyện.
+3. Không dùng ví dụ, câu, nhãn vàng hoặc quy tắc rút ra từ tập test.
+4. Giữ dấu ngoặc AMR cân bằng.
+5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
+6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
+7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+<|im_end|>
+<|im_start|>user
+ông dùng chúng để làm gì ?
+<|im_end|>
+<|im_start|>assistant
+AMR_NO_VAR: (dùng
+    :agent(ông)
+    :theme(chúng)
+    :purpose(làm
+        :topic(amr-unknown)
+        :agent (ông)))
+<|im_end|>
+
+<|im_start|>system
+Bạn là trợ lý phân tích AMR (Abstract Meaning Representation) cho tiếng Việt.
+
+QUY TẮC:
+1. Tuân thủ đúng định dạng output được yêu cầu.
+2. Dùng concept, biến và quan hệ AMR nhất quán với dữ liệu huấn luyện.
+3. Không dùng ví dụ, câu, nhãn vàng hoặc quy tắc rút ra từ tập test.
+4. Giữ dấu ngoặc AMR cân bằng.
+5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
+6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
+7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+<|im_end|>
+<|im_start|>user
+có vẻ nên thơ đấy .
+<|im_end|>
+<|im_start|>assistant
+AMR_NO_VAR: (có
+    :theme(vẻ
+        :mod(nên thơ))
+    :modality(đấy))
+<|im_end|>
+
+<|im_start|>system
+Bạn là trợ lý phân tích AMR (Abstract Meaning Representation) cho tiếng Việt.
+
+QUY TẮC:
+1. Tuân thủ đúng định dạng output được yêu cầu.
+2. Dùng concept, biến và quan hệ AMR nhất quán với dữ liệu huấn luyện.
+3. Không dùng ví dụ, câu, nhãn vàng hoặc quy tắc rút ra từ tập test.
+4. Giữ dấu ngoặc AMR cân bằng.
+5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
+6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
+7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+<|im_end|>
+<|im_start|>user
+nhưng ông chẳng giúp ích gì cho những ngôi sao cả ...
+<|im_end|>
+<|im_start|>assistant
+AMR_NO_VAR: (contrast-01
+    :ARG2(giúp ích
+        :agent(ông)
+        :polarity -
+        :theme(gì)
+        :goal(sao
+            :classifier(ngôi))))
+<|im_end|>
+
+<|im_start|>system
+Bạn là trợ lý phân tích AMR (Abstract Meaning Representation) cho tiếng Việt.
+
+QUY TẮC:
+1. Tuân thủ đúng định dạng output được yêu cầu.
+2. Dùng concept, biến và quan hệ AMR nhất quán với dữ liệu huấn luyện.
+3. Không dùng ví dụ, câu, nhãn vàng hoặc quy tắc rút ra từ tập test.
+4. Giữ dấu ngoặc AMR cân bằng.
+5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
+6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
+7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+<|im_end|>
+<|im_start|>user
+và ông ta lại thắp đèn lên .
+<|im_end|>
+<|im_start|>assistant
+AMR_NO_VAR: (and
+    :op2(thắp
+        :agent(ông
+            :mod(ta))
+        :manner(lại)
+        :patient(đèn)
+        :manner(lên)))
+<|im_end|>
+
+<|im_start|>system
+Bạn là trợ lý phân tích AMR (Abstract Meaning Representation) cho tiếng Việt.
+
+QUY TẮC:
+1. Tuân thủ đúng định dạng output được yêu cầu.
+2. Dùng concept, biến và quan hệ AMR nhất quán với dữ liệu huấn luyện.
+3. Không dùng ví dụ, câu, nhãn vàng hoặc quy tắc rút ra từ tập test.
+4. Giữ dấu ngoặc AMR cân bằng.
+5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
+6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
+7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+<|im_end|>
+<|im_start|>user
+xưa kia thì nó còn có lý .
+<|im_end|>
+<|im_start|>assistant
+AMR_NO_VAR: (có lý
+    :time(xưa
+        :compound(kia))
+    :domain(nó)
+    :modality(còn))
+<|im_end|>
+
+<|im_start|>system
+Bạn là trợ lý phân tích AMR (Abstract Meaning Representation) cho tiếng Việt.
+
+QUY TẮC:
+1. Tuân thủ đúng định dạng output được yêu cầu.
+2. Dùng concept, biến và quan hệ AMR nhất quán với dữ liệu huấn luyện.
+3. Không dùng ví dụ, câu, nhãn vàng hoặc quy tắc rút ra từ tập test.
+4. Giữ dấu ngoặc AMR cân bằng.
+5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
+6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
+7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+<|im_end|>
+<|im_start|>user
+linh nói rất nhiều chuyện .
+<|im_end|>
+<|im_start|>assistant
+AMR_NO_VAR: (nói
+    :agent(linh)
+    :topic(chuyện
+        :mod(nhiều)))
+<|im_end|>
+
+<|im_start|>system
+Bạn là trợ lý phân tích AMR (Abstract Meaning Representation) cho tiếng Việt.
+
+QUY TẮC:
+1. Tuân thủ đúng định dạng output được yêu cầu.
+2. Dùng concept, biến và quan hệ AMR nhất quán với dữ liệu huấn luyện.
+3. Không dùng ví dụ, câu, nhãn vàng hoặc quy tắc rút ra từ tập test.
+4. Giữ dấu ngoặc AMR cân bằng.
+5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
+6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
+7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+<|im_end|>
+<|im_start|>user
+chúng tôi mong họ thay đổi suy nghĩ .
+<|im_end|>
+<|im_start|>assistant
+AMR_NO_VAR: (mong
+    :pivot(chúng tôi)
+    :topic(thay đổi
+        :agent(họ)
+        :theme(suy nghĩ)))
+<|im_end|>
+
+<|im_start|>system
+Bạn là trợ lý phân tích AMR (Abstract Meaning Representation) cho tiếng Việt.
+
+QUY TẮC:
+1. Tuân thủ đúng định dạng output được yêu cầu.
+2. Dùng concept, biến và quan hệ AMR nhất quán với dữ liệu huấn luyện.
+3. Không dùng ví dụ, câu, nhãn vàng hoặc quy tắc rút ra từ tập test.
+4. Giữ dấu ngoặc AMR cân bằng.
+5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
+6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
+7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+<|im_end|>
+<|im_start|>user
+nam bị đánh .
+<|im_end|>
+<|im_start|>assistant
+AMR_NO_VAR: (đánh
+    :patient(nam)
+    :modality(bị))
+<|im_end|>
+
+<|im_start|>system
+Bạn là trợ lý phân tích AMR (Abstract Meaning Representation) cho tiếng Việt.
+
+QUY TẮC:
+1. Tuân thủ đúng định dạng output được yêu cầu.
+2. Dùng concept, biến và quan hệ AMR nhất quán với dữ liệu huấn luyện.
+3. Không dùng ví dụ, câu, nhãn vàng hoặc quy tắc rút ra từ tập test.
+4. Giữ dấu ngoặc AMR cân bằng.
+5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
+6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
+7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+<|im_end|>
+<|im_start|>user
+tèo bị cho điểm kém .
+<|im_end|>
+<|im_start|>assistant
+AMR_NO_VAR: (cho
+    :patient(tèo)
+    :modality(bị)
+    :theme(điểm
+        :mod(kém)))
+<|im_end|>
+
+<|im_start|>system
+Bạn là trợ lý phân tích AMR (Abstract Meaning Representation) cho tiếng Việt.
+
+QUY TẮC:
+1. Tuân thủ đúng định dạng output được yêu cầu.
+2. Dùng concept, biến và quan hệ AMR nhất quán với dữ liệu huấn luyện.
+3. Không dùng ví dụ, câu, nhãn vàng hoặc quy tắc rút ra từ tập test.
+4. Giữ dấu ngoặc AMR cân bằng.
+5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
+6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
+7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+<|im_end|>
+<|im_start|>user
+anh người vùng nào ?
+<|im_end|>
+<|im_start|>assistant
+AMR_NO_VAR: (người
+    :domain(anh)
+    :location(amr-unknown))
+<|im_end|>
+
+<|im_start|>system
+Bạn là trợ lý phân tích AMR (Abstract Meaning Representation) cho tiếng Việt.
+
+QUY TẮC:
+1. Tuân thủ đúng định dạng output được yêu cầu.
+2. Dùng concept, biến và quan hệ AMR nhất quán với dữ liệu huấn luyện.
+3. Không dùng ví dụ, câu, nhãn vàng hoặc quy tắc rút ra từ tập test.
+4. Giữ dấu ngoặc AMR cân bằng.
+5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
+6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
+7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+<|im_end|>
+<|im_start|>user
+thủ phạm đằng sau thủ phạm .
+<|im_end|>
+<|im_start|>assistant
+AMR_NO_VAR: (đằng
+    :domain(thủ phạm)
+    :compound(sau)
+    :mod(thủ phạm))
+<|im_end|>
+
+<|im_start|>system
+Bạn là trợ lý phân tích AMR (Abstract Meaning Representation) cho tiếng Việt.
+
+QUY TẮC:
+1. Tuân thủ đúng định dạng output được yêu cầu.
+2. Dùng concept, biến và quan hệ AMR nhất quán với dữ liệu huấn luyện.
+3. Không dùng ví dụ, câu, nhãn vàng hoặc quy tắc rút ra từ tập test.
+4. Giữ dấu ngoặc AMR cân bằng.
+5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
+6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
+7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+<|im_end|>
+<|im_start|>user
+cái này bao nhiêu tiền ?
+<|im_end|>
+<|im_start|>assistant
+AMR_NO_VAR: (tiền
+    :domain(cái
+        :mod(này))
+    :quant(amr-unknown))
+<|im_end|>
+
+<|im_start|>system
+Bạn là trợ lý phân tích AMR (Abstract Meaning Representation) cho tiếng Việt.
+
+QUY TẮC:
+1. Tuân thủ đúng định dạng output được yêu cầu.
+2. Dùng concept, biến và quan hệ AMR nhất quán với dữ liệu huấn luyện.
+3. Không dùng ví dụ, câu, nhãn vàng hoặc quy tắc rút ra từ tập test.
+4. Giữ dấu ngoặc AMR cân bằng.
+5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
+6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
+7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+<|im_end|>
+<|im_start|>user
+người nói dối sẽ bị máy phát hiện .
+<|im_end|>
+<|im_start|>assistant
+AMR_NO_VAR: (phát hiện
+    :patient(người
+        :agent-of(nói dối))
+    :tense(sẽ)
+    :modality(bị)
+    :agent(máy))
+<|im_end|>
+
+<|im_start|>system
+Bạn là trợ lý phân tích AMR (Abstract Meaning Representation) cho tiếng Việt.
+
+QUY TẮC:
+1. Tuân thủ đúng định dạng output được yêu cầu.
+2. Dùng concept, biến và quan hệ AMR nhất quán với dữ liệu huấn luyện.
+3. Không dùng ví dụ, câu, nhãn vàng hoặc quy tắc rút ra từ tập test.
+4. Giữ dấu ngoặc AMR cân bằng.
+5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
+6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
+7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+<|im_end|>
+<|im_start|>user
+bạn rất hiểu tôi .
+<|im_end|>
+<|im_start|>assistant
+AMR_NO_VAR: (hiểu
+    :pivot(bạn)
+    :degree(rất)
+    :theme(tôi))
+<|im_end|>
+
+<|im_start|>system
+Bạn là trợ lý phân tích AMR (Abstract Meaning Representation) cho tiếng Việt.
+
+QUY TẮC:
+1. Tuân thủ đúng định dạng output được yêu cầu.
+2. Dùng concept, biến và quan hệ AMR nhất quán với dữ liệu huấn luyện.
+3. Không dùng ví dụ, câu, nhãn vàng hoặc quy tắc rút ra từ tập test.
+4. Giữ dấu ngoặc AMR cân bằng.
+5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
+6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
+7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+<|im_end|>
+<|im_start|>user
+anh vừa trả tiền ngân hàng .
+<|im_end|>
+<|im_start|>assistant
+AMR_NO_VAR: (trả
+    :agent(anh)
+    :tense(vừa)
+    :theme(tiền)
+    :beneficiary-arg2(ngân hàng))
+<|im_end|>
+
+<|im_start|>system
+Bạn là trợ lý phân tích AMR (Abstract Meaning Representation) cho tiếng Việt.
+
+QUY TẮC:
+1. Tuân thủ đúng định dạng output được yêu cầu.
+2. Dùng concept, biến và quan hệ AMR nhất quán với dữ liệu huấn luyện.
+3. Không dùng ví dụ, câu, nhãn vàng hoặc quy tắc rút ra từ tập test.
+4. Giữ dấu ngoặc AMR cân bằng.
+5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
+6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
+7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+<|im_end|>
+<|im_start|>user
+nó chặt thịt bằng dao .
+<|im_end|>
+<|im_start|>assistant
+AMR_NO_VAR: (chặt
+    :agent(nó)
+    :theme(thịt)
+    :instrument(dao))
+<|im_end|>
+
+<|im_start|>system
+Bạn là trợ lý phân tích AMR (Abstract Meaning Representation) cho tiếng Việt.
+
+QUY TẮC:
+1. Tuân thủ đúng định dạng output được yêu cầu.
+2. Dùng concept, biến và quan hệ AMR nhất quán với dữ liệu huấn luyện.
+3. Không dùng ví dụ, câu, nhãn vàng hoặc quy tắc rút ra từ tập test.
+4. Giữ dấu ngoặc AMR cân bằng.
+5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
+6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
+7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+<|im_end|>
+<|im_start|>user
+tôi đã đến hầu hết các nước trên thế giới .
+<|im_end|>
+<|im_start|>assistant
+AMR_NO_VAR: (đến
+    :agent(tôi)
+    :tense(đã)
+    :location(nước
+        :mod(hầu hết)
+        :part-of(thế giới
+            :prep(trên))))
+<|im_end|>
+
+<|im_start|>system
+Bạn là trợ lý phân tích AMR (Abstract Meaning Representation) cho tiếng Việt.
+
+QUY TẮC:
+1. Tuân thủ đúng định dạng output được yêu cầu.
+2. Dùng concept, biến và quan hệ AMR nhất quán với dữ liệu huấn luyện.
+3. Không dùng ví dụ, câu, nhãn vàng hoặc quy tắc rút ra từ tập test.
+4. Giữ dấu ngoặc AMR cân bằng.
+5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
+6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
+7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+<|im_end|>
+<|im_start|>user
+có nhiều website cung cấp các nơi đặt phòng .
+<|im_end|>
+<|im_start|>assistant
+AMR_NO_VAR: (có
+    :theme(website
+        :quant(nhiều)
+        :theme-of(cung cấp
+            :theme(nơi
+                :theme-of(đặt
+                    :theme(phòng))))))
+<|im_end|>
+
+<|im_start|>system
+Bạn là trợ lý phân tích AMR (Abstract Meaning Representation) cho tiếng Việt.
+
+QUY TẮC:
+1. Tuân thủ đúng định dạng output được yêu cầu.
+2. Dùng concept, biến và quan hệ AMR nhất quán với dữ liệu huấn luyện.
+3. Không dùng ví dụ, câu, nhãn vàng hoặc quy tắc rút ra từ tập test.
+4. Giữ dấu ngoặc AMR cân bằng.
+5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
+6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
+7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+<|im_end|>
+<|im_start|>user
+thần xã itsukushima là nơi thờ thần đạo nằm trên đảo itsukushima .
+<|im_end|>
+<|im_start|>assistant
+AMR_NO_VAR: (nơi
+    :domain(thần xã
+        :compound(worship-place
+            :wiki(Itsukushima )
+            :name(name
+                :op1(itsukushima))))
+    :location-of(thờ
+        :theme(thần đạo))
+    :theme-of(nằm
+        :location(island
+            :prep(trên)
+            :name(name
+                :op1(itsukushima))
+            :wiki(Itsukushima))))
+<|im_end|>
+
+<|im_start|>system
+Bạn là trợ lý phân tích AMR (Abstract Meaning Representation) cho tiếng Việt.
+
+QUY TẮC:
+1. Tuân thủ đúng định dạng output được yêu cầu.
+2. Dùng concept, biến và quan hệ AMR nhất quán với dữ liệu huấn luyện.
+3. Không dùng ví dụ, câu, nhãn vàng hoặc quy tắc rút ra từ tập test.
+4. Giữ dấu ngoặc AMR cân bằng.
+5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
+6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
+7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+<|im_end|>
+<|im_start|>user
+tôi dậy khi trời sáng .
+<|im_end|>
+<|im_start|>assistant
+AMR_NO_VAR: (dậy
+    :agent(tôi)
+    :time(sáng
+        :theme(trời)))
+<|im_end|>
+
+<|im_start|>system
+Bạn là trợ lý phân tích AMR (Abstract Meaning Representation) cho tiếng Việt.
+
+QUY TẮC:
+1. Tuân thủ đúng định dạng output được yêu cầu.
+2. Dùng concept, biến và quan hệ AMR nhất quán với dữ liệu huấn luyện.
+3. Không dùng ví dụ, câu, nhãn vàng hoặc quy tắc rút ra từ tập test.
+4. Giữ dấu ngoặc AMR cân bằng.
+5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
+6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
+7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+<|im_end|>
+<|im_start|>user
+kyansittha đã xây dựng chùa shwezigon mà vua anawrahta còn làm dang dở .
+<|im_end|>
+<|im_start|>assistant
+AMR_NO_VAR: (xây dựng
+    :tense(đã)
+    :result-arg1(chùa
+        :agent-of(làm
+            :agent(vua
+                :wiki(Anawrahta)
+                :name(name
+                    :op1(anawrahta)))
+            :manner(dang dở))
+        :mod(name
+            :wiki -
+            :name(name
+                :op1(shwezigon))))
+    :agent(person
+        :wiki(Kyansittha)
+        :name(name
+            :op1(kyansittha))))
+<|im_end|>
+
+<|im_start|>system
+Bạn là trợ lý phân tích AMR (Abstract Meaning Representation) cho tiếng Việt.
+
+QUY TẮC:
+1. Tuân thủ đúng định dạng output được yêu cầu.
+2. Dùng concept, biến và quan hệ AMR nhất quán với dữ liệu huấn luyện.
+3. Không dùng ví dụ, câu, nhãn vàng hoặc quy tắc rút ra từ tập test.
+4. Giữ dấu ngoặc AMR cân bằng.
+5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
+6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
+7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+<|im_end|>
+<|im_start|>user
+xe máy điện không dùng bàn đạp để chạy .
+<|im_end|>
+<|im_start|>assistant
+AMR_NO_VAR: (dùng
+    :theme(xe máy
+        :mod(điện))
+    :polarity -
+    :instrument(bàn đạp)
+    :purpose(chạy
+        :theme (xe)))
+<|im_end|>
+
+<|im_start|>system
+Bạn là trợ lý phân tích AMR (Abstract Meaning Representation) cho tiếng Việt.
+
+QUY TẮC:
+1. Tuân thủ đúng định dạng output được yêu cầu.
+2. Dùng concept, biến và quan hệ AMR nhất quán với dữ liệu huấn luyện.
+3. Không dùng ví dụ, câu, nhãn vàng hoặc quy tắc rút ra từ tập test.
+4. Giữ dấu ngoặc AMR cân bằng.
+5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
+6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
+7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+<|im_end|>
+<|im_start|>user
+rồng râu là thợ săn tầm nhìn , chúng cần nhìn thấy thức ăn để di chuyển .
+<|im_end|>
+<|im_start|>assistant
+AMR_NO_VAR: (multi-sentence
+    :snt1(thợ săn
+        :domain(rồng
+            :compound(râu))
+        :mod(tầm nhìn))
+    :snt2(cần
+        :pivot(chúng)
+        :topic(nhìn
+            :compound(thấy)
+            :goal(thức ăn)
+            :purpose(di chuyển
+                :agent (chúng))
+            :agent (chúng))))
+<|im_end|>
+
+<|im_start|>system
+Bạn là trợ lý phân tích AMR (Abstract Meaning Representation) cho tiếng Việt.
+
+QUY TẮC:
+1. Tuân thủ đúng định dạng output được yêu cầu.
+2. Dùng concept, biến và quan hệ AMR nhất quán với dữ liệu huấn luyện.
+3. Không dùng ví dụ, câu, nhãn vàng hoặc quy tắc rút ra từ tập test.
+4. Giữ dấu ngoặc AMR cân bằng.
+5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
+6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
+7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+<|im_end|>
+<|im_start|>user
+cây này , lá to
+<|im_end|>
+<|im_start|>assistant
+AMR_NO_VAR: (to
+    :domain(lá
+        :part-of(cây
+            :mod(này))))
+<|im_end|>
+
+<|im_start|>system
+Bạn là trợ lý phân tích AMR (Abstract Meaning Representation) cho tiếng Việt.
+
+QUY TẮC:
+1. Tuân thủ đúng định dạng output được yêu cầu.
+2. Dùng concept, biến và quan hệ AMR nhất quán với dữ liệu huấn luyện.
+3. Không dùng ví dụ, câu, nhãn vàng hoặc quy tắc rút ra từ tập test.
+4. Giữ dấu ngoặc AMR cân bằng.
+5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
+6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
+7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+<|im_end|>
+<|im_start|>user
+giống đực , nó thường tổn hao đối với giống cái .
+<|im_end|>
+<|im_start|>assistant
+AMR_NO_VAR: (tổn hao
+    :pivot(giống
+        :mod(đực))
+    :degree(thường)
+    :goal(giống
+        :mod(cái)))
+<|im_end|>
+
+<|im_start|>system
+Bạn là trợ lý phân tích AMR (Abstract Meaning Representation) cho tiếng Việt.
+
+QUY TẮC:
+1. Tuân thủ đúng định dạng output được yêu cầu.
+2. Dùng concept, biến và quan hệ AMR nhất quán với dữ liệu huấn luyện.
+3. Không dùng ví dụ, câu, nhãn vàng hoặc quy tắc rút ra từ tập test.
+4. Giữ dấu ngoặc AMR cân bằng.
+5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
+6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
+7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+<|im_end|>
+<|im_start|>user
+có được đổi hàng không ad nhỉ ?
+<|im_end|>
+<|im_start|>assistant
+AMR_NO_VAR: (đổi
+    :modality(có
+        :compound(được))
+    :theme(hàng)
+    :mode interrogative
+    :goal(ad
+        :mode expressive))
+<|im_end|>
+
+<|im_start|>system
+Bạn là trợ lý phân tích AMR (Abstract Meaning Representation) cho tiếng Việt.
+
+QUY TẮC:
+1. Tuân thủ đúng định dạng output được yêu cầu.
+2. Dùng concept, biến và quan hệ AMR nhất quán với dữ liệu huấn luyện.
+3. Không dùng ví dụ, câu, nhãn vàng hoặc quy tắc rút ra từ tập test.
+4. Giữ dấu ngoặc AMR cân bằng.
+5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
+6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
+7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+<|im_end|>
+<|im_start|>user
+tôi phải đi ngay .
+<|im_end|>
+<|im_start|>assistant
+AMR_NO_VAR: (obligate-01
+    :topic(đi
+        :agent(tôi)
+        :manner(ngay)))
+<|im_end|>
+
+<|im_start|>system
+Bạn là trợ lý phân tích AMR (Abstract Meaning Representation) cho tiếng Việt.
+
+QUY TẮC:
+1. Tuân thủ đúng định dạng output được yêu cầu.
+2. Dùng concept, biến và quan hệ AMR nhất quán với dữ liệu huấn luyện.
+3. Không dùng ví dụ, câu, nhãn vàng hoặc quy tắc rút ra từ tập test.
+4. Giữ dấu ngoặc AMR cân bằng.
+5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
+6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
+7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+<|im_end|>
+<|im_start|>user
+anh muốn chơi cờ .
+<|im_end|>
+<|im_start|>assistant
+AMR_NO_VAR: (muốn
+    :pivot(anh)
+    :topic(chơi
+        :theme(cờ)
+        :agent (anh)))
+<|im_end|>
+
+<|im_start|>system
+Bạn là trợ lý phân tích AMR (Abstract Meaning Representation) cho tiếng Việt.
+
+QUY TẮC:
+1. Tuân thủ đúng định dạng output được yêu cầu.
+2. Dùng concept, biến và quan hệ AMR nhất quán với dữ liệu huấn luyện.
+3. Không dùng ví dụ, câu, nhãn vàng hoặc quy tắc rút ra từ tập test.
+4. Giữ dấu ngoặc AMR cân bằng.
+5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
+6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
+7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+<|im_end|>
+<|im_start|>user
+người mù là người tàn tật .
+<|im_end|>
+<|im_start|>assistant
+AMR_NO_VAR: (người
+    :domain(người
+        :mod(mù))
+    :mod(tàn tật))
+<|im_end|>
+
+<|im_start|>system
+Bạn là trợ lý phân tích AMR (Abstract Meaning Representation) cho tiếng Việt.
+
+QUY TẮC:
+1. Tuân thủ đúng định dạng output được yêu cầu.
+2. Dùng concept, biến và quan hệ AMR nhất quán với dữ liệu huấn luyện.
+3. Không dùng ví dụ, câu, nhãn vàng hoặc quy tắc rút ra từ tập test.
+4. Giữ dấu ngoặc AMR cân bằng.
+5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
+6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
+7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+<|im_end|>
+<|im_start|>user
+tôi với anh sẽ đi lên
+<|im_end|>
+<|im_start|>assistant
+AMR_NO_VAR: (đi
+    :agent(tôi)
+    :accompanier(anh)
+    :tense(sẽ)
+    :direction(lên))
+<|im_end|>
+
+<|im_start|>system
+Bạn là trợ lý phân tích AMR (Abstract Meaning Representation) cho tiếng Việt.
+
+QUY TẮC:
+1. Tuân thủ đúng định dạng output được yêu cầu.
+2. Dùng concept, biến và quan hệ AMR nhất quán với dữ liệu huấn luyện.
+3. Không dùng ví dụ, câu, nhãn vàng hoặc quy tắc rút ra từ tập test.
+4. Giữ dấu ngoặc AMR cân bằng.
+5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
+6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
+7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+<|im_end|>
+<|im_start|>user
+nó chạy thẳng vào nhà nghỉ .
+<|im_end|>
+<|im_start|>assistant
+AMR_NO_VAR: (chạy
+    :agent(nó)
+    :direction(thẳng)
+    :finalLocation(nhà nghỉ
+        :prep(vào)))
+<|im_end|>
+
+<|im_start|>system
+Bạn là trợ lý phân tích AMR (Abstract Meaning Representation) cho tiếng Việt.
+
+QUY TẮC:
+1. Tuân thủ đúng định dạng output được yêu cầu.
+2. Dùng concept, biến và quan hệ AMR nhất quán với dữ liệu huấn luyện.
+3. Không dùng ví dụ, câu, nhãn vàng hoặc quy tắc rút ra từ tập test.
+4. Giữ dấu ngoặc AMR cân bằng.
+5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
+6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
+7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+<|im_end|>
+<|im_start|>user
+cô ấy ngày càng đẹp hơn .
+<|im_end|>
+<|im_start|>assistant
+AMR_NO_VAR: (đẹp
+    :domain(cô
+        :mod(ấy))
+    :degree(ngày càng)
+    :degree(hơn))
+<|im_end|>
+
+<|im_start|>system
+Bạn là trợ lý phân tích AMR (Abstract Meaning Representation) cho tiếng Việt.
+
+QUY TẮC:
+1. Tuân thủ đúng định dạng output được yêu cầu.
+2. Dùng concept, biến và quan hệ AMR nhất quán với dữ liệu huấn luyện.
+3. Không dùng ví dụ, câu, nhãn vàng hoặc quy tắc rút ra từ tập test.
+4. Giữ dấu ngoặc AMR cân bằng.
+5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
+6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
+7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+<|im_end|>
+<|im_start|>user
+nó chẳng thiết gì nữa .
+<|im_end|>
+<|im_start|>assistant
+AMR_NO_VAR: (thiết
+    :pivot(nó)
+    :polarity -
+    :theme(gì)
+    :modality(nữa))
+<|im_end|>
+
+<|im_start|>system
+Bạn là trợ lý phân tích AMR (Abstract Meaning Representation) cho tiếng Việt.
+
+QUY TẮC:
+1. Tuân thủ đúng định dạng output được yêu cầu.
+2. Dùng concept, biến và quan hệ AMR nhất quán với dữ liệu huấn luyện.
+3. Không dùng ví dụ, câu, nhãn vàng hoặc quy tắc rút ra từ tập test.
+4. Giữ dấu ngoặc AMR cân bằng.
+5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
+6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
+7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+<|im_end|>
+<|im_start|>user
+bà lão mở cửa ra .
+<|im_end|>
+<|im_start|>assistant
+AMR_NO_VAR: (mở
+    :agent(bà
+        :mod(lão))
+    :theme(cửa)
+    :direction(ra))
+<|im_end|>
+
+<|im_start|>system
+Bạn là trợ lý phân tích AMR (Abstract Meaning Representation) cho tiếng Việt.
+
+QUY TẮC:
+1. Tuân thủ đúng định dạng output được yêu cầu.
+2. Dùng concept, biến và quan hệ AMR nhất quán với dữ liệu huấn luyện.
+3. Không dùng ví dụ, câu, nhãn vàng hoặc quy tắc rút ra từ tập test.
+4. Giữ dấu ngoặc AMR cân bằng.
+5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
+6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
+7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+<|im_end|>
+<|im_start|>user
+thuỷ thủ ném hàng xuống .
+<|im_end|>
+<|im_start|>assistant
+AMR_NO_VAR: (ném
+    :agent(thuỷ thủ)
+    :theme(hàng)
+    :direction(xuống))
+<|im_end|>
+
+<|im_start|>system
+Bạn là trợ lý phân tích AMR (Abstract Meaning Representation) cho tiếng Việt.
+
+QUY TẮC:
+1. Tuân thủ đúng định dạng output được yêu cầu.
+2. Dùng concept, biến và quan hệ AMR nhất quán với dữ liệu huấn luyện.
+3. Không dùng ví dụ, câu, nhãn vàng hoặc quy tắc rút ra từ tập test.
+4. Giữ dấu ngoặc AMR cân bằng.
+5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
+6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
+7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+<|im_end|>
+<|im_start|>user
+thiện ác , sướng khổ đều bắt đầu từ trong suy nghĩ mà ra .
+<|im_end|>
+<|im_start|>assistant
+AMR_NO_VAR: (bắt đầu
+    :source(suy nghĩ)
+    :manner(ra)
+    :theme(and
+        :op1(thiện ác)
+        :op2(sướng khổ)))
+<|im_end|>
+
+<|im_start|>system
+Bạn là trợ lý phân tích AMR (Abstract Meaning Representation) cho tiếng Việt.
+
+QUY TẮC:
+1. Tuân thủ đúng định dạng output được yêu cầu.
+2. Dùng concept, biến và quan hệ AMR nhất quán với dữ liệu huấn luyện.
+3. Không dùng ví dụ, câu, nhãn vàng hoặc quy tắc rút ra từ tập test.
+4. Giữ dấu ngoặc AMR cân bằng.
+5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
+6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
+7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+<|im_end|>
+<|im_start|>user
+thư được gửi ngày 19 tháng 2 lúc 10:32 am .
+<|im_end|>
+<|im_start|>assistant
+AMR_NO_VAR: (gửi
+    :theme(thư)
+    :modality +
+    :time(date-entity
+        :day(19)
+        :month(2)
+        :initialTime(lúc
+            :time(10h32)
+            :dayperiod(am))))
+<|im_end|>
+
+<|im_start|>system
+Bạn là trợ lý phân tích AMR (Abstract Meaning Representation) cho tiếng Việt.
+
+QUY TẮC:
+1. Tuân thủ đúng định dạng output được yêu cầu.
+2. Dùng concept, biến và quan hệ AMR nhất quán với dữ liệu huấn luyện.
+3. Không dùng ví dụ, câu, nhãn vàng hoặc quy tắc rút ra từ tập test.
+4. Giữ dấu ngoặc AMR cân bằng.
+5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
+6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
+7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+<|im_end|>
+<|im_start|>user
+tổng mức đầu tư dự kiến 2600 tỷ đồng .
+<|im_end|>
+<|im_start|>assistant
+AMR_NO_VAR: (dự kiến
+    :theme(tổng
+        :mod(mức
+            :mod(đầu tư)))
+    :unit(đồng)
+    :quant 2600000000000)
+<|im_end|>
+
+<|im_start|>system
+Bạn là trợ lý phân tích AMR (Abstract Meaning Representation) cho tiếng Việt.
+
+QUY TẮC:
+1. Tuân thủ đúng định dạng output được yêu cầu.
+2. Dùng concept, biến và quan hệ AMR nhất quán với dữ liệu huấn luyện.
+3. Không dùng ví dụ, câu, nhãn vàng hoặc quy tắc rút ra từ tập test.
+4. Giữ dấu ngoặc AMR cân bằng.
+5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
+6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
+7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+<|im_end|>
+<|im_start|>user
+cái váy xoè rất đẹp .
+<|im_end|>
+<|im_start|>assistant
+AMR_NO_VAR: (xoè
+    :theme(váy
+        :classifier(cái))
+    :manner(đẹp
+        :degree(rất)))
+<|im_end|>
+
+<|im_start|>system
+Bạn là trợ lý phân tích AMR (Abstract Meaning Representation) cho tiếng Việt.
+
+QUY TẮC:
+1. Tuân thủ đúng định dạng output được yêu cầu.
+2. Dùng concept, biến và quan hệ AMR nhất quán với dữ liệu huấn luyện.
+3. Không dùng ví dụ, câu, nhãn vàng hoặc quy tắc rút ra từ tập test.
+4. Giữ dấu ngoặc AMR cân bằng.
+5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
+6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
+7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+<|im_end|>
+<|im_start|>user
+nó cắt đi một miếng .
+<|im_end|>
+<|im_start|>assistant
+AMR_NO_VAR: (cắt
+    :agent(nó)
+    :manner(đi)
+    :result-arg1(miếng
+        :quant 1))
+<|im_end|>
+
+<|im_start|>system
+Bạn là trợ lý phân tích AMR (Abstract Meaning Representation) cho tiếng Việt.
+
+QUY TẮC:
+1. Tuân thủ đúng định dạng output được yêu cầu.
+2. Dùng concept, biến và quan hệ AMR nhất quán với dữ liệu huấn luyện.
+3. Không dùng ví dụ, câu, nhãn vàng hoặc quy tắc rút ra từ tập test.
+4. Giữ dấu ngoặc AMR cân bằng.
+5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
+6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
+7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+<|im_end|>
+<|im_start|>user
+thứ nhất : tôi sẽ không nói .
+<|im_end|>
+<|im_start|>assistant
+AMR_NO_VAR: (nói
+    :agent(tôi)
+    :tense(sẽ)
+    :polarity -
+    :ord(ordinal-entity 
+        :value 1))
+<|im_end|>
+
+<|im_start|>system
+Bạn là trợ lý phân tích AMR (Abstract Meaning Representation) cho tiếng Việt.
+
+QUY TẮC:
+1. Tuân thủ đúng định dạng output được yêu cầu.
+2. Dùng concept, biến và quan hệ AMR nhất quán với dữ liệu huấn luyện.
+3. Không dùng ví dụ, câu, nhãn vàng hoặc quy tắc rút ra từ tập test.
+4. Giữ dấu ngoặc AMR cân bằng.
+5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
+6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
+7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+<|im_end|>
+<|im_start|>user
+đảng viên mất liên lạc với tổ chức .
+<|im_end|>
+<|im_start|>assistant
+AMR_NO_VAR: (mất
+    :pivot(đảng viên
+        :part-of (tổ))
+    :manner(liên lạc)
+    :accompanier(tổ chức))
+<|im_end|>
+
+<|im_start|>system
+Bạn là trợ lý phân tích AMR (Abstract Meaning Representation) cho tiếng Việt.
+
+QUY TẮC:
+1. Tuân thủ đúng định dạng output được yêu cầu.
+2. Dùng concept, biến và quan hệ AMR nhất quán với dữ liệu huấn luyện.
+3. Không dùng ví dụ, câu, nhãn vàng hoặc quy tắc rút ra từ tập test.
+4. Giữ dấu ngoặc AMR cân bằng.
+5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
+6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
+7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+<|im_end|>
+<|im_start|>user
+ấn độ được chính phủ anh quản lí .
+<|im_end|>
+<|im_start|>assistant
+AMR_NO_VAR: (quản lí
+    :agent(chính phủ
+        :part-of(anh))
+    :beneficiary(country
+        :wiki(Ấn_Độ)
+        :name(name
+            :op1(ấn)
+            :op2(độ))))
+<|im_end|>
+
+<|im_start|>system
+Bạn là trợ lý phân tích AMR (Abstract Meaning Representation) cho tiếng Việt.
+
+QUY TẮC:
+1. Tuân thủ đúng định dạng output được yêu cầu.
+2. Dùng concept, biến và quan hệ AMR nhất quán với dữ liệu huấn luyện.
+3. Không dùng ví dụ, câu, nhãn vàng hoặc quy tắc rút ra từ tập test.
+4. Giữ dấu ngoặc AMR cân bằng.
+5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
+6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
+7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+<|im_end|>
+<|im_start|>user
+nó ngủ như chết .
+<|im_end|>
+<|im_start|>assistant
+AMR_NO_VAR: (ngủ
+    :agent(nó)
+    :compared-to(chết)
+    :degree(equal))
+<|im_end|>
+
+<|im_start|>system
+Bạn là trợ lý phân tích AMR (Abstract Meaning Representation) cho tiếng Việt.
+
+QUY TẮC:
+1. Tuân thủ đúng định dạng output được yêu cầu.
+2. Dùng concept, biến và quan hệ AMR nhất quán với dữ liệu huấn luyện.
+3. Không dùng ví dụ, câu, nhãn vàng hoặc quy tắc rút ra từ tập test.
+4. Giữ dấu ngoặc AMR cân bằng.
+5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
+6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
+7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+<|im_end|>
+<|im_start|>user
+giám đốc đang làm việc với chuyên gia nước ngoài .
+<|im_end|>
+<|im_start|>assistant
+AMR_NO_VAR: (làm việc
+    :agent(giám đốc)
+    :tense(đang)
+    :accompanier(chuyên gia
+        :mod(nước ngoài)))
+<|im_end|>
+
+<|im_start|>system
+Bạn là trợ lý phân tích AMR (Abstract Meaning Representation) cho tiếng Việt.
+
+QUY TẮC:
+1. Tuân thủ đúng định dạng output được yêu cầu.
+2. Dùng concept, biến và quan hệ AMR nhất quán với dữ liệu huấn luyện.
+3. Không dùng ví dụ, câu, nhãn vàng hoặc quy tắc rút ra từ tập test.
+4. Giữ dấu ngoặc AMR cân bằng.
+5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
+6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
+7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+<|im_end|>
+<|im_start|>user
+tôi chỉ dựa vào sức mình là chính .
+<|im_end|>
+<|im_start|>assistant
+AMR_NO_VAR: (dựa
+    :theme(tôi)
+    :mod(chỉ)
+    :source(sức
+        :poss(mình))
+    :manner(chính))
+<|im_end|>
+
+<|im_start|>system
+Bạn là trợ lý phân tích AMR (Abstract Meaning Representation) cho tiếng Việt.
+
+QUY TẮC:
+1. Tuân thủ đúng định dạng output được yêu cầu.
+2. Dùng concept, biến và quan hệ AMR nhất quán với dữ liệu huấn luyện.
+3. Không dùng ví dụ, câu, nhãn vàng hoặc quy tắc rút ra từ tập test.
+4. Giữ dấu ngoặc AMR cân bằng.
+5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
+6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
+7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+<|im_end|>
+<|im_start|>user
+ông đã đi khắp châu âu .
+<|im_end|>
+<|im_start|>assistant
+AMR_NO_VAR: (đi
+    :theme(ông)
+    :tense(đã)
+    :manner(khắp)
+    :location(region
+        :wiki(châu Âu)
+        :name(name
+            :op1(châu)
+            :op2(âu))))
+<|im_end|>
+
+<|im_start|>system
+Bạn là trợ lý phân tích AMR (Abstract Meaning Representation) cho tiếng Việt.
+
+QUY TẮC:
+1. Tuân thủ đúng định dạng output được yêu cầu.
+2. Dùng concept, biến và quan hệ AMR nhất quán với dữ liệu huấn luyện.
+3. Không dùng ví dụ, câu, nhãn vàng hoặc quy tắc rút ra từ tập test.
+4. Giữ dấu ngoặc AMR cân bằng.
+5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
+6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
+7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+<|im_end|>
+<|im_start|>user
+cô ấy giỏi toán .
+<|im_end|>
+<|im_start|>assistant
+AMR_NO_VAR: (giỏi
+    :pivot(cô
+        :mod(ấy))
+    :topic(toán))
+<|im_end|>
+
+<|im_start|>system
+Bạn là trợ lý phân tích AMR (Abstract Meaning Representation) cho tiếng Việt.
+
+QUY TẮC:
+1. Tuân thủ đúng định dạng output được yêu cầu.
+2. Dùng concept, biến và quan hệ AMR nhất quán với dữ liệu huấn luyện.
+3. Không dùng ví dụ, câu, nhãn vàng hoặc quy tắc rút ra từ tập test.
+4. Giữ dấu ngoặc AMR cân bằng.
+5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
+6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
+7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+<|im_end|>
+<|im_start|>user
+cô ấy nghỉ việc từ hôm qua .
+<|im_end|>
+<|im_start|>assistant
+AMR_NO_VAR: (nghỉ việc
+    :agent(cô
+        :mod(ấy))
+    :initialTime(date-entity
+        :mod(hôm qua)))
+<|im_end|>
+
+<|im_start|>system
+Bạn là trợ lý phân tích AMR (Abstract Meaning Representation) cho tiếng Việt.
+
+QUY TẮC:
+1. Tuân thủ đúng định dạng output được yêu cầu.
+2. Dùng concept, biến và quan hệ AMR nhất quán với dữ liệu huấn luyện.
+3. Không dùng ví dụ, câu, nhãn vàng hoặc quy tắc rút ra từ tập test.
+4. Giữ dấu ngoặc AMR cân bằng.
+5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
+6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
+7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+<|im_end|>
+<|im_start|>user
+sản phẩm được in máy .
+<|im_end|>
+<|im_start|>assistant
+AMR_NO_VAR: (in
+    :patient(sản phẩm)
+    :modality(được)
+    :instrument(máy))
+<|im_end|>
+
+<|im_start|>system
+Bạn là trợ lý phân tích AMR (Abstract Meaning Representation) cho tiếng Việt.
+
+QUY TẮC:
+1. Tuân thủ đúng định dạng output được yêu cầu.
+2. Dùng concept, biến và quan hệ AMR nhất quán với dữ liệu huấn luyện.
+3. Không dùng ví dụ, câu, nhãn vàng hoặc quy tắc rút ra từ tập test.
+4. Giữ dấu ngoặc AMR cân bằng.
+5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
+6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
+7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+<|im_end|>
+<|im_start|>user
+cha mẹ luôn hi sinh vì con cái .
+<|im_end|>
+<|im_start|>assistant
+AMR_NO_VAR: (hi sinh
+    :pivot(cha mẹ)
+    :purpose(con cái)
+    :time(always))
+<|im_end|>
+
+<|im_start|>system
+Bạn là trợ lý phân tích AMR (Abstract Meaning Representation) cho tiếng Việt.
+
+QUY TẮC:
+1. Tuân thủ đúng định dạng output được yêu cầu.
+2. Dùng concept, biến và quan hệ AMR nhất quán với dữ liệu huấn luyện.
+3. Không dùng ví dụ, câu, nhãn vàng hoặc quy tắc rút ra từ tập test.
+4. Giữ dấu ngoặc AMR cân bằng.
+5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
+6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
+7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+<|im_end|>
+<|im_start|>user
+tôi thua nó nhiều mặt .
+<|im_end|>
+<|im_start|>assistant
+AMR_NO_VAR: (thua
+    :pivot(tôi)
+    :theme(nó)
+    :topic(mặt
+        :mod(nhiều)))
+<|im_end|>
+
+<|im_start|>system
+Bạn là trợ lý phân tích AMR (Abstract Meaning Representation) cho tiếng Việt.
+
+QUY TẮC:
+1. Tuân thủ đúng định dạng output được yêu cầu.
+2. Dùng concept, biến và quan hệ AMR nhất quán với dữ liệu huấn luyện.
+3. Không dùng ví dụ, câu, nhãn vàng hoặc quy tắc rút ra từ tập test.
+4. Giữ dấu ngoặc AMR cân bằng.
+5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
+6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
+7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+<|im_end|>
+<|im_start|>user
+nhân dân đấu tranh trong niềm tin sâu sắc .
+<|im_end|>
+<|im_start|>assistant
+AMR_NO_VAR: (đấu tranh
+    :agent(nhân dân)
+    :setting(niềm
+        :prep(trong)
+        :compound(tin)
+        :mod(sâu sắc)))
+<|im_end|>
+
+<|im_start|>system
+Bạn là trợ lý phân tích AMR (Abstract Meaning Representation) cho tiếng Việt.
+
+QUY TẮC:
+1. Tuân thủ đúng định dạng output được yêu cầu.
+2. Dùng concept, biến và quan hệ AMR nhất quán với dữ liệu huấn luyện.
+3. Không dùng ví dụ, câu, nhãn vàng hoặc quy tắc rút ra từ tập test.
+4. Giữ dấu ngoặc AMR cân bằng.
+5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
+6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
+7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+<|im_end|>
+<|im_start|>user
+ông ta gắt vợ luôn miệng .
+<|im_end|>
+<|im_start|>assistant
+AMR_NO_VAR: (gắt
+    :agent(ông
+        :mod(ta))
+    :patient(vợ)
+    :manner(luôn
+        :compound(miệng)))
+<|im_end|>
+
+<|im_start|>system
+Bạn là trợ lý phân tích AMR (Abstract Meaning Representation) cho tiếng Việt.
+
+QUY TẮC:
+1. Tuân thủ đúng định dạng output được yêu cầu.
+2. Dùng concept, biến và quan hệ AMR nhất quán với dữ liệu huấn luyện.
+3. Không dùng ví dụ, câu, nhãn vàng hoặc quy tắc rút ra từ tập test.
+4. Giữ dấu ngoặc AMR cân bằng.
+5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
+6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
+7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+<|im_end|>
+<|im_start|>user
+địch tiến không được mà lùi cũng không xong .
+<|im_end|>
+<|im_start|>assistant
+AMR_NO_VAR: (contrast-01
+    :ARG2(possible-01
+        :topic(lùi
+            :theme (địch))
+        :polarity -)
+    :ARG1(possible-01
+        :topic(tiến
+            :theme(địch))
+        :polarity -))
+<|im_end|>
+
+<|im_start|>system
+Bạn là trợ lý phân tích AMR (Abstract Meaning Representation) cho tiếng Việt.
+
+QUY TẮC:
+1. Tuân thủ đúng định dạng output được yêu cầu.
+2. Dùng concept, biến và quan hệ AMR nhất quán với dữ liệu huấn luyện.
+3. Không dùng ví dụ, câu, nhãn vàng hoặc quy tắc rút ra từ tập test.
+4. Giữ dấu ngoặc AMR cân bằng.
+5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
+6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
+7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+<|im_end|>
+<|im_start|>user
+cái bánh bị hỏng .
+<|im_end|>
+<|im_start|>assistant
+AMR_NO_VAR: (hỏng
+    :pivot(bánh
+        :classifier(cái))
+    :modality(bị))
+<|im_end|>
+
+<|im_start|>system
+Bạn là trợ lý phân tích AMR (Abstract Meaning Representation) cho tiếng Việt.
+
+QUY TẮC:
+1. Tuân thủ đúng định dạng output được yêu cầu.
+2. Dùng concept, biến và quan hệ AMR nhất quán với dữ liệu huấn luyện.
+3. Không dùng ví dụ, câu, nhãn vàng hoặc quy tắc rút ra từ tập test.
+4. Giữ dấu ngoặc AMR cân bằng.
+5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
+6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
+7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+<|im_end|>
+<|im_start|>user
+vợ ông công nằm viện .
+<|im_end|>
+<|im_start|>assistant
+AMR_NO_VAR: (nằm viện
+    :agent(vợ
+        :poss(person
+            :classifier(ông)
+            :name(name
+                :op1(công)))))
+<|im_end|>
+
+<|im_start|>system
+Bạn là trợ lý phân tích AMR (Abstract Meaning Representation) cho tiếng Việt.
+
+QUY TẮC:
+1. Tuân thủ đúng định dạng output được yêu cầu.
+2. Dùng concept, biến và quan hệ AMR nhất quán với dữ liệu huấn luyện.
+3. Không dùng ví dụ, câu, nhãn vàng hoặc quy tắc rút ra từ tập test.
+4. Giữ dấu ngoặc AMR cân bằng.
+5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
+6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
+7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+<|im_end|>
+<|im_start|>user
+quân nga chặn đứng quân đức .
+<|im_end|>
+<|im_start|>assistant
+AMR_NO_VAR: (chặn đứng
+    :agent(quân
+        :mod(country
+            :wiki(nga)
+            :name(name
+                :op1(nga))))
+    :patient(quân
+        :mod(country
+            :wiki(đức)
+            :name(name
+                :op1(đức)))))
+<|im_end|>
+
+<|im_start|>system
+Bạn là trợ lý phân tích AMR (Abstract Meaning Representation) cho tiếng Việt.
+
+QUY TẮC:
+1. Tuân thủ đúng định dạng output được yêu cầu.
+2. Dùng concept, biến và quan hệ AMR nhất quán với dữ liệu huấn luyện.
+3. Không dùng ví dụ, câu, nhãn vàng hoặc quy tắc rút ra từ tập test.
+4. Giữ dấu ngoặc AMR cân bằng.
+5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
+6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
+7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+<|im_end|>
+<|im_start|>user
+thuyền đi dọc bờ sông .
+<|im_end|>
+<|im_start|>assistant
+AMR_NO_VAR: (đi
+    :theme(thuyền)
+    :path(dọc
+        :op1(bờ
+            :mod(sông))))
+<|im_end|>
+
+<|im_start|>system
+Bạn là trợ lý phân tích AMR (Abstract Meaning Representation) cho tiếng Việt.
+
+QUY TẮC:
+1. Tuân thủ đúng định dạng output được yêu cầu.
+2. Dùng concept, biến và quan hệ AMR nhất quán với dữ liệu huấn luyện.
+3. Không dùng ví dụ, câu, nhãn vàng hoặc quy tắc rút ra từ tập test.
+4. Giữ dấu ngoặc AMR cân bằng.
+5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
+6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
+7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+<|im_end|>
+<|im_start|>user
+đó là tình thương của người mẹ .
+<|im_end|>
+<|im_start|>assistant
+AMR_NO_VAR: (tình thương
+    :domain(đó)
+    :poss(mẹ
+        :classifier(người)))
+<|im_end|>
+
+<|im_start|>system
+Bạn là trợ lý phân tích AMR (Abstract Meaning Representation) cho tiếng Việt.
+
+QUY TẮC:
+1. Tuân thủ đúng định dạng output được yêu cầu.
+2. Dùng concept, biến và quan hệ AMR nhất quán với dữ liệu huấn luyện.
+3. Không dùng ví dụ, câu, nhãn vàng hoặc quy tắc rút ra từ tập test.
+4. Giữ dấu ngoặc AMR cân bằng.
+5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
+6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
+7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+<|im_end|>
+<|im_start|>user
+bụng tôi bị đau .
+<|im_end|>
+<|im_start|>assistant
+AMR_NO_VAR: (đau
+    :theme(bụng
+        :part-of(tôi))
+    :modality(bị))
+<|im_end|>
+
+<|im_start|>system
+Bạn là trợ lý phân tích AMR (Abstract Meaning Representation) cho tiếng Việt.
+
+QUY TẮC:
+1. Tuân thủ đúng định dạng output được yêu cầu.
+2. Dùng concept, biến và quan hệ AMR nhất quán với dữ liệu huấn luyện.
+3. Không dùng ví dụ, câu, nhãn vàng hoặc quy tắc rút ra từ tập test.
+4. Giữ dấu ngoặc AMR cân bằng.
+5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
+6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
+7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+<|im_end|>
+<|im_start|>user
+anh đã ghi bàn thắng quốc tế đầu tiên .
+<|im_end|>
+<|im_start|>assistant
+AMR_NO_VAR: (ghi
+    :agent(anh)
+    :tense(đã)
+    :patient(bàn thắng
+        :mod(quốc tế)
+        :mod(đầu tiên)))
+<|im_end|>

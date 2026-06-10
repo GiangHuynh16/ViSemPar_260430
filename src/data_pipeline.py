@@ -400,6 +400,24 @@ def split_train_dev(examples, dev_split: float, seed: int):
     return train, dev
 
 
+def write_amr_blocks(path: Path, examples: list):
+    """Write raw sentence/gold AMR blocks for dev Smatch evaluation."""
+    blocks = []
+    for ex in examples:
+        amr = convert_underscore_to_space(ex['amr'])
+        amr = fix_polarity_format(amr)
+        if not validate_amr(amr):
+            continue
+        blocks.append(f"# ::snt {ex['sentence']}\n{amr}")
+    with open(path, 'w', encoding='utf-8') as f:
+        f.write('\n\n'.join(blocks))
+
+
+def write_sentence_lines(path: Path, examples: list):
+    with open(path, 'w', encoding='utf-8') as f:
+        f.write('\n'.join(ex['sentence'] for ex in examples))
+
+
 # ─────────────────────────────────────────────────────────────────────────────
 # Main
 # ─────────────────────────────────────────────────────────────────────────────
@@ -485,11 +503,21 @@ def main():
         print(f"  dev split:   {args.dev_split:.3f} with seed {args.dev_seed}")
     print()
 
+    if args.dev_split > 0:
+        ex1_train, ex1_dev = split_train_dev(ex1, args.dev_split, args.dev_seed)
+        ex2_train, ex2_dev = split_train_dev(ex2, args.dev_split, args.dev_seed + 1)
+        dev_raw_examples = ex1_dev + ex2_dev
+        write_sentence_lines(fmt_dir / 'dev.txt', dev_raw_examples)
+        write_amr_blocks(fmt_dir / 'dev_ground_truth.txt', dev_raw_examples)
+        print(f"  dev raw:     {len(dev_raw_examples)} sentences → {fmt_dir / 'dev.txt'}")
+        print(f"  dev gold:    {len(dev_raw_examples)} AMRs → {fmt_dir / 'dev_ground_truth.txt'}")
+    else:
+        ex1_train, ex1_dev = ex1, []
+        ex2_train, ex2_dev = ex2, []
+
     stats = {}
     for method in args.method if hasattr(args, 'method') else args.methods:
         if args.dev_split > 0:
-            ex1_train, ex1_dev = split_train_dev(ex1, args.dev_split, args.dev_seed)
-            ex2_train, ex2_dev = split_train_dev(ex2, args.dev_split, args.dev_seed + 1)
             train_examples = build_dataset(method, ex1_train, ex2_train, 0,
                                            args.amr1_weight, args.amr2_weight,
                                            no_var_mode=args.no_var_mode,
