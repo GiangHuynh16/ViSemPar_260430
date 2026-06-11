@@ -231,12 +231,26 @@ def main():
     model_dtype = torch.bfloat16 if use_bf16 else torch.float16
     print(f"Precision: {'bf16' if use_bf16 else 'fp16'}")
 
-    model = AutoModelForCausalLM.from_pretrained(
-        model_name,
-        torch_dtype=model_dtype,
-        device_map='auto',
-        trust_remote_code=True,
-    )
+    device_map_cfg = cfg.get('model', {}).get('device_map', 'single_cuda')
+    if device_map_cfg in {'single_cuda', 'cuda'}:
+        device_map = {'': torch.cuda.current_device()}
+    elif device_map_cfg in {'none', None}:
+        device_map = None
+    elif device_map_cfg == 'auto':
+        device_map = 'auto'
+        print("WARNING: model.device_map=auto may offload parameters and break training.")
+    else:
+        raise ValueError(f"Unsupported model.device_map for training: {device_map_cfg}")
+    print(f"Model device_map: {device_map_cfg}")
+
+    model_kwargs = {
+        'torch_dtype': model_dtype,
+        'trust_remote_code': True,
+    }
+    if device_map is not None:
+        model_kwargs['device_map'] = device_map
+
+    model = AutoModelForCausalLM.from_pretrained(model_name, **model_kwargs)
 
     lora_cfg = cfg['lora']
     target_modules = lora_cfg.get('target_modules',
