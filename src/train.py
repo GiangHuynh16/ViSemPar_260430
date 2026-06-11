@@ -25,6 +25,7 @@ from transformers import (
     TrainingArguments,
     Trainer,
     DataCollatorForSeq2Seq,
+    EarlyStoppingCallback,
 )
 from peft import LoraConfig, get_peft_model, TaskType
 
@@ -296,12 +297,26 @@ def main():
         return_tensors='pt',
     )
 
+    callbacks = []
+    early_stopping_patience = tr_cfg.get('early_stopping_patience')
+    if eval_dataset is not None and early_stopping_patience:
+        callbacks.append(EarlyStoppingCallback(
+            early_stopping_patience=int(early_stopping_patience),
+            early_stopping_threshold=float(tr_cfg.get('early_stopping_threshold', 0.0)),
+        ))
+        print(
+            "Early stopping: "
+            f"patience={early_stopping_patience}, "
+            f"threshold={tr_cfg.get('early_stopping_threshold', 0.0)}"
+        )
+
     trainer = Trainer(
         model=model,
         args=training_args,
         train_dataset=dataset,
         eval_dataset=eval_dataset,
         data_collator=data_collator,
+        callbacks=callbacks,
     )
 
     print("\n" + "=" * 60)
@@ -353,6 +368,8 @@ def main():
         'epochs': tr_cfg['epochs'],
         'lora_r': lora_cfg['r'],
         'lr': tr_cfg['lr'],
+        'early_stopping_patience': early_stopping_patience,
+        'early_stopping_threshold': tr_cfg.get('early_stopping_threshold', 0.0),
         'best_checkpoint': trainer.state.best_model_checkpoint,
         'best_eval_loss': trainer.state.best_metric,
     }

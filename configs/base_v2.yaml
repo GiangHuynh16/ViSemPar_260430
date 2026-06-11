@@ -38,6 +38,8 @@ training:
   max_length: 2048
   save_total_limit: 1
   logging_strategy: epoch
+  early_stopping_patience: 5
+  early_stopping_threshold: 0.0
 
 data:
   amr1_weight: 1

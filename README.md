@@ -91,7 +91,7 @@ For validation inference, v2 configs use `data/formatted/vietnamese_v2/dev.txt`;
 
 ## Learning-Rate Tuning
 
-Do not keep `25` epochs as the default decision for final runs. For v2, start with batch effective size `16` (`batch_per_device: 1`, `grad_accum: 16`) and tune learning rate.
+Do not keep `25` epochs as the default decision for final runs. For v2, start with batch effective size `16` (`batch_per_device: 1`, `grad_accum: 16`) and tune learning rate. `--epochs 50` is only the search ceiling; training stops early when dev loss does not improve for `early_stopping_patience` evaluations.
 
 Generate random-search learning-rate configs:
 
