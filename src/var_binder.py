@@ -1,4 +1,6 @@
 #!/usr/bin/env python3
+from __future__ import annotations
+
 """Deterministic variable binder for no-var AMR.
 
 Converts forms such as:

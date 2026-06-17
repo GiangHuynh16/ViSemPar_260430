@@ -1,4 +1,6 @@
 #!/usr/bin/env python3
+from __future__ import annotations
+
 """Generate and summarize RandomizedSearchCV-style learning-rate runs.
 
 This helper keeps expensive LoRA training outside sklearn's estimator API, but
@@ -16,8 +18,7 @@ import copy
 import json
 from pathlib import Path
 
-import yaml
-from config_utils import load_yaml_config
+from config_utils import load_yaml_config, yaml
 
 try:
     from scipy.stats import loguniform

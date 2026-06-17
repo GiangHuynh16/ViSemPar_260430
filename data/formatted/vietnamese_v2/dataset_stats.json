@@ -13,6 +13,7 @@
   "dev_split": 0.1,
   "dev_seed": 42,
   "methods": {
+    "B2": 1623,
     "MTUP2": 1623
   }
 }

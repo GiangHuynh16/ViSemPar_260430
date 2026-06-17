@@ -1,4 +1,6 @@
 #!/usr/bin/env python3
+from __future__ import annotations
+
 """Prepare the public Little Prince AMR corpus for English experiments."""
 
 import argparse

@@ -2,7 +2,7 @@
 """
 Inference for ViSemPar_260430.
 
-Loads the final LoRA adapter, runs greedy decoding on a test file,
+Loads the selected LoRA adapter, runs greedy decoding on a test file,
 extracts the final AMR output (last step for MTUP variants),
 and saves predictions.
 
@@ -194,10 +194,17 @@ def main():
     cfg = load_yaml_config(args.config)
 
     method = cfg['method']
+    run_name = cfg.get('run_name', method)
     group = cfg['group']
     root = Path(__file__).parent.parent
 
-    adapter_path = root / 'checkpoints' / group / method / f"s{args.seed}" / 'final'
+    configured_adapter = cfg.get('adapter_path')
+    if configured_adapter:
+        adapter_path = Path(configured_adapter)
+        if not adapter_path.is_absolute():
+            adapter_path = root / adapter_path
+    else:
+        adapter_path = root / 'checkpoints' / group / run_name / f"s{args.seed}" / 'final'
     if not adapter_path.exists():
         print(f"ERROR: adapter not found at {adapter_path}")
         sys.exit(1)
@@ -215,12 +222,13 @@ def main():
             )
         test_file = root / configured_val
 
-    out_dir = root / 'results' / group / method
+    out_dir = root / 'results' / group / run_name
     out_dir.mkdir(parents=True, exist_ok=True)
     pred_path = out_dir / f"s{args.seed}_pred.txt"
     full_path = out_dir / f"s{args.seed}_full.txt"
+    meta_path = out_dir / f"s{args.seed}_{args.split}_inference_meta.json"
 
-    print(f"Method: {method} | Seed: {args.seed} | Split: {args.split}")
+    print(f"Method: {method} | Run: {run_name} | Seed: {args.seed} | Split: {args.split}")
     print(f"Adapter: {adapter_path}")
     print(f"Test file: {test_file}")
 
@@ -266,8 +274,25 @@ def main():
         for sent, full in zip(sentences, full_outputs):
             f.write(f"#::snt {sent}\n{full}\n\n")
 
+    with open(meta_path, 'w', encoding='utf-8') as f:
+        json.dump({
+            'method': method,
+            'run_name': run_name,
+            'group': group,
+            'seed': args.seed,
+            'split': args.split,
+            'config': args.config,
+            'adapter_path': str(adapter_path),
+            'input_file': str(test_file),
+            'pred_path': str(pred_path),
+            'full_path': str(full_path),
+            'num_sentences': len(sentences),
+            'max_new_tokens': max_new_tokens,
+        }, f, indent=2, ensure_ascii=False)
+
     print(f"Saved {len(predictions)} predictions → {pred_path}")
     print(f"Full outputs → {full_path}")
+    print(f"Inference metadata → {meta_path}")
 
 
 if __name__ == '__main__':

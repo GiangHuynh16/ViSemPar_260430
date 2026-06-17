@@ -13,7 +13,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
 from config_utils import load_yaml_config
-from data_pipeline import strip_variables
+from data_pipeline import parse_amr_file, strip_variables
 from postprocess import postprocess_amr
 from prompts import get_system_prompt
 
@@ -56,6 +56,12 @@ def read_sentences(path: Path) -> set[str]:
             if line and not line.startswith("#"):
                 sentences.add(line)
     return sentences
+
+
+def read_raw_amr_sentences(path: Path) -> set[str]:
+    if not path.exists():
+        return set()
+    return {ex["sentence"].strip() for ex in parse_amr_file(str(path))}
 
 
 def extract_steps(assistant: str) -> tuple[str, str]:
@@ -109,6 +115,7 @@ def audit_file(path: Path, expected_prompt: str, no_var_mode: str) -> dict:
         "bare_var_refs": 0,
         "bad_full_amr": 0,
         "postprocess_changes": 0,
+        "stale_headers": 0,
         "sentences": set(),
     }
 
@@ -118,6 +125,10 @@ def audit_file(path: Path, expected_prompt: str, no_var_mode: str) -> dict:
         if ex["system"] != expected_prompt:
             stats["prompt_mismatch"] += 1
             first_errors.append((idx, "prompt_mismatch"))
+
+        if "Task 1:" in ex["assistant"] or "Task 2:" in ex["assistant"]:
+            stats["stale_headers"] += 1
+            first_errors.append((idx, "stale_task_header"))
 
         no_var, full = extract_steps(ex["assistant"])
         expected_no_var = strip_variables(full, mode=no_var_mode)
@@ -160,12 +171,20 @@ def main() -> None:
     train_path = root / "data" / "formatted" / cfg["data"]["train"]
     dev_path = root / "data" / "formatted" / cfg["data"]["dev_formatted"]
     test_path = root / cfg["data"]["test"]
+    raw_dir = root / cfg.get("data", {}).get("raw_dir", "data/raw")
     no_var_mode = cfg.get("no_var_mode", "clean")
 
     train_stats = audit_file(train_path, expected_prompt, no_var_mode)
     dev_stats = audit_file(dev_path, expected_prompt, no_var_mode)
     public_test_sentences = read_sentences(test_path)
-    overlaps = (train_stats["sentences"] | dev_stats["sentences"]) & public_test_sentences
+    raw_train_sentences = (
+        read_raw_amr_sentences(raw_dir / "train_amr_1.txt")
+        | read_raw_amr_sentences(raw_dir / "train_amr_2.txt")
+    )
+    train_dev_overlaps = train_stats["sentences"] & dev_stats["sentences"]
+    train_test_overlaps = train_stats["sentences"] & public_test_sentences
+    dev_test_overlaps = dev_stats["sentences"] & public_test_sentences
+    raw_test_overlaps = raw_train_sentences & public_test_sentences
 
     for stats in [train_stats, dev_stats]:
         print(f"\n{stats['path']}")
@@ -177,14 +196,24 @@ def main() -> None:
             "bare_var_refs",
             "bad_full_amr",
             "postprocess_changes",
+            "stale_headers",
         ]:
             print(f"  {key}: {stats[key]}")
         if stats["first_errors"]:
             print(f"  first_errors: {stats['first_errors']}")
 
-    print(f"\npublic_test_exact_sentence_overlaps: {len(overlaps)}")
-    for sentence in sorted(overlaps)[:10]:
-        print(f"  overlap: {sentence}")
+    print(f"\ntrain_dev_exact_sentence_overlaps: {len(train_dev_overlaps)}")
+    for sentence in sorted(train_dev_overlaps)[:10]:
+        print(f"  train_dev_overlap: {sentence}")
+    print(f"train_public_test_exact_sentence_overlaps: {len(train_test_overlaps)}")
+    for sentence in sorted(train_test_overlaps)[:10]:
+        print(f"  train_test_overlap: {sentence}")
+    print(f"dev_public_test_exact_sentence_overlaps: {len(dev_test_overlaps)}")
+    for sentence in sorted(dev_test_overlaps)[:10]:
+        print(f"  dev_test_overlap: {sentence}")
+    print(f"raw_train_public_test_exact_sentence_overlaps: {len(raw_test_overlaps)}")
+    for sentence in sorted(raw_test_overlaps)[:10]:
+        print(f"  raw_train_test_overlap: {sentence}")
 
     hard_fail = (
         train_stats["prompt_mismatch"]
@@ -199,7 +228,12 @@ def main() -> None:
         or dev_stats["bad_full_amr"]
         or train_stats["postprocess_changes"]
         or dev_stats["postprocess_changes"]
-        or overlaps
+        or train_stats["stale_headers"]
+        or dev_stats["stale_headers"]
+        or train_dev_overlaps
+        or train_test_overlaps
+        or dev_test_overlaps
+        or raw_test_overlaps
     )
     if hard_fail:
         raise SystemExit(1)

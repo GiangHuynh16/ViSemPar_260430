@@ -1,4 +1,6 @@
 #!/usr/bin/env python3
+from __future__ import annotations
+
 """Normalise raw Brazilian Portuguese AMR corpora and split into train/dev/test sets."""
 
 import re

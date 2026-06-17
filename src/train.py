@@ -183,6 +183,12 @@ def main():
         print(f"Dev data:   {dev_path}")
     print(f"Output dir: {output_dir}")
 
+    if not torch.cuda.is_available():
+        raise RuntimeError(
+            "CUDA GPU is not available. This training setup requires a GPU; "
+            "check nvidia-smi, CUDA_VISIBLE_DEVICES, and the PyTorch CUDA build."
+        )
+
     # ── Tokenizer ──────────────────────────────────────────────────────────
     model_name = cfg['model']['name']
     tokenizer = AutoTokenizer.from_pretrained(model_name, trust_remote_code=True)
@@ -215,12 +221,6 @@ def main():
 
     # ── Model ──────────────────────────────────────────────────────────────
     print(f"\nLoading model: {model_name}")
-    if not torch.cuda.is_available():
-        raise RuntimeError(
-            "CUDA GPU is not available. This training setup requires a GPU; "
-            "check nvidia-smi, CUDA_VISIBLE_DEVICES, and the PyTorch CUDA build."
-        )
-
     use_bf16 = torch.cuda.is_bf16_supported()
     model_dtype = torch.bfloat16 if use_bf16 else torch.float16
     print(f"Precision: {'bf16' if use_bf16 else 'fp16'}")
@@ -380,6 +380,8 @@ def main():
         'lr': tr_cfg['lr'],
         'early_stopping_patience': early_stopping_patience,
         'early_stopping_threshold': tr_cfg.get('early_stopping_threshold', 0.0),
+        'selection_metric': 'eval_loss' if eval_dataset is not None else None,
+        'final_adapter_path': str(final_dir),
         'best_checkpoint': trainer.state.best_model_checkpoint,
         'best_eval_loss': trainer.state.best_metric,
     }

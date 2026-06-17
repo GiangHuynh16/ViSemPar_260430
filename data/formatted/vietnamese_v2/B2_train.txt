@@ -17815,44 +17815,6 @@ QUY TẮC:
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
 <|im_end|>
 <|im_start|>user
-ông hoàng bé nhỏ , vốn rất hay đặt câu hỏi cho tôi , lại dường như không bao giờ chú ý nghe tôi hỏi .
-<|im_end|>
-<|im_start|>assistant
-AMR_NO_VAR: (đúng
-    :mod(thế))
-	
-(chú ý
-    :pivot(ông hoàng
-        :mod(bé nhỏ)
-        :pivot-of(đặt
-            :degree(hay
-                :degree(rất))
-            :theme(câu
-                :compound(hỏi))
-            :beneficiary(tôi)
-            :agent (ông)))
-    :modality(dường như)
-    :topic(nghe
-        :topic(hỏi
-            :agent (tôi))
-        :pivot (ông))
-    :time(always)
-    :polarity -)
-<|im_end|>
-
-<|im_start|>system
-Bạn là trợ lý phân tích AMR (Abstract Meaning Representation) cho tiếng Việt.
-
-QUY TẮC:
-1. Tuân thủ đúng định dạng output được yêu cầu.
-2. Dùng concept, biến và quan hệ AMR nhất quán với dữ liệu huấn luyện.
-3. Không dùng ví dụ, câu, nhãn vàng hoặc quy tắc rút ra từ tập test.
-4. Giữ dấu ngoặc AMR cân bằng.
-5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
-6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
-7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
-<|im_end|>
-<|im_start|>user
 ví dụ ông gọi nó là tiểu hành tinh 3251 .
 <|im_end|>
 <|im_start|>assistant
@@ -23835,41 +23797,6 @@ AMR_NO_VAR: (cho
         :domain(tôi)
         :compared-to(em)
         :degree(equal)))
-<|im_end|>
-
-<|im_start|>system
-Bạn là trợ lý phân tích AMR (Abstract Meaning Representation) cho tiếng Việt.
-
-QUY TẮC:
-1. Tuân thủ đúng định dạng output được yêu cầu.
-2. Dùng concept, biến và quan hệ AMR nhất quán với dữ liệu huấn luyện.
-3. Không dùng ví dụ, câu, nhãn vàng hoặc quy tắc rút ra từ tập test.
-4. Giữ dấu ngoặc AMR cân bằng.
-5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
-6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
-7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
-<|im_end|>
-<|im_start|>user
-cái hành tinh thật là bé .
-<|im_end|>
-<|im_start|>assistant
-AMR_NO_VAR: (biết
-    :pivot(tôi)
-    :goal(tinh cầu
-        :goal-of(có
-            :pivot(ông
-                :mod(mặt mũi
-                    :mod(đỏ gay))
-                :quant 1)
-            :location (thật)
-                :prep(trên))
-        :quant 1))
-		
-(bé
-    :domain(hành tinh
-        :classifier(cái))
-    :degree(thật
-        :compound(là)))
 <|im_end|>
 
 <|im_start|>system
@@ -34132,29 +34059,6 @@ AMR_NO_VAR: (bình thường
     :polarity -
     :time(now
         :unit(year)))
-<|im_end|>
-
-<|im_start|>system
-Bạn là trợ lý phân tích AMR (Abstract Meaning Representation) cho tiếng Việt.
-
-QUY TẮC:
-1. Tuân thủ đúng định dạng output được yêu cầu.
-2. Dùng concept, biến và quan hệ AMR nhất quán với dữ liệu huấn luyện.
-3. Không dùng ví dụ, câu, nhãn vàng hoặc quy tắc rút ra từ tập test.
-4. Giữ dấu ngoặc AMR cân bằng.
-5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
-6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
-7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
-<|im_end|>
-<|im_start|>user
-năm 1900 , ông ra nước ngoài .
-<|im_end|>
-<|im_start|>assistant
-AMR_NO_VAR: (ra
-    :agent(ông)
-    :location(nước ngoài)
-    :time(date-entity 
-        :year( / 1900)))
 <|im_end|>
 
 <|im_start|>system

@@ -1,4 +1,6 @@
 #!/usr/bin/env python3
+from __future__ import annotations
+
 """Generate and summarize LR-search runs for all Vietnamese v2 methods.
 
 The same sampled learning-rate list is used for every method so the search is

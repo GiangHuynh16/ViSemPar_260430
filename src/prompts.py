@@ -29,6 +29,11 @@ RULES:
 5. Reuse variables for reentrancies when producing full AMR.
 6. Output only the requested labels and AMR content."""
 
+SYSTEM_PROMPT_EN_MTUP2 = SYSTEM_PROMPT_EN + """
+7. For MTUP2, output exactly two sections in this order: [STEP 1: AMR_NO_VAR], then [STEP 2: AMR_WITH_VAR].
+8. [STEP 1: AMR_NO_VAR] is variable-free AMR: use forms like (concept ...), not declarations like (x / concept).
+9. [STEP 2: AMR_WITH_VAR] is full AMR: use forms like (x / concept), unique variables, and variable reuse only for reentrancy."""
+
 SYSTEM_PROMPT_PT = """You are an AMR (Abstract Meaning Representation) parsing assistant for Brazilian Portuguese.
 
 RULES:
@@ -42,6 +47,8 @@ RULES:
 
 def get_system_prompt(language: str = 'vi', method: Optional[str] = None) -> str:
     if language == 'en':
+        if method == 'MTUP2':
+            return SYSTEM_PROMPT_EN_MTUP2
         return SYSTEM_PROMPT_EN
     if language == 'pt':
         return SYSTEM_PROMPT_PT
