@@ -89,35 +89,54 @@ Training with a dev split writes:
 Use the dev loss curve to detect overfitting and choose a defensible epoch/checkpoint before public-test inference.
 For validation inference, v2 configs use `data/formatted/vietnamese_v2/dev.txt`; public test is never the fallback for `--split val`.
 
-## Learning-Rate Tuning
+## MTUP2-Only Cascade Tuning
 
-Do not keep `25` epochs as the default decision for final runs. For v2, start with batch effective size `16` (`batch_per_device: 1`, `grad_accum: 16`) and tune learning rate. `--epochs 50` is only the search ceiling; training stops early when dev loss does not improve for `early_stopping_patience` evaluations.
+Current decision protocol: do not rerun every old method/dataset. Use one representative method, `MTUP2`, on Vietnamese v2 to get an early signal about whether the idea works.
 
-Generate random-search learning-rate configs:
+Use hierarchical cascade tuning, not full grid search:
+
+1. Fix defaults: MTUP2 uses LoRA `r=64`, `alpha=128`, `dropout=0.05`, effective batch size 16, scheduler, warmup, weight decay.
+2. Tune learning rate first on dev.
+3. Fix the selected learning rate and best epoch.
+4. Only if the dev curve is clearly unstable, tune the next hyperparameter in a narrow range.
+
+Run the MTUP2 pre-flight audit before GPU training:
 
 ```bash
-python src/tune_all_methods.py \
+python src/audit_mtup2_setup.py --config configs/vietnamese_v2/MTUP2.yaml
+```
+
+Generate MTUP2-only learning-rate configs:
+
+```bash
+python src/tune_lr.py \
+  --config configs/vietnamese_v2/MTUP2.yaml \
   --seed 42 \
-  --n_iter 5 \
+  --n_iter 3 \
   --lr_min 1e-6 \
   --lr_max 5e-5 \
-  --epochs 50
+  --epochs 30 \
+  --out_dir configs/tuning/mtup2_vi_lr
 ```
 
-Run the generated train script on the GPU server:
+Run the printed train commands. Then summarize completed runs:
 
 ```bash
-bash configs/tuning/vietnamese_v2_all/run_all_lrsearch.sh
+python src/tune_lr.py \
+  --config configs/vietnamese_v2/MTUP2.yaml \
+  --seed 42 \
+  --summarize configs/tuning/mtup2_vi_lr/MTUP2_lrsearch_manifest.json
 ```
 
-Then summarize completed runs for every method:
+Pick `selected.lr` and `selected.best_epoch` from the summary. Public test is used only after this selection is fixed.
+
+Final MTUP2 rerun uses three seeds:
 
 ```bash
-python src/tune_all_methods.py \
-  --summarize configs/tuning/vietnamese_v2_all/vietnamese_v2_all_lrsearch_manifest.json
+python src/train.py --config configs/vietnamese_v2/MTUP2.yaml --seed 42
+python src/train.py --config configs/vietnamese_v2/MTUP2.yaml --seed 123
+python src/train.py --config configs/vietnamese_v2/MTUP2.yaml --seed 456
 ```
-
-Pick each method's learning rate and epoch with the lowest dev loss from the summary and the healthiest train/dev curve. After selecting LR/epoch, run all seeds for each method.
 
 ## Prompt Leakage Policy
 

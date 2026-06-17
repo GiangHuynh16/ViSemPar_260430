@@ -30,8 +30,10 @@ after the cleanup pass.
    B2 equals MTUP2 step 1, declaration violations = 0, bare full-AMR variable refs = 0.
    B2 inference still binds variables deterministically with `src/var_binder.py` before Smatch.
 
-6. **Three-seed protocol**
-   Final results still need reruns for seeds `42`, `123`, and `456` after LR/epoch selection.
+6. **Current scope**
+   The current decision is not to rerun every old method/dataset. Run only representative
+   `MTUP2` on Vietnamese v2 first, using cascade tuning on dev. If MTUP2 Vietnamese gives a
+   positive early signal, broader method/dataset reruns can be reconsidered later.
 
 7. **Manual edits / old scripts**
    No manual prediction editing was done in this cleanup. Old predictions should not be used as
@@ -54,11 +56,14 @@ Changed code:
 
 - `src/data_pipeline.py`: clean no-var path, deterministic dev split, dev sentence/gold export.
 - `src/audit_b2.py`: new B2/MTUP2 step-1 and no-var leakage audit.
+- `src/audit_mtup2_setup.py`: MTUP2-only pre-flight audit for prompt/template consistency,
+  target construction, exact public-test sentence overlap, and postprocess changes.
+- `src/prompts.py`: shared prompt source used by both data formatting and inference.
 - `src/train.py`: optional sklearn auto split, epoch-level logging, dev loss metadata.
 - `src/tune_lr.py`: sklearn random LR sampler, 1e-6 to 5e-5 default range, 50-epoch search option,
   and summary selection by dev loss.
-- `src/tune_all_methods.py`: one-command LR-search config generation and summary for B1, B2,
-  MTUP2, MTUP3A, MTUP3B, and MTUP4 using the same sampled LR list.
+- `src/tune_all_methods.py`: available for broader later experiments, but not part of the
+  current minimal MTUP2 Vietnamese decision run.
 - `src/inference.py`: `--split val` no longer falls back to public test.
 - `configs/vietnamese_v2/*.yaml`: dev sentence path added.
 - `configs/base_v2.yaml`: v2 logging and dev seed defaults.

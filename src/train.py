@@ -11,7 +11,6 @@ Saves adapter to:
 
 import re
 import json
-import yaml
 import random
 import argparse
 import numpy as np
@@ -28,6 +27,7 @@ from transformers import (
     EarlyStoppingCallback,
 )
 from peft import LoraConfig, get_peft_model, TaskType
+from config_utils import load_yaml_config
 
 try:
     from sklearn.model_selection import train_test_split
@@ -44,14 +44,7 @@ def set_seed(seed: int):
 
 
 def load_config(config_path: str, seed: int) -> dict:
-    with open(config_path) as f:
-        cfg = yaml.safe_load(f)
-    if 'base' in cfg:
-        base_path = Path(config_path).parent / cfg['base']
-        with open(base_path) as f:
-            base = yaml.safe_load(f)
-        base.update(cfg)
-        cfg = base
+    cfg = load_yaml_config(config_path)
     cfg['seed'] = seed
     return cfg
 
@@ -172,18 +165,19 @@ def main():
     set_seed(args.seed)
 
     method = cfg['method']
+    run_name = cfg.get('run_name', method)
     group  = cfg['group']
     root   = Path(__file__).parent.parent
 
     train_path = root / 'data' / 'formatted' / cfg['data']['train']
-    output_dir = root / 'checkpoints' / group / method / f"s{args.seed}"
+    output_dir = root / 'checkpoints' / group / run_name / f"s{args.seed}"
     output_dir.mkdir(parents=True, exist_ok=True)
 
     # Dev dataset: optional, derived from data.dev key in config
     dev_key = cfg.get('data', {}).get('dev_formatted')
     dev_path = (root / 'data' / 'formatted' / dev_key) if dev_key else None
 
-    print(f"Method: {method} | Seed: {args.seed} | Group: {group}")
+    print(f"Method: {method} | Run: {run_name} | Seed: {args.seed} | Group: {group}")
     print(f"Train data: {train_path}")
     if dev_path:
         print(f"Dev data:   {dev_path}")
@@ -346,10 +340,10 @@ def main():
         try:
             import matplotlib.pyplot as plt
 
-            train_epochs = [x['epoch'] for x in log_history if 'loss' in x and 'epoch' in x]
-            train_losses = [x['loss'] for x in log_history if 'loss' in x and 'epoch' in x]
-            eval_epochs = [x['epoch'] for x in log_history if 'eval_loss' in x and 'epoch' in x]
-            eval_losses = [x['eval_loss'] for x in log_history if 'eval_loss' in x and 'epoch' in x]
+            train_epochs = [float(x['epoch']) for x in log_history if 'loss' in x and 'epoch' in x]
+            train_losses = [float(x['loss']) for x in log_history if 'loss' in x and 'epoch' in x]
+            eval_epochs = [float(x['epoch']) for x in log_history if 'eval_loss' in x and 'epoch' in x]
+            eval_losses = [float(x['eval_loss']) for x in log_history if 'eval_loss' in x and 'epoch' in x]
 
             if train_losses or eval_losses:
                 plt.figure(figsize=(7, 4))
@@ -375,11 +369,13 @@ def main():
     print(f"\nSaved adapter → {final_dir}")
 
     meta = {
-        'method': method, 'seed': args.seed, 'group': group,
+        'method': method, 'run_name': run_name, 'seed': args.seed, 'group': group,
         'config': args.config,
         'train_examples': len(dataset),
         'dev_examples': len(eval_dataset) if eval_dataset is not None else 0,
         'epochs': tr_cfg['epochs'],
+        'last_epoch': trainer.state.epoch,
+        'global_step': trainer.state.global_step,
         'lora_r': lora_cfg['r'],
         'lr': tr_cfg['lr'],
         'early_stopping_patience': early_stopping_patience,

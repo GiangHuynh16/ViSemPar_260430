@@ -12,6 +12,7 @@ import stat
 from pathlib import Path
 
 import yaml
+from config_utils import load_yaml_config
 
 try:
     from scipy.stats import loguniform
@@ -33,15 +34,11 @@ DEFAULT_CONFIGS = [
 
 
 def load_config(path: Path) -> dict:
-    with open(path) as f:
-        cfg = yaml.safe_load(f)
-    if "base" in cfg:
-        base_path = path.parent / cfg["base"]
-        with open(base_path) as f:
-            base = yaml.safe_load(f)
-        base.update(cfg)
-        cfg = base
-    return cfg
+    return load_yaml_config(path)
+
+
+def to_float(value) -> float:
+    return float(value)
 
 
 def best_eval_from_log(log_path: Path) -> dict | None:
@@ -52,18 +49,21 @@ def best_eval_from_log(log_path: Path) -> dict | None:
     eval_rows = [row for row in rows if "eval_loss" in row and "epoch" in row]
     if not eval_rows:
         return None
-    best = min(eval_rows, key=lambda row: row["eval_loss"])
+    best = min(eval_rows, key=lambda row: to_float(row["eval_loss"]))
     train_rows = [row for row in rows if "loss" in row and "epoch" in row]
+    epoch_rows = [row for row in rows if "epoch" in row]
+    last_epoch = max((to_float(row["epoch"]) for row in epoch_rows), default=None)
     train_at_epoch = None
     same_epoch = [
         row for row in train_rows
-        if round(float(row["epoch"]), 4) == round(float(best["epoch"]), 4)
+        if round(to_float(row["epoch"]), 4) == round(to_float(best["epoch"]), 4)
     ]
     if same_epoch:
-        train_at_epoch = same_epoch[-1]["loss"]
+        train_at_epoch = to_float(same_epoch[-1]["loss"])
     return {
-        "best_epoch": best["epoch"],
-        "best_eval_loss": best["eval_loss"],
+        "best_epoch": to_float(best["epoch"]),
+        "last_epoch": last_epoch,
+        "best_eval_loss": to_float(best["eval_loss"]),
         "train_loss_at_best_epoch": train_at_epoch,
     }
 
@@ -98,6 +98,7 @@ def generate(args: argparse.Namespace) -> None:
             tuned = copy.deepcopy(cfg)
             tuned.pop("base", None)
             tuned["group"] = f"{cfg['group']}_lrsearch"
+            tuned["run_name"] = f"{method}_lr{i}"
             tuned["training"]["lr"] = float(params["lr"])
             tuned["training"]["epochs"] = args.epochs
             tuned["training"]["batch_per_device"] = tuned["training"].get("batch_per_device", 1)
@@ -161,19 +162,23 @@ def summarize(args: argparse.Namespace) -> None:
         for config_name in method_info["configs"]:
             config_path = Path(config_name)
             cfg = load_config(config_path)
+            run_name = cfg.get("run_name", cfg["method"])
             ckpt_dir = (
                 Path("checkpoints")
                 / cfg["group"]
-                / cfg["method"]
+                / run_name
                 / f"s{manifest['seed']}"
             )
             best = best_eval_from_log(ckpt_dir / "trainer_log_history.json")
             rows.append({
                 "config": str(config_path),
+                "run_name": run_name,
                 "lr": cfg["training"]["lr"],
+                "max_epochs": cfg["training"]["epochs"],
                 "checkpoint_dir": str(ckpt_dir),
                 **(best or {
                     "best_epoch": None,
+                    "last_epoch": None,
                     "best_eval_loss": None,
                     "train_loss_at_best_epoch": None,
                 }),
@@ -203,6 +208,7 @@ def summarize(args: argparse.Namespace) -> None:
             print(
                 f"{method}: lr={selected['lr']:.6g} "
                 f"epoch={selected['best_epoch']} "
+                f"last_epoch={selected['last_epoch']} "
                 f"eval_loss={selected['best_eval_loss']:.6f}"
             )
         else:

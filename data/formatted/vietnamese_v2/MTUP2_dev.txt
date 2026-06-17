@@ -9,6 +9,9 @@ QUY TẮC:
 5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
 6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+8. Với MTUP2, output đúng hai phần theo thứ tự: [STEP 1: AMR_NO_VAR], rồi [STEP 2: AMR_WITH_VAR].
+9. [STEP 1: AMR_NO_VAR] là AMR không biến: dùng dạng (concept ...), không dùng khai báo (x / concept).
+10. [STEP 2: AMR_WITH_VAR] là AMR đầy đủ có biến: dùng dạng (x / concept), biến duy nhất và chỉ tái sử dụng khi reentrancy.
 <|im_end|>
 <|im_start|>user
 mỗi phút ta phải thắp đèn và phải tắt đèn một lần !
@@ -56,6 +59,9 @@ QUY TẮC:
 5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
 6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+8. Với MTUP2, output đúng hai phần theo thứ tự: [STEP 1: AMR_NO_VAR], rồi [STEP 2: AMR_WITH_VAR].
+9. [STEP 1: AMR_NO_VAR] là AMR không biến: dùng dạng (concept ...), không dùng khai báo (x / concept).
+10. [STEP 2: AMR_WITH_VAR] là AMR đầy đủ có biến: dùng dạng (x / concept), biến duy nhất và chỉ tái sử dụng khi reentrancy.
 <|im_end|>
 <|im_start|>user
 chúc một đêm tốt lành .
@@ -85,6 +91,9 @@ QUY TẮC:
 5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
 6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+8. Với MTUP2, output đúng hai phần theo thứ tự: [STEP 1: AMR_NO_VAR], rồi [STEP 2: AMR_WITH_VAR].
+9. [STEP 1: AMR_NO_VAR] là AMR không biến: dùng dạng (concept ...), không dùng khai báo (x / concept).
+10. [STEP 2: AMR_WITH_VAR] là AMR đầy đủ có biến: dùng dạng (x / concept), biến duy nhất và chỉ tái sử dụng khi reentrancy.
 <|im_end|>
 <|im_start|>user
 tôi biết cách cho ông nghỉ ngơi khi nào ông muốn đấy ...
@@ -120,6 +129,9 @@ QUY TẮC:
 5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
 6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+8. Với MTUP2, output đúng hai phần theo thứ tự: [STEP 1: AMR_NO_VAR], rồi [STEP 2: AMR_WITH_VAR].
+9. [STEP 1: AMR_NO_VAR] là AMR không biến: dùng dạng (concept ...), không dùng khai báo (x / concept).
+10. [STEP 2: AMR_WITH_VAR] là AMR đầy đủ có biến: dùng dạng (x / concept), biến duy nhất và chỉ tái sử dụng khi reentrancy.
 <|im_end|>
 <|im_start|>user
 ông hoàng nhỏ hỏi tiếp :
@@ -149,6 +161,9 @@ QUY TẮC:
 5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
 6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+8. Với MTUP2, output đúng hai phần theo thứ tự: [STEP 1: AMR_NO_VAR], rồi [STEP 2: AMR_WITH_VAR].
+9. [STEP 1: AMR_NO_VAR] là AMR không biến: dùng dạng (concept ...), không dùng khai báo (x / concept).
+10. [STEP 2: AMR_WITH_VAR] là AMR đầy đủ có biến: dùng dạng (x / concept), biến duy nhất và chỉ tái sử dụng khi reentrancy.
 <|im_end|>
 <|im_start|>user
 cái ông này , ông hoàng nhỏ nghĩ thầm trong lúc tiếp tục cuộc hành trình .
@@ -190,6 +205,9 @@ QUY TẮC:
 5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
 6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+8. Với MTUP2, output đúng hai phần theo thứ tự: [STEP 1: AMR_NO_VAR], rồi [STEP 2: AMR_WITH_VAR].
+9. [STEP 1: AMR_NO_VAR] là AMR không biến: dùng dạng (concept ...), không dùng khai báo (x / concept).
+10. [STEP 2: AMR_WITH_VAR] là AMR đầy đủ có biến: dùng dạng (x / concept), biến duy nhất và chỉ tái sử dụng khi reentrancy.
 <|im_end|>
 <|im_start|>user
 - nhà địa lý là người như thế nào ?
@@ -219,6 +237,9 @@ QUY TẮC:
 5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
 6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+8. Với MTUP2, output đúng hai phần theo thứ tự: [STEP 1: AMR_NO_VAR], rồi [STEP 2: AMR_WITH_VAR].
+9. [STEP 1: AMR_NO_VAR] là AMR không biến: dùng dạng (concept ...), không dùng khai báo (x / concept).
+10. [STEP 2: AMR_WITH_VAR] là AMR đầy đủ có biến: dùng dạng (x / concept), biến duy nhất và chỉ tái sử dụng khi reentrancy.
 <|im_end|>
 <|im_start|>user
 - tinh cầu của ông đẹp quá .
@@ -248,6 +269,9 @@ QUY TẮC:
 5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
 6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+8. Với MTUP2, output đúng hai phần theo thứ tự: [STEP 1: AMR_NO_VAR], rồi [STEP 2: AMR_WITH_VAR].
+9. [STEP 1: AMR_NO_VAR] là AMR không biến: dùng dạng (concept ...), không dùng khai báo (x / concept).
+10. [STEP 2: AMR_WITH_VAR] là AMR đầy đủ có biến: dùng dạng (x / concept), biến duy nhất và chỉ tái sử dụng khi reentrancy.
 <|im_end|>
 <|im_start|>user
 có đại dương không ông ?
@@ -275,6 +299,9 @@ QUY TẮC:
 5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
 6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+8. Với MTUP2, output đúng hai phần theo thứ tự: [STEP 1: AMR_NO_VAR], rồi [STEP 2: AMR_WITH_VAR].
+9. [STEP 1: AMR_NO_VAR] là AMR không biến: dùng dạng (concept ...), không dùng khai báo (x / concept).
+10. [STEP 2: AMR_WITH_VAR] là AMR đầy đủ có biến: dùng dạng (x / concept), biến duy nhất và chỉ tái sử dụng khi reentrancy.
 <|im_end|>
 <|im_start|>user
 nhà địa lý không phải là người đi đến các thành phố , sông biển , núi non , đại dương và sa mạc .
@@ -322,6 +349,9 @@ QUY TẮC:
 5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
 6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+8. Với MTUP2, output đúng hai phần theo thứ tự: [STEP 1: AMR_NO_VAR], rồi [STEP 2: AMR_WITH_VAR].
+9. [STEP 1: AMR_NO_VAR] là AMR không biến: dùng dạng (concept ...), không dùng khai báo (x / concept).
+10. [STEP 2: AMR_WITH_VAR] là AMR đầy đủ có biến: dùng dạng (x / concept), biến duy nhất và chỉ tái sử dụng khi reentrancy.
 <|im_end|>
 <|im_start|>user
 nhà địa lý rất quan trọng không thể đi lung tung .
@@ -361,6 +391,9 @@ QUY TẮC:
 5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
 6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+8. Với MTUP2, output đúng hai phần theo thứ tự: [STEP 1: AMR_NO_VAR], rồi [STEP 2: AMR_WITH_VAR].
+9. [STEP 1: AMR_NO_VAR] là AMR không biến: dùng dạng (concept ...), không dùng khai báo (x / concept).
+10. [STEP 2: AMR_WITH_VAR] là AMR đầy đủ có biến: dùng dạng (x / concept), biến duy nhất và chỉ tái sử dụng khi reentrancy.
 <|im_end|>
 <|im_start|>user
 chẳng mấy khi một đại dương lại cạn nước .
@@ -394,6 +427,9 @@ QUY TẮC:
 5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
 6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+8. Với MTUP2, output đúng hai phần theo thứ tự: [STEP 1: AMR_NO_VAR], rồi [STEP 2: AMR_WITH_VAR].
+9. [STEP 1: AMR_NO_VAR] là AMR không biến: dùng dạng (concept ...), không dùng khai báo (x / concept).
+10. [STEP 2: AMR_WITH_VAR] là AMR đầy đủ có biến: dùng dạng (x / concept), biến duy nhất và chỉ tái sử dụng khi reentrancy.
 <|im_end|>
 <|im_start|>user
 có thể dồn hết nhân loại lên một hòn đảo bé nhất trong Thái Bình Dương .
@@ -447,6 +483,9 @@ QUY TẮC:
 5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
 6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+8. Với MTUP2, output đúng hai phần theo thứ tự: [STEP 1: AMR_NO_VAR], rồi [STEP 2: AMR_WITH_VAR].
+9. [STEP 1: AMR_NO_VAR] là AMR không biến: dùng dạng (concept ...), không dùng khai báo (x / concept).
+10. [STEP 2: AMR_WITH_VAR] là AMR đầy đủ có biến: dùng dạng (x / concept), biến duy nhất và chỉ tái sử dụng khi reentrancy.
 <|im_end|>
 <|im_start|>user
 - ngay giữa loài người , cũng bơ vơ , rắn nói .
@@ -482,6 +521,9 @@ QUY TẮC:
 5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
 6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+8. Với MTUP2, output đúng hai phần theo thứ tự: [STEP 1: AMR_NO_VAR], rồi [STEP 2: AMR_WITH_VAR].
+9. [STEP 1: AMR_NO_VAR] là AMR không biến: dùng dạng (concept ...), không dùng khai báo (x / concept).
+10. [STEP 2: AMR_WITH_VAR] là AMR đầy đủ có biến: dùng dạng (x / concept), biến duy nhất và chỉ tái sử dụng khi reentrancy.
 <|im_end|>
 <|im_start|>user
 - anh là một con vật buồn cười thật , em nói , mảnh khảnh cứ như một ngón tay ...
@@ -531,6 +573,9 @@ QUY TẮC:
 5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
 6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+8. Với MTUP2, output đúng hai phần theo thứ tự: [STEP 1: AMR_NO_VAR], rồi [STEP 2: AMR_WITH_VAR].
+9. [STEP 1: AMR_NO_VAR] là AMR không biến: dùng dạng (concept ...), không dùng khai báo (x / concept).
+10. [STEP 2: AMR_WITH_VAR] là AMR đầy đủ có biến: dùng dạng (x / concept), biến duy nhất và chỉ tái sử dụng khi reentrancy.
 <|im_end|>
 <|im_start|>user
 ông hoàng nhỏ đi qua sa mạc và chỉ gặp có một bông hoa .
@@ -576,6 +621,9 @@ QUY TẮC:
 5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
 6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+8. Với MTUP2, output đúng hai phần theo thứ tự: [STEP 1: AMR_NO_VAR], rồi [STEP 2: AMR_WITH_VAR].
+9. [STEP 1: AMR_NO_VAR] là AMR không biến: dùng dạng (concept ...), không dùng khai báo (x / concept).
+10. [STEP 2: AMR_WITH_VAR] là AMR đầy đủ có biến: dùng dạng (x / concept), biến duy nhất và chỉ tái sử dụng khi reentrancy.
 <|im_end|>
 <|im_start|>user
 - chúc một ngày tốt lành , ông hoàng nhỏ nói .
@@ -611,6 +659,9 @@ QUY TẮC:
 5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
 6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+8. Với MTUP2, output đúng hai phần theo thứ tự: [STEP 1: AMR_NO_VAR], rồi [STEP 2: AMR_WITH_VAR].
+9. [STEP 1: AMR_NO_VAR] là AMR không biến: dùng dạng (concept ...), không dùng khai báo (x / concept).
+10. [STEP 2: AMR_WITH_VAR] là AMR đầy đủ có biến: dùng dạng (x / concept), biến duy nhất và chỉ tái sử dụng khi reentrancy.
 <|im_end|>
 <|im_start|>user
 gió thổi họ đi .
@@ -640,6 +691,9 @@ QUY TẮC:
 5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
 6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+8. Với MTUP2, output đúng hai phần theo thứ tự: [STEP 1: AMR_NO_VAR], rồi [STEP 2: AMR_WITH_VAR].
+9. [STEP 1: AMR_NO_VAR] là AMR không biến: dùng dạng (concept ...), không dùng khai báo (x / concept).
+10. [STEP 2: AMR_WITH_VAR] là AMR đầy đủ có biến: dùng dạng (x / concept), biến duy nhất và chỉ tái sử dụng khi reentrancy.
 <|im_end|>
 <|im_start|>user
 ông hoàng nhỏ trèo lên một quả núi cao .
@@ -677,6 +731,9 @@ QUY TẮC:
 5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
 6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+8. Với MTUP2, output đúng hai phần theo thứ tự: [STEP 1: AMR_NO_VAR], rồi [STEP 2: AMR_WITH_VAR].
+9. [STEP 1: AMR_NO_VAR] là AMR không biến: dùng dạng (concept ...), không dùng khai báo (x / concept).
+10. [STEP 2: AMR_WITH_VAR] là AMR đầy đủ có biến: dùng dạng (x / concept), biến duy nhất và chỉ tái sử dụng khi reentrancy.
 <|im_end|>
 <|im_start|>user
 chúc một ngày tốt lành !
@@ -706,6 +763,9 @@ QUY TẮC:
 5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
 6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+8. Với MTUP2, output đúng hai phần theo thứ tự: [STEP 1: AMR_NO_VAR], rồi [STEP 2: AMR_WITH_VAR].
+9. [STEP 1: AMR_NO_VAR] là AMR không biến: dùng dạng (concept ...), không dùng khai báo (x / concept).
+10. [STEP 2: AMR_WITH_VAR] là AMR đầy đủ có biến: dùng dạng (x / concept), biến duy nhất và chỉ tái sử dụng khi reentrancy.
 <|im_end|>
 <|im_start|>user
 và những con người thì thiếu hẳn óc tưởng tượng .
@@ -739,6 +799,9 @@ QUY TẮC:
 5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
 6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+8. Với MTUP2, output đúng hai phần theo thứ tự: [STEP 1: AMR_NO_VAR], rồi [STEP 2: AMR_WITH_VAR].
+9. [STEP 1: AMR_NO_VAR] là AMR không biến: dùng dạng (concept ...), không dùng khai báo (x / concept).
+10. [STEP 2: AMR_WITH_VAR] là AMR đầy đủ có biến: dùng dạng (x / concept), biến duy nhất và chỉ tái sử dụng khi reentrancy.
 <|im_end|>
 <|im_start|>user
 - các nàng là ai ?
@@ -766,6 +829,9 @@ QUY TẮC:
 5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
 6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+8. Với MTUP2, output đúng hai phần theo thứ tự: [STEP 1: AMR_NO_VAR], rồi [STEP 2: AMR_WITH_VAR].
+9. [STEP 1: AMR_NO_VAR] là AMR không biến: dùng dạng (concept ...), không dùng khai báo (x / concept).
+10. [STEP 2: AMR_WITH_VAR] là AMR đầy đủ có biến: dùng dạng (x / concept), biến duy nhất và chỉ tái sử dụng khi reentrancy.
 <|im_end|>
 <|im_start|>user
 đoá hoa của em đã kể với em rằng nàng là duy nhất trong giống nòi của nàng khắp trong vũ trụ .
@@ -811,6 +877,9 @@ QUY TẮC:
 5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
 6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+8. Với MTUP2, output đúng hai phần theo thứ tự: [STEP 1: AMR_NO_VAR], rồi [STEP 2: AMR_WITH_VAR].
+9. [STEP 1: AMR_NO_VAR] là AMR không biến: dùng dạng (concept ...), không dùng khai báo (x / concept).
+10. [STEP 2: AMR_WITH_VAR] là AMR đầy đủ có biến: dùng dạng (x / concept), biến duy nhất và chỉ tái sử dụng khi reentrancy.
 <|im_end|>
 <|im_start|>user
 - a !
@@ -836,6 +905,9 @@ QUY TẮC:
 5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
 6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+8. Với MTUP2, output đúng hai phần theo thứ tự: [STEP 1: AMR_NO_VAR], rồi [STEP 2: AMR_WITH_VAR].
+9. [STEP 1: AMR_NO_VAR] là AMR không biến: dùng dạng (concept ...), không dùng khai báo (x / concept).
+10. [STEP 2: AMR_WITH_VAR] là AMR đầy đủ có biến: dùng dạng (x / concept), biến duy nhất và chỉ tái sử dụng khi reentrancy.
 <|im_end|>
 <|im_start|>user
 - và khi ông đã nguôi rồi ( người ta bao giờ cũng nguôi đi ) , ông sẽ bằng lòng đã từng được quen biết tôi .
@@ -887,6 +959,9 @@ QUY TẮC:
 5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
 6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+8. Với MTUP2, output đúng hai phần theo thứ tự: [STEP 1: AMR_NO_VAR], rồi [STEP 2: AMR_WITH_VAR].
+9. [STEP 1: AMR_NO_VAR] là AMR không biến: dùng dạng (concept ...), không dùng khai báo (x / concept).
+10. [STEP 2: AMR_WITH_VAR] là AMR đầy đủ có biến: dùng dạng (x / concept), biến duy nhất và chỉ tái sử dụng khi reentrancy.
 <|im_end|>
 <|im_start|>user
 tôi sẽ có vẻ sắp chết .
@@ -916,6 +991,9 @@ QUY TẮC:
 5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
 6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+8. Với MTUP2, output đúng hai phần theo thứ tự: [STEP 1: AMR_NO_VAR], rồi [STEP 2: AMR_WITH_VAR].
+9. [STEP 1: AMR_NO_VAR] là AMR không biến: dùng dạng (concept ...), không dùng khai báo (x / concept).
+10. [STEP 2: AMR_WITH_VAR] là AMR đầy đủ có biến: dùng dạng (x / concept), biến duy nhất và chỉ tái sử dụng khi reentrancy.
 <|im_end|>
 <|im_start|>user
 - tôi nói với ông ... là tại vì con rắn đây .
@@ -951,6 +1029,9 @@ QUY TẮC:
 5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
 6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+8. Với MTUP2, output đúng hai phần theo thứ tự: [STEP 1: AMR_NO_VAR], rồi [STEP 2: AMR_WITH_VAR].
+9. [STEP 1: AMR_NO_VAR] là AMR không biến: dùng dạng (concept ...), không dùng khai báo (x / concept).
+10. [STEP 2: AMR_WITH_VAR] là AMR đầy đủ có biến: dùng dạng (x / concept), biến duy nhất và chỉ tái sử dụng khi reentrancy.
 <|im_end|>
 <|im_start|>user
 đêm ấy , tôi không trông thấy em bỏ đi .
@@ -992,6 +1073,9 @@ QUY TẮC:
 5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
 6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+8. Với MTUP2, output đúng hai phần theo thứ tự: [STEP 1: AMR_NO_VAR], rồi [STEP 2: AMR_WITH_VAR].
+9. [STEP 1: AMR_NO_VAR] là AMR không biến: dùng dạng (concept ...), không dùng khai báo (x / concept).
+10. [STEP 2: AMR_WITH_VAR] là AMR đầy đủ có biến: dùng dạng (x / concept), biến duy nhất và chỉ tái sử dụng khi reentrancy.
 <|im_end|>
 <|im_start|>user
 các ngôi sao sẽ là những cái giếng với một cái ròng rọc han rỉ .
@@ -1035,6 +1119,9 @@ QUY TẮC:
 5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
 6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+8. Với MTUP2, output đúng hai phần theo thứ tự: [STEP 1: AMR_NO_VAR], rồi [STEP 2: AMR_WITH_VAR].
+9. [STEP 1: AMR_NO_VAR] là AMR không biến: dùng dạng (concept ...), không dùng khai báo (x / concept).
+10. [STEP 2: AMR_WITH_VAR] là AMR đầy đủ có biến: dùng dạng (x / concept), biến duy nhất và chỉ tái sử dụng khi reentrancy.
 <|im_end|>
 <|im_start|>user
 em lưỡng lự một chút , rồi đứng lên .
@@ -1072,6 +1159,9 @@ QUY TẮC:
 5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
 6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+8. Với MTUP2, output đúng hai phần theo thứ tự: [STEP 1: AMR_NO_VAR], rồi [STEP 2: AMR_WITH_VAR].
+9. [STEP 1: AMR_NO_VAR] là AMR không biến: dùng dạng (concept ...), không dùng khai báo (x / concept).
+10. [STEP 2: AMR_WITH_VAR] là AMR đầy đủ có biến: dùng dạng (x / concept), biến duy nhất và chỉ tái sử dụng khi reentrancy.
 <|im_end|>
 <|im_start|>user
 nghĩa là ... không hẳn là như thế .
@@ -1101,6 +1191,9 @@ QUY TẮC:
 5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
 6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+8. Với MTUP2, output đúng hai phần theo thứ tự: [STEP 1: AMR_NO_VAR], rồi [STEP 2: AMR_WITH_VAR].
+9. [STEP 1: AMR_NO_VAR] là AMR không biến: dùng dạng (concept ...), không dùng khai báo (x / concept).
+10. [STEP 2: AMR_WITH_VAR] là AMR đầy đủ có biến: dùng dạng (x / concept), biến duy nhất và chỉ tái sử dụng khi reentrancy.
 <|im_end|>
 <|im_start|>user
 khi thì tôi tự nhủ : " chắc là không !
@@ -1132,6 +1225,9 @@ QUY TẮC:
 5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
 6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+8. Với MTUP2, output đúng hai phần theo thứ tự: [STEP 1: AMR_NO_VAR], rồi [STEP 2: AMR_WITH_VAR].
+9. [STEP 1: AMR_NO_VAR] là AMR không biến: dùng dạng (concept ...), không dùng khai báo (x / concept).
+10. [STEP 2: AMR_WITH_VAR] là AMR đầy đủ có biến: dùng dạng (x / concept), biến duy nhất và chỉ tái sử dụng khi reentrancy.
 <|im_end|>
 <|im_start|>user
 nhưng cái hoạ baobab còn ít người biết quá , mà những nguy hiểm mà một cậu bé một mai lạc vào một tiểu tinh cầu sẽ gặp phải thì rất là đáng kể , cho nên , chỉ một lần thôi , tôi làm khác với nguyên tắc của tôi .
@@ -1215,6 +1311,9 @@ QUY TẮC:
 5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
 6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+8. Với MTUP2, output đúng hai phần theo thứ tự: [STEP 1: AMR_NO_VAR], rồi [STEP 2: AMR_WITH_VAR].
+9. [STEP 1: AMR_NO_VAR] là AMR không biến: dùng dạng (concept ...), không dùng khai báo (x / concept).
+10. [STEP 2: AMR_WITH_VAR] là AMR đầy đủ có biến: dùng dạng (x / concept), biến duy nhất và chỉ tái sử dụng khi reentrancy.
 <|im_end|>
 <|im_start|>user
 khi vẽ cây baobab , tôi bị thôi thúc bởi một tình cảm cấp bách .
@@ -1254,6 +1353,9 @@ QUY TẮC:
 5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
 6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+8. Với MTUP2, output đúng hai phần theo thứ tự: [STEP 1: AMR_NO_VAR], rồi [STEP 2: AMR_WITH_VAR].
+9. [STEP 1: AMR_NO_VAR] là AMR không biến: dùng dạng (concept ...), không dùng khai báo (x / concept).
+10. [STEP 2: AMR_WITH_VAR] là AMR đầy đủ có biến: dùng dạng (x / concept), biến duy nhất và chỉ tái sử dụng khi reentrancy.
 <|im_end|>
 <|im_start|>user
 thoạt nhiên em có vẻ kinh ngạc , và rồi em tự cười mình .
@@ -1287,6 +1389,9 @@ QUY TẮC:
 5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
 6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+8. Với MTUP2, output đúng hai phần theo thứ tự: [STEP 1: AMR_NO_VAR], rồi [STEP 2: AMR_WITH_VAR].
+9. [STEP 1: AMR_NO_VAR] là AMR không biến: dùng dạng (concept ...), không dùng khai báo (x / concept).
+10. [STEP 2: AMR_WITH_VAR] là AMR đầy đủ có biến: dùng dạng (x / concept), biến duy nhất và chỉ tái sử dụng khi reentrancy.
 <|im_end|>
 <|im_start|>user
 ông hoàng nhỏ lại làm sao lãng những suy nghĩ của tôi :
@@ -1320,6 +1425,9 @@ QUY TẮC:
 5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
 6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+8. Với MTUP2, output đúng hai phần theo thứ tự: [STEP 1: AMR_NO_VAR], rồi [STEP 2: AMR_WITH_VAR].
+9. [STEP 1: AMR_NO_VAR] là AMR không biến: dùng dạng (concept ...), không dùng khai báo (x / concept).
+10. [STEP 2: AMR_WITH_VAR] là AMR đầy đủ có biến: dùng dạng (x / concept), biến duy nhất và chỉ tái sử dụng khi reentrancy.
 <|im_end|>
 <|im_start|>user
 tôi trả lời đại thế thôi .
@@ -1347,6 +1455,9 @@ QUY TẮC:
 5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
 6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+8. Với MTUP2, output đúng hai phần theo thứ tự: [STEP 1: AMR_NO_VAR], rồi [STEP 2: AMR_WITH_VAR].
+9. [STEP 1: AMR_NO_VAR] là AMR không biến: dùng dạng (concept ...), không dùng khai báo (x / concept).
+10. [STEP 2: AMR_WITH_VAR] là AMR đầy đủ có biến: dùng dạng (x / concept), biến duy nhất và chỉ tái sử dụng khi reentrancy.
 <|im_end|>
 <|im_start|>user
 tôi có biết một tinh cầu , trên ấy có một gã lười .
@@ -1384,6 +1495,9 @@ QUY TẮC:
 5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
 6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+8. Với MTUP2, output đúng hai phần theo thứ tự: [STEP 1: AMR_NO_VAR], rồi [STEP 2: AMR_WITH_VAR].
+9. [STEP 1: AMR_NO_VAR] là AMR không biến: dùng dạng (concept ...), không dùng khai báo (x / concept).
+10. [STEP 2: AMR_WITH_VAR] là AMR đầy đủ có biến: dùng dạng (x / concept), biến duy nhất và chỉ tái sử dụng khi reentrancy.
 <|im_end|>
 <|im_start|>user
 em nghẹn ngào không nói được nữa .
@@ -1419,6 +1533,9 @@ QUY TẮC:
 5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
 6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+8. Với MTUP2, output đúng hai phần theo thứ tự: [STEP 1: AMR_NO_VAR], rồi [STEP 2: AMR_WITH_VAR].
+9. [STEP 1: AMR_NO_VAR] là AMR không biến: dùng dạng (concept ...), không dùng khai báo (x / concept).
+10. [STEP 2: AMR_WITH_VAR] là AMR đầy đủ có biến: dùng dạng (x / concept), biến duy nhất và chỉ tái sử dụng khi reentrancy.
 <|im_end|>
 <|im_start|>user
 tôi ôm em trong vòng tay .
@@ -1452,6 +1569,9 @@ QUY TẮC:
 5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
 6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+8. Với MTUP2, output đúng hai phần theo thứ tự: [STEP 1: AMR_NO_VAR], rồi [STEP 2: AMR_WITH_VAR].
+9. [STEP 1: AMR_NO_VAR] là AMR không biến: dùng dạng (concept ...), không dùng khai báo (x / concept).
+10. [STEP 2: AMR_WITH_VAR] là AMR đầy đủ có biến: dùng dạng (x / concept), biến duy nhất và chỉ tái sử dụng khi reentrancy.
 <|im_end|>
 <|im_start|>user
 hoa không muốn hiện ra nhàu nát như cái mồng gà .
@@ -1493,6 +1613,9 @@ QUY TẮC:
 5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
 6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+8. Với MTUP2, output đúng hai phần theo thứ tự: [STEP 1: AMR_NO_VAR], rồi [STEP 2: AMR_WITH_VAR].
+9. [STEP 1: AMR_NO_VAR] là AMR không biến: dùng dạng (concept ...), không dùng khai báo (x / concept).
+10. [STEP 2: AMR_WITH_VAR] là AMR đầy đủ có biến: dùng dạng (x / concept), biến duy nhất và chỉ tái sử dụng khi reentrancy.
 <|im_end|>
 <|im_start|>user
 - ôi ! em chỉ vừa thức dậy ... em xinlỗi anh ...
@@ -1534,6 +1657,9 @@ QUY TẮC:
 5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
 6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+8. Với MTUP2, output đúng hai phần theo thứ tự: [STEP 1: AMR_NO_VAR], rồi [STEP 2: AMR_WITH_VAR].
+9. [STEP 1: AMR_NO_VAR] là AMR không biến: dùng dạng (concept ...), không dùng khai báo (x / concept).
+10. [STEP 2: AMR_WITH_VAR] là AMR đầy đủ có biến: dùng dạng (x / concept), biến duy nhất và chỉ tái sử dụng khi reentrancy.
 <|im_end|>
 <|im_start|>user
 ông hoàng nhỏ biết ngay cô nàng không lấy gì làm khiêm tốn lắm , nhưng nàng thật là dễ thương !
@@ -1581,6 +1707,9 @@ QUY TẮC:
 5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
 6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+8. Với MTUP2, output đúng hai phần theo thứ tự: [STEP 1: AMR_NO_VAR], rồi [STEP 2: AMR_WITH_VAR].
+9. [STEP 1: AMR_NO_VAR] là AMR không biến: dùng dạng (concept ...), không dùng khai báo (x / concept).
+10. [STEP 2: AMR_WITH_VAR] là AMR đầy đủ có biến: dùng dạng (x / concept), biến duy nhất và chỉ tái sử dụng khi reentrancy.
 <|im_end|>
 <|im_start|>user
 - xin lỗi ...
@@ -1604,6 +1733,9 @@ QUY TẮC:
 5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
 6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+8. Với MTUP2, output đúng hai phần theo thứ tự: [STEP 1: AMR_NO_VAR], rồi [STEP 2: AMR_WITH_VAR].
+9. [STEP 1: AMR_NO_VAR] là AMR không biến: dùng dạng (concept ...), không dùng khai báo (x / concept).
+10. [STEP 2: AMR_WITH_VAR] là AMR đầy đủ có biến: dùng dạng (x / concept), biến duy nhất và chỉ tái sử dụng khi reentrancy.
 <|im_end|>
 <|im_start|>user
 cô nàng này thật phức tạp ... "
@@ -1635,6 +1767,9 @@ QUY TẮC:
 5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
 6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+8. Với MTUP2, output đúng hai phần theo thứ tự: [STEP 1: AMR_NO_VAR], rồi [STEP 2: AMR_WITH_VAR].
+9. [STEP 1: AMR_NO_VAR] là AMR không biến: dùng dạng (concept ...), không dùng khai báo (x / concept).
+10. [STEP 2: AMR_WITH_VAR] là AMR đầy đủ có biến: dùng dạng (x / concept), biến duy nhất và chỉ tái sử dụng khi reentrancy.
 <|im_end|>
 <|im_start|>user
 chỗ anh rét lắm .
@@ -1664,6 +1799,9 @@ QUY TẮC:
 5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
 6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+8. Với MTUP2, output đúng hai phần theo thứ tự: [STEP 1: AMR_NO_VAR], rồi [STEP 2: AMR_WITH_VAR].
+9. [STEP 1: AMR_NO_VAR] là AMR không biến: dùng dạng (concept ...), không dùng khai báo (x / concept).
+10. [STEP 2: AMR_WITH_VAR] là AMR đầy đủ có biến: dùng dạng (x / concept), biến duy nhất và chỉ tái sử dụng khi reentrancy.
 <|im_end|>
 <|im_start|>user
 nên em cũng nạo vét cả quả núi lửa đã tắt nữa .
@@ -1697,6 +1835,9 @@ QUY TẮC:
 5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
 6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+8. Với MTUP2, output đúng hai phần theo thứ tự: [STEP 1: AMR_NO_VAR], rồi [STEP 2: AMR_WITH_VAR].
+9. [STEP 1: AMR_NO_VAR] là AMR không biến: dùng dạng (concept ...), không dùng khai báo (x / concept).
+10. [STEP 2: AMR_WITH_VAR] là AMR đầy đủ có biến: dùng dạng (x / concept), biến duy nhất và chỉ tái sử dụng khi reentrancy.
 <|im_end|>
 <|im_start|>user
 nhưng mọi việc quen thuộc này buổi sáng hôm nay sao đối với em thật vô cùng êm đềm .
@@ -1740,6 +1881,9 @@ QUY TẮC:
 5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
 6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+8. Với MTUP2, output đúng hai phần theo thứ tự: [STEP 1: AMR_NO_VAR], rồi [STEP 2: AMR_WITH_VAR].
+9. [STEP 1: AMR_NO_VAR] là AMR không biến: dùng dạng (concept ...), không dùng khai báo (x / concept).
+10. [STEP 2: AMR_WITH_VAR] là AMR đầy đủ có biến: dùng dạng (x / concept), biến duy nhất và chỉ tái sử dụng khi reentrancy.
 <|im_end|>
 <|im_start|>user
 anh sẽ đi xa .
@@ -1769,6 +1913,9 @@ QUY TẮC:
 5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
 6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+8. Với MTUP2, output đúng hai phần theo thứ tự: [STEP 1: AMR_NO_VAR], rồi [STEP 2: AMR_WITH_VAR].
+9. [STEP 1: AMR_NO_VAR] là AMR không biến: dùng dạng (concept ...), không dùng khai báo (x / concept).
+10. [STEP 2: AMR_WITH_VAR] là AMR đầy đủ có biến: dùng dạng (x / concept), biến duy nhất và chỉ tái sử dụng khi reentrancy.
 <|im_end|>
 <|im_start|>user
 - đừng chần chờ như vậy nữa , khó chịu lắm .
@@ -1798,6 +1945,9 @@ QUY TẮC:
 5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
 6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+8. Với MTUP2, output đúng hai phần theo thứ tự: [STEP 1: AMR_NO_VAR], rồi [STEP 2: AMR_WITH_VAR].
+9. [STEP 1: AMR_NO_VAR] là AMR không biến: dùng dạng (concept ...), không dùng khai báo (x / concept).
+10. [STEP 2: AMR_WITH_VAR] là AMR đầy đủ có biến: dùng dạng (x / concept), biến duy nhất và chỉ tái sử dụng khi reentrancy.
 <|im_end|>
 <|im_start|>user
 - thế thì , vua phán , ta ra lệnh cho ngươi ngáp .
@@ -1831,6 +1981,9 @@ QUY TẮC:
 5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
 6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+8. Với MTUP2, output đúng hai phần theo thứ tự: [STEP 1: AMR_NO_VAR], rồi [STEP 2: AMR_WITH_VAR].
+9. [STEP 1: AMR_NO_VAR] là AMR không biến: dùng dạng (concept ...), không dùng khai báo (x / concept).
+10. [STEP 2: AMR_WITH_VAR] là AMR đầy đủ có biến: dùng dạng (x / concept), biến duy nhất và chỉ tái sử dụng khi reentrancy.
 <|im_end|>
 <|im_start|>user
 ngươi ngáp nữa đi .
@@ -1858,6 +2011,9 @@ QUY TẮC:
 5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
 6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+8. Với MTUP2, output đúng hai phần theo thứ tự: [STEP 1: AMR_NO_VAR], rồi [STEP 2: AMR_WITH_VAR].
+9. [STEP 1: AMR_NO_VAR] là AMR không biến: dùng dạng (concept ...), không dùng khai báo (x / concept).
+10. [STEP 2: AMR_WITH_VAR] là AMR đầy đủ có biến: dùng dạng (x / concept), biến duy nhất và chỉ tái sử dụng khi reentrancy.
 <|im_end|>
 <|im_start|>user
 nhưng , vì ngài rất tốt bụng , nên chỉ ra những cái lệnh hợp lý thôi .
@@ -1897,6 +2053,9 @@ QUY TẮC:
 5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
 6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+8. Với MTUP2, output đúng hai phần theo thứ tự: [STEP 1: AMR_NO_VAR], rồi [STEP 2: AMR_WITH_VAR].
+9. [STEP 1: AMR_NO_VAR] là AMR không biến: dùng dạng (concept ...), không dùng khai báo (x / concept).
+10. [STEP 2: AMR_WITH_VAR] là AMR đầy đủ có biến: dùng dạng (x / concept), biến duy nhất và chỉ tái sử dụng khi reentrancy.
 <|im_end|>
 <|im_start|>user
 thứ nước này còn là một cái gì khác hơn mọi thứ nước uống .
@@ -1938,6 +2097,9 @@ QUY TẮC:
 5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
 6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+8. Với MTUP2, output đúng hai phần theo thứ tự: [STEP 1: AMR_NO_VAR], rồi [STEP 2: AMR_WITH_VAR].
+9. [STEP 1: AMR_NO_VAR] là AMR không biến: dùng dạng (concept ...), không dùng khai báo (x / concept).
+10. [STEP 2: AMR_WITH_VAR] là AMR đầy đủ có biến: dùng dạng (x / concept), biến duy nhất và chỉ tái sử dụng khi reentrancy.
 <|im_end|>
 <|im_start|>user
 - loài người nơi ông , ông hoàng nhỏ nói , trồng năm nghìn hoa hồng cũng trong một khu vườn ... thế mà họ chẳng tìm thấy cái họ tìm ...
@@ -2001,6 +2163,9 @@ QUY TẮC:
 5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
 6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+8. Với MTUP2, output đúng hai phần theo thứ tự: [STEP 1: AMR_NO_VAR], rồi [STEP 2: AMR_WITH_VAR].
+9. [STEP 1: AMR_NO_VAR] là AMR không biến: dùng dạng (concept ...), không dùng khai báo (x / concept).
+10. [STEP 2: AMR_WITH_VAR] là AMR đầy đủ có biến: dùng dạng (x / concept), biến duy nhất và chỉ tái sử dụng khi reentrancy.
 <|im_end|>
 <|im_start|>user
 vào lúc tinh mơ , cát một màu mật ong .
@@ -2038,6 +2203,9 @@ QUY TẮC:
 5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
 6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+8. Với MTUP2, output đúng hai phần theo thứ tự: [STEP 1: AMR_NO_VAR], rồi [STEP 2: AMR_WITH_VAR].
+9. [STEP 1: AMR_NO_VAR] là AMR không biến: dùng dạng (concept ...), không dùng khai báo (x / concept).
+10. [STEP 2: AMR_WITH_VAR] là AMR đầy đủ có biến: dùng dạng (x / concept), biến duy nhất và chỉ tái sử dụng khi reentrancy.
 <|im_end|>
 <|im_start|>user
 hai tai nó ... trông giống như hai cái sừng ... và lại dài quá !
@@ -2087,6 +2255,9 @@ QUY TẮC:
 5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
 6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+8. Với MTUP2, output đúng hai phần theo thứ tự: [STEP 1: AMR_NO_VAR], rồi [STEP 2: AMR_WITH_VAR].
+9. [STEP 1: AMR_NO_VAR] là AMR không biến: dùng dạng (concept ...), không dùng khai báo (x / concept).
+10. [STEP 2: AMR_WITH_VAR] là AMR đầy đủ có biến: dùng dạng (x / concept), biến duy nhất và chỉ tái sử dụng khi reentrancy.
 <|im_end|>
 <|im_start|>user
 thế là tôi dùng bút chì phác một cái rọ mõm .
@@ -2122,6 +2293,9 @@ QUY TẮC:
 5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
 6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+8. Với MTUP2, output đúng hai phần theo thứ tự: [STEP 1: AMR_NO_VAR], rồi [STEP 2: AMR_WITH_VAR].
+9. [STEP 1: AMR_NO_VAR] là AMR không biến: dùng dạng (concept ...), không dùng khai báo (x / concept).
+10. [STEP 2: AMR_WITH_VAR] là AMR đầy đủ có biến: dùng dạng (x / concept), biến duy nhất và chỉ tái sử dụng khi reentrancy.
 <|im_end|>
 <|im_start|>user
 em bảo tôi :
@@ -2149,6 +2323,9 @@ QUY TẮC:
 5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
 6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+8. Với MTUP2, output đúng hai phần theo thứ tự: [STEP 1: AMR_NO_VAR], rồi [STEP 2: AMR_WITH_VAR].
+9. [STEP 1: AMR_NO_VAR] là AMR không biến: dùng dạng (concept ...), không dùng khai báo (x / concept).
+10. [STEP 2: AMR_WITH_VAR] là AMR đầy đủ có biến: dùng dạng (x / concept), biến duy nhất và chỉ tái sử dụng khi reentrancy.
 <|im_end|>
 <|im_start|>user
 - tôi rơi xuống ngay gần đây ...
@@ -2182,6 +2359,9 @@ QUY TẮC:
 5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
 6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+8. Với MTUP2, output đúng hai phần theo thứ tự: [STEP 1: AMR_NO_VAR], rồi [STEP 2: AMR_WITH_VAR].
+9. [STEP 1: AMR_NO_VAR] là AMR không biến: dùng dạng (concept ...), không dùng khai báo (x / concept).
+10. [STEP 2: AMR_WITH_VAR] là AMR đầy đủ có biến: dùng dạng (x / concept), biến duy nhất và chỉ tái sử dụng khi reentrancy.
 <|im_end|>
 <|im_start|>user
 - a , tôi nói , tôi sợ ...
@@ -2217,6 +2397,9 @@ QUY TẮC:
 5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
 6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+8. Với MTUP2, output đúng hai phần theo thứ tự: [STEP 1: AMR_NO_VAR], rồi [STEP 2: AMR_WITH_VAR].
+9. [STEP 1: AMR_NO_VAR] là AMR không biến: dùng dạng (concept ...), không dùng khai báo (x / concept).
+10. [STEP 2: AMR_WITH_VAR] là AMR đầy đủ có biến: dùng dạng (x / concept), biến duy nhất và chỉ tái sử dụng khi reentrancy.
 <|im_end|>
 <|im_start|>user
 không phải là chỗ này đâu !
@@ -2246,6 +2429,9 @@ QUY TẮC:
 5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
 6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+8. Với MTUP2, output đúng hai phần theo thứ tự: [STEP 1: AMR_NO_VAR], rồi [STEP 2: AMR_WITH_VAR].
+9. [STEP 1: AMR_NO_VAR] là AMR không biến: dùng dạng (concept ...), không dùng khai báo (x / concept).
+10. [STEP 2: AMR_WITH_VAR] là AMR đầy đủ có biến: dùng dạng (x / concept), biến duy nhất và chỉ tái sử dụng khi reentrancy.
 <|im_end|>
 <|im_start|>user
 tôi vẫn không nhìn thấy , cũng chẳng nghe thấy ai .
@@ -2289,6 +2475,9 @@ QUY TẮC:
 5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
 6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+8. Với MTUP2, output đúng hai phần theo thứ tự: [STEP 1: AMR_NO_VAR], rồi [STEP 2: AMR_WITH_VAR].
+9. [STEP 1: AMR_NO_VAR] là AMR không biến: dùng dạng (concept ...), không dùng khai báo (x / concept).
+10. [STEP 2: AMR_WITH_VAR] là AMR đầy đủ có biến: dùng dạng (x / concept), biến duy nhất và chỉ tái sử dụng khi reentrancy.
 <|im_end|>
 <|im_start|>user
 - thôi bây giờ hãy đi đi , em nói .
@@ -2320,6 +2509,9 @@ QUY TẮC:
 5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
 6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+8. Với MTUP2, output đúng hai phần theo thứ tự: [STEP 1: AMR_NO_VAR], rồi [STEP 2: AMR_WITH_VAR].
+9. [STEP 1: AMR_NO_VAR] là AMR không biến: dùng dạng (concept ...), không dùng khai báo (x / concept).
+10. [STEP 2: AMR_WITH_VAR] là AMR đầy đủ có biến: dùng dạng (x / concept), biến duy nhất và chỉ tái sử dụng khi reentrancy.
 <|im_end|>
 <|im_start|>user
 tôi tháo chiếc khăn vàng kim bao giờ cũng khoác ở cổ em .
@@ -2365,6 +2557,9 @@ QUY TẮC:
 5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
 6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+8. Với MTUP2, output đúng hai phần theo thứ tự: [STEP 1: AMR_NO_VAR], rồi [STEP 2: AMR_WITH_VAR].
+9. [STEP 1: AMR_NO_VAR] là AMR không biến: dùng dạng (concept ...), không dùng khai báo (x / concept).
+10. [STEP 2: AMR_WITH_VAR] là AMR đầy đủ có biến: dùng dạng (x / concept), biến duy nhất và chỉ tái sử dụng khi reentrancy.
 <|im_end|>
 <|im_start|>user
 tôi nghe tiếng tim em đập như tiếng đập của một con chim sắp chết , khi bị trúng đạn súng săn .
@@ -2426,6 +2621,9 @@ QUY TẮC:
 5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
 6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+8. Với MTUP2, output đúng hai phần theo thứ tự: [STEP 1: AMR_NO_VAR], rồi [STEP 2: AMR_WITH_VAR].
+9. [STEP 1: AMR_NO_VAR] là AMR không biến: dùng dạng (concept ...), không dùng khai báo (x / concept).
+10. [STEP 2: AMR_WITH_VAR] là AMR đầy đủ có biến: dùng dạng (x / concept), biến duy nhất và chỉ tái sử dụng khi reentrancy.
 <|im_end|>
 <|im_start|>user
 - sao em biết ?
@@ -2453,6 +2651,9 @@ QUY TẮC:
 5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
 6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+8. Với MTUP2, output đúng hai phần theo thứ tự: [STEP 1: AMR_NO_VAR], rồi [STEP 2: AMR_WITH_VAR].
+9. [STEP 1: AMR_NO_VAR] là AMR không biến: dùng dạng (concept ...), không dùng khai báo (x / concept).
+10. [STEP 2: AMR_WITH_VAR] là AMR đầy đủ có biến: dùng dạng (x / concept), biến duy nhất và chỉ tái sử dụng khi reentrancy.
 <|im_end|>
 <|im_start|>user
 rồi , giọng ngậm ngùi :
@@ -2478,6 +2679,9 @@ QUY TẮC:
 5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
 6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+8. Với MTUP2, output đúng hai phần theo thứ tự: [STEP 1: AMR_NO_VAR], rồi [STEP 2: AMR_WITH_VAR].
+9. [STEP 1: AMR_NO_VAR] là AMR không biến: dùng dạng (concept ...), không dùng khai báo (x / concept).
+10. [STEP 2: AMR_WITH_VAR] là AMR đầy đủ có biến: dùng dạng (x / concept), biến duy nhất và chỉ tái sử dụng khi reentrancy.
 <|im_end|>
 <|im_start|>user
 ánh mắt em nghiêm nghị , mất hút vào một nơi rất xa :
@@ -2523,6 +2727,9 @@ QUY TẮC:
 5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
 6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+8. Với MTUP2, output đúng hai phần theo thứ tự: [STEP 1: AMR_NO_VAR], rồi [STEP 2: AMR_WITH_VAR].
+9. [STEP 1: AMR_NO_VAR] là AMR không biến: dùng dạng (concept ...), không dùng khai báo (x / concept).
+10. [STEP 2: AMR_WITH_VAR] là AMR đầy đủ có biến: dùng dạng (x / concept), biến duy nhất và chỉ tái sử dụng khi reentrancy.
 <|im_end|>
 <|im_start|>user
 em có sợ hãi , đúng rồi !
@@ -2554,6 +2761,9 @@ QUY TẮC:
 5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
 6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+8. Với MTUP2, output đúng hai phần theo thứ tự: [STEP 1: AMR_NO_VAR], rồi [STEP 2: AMR_WITH_VAR].
+9. [STEP 1: AMR_NO_VAR] là AMR không biến: dùng dạng (concept ...), không dùng khai báo (x / concept).
+10. [STEP 2: AMR_WITH_VAR] là AMR đầy đủ có biến: dùng dạng (x / concept), biến duy nhất và chỉ tái sử dụng khi reentrancy.
 <|im_end|>
 <|im_start|>user
 nhưng em cười dịu dàng :
@@ -2583,6 +2793,9 @@ QUY TẮC:
 5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
 6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+8. Với MTUP2, output đúng hai phần theo thứ tự: [STEP 1: AMR_NO_VAR], rồi [STEP 2: AMR_WITH_VAR].
+9. [STEP 1: AMR_NO_VAR] là AMR không biến: dùng dạng (concept ...), không dùng khai báo (x / concept).
+10. [STEP 2: AMR_WITH_VAR] là AMR đầy đủ có biến: dùng dạng (x / concept), biến duy nhất và chỉ tái sử dụng khi reentrancy.
 <|im_end|>
 <|im_start|>user
 nhưng em không trả lời câu tôi hỏi .
@@ -2614,6 +2827,9 @@ QUY TẮC:
 5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
 6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+8. Với MTUP2, output đúng hai phần theo thứ tự: [STEP 1: AMR_NO_VAR], rồi [STEP 2: AMR_WITH_VAR].
+9. [STEP 1: AMR_NO_VAR] là AMR không biến: dùng dạng (concept ...), không dùng khai báo (x / concept).
+10. [STEP 2: AMR_WITH_VAR] là AMR đầy đủ có biến: dùng dạng (x / concept), biến duy nhất và chỉ tái sử dụng khi reentrancy.
 <|im_end|>
 <|im_start|>user
 nhưng chắc chắn rằng đối với bọn ta là những người hiểu đời , chúng ta cóc cần những con số !
@@ -2657,6 +2873,9 @@ QUY TẮC:
 5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
 6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+8. Với MTUP2, output đúng hai phần theo thứ tự: [STEP 1: AMR_NO_VAR], rồi [STEP 2: AMR_WITH_VAR].
+9. [STEP 1: AMR_NO_VAR] là AMR không biến: dùng dạng (concept ...), không dùng khai báo (x / concept).
+10. [STEP 2: AMR_WITH_VAR] là AMR đầy đủ có biến: dùng dạng (x / concept), biến duy nhất và chỉ tái sử dụng khi reentrancy.
 <|im_end|>
 <|im_start|>user
 tôi lại cũng có sai lầm về tầm vóc .
@@ -2688,6 +2907,9 @@ QUY TẮC:
 5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
 6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+8. Với MTUP2, output đúng hai phần theo thứ tự: [STEP 1: AMR_NO_VAR], rồi [STEP 2: AMR_WITH_VAR].
+9. [STEP 1: AMR_NO_VAR] là AMR không biến: dùng dạng (concept ...), không dùng khai báo (x / concept).
+10. [STEP 2: AMR_WITH_VAR] là AMR đầy đủ có biến: dùng dạng (x / concept), biến duy nhất và chỉ tái sử dụng khi reentrancy.
 <|im_end|>
 <|im_start|>user
 tôi cứ lần mò như thế này rồi như thế khác , khi được khi không .
@@ -2729,6 +2951,9 @@ QUY TẮC:
 5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
 6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+8. Với MTUP2, output đúng hai phần theo thứ tự: [STEP 1: AMR_NO_VAR], rồi [STEP 2: AMR_WITH_VAR].
+9. [STEP 1: AMR_NO_VAR] là AMR không biến: dùng dạng (concept ...), không dùng khai báo (x / concept).
+10. [STEP 2: AMR_WITH_VAR] là AMR đầy đủ có biến: dùng dạng (x / concept), biến duy nhất và chỉ tái sử dụng khi reentrancy.
 <|im_end|>
 <|im_start|>user
 có lẽ tôi hơi giống những người lớn rồi .
@@ -2760,6 +2985,9 @@ QUY TẮC:
 5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
 6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+8. Với MTUP2, output đúng hai phần theo thứ tự: [STEP 1: AMR_NO_VAR], rồi [STEP 2: AMR_WITH_VAR].
+9. [STEP 1: AMR_NO_VAR] là AMR không biến: dùng dạng (concept ...), không dùng khai báo (x / concept).
+10. [STEP 2: AMR_WITH_VAR] là AMR đầy đủ có biến: dùng dạng (x / concept), biến duy nhất và chỉ tái sử dụng khi reentrancy.
 <|im_end|>
 <|im_start|>user
 - có thật đúng là con cừu ăn những bụi cây con không ?
@@ -2799,6 +3027,9 @@ QUY TẮC:
 5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
 6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+8. Với MTUP2, output đúng hai phần theo thứ tự: [STEP 1: AMR_NO_VAR], rồi [STEP 2: AMR_WITH_VAR].
+9. [STEP 1: AMR_NO_VAR] là AMR không biến: dùng dạng (concept ...), không dùng khai báo (x / concept).
+10. [STEP 2: AMR_WITH_VAR] là AMR đầy đủ có biến: dùng dạng (x / concept), biến duy nhất và chỉ tái sử dụng khi reentrancy.
 <|im_end|>
 <|im_start|>user
 ý nghĩ về đàn voi làm cho ông hoàng nhỏ bật cười :
@@ -2836,6 +3067,9 @@ QUY TẮC:
 5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
 6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+8. Với MTUP2, output đúng hai phần theo thứ tự: [STEP 1: AMR_NO_VAR], rồi [STEP 2: AMR_WITH_VAR].
+9. [STEP 1: AMR_NO_VAR] là AMR không biến: dùng dạng (concept ...), không dùng khai báo (x / concept).
+10. [STEP 2: AMR_WITH_VAR] là AMR đầy đủ có biến: dùng dạng (x / concept), biến duy nhất và chỉ tái sử dụng khi reentrancy.
 <|im_end|>
 <|im_start|>user
 nguyên là , trên hành tinh của ông hoàng nhỏ , cũng như trên mọi hành tinh khác , đều có những loại cỏ tốt và những loại cỏ xấu .
@@ -2893,6 +3127,9 @@ QUY TẮC:
 5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
 6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+8. Với MTUP2, output đúng hai phần theo thứ tự: [STEP 1: AMR_NO_VAR], rồi [STEP 2: AMR_WITH_VAR].
+9. [STEP 1: AMR_NO_VAR] là AMR không biến: dùng dạng (concept ...), không dùng khai báo (x / concept).
+10. [STEP 2: AMR_WITH_VAR] là AMR đầy đủ có biến: dùng dạng (x / concept), biến duy nhất và chỉ tái sử dụng khi reentrancy.
 <|im_end|>
 <|im_start|>user
 nếu là nhánh dưa hay một nhánh hồng , ta có thể muốn để cho nó mọc thế nào tuỳ ý .
@@ -2940,6 +3177,9 @@ QUY TẮC:
 5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
 6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+8. Với MTUP2, output đúng hai phần theo thứ tự: [STEP 1: AMR_NO_VAR], rồi [STEP 2: AMR_WITH_VAR].
+9. [STEP 1: AMR_NO_VAR] là AMR không biến: dùng dạng (concept ...), không dùng khai báo (x / concept).
+10. [STEP 2: AMR_WITH_VAR] là AMR đầy đủ có biến: dùng dạng (x / concept), biến duy nhất và chỉ tái sử dụng khi reentrancy.
 <|im_end|>
 <|im_start|>user
 nhưng nếu là một cây xấu , ngay khi nhận ra là phải nhổ ngay .
@@ -2981,6 +3221,9 @@ QUY TẮC:
 5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
 6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+8. Với MTUP2, output đúng hai phần theo thứ tự: [STEP 1: AMR_NO_VAR], rồi [STEP 2: AMR_WITH_VAR].
+9. [STEP 1: AMR_NO_VAR] là AMR không biến: dùng dạng (concept ...), không dùng khai báo (x / concept).
+10. [STEP 2: AMR_WITH_VAR] là AMR đầy đủ có biến: dùng dạng (x / concept), biến duy nhất và chỉ tái sử dụng khi reentrancy.
 <|im_end|>
 <|im_start|>user
 nó vẽ một con trăn đang nằm chờ tiêu hoá một con voi .
@@ -3030,6 +3273,9 @@ QUY TẮC:
 5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
 6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+8. Với MTUP2, output đúng hai phần theo thứ tự: [STEP 1: AMR_NO_VAR], rồi [STEP 2: AMR_WITH_VAR].
+9. [STEP 1: AMR_NO_VAR] là AMR không biến: dùng dạng (concept ...), không dùng khai báo (x / concept).
+10. [STEP 2: AMR_WITH_VAR] là AMR đầy đủ có biến: dùng dạng (x / concept), biến duy nhất và chỉ tái sử dụng khi reentrancy.
 <|im_end|>
 <|im_start|>user
 cái đó thật là ích lợi nếu như người ta bay lạc đường trong đêm tối .
@@ -3073,6 +3319,9 @@ QUY TẮC:
 5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
 6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+8. Với MTUP2, output đúng hai phần theo thứ tự: [STEP 1: AMR_NO_VAR], rồi [STEP 2: AMR_WITH_VAR].
+9. [STEP 1: AMR_NO_VAR] là AMR không biến: dùng dạng (concept ...), không dùng khai báo (x / concept).
+10. [STEP 2: AMR_WITH_VAR] là AMR đầy đủ có biến: dùng dạng (x / concept), biến duy nhất và chỉ tái sử dụng khi reentrancy.
 <|im_end|>
 <|im_start|>user
 nhưng cái đó chẳng làm thay đổi ý kiến của tôi bao nhiêu .
@@ -3114,6 +3363,9 @@ QUY TẮC:
 5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
 6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+8. Với MTUP2, output đúng hai phần theo thứ tự: [STEP 1: AMR_NO_VAR], rồi [STEP 2: AMR_WITH_VAR].
+9. [STEP 1: AMR_NO_VAR] là AMR không biến: dùng dạng (concept ...), không dùng khai báo (x / concept).
+10. [STEP 2: AMR_WITH_VAR] là AMR đầy đủ có biến: dùng dạng (x / concept), biến duy nhất và chỉ tái sử dụng khi reentrancy.
 <|im_end|>
 <|im_start|>user
 tôi chỉ có đủ nước để uống trong nhiều nhất là tám ngày .
@@ -3159,6 +3411,9 @@ QUY TẮC:
 5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
 6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+8. Với MTUP2, output đúng hai phần theo thứ tự: [STEP 1: AMR_NO_VAR], rồi [STEP 2: AMR_WITH_VAR].
+9. [STEP 1: AMR_NO_VAR] là AMR không biến: dùng dạng (concept ...), không dùng khai báo (x / concept).
+10. [STEP 2: AMR_WITH_VAR] là AMR đầy đủ có biến: dùng dạng (x / concept), biến duy nhất và chỉ tái sử dụng khi reentrancy.
 <|im_end|>
 <|im_start|>user
 tôi nhảy dựng lên như là bị sét đánh .
@@ -3198,6 +3453,9 @@ QUY TẮC:
 5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
 6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+8. Với MTUP2, output đúng hai phần theo thứ tự: [STEP 1: AMR_NO_VAR], rồi [STEP 2: AMR_WITH_VAR].
+9. [STEP 1: AMR_NO_VAR] là AMR không biến: dùng dạng (concept ...), không dùng khai báo (x / concept).
+10. [STEP 2: AMR_WITH_VAR] là AMR đầy đủ có biến: dùng dạng (x / concept), biến duy nhất và chỉ tái sử dụng khi reentrancy.
 <|im_end|>
 <|im_start|>user
 em trả lời tôi :
@@ -3225,6 +3483,9 @@ QUY TẮC:
 5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
 6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+8. Với MTUP2, output đúng hai phần theo thứ tự: [STEP 1: AMR_NO_VAR], rồi [STEP 2: AMR_WITH_VAR].
+9. [STEP 1: AMR_NO_VAR] là AMR không biến: dùng dạng (concept ...), không dùng khai báo (x / concept).
+10. [STEP 2: AMR_WITH_VAR] là AMR đầy đủ có biến: dùng dạng (x / concept), biến duy nhất và chỉ tái sử dụng khi reentrancy.
 <|im_end|>
 <|im_start|>user
 nó có sừng ...
@@ -3252,6 +3513,9 @@ QUY TẮC:
 5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
 6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+8. Với MTUP2, output đúng hai phần theo thứ tự: [STEP 1: AMR_NO_VAR], rồi [STEP 2: AMR_WITH_VAR].
+9. [STEP 1: AMR_NO_VAR] là AMR không biến: dùng dạng (concept ...), không dùng khai báo (x / concept).
+10. [STEP 2: AMR_WITH_VAR] là AMR đầy đủ có biến: dùng dạng (x / concept), biến duy nhất và chỉ tái sử dụng khi reentrancy.
 <|im_end|>
 <|im_start|>user
 nhưng bức này cũng bị từ chối như các bức trước .
@@ -3289,6 +3553,9 @@ QUY TẮC:
 5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
 6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+8. Với MTUP2, output đúng hai phần theo thứ tự: [STEP 1: AMR_NO_VAR], rồi [STEP 2: AMR_WITH_VAR].
+9. [STEP 1: AMR_NO_VAR] là AMR không biến: dùng dạng (concept ...), không dùng khai báo (x / concept).
+10. [STEP 2: AMR_WITH_VAR] là AMR đầy đủ có biến: dùng dạng (x / concept), biến duy nhất và chỉ tái sử dụng khi reentrancy.
 <|im_end|>
 <|im_start|>user
 - con này già quá .
@@ -3318,6 +3585,9 @@ QUY TẮC:
 5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
 6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+8. Với MTUP2, output đúng hai phần theo thứ tự: [STEP 1: AMR_NO_VAR], rồi [STEP 2: AMR_WITH_VAR].
+9. [STEP 1: AMR_NO_VAR] là AMR không biến: dùng dạng (concept ...), không dùng khai báo (x / concept).
+10. [STEP 2: AMR_WITH_VAR] là AMR đầy đủ có biến: dùng dạng (x / concept), biến duy nhất và chỉ tái sử dụng khi reentrancy.
 <|im_end|>
 <|im_start|>user
 con cừu chú muốn nó ở trong ấy đấy .
@@ -3355,6 +3625,9 @@ QUY TẮC:
 5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
 6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+8. Với MTUP2, output đúng hai phần theo thứ tự: [STEP 1: AMR_NO_VAR], rồi [STEP 2: AMR_WITH_VAR].
+9. [STEP 1: AMR_NO_VAR] là AMR không biến: dùng dạng (concept ...), không dùng khai báo (x / concept).
+10. [STEP 2: AMR_WITH_VAR] là AMR đầy đủ có biến: dùng dạng (x / concept), biến duy nhất và chỉ tái sử dụng khi reentrancy.
 <|im_end|>
 <|im_start|>user
 - không nhỏ lắm đâu ... kìa !
@@ -3390,6 +3663,9 @@ QUY TẮC:
 5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
 6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+8. Với MTUP2, output đúng hai phần theo thứ tự: [STEP 1: AMR_NO_VAR], rồi [STEP 2: AMR_WITH_VAR].
+9. [STEP 1: AMR_NO_VAR] là AMR không biến: dùng dạng (concept ...), không dùng khai báo (x / concept).
+10. [STEP 2: AMR_WITH_VAR] là AMR đầy đủ có biến: dùng dạng (x / concept), biến duy nhất và chỉ tái sử dụng khi reentrancy.
 <|im_end|>
 <|im_start|>user
 đó là chiếc máy bay của tôi .
@@ -3419,6 +3695,9 @@ QUY TẮC:
 5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
 6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+8. Với MTUP2, output đúng hai phần theo thứ tự: [STEP 1: AMR_NO_VAR], rồi [STEP 2: AMR_WITH_VAR].
+9. [STEP 1: AMR_NO_VAR] là AMR không biến: dùng dạng (concept ...), không dùng khai báo (x / concept).
+10. [STEP 2: AMR_WITH_VAR] là AMR đầy đủ có biến: dùng dạng (x / concept), biến duy nhất và chỉ tái sử dụng khi reentrancy.
 <|im_end|>
 <|im_start|>user
 ông ở hành tinh nào ?
@@ -3448,6 +3727,9 @@ QUY TẮC:
 5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
 6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+8. Với MTUP2, output đúng hai phần theo thứ tự: [STEP 1: AMR_NO_VAR], rồi [STEP 2: AMR_WITH_VAR].
+9. [STEP 1: AMR_NO_VAR] là AMR không biến: dùng dạng (concept ...), không dùng khai báo (x / concept).
+10. [STEP 2: AMR_WITH_VAR] là AMR đầy đủ có biến: dùng dạng (x / concept), biến duy nhất và chỉ tái sử dụng khi reentrancy.
 <|im_end|>
 <|im_start|>user
 em muốn mang con cừu của ta về đâu ?
@@ -3487,6 +3769,9 @@ QUY TẮC:
 5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
 6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+8. Với MTUP2, output đúng hai phần theo thứ tự: [STEP 1: AMR_NO_VAR], rồi [STEP 2: AMR_WITH_VAR].
+9. [STEP 1: AMR_NO_VAR] là AMR không biến: dùng dạng (concept ...), không dùng khai báo (x / concept).
+10. [STEP 2: AMR_WITH_VAR] là AMR đầy đủ có biến: dùng dạng (x / concept), biến duy nhất và chỉ tái sử dụng khi reentrancy.
 <|im_end|>
 <|im_start|>user
 lời đề nghị đó có lẽ làm cho ông hoàng bé nhỏ không vừa lòng :
@@ -3526,6 +3811,9 @@ QUY TẮC:
 5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
 6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+8. Với MTUP2, output đúng hai phần theo thứ tự: [STEP 1: AMR_NO_VAR], rồi [STEP 2: AMR_WITH_VAR].
+9. [STEP 1: AMR_NO_VAR] là AMR không biến: dùng dạng (concept ...), không dùng khai báo (x / concept).
+10. [STEP 2: AMR_WITH_VAR] là AMR đầy đủ có biến: dùng dạng (x / concept), biến duy nhất và chỉ tái sử dụng khi reentrancy.
 <|im_end|>
 <|im_start|>user
 may mắn cho tiểu tinh cầu B612 , một nhà độc tài Thổ Nhĩ Kỳ buộc dân Thổ phải mặc âu phục , ai không tuân theo sẽ bị tội chết .
@@ -3607,6 +3895,9 @@ QUY TẮC:
 5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
 6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+8. Với MTUP2, output đúng hai phần theo thứ tự: [STEP 1: AMR_NO_VAR], rồi [STEP 2: AMR_WITH_VAR].
+9. [STEP 1: AMR_NO_VAR] là AMR không biến: dùng dạng (concept ...), không dùng khai báo (x / concept).
+10. [STEP 2: AMR_WITH_VAR] là AMR đầy đủ có biến: dùng dạng (x / concept), biến duy nhất và chỉ tái sử dụng khi reentrancy.
 <|im_end|>
 <|im_start|>user
 hắn có sưu tầm bươm bướm không ? "
@@ -3636,6 +3927,9 @@ QUY TẮC:
 5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
 6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+8. Với MTUP2, output đúng hai phần theo thứ tự: [STEP 1: AMR_NO_VAR], rồi [STEP 2: AMR_WITH_VAR].
+9. [STEP 1: AMR_NO_VAR] là AMR không biến: dùng dạng (concept ...), không dùng khai báo (x / concept).
+10. [STEP 2: AMR_WITH_VAR] là AMR đầy đủ có biến: dùng dạng (x / concept), biến duy nhất và chỉ tái sử dụng khi reentrancy.
 <|im_end|>
 <|im_start|>user
 nhưng không thể nhìn thấy hạt .
@@ -3669,6 +3963,9 @@ QUY TẮC:
 5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
 6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+8. Với MTUP2, output đúng hai phần theo thứ tự: [STEP 1: AMR_NO_VAR], rồi [STEP 2: AMR_WITH_VAR].
+9. [STEP 1: AMR_NO_VAR] là AMR không biến: dùng dạng (concept ...), không dùng khai báo (x / concept).
+10. [STEP 2: AMR_WITH_VAR] là AMR đầy đủ có biến: dùng dạng (x / concept), biến duy nhất và chỉ tái sử dụng khi reentrancy.
 <|im_end|>
 <|im_start|>user
 - tâu bệ hạ , ngài trị vì trên cái gì ?
@@ -3704,6 +4001,9 @@ QUY TẮC:
 5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
 6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+8. Với MTUP2, output đúng hai phần theo thứ tự: [STEP 1: AMR_NO_VAR], rồi [STEP 2: AMR_WITH_VAR].
+9. [STEP 1: AMR_NO_VAR] là AMR không biến: dùng dạng (concept ...), không dùng khai báo (x / concept).
+10. [STEP 2: AMR_WITH_VAR] là AMR đầy đủ có biến: dùng dạng (x / concept), biến duy nhất và chỉ tái sử dụng khi reentrancy.
 <|im_end|>
 <|im_start|>user
 - trên tất cả những cái đó ...
@@ -3733,6 +4033,9 @@ QUY TẮC:
 5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
 6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+8. Với MTUP2, output đúng hai phần theo thứ tự: [STEP 1: AMR_NO_VAR], rồi [STEP 2: AMR_WITH_VAR].
+9. [STEP 1: AMR_NO_VAR] là AMR không biến: dùng dạng (concept ...), không dùng khai báo (x / concept).
+10. [STEP 2: AMR_WITH_VAR] là AMR đầy đủ có biến: dùng dạng (x / concept), biến duy nhất và chỉ tái sử dụng khi reentrancy.
 <|im_end|>
 <|im_start|>user
 một quyền lực như thế làm cho ông hoàng nhỏ thích mê .
@@ -3770,6 +4073,9 @@ QUY TẮC:
 5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
 6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+8. Với MTUP2, output đúng hai phần theo thứ tự: [STEP 1: AMR_NO_VAR], rồi [STEP 2: AMR_WITH_VAR].
+9. [STEP 1: AMR_NO_VAR] là AMR không biến: dùng dạng (concept ...), không dùng khai báo (x / concept).
+10. [STEP 2: AMR_WITH_VAR] là AMR đầy đủ có biến: dùng dạng (x / concept), biến duy nhất và chỉ tái sử dụng khi reentrancy.
 <|im_end|>
 <|im_start|>user
 - nếu ta ra lệnh cho một võ tướng bay từ đoá hoa này sang đoá hoa kia như một con bướm , hay lệnh cho ông ta viết một vở bi kịch , hay biến thành chim biển , và nếu vị võ tướng ấy không tuân lệnh , thì lỗi ấy ở ông ta hay ở ta ?
@@ -3871,6 +4177,9 @@ QUY TẮC:
 5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
 6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+8. Với MTUP2, output đúng hai phần theo thứ tự: [STEP 1: AMR_NO_VAR], rồi [STEP 2: AMR_WITH_VAR].
+9. [STEP 1: AMR_NO_VAR] là AMR không biến: dùng dạng (concept ...), không dùng khai báo (x / concept).
+10. [STEP 2: AMR_WITH_VAR] là AMR đầy đủ có biến: dùng dạng (x / concept), biến duy nhất và chỉ tái sử dụng khi reentrancy.
 <|im_end|>
 <|im_start|>user
 - đến bao giờ thì đủ ? ông hoàng nhỏ hỏi .
@@ -3902,6 +4211,9 @@ QUY TẮC:
 5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
 6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+8. Với MTUP2, output đúng hai phần theo thứ tự: [STEP 1: AMR_NO_VAR], rồi [STEP 2: AMR_WITH_VAR].
+9. [STEP 1: AMR_NO_VAR] là AMR không biến: dùng dạng (concept ...), không dùng khai báo (x / concept).
+10. [STEP 2: AMR_WITH_VAR] là AMR đầy đủ có biến: dùng dạng (x / concept), biến duy nhất và chỉ tái sử dụng khi reentrancy.
 <|im_end|>
 <|im_start|>user
 vào lúc ...
@@ -3927,6 +4239,9 @@ QUY TẮC:
 5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
 6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+8. Với MTUP2, output đúng hai phần theo thứ tự: [STEP 1: AMR_NO_VAR], rồi [STEP 2: AMR_WITH_VAR].
+9. [STEP 1: AMR_NO_VAR] là AMR không biến: dùng dạng (concept ...), không dùng khai báo (x / concept).
+10. [STEP 2: AMR_WITH_VAR] là AMR đầy đủ có biến: dùng dạng (x / concept), biến duy nhất và chỉ tái sử dụng khi reentrancy.
 <|im_end|>
 <|im_start|>user
 em tiếc cho cảnh mặt trời lặn hụt của em .
@@ -3962,6 +4277,9 @@ QUY TẮC:
 5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
 6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+8. Với MTUP2, output đúng hai phần theo thứ tự: [STEP 1: AMR_NO_VAR], rồi [STEP 2: AMR_WITH_VAR].
+9. [STEP 1: AMR_NO_VAR] là AMR không biến: dùng dạng (concept ...), không dùng khai báo (x / concept).
+10. [STEP 2: AMR_WITH_VAR] là AMR đầy đủ có biến: dùng dạng (x / concept), biến duy nhất và chỉ tái sử dụng khi reentrancy.
 <|im_end|>
 <|im_start|>user
 thỉnh thoảng ngươi ghép nó vào tội tử hình .
@@ -3999,6 +4317,9 @@ QUY TẮC:
 5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
 6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+8. Với MTUP2, output đúng hai phần theo thứ tự: [STEP 1: AMR_NO_VAR], rồi [STEP 2: AMR_WITH_VAR].
+9. [STEP 1: AMR_NO_VAR] là AMR không biến: dùng dạng (concept ...), không dùng khai báo (x / concept).
+10. [STEP 2: AMR_WITH_VAR] là AMR đầy đủ có biến: dùng dạng (x / concept), biến duy nhất và chỉ tái sử dụng khi reentrancy.
 <|im_end|>
 <|im_start|>user
 nhưng mỗi lần buộc tội xong , thì ngươi lại nên ân xá để dành dụm chuột .
@@ -4042,6 +4363,9 @@ QUY TẮC:
 5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
 6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+8. Với MTUP2, output đúng hai phần theo thứ tự: [STEP 1: AMR_NO_VAR], rồi [STEP 2: AMR_WITH_VAR].
+9. [STEP 1: AMR_NO_VAR] là AMR không biến: dùng dạng (concept ...), không dùng khai báo (x / concept).
+10. [STEP 2: AMR_WITH_VAR] là AMR đầy đủ có biến: dùng dạng (x / concept), biến duy nhất và chỉ tái sử dụng khi reentrancy.
 <|im_end|>
 <|im_start|>user
 sau năm phút tập dượt , ông hoàng nhỏ thấy chán vì sự đơn điệu của cái trò chơi ấy :
@@ -4091,6 +4415,9 @@ QUY TẮC:
 5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
 6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+8. Với MTUP2, output đúng hai phần theo thứ tự: [STEP 1: AMR_NO_VAR], rồi [STEP 2: AMR_WITH_VAR].
+9. [STEP 1: AMR_NO_VAR] là AMR không biến: dùng dạng (concept ...), không dùng khai báo (x / concept).
+10. [STEP 2: AMR_WITH_VAR] là AMR đầy đủ có biến: dùng dạng (x / concept), biến duy nhất và chỉ tái sử dụng khi reentrancy.
 <|im_end|>
 <|im_start|>user
 dẫu sao cứ hãy cứ khâm phục ta !
@@ -4120,6 +4447,9 @@ QUY TẮC:
 5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
 6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+8. Với MTUP2, output đúng hai phần theo thứ tự: [STEP 1: AMR_NO_VAR], rồi [STEP 2: AMR_WITH_VAR].
+9. [STEP 1: AMR_NO_VAR] là AMR không biến: dùng dạng (concept ...), không dùng khai báo (x / concept).
+10. [STEP 2: AMR_WITH_VAR] là AMR đầy đủ có biến: dùng dạng (x / concept), biến duy nhất và chỉ tái sử dụng khi reentrancy.
 <|im_end|>
 <|im_start|>user
 - xấu hổ vì cái gì ? ông hoàng nhỏ hỏi , đã muốn giúp đỡ hắn .
@@ -4165,6 +4495,9 @@ QUY TẮC:
 5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
 6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+8. Với MTUP2, output đúng hai phần theo thứ tự: [STEP 1: AMR_NO_VAR], rồi [STEP 2: AMR_WITH_VAR].
+9. [STEP 1: AMR_NO_VAR] là AMR không biến: dùng dạng (concept ...), không dùng khai báo (x / concept).
+10. [STEP 2: AMR_WITH_VAR] là AMR đầy đủ có biến: dùng dạng (x / concept), biến duy nhất và chỉ tái sử dụng khi reentrancy.
 <|im_end|>
 <|im_start|>user
 chào chú .
@@ -4190,6 +4523,9 @@ QUY TẮC:
 5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
 6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+8. Với MTUP2, output đúng hai phần theo thứ tự: [STEP 1: AMR_NO_VAR], rồi [STEP 2: AMR_WITH_VAR].
+9. [STEP 1: AMR_NO_VAR] là AMR không biến: dùng dạng (concept ...), không dùng khai báo (x / concept).
+10. [STEP 2: AMR_WITH_VAR] là AMR đầy đủ có biến: dùng dạng (x / concept), biến duy nhất và chỉ tái sử dụng khi reentrancy.
 <|im_end|>
 <|im_start|>user
 ta cũng chẳng biết là cái gì nữa .
@@ -4225,6 +4561,9 @@ QUY TẮC:
 5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
 6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+8. Với MTUP2, output đúng hai phần theo thứ tự: [STEP 1: AMR_NO_VAR], rồi [STEP 2: AMR_WITH_VAR].
+9. [STEP 1: AMR_NO_VAR] là AMR không biến: dùng dạng (concept ...), không dùng khai báo (x / concept).
+10. [STEP 2: AMR_WITH_VAR] là AMR đầy đủ có biến: dùng dạng (x / concept), biến duy nhất và chỉ tái sử dụng khi reentrancy.
 <|im_end|>
 <|im_start|>user
 nhà doanh nghiệp biết không hy vọng gì được yên thân :
@@ -4264,6 +4603,9 @@ QUY TẮC:
 5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
 6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+8. Với MTUP2, output đúng hai phần theo thứ tự: [STEP 1: AMR_NO_VAR], rồi [STEP 2: AMR_WITH_VAR].
+9. [STEP 1: AMR_NO_VAR] là AMR không biến: dùng dạng (concept ...), không dùng khai báo (x / concept).
+10. [STEP 2: AMR_WITH_VAR] là AMR đầy đủ có biến: dùng dạng (x / concept), biến duy nhất và chỉ tái sử dụng khi reentrancy.
 <|im_end|>
 <|im_start|>user
 - không mà ...
@@ -4289,6 +4631,9 @@ QUY TẮC:
 5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
 6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+8. Với MTUP2, output đúng hai phần theo thứ tự: [STEP 1: AMR_NO_VAR], rồi [STEP 2: AMR_WITH_VAR].
+9. [STEP 1: AMR_NO_VAR] là AMR không biến: dùng dạng (concept ...), không dùng khai báo (x / concept).
+10. [STEP 2: AMR_WITH_VAR] là AMR đầy đủ có biến: dùng dạng (x / concept), biến duy nhất và chỉ tái sử dụng khi reentrancy.
 <|im_end|>
 <|im_start|>user
 - chẳng làm gì sất .
@@ -4318,6 +4663,9 @@ QUY TẮC:
 5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
 6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+8. Với MTUP2, output đúng hai phần theo thứ tự: [STEP 1: AMR_NO_VAR], rồi [STEP 2: AMR_WITH_VAR].
+9. [STEP 1: AMR_NO_VAR] là AMR không biến: dùng dạng (concept ...), không dùng khai báo (x / concept).
+10. [STEP 2: AMR_WITH_VAR] là AMR đầy đủ có biến: dùng dạng (x / concept), biến duy nhất và chỉ tái sử dụng khi reentrancy.
 <|im_end|>
 <|im_start|>user
 - giàu giúp ông được gì ?
@@ -4351,6 +4699,9 @@ QUY TẮC:
 5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
 6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+8. Với MTUP2, output đúng hai phần theo thứ tự: [STEP 1: AMR_NO_VAR], rồi [STEP 2: AMR_WITH_VAR].
+9. [STEP 1: AMR_NO_VAR] là AMR không biến: dùng dạng (concept ...), không dùng khai báo (x / concept).
+10. [STEP 2: AMR_WITH_VAR] là AMR đầy đủ có biến: dùng dạng (x / concept), biến duy nhất và chỉ tái sử dụng khi reentrancy.
 <|im_end|>
 <|im_start|>user
 tuy thế em vẫn hỏi thêm :
@@ -4382,6 +4733,9 @@ QUY TẮC:
 5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
 6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+8. Với MTUP2, output đúng hai phần theo thứ tự: [STEP 1: AMR_NO_VAR], rồi [STEP 2: AMR_WITH_VAR].
+9. [STEP 1: AMR_NO_VAR] là AMR không biến: dùng dạng (concept ...), không dùng khai báo (x / concept).
+10. [STEP 2: AMR_WITH_VAR] là AMR đầy đủ có biến: dùng dạng (x / concept), biến duy nhất và chỉ tái sử dụng khi reentrancy.
 <|im_end|>
 <|im_start|>user
 - chúng của ai nào ?
@@ -4409,6 +4763,9 @@ QUY TẮC:
 5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
 6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+8. Với MTUP2, output đúng hai phần theo thứ tự: [STEP 1: AMR_NO_VAR], rồi [STEP 2: AMR_WITH_VAR].
+9. [STEP 1: AMR_NO_VAR] là AMR không biến: dùng dạng (concept ...), không dùng khai báo (x / concept).
+10. [STEP 2: AMR_WITH_VAR] là AMR đầy đủ có biến: dùng dạng (x / concept), biến duy nhất và chỉ tái sử dụng khi reentrancy.
 <|im_end|>
 <|im_start|>user
 nhà doanh nghiệp vặn lại , sửng cồ .
@@ -4440,6 +4797,9 @@ QUY TẮC:
 5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
 6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+8. Với MTUP2, output đúng hai phần theo thứ tự: [STEP 1: AMR_NO_VAR], rồi [STEP 2: AMR_WITH_VAR].
+9. [STEP 1: AMR_NO_VAR] là AMR không biến: dùng dạng (concept ...), không dùng khai báo (x / concept).
+10. [STEP 2: AMR_WITH_VAR] là AMR đầy đủ có biến: dùng dạng (x / concept), biến duy nhất và chỉ tái sử dụng khi reentrancy.
 <|im_end|>
 <|im_start|>user
 ông dùng chúng để làm gì ?
@@ -4473,6 +4833,9 @@ QUY TẮC:
 5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
 6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+8. Với MTUP2, output đúng hai phần theo thứ tự: [STEP 1: AMR_NO_VAR], rồi [STEP 2: AMR_WITH_VAR].
+9. [STEP 1: AMR_NO_VAR] là AMR không biến: dùng dạng (concept ...), không dùng khai báo (x / concept).
+10. [STEP 2: AMR_WITH_VAR] là AMR đầy đủ có biến: dùng dạng (x / concept), biến duy nhất và chỉ tái sử dụng khi reentrancy.
 <|im_end|>
 <|im_start|>user
 có vẻ nên thơ đấy .
@@ -4502,6 +4865,9 @@ QUY TẮC:
 5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
 6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+8. Với MTUP2, output đúng hai phần theo thứ tự: [STEP 1: AMR_NO_VAR], rồi [STEP 2: AMR_WITH_VAR].
+9. [STEP 1: AMR_NO_VAR] là AMR không biến: dùng dạng (concept ...), không dùng khai báo (x / concept).
+10. [STEP 2: AMR_WITH_VAR] là AMR đầy đủ có biến: dùng dạng (x / concept), biến duy nhất và chỉ tái sử dụng khi reentrancy.
 <|im_end|>
 <|im_start|>user
 nhưng ông chẳng giúp ích gì cho những ngôi sao cả ...
@@ -4537,6 +4903,9 @@ QUY TẮC:
 5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
 6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+8. Với MTUP2, output đúng hai phần theo thứ tự: [STEP 1: AMR_NO_VAR], rồi [STEP 2: AMR_WITH_VAR].
+9. [STEP 1: AMR_NO_VAR] là AMR không biến: dùng dạng (concept ...), không dùng khai báo (x / concept).
+10. [STEP 2: AMR_WITH_VAR] là AMR đầy đủ có biến: dùng dạng (x / concept), biến duy nhất và chỉ tái sử dụng khi reentrancy.
 <|im_end|>
 <|im_start|>user
 và ông ta lại thắp đèn lên .
@@ -4572,6 +4941,9 @@ QUY TẮC:
 5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
 6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+8. Với MTUP2, output đúng hai phần theo thứ tự: [STEP 1: AMR_NO_VAR], rồi [STEP 2: AMR_WITH_VAR].
+9. [STEP 1: AMR_NO_VAR] là AMR không biến: dùng dạng (concept ...), không dùng khai báo (x / concept).
+10. [STEP 2: AMR_WITH_VAR] là AMR đầy đủ có biến: dùng dạng (x / concept), biến duy nhất và chỉ tái sử dụng khi reentrancy.
 <|im_end|>
 <|im_start|>user
 xưa kia thì nó còn có lý .
@@ -4603,6 +4975,9 @@ QUY TẮC:
 5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
 6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+8. Với MTUP2, output đúng hai phần theo thứ tự: [STEP 1: AMR_NO_VAR], rồi [STEP 2: AMR_WITH_VAR].
+9. [STEP 1: AMR_NO_VAR] là AMR không biến: dùng dạng (concept ...), không dùng khai báo (x / concept).
+10. [STEP 2: AMR_WITH_VAR] là AMR đầy đủ có biến: dùng dạng (x / concept), biến duy nhất và chỉ tái sử dụng khi reentrancy.
 <|im_end|>
 <|im_start|>user
 linh nói rất nhiều chuyện .
@@ -4632,6 +5007,9 @@ QUY TẮC:
 5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
 6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+8. Với MTUP2, output đúng hai phần theo thứ tự: [STEP 1: AMR_NO_VAR], rồi [STEP 2: AMR_WITH_VAR].
+9. [STEP 1: AMR_NO_VAR] là AMR không biến: dùng dạng (concept ...), không dùng khai báo (x / concept).
+10. [STEP 2: AMR_WITH_VAR] là AMR đầy đủ có biến: dùng dạng (x / concept), biến duy nhất và chỉ tái sử dụng khi reentrancy.
 <|im_end|>
 <|im_start|>user
 chúng tôi mong họ thay đổi suy nghĩ .
@@ -4663,6 +5041,9 @@ QUY TẮC:
 5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
 6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+8. Với MTUP2, output đúng hai phần theo thứ tự: [STEP 1: AMR_NO_VAR], rồi [STEP 2: AMR_WITH_VAR].
+9. [STEP 1: AMR_NO_VAR] là AMR không biến: dùng dạng (concept ...), không dùng khai báo (x / concept).
+10. [STEP 2: AMR_WITH_VAR] là AMR đầy đủ có biến: dùng dạng (x / concept), biến duy nhất và chỉ tái sử dụng khi reentrancy.
 <|im_end|>
 <|im_start|>user
 nam bị đánh .
@@ -4690,6 +5071,9 @@ QUY TẮC:
 5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
 6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+8. Với MTUP2, output đúng hai phần theo thứ tự: [STEP 1: AMR_NO_VAR], rồi [STEP 2: AMR_WITH_VAR].
+9. [STEP 1: AMR_NO_VAR] là AMR không biến: dùng dạng (concept ...), không dùng khai báo (x / concept).
+10. [STEP 2: AMR_WITH_VAR] là AMR đầy đủ có biến: dùng dạng (x / concept), biến duy nhất và chỉ tái sử dụng khi reentrancy.
 <|im_end|>
 <|im_start|>user
 tèo bị cho điểm kém .
@@ -4721,6 +5105,9 @@ QUY TẮC:
 5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
 6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+8. Với MTUP2, output đúng hai phần theo thứ tự: [STEP 1: AMR_NO_VAR], rồi [STEP 2: AMR_WITH_VAR].
+9. [STEP 1: AMR_NO_VAR] là AMR không biến: dùng dạng (concept ...), không dùng khai báo (x / concept).
+10. [STEP 2: AMR_WITH_VAR] là AMR đầy đủ có biến: dùng dạng (x / concept), biến duy nhất và chỉ tái sử dụng khi reentrancy.
 <|im_end|>
 <|im_start|>user
 anh người vùng nào ?
@@ -4748,6 +5135,9 @@ QUY TẮC:
 5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
 6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+8. Với MTUP2, output đúng hai phần theo thứ tự: [STEP 1: AMR_NO_VAR], rồi [STEP 2: AMR_WITH_VAR].
+9. [STEP 1: AMR_NO_VAR] là AMR không biến: dùng dạng (concept ...), không dùng khai báo (x / concept).
+10. [STEP 2: AMR_WITH_VAR] là AMR đầy đủ có biến: dùng dạng (x / concept), biến duy nhất và chỉ tái sử dụng khi reentrancy.
 <|im_end|>
 <|im_start|>user
 thủ phạm đằng sau thủ phạm .
@@ -4777,6 +5167,9 @@ QUY TẮC:
 5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
 6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+8. Với MTUP2, output đúng hai phần theo thứ tự: [STEP 1: AMR_NO_VAR], rồi [STEP 2: AMR_WITH_VAR].
+9. [STEP 1: AMR_NO_VAR] là AMR không biến: dùng dạng (concept ...), không dùng khai báo (x / concept).
+10. [STEP 2: AMR_WITH_VAR] là AMR đầy đủ có biến: dùng dạng (x / concept), biến duy nhất và chỉ tái sử dụng khi reentrancy.
 <|im_end|>
 <|im_start|>user
 cái này bao nhiêu tiền ?
@@ -4806,6 +5199,9 @@ QUY TẮC:
 5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
 6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+8. Với MTUP2, output đúng hai phần theo thứ tự: [STEP 1: AMR_NO_VAR], rồi [STEP 2: AMR_WITH_VAR].
+9. [STEP 1: AMR_NO_VAR] là AMR không biến: dùng dạng (concept ...), không dùng khai báo (x / concept).
+10. [STEP 2: AMR_WITH_VAR] là AMR đầy đủ có biến: dùng dạng (x / concept), biến duy nhất và chỉ tái sử dụng khi reentrancy.
 <|im_end|>
 <|im_start|>user
 người nói dối sẽ bị máy phát hiện .
@@ -4839,6 +5235,9 @@ QUY TẮC:
 5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
 6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+8. Với MTUP2, output đúng hai phần theo thứ tự: [STEP 1: AMR_NO_VAR], rồi [STEP 2: AMR_WITH_VAR].
+9. [STEP 1: AMR_NO_VAR] là AMR không biến: dùng dạng (concept ...), không dùng khai báo (x / concept).
+10. [STEP 2: AMR_WITH_VAR] là AMR đầy đủ có biến: dùng dạng (x / concept), biến duy nhất và chỉ tái sử dụng khi reentrancy.
 <|im_end|>
 <|im_start|>user
 bạn rất hiểu tôi .
@@ -4868,6 +5267,9 @@ QUY TẮC:
 5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
 6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+8. Với MTUP2, output đúng hai phần theo thứ tự: [STEP 1: AMR_NO_VAR], rồi [STEP 2: AMR_WITH_VAR].
+9. [STEP 1: AMR_NO_VAR] là AMR không biến: dùng dạng (concept ...), không dùng khai báo (x / concept).
+10. [STEP 2: AMR_WITH_VAR] là AMR đầy đủ có biến: dùng dạng (x / concept), biến duy nhất và chỉ tái sử dụng khi reentrancy.
 <|im_end|>
 <|im_start|>user
 anh vừa trả tiền ngân hàng .
@@ -4899,6 +5301,9 @@ QUY TẮC:
 5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
 6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+8. Với MTUP2, output đúng hai phần theo thứ tự: [STEP 1: AMR_NO_VAR], rồi [STEP 2: AMR_WITH_VAR].
+9. [STEP 1: AMR_NO_VAR] là AMR không biến: dùng dạng (concept ...), không dùng khai báo (x / concept).
+10. [STEP 2: AMR_WITH_VAR] là AMR đầy đủ có biến: dùng dạng (x / concept), biến duy nhất và chỉ tái sử dụng khi reentrancy.
 <|im_end|>
 <|im_start|>user
 nó chặt thịt bằng dao .
@@ -4928,6 +5333,9 @@ QUY TẮC:
 5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
 6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+8. Với MTUP2, output đúng hai phần theo thứ tự: [STEP 1: AMR_NO_VAR], rồi [STEP 2: AMR_WITH_VAR].
+9. [STEP 1: AMR_NO_VAR] là AMR không biến: dùng dạng (concept ...), không dùng khai báo (x / concept).
+10. [STEP 2: AMR_WITH_VAR] là AMR đầy đủ có biến: dùng dạng (x / concept), biến duy nhất và chỉ tái sử dụng khi reentrancy.
 <|im_end|>
 <|im_start|>user
 tôi đã đến hầu hết các nước trên thế giới .
@@ -4963,6 +5371,9 @@ QUY TẮC:
 5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
 6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+8. Với MTUP2, output đúng hai phần theo thứ tự: [STEP 1: AMR_NO_VAR], rồi [STEP 2: AMR_WITH_VAR].
+9. [STEP 1: AMR_NO_VAR] là AMR không biến: dùng dạng (concept ...), không dùng khai báo (x / concept).
+10. [STEP 2: AMR_WITH_VAR] là AMR đầy đủ có biến: dùng dạng (x / concept), biến duy nhất và chỉ tái sử dụng khi reentrancy.
 <|im_end|>
 <|im_start|>user
 có nhiều website cung cấp các nơi đặt phòng .
@@ -4998,6 +5409,9 @@ QUY TẮC:
 5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
 6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+8. Với MTUP2, output đúng hai phần theo thứ tự: [STEP 1: AMR_NO_VAR], rồi [STEP 2: AMR_WITH_VAR].
+9. [STEP 1: AMR_NO_VAR] là AMR không biến: dùng dạng (concept ...), không dùng khai báo (x / concept).
+10. [STEP 2: AMR_WITH_VAR] là AMR đầy đủ có biến: dùng dạng (x / concept), biến duy nhất và chỉ tái sử dụng khi reentrancy.
 <|im_end|>
 <|im_start|>user
 thần xã itsukushima là nơi thờ thần đạo nằm trên đảo itsukushima .
@@ -5047,6 +5461,9 @@ QUY TẮC:
 5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
 6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+8. Với MTUP2, output đúng hai phần theo thứ tự: [STEP 1: AMR_NO_VAR], rồi [STEP 2: AMR_WITH_VAR].
+9. [STEP 1: AMR_NO_VAR] là AMR không biến: dùng dạng (concept ...), không dùng khai báo (x / concept).
+10. [STEP 2: AMR_WITH_VAR] là AMR đầy đủ có biến: dùng dạng (x / concept), biến duy nhất và chỉ tái sử dụng khi reentrancy.
 <|im_end|>
 <|im_start|>user
 tôi dậy khi trời sáng .
@@ -5076,6 +5493,9 @@ QUY TẮC:
 5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
 6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+8. Với MTUP2, output đúng hai phần theo thứ tự: [STEP 1: AMR_NO_VAR], rồi [STEP 2: AMR_WITH_VAR].
+9. [STEP 1: AMR_NO_VAR] là AMR không biến: dùng dạng (concept ...), không dùng khai báo (x / concept).
+10. [STEP 2: AMR_WITH_VAR] là AMR đầy đủ có biến: dùng dạng (x / concept), biến duy nhất và chỉ tái sử dụng khi reentrancy.
 <|im_end|>
 <|im_start|>user
 kyansittha đã xây dựng chùa shwezigon mà vua anawrahta còn làm dang dở .
@@ -5131,6 +5551,9 @@ QUY TẮC:
 5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
 6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+8. Với MTUP2, output đúng hai phần theo thứ tự: [STEP 1: AMR_NO_VAR], rồi [STEP 2: AMR_WITH_VAR].
+9. [STEP 1: AMR_NO_VAR] là AMR không biến: dùng dạng (concept ...), không dùng khai báo (x / concept).
+10. [STEP 2: AMR_WITH_VAR] là AMR đầy đủ có biến: dùng dạng (x / concept), biến duy nhất và chỉ tái sử dụng khi reentrancy.
 <|im_end|>
 <|im_start|>user
 xe máy điện không dùng bàn đạp để chạy .
@@ -5166,6 +5589,9 @@ QUY TẮC:
 5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
 6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+8. Với MTUP2, output đúng hai phần theo thứ tự: [STEP 1: AMR_NO_VAR], rồi [STEP 2: AMR_WITH_VAR].
+9. [STEP 1: AMR_NO_VAR] là AMR không biến: dùng dạng (concept ...), không dùng khai báo (x / concept).
+10. [STEP 2: AMR_WITH_VAR] là AMR đầy đủ có biến: dùng dạng (x / concept), biến duy nhất và chỉ tái sử dụng khi reentrancy.
 <|im_end|>
 <|im_start|>user
 rồng râu là thợ săn tầm nhìn , chúng cần nhìn thấy thức ăn để di chuyển .
@@ -5213,6 +5639,9 @@ QUY TẮC:
 5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
 6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+8. Với MTUP2, output đúng hai phần theo thứ tự: [STEP 1: AMR_NO_VAR], rồi [STEP 2: AMR_WITH_VAR].
+9. [STEP 1: AMR_NO_VAR] là AMR không biến: dùng dạng (concept ...), không dùng khai báo (x / concept).
+10. [STEP 2: AMR_WITH_VAR] là AMR đầy đủ có biến: dùng dạng (x / concept), biến duy nhất và chỉ tái sử dụng khi reentrancy.
 <|im_end|>
 <|im_start|>user
 cây này , lá to
@@ -5242,6 +5671,9 @@ QUY TẮC:
 5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
 6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+8. Với MTUP2, output đúng hai phần theo thứ tự: [STEP 1: AMR_NO_VAR], rồi [STEP 2: AMR_WITH_VAR].
+9. [STEP 1: AMR_NO_VAR] là AMR không biến: dùng dạng (concept ...), không dùng khai báo (x / concept).
+10. [STEP 2: AMR_WITH_VAR] là AMR đầy đủ có biến: dùng dạng (x / concept), biến duy nhất và chỉ tái sử dụng khi reentrancy.
 <|im_end|>
 <|im_start|>user
 giống đực , nó thường tổn hao đối với giống cái .
@@ -5275,6 +5707,9 @@ QUY TẮC:
 5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
 6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+8. Với MTUP2, output đúng hai phần theo thứ tự: [STEP 1: AMR_NO_VAR], rồi [STEP 2: AMR_WITH_VAR].
+9. [STEP 1: AMR_NO_VAR] là AMR không biến: dùng dạng (concept ...), không dùng khai báo (x / concept).
+10. [STEP 2: AMR_WITH_VAR] là AMR đầy đủ có biến: dùng dạng (x / concept), biến duy nhất và chỉ tái sử dụng khi reentrancy.
 <|im_end|>
 <|im_start|>user
 có được đổi hàng không ad nhỉ ?
@@ -5310,6 +5745,9 @@ QUY TẮC:
 5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
 6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+8. Với MTUP2, output đúng hai phần theo thứ tự: [STEP 1: AMR_NO_VAR], rồi [STEP 2: AMR_WITH_VAR].
+9. [STEP 1: AMR_NO_VAR] là AMR không biến: dùng dạng (concept ...), không dùng khai báo (x / concept).
+10. [STEP 2: AMR_WITH_VAR] là AMR đầy đủ có biến: dùng dạng (x / concept), biến duy nhất và chỉ tái sử dụng khi reentrancy.
 <|im_end|>
 <|im_start|>user
 tôi phải đi ngay .
@@ -5339,6 +5777,9 @@ QUY TẮC:
 5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
 6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+8. Với MTUP2, output đúng hai phần theo thứ tự: [STEP 1: AMR_NO_VAR], rồi [STEP 2: AMR_WITH_VAR].
+9. [STEP 1: AMR_NO_VAR] là AMR không biến: dùng dạng (concept ...), không dùng khai báo (x / concept).
+10. [STEP 2: AMR_WITH_VAR] là AMR đầy đủ có biến: dùng dạng (x / concept), biến duy nhất và chỉ tái sử dụng khi reentrancy.
 <|im_end|>
 <|im_start|>user
 anh muốn chơi cờ .
@@ -5370,6 +5811,9 @@ QUY TẮC:
 5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
 6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+8. Với MTUP2, output đúng hai phần theo thứ tự: [STEP 1: AMR_NO_VAR], rồi [STEP 2: AMR_WITH_VAR].
+9. [STEP 1: AMR_NO_VAR] là AMR không biến: dùng dạng (concept ...), không dùng khai báo (x / concept).
+10. [STEP 2: AMR_WITH_VAR] là AMR đầy đủ có biến: dùng dạng (x / concept), biến duy nhất và chỉ tái sử dụng khi reentrancy.
 <|im_end|>
 <|im_start|>user
 người mù là người tàn tật .
@@ -5399,6 +5843,9 @@ QUY TẮC:
 5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
 6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+8. Với MTUP2, output đúng hai phần theo thứ tự: [STEP 1: AMR_NO_VAR], rồi [STEP 2: AMR_WITH_VAR].
+9. [STEP 1: AMR_NO_VAR] là AMR không biến: dùng dạng (concept ...), không dùng khai báo (x / concept).
+10. [STEP 2: AMR_WITH_VAR] là AMR đầy đủ có biến: dùng dạng (x / concept), biến duy nhất và chỉ tái sử dụng khi reentrancy.
 <|im_end|>
 <|im_start|>user
 tôi với anh sẽ đi lên
@@ -5430,6 +5877,9 @@ QUY TẮC:
 5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
 6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+8. Với MTUP2, output đúng hai phần theo thứ tự: [STEP 1: AMR_NO_VAR], rồi [STEP 2: AMR_WITH_VAR].
+9. [STEP 1: AMR_NO_VAR] là AMR không biến: dùng dạng (concept ...), không dùng khai báo (x / concept).
+10. [STEP 2: AMR_WITH_VAR] là AMR đầy đủ có biến: dùng dạng (x / concept), biến duy nhất và chỉ tái sử dụng khi reentrancy.
 <|im_end|>
 <|im_start|>user
 nó chạy thẳng vào nhà nghỉ .
@@ -5461,6 +5911,9 @@ QUY TẮC:
 5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
 6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+8. Với MTUP2, output đúng hai phần theo thứ tự: [STEP 1: AMR_NO_VAR], rồi [STEP 2: AMR_WITH_VAR].
+9. [STEP 1: AMR_NO_VAR] là AMR không biến: dùng dạng (concept ...), không dùng khai báo (x / concept).
+10. [STEP 2: AMR_WITH_VAR] là AMR đầy đủ có biến: dùng dạng (x / concept), biến duy nhất và chỉ tái sử dụng khi reentrancy.
 <|im_end|>
 <|im_start|>user
 cô ấy ngày càng đẹp hơn .
@@ -5492,6 +5945,9 @@ QUY TẮC:
 5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
 6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+8. Với MTUP2, output đúng hai phần theo thứ tự: [STEP 1: AMR_NO_VAR], rồi [STEP 2: AMR_WITH_VAR].
+9. [STEP 1: AMR_NO_VAR] là AMR không biến: dùng dạng (concept ...), không dùng khai báo (x / concept).
+10. [STEP 2: AMR_WITH_VAR] là AMR đầy đủ có biến: dùng dạng (x / concept), biến duy nhất và chỉ tái sử dụng khi reentrancy.
 <|im_end|>
 <|im_start|>user
 nó chẳng thiết gì nữa .
@@ -5523,6 +5979,9 @@ QUY TẮC:
 5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
 6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+8. Với MTUP2, output đúng hai phần theo thứ tự: [STEP 1: AMR_NO_VAR], rồi [STEP 2: AMR_WITH_VAR].
+9. [STEP 1: AMR_NO_VAR] là AMR không biến: dùng dạng (concept ...), không dùng khai báo (x / concept).
+10. [STEP 2: AMR_WITH_VAR] là AMR đầy đủ có biến: dùng dạng (x / concept), biến duy nhất và chỉ tái sử dụng khi reentrancy.
 <|im_end|>
 <|im_start|>user
 bà lão mở cửa ra .
@@ -5554,6 +6013,9 @@ QUY TẮC:
 5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
 6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+8. Với MTUP2, output đúng hai phần theo thứ tự: [STEP 1: AMR_NO_VAR], rồi [STEP 2: AMR_WITH_VAR].
+9. [STEP 1: AMR_NO_VAR] là AMR không biến: dùng dạng (concept ...), không dùng khai báo (x / concept).
+10. [STEP 2: AMR_WITH_VAR] là AMR đầy đủ có biến: dùng dạng (x / concept), biến duy nhất và chỉ tái sử dụng khi reentrancy.
 <|im_end|>
 <|im_start|>user
 thuỷ thủ ném hàng xuống .
@@ -5583,6 +6045,9 @@ QUY TẮC:
 5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
 6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+8. Với MTUP2, output đúng hai phần theo thứ tự: [STEP 1: AMR_NO_VAR], rồi [STEP 2: AMR_WITH_VAR].
+9. [STEP 1: AMR_NO_VAR] là AMR không biến: dùng dạng (concept ...), không dùng khai báo (x / concept).
+10. [STEP 2: AMR_WITH_VAR] là AMR đầy đủ có biến: dùng dạng (x / concept), biến duy nhất và chỉ tái sử dụng khi reentrancy.
 <|im_end|>
 <|im_start|>user
 thiện ác , sướng khổ đều bắt đầu từ trong suy nghĩ mà ra .
@@ -5616,6 +6081,9 @@ QUY TẮC:
 5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
 6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+8. Với MTUP2, output đúng hai phần theo thứ tự: [STEP 1: AMR_NO_VAR], rồi [STEP 2: AMR_WITH_VAR].
+9. [STEP 1: AMR_NO_VAR] là AMR không biến: dùng dạng (concept ...), không dùng khai báo (x / concept).
+10. [STEP 2: AMR_WITH_VAR] là AMR đầy đủ có biến: dùng dạng (x / concept), biến duy nhất và chỉ tái sử dụng khi reentrancy.
 <|im_end|>
 <|im_start|>user
 thư được gửi ngày 19 tháng 2 lúc 10:32 am .
@@ -5655,6 +6123,9 @@ QUY TẮC:
 5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
 6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+8. Với MTUP2, output đúng hai phần theo thứ tự: [STEP 1: AMR_NO_VAR], rồi [STEP 2: AMR_WITH_VAR].
+9. [STEP 1: AMR_NO_VAR] là AMR không biến: dùng dạng (concept ...), không dùng khai báo (x / concept).
+10. [STEP 2: AMR_WITH_VAR] là AMR đầy đủ có biến: dùng dạng (x / concept), biến duy nhất và chỉ tái sử dụng khi reentrancy.
 <|im_end|>
 <|im_start|>user
 tổng mức đầu tư dự kiến 2600 tỷ đồng .
@@ -5688,6 +6159,9 @@ QUY TẮC:
 5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
 6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+8. Với MTUP2, output đúng hai phần theo thứ tự: [STEP 1: AMR_NO_VAR], rồi [STEP 2: AMR_WITH_VAR].
+9. [STEP 1: AMR_NO_VAR] là AMR không biến: dùng dạng (concept ...), không dùng khai báo (x / concept).
+10. [STEP 2: AMR_WITH_VAR] là AMR đầy đủ có biến: dùng dạng (x / concept), biến duy nhất và chỉ tái sử dụng khi reentrancy.
 <|im_end|>
 <|im_start|>user
 cái váy xoè rất đẹp .
@@ -5719,6 +6193,9 @@ QUY TẮC:
 5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
 6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+8. Với MTUP2, output đúng hai phần theo thứ tự: [STEP 1: AMR_NO_VAR], rồi [STEP 2: AMR_WITH_VAR].
+9. [STEP 1: AMR_NO_VAR] là AMR không biến: dùng dạng (concept ...), không dùng khai báo (x / concept).
+10. [STEP 2: AMR_WITH_VAR] là AMR đầy đủ có biến: dùng dạng (x / concept), biến duy nhất và chỉ tái sử dụng khi reentrancy.
 <|im_end|>
 <|im_start|>user
 nó cắt đi một miếng .
@@ -5750,6 +6227,9 @@ QUY TẮC:
 5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
 6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+8. Với MTUP2, output đúng hai phần theo thứ tự: [STEP 1: AMR_NO_VAR], rồi [STEP 2: AMR_WITH_VAR].
+9. [STEP 1: AMR_NO_VAR] là AMR không biến: dùng dạng (concept ...), không dùng khai báo (x / concept).
+10. [STEP 2: AMR_WITH_VAR] là AMR đầy đủ có biến: dùng dạng (x / concept), biến duy nhất và chỉ tái sử dụng khi reentrancy.
 <|im_end|>
 <|im_start|>user
 thứ nhất : tôi sẽ không nói .
@@ -5783,6 +6263,9 @@ QUY TẮC:
 5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
 6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+8. Với MTUP2, output đúng hai phần theo thứ tự: [STEP 1: AMR_NO_VAR], rồi [STEP 2: AMR_WITH_VAR].
+9. [STEP 1: AMR_NO_VAR] là AMR không biến: dùng dạng (concept ...), không dùng khai báo (x / concept).
+10. [STEP 2: AMR_WITH_VAR] là AMR đầy đủ có biến: dùng dạng (x / concept), biến duy nhất và chỉ tái sử dụng khi reentrancy.
 <|im_end|>
 <|im_start|>user
 đảng viên mất liên lạc với tổ chức .
@@ -5814,6 +6297,9 @@ QUY TẮC:
 5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
 6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+8. Với MTUP2, output đúng hai phần theo thứ tự: [STEP 1: AMR_NO_VAR], rồi [STEP 2: AMR_WITH_VAR].
+9. [STEP 1: AMR_NO_VAR] là AMR không biến: dùng dạng (concept ...), không dùng khai báo (x / concept).
+10. [STEP 2: AMR_WITH_VAR] là AMR đầy đủ có biến: dùng dạng (x / concept), biến duy nhất và chỉ tái sử dụng khi reentrancy.
 <|im_end|>
 <|im_start|>user
 ấn độ được chính phủ anh quản lí .
@@ -5851,6 +6337,9 @@ QUY TẮC:
 5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
 6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+8. Với MTUP2, output đúng hai phần theo thứ tự: [STEP 1: AMR_NO_VAR], rồi [STEP 2: AMR_WITH_VAR].
+9. [STEP 1: AMR_NO_VAR] là AMR không biến: dùng dạng (concept ...), không dùng khai báo (x / concept).
+10. [STEP 2: AMR_WITH_VAR] là AMR đầy đủ có biến: dùng dạng (x / concept), biến duy nhất và chỉ tái sử dụng khi reentrancy.
 <|im_end|>
 <|im_start|>user
 nó ngủ như chết .
@@ -5880,6 +6369,9 @@ QUY TẮC:
 5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
 6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+8. Với MTUP2, output đúng hai phần theo thứ tự: [STEP 1: AMR_NO_VAR], rồi [STEP 2: AMR_WITH_VAR].
+9. [STEP 1: AMR_NO_VAR] là AMR không biến: dùng dạng (concept ...), không dùng khai báo (x / concept).
+10. [STEP 2: AMR_WITH_VAR] là AMR đầy đủ có biến: dùng dạng (x / concept), biến duy nhất và chỉ tái sử dụng khi reentrancy.
 <|im_end|>
 <|im_start|>user
 giám đốc đang làm việc với chuyên gia nước ngoài .
@@ -5911,6 +6403,9 @@ QUY TẮC:
 5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
 6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+8. Với MTUP2, output đúng hai phần theo thứ tự: [STEP 1: AMR_NO_VAR], rồi [STEP 2: AMR_WITH_VAR].
+9. [STEP 1: AMR_NO_VAR] là AMR không biến: dùng dạng (concept ...), không dùng khai báo (x / concept).
+10. [STEP 2: AMR_WITH_VAR] là AMR đầy đủ có biến: dùng dạng (x / concept), biến duy nhất và chỉ tái sử dụng khi reentrancy.
 <|im_end|>
 <|im_start|>user
 tôi chỉ dựa vào sức mình là chính .
@@ -5944,6 +6439,9 @@ QUY TẮC:
 5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
 6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+8. Với MTUP2, output đúng hai phần theo thứ tự: [STEP 1: AMR_NO_VAR], rồi [STEP 2: AMR_WITH_VAR].
+9. [STEP 1: AMR_NO_VAR] là AMR không biến: dùng dạng (concept ...), không dùng khai báo (x / concept).
+10. [STEP 2: AMR_WITH_VAR] là AMR đầy đủ có biến: dùng dạng (x / concept), biến duy nhất và chỉ tái sử dụng khi reentrancy.
 <|im_end|>
 <|im_start|>user
 ông đã đi khắp châu âu .
@@ -5983,6 +6481,9 @@ QUY TẮC:
 5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
 6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+8. Với MTUP2, output đúng hai phần theo thứ tự: [STEP 1: AMR_NO_VAR], rồi [STEP 2: AMR_WITH_VAR].
+9. [STEP 1: AMR_NO_VAR] là AMR không biến: dùng dạng (concept ...), không dùng khai báo (x / concept).
+10. [STEP 2: AMR_WITH_VAR] là AMR đầy đủ có biến: dùng dạng (x / concept), biến duy nhất và chỉ tái sử dụng khi reentrancy.
 <|im_end|>
 <|im_start|>user
 cô ấy giỏi toán .
@@ -6012,6 +6513,9 @@ QUY TẮC:
 5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
 6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+8. Với MTUP2, output đúng hai phần theo thứ tự: [STEP 1: AMR_NO_VAR], rồi [STEP 2: AMR_WITH_VAR].
+9. [STEP 1: AMR_NO_VAR] là AMR không biến: dùng dạng (concept ...), không dùng khai báo (x / concept).
+10. [STEP 2: AMR_WITH_VAR] là AMR đầy đủ có biến: dùng dạng (x / concept), biến duy nhất và chỉ tái sử dụng khi reentrancy.
 <|im_end|>
 <|im_start|>user
 cô ấy nghỉ việc từ hôm qua .
@@ -6043,6 +6547,9 @@ QUY TẮC:
 5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
 6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+8. Với MTUP2, output đúng hai phần theo thứ tự: [STEP 1: AMR_NO_VAR], rồi [STEP 2: AMR_WITH_VAR].
+9. [STEP 1: AMR_NO_VAR] là AMR không biến: dùng dạng (concept ...), không dùng khai báo (x / concept).
+10. [STEP 2: AMR_WITH_VAR] là AMR đầy đủ có biến: dùng dạng (x / concept), biến duy nhất và chỉ tái sử dụng khi reentrancy.
 <|im_end|>
 <|im_start|>user
 sản phẩm được in máy .
@@ -6072,6 +6579,9 @@ QUY TẮC:
 5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
 6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+8. Với MTUP2, output đúng hai phần theo thứ tự: [STEP 1: AMR_NO_VAR], rồi [STEP 2: AMR_WITH_VAR].
+9. [STEP 1: AMR_NO_VAR] là AMR không biến: dùng dạng (concept ...), không dùng khai báo (x / concept).
+10. [STEP 2: AMR_WITH_VAR] là AMR đầy đủ có biến: dùng dạng (x / concept), biến duy nhất và chỉ tái sử dụng khi reentrancy.
 <|im_end|>
 <|im_start|>user
 cha mẹ luôn hi sinh vì con cái .
@@ -6101,6 +6611,9 @@ QUY TẮC:
 5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
 6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+8. Với MTUP2, output đúng hai phần theo thứ tự: [STEP 1: AMR_NO_VAR], rồi [STEP 2: AMR_WITH_VAR].
+9. [STEP 1: AMR_NO_VAR] là AMR không biến: dùng dạng (concept ...), không dùng khai báo (x / concept).
+10. [STEP 2: AMR_WITH_VAR] là AMR đầy đủ có biến: dùng dạng (x / concept), biến duy nhất và chỉ tái sử dụng khi reentrancy.
 <|im_end|>
 <|im_start|>user
 tôi thua nó nhiều mặt .
@@ -6132,6 +6645,9 @@ QUY TẮC:
 5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
 6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+8. Với MTUP2, output đúng hai phần theo thứ tự: [STEP 1: AMR_NO_VAR], rồi [STEP 2: AMR_WITH_VAR].
+9. [STEP 1: AMR_NO_VAR] là AMR không biến: dùng dạng (concept ...), không dùng khai báo (x / concept).
+10. [STEP 2: AMR_WITH_VAR] là AMR đầy đủ có biến: dùng dạng (x / concept), biến duy nhất và chỉ tái sử dụng khi reentrancy.
 <|im_end|>
 <|im_start|>user
 nhân dân đấu tranh trong niềm tin sâu sắc .
@@ -6165,6 +6681,9 @@ QUY TẮC:
 5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
 6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+8. Với MTUP2, output đúng hai phần theo thứ tự: [STEP 1: AMR_NO_VAR], rồi [STEP 2: AMR_WITH_VAR].
+9. [STEP 1: AMR_NO_VAR] là AMR không biến: dùng dạng (concept ...), không dùng khai báo (x / concept).
+10. [STEP 2: AMR_WITH_VAR] là AMR đầy đủ có biến: dùng dạng (x / concept), biến duy nhất và chỉ tái sử dụng khi reentrancy.
 <|im_end|>
 <|im_start|>user
 ông ta gắt vợ luôn miệng .
@@ -6198,6 +6717,9 @@ QUY TẮC:
 5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
 6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+8. Với MTUP2, output đúng hai phần theo thứ tự: [STEP 1: AMR_NO_VAR], rồi [STEP 2: AMR_WITH_VAR].
+9. [STEP 1: AMR_NO_VAR] là AMR không biến: dùng dạng (concept ...), không dùng khai báo (x / concept).
+10. [STEP 2: AMR_WITH_VAR] là AMR đầy đủ có biến: dùng dạng (x / concept), biến duy nhất và chỉ tái sử dụng khi reentrancy.
 <|im_end|>
 <|im_start|>user
 địch tiến không được mà lùi cũng không xong .
@@ -6237,6 +6759,9 @@ QUY TẮC:
 5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
 6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+8. Với MTUP2, output đúng hai phần theo thứ tự: [STEP 1: AMR_NO_VAR], rồi [STEP 2: AMR_WITH_VAR].
+9. [STEP 1: AMR_NO_VAR] là AMR không biến: dùng dạng (concept ...), không dùng khai báo (x / concept).
+10. [STEP 2: AMR_WITH_VAR] là AMR đầy đủ có biến: dùng dạng (x / concept), biến duy nhất và chỉ tái sử dụng khi reentrancy.
 <|im_end|>
 <|im_start|>user
 cái bánh bị hỏng .
@@ -6266,6 +6791,9 @@ QUY TẮC:
 5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
 6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+8. Với MTUP2, output đúng hai phần theo thứ tự: [STEP 1: AMR_NO_VAR], rồi [STEP 2: AMR_WITH_VAR].
+9. [STEP 1: AMR_NO_VAR] là AMR không biến: dùng dạng (concept ...), không dùng khai báo (x / concept).
+10. [STEP 2: AMR_WITH_VAR] là AMR đầy đủ có biến: dùng dạng (x / concept), biến duy nhất và chỉ tái sử dụng khi reentrancy.
 <|im_end|>
 <|im_start|>user
 vợ ông công nằm viện .
@@ -6299,6 +6827,9 @@ QUY TẮC:
 5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
 6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+8. Với MTUP2, output đúng hai phần theo thứ tự: [STEP 1: AMR_NO_VAR], rồi [STEP 2: AMR_WITH_VAR].
+9. [STEP 1: AMR_NO_VAR] là AMR không biến: dùng dạng (concept ...), không dùng khai báo (x / concept).
+10. [STEP 2: AMR_WITH_VAR] là AMR đầy đủ có biến: dùng dạng (x / concept), biến duy nhất và chỉ tái sử dụng khi reentrancy.
 <|im_end|>
 <|im_start|>user
 quân nga chặn đứng quân đức .
@@ -6342,6 +6873,9 @@ QUY TẮC:
 5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
 6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+8. Với MTUP2, output đúng hai phần theo thứ tự: [STEP 1: AMR_NO_VAR], rồi [STEP 2: AMR_WITH_VAR].
+9. [STEP 1: AMR_NO_VAR] là AMR không biến: dùng dạng (concept ...), không dùng khai báo (x / concept).
+10. [STEP 2: AMR_WITH_VAR] là AMR đầy đủ có biến: dùng dạng (x / concept), biến duy nhất và chỉ tái sử dụng khi reentrancy.
 <|im_end|>
 <|im_start|>user
 thuyền đi dọc bờ sông .
@@ -6373,6 +6907,9 @@ QUY TẮC:
 5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
 6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+8. Với MTUP2, output đúng hai phần theo thứ tự: [STEP 1: AMR_NO_VAR], rồi [STEP 2: AMR_WITH_VAR].
+9. [STEP 1: AMR_NO_VAR] là AMR không biến: dùng dạng (concept ...), không dùng khai báo (x / concept).
+10. [STEP 2: AMR_WITH_VAR] là AMR đầy đủ có biến: dùng dạng (x / concept), biến duy nhất và chỉ tái sử dụng khi reentrancy.
 <|im_end|>
 <|im_start|>user
 đó là tình thương của người mẹ .
@@ -6402,6 +6939,9 @@ QUY TẮC:
 5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
 6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+8. Với MTUP2, output đúng hai phần theo thứ tự: [STEP 1: AMR_NO_VAR], rồi [STEP 2: AMR_WITH_VAR].
+9. [STEP 1: AMR_NO_VAR] là AMR không biến: dùng dạng (concept ...), không dùng khai báo (x / concept).
+10. [STEP 2: AMR_WITH_VAR] là AMR đầy đủ có biến: dùng dạng (x / concept), biến duy nhất và chỉ tái sử dụng khi reentrancy.
 <|im_end|>
 <|im_start|>user
 bụng tôi bị đau .
@@ -6431,6 +6971,9 @@ QUY TẮC:
 5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
 6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+8. Với MTUP2, output đúng hai phần theo thứ tự: [STEP 1: AMR_NO_VAR], rồi [STEP 2: AMR_WITH_VAR].
+9. [STEP 1: AMR_NO_VAR] là AMR không biến: dùng dạng (concept ...), không dùng khai báo (x / concept).
+10. [STEP 2: AMR_WITH_VAR] là AMR đầy đủ có biến: dùng dạng (x / concept), biến duy nhất và chỉ tái sử dụng khi reentrancy.
 <|im_end|>
 <|im_start|>user
 anh đã ghi bàn thắng quốc tế đầu tiên .

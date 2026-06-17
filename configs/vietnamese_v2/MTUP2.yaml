@@ -3,6 +3,19 @@ method: MTUP2
 group: vietnamese_v2_mtup_2tasks
 language: vi
 no_var_mode: clean
+lora:
+  r: 64
+  alpha: 128
+  dropout: 0.05
+  bias: none
+  target_modules:
+    - q_proj
+    - k_proj
+    - v_proj
+    - o_proj
+    - gate_proj
+    - up_proj
+    - down_proj
 data:
   train: vietnamese_v2/MTUP2_train.txt
   dev_formatted: vietnamese_v2/MTUP2_dev.txt

@@ -27,19 +27,23 @@
 - [x] Decide final model-selection metric: use dev loss for LR/epoch selection; optional dev Smatch can be reported after inference on `data/formatted/vietnamese_v2/dev.txt`.
 - [x] Never tune by public-test score. Use public test only after LR/epoch/checkpoint are fixed from dev.
 
-## Priority 4: Learning-Rate Tuning
+## Priority 4: MTUP2-Only Cascade Tuning
 
 - [x] Add `src/tune_lr.py` to generate sklearn random-search style LR configs.
-- [ ] Run LR search per method on a dev split. Suggested starting range: `1e-6` to `5e-5`.
+- [x] Set representative MTUP2 run to LoRA `r=64`, `alpha=128` for the early-signal experiment.
+- [x] Add MTUP2 pre-flight audit for prompt/template/target/leakage/postprocess checks.
+- [ ] Run `src/audit_mtup2_setup.py` on the server environment after regenerating MTUP2 data.
+- [ ] Run MTUP2-only LR search on Vietnamese v2 dev split. Suggested starting range: `1e-6` to `5e-5`, `n_iter=3`, `epochs=30`.
 - [x] Keep effective batch size around 16 unless GPU memory allows larger.
-- [ ] Compare train/dev curves after each run.
-- [ ] Pick best LR from dev behavior, then rerun final three seeds.
-- [x] Do not keep 25 epochs by default. Use v2 default `10`; LR-search configs can run up to `50` and select the best epoch from dev curves.
+- [ ] Compare MTUP2 train/dev curves after each LR run.
+- [ ] Pick best MTUP2 LR and epoch from dev behavior, then rerun final three seeds.
+- [x] Do not keep 25 epochs by default. Use v2 default `10`; LR-search configs can run up to `30` for MTUP2 and select the best epoch from dev curves.
+- [ ] Do not run full 6-method or 3-dataset experiments until MTUP2 Vietnamese gives a positive early signal.
 
 ## Priority 5: Reproducibility Package
 
 - [ ] Add a pinned dependency file, e.g. `requirements.txt` or `environment.yml`.
 - [ ] Save commit hash, command, config, Python version, package versions, CUDA version, GPU model, seed, checkpoint path, prediction path, and score path for every final run.
 - [ ] Add generated run logs under a dedicated logs directory or external artifact store.
-- [ ] Rerun all final methods with seeds `42`, `123`, and `456`.
+- [ ] Rerun final MTUP2 Vietnamese with seeds `42`, `123`, and `456`.
 - [ ] Regenerate `results/summary/all_scores.csv`.

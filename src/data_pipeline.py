@@ -26,51 +26,14 @@ import random
 from pathlib import Path
 from collections import OrderedDict
 
+from prompts import get_system_prompt
+
 
 # ─────────────────────────────────────────────────────────────────────────────
 # Frozen system prompts (identical for ALL methods per plan)
 # ─────────────────────────────────────────────────────────────────────────────
-
-SYSTEM_PROMPT_MULTISTEP = """Bạn là trợ lý phân tích AMR (Abstract Meaning Representation) cho tiếng Việt.
-
-QUY TẮC:
-1. Tuân thủ đúng định dạng output được yêu cầu.
-2. Dùng concept, biến và quan hệ AMR nhất quán với dữ liệu huấn luyện.
-3. Không dùng ví dụ, câu, nhãn vàng hoặc quy tắc rút ra từ tập test.
-4. Giữ dấu ngoặc AMR cân bằng.
-5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
-6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
-7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu."""
-
-SYSTEM_PROMPT_B1 = SYSTEM_PROMPT_MULTISTEP  # identical per plan
-
-SYSTEM_PROMPT_EN = """You are an AMR (Abstract Meaning Representation) parsing assistant for English.
-
-RULES:
-1. Follow the requested output format exactly.
-2. Use standard AMR concepts, variables, and relations.
-3. Keep AMR parentheses balanced.
-4. Each variable must be unique within the graph.
-5. Reuse variables for reentrancies when producing full AMR.
-6. Output only the requested labels and AMR content."""
-
-SYSTEM_PROMPT_PT = """You are an AMR (Abstract Meaning Representation) parsing assistant for Brazilian Portuguese.
-
-RULES:
-1. Follow the requested output format exactly.
-2. Use standard AMR concepts, variables, and relations (in English, as per AMR convention).
-3. Keep AMR parentheses balanced.
-4. Each variable must be unique within the graph.
-5. Reuse variables for reentrancies when producing full AMR.
-6. Output only the requested labels and AMR content."""
-
-
-def get_system_prompt(language: str) -> str:
-    if language == 'en':
-        return SYSTEM_PROMPT_EN
-    if language == 'pt':
-        return SYSTEM_PROMPT_PT
-    return SYSTEM_PROMPT_MULTISTEP
+# Prompt text is imported from src/prompts.py so training data and inference
+# cannot drift apart.
 
 # ─────────────────────────────────────────────────────────────────────────────
 # Synthetic examples (frozen – never change after first run)
@@ -117,6 +80,24 @@ def validate_amr(amr: str) -> bool:
     if s.count('(') != s.count(')'):
         return False
     if '/' not in s:
+        return False
+    if re.search(r'\(\s*/', s):
+        return False
+    depth = 0
+    top_level_spans = 0
+    for ch in s:
+        if ch == '(':
+            if depth == 0:
+                top_level_spans += 1
+            depth += 1
+        elif ch == ')':
+            depth -= 1
+            if depth < 0:
+                return False
+    if top_level_spans != 1:
+        return False
+    definitions = re.findall(r'\(\s*([A-Za-zÀ-ỹ][A-Za-zÀ-ỹ0-9_-]*)\s*/', s)
+    if len(definitions) != len(set(definitions)):
         return False
     return True
 
@@ -278,14 +259,14 @@ def _wrap(system: str, user: str, assistant: str) -> str:
 def make_B1(sentence: str, amr: str, no_var_mode: str = 'clean',
             language: str = 'vi') -> str:
     """B1: direct sentence → AMR."""
-    return _wrap(get_system_prompt(language), sentence, f"AMR: {amr}")
+    return _wrap(get_system_prompt(language, 'B1'), sentence, f"AMR: {amr}")
 
 
 def make_B2(sentence: str, amr: str, no_var_mode: str = 'clean',
             language: str = 'vi') -> str:
     """B2: sentence → AMR-no-var."""
     no_var = strip_variables(amr, mode=no_var_mode)
-    return _wrap(get_system_prompt(language), sentence, f"AMR_NO_VAR: {no_var}")
+    return _wrap(get_system_prompt(language, 'B2'), sentence, f"AMR_NO_VAR: {no_var}")
 
 
 def make_MTUP2(sentence: str, amr: str, no_var_mode: str = 'clean',
@@ -293,7 +274,7 @@ def make_MTUP2(sentence: str, amr: str, no_var_mode: str = 'clean',
     """MTUP2: no-var → full AMR (closer intermediate, easier for model to add variables)."""
     no_var = strip_variables(amr, mode=no_var_mode)
     assistant = f"[STEP 1: AMR_NO_VAR]\n{no_var}\n\n[STEP 2: AMR_WITH_VAR]\n{amr}"
-    return _wrap(get_system_prompt(language), sentence, assistant)
+    return _wrap(get_system_prompt(language, 'MTUP2'), sentence, assistant)
 
 
 def make_MTUP3A(sentence: str, amr: str, no_var_mode: str = 'clean',
@@ -306,7 +287,7 @@ def make_MTUP3A(sentence: str, amr: str, no_var_mode: str = 'clean',
     assistant = (f"[STEP 1: CONCEPTS]\n{concepts}\n\n"
                  f"[STEP 2: AMR_NO_VAR]\n{no_var}\n\n"
                  f"[STEP 3: AMR_WITH_VAR]\n{amr}")
-    return _wrap(get_system_prompt(language), sentence, assistant)
+    return _wrap(get_system_prompt(language, 'MTUP3A'), sentence, assistant)
 
 
 def make_MTUP3B(sentence: str, amr: str, no_var_mode: str = 'clean',
@@ -319,7 +300,7 @@ def make_MTUP3B(sentence: str, amr: str, no_var_mode: str = 'clean',
     assistant = (f"[STEP 1: CONCEPTS]\n{concepts}\n\n"
                  f"[STEP 2: RELATIONS]\n{relations}\n\n"
                  f"[STEP 3: AMR_WITH_VAR]\n{amr}")
-    return _wrap(get_system_prompt(language), sentence, assistant)
+    return _wrap(get_system_prompt(language, 'MTUP3B'), sentence, assistant)
 
 
 def make_MTUP4(sentence: str, amr: str, no_var_mode: str = 'clean',
@@ -334,7 +315,7 @@ def make_MTUP4(sentence: str, amr: str, no_var_mode: str = 'clean',
                  f"[STEP 2: RELATIONS]\n{relations}\n\n"
                  f"[STEP 3: AMR_NO_VAR]\n{no_var}\n\n"
                  f"[STEP 4: AMR_WITH_VAR]\n{amr}")
-    return _wrap(get_system_prompt(language), sentence, assistant)
+    return _wrap(get_system_prompt(language, 'MTUP4'), sentence, assistant)
 
 
 BUILDERS = {

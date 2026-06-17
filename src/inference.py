@@ -17,7 +17,6 @@ Outputs:
 
 import re
 import sys
-import yaml
 import json
 import argparse
 import torch
@@ -27,6 +26,8 @@ from transformers import AutoModelForCausalLM, AutoTokenizer
 from peft import PeftModel
 
 sys.path.insert(0, str(Path(__file__).parent))
+from config_utils import load_yaml_config
+from prompts import get_system_prompt as prompt_for
 from postprocess import postprocess_amr
 from var_binder import bind_no_var_amr
 
@@ -175,45 +176,10 @@ def build_prompt(tokenizer, system_prompt: str, sentence: str) -> torch.Tensor:
     return tokenizer(text, return_tensors='pt', add_special_tokens=False)
 
 
-SYSTEM_PROMPT = """Bạn là trợ lý phân tích AMR (Abstract Meaning Representation) cho tiếng Việt.
-
-QUY TẮC:
-1. Tuân thủ đúng định dạng output được yêu cầu.
-2. Dùng concept, biến và quan hệ AMR nhất quán với dữ liệu huấn luyện.
-3. Không dùng ví dụ, câu, nhãn vàng hoặc quy tắc rút ra từ tập test.
-4. Giữ dấu ngoặc AMR cân bằng.
-5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
-6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
-7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu."""
-
-SYSTEM_PROMPT_EN = """You are an AMR (Abstract Meaning Representation) parsing assistant for English.
-
-RULES:
-1. Follow the requested output format exactly.
-2. Use standard AMR concepts, variables, and relations.
-3. Keep AMR parentheses balanced.
-4. Each variable must be unique within the graph.
-5. Reuse variables for reentrancies when producing full AMR.
-6. Output only the requested labels and AMR content."""
-
-SYSTEM_PROMPT_PT = """You are an AMR (Abstract Meaning Representation) parsing assistant for Brazilian Portuguese.
-
-RULES:
-1. Follow the requested output format exactly.
-2. Use standard AMR concepts, variables, and relations (in English, as per AMR convention).
-3. Keep AMR parentheses balanced.
-4. Each variable must be unique within the graph.
-5. Reuse variables for reentrancies when producing full AMR.
-6. Output only the requested labels and AMR content."""
-
-
 def get_system_prompt(cfg: dict) -> str:
     lang = cfg.get('language') or cfg.get('data', {}).get('language', 'vi')
-    if lang == 'en':
-        return SYSTEM_PROMPT_EN
-    if lang == 'pt':
-        return SYSTEM_PROMPT_PT
-    return SYSTEM_PROMPT
+    method = cfg.get('method')
+    return prompt_for(lang, method)
 
 
 def main():
@@ -225,16 +191,7 @@ def main():
                         help='Which split to run inference on')
     args = parser.parse_args()
 
-    with open(args.config) as f:
-        cfg = yaml.safe_load(f)
-
-    # Load base config
-    if 'base' in cfg:
-        base_path = Path(args.config).parent / cfg['base']
-        with open(base_path) as f:
-            base = yaml.safe_load(f)
-        base.update(cfg)
-        cfg = base
+    cfg = load_yaml_config(args.config)
 
     method = cfg['method']
     group = cfg['group']
