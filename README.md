@@ -27,7 +27,52 @@ Important current convention: `B2` no-var output and `MTUP2` step 1 are produced
 
 ## Environment
 
-The exact historical environment is not recorded. Current code expects:
+Create one named Conda environment on the CUDA server, then activate it whenever
+running audits, training, inference, or evaluation.
+
+Recommended one-time setup:
+
+```bash
+conda create -y -n visempar-mtup2 python=3.10
+conda activate visempar-mtup2
+python --version
+pip install --upgrade pip
+```
+
+Install CUDA PyTorch and repo dependencies. For CUDA 12.1:
+
+```bash
+pip install torch --index-url https://download.pytorch.org/whl/cu121
+pip install -r requirements.txt
+```
+
+Or use the helper script for the same setup:
+
+```bash
+bash run_scripts/setup_conda_env.sh
+conda activate visempar-mtup2
+```
+
+If the server uses a different CUDA version, override the PyTorch wheel index,
+for example:
+
+```bash
+TORCH_INDEX_URL=https://download.pytorch.org/whl/cu124 bash run_scripts/setup_conda_env.sh
+```
+
+Verify CUDA before training:
+
+```bash
+python - <<'PY'
+import torch
+print("torch:", torch.__version__)
+print("cuda available:", torch.cuda.is_available())
+print("cuda version:", torch.version.cuda)
+print("gpu:", torch.cuda.get_device_name(0) if torch.cuda.is_available() else None)
+PY
+```
+
+Current code expects:
 
 - Python 3.10+ recommended
 - CUDA GPU for training
@@ -42,7 +87,8 @@ The exact historical environment is not recorded. Current code expects:
 - `matplotlib` optional, for `loss_curve.png`
 - `scikit-learn` and `scipy` for `src/tune_lr.py`
 
-Before final paper runs, add a pinned environment file and save `python --version`, `pip freeze`, CUDA version, GPU model, command, git commit, config path, and checkpoint path for every run.
+Before final paper runs, save `python --version`, `pip freeze`, CUDA version,
+GPU model, command, git commit, config path, and checkpoint path for every run.
 
 ## Recommended Vietnamese V2 Workflow
 
@@ -92,6 +138,22 @@ For validation inference, v2 configs use `data/formatted/vietnamese_v2/dev.txt`;
 ## MTUP2-Only Cascade Tuning
 
 Current decision protocol: do not rerun every old method/dataset. Use one representative method, `MTUP2`, on Vietnamese v2 to get an early signal about whether the idea works.
+
+On the CUDA server, activate the environment first:
+
+```bash
+conda activate visempar-mtup2
+```
+
+Preferred one-command protocol:
+
+```bash
+RUN_TRAIN=1 bash run_scripts/run_mtup2_vi_clean.sh
+```
+
+This regenerates only `B2` and `MTUP2` Vietnamese v2 data, runs the setup
+audits, trains only the three MTUP2 LR candidates, selects by dev loss, and then
+runs one public-test inference/evaluation for seed `42`.
 
 Use hierarchical cascade tuning, not full grid search:
 
