@@ -135,6 +135,21 @@ Training with a dev split writes:
 Use the dev loss curve to detect overfitting and choose a defensible epoch/checkpoint before public-test inference.
 For validation inference, v2 configs use `data/formatted/vietnamese_v2/dev.txt`; public test is never the fallback for `--split val`.
 
+If training succeeds but validation fails with CUDA OOM exactly at an epoch
+boundary, verify that the updated code prints:
+
+```text
+Batch sizes: train=1, eval=1, grad_accum=16
+```
+
+Older code left Hugging Face's default evaluation batch size at `8`, even
+though training used batch size `1`. Pull the latest code before restarting.
+To resume when a `checkpoint-*` directory exists:
+
+```bash
+python src/train.py --config <config.yaml> --seed 42 --resume_from_checkpoint
+```
+
 ## MTUP2-Only Cascade Tuning
 
 Current decision protocol: do not rerun every old method/dataset. Use one representative method, `MTUP2`, on Vietnamese v2 to get an early signal about whether the idea works.

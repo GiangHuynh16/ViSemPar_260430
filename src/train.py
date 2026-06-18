@@ -11,10 +11,14 @@ Saves adapter to:
 
 import re
 import json
+import os
 import random
 import argparse
 import numpy as np
 from pathlib import Path
+
+# Reduce CUDA allocator fragmentation on long train/eval transitions.
+os.environ.setdefault('PYTORCH_CUDA_ALLOC_CONF', 'expandable_segments:True')
 
 import torch
 from datasets import Dataset
@@ -159,6 +163,13 @@ def main():
     parser.add_argument('--auto_dev_split', type=float, default=None,
                         help='If no data.dev_formatted file exists, split this fraction '
                              'from train with sklearn train_test_split.')
+    parser.add_argument(
+        '--resume_from_checkpoint',
+        nargs='?',
+        const='auto',
+        default=None,
+        help='Resume from the latest checkpoint, or from an explicit checkpoint path.',
+    )
     args = parser.parse_args()
 
     cfg = load_config(args.config, args.seed)
@@ -268,10 +279,18 @@ def main():
     model.gradient_checkpointing_enable()
 
     # ── Training args ──────────────────────────────────────────────────────
+    train_batch_size = tr_cfg.get('batch_per_device', 1)
+    eval_batch_size = tr_cfg.get('eval_batch_per_device', train_batch_size)
+    print(
+        f"Batch sizes: train={train_batch_size}, eval={eval_batch_size}, "
+        f"grad_accum={tr_cfg.get('grad_accum', 16)}"
+    )
+
     training_args = TrainingArguments(
         output_dir=str(output_dir),
         num_train_epochs=tr_cfg['epochs'],
-        per_device_train_batch_size=tr_cfg.get('batch_per_device', 1),
+        per_device_train_batch_size=train_batch_size,
+        per_device_eval_batch_size=eval_batch_size,
         gradient_accumulation_steps=tr_cfg.get('grad_accum', 16),
         learning_rate=tr_cfg['lr'],
         lr_scheduler_type=tr_cfg.get('scheduler', 'cosine'),
@@ -293,6 +312,8 @@ def main():
         dataloader_num_workers=0,
         # Eval settings — only active when eval_dataset is provided
         eval_strategy='epoch' if eval_dataset is not None else 'no',
+        eval_accumulation_steps=1 if eval_dataset is not None else None,
+        prediction_loss_only=eval_dataset is not None,
         load_best_model_at_end=eval_dataset is not None,
         metric_for_best_model='eval_loss' if eval_dataset is not None else None,
         greater_is_better=False if eval_dataset is not None else None,
@@ -330,7 +351,14 @@ def main():
     print("\n" + "=" * 60)
     print("STARTING TRAINING")
     print("=" * 60)
-    trainer.train()
+    resume_from_checkpoint = None
+    if args.resume_from_checkpoint == 'auto':
+        resume_from_checkpoint = True
+    elif args.resume_from_checkpoint:
+        resume_from_checkpoint = args.resume_from_checkpoint
+    if resume_from_checkpoint:
+        print(f"Resuming from checkpoint: {resume_from_checkpoint}")
+    trainer.train(resume_from_checkpoint=resume_from_checkpoint)
 
     log_history = trainer.state.log_history
     with open(output_dir / 'trainer_log_history.json', 'w') as f:
@@ -373,6 +401,8 @@ def main():
         'config': args.config,
         'train_examples': len(dataset),
         'dev_examples': len(eval_dataset) if eval_dataset is not None else 0,
+        'train_batch_per_device': train_batch_size,
+        'eval_batch_per_device': eval_batch_size,
         'epochs': tr_cfg['epochs'],
         'last_epoch': trainer.state.epoch,
         'global_step': trainer.state.global_step,
