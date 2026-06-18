@@ -160,10 +160,10 @@ On the CUDA server, activate the environment first:
 conda activate visempar-mtup2
 ```
 
-Run the agreed short probe first: one middle learning rate and five epochs.
+Run the agreed short MTUP2 probe first: one middle learning rate and five epochs.
 
 ```bash
-bash run_scripts/run_mtup2_vi_probe5.sh
+bash run_scripts/run_vi_probe5.sh MTUP2
 ```
 
 This uses:
@@ -180,6 +180,31 @@ effective batch: 16
 The progress bar should show approximately `510` optimizer steps, not `3060`.
 After this run, inspect its train/dev loss curve before deciding whether to
 run additional learning rates.
+
+The first MTUP2 probe result was:
+
+```text
+MTUP2 mid-LR probe5, seed 42:
+best dev loss = 0.1367 at epoch 3
+public-test Smatch F1 = 0.5236
+parsable rate = 1.0
+```
+
+Before spending more time on MTUP2 learning-rate variants, run one clean direct
+baseline probe with the same model, LoRA size, LR, batch size, split, and epoch
+budget:
+
+```bash
+bash run_scripts/run_vi_probe5.sh B1
+```
+
+Decision rule:
+
+- If B1 is clearly below MTUP2 `0.5236`, MTUP2 has a positive early signal.
+- If B1 is similar or higher, run `bash run_scripts/run_vi_probe5.sh MTUP2_LOW`
+  once to test whether a lower LR helps MTUP2.
+- Run `bash run_scripts/run_vi_probe5.sh B2` only if the B1/MTUP2 comparison is
+  inconclusive or the report needs the cleaned B2 baseline number.
 
 Preferred one-command protocol:
 
