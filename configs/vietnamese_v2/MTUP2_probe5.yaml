@@ -1,0 +1,37 @@
+base: ../base_v2.yaml
+method: MTUP2
+run_name: MTUP2_lr_mid_probe5
+group: vietnamese_v2_mtup_2tasks_probe
+language: vi
+no_var_mode: clean
+
+lora:
+  r: 64
+  alpha: 128
+  dropout: 0.05
+  bias: none
+  target_modules:
+    - q_proj
+    - k_proj
+    - v_proj
+    - o_proj
+    - gate_proj
+    - up_proj
+    - down_proj
+
+training:
+  lr: 1.752410111812816e-5
+  epochs: 5
+  batch_per_device: 1
+  eval_batch_per_device: 1
+  grad_accum: 16
+  early_stopping_patience: 2
+
+data:
+  train: vietnamese_v2/MTUP2_train.txt
+  dev_formatted: vietnamese_v2/MTUP2_dev.txt
+  val: data/formatted/vietnamese_v2/dev.txt
+  test: data/raw/public_test.txt
+
+decoding:
+  max_new_tokens: 1536

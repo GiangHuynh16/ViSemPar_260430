@@ -160,6 +160,27 @@ On the CUDA server, activate the environment first:
 conda activate visempar-mtup2
 ```
 
+Run the agreed short probe first: one middle learning rate and five epochs.
+
+```bash
+bash run_scripts/run_mtup2_vi_probe5.sh
+```
+
+This uses:
+
+```text
+config: configs/vietnamese_v2/MTUP2_probe5.yaml
+learning rate: 1.752410111812816e-5
+maximum epochs: 5
+train batch: 1
+validation batch: 1
+effective batch: 16
+```
+
+The progress bar should show approximately `510` optimizer steps, not `3060`.
+After this run, inspect its train/dev loss curve before deciding whether to
+run additional learning rates.
+
 Preferred one-command protocol:
 
 ```bash
