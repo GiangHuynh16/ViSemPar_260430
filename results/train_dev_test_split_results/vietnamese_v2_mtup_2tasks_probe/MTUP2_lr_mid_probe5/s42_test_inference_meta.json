@@ -1,0 +1,14 @@
+{
+  "method": "MTUP2",
+  "run_name": "MTUP2_lr_mid_probe5",
+  "group": "vietnamese_v2_mtup_2tasks_probe",
+  "seed": 42,
+  "split": "test",
+  "config": "configs/vietnamese_v2/MTUP2_probe5.yaml",
+  "adapter_path": "/mnt/nghiepth/giangha/ViSemPar_260430/checkpoints/vietnamese_v2_mtup_2tasks_probe/MTUP2_lr_mid_probe5/s42/final",
+  "input_file": "/mnt/nghiepth/giangha/ViSemPar_260430/data/raw/public_test.txt",
+  "pred_path": "/mnt/nghiepth/giangha/ViSemPar_260430/results/vietnamese_v2_mtup_2tasks_probe/MTUP2_lr_mid_probe5/s42_pred.txt",
+  "full_path": "/mnt/nghiepth/giangha/ViSemPar_260430/results/vietnamese_v2_mtup_2tasks_probe/MTUP2_lr_mid_probe5/s42_full.txt",
+  "num_sentences": 150,
+  "max_new_tokens": 1536
+}

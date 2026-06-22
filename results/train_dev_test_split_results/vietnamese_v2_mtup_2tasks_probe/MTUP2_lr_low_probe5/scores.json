@@ -1,0 +1,15 @@
+{
+  "s42": {
+    "method": "MTUP2",
+    "seed": 42,
+    "group": "vietnamese_v2_mtup_2tasks_probe",
+    "n_samples": 149,
+    "parsable": 148,
+    "parsable_rate": 0.9933,
+    "avg_output_len": 189.6,
+    "root_acc": 0.4362,
+    "precision": 0.4639,
+    "recall": 0.3896,
+    "f1": 0.4235
+  }
+}

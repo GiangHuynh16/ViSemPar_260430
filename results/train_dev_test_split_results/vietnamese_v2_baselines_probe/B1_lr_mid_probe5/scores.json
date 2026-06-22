@@ -1,0 +1,15 @@
+{
+  "s42": {
+    "method": "B1",
+    "seed": 42,
+    "group": "vietnamese_v2_baselines_probe",
+    "n_samples": 149,
+    "parsable": 149,
+    "parsable_rate": 1.0,
+    "avg_output_len": 185.6,
+    "root_acc": 0.5705,
+    "precision": 0.5667,
+    "recall": 0.4983,
+    "f1": 0.5303
+  }
+}
