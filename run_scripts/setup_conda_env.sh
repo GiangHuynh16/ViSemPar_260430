@@ -49,7 +49,8 @@ echo "Environment is ready."
 echo "Activate it in each server shell with:"
 echo "  conda activate $ENV_NAME"
 echo
-echo "Optional speedup on the CUDA server:"
+echo "Note: FlashAttention is disabled by default for Quadro RTX 6000/Turing."
+echo "Only install it on Ampere-or-newer GPUs, for example RTX A6000/A100:"
 echo "  bash run_scripts/install_flash_attn.sh"
 echo
 echo "Then run:"

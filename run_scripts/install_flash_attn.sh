@@ -7,6 +7,7 @@
 # Optional overrides:
 #   ENV_NAME=visempar-mtup2 bash run_scripts/install_flash_attn.sh
 #   FLASH_ATTN_VERSION=2.7.4.post1 bash run_scripts/install_flash_attn.sh
+#   FLASH_ATTN_WHEEL_URL=https://.../flash_attn-...whl bash run_scripts/install_flash_attn.sh
 
 set -euo pipefail
 
@@ -15,7 +16,18 @@ cd "$ROOT"
 
 ENV_NAME="${ENV_NAME:-visempar-mtup2}"
 FLASH_ATTN_VERSION="${FLASH_ATTN_VERSION:-}"
+FLASH_ATTN_WHEEL_URL="${FLASH_ATTN_WHEEL_URL:-}"
 MAX_JOBS="${MAX_JOBS:-4}"
+INSTALL_ROOT="${INSTALL_ROOT:-$HOME/.cache/visempar_flash_attn_install}"
+WORK_DIR="$INSTALL_ROOT/work"
+TMP_DIR="$INSTALL_ROOT/tmp"
+PIP_CACHE_DIR="$INSTALL_ROOT/pip-cache"
+
+export MAX_JOBS
+export TMPDIR="$TMP_DIR"
+export PIP_CACHE_DIR
+
+mkdir -p "$WORK_DIR" "$TMPDIR" "$PIP_CACHE_DIR"
 
 if command -v conda >/dev/null 2>&1; then
   eval "$(conda shell.bash hook)"
@@ -57,14 +69,33 @@ if not torch.cuda.is_available() or torch.version.cuda is None:
 print("gpu:", torch.cuda.get_device_name(0))
 PY
 
-python -m pip install --upgrade pip
-python -m pip install packaging ninja setuptools wheel
+cd "$WORK_DIR"
 
-export MAX_JOBS
-if [[ -n "$FLASH_ATTN_VERSION" ]]; then
-  python -m pip install "flash-attn==${FLASH_ATTN_VERSION}" --no-build-isolation
+echo
+echo "Using FlashAttention install workspace:"
+echo "  work:      $WORK_DIR"
+echo "  tmp:       $TMPDIR"
+echo "  pip cache: $PIP_CACHE_DIR"
+echo
+
+python -m pip install --cache-dir "$PIP_CACHE_DIR" --upgrade pip
+python -m pip install --cache-dir "$PIP_CACHE_DIR" packaging ninja setuptools wheel
+
+if [[ -n "$FLASH_ATTN_WHEEL_URL" ]]; then
+  WHEEL_PATH="$WORK_DIR/${FLASH_ATTN_WHEEL_URL##*/}"
+  python - "$FLASH_ATTN_WHEEL_URL" "$WHEEL_PATH" <<'PY'
+import sys
+import urllib.request
+
+url, out = sys.argv[1], sys.argv[2]
+print(f"Downloading wheel:\n  {url}\n  -> {out}")
+urllib.request.urlretrieve(url, out)
+PY
+  python -m pip install --no-cache-dir "$WHEEL_PATH"
+elif [[ -n "$FLASH_ATTN_VERSION" ]]; then
+  python -m pip install --no-cache-dir "flash-attn==${FLASH_ATTN_VERSION}" --no-build-isolation
 else
-  python -m pip install flash-attn --no-build-isolation
+  python -m pip install --no-cache-dir flash-attn --no-build-isolation
 fi
 
 python - <<'PY'

@@ -16,10 +16,10 @@
 - [x] Add run-name suffixes for runtime overrides to avoid reusing incompatible checkpoints.
 - [x] Add profiler overrides to estimate micro-batch savings before GPU runs.
 - [x] Make `batch_per_device=2, grad_accum=8` the default fair runtime.
+- [x] Disable FlashAttention by default for RTX 6000/Turing compatibility.
 
 ## Next Runs
 
-- [ ] On RTX 6000, confirm whether `flash_attn` is installed and used.
 - [ ] Run a 20-step timing probe with the default config.
 - [ ] Run a 20-step timing probe with `batch_per_device=2, grad_accum=8`.
 - [ ] If VRAM allows, try `batch_per_device=4, grad_accum=4`.

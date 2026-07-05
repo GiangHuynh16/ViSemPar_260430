@@ -69,21 +69,16 @@ Then inspect:
 checkpoints/<group>/<run_name>/s42/timing_profile.json
 ```
 
-If the timing probe shows slow micro-batches, first check whether FlashAttention
-is actually installed in the active CUDA environment:
-
-```bash
-python3 -c "import flash_attn; print('flash_attn ok')"
-```
-
-`model.flash_attn: true` is enabled in config, but training only uses
-FlashAttention when the `flash_attn` package is importable.
-
-Install it on the CUDA server with:
+FlashAttention is disabled by default because Quadro RTX 6000/Turing does not
+support FlashAttention 2. If you later run on an Ampere-or-newer GPU such as
+RTX A6000/A100, you can explicitly enable it:
 
 ```bash
 bash run_scripts/install_flash_attn.sh
+python3 run_scripts/run_vi_epoch_smatch_grid.py --flash-attn on
 ```
+
+On unsupported GPUs, keep the default `model.flash_attn: false`.
 
 Quick protocol: MTUP2 only, seed `42`, three LR values, `batch=2`,
 `grad_accum=8`, and dev Smatch every 5 epochs.
@@ -115,7 +110,7 @@ python3 run_scripts/run_vi_epoch_smatch_grid.py \
 Safe optimizations already used by default:
 
 - Dev-loss evaluation during training is disabled because checkpoint selection is done by external dev Smatch.
-- FlashAttention is requested and used automatically when the package is installed.
+- FlashAttention is disabled for RTX 6000/Turing compatibility.
 - The default runner is MTUP2-only/seed-42/dev-every-5-epochs to avoid accidentally launching the full expensive grid.
 - Every final run still trains for 30 epochs and keeps epoch checkpoints for dev-Smatch selection.
 

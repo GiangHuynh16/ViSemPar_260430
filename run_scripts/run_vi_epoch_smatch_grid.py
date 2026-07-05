@@ -36,11 +36,31 @@ DEFAULT_MTUP2_LRS = [2e-4, 1e-4, 5e-5]
 DEFAULT_BASELINE_LRS = [2e-4, 1e-4, 5e-5, 1e-5]
 
 
-def run_command(cmd: list[str], dry_run: bool = False) -> None:
+def run_command(cmd: list[str], dry_run: bool = False, log_path: Path | None = None) -> None:
     print("$ " + " ".join(shlex.quote(part) for part in cmd), flush=True)
     if dry_run:
         return
-    subprocess.run(cmd, cwd=ROOT, check=True)
+    if log_path is None:
+        subprocess.run(cmd, cwd=ROOT, check=True)
+        return
+
+    log_path.parent.mkdir(parents=True, exist_ok=True)
+    with open(log_path, "w", encoding="utf-8") as log_file:
+        process = subprocess.Popen(
+            cmd,
+            cwd=ROOT,
+            stdout=subprocess.PIPE,
+            stderr=subprocess.STDOUT,
+            text=True,
+            bufsize=1,
+        )
+        assert process.stdout is not None
+        for line in process.stdout:
+            print(line, end="", flush=True)
+            log_file.write(line)
+        return_code = process.wait()
+    if return_code:
+        raise subprocess.CalledProcessError(return_code, cmd)
 
 
 def count_sentence_lines(path: Path) -> int:
@@ -131,12 +151,16 @@ def write_config(
     batch_per_device: int | None,
     grad_accum: int | None,
     gradient_checkpointing: bool | None,
+    flash_attn: bool | None,
     dry_run: bool = False,
 ) -> Path:
     cfg = copy.deepcopy(load_yaml_config(source_config))
     cfg.pop("base", None)
     cfg["group"] = group
     cfg["run_name"] = run_name
+    if flash_attn is not None:
+        model = cfg.setdefault("model", {})
+        model["flash_attn"] = bool(flash_attn)
     training = cfg.setdefault("training", {})
     training["epochs"] = epochs
     training["save_total_limit"] = epochs
@@ -177,6 +201,12 @@ def run_name_suffix(args: argparse.Namespace) -> str:
 
 
 def gradient_checkpointing_override(value: str) -> bool | None:
+    if value == "config":
+        return None
+    return value == "on"
+
+
+def flash_attn_override(value: str) -> bool | None:
     if value == "config":
         return None
     return value == "on"
@@ -261,7 +291,7 @@ def maybe_train(config_path: Path, seed: int, run_dir: Path, epochs: int, args) 
         cmd.extend(["--resume_from_checkpoint", "auto"])
     if args.timing_probe_steps > 0:
         cmd.extend(["--max_steps", str(args.timing_probe_steps)])
-    run_command(cmd, dry_run=args.dry_run)
+    run_command(cmd, dry_run=args.dry_run, log_path=run_dir / "train_command.log")
 
 
 def score_dev_checkpoints(
@@ -460,6 +490,8 @@ def parse_args() -> argparse.Namespace:
                         help="Override training.grad_accum for every generated run.")
     parser.add_argument("--gradient-checkpointing", choices=["config", "on", "off"], default="config",
                         help="Override gradient checkpointing for every generated run.")
+    parser.add_argument("--flash-attn", choices=["config", "on", "off"], default="config",
+                        help="Override model.flash_attn for every generated run.")
     parser.add_argument("--timing-probe-steps", type=int, default=-1,
                         help="Run train.py for only N optimizer steps and skip dev/test scoring.")
     parser.add_argument("--dev-gold", default="data/formatted/vietnamese_v2/dev_ground_truth.txt")
@@ -521,6 +553,7 @@ def main() -> None:
                 batch_per_device=args.batch_per_device,
                 grad_accum=args.grad_accum,
                 gradient_checkpointing=gradient_checkpointing_override(args.gradient_checkpointing),
+                flash_attn=flash_attn_override(args.flash_attn),
                 dry_run=args.dry_run,
             )
             for seed in args.seeds:

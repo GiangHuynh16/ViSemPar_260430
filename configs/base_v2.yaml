@@ -9,7 +9,7 @@
 
 model:
   name: Qwen/Qwen2.5-7B-Instruct
-  flash_attn: true
+  flash_attn: false
   device_map: single_cuda
 
 lora:
