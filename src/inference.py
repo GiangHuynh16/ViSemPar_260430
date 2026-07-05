@@ -7,8 +7,8 @@ extracts the final AMR output (last step for MTUP variants),
 and saves predictions.
 
 Usage:
-    python src/inference.py --config configs/MTUP2.yaml --seed 42 --split test
-    python src/inference.py --config configs/B1.yaml    --seed 42 --split test
+    python src/inference.py --config configs/vietnamese_v2/MTUP2.yaml --seed 42 --split test
+    python src/inference.py --config configs/vietnamese_v2/B1.yaml    --seed 42 --split test
 
 Outputs:
     results/{group}/{method}/s{seed}_pred.txt       – one AMR per line (for eval)
@@ -94,44 +94,10 @@ def extract_amr_MTUP2(response: str) -> str:
     return amr or '(a / amr-unknown)'
 
 
-def extract_amr_MTUP3A(response: str) -> str:
-    marker = response.rfind('[STEP 3: AMR_WITH_VAR]')
-    if marker == -1:
-        # fallback to step 2 no-var
-        marker = response.rfind('[STEP 2: AMR_NO_VAR]')
-    if marker == -1:
-        return '(a / amr-unknown)'
-    amr = extract_balanced_amr(response, marker)
-    return amr or '(a / amr-unknown)'
-
-
-def extract_amr_MTUP3B(response: str) -> str:
-    marker = response.rfind('[STEP 3: AMR_WITH_VAR]')
-    if marker == -1:
-        marker = response.rfind('[STEP 2: RELATIONS]')
-    if marker == -1:
-        return '(a / amr-unknown)'
-    amr = extract_balanced_amr(response, marker)
-    return amr or '(a / amr-unknown)'
-
-
-def extract_amr_MTUP4(response: str) -> str:
-    marker = response.rfind('[STEP 4: AMR_WITH_VAR]')
-    if marker == -1:
-        marker = response.rfind('[STEP 3: AMR_NO_VAR]')
-    if marker == -1:
-        return '(a / amr-unknown)'
-    amr = extract_balanced_amr(response, marker)
-    return amr or '(a / amr-unknown)'
-
-
 EXTRACTORS = {
     'B1': extract_amr_B1,
     'B2': extract_amr_B2,
     'MTUP2': extract_amr_MTUP2,
-    'MTUP3A': extract_amr_MTUP3A,
-    'MTUP3B': extract_amr_MTUP3B,
-    'MTUP4': extract_amr_MTUP4,
 }
 
 
@@ -189,6 +155,12 @@ def main():
     parser.add_argument('--split',    default='test',
                         choices=['test', 'val'],
                         help='Which split to run inference on')
+    parser.add_argument('--adapter_path',
+                        help='Override adapter path, e.g. an epoch checkpoint.')
+    parser.add_argument('--output_dir',
+                        help='Override output directory for predictions.')
+    parser.add_argument('--output_prefix',
+                        help='Override output filename prefix before _pred/_full.')
     args = parser.parse_args()
 
     cfg = load_yaml_config(args.config)
@@ -198,7 +170,7 @@ def main():
     group = cfg['group']
     root = Path(__file__).parent.parent
 
-    configured_adapter = cfg.get('adapter_path')
+    configured_adapter = args.adapter_path or cfg.get('adapter_path')
     if configured_adapter:
         adapter_path = Path(configured_adapter)
         if not adapter_path.is_absolute():
@@ -222,11 +194,14 @@ def main():
             )
         test_file = root / configured_val
 
-    out_dir = root / 'results' / group / run_name
+    out_dir = Path(args.output_dir) if args.output_dir else root / 'results' / group / run_name
+    if not out_dir.is_absolute():
+        out_dir = root / out_dir
     out_dir.mkdir(parents=True, exist_ok=True)
-    pred_path = out_dir / f"s{args.seed}_pred.txt"
-    full_path = out_dir / f"s{args.seed}_full.txt"
-    meta_path = out_dir / f"s{args.seed}_{args.split}_inference_meta.json"
+    output_prefix = args.output_prefix or f"s{args.seed}"
+    pred_path = out_dir / f"{output_prefix}_pred.txt"
+    full_path = out_dir / f"{output_prefix}_full.txt"
+    meta_path = out_dir / f"{output_prefix}_{args.split}_inference_meta.json"
 
     print(f"Method: {method} | Run: {run_name} | Seed: {args.seed} | Split: {args.split}")
     print(f"Adapter: {adapter_path}")

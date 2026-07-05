@@ -1,0 +1,4 @@
+interface:
+  display_name: "Multi-Agent SDLC"
+  short_description: "Run a multi-agent SDLC delivery loop"
+  default_prompt: "Use $multi-agent-sdlc to turn these requirements and acceptance criteria into a multi-agent delivery workflow."

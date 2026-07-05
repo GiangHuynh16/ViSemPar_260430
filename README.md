@@ -1,101 +1,40 @@
 # ViSemPar_260430
 
-LoRA SFT experiments for Vietnamese AMR parsing and MTUP baselines.
+LoRA SFT experiments for Vietnamese AMR parsing with B1, B2, and MTUP2.
 
-## What This Repo Contains
+## Current Goal
 
-- `src/data_pipeline.py`: builds chat-format training files for `B1`, `B2`, `MTUP2`, `MTUP3A`, `MTUP3B`, and `MTUP4`.
-- `src/train.py`: trains a Qwen2.5 LoRA adapter from a config.
-- `src/inference.py`: runs greedy inference and writes `*_full.txt` plus extracted `*_pred.txt`.
-- `src/evaluate.py`: computes Smatch, parsable rate, output length, and root accuracy.
-- `src/aggregate_scores.py`: aggregates all `results/**/scores.json` into `results/summary/all_scores.csv`.
-- `src/tune_lr.py`: creates sklearn random-search style learning-rate tuning configs.
-- `configs/`: method configs. The cleaner Vietnamese setup is under `configs/vietnamese_v2/`.
-- `run_scripts/`: end-to-end scripts for Vietnamese, English Little Prince, and Portuguese Little Prince.
-- `references/`: repo audit notes, current questions, and experimental-plan drafts.
+The active protocol answers one question: whether MTUP2 is better than the B1/B2 baselines under an objective Vietnamese v2 setup.
 
-## Methods
+Model selection is based on held-out dev Smatch for the final AMR only. Dev loss is logged for diagnostics, but it is not used to choose MTUP2 checkpoints.
 
-- `B1`: sentence to full AMR.
-- `B2`: sentence to no-var AMR. At inference time, `src/var_binder.py` deterministically adds variables so Smatch can run.
-- `MTUP2`: step 1 no-var AMR, step 2 full AMR.
-- `MTUP3A`: concepts, no-var AMR, full AMR.
-- `MTUP3B`: concepts, relations, full AMR.
-- `MTUP4`: concepts, relations, no-var AMR, full AMR.
+## Active Files
 
-Important current convention: `B2` no-var output and `MTUP2` step 1 are produced by the same `strip_variables(..., mode="clean")` path when the same formatted data command is used. `clean` mode removes declarations and expands bare reentrancy variables, so B2 is actually variable-free.
+- `src/data_pipeline.py`: builds clean chat-format train/dev data.
+- `src/train.py`: trains Qwen2.5 LoRA adapters and saves one checkpoint per epoch.
+- `src/inference.py`: runs inference from either `final` or an explicit `checkpoint-*`.
+- `src/evaluate.py`: computes Smatch and structural diagnostics.
+- `src/audit_b2.py`: verifies B2 target equals MTUP2 step 1 without final-AMR leakage.
+- `src/audit_mtup2_setup.py`: verifies MTUP2 prompt/template/split cleanliness.
+- `run_scripts/run_vi_epoch_smatch_grid.py`: current end-to-end experiment runner.
+- `run_scripts/run_vietnamese_v2.sh`: compatibility wrapper around the current runner.
+- `configs/vietnamese_v2/`: source configs for B1, B2, and MTUP2.
 
 ## Environment
-
-Create one named Conda environment on the CUDA server, then activate it whenever
-running audits, training, inference, or evaluation.
-
-Recommended one-time setup:
-
-```bash
-conda create -y -n visempar-mtup2 python=3.10
-conda activate visempar-mtup2
-python --version
-pip install --upgrade pip
-```
-
-Install CUDA PyTorch and repo dependencies. For CUDA 12.1:
-
-```bash
-pip install torch --index-url https://download.pytorch.org/whl/cu121
-pip install -r requirements.txt
-```
-
-Or use the helper script for the same setup:
 
 ```bash
 bash run_scripts/setup_conda_env.sh
 conda activate visempar-mtup2
 ```
 
-If the server uses a different CUDA version, override the PyTorch wheel index,
-for example:
+The setup script installs CUDA PyTorch and `requirements.txt`. Training requires a CUDA GPU.
+
+## Data
+
+Regenerate Vietnamese v2 formatted data when raw data or prompt formatting changes:
 
 ```bash
-TORCH_INDEX_URL=https://download.pytorch.org/whl/cu124 bash run_scripts/setup_conda_env.sh
-```
-
-Verify CUDA before training:
-
-```bash
-python - <<'PY'
-import torch
-print("torch:", torch.__version__)
-print("cuda available:", torch.cuda.is_available())
-print("cuda version:", torch.version.cuda)
-print("gpu:", torch.cuda.get_device_name(0) if torch.cuda.is_available() else None)
-PY
-```
-
-Current code expects:
-
-- Python 3.10+ recommended
-- CUDA GPU for training
-- `torch`
-- `transformers`
-- `datasets`
-- `peft`
-- `pyyaml`
-- `tqdm`
-- `smatch`
-- `penman` optional
-- `matplotlib` optional, for `loss_curve.png`
-- `scikit-learn` and `scipy` for `src/tune_lr.py`
-
-Before final paper runs, save `python --version`, `pip freeze`, CUDA version,
-GPU model, command, git commit, config path, and checkpoint path for every run.
-
-## Recommended Vietnamese V2 Workflow
-
-Build clean formatted data with a deterministic dev split:
-
-```bash
-python src/data_pipeline.py \
+python3 src/data_pipeline.py \
   --language vi \
   --no_var_mode clean \
   --raw_dir data/raw \
@@ -103,177 +42,176 @@ python src/data_pipeline.py \
   --amr1_weight 1 \
   --amr2_weight 1 \
   --dev_split 0.1 \
-  --dev_seed 42
+  --dev_seed 42 \
+  --methods B1 B2 MTUP2
 ```
 
-Train, infer, and evaluate all Vietnamese v2 methods:
+## Run The Current Experiment
+
+Before spending GPU time, inspect expected cost:
 
 ```bash
-bash run_scripts/run_vietnamese_v2.sh
+python3 src/profile_training_cost.py --config configs/vietnamese_v2/MTUP2.yaml
 ```
 
-Run one method manually:
+On the GPU server, run a short timing probe before a full run:
 
 ```bash
-python src/train.py --config configs/vietnamese_v2/MTUP2.yaml --seed 42
-python src/inference.py --config configs/vietnamese_v2/MTUP2.yaml --seed 42 --split test
-python src/evaluate.py \
-  --pred results/vietnamese_v2_mtup_2tasks/MTUP2/s42_pred.txt \
-  --gold data/raw/public_test_ground_truth.txt \
-  --method MTUP2 \
-  --seed 42 \
-  --group vietnamese_v2_mtup_2tasks
-python src/aggregate_scores.py
-```
-
-Training with a dev split writes:
-
-- `checkpoints/<group>/<method>/s<seed>/trainer_log_history.json`
-- `checkpoints/<group>/<method>/s<seed>/loss_curve.png`
-- `checkpoints/<group>/<method>/s<seed>/train_meta.json`
-
-Use the dev loss curve to detect overfitting and choose a defensible epoch/checkpoint before public-test inference.
-For validation inference, v2 configs use `data/formatted/vietnamese_v2/dev.txt`; public test is never the fallback for `--split val`.
-
-If training succeeds but validation fails with CUDA OOM exactly at an epoch
-boundary, verify that the updated code prints:
-
-```text
-Batch sizes: train=1, eval=1, grad_accum=16
-```
-
-Older code left Hugging Face's default evaluation batch size at `8`, even
-though training used batch size `1`. Pull the latest code before restarting.
-To resume when a `checkpoint-*` directory exists:
-
-```bash
-python src/train.py --config <config.yaml> --seed 42 --resume_from_checkpoint
-```
-
-## MTUP2-Only Cascade Tuning
-
-Current decision protocol: do not rerun every old method/dataset. Use one representative method, `MTUP2`, on Vietnamese v2 to get an early signal about whether the idea works.
-
-On the CUDA server, activate the environment first:
-
-```bash
-conda activate visempar-mtup2
-```
-
-Run the agreed short MTUP2 probe first: one middle learning rate and five epochs.
-
-```bash
-bash run_scripts/run_vi_probe5.sh MTUP2
-```
-
-This uses:
-
-```text
-config: configs/vietnamese_v2/MTUP2_probe5.yaml
-learning rate: 1.752410111812816e-5
-maximum epochs: 5
-train batch: 1
-validation batch: 1
-effective batch: 16
-```
-
-The progress bar should show approximately `510` optimizer steps, not `3060`.
-After this run, inspect its train/dev loss curve before deciding whether to
-run additional learning rates.
-
-The first MTUP2 probe result was:
-
-```text
-MTUP2 mid-LR probe5, seed 42:
-best dev loss = 0.1367 at epoch 3
-public-test Smatch F1 = 0.5236
-parsable rate = 1.0
-```
-
-Before spending more time on MTUP2 learning-rate variants, run one clean direct
-baseline probe with the same model, LoRA size, LR, batch size, split, and epoch
-budget:
-
-```bash
-bash run_scripts/run_vi_probe5.sh B1
-```
-
-Decision rule:
-
-- If B1 is clearly below MTUP2 `0.5236`, MTUP2 has a positive early signal.
-- If B1 is similar or higher, run `bash run_scripts/run_vi_probe5.sh MTUP2_LOW`
-  once to test whether a lower LR helps MTUP2.
-- Run `bash run_scripts/run_vi_probe5.sh B2` only if the B1/MTUP2 comparison is
-  inconclusive or the report needs the cleaned B2 baseline number.
-
-Preferred one-command protocol:
-
-```bash
-RUN_TRAIN=1 bash run_scripts/run_mtup2_vi_clean.sh
-```
-
-This regenerates only `B2` and `MTUP2` Vietnamese v2 data, runs the setup
-audits, trains only the three MTUP2 LR candidates, selects by dev loss, and then
-runs one public-test inference/evaluation for seed `42`.
-
-Use hierarchical cascade tuning, not full grid search:
-
-1. Fix defaults: MTUP2 uses LoRA `r=64`, `alpha=128`, `dropout=0.05`, effective batch size 16, scheduler, warmup, weight decay.
-2. Tune learning rate first on dev.
-3. Fix the selected learning rate and best epoch.
-4. Only if the dev curve is clearly unstable, tune the next hyperparameter in a narrow range.
-
-Run the MTUP2 pre-flight audit before GPU training:
-
-```bash
-python src/audit_mtup2_setup.py --config configs/vietnamese_v2/MTUP2.yaml
-```
-
-Generate MTUP2-only learning-rate configs:
-
-```bash
-python src/tune_lr.py \
+python3 src/train.py \
   --config configs/vietnamese_v2/MTUP2.yaml \
   --seed 42 \
-  --n_iter 3 \
-  --lr_min 1e-6 \
-  --lr_max 5e-5 \
-  --epochs 30 \
-  --out_dir configs/tuning/mtup2_vi_lr
+  --max_steps 20
 ```
 
-Run the printed train commands. Then summarize completed runs:
+Then inspect:
+
+```text
+checkpoints/<group>/<run_name>/s42/timing_profile.json
+```
+
+If the timing probe shows slow micro-batches, first check whether FlashAttention
+is actually installed in the active CUDA environment:
 
 ```bash
-python src/tune_lr.py \
+python3 -c "import flash_attn; print('flash_attn ok')"
+```
+
+`model.flash_attn: true` is enabled in config, but training only uses
+FlashAttention when the `flash_attn` package is importable.
+
+Install it on the CUDA server with:
+
+```bash
+bash run_scripts/install_flash_attn.sh
+```
+
+Quick protocol: MTUP2 only, seed `42`, three LR values, `batch=2`,
+`grad_accum=8`, and dev Smatch every 5 epochs.
+
+```bash
+python3 run_scripts/run_vi_epoch_smatch_grid.py
+```
+
+Comparison protocol: add B1/B2 and all three seeds after the quick MTUP2 signal looks worth the compute.
+
+```bash
+python3 run_scripts/run_vi_epoch_smatch_grid.py \
+  --methods B1 B2 MTUP2 \
+  --seeds 42 123 456
+```
+
+Final exhaustive protocol: tune B1/B2 too and score every epoch checkpoint. This is expensive and should be run only for final evidence.
+
+```bash
+python3 run_scripts/run_vi_epoch_smatch_grid.py \
+  --methods B1 B2 MTUP2 \
+  --seeds 42 123 456 \
+  --tune-baselines \
+  --score-all-checkpoints
+```
+
+## Runtime Optimization Without Biasing The Comparison
+
+Safe optimizations already used by default:
+
+- Dev-loss evaluation during training is disabled because checkpoint selection is done by external dev Smatch.
+- FlashAttention is requested and used automatically when the package is installed.
+- The default runner is MTUP2-only/seed-42/dev-every-5-epochs to avoid accidentally launching the full expensive grid.
+- Every final run still trains for 30 epochs and keeps epoch checkpoints for dev-Smatch selection.
+
+The default runtime is now `batch_per_device=2` and `grad_accum=8`, preserving
+the same effective batch size of `16` while cutting the number of micro-batches
+roughly in half compared with the old `batch=1`, `grad_accum=16` setup. This
+changes GPU memory use and can slightly change runtime numerics, so apply it
+uniformly to all compared methods and report it with the results.
+
+Estimate the cost before running:
+
+```bash
+python3 src/profile_training_cost.py \
   --config configs/vietnamese_v2/MTUP2.yaml \
-  --seed 42 \
-  --summarize configs/tuning/mtup2_vi_lr/MTUP2_lrsearch_manifest.json
+  --batch-per-device 2 \
+  --grad-accum 8
 ```
 
-Pick `selected.lr` and `selected.best_epoch` from the summary. Public test is used only after this selection is fixed.
-
-Final MTUP2 rerun uses three seeds:
+Run the grid. The same fair batch setting is applied to every method/LR/seed:
 
 ```bash
-python src/train.py --config configs/vietnamese_v2/MTUP2.yaml --seed 42
-python src/train.py --config configs/vietnamese_v2/MTUP2.yaml --seed 123
-python src/train.py --config configs/vietnamese_v2/MTUP2.yaml --seed 456
+python3 run_scripts/run_vi_epoch_smatch_grid.py \
+  --methods B1 B2 MTUP2 \
+  --seeds 42 123 456 \
+  --batch-per-device 2 \
+  --grad-accum 8
 ```
 
-## Prompt Leakage Policy
+The runner appends the batch setting to the run name, for example
+`MTUP2_lr1e-04_b2_ga8`, so these checkpoints cannot be confused with the
+old `batch=1, grad_accum=16` checkpoints.
 
-The Vietnamese prompt has been simplified to avoid dataset-specific lexical rules. It now explicitly says not to use examples, gold labels, or rules derived from the test set.
+If RTX 6000 still runs out of memory, fall back to the old lower-memory runtime:
 
-Before final reporting:
+```bash
+python3 run_scripts/run_vi_epoch_smatch_grid.py \
+  --batch-per-device 1 \
+  --grad-accum 16
+```
 
-- Do not add synthetic examples from public test.
-- Do not add prompt rules discovered by inspecting public-test gold AMRs.
-- If a rule comes from annotation guidelines or training data only, document that source.
-- Keep Vietnamese, English, and Portuguese prompts general unless the paper explicitly claims a dataset-specific prompt ablation.
+Only disable gradient checkpointing after a short probe confirms RTX 6000 has
+enough VRAM:
 
-## Caveats About Existing Results
+```bash
+python3 run_scripts/run_vi_epoch_smatch_grid.py \
+  --methods MTUP2 \
+  --seeds 42 \
+  --mtup2-lrs 1e-4 \
+  --batch-per-device 2 \
+  --grad-accum 8 \
+  --gradient-checkpointing off
+```
 
-Existing `results/**` files are useful as preliminary evidence, but not all are cleanly reproducible from current code. In particular, old Vietnamese `MTUP2` outputs used older `Task 1:` / `Task 2:` headers while current code expects `[STEP ...]` headers.
+Do not silently change LoRA rank, target modules, `max_length`, epochs, or LR
+grid for only one method. Those are model/protocol changes, not just runtime
+optimizations.
 
-Treat current saved scores as historical until the v2 workflow is rerun with recorded commands, fixed dev split, clean no-var mode, and three seeds.
+Default quick MTUP2 LR grid:
+
+```text
+2e-4, 1e-4, 5e-5
+```
+
+Default baseline LR grid when `--tune-baselines` is used:
+
+```text
+2e-4, 1e-4, 5e-5, 1e-5
+```
+
+## Selection Rule
+
+For every run and seed:
+
+1. Train for 30 epochs.
+2. Keep each epoch checkpoint.
+3. Run dev inference every `--dev-eval-interval` checkpoints, always including the last checkpoint.
+4. Compute dev Smatch on the extracted final AMR.
+5. Select the checkpoint with the best dev Smatch.
+6. Evaluate that selected checkpoint on the public test set once.
+
+Outputs are written under:
+
+```text
+results/vietnamese_v2_epoch_smatch/
+```
+
+The main summary is:
+
+```text
+results/vietnamese_v2_epoch_smatch/epoch_smatch_test_summary.csv
+```
+
+## Notes
+
+- Public test is never used for checkpoint or LR selection.
+- `data/raw/public_test.txt` has 150 sentences while `public_test_ground_truth.txt` has 149 gold AMRs; the evaluator handles this known missing-gold case for test only.
+- Generated configs are written under `configs/generated/vi_epoch_smatch/` when the runner executes.
+- Historical scripts and probe/dev-loss tuning helpers were removed to keep the repo focused on the active protocol.
+- Training dev-loss evaluation is disabled by default to avoid spending GPU on a metric that is not used for selection.

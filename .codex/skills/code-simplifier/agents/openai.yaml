@@ -1,0 +1,4 @@
+interface:
+  display_name: "Code Simplifier"
+  short_description: "Simplify code without changing behavior"
+  default_prompt: "Use $code-simplifier to simplify this code while preserving exact behavior and keeping the refactor strictly scoped to the touched files."

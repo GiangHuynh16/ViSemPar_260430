@@ -1,6 +1,4 @@
-"""Shared system prompts for data formatting and inference."""
-
-from typing import Optional
+"""Shared Vietnamese system prompts for data formatting and inference."""
 
 
 SYSTEM_PROMPT_VI = """Bạn là trợ lý phân tích AMR (Abstract Meaning Representation) cho tiếng Việt.
@@ -19,39 +17,9 @@ SYSTEM_PROMPT_VI_MTUP2 = SYSTEM_PROMPT_VI + """
 9. [STEP 1: AMR_NO_VAR] là AMR không biến: dùng dạng (concept ...), không dùng khai báo (x / concept).
 10. [STEP 2: AMR_WITH_VAR] là AMR đầy đủ có biến: dùng dạng (x / concept), biến duy nhất và chỉ tái sử dụng khi reentrancy."""
 
-SYSTEM_PROMPT_EN = """You are an AMR (Abstract Meaning Representation) parsing assistant for English.
-
-RULES:
-1. Follow the requested output format exactly.
-2. Use standard AMR concepts, variables, and relations.
-3. Keep AMR parentheses balanced.
-4. Each variable must be unique within the graph.
-5. Reuse variables for reentrancies when producing full AMR.
-6. Output only the requested labels and AMR content."""
-
-SYSTEM_PROMPT_EN_MTUP2 = SYSTEM_PROMPT_EN + """
-7. For MTUP2, output exactly two sections in this order: [STEP 1: AMR_NO_VAR], then [STEP 2: AMR_WITH_VAR].
-8. [STEP 1: AMR_NO_VAR] is variable-free AMR: use forms like (concept ...), not declarations like (x / concept).
-9. [STEP 2: AMR_WITH_VAR] is full AMR: use forms like (x / concept), unique variables, and variable reuse only for reentrancy."""
-
-SYSTEM_PROMPT_PT = """You are an AMR (Abstract Meaning Representation) parsing assistant for Brazilian Portuguese.
-
-RULES:
-1. Follow the requested output format exactly.
-2. Use standard AMR concepts, variables, and relations (in English, as per AMR convention).
-3. Keep AMR parentheses balanced.
-4. Each variable must be unique within the graph.
-5. Reuse variables for reentrancies when producing full AMR.
-6. Output only the requested labels and AMR content."""
-
-
-def get_system_prompt(language: str = 'vi', method: Optional[str] = None) -> str:
-    if language == 'en':
-        if method == 'MTUP2':
-            return SYSTEM_PROMPT_EN_MTUP2
-        return SYSTEM_PROMPT_EN
-    if language == 'pt':
-        return SYSTEM_PROMPT_PT
+def get_system_prompt(language: str = 'vi', method: str | None = None) -> str:
+    if language != 'vi':
+        raise ValueError(f"Unsupported language for current protocol: {language}")
     if method == 'MTUP2':
         return SYSTEM_PROMPT_VI_MTUP2
     return SYSTEM_PROMPT_VI

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Code Review"
+  short_description: "Maintainability and SDK-fit review"
+  default_prompt: "Use $code-review to review this scope for high-complexity custom logic, verify SDK-native replacements, and use runtime sub-agents only if the review spans the whole system or n+1 features."

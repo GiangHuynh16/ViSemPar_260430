@@ -49,5 +49,8 @@ echo "Environment is ready."
 echo "Activate it in each server shell with:"
 echo "  conda activate $ENV_NAME"
 echo
+echo "Optional speedup on the CUDA server:"
+echo "  bash run_scripts/install_flash_attn.sh"
+echo
 echo "Then run:"
-echo "  RUN_TRAIN=1 bash run_scripts/run_mtup2_vi_clean.sh"
+echo "  python3 run_scripts/run_vi_epoch_smatch_grid.py --tune-baselines"

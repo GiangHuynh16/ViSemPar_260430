@@ -14,6 +14,9 @@ import json
 import os
 import random
 import argparse
+import math
+import time
+import importlib.util
 import numpy as np
 from pathlib import Path
 
@@ -27,6 +30,7 @@ from transformers import (
     AutoTokenizer,
     TrainingArguments,
     Trainer,
+    TrainerCallback,
     DataCollatorForSeq2Seq,
     EarlyStoppingCallback,
 )
@@ -156,6 +160,71 @@ def split_dataset_for_dev(dataset: Dataset, dev_split: float, seed: int):
     return dataset.select(train_idx), dataset.select(dev_idx)
 
 
+class TimingCallback(TrainerCallback):
+    """Record coarse optimizer-step and epoch timing for GPU-cost diagnosis."""
+
+    def __init__(self, log_steps: int = 10):
+        self.log_steps = max(1, int(log_steps))
+        self.rows = []
+        self._train_start = None
+        self._epoch_start = None
+        self._step_start = None
+
+    def on_train_begin(self, args, state, control, **kwargs):
+        self._train_start = time.perf_counter()
+
+    def on_epoch_begin(self, args, state, control, **kwargs):
+        self._epoch_start = time.perf_counter()
+
+    def on_step_begin(self, args, state, control, **kwargs):
+        self._step_start = time.perf_counter()
+
+    def on_step_end(self, args, state, control, **kwargs):
+        if self._step_start is None:
+            return
+        elapsed = time.perf_counter() - self._step_start
+        if state.global_step and state.global_step % self.log_steps == 0:
+            row = {
+                'event': 'optimizer_step',
+                'global_step': state.global_step,
+                'epoch': state.epoch,
+                'seconds': round(elapsed, 4),
+            }
+            self.rows.append(row)
+            print(
+                f"[timing] step={state.global_step} "
+                f"epoch={state.epoch:.4f} seconds={elapsed:.2f}",
+                flush=True,
+            )
+
+    def on_epoch_end(self, args, state, control, **kwargs):
+        if self._epoch_start is None:
+            return
+        elapsed = time.perf_counter() - self._epoch_start
+        row = {
+            'event': 'epoch',
+            'global_step': state.global_step,
+            'epoch': state.epoch,
+            'seconds': round(elapsed, 4),
+        }
+        self.rows.append(row)
+        print(
+            f"[timing] epoch={state.epoch:.4f} seconds={elapsed:.2f}",
+            flush=True,
+        )
+
+    def on_train_end(self, args, state, control, **kwargs):
+        if self._train_start is None:
+            return
+        elapsed = time.perf_counter() - self._train_start
+        self.rows.append({
+            'event': 'train',
+            'global_step': state.global_step,
+            'epoch': state.epoch,
+            'seconds': round(elapsed, 4),
+        })
+
+
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('--config', required=True)
@@ -170,6 +239,8 @@ def main():
         default=None,
         help='Resume from the latest checkpoint, or from an explicit checkpoint path.',
     )
+    parser.add_argument('--max_steps', type=int, default=-1,
+                        help='Diagnostic mode: stop after this many optimizer steps.')
     args = parser.parse_args()
 
     cfg = load_config(args.config, args.seed)
@@ -206,20 +277,25 @@ def main():
     if tokenizer.pad_token is None:
         tokenizer.pad_token = tokenizer.eos_token
 
-    # ── Dataset ────────────────────────────────────────────────────────────
     tr_cfg = cfg['training']
+    use_eval_loss_selection = bool(tr_cfg.get('load_best_model_at_end', False))
+    use_eval_loss_logging = bool(
+        tr_cfg.get('eval_loss_during_training', use_eval_loss_selection)
+    )
+
+    # ── Dataset ────────────────────────────────────────────────────────────
     dataset = load_chat_dataset(
         str(train_path), tokenizer,
         max_length=tr_cfg.get('max_length', 2048))
     print(f"Train examples: {len(dataset)}")
 
     eval_dataset = None
-    if dev_path and dev_path.exists():
+    if use_eval_loss_logging and dev_path and dev_path.exists():
         eval_dataset = load_chat_dataset(
             str(dev_path), tokenizer,
             max_length=tr_cfg.get('max_length', 2048))
         print(f"Dev examples:  {len(eval_dataset)}")
-    else:
+    elif use_eval_loss_logging:
         auto_dev_split = args.auto_dev_split
         if auto_dev_split is None:
             auto_dev_split = cfg.get('data', {}).get('auto_dev_split', 0.0)
@@ -229,6 +305,19 @@ def main():
             print(f"Auto dev split: {auto_dev_split:.3f}")
             print(f"Train examples after split: {len(dataset)}")
             print(f"Dev examples after split:   {len(eval_dataset)}")
+    elif dev_path and dev_path.exists():
+        print("Dev loss eval disabled; external dev-Smatch selection will use raw dev inference.")
+
+    train_batch_size = tr_cfg.get('batch_per_device', 1)
+    grad_accum = tr_cfg.get('grad_accum', 16)
+    micro_batches_per_epoch = math.ceil(len(dataset) / train_batch_size)
+    optimizer_steps_per_epoch = math.ceil(micro_batches_per_epoch / grad_accum)
+    print(
+        "Training cost estimate: "
+        f"{micro_batches_per_epoch} micro-batches/epoch, "
+        f"{optimizer_steps_per_epoch} optimizer steps/epoch, "
+        f"grad_accum={grad_accum}"
+    )
 
     # ── Model ──────────────────────────────────────────────────────────────
     print(f"\nLoading model: {model_name}")
@@ -252,8 +341,15 @@ def main():
         'torch_dtype': model_dtype,
         'trust_remote_code': True,
     }
+    if cfg.get('model', {}).get('flash_attn') and importlib.util.find_spec('flash_attn'):
+        model_kwargs['attn_implementation'] = 'flash_attention_2'
+    elif cfg.get('model', {}).get('flash_attn'):
+        print("WARNING: model.flash_attn=true but package 'flash_attn' is not installed; using default attention.")
+    elif cfg.get('model', {}).get('attn_implementation'):
+        model_kwargs['attn_implementation'] = cfg['model']['attn_implementation']
     if device_map is not None:
         model_kwargs['device_map'] = device_map
+    print(f"Attention implementation: {model_kwargs.get('attn_implementation', 'transformers default')}")
 
     model = AutoModelForCausalLM.from_pretrained(model_name, **model_kwargs)
 
@@ -275,20 +371,25 @@ def main():
     # ── Critical: must call in this exact order ────────────────────────────
     # enable_input_require_grads() BEFORE gradient_checkpointing_enable()
     # so that the hook set by enable_input_require_grads is not overwritten.
-    model.enable_input_require_grads()
-    model.gradient_checkpointing_enable()
+    use_gradient_checkpointing = bool(tr_cfg.get('gradient_checkpointing', True))
+    if use_gradient_checkpointing:
+        model.enable_input_require_grads()
+        model.gradient_checkpointing_enable()
+    print(f"Gradient checkpointing: {use_gradient_checkpointing}")
 
     # ── Training args ──────────────────────────────────────────────────────
-    train_batch_size = tr_cfg.get('batch_per_device', 1)
     eval_batch_size = tr_cfg.get('eval_batch_per_device', train_batch_size)
     print(
         f"Batch sizes: train={train_batch_size}, eval={eval_batch_size}, "
         f"grad_accum={tr_cfg.get('grad_accum', 16)}"
     )
 
+    use_eval_loss_selection = use_eval_loss_selection and eval_dataset is not None
+
     training_args = TrainingArguments(
         output_dir=str(output_dir),
         num_train_epochs=tr_cfg['epochs'],
+        max_steps=args.max_steps,
         per_device_train_batch_size=train_batch_size,
         per_device_eval_batch_size=eval_batch_size,
         gradient_accumulation_steps=tr_cfg.get('grad_accum', 16),
@@ -314,9 +415,9 @@ def main():
         eval_strategy='epoch' if eval_dataset is not None else 'no',
         eval_accumulation_steps=1 if eval_dataset is not None else None,
         prediction_loss_only=eval_dataset is not None,
-        load_best_model_at_end=eval_dataset is not None,
-        metric_for_best_model='eval_loss' if eval_dataset is not None else None,
-        greater_is_better=False if eval_dataset is not None else None,
+        load_best_model_at_end=use_eval_loss_selection,
+        metric_for_best_model='eval_loss' if use_eval_loss_selection else None,
+        greater_is_better=False if use_eval_loss_selection else None,
     )
 
     data_collator = DataCollatorForSeq2Seq(
@@ -327,8 +428,10 @@ def main():
     )
 
     callbacks = []
+    timing_callback = TimingCallback(log_steps=tr_cfg.get('timing_log_steps', 10))
+    callbacks.append(timing_callback)
     early_stopping_patience = tr_cfg.get('early_stopping_patience')
-    if eval_dataset is not None and early_stopping_patience:
+    if use_eval_loss_selection and early_stopping_patience:
         callbacks.append(EarlyStoppingCallback(
             early_stopping_patience=int(early_stopping_patience),
             early_stopping_threshold=float(tr_cfg.get('early_stopping_threshold', 0.0)),
@@ -363,6 +466,9 @@ def main():
     log_history = trainer.state.log_history
     with open(output_dir / 'trainer_log_history.json', 'w') as f:
         json.dump(log_history, f, indent=2)
+    with open(output_dir / 'timing_profile.json', 'w') as f:
+        json.dump(timing_callback.rows, f, indent=2)
+    print(f"Timing profile → {output_dir / 'timing_profile.json'}")
 
     if eval_dataset is not None:
         try:
@@ -401,19 +507,33 @@ def main():
         'config': args.config,
         'train_examples': len(dataset),
         'dev_examples': len(eval_dataset) if eval_dataset is not None else 0,
+        'dev_formatted_path': str(dev_path) if dev_path else None,
+        'eval_loss_during_training': use_eval_loss_logging,
         'train_batch_per_device': train_batch_size,
         'eval_batch_per_device': eval_batch_size,
+        'grad_accum': grad_accum,
+        'effective_batch_size': train_batch_size * grad_accum,
         'epochs': tr_cfg['epochs'],
+        'max_steps': args.max_steps,
         'last_epoch': trainer.state.epoch,
         'global_step': trainer.state.global_step,
         'lora_r': lora_cfg['r'],
         'lr': tr_cfg['lr'],
+        'gradient_checkpointing': use_gradient_checkpointing,
+        'attention_implementation': model_kwargs.get('attn_implementation'),
+        'micro_batches_per_epoch': micro_batches_per_epoch,
+        'optimizer_steps_per_epoch': optimizer_steps_per_epoch,
         'early_stopping_patience': early_stopping_patience,
         'early_stopping_threshold': tr_cfg.get('early_stopping_threshold', 0.0),
-        'selection_metric': 'eval_loss' if eval_dataset is not None else None,
+        'selection_metric': (
+            'eval_loss' if use_eval_loss_selection
+            else tr_cfg.get('selection_metric')
+        ),
         'final_adapter_path': str(final_dir),
         'best_checkpoint': trainer.state.best_model_checkpoint,
-        'best_eval_loss': trainer.state.best_metric,
+        'best_eval_loss': (
+            trainer.state.best_metric if use_eval_loss_selection else None
+        ),
     }
     with open(output_dir / 'train_meta.json', 'w') as f:
         json.dump(meta, f, indent=2)

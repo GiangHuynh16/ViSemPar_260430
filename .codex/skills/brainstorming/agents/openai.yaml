@@ -1,0 +1,4 @@
+interface:
+  display_name: "Brainstorming"
+  short_description: "Research-backed solution optioning"
+  default_prompt: "Use $brainstorming to research the current solution space, recommend the best option first, and compare up to 3 viable paths with trade-offs."

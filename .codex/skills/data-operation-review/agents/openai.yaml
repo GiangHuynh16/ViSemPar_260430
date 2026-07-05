@@ -1,0 +1,4 @@
+interface:
+  display_name: "Data Operation Review"
+  short_description: "Database and cache flow review"
+  default_prompt: "Use $data-operation-review to inspect this data scope for CRUD and propagation consistency, verify SDK-native data operations, and use runtime sub-agents only if the review spans the whole system or n+1 features."

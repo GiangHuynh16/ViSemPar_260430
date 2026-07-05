@@ -1,49 +1,35 @@
 # TODO
 
-## Priority 1: Clean B2 Baseline
+## Current Protocol
 
-- [x] Switch default no-var generation to `clean` in `src/data_pipeline.py`.
-- [x] Ensure `B2` and `MTUP2` step 1 share the same no-var generation path.
-- [x] Ensure the Vietnamese prompt tells the model not to leave bare variable references in no-var output.
-- [x] Regenerate Vietnamese v2 formatted data and inspect `data/formatted/vietnamese_v2/B2_train.txt`.
-- [x] Verify B2 no-var targets contain no AMR declarations like `(x / concept)` and no bare reentrancy variables.
-- [ ] Retrain B2 after regenerated data; old B2 checkpoints are not enough for final comparison.
+- [x] Use clean B2 no-var targets shared with MTUP2 step 1.
+- [x] Use deterministic Vietnamese v2 train/dev split.
+- [x] Train for 30 epochs and keep epoch checkpoints.
+- [x] Select checkpoints by dev Smatch on final AMR, not dev loss.
+- [x] Add preflight audits for B2/MTUP2 and sentence/gold counts.
+- [x] Add MTUP2 LR grid around LoRA-relevant values.
+- [x] Add optional fair LR grid for B1/B2 via `--tune-baselines`.
+- [x] Make the default runner a low-cost quick MTUP2 signal instead of a full comparison.
+- [x] Disable dev-loss evaluation during training by default.
+- [x] Score dev Smatch every 5 epochs by default; keep `--score-all-checkpoints` for final runs.
+- [x] Add fair runtime overrides for `batch_per_device`, `grad_accum`, and gradient checkpointing.
+- [x] Add run-name suffixes for runtime overrides to avoid reusing incompatible checkpoints.
+- [x] Add profiler overrides to estimate micro-batch savings before GPU runs.
+- [x] Make `batch_per_device=2, grad_accum=8` the default fair runtime.
 
-## Priority 2: Prompt Leakage Audit
+## Next Runs
 
-- [x] Replace the detailed Vietnamese prompt with a generic prompt in `src/data_pipeline.py`.
-- [x] Replace the detailed Vietnamese inference prompt with the same generic prompt in `src/inference.py`.
-- [x] Keep English and Portuguese prompts generic.
-- [x] Audit current prompt edits against public-test leakage risk. Do not add public-test-derived rules.
-- [x] Document every non-generic prompt rule as one of: annotation-guideline-derived, train-data-derived, or test-derived. Test-derived rules must be removed.
+- [ ] On RTX 6000, confirm whether `flash_attn` is installed and used.
+- [ ] Run a 20-step timing probe with the default config.
+- [ ] Run a 20-step timing probe with `batch_per_device=2, grad_accum=8`.
+- [ ] If VRAM allows, try `batch_per_device=4, grad_accum=4`.
+- [ ] Run `python3 run_scripts/run_vi_epoch_smatch_grid.py` for the quick MTUP2 signal.
+- [ ] Run `python3 run_scripts/run_vi_epoch_smatch_grid.py --methods B1 B2 MTUP2 --seeds 42 123 456` for a broader comparison.
+- [ ] Run the final exhaustive protocol only if the quick/broader runs justify the compute.
+- [ ] Inspect `results/vietnamese_v2_epoch_smatch/epoch_smatch_test_summary.csv`.
+- [ ] Record command, git commit, seed, LR, selected checkpoint, dev Smatch, and test Smatch for every final run.
 
-## Priority 3: Train/Dev Split and Model Selection
+## Reporting
 
-- [x] Update `src/data_pipeline.py` so `--dev_split` randomly splits raw examples before weighting/formatting.
-- [x] Add `--dev_seed` for deterministic splits.
-- [x] Save `dev_split` and `dev_seed` in `dataset_stats.json`.
-- [x] Update `src/train.py` to save `trainer_log_history.json`.
-- [x] Update `src/train.py` to save `loss_curve.png` when dev data exists.
-- [x] Decide final model-selection metric: use dev loss for LR/epoch selection; optional dev Smatch can be reported after inference on `data/formatted/vietnamese_v2/dev.txt`.
-- [x] Never tune by public-test score. Use public test only after LR/epoch/checkpoint are fixed from dev.
-
-## Priority 4: MTUP2-Only Cascade Tuning
-
-- [x] Add `src/tune_lr.py` to generate sklearn random-search style LR configs.
-- [x] Set representative MTUP2 run to LoRA `r=64`, `alpha=128` for the early-signal experiment.
-- [x] Add MTUP2 pre-flight audit for prompt/template/target/leakage/postprocess checks.
-- [ ] Run `src/audit_mtup2_setup.py` on the server environment after regenerating MTUP2 data.
-- [ ] Run MTUP2-only LR search on Vietnamese v2 dev split. Suggested starting range: `1e-6` to `5e-5`, `n_iter=3`, `epochs=30`.
-- [x] Keep effective batch size around 16 unless GPU memory allows larger.
-- [ ] Compare MTUP2 train/dev curves after each LR run.
-- [ ] Pick best MTUP2 LR and epoch from dev behavior, then rerun final three seeds.
-- [x] Do not keep 25 epochs by default. Use v2 default `10`; LR-search configs can run up to `30` for MTUP2 and select the best epoch from dev curves.
-- [ ] Do not run full 6-method or 3-dataset experiments until MTUP2 Vietnamese gives a positive early signal.
-
-## Priority 5: Reproducibility Package
-
-- [ ] Add a pinned dependency file, e.g. `requirements.txt` or `environment.yml`.
-- [ ] Save commit hash, command, config, Python version, package versions, CUDA version, GPU model, seed, checkpoint path, prediction path, and score path for every final run.
-- [ ] Add generated run logs under a dedicated logs directory or external artifact store.
-- [ ] Rerun final MTUP2 Vietnamese with seeds `42`, `123`, and `456`.
-- [ ] Regenerate `results/summary/all_scores.csv`.
+- [ ] Conclude MTUP2 is promising only if its dev-selected test scores beat tuned B1/B2 consistently across seeds.
+- [ ] Report selected epochs and dev/test Smatch together so the comparison is auditable.

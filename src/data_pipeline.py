@@ -4,19 +4,16 @@ Data pipeline for ViSemPar_260430.
 
 Steps:
   1. Load train_amr_1 + train_amr_2, deduplicate by sentence
-  2. Build formatted chat examples for each method
+  2. Build formatted chat examples for B1, B2, and MTUP2
   3. Save formatted/{method}_train.txt (ready to feed into train.py)
 
-Methods: B1, B2, MTUP2, MTUP3A, MTUP3B, MTUP4
+Methods: B1, B2, MTUP2
   B1     – direct: sentence → AMR
   B2     – no-var:  sentence → AMR-no-var  (intermediate only)
   MTUP2  – 2 steps: no-var → AMR
-  MTUP3A – 3 steps: concepts → no-var → AMR
-  MTUP3B – 3 steps: concepts → relations → AMR
-  MTUP4  – 4 steps: concepts → relations → no-var → AMR
 
 Usage:
-    python src/data_pipeline.py [--verify] [--amr1_weight 1] [--amr2_weight 3] [--syn_weight 10]
+    python src/data_pipeline.py [--verify] [--amr1_weight 1] [--amr2_weight 1]
 """
 
 import re
@@ -24,7 +21,6 @@ import json
 import argparse
 import random
 from pathlib import Path
-from collections import OrderedDict
 
 from prompts import get_system_prompt
 
@@ -34,15 +30,6 @@ from prompts import get_system_prompt
 # ─────────────────────────────────────────────────────────────────────────────
 # Prompt text is imported from src/prompts.py so training data and inference
 # cannot drift apart.
-
-# ─────────────────────────────────────────────────────────────────────────────
-# Synthetic examples (frozen – never change after first run)
-# ─────────────────────────────────────────────────────────────────────────────
-
-# Synthetic examples removed — all 15 original examples were found in the test set
-# (data leakage). Training relies solely on train_amr_1.txt and train_amr_2.txt.
-SYNTHETIC_EXAMPLES = []
-
 
 # ─────────────────────────────────────────────────────────────────────────────
 # AMR processing helpers
@@ -138,114 +125,6 @@ def strip_variables(amr: str, mode: str = 'clean') -> str:
     return result
 
 
-def parse_amr_tree(amr_text: str):
-    """Return (root_concept, [(parent, relation, child), ...])."""
-    triples = []
-    concept_stack = []
-    current_relation = None
-    root_concept = None
-    i = 0
-    text = amr_text
-
-    while i < len(text):
-        if text[i] in ' \t\n':
-            i += 1
-            continue
-
-        if text[i] == '(':
-            i += 1
-            while i < len(text) and text[i] in ' \t\n':
-                i += 1
-            var_start = i
-            while i < len(text) and text[i] not in ' \t\n/()':
-                i += 1
-            while i < len(text) and text[i] in ' \t\n':
-                i += 1
-            if i < len(text) and text[i] == '/':
-                i += 1
-                while i < len(text) and text[i] in ' \t\n':
-                    i += 1
-                concept_start = i
-                while i < len(text):
-                    if text[i] in '()':
-                        break
-                    if text[i] == ':':
-                        break
-                    if text[i] == '\n':
-                        j = i + 1
-                        while j < len(text) and text[j] in ' \t':
-                            j += 1
-                        if j < len(text) and text[j] in ':)(': break
-                    i += 1
-                concept = text[concept_start:i].strip()
-                if not root_concept:
-                    root_concept = concept
-                if concept_stack and current_relation:
-                    triples.append((concept_stack[-1][1], current_relation, concept))
-                    current_relation = None
-                var = text[var_start:var_start + 10].split()[0] if var_start < len(text) else 'x'
-                concept_stack.append((var, concept))
-            else:
-                i = var_start
-                while i < len(text) and text[i] not in ' \t\n)(':
-                    i += 1
-        elif text[i] == ')':
-            if concept_stack:
-                concept_stack.pop()
-            i += 1
-        elif text[i] == ':':
-            rel_start = i
-            i += 1
-            while i < len(text) and (text[i].isalnum() or text[i] in '-_+'):
-                i += 1
-            relation = text[rel_start:i].strip()
-            while i < len(text) and text[i] in ' \t\n':
-                i += 1
-            if i < len(text) and text[i] != '(':
-                val_start = i
-                while i < len(text) and text[i] not in '\t\n)(':
-                    if text[i] == ':':
-                        break
-                    if text[i] == ' ':
-                        j = i + 1
-                        while j < len(text) and text[j] == ' ':
-                            j += 1
-                        if j >= len(text) or text[j] in ':)(\n':
-                            break
-                        break
-                    i += 1
-                value = text[val_start:i].strip()
-                if value and concept_stack:
-                    triples.append((concept_stack[-1][1], relation, value))
-            else:
-                current_relation = relation
-        else:
-            i += 1
-
-    return root_concept, triples
-
-
-def build_concept_list(amr: str) -> str:
-    """Flat concept list: 'concept_1 | want-01'  (one per line)."""
-    root, triples = parse_amr_tree(amr)
-    if not root:
-        return None
-    seen = OrderedDict()
-    seen[root] = True
-    for _, _, child in triples:
-        if re.match(r'^[a-zA-ZÀ-ỹ]', child):
-            seen[child] = True
-    return '\n'.join(f"concept_{i+1} | {c}" for i, c in enumerate(seen))
-
-
-def build_relation_list(amr: str) -> str:
-    """Flat relation list: 'parent | :role | child'  (one per line)."""
-    _, triples = parse_amr_tree(amr)
-    if not triples:
-        return None
-    return '\n'.join(f"{p} | {r} | {c}" for p, r, c in triples)
-
-
 # ─────────────────────────────────────────────────────────────────────────────
 # Chat example builders per method
 # ─────────────────────────────────────────────────────────────────────────────
@@ -277,54 +156,10 @@ def make_MTUP2(sentence: str, amr: str, no_var_mode: str = 'clean',
     return _wrap(get_system_prompt(language, 'MTUP2'), sentence, assistant)
 
 
-def make_MTUP3A(sentence: str, amr: str, no_var_mode: str = 'clean',
-                language: str = 'vi') -> str:
-    """MTUP3A: concepts → no-var → AMR."""
-    concepts = build_concept_list(amr)
-    no_var = strip_variables(amr, mode=no_var_mode)
-    if concepts is None:
-        return None
-    assistant = (f"[STEP 1: CONCEPTS]\n{concepts}\n\n"
-                 f"[STEP 2: AMR_NO_VAR]\n{no_var}\n\n"
-                 f"[STEP 3: AMR_WITH_VAR]\n{amr}")
-    return _wrap(get_system_prompt(language, 'MTUP3A'), sentence, assistant)
-
-
-def make_MTUP3B(sentence: str, amr: str, no_var_mode: str = 'clean',
-                language: str = 'vi') -> str:
-    """MTUP3B: concepts → relations → AMR."""
-    concepts = build_concept_list(amr)
-    relations = build_relation_list(amr)
-    if concepts is None or relations is None:
-        return None
-    assistant = (f"[STEP 1: CONCEPTS]\n{concepts}\n\n"
-                 f"[STEP 2: RELATIONS]\n{relations}\n\n"
-                 f"[STEP 3: AMR_WITH_VAR]\n{amr}")
-    return _wrap(get_system_prompt(language, 'MTUP3B'), sentence, assistant)
-
-
-def make_MTUP4(sentence: str, amr: str, no_var_mode: str = 'clean',
-               language: str = 'vi') -> str:
-    """MTUP4: concepts → relations → no-var → AMR."""
-    concepts = build_concept_list(amr)
-    relations = build_relation_list(amr)
-    no_var = strip_variables(amr, mode=no_var_mode)
-    if concepts is None or relations is None:
-        return None
-    assistant = (f"[STEP 1: CONCEPTS]\n{concepts}\n\n"
-                 f"[STEP 2: RELATIONS]\n{relations}\n\n"
-                 f"[STEP 3: AMR_NO_VAR]\n{no_var}\n\n"
-                 f"[STEP 4: AMR_WITH_VAR]\n{amr}")
-    return _wrap(get_system_prompt(language, 'MTUP4'), sentence, assistant)
-
-
 BUILDERS = {
     'B1': make_B1,
     'B2': make_B2,
     'MTUP2': make_MTUP2,
-    'MTUP3A': make_MTUP3A,
-    'MTUP3B': make_MTUP3B,
-    'MTUP4': make_MTUP4,
 }
 
 
@@ -403,7 +238,7 @@ def write_sentence_lines(path: Path, examples: list):
 # Main
 # ─────────────────────────────────────────────────────────────────────────────
 
-def build_dataset(method: str, examples_1, examples_2, syn_weight: int,
+def build_dataset(method: str, examples_1, examples_2,
                   amr1_weight: int, amr2_weight: int,
                   no_var_mode: str = 'clean',
                   language: str = 'vi') -> list:
@@ -424,28 +259,16 @@ def build_dataset(method: str, examples_1, examples_2, syn_weight: int,
 
     add(examples_1, amr1_weight)
     add(examples_2, amr2_weight)
-
-    for _ in range(syn_weight):
-        for syn in SYNTHETIC_EXAMPLES:
-            amr = convert_underscore_to_space(syn['amr'])
-            amr = fix_polarity_format(amr)
-            if not validate_amr(amr):
-                continue
-            result = builder(syn['sentence'], amr, no_var_mode=no_var_mode,
-                             language=language)
-            if result:
-                chat_examples.append(result)
-
     return chat_examples
 
 
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('--amr1_weight', type=int, default=1)
-    parser.add_argument('--amr2_weight', type=int, default=3)
-    parser.add_argument('--syn_weight',  type=int, default=10)
+    parser.add_argument('--amr2_weight', type=int, default=1)
     parser.add_argument('--methods', nargs='+',
-                        default=['B1', 'B2', 'MTUP2', 'MTUP3A', 'MTUP3B', 'MTUP4'])
+                        default=['B1', 'B2', 'MTUP2'],
+                        choices=sorted(BUILDERS))
     parser.add_argument('--no_var_mode', choices=['legacy', 'clean'], default='clean',
                         help='clean expands bare reentrancy variables; legacy preserves old Vietnamese historical outputs')
     parser.add_argument('--raw_dir', default='data/raw',
@@ -454,7 +277,7 @@ def main():
                         help='Output directory for formatted training files')
     parser.add_argument('--no_dedup', action='store_true',
                         help='Keep all AMR blocks instead of deduplicating by sentence')
-    parser.add_argument('--language', choices=['vi', 'en', 'pt'], default='vi')
+    parser.add_argument('--language', choices=['vi'], default='vi')
     parser.add_argument('--dev_split', type=float, default=0.0,
                         help='Fraction of examples to hold out as dev set (e.g. 0.1). '
                              'Written to {method}_dev.txt. 0 = disabled.')
@@ -479,7 +302,6 @@ def main():
 
     print(f"  train_amr_1: {len(ex1_raw)} raw -> {len(ex1)} after dedup")
     print(f"  train_amr_2: {len(ex2_raw)} raw -> {len(ex2)} after dedup")
-    print(f"  synthetic:   {len(SYNTHETIC_EXAMPLES)} examples x {args.syn_weight}")
     if args.dev_split > 0:
         print(f"  dev split:   {args.dev_split:.3f} with seed {args.dev_seed}")
     print()
@@ -497,14 +319,13 @@ def main():
         ex2_train, ex2_dev = ex2, []
 
     stats = {}
-    for method in args.method if hasattr(args, 'method') else args.methods:
+    for method in args.methods:
         if args.dev_split > 0:
-            train_examples = build_dataset(method, ex1_train, ex2_train, 0,
+            train_examples = build_dataset(method, ex1_train, ex2_train,
                                            args.amr1_weight, args.amr2_weight,
                                            no_var_mode=args.no_var_mode,
                                            language=args.language)
-            dev_examples = build_dataset(method, ex1_dev, ex2_dev, 0,
-                                         1, 1,
+            dev_examples = build_dataset(method, ex1_dev, ex2_dev, 1, 1,
                                          no_var_mode=args.no_var_mode,
                                          language=args.language)
             dev_path = fmt_dir / f"{method}_dev.txt"
@@ -512,7 +333,7 @@ def main():
                 f.write('\n\n'.join(dev_examples))
             print(f"  {method}: {len(train_examples)} train + {len(dev_examples)} dev -> {fmt_dir}")
         else:
-            train_examples = build_dataset(method, ex1, ex2, args.syn_weight,
+            train_examples = build_dataset(method, ex1, ex2,
                                            args.amr1_weight, args.amr2_weight,
                                            no_var_mode=args.no_var_mode,
                                            language=args.language)
@@ -537,8 +358,7 @@ def main():
         json.dump({
             'amr1_examples': len(ex1),
             'amr2_examples': len(ex2),
-            'synthetic_examples': len(SYNTHETIC_EXAMPLES),
-            'weights': {'amr1': args.amr1_weight, 'amr2': args.amr2_weight, 'syn': args.syn_weight},
+            'weights': {'amr1': args.amr1_weight, 'amr2': args.amr2_weight},
             'no_var_mode': args.no_var_mode,
             'dedup': not args.no_dedup,
             'language': args.language,
