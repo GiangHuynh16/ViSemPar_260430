@@ -15,14 +15,12 @@
 - [x] Add fair runtime overrides for `batch_per_device`, `grad_accum`, and gradient checkpointing.
 - [x] Add run-name suffixes for runtime overrides to avoid reusing incompatible checkpoints.
 - [x] Add profiler overrides to estimate micro-batch savings before GPU runs.
-- [x] Make `batch_per_device=2, grad_accum=8` the default fair runtime.
+- [x] Keep `batch_per_device=1, grad_accum=16` as the RTX 6000/Turing default after `b2_ga8` probed slower.
 - [x] Disable FlashAttention by default for RTX 6000/Turing compatibility.
 
 ## Next Runs
 
 - [ ] Run a 20-step timing probe with the default config.
-- [ ] Run a 20-step timing probe with `batch_per_device=2, grad_accum=8`.
-- [ ] If VRAM allows, try `batch_per_device=4, grad_accum=4`.
 - [ ] Run `python3 run_scripts/run_vi_epoch_smatch_grid.py` for the quick MTUP2 signal.
 - [ ] Run `python3 run_scripts/run_vi_epoch_smatch_grid.py --methods B1 B2 MTUP2 --seeds 42 123 456` for a broader comparison.
 - [ ] Run the final exhaustive protocol only if the quick/broader runs justify the compute.

@@ -80,8 +80,8 @@ python3 run_scripts/run_vi_epoch_smatch_grid.py --flash-attn on
 
 On unsupported GPUs, keep the default `model.flash_attn: false`.
 
-Quick protocol: MTUP2 only, seed `42`, three LR values, `batch=2`,
-`grad_accum=8`, and dev Smatch every 5 epochs.
+Quick protocol: MTUP2 only, seed `42`, three LR values, `batch=1`,
+`grad_accum=16`, and dev Smatch every 5 epochs.
 
 ```bash
 python3 run_scripts/run_vi_epoch_smatch_grid.py
@@ -114,19 +114,17 @@ Safe optimizations already used by default:
 - The default runner is MTUP2-only/seed-42/dev-every-5-epochs to avoid accidentally launching the full expensive grid.
 - Every final run still trains for 30 epochs and keeps epoch checkpoints for dev-Smatch selection.
 
-The default runtime is now `batch_per_device=2` and `grad_accum=8`, preserving
-the same effective batch size of `16` while cutting the number of micro-batches
-roughly in half compared with the old `batch=1`, `grad_accum=16` setup. This
-changes GPU memory use and can slightly change runtime numerics, so apply it
-uniformly to all compared methods and report it with the results.
+The default runtime is `batch_per_device=1` and `grad_accum=16`. A 20-step probe
+showed `batch=2`, `grad_accum=8` was slower on Quadro RTX 6000/Turing without
+FlashAttention, so the full protocol keeps the lower-memory runtime. If you
+change batch settings, apply them uniformly to all compared methods and report
+them with the results.
 
 Estimate the cost before running:
 
 ```bash
 python3 src/profile_training_cost.py \
-  --config configs/vietnamese_v2/MTUP2.yaml \
-  --batch-per-device 2 \
-  --grad-accum 8
+  --config configs/vietnamese_v2/MTUP2.yaml
 ```
 
 Run the grid. The same fair batch setting is applied to every method/LR/seed:
@@ -134,25 +132,14 @@ Run the grid. The same fair batch setting is applied to every method/LR/seed:
 ```bash
 python3 run_scripts/run_vi_epoch_smatch_grid.py \
   --methods B1 B2 MTUP2 \
-  --seeds 42 123 456 \
-  --batch-per-device 2 \
-  --grad-accum 8
+  --seeds 42 123 456
 ```
 
 The runner appends the batch setting to the run name, for example
-`MTUP2_lr1e-04_b2_ga8`, so these checkpoints cannot be confused with the
-old `batch=1, grad_accum=16` checkpoints.
+`MTUP2_lr1e-04_b1_ga16`, so checkpoints from different runtime settings cannot
+be confused.
 
-If RTX 6000 still runs out of memory, fall back to the old lower-memory runtime:
-
-```bash
-python3 run_scripts/run_vi_epoch_smatch_grid.py \
-  --batch-per-device 1 \
-  --grad-accum 16
-```
-
-Only disable gradient checkpointing after a short probe confirms RTX 6000 has
-enough VRAM:
+If you want to re-test the slower high-batch probe explicitly:
 
 ```bash
 python3 run_scripts/run_vi_epoch_smatch_grid.py \
@@ -161,6 +148,17 @@ python3 run_scripts/run_vi_epoch_smatch_grid.py \
   --mtup2-lrs 1e-4 \
   --batch-per-device 2 \
   --grad-accum 8 \
+  --timing-probe-steps 20
+```
+
+Only disable gradient checkpointing after a short probe confirms RTX 6000 has
+enough VRAM and improves time:
+
+```bash
+python3 run_scripts/run_vi_epoch_smatch_grid.py \
+  --methods MTUP2 \
+  --seeds 42 \
+  --mtup2-lrs 1e-4 \
   --gradient-checkpointing off
 ```
 

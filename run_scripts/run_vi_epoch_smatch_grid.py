@@ -484,9 +484,9 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--baseline-lrs", nargs="+", type=float, default=DEFAULT_BASELINE_LRS)
     parser.add_argument("--tune-baselines", action="store_true",
                         help="Run B1/B2 over --baseline-lrs instead of only their config LR.")
-    parser.add_argument("--batch-per-device", type=int, default=2,
+    parser.add_argument("--batch-per-device", type=int, default=1,
                         help="Override training.batch_per_device for every generated run.")
-    parser.add_argument("--grad-accum", type=int, default=8,
+    parser.add_argument("--grad-accum", type=int, default=16,
                         help="Override training.grad_accum for every generated run.")
     parser.add_argument("--gradient-checkpointing", choices=["config", "on", "off"], default="config",
                         help="Override gradient checkpointing for every generated run.")
