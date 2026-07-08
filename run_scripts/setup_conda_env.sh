@@ -1,9 +1,9 @@
 #!/bin/bash
 # Create/update the Conda environment used for CUDA server runs.
 #
-# Override ENV_NAME or TORCH_INDEX_URL if needed:
+# Override ENV_NAME, TORCH_VERSION, or TORCH_INDEX_URL if needed:
 #   ENV_NAME=visempar-mtup2 bash run_scripts/setup_conda_env.sh
-#   TORCH_INDEX_URL=https://download.pytorch.org/whl/cu124 bash run_scripts/setup_conda_env.sh
+#   TORCH_VERSION=2.5.1 TORCH_INDEX_URL=https://download.pytorch.org/whl/cu121 bash run_scripts/setup_conda_env.sh
 
 set -euo pipefail
 
@@ -12,7 +12,8 @@ cd "$ROOT"
 
 ENV_NAME="${ENV_NAME:-visempar-mtup2}"
 PYTHON_VERSION="${PYTHON_VERSION:-3.10}"
-TORCH_INDEX_URL="${TORCH_INDEX_URL:-https://download.pytorch.org/whl/cu121}"
+TORCH_VERSION="${TORCH_VERSION:-2.6.0}"
+TORCH_INDEX_URL="${TORCH_INDEX_URL:-https://download.pytorch.org/whl/cu118}"
 
 if ! command -v conda >/dev/null 2>&1; then
   echo "ERROR: conda is not available on PATH."
@@ -29,7 +30,7 @@ conda activate "$ENV_NAME"
 
 python --version
 python -m pip install --upgrade pip
-python -m pip install torch --index-url "$TORCH_INDEX_URL"
+python -m pip install "torch==$TORCH_VERSION" --index-url "$TORCH_INDEX_URL"
 python -m pip install -r requirements.txt
 
 python - <<'PY'

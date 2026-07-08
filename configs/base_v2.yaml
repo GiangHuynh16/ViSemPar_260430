@@ -41,6 +41,7 @@ training:
   gradient_checkpointing: true
   timing_log_steps: 10
   save_total_limit: 30
+  save_only_model: true
   logging_strategy: epoch
   early_stopping_patience: null
   early_stopping_threshold: 0.0

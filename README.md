@@ -178,6 +178,46 @@ Default baseline LR grid when `--tune-baselines` is used:
 2e-4, 1e-4, 5e-5, 1e-5
 ```
 
+## Baseline-Only Server
+
+Use this when MTUP2 is already running on another server and a second server
+should run only B1/B2. Copy code and data, but do not copy checkpoints/results
+unless you intentionally want to merge artifacts:
+
+```bash
+rsync -av \
+  --exclude checkpoints \
+  --exclude results \
+  /mnt/nghiepth/giang/ViSemPar_260430/ \
+  USER@BASELINE_SERVER:/mnt/nghiepth/giang/ViSemPar_260430/
+```
+
+On the baseline server:
+
+```bash
+cd /mnt/nghiepth/giang/ViSemPar_260430
+bash run_scripts/setup_conda_env.sh
+conda activate visempar-mtup2
+python3 run_scripts/run_vi_epoch_smatch_grid.py \
+  --methods B1 B2 \
+  --seeds 42 \
+  --tune-baselines \
+  --score-all-checkpoints
+```
+
+For the final paper-style comparison, run all three seeds:
+
+```bash
+python3 run_scripts/run_vi_epoch_smatch_grid.py \
+  --methods B1 B2 \
+  --seeds 42 123 456 \
+  --tune-baselines \
+  --score-all-checkpoints
+```
+
+Do not omit `--tune-baselines` for final evidence if MTUP2 was run over a
+learning-rate grid. Without it, B1/B2 only use the config LR.
+
 ## Selection Rule
 
 For every run and seed:
