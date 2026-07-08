@@ -1,0 +1,14 @@
+{
+  "method": "MTUP2",
+  "run_name": "MTUP2_lr1e-04_b2_ga8_probe20",
+  "group": "vietnamese_v2_epoch_smatch",
+  "seed": 42,
+  "split": "test",
+  "config": "configs/generated/vi_epoch_smatch/MTUP2_lr1e-04_b2_ga8_probe20.yaml",
+  "adapter_path": "/mnt/nghiepth/giang/ViSemPar_260430/checkpoints/vietnamese_v2_epoch_smatch/MTUP2_lr1e-04_b2_ga8_probe20/s42/final",
+  "input_file": "/mnt/nghiepth/giang/ViSemPar_260430/data/raw/public_test.txt",
+  "pred_path": "/mnt/nghiepth/giang/ViSemPar_260430/results/vietnamese_v2_epoch_smatch/MTUP2_lr1e-04_b2_ga8_probe20/manual_test/s42_probe20_test_pred.txt",
+  "full_path": "/mnt/nghiepth/giang/ViSemPar_260430/results/vietnamese_v2_epoch_smatch/MTUP2_lr1e-04_b2_ga8_probe20/manual_test/s42_probe20_test_full.txt",
+  "num_sentences": 150,
+  "max_new_tokens": 1536
+}

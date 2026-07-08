@@ -1,0 +1,2 @@
+method,run_name,seeds,n,test_f1_mean,test_f1_std,test_f1_values,dev_f1_values,selected_epochs
+MTUP2,MTUP2_lr2e-04_b1_ga16,42,1,0.586,0.0,0.5860,0.7599,12

@@ -1,0 +1,20 @@
+{
+  "method": "MTUP2",
+  "run_name": "MTUP2_lr2e-04_b1_ga16",
+  "group": "vietnamese_v2_epoch_smatch",
+  "seed": 42,
+  "checkpoint": "/mnt/nghiepth/giang/ViSemPar_260430/checkpoints/vietnamese_v2_epoch_smatch/MTUP2_lr2e-04_b1_ga16/s42/checkpoint-1224",
+  "checkpoint_step": 1224,
+  "epoch": 12.0,
+  "epoch_sort": 12.0,
+  "pred_path": "/mnt/nghiepth/giang/ViSemPar_260430/results/vietnamese_v2_epoch_smatch/MTUP2_lr2e-04_b1_ga16/dev_epoch_scores/s42/s42_checkpoint-1224_dev_pred.txt",
+  "dev_eval_interval": 1,
+  "n_samples": 181,
+  "parsable": 181,
+  "parsable_rate": 1.0,
+  "avg_output_len": 112.5,
+  "root_acc": 0.8232,
+  "precision": 0.7835,
+  "recall": 0.7377,
+  "f1": 0.7599
+}
