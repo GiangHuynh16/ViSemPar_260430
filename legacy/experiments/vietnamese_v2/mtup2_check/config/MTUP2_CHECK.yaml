@@ -1,0 +1,25 @@
+base: ../../base_v2.yaml
+method: MTUP2_CHECK
+group: vietnamese_v2_mtup2_check
+language: vi
+no_var_mode: clean
+lora:
+  r: 64
+  alpha: 128
+  dropout: 0.05
+  bias: none
+  target_modules:
+    - q_proj
+    - k_proj
+    - v_proj
+    - o_proj
+    - gate_proj
+    - up_proj
+    - down_proj
+data:
+  train: vietnamese_v2/MTUP2_CHECK_train.txt
+  dev_formatted: vietnamese_v2/MTUP2_CHECK_dev.txt
+  val: data/formatted/vietnamese_v2/dev.txt
+  test: data/raw/public_test.txt
+decoding:
+  max_new_tokens: 1792
