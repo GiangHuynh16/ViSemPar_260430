@@ -28,13 +28,13 @@ class NoVarBinder:
         self.counts = {}
         amr = amr.strip()
         if not amr:
-            return "(a / amr-unknown)"
+            return ""
         if re.search(r"\(\s*[\wÀ-ỹ]+\s*/", amr):
             return re.sub(r"\s+", " ", amr).strip()
         text, pos = self._parse_node(amr, 0)
         if text:
             return re.sub(r"\s+", " ", text).strip()
-        return "(a / amr-unknown)"
+        return ""
 
     def _skip_ws(self, text: str, pos: int) -> int:
         while pos < len(text) and text[pos].isspace():

@@ -77,10 +77,9 @@ def preflight(args: argparse.Namespace, dev_gold: Path, test_gold: Path) -> None
             f"{dev_sentences} sentences vs {dev_gold_count} gold AMRs"
         )
 
-    test_sentences = count_sentence_lines(ROOT / "data/raw/public_test.txt")
+    test_sentences = count_sentence_lines(ROOT / "data/formatted/vietnamese_v2/test.txt")
     test_gold_count = len(read_gold(str(test_gold)))
-    known_public_gap = test_sentences == 150 and test_gold_count == 149
-    if test_sentences != test_gold_count and not known_public_gap:
+    if test_sentences != test_gold_count:
         raise RuntimeError(
             "Test sentence/gold count mismatch: "
             f"{test_sentences} sentences vs {test_gold_count} gold AMRs"
@@ -260,12 +259,10 @@ def checkpoint_epoch_map(run_dir: Path) -> dict[int, float]:
     return out
 
 
-def score_file(pred_path: Path, gold_path: Path, allow_known_test_gap: bool) -> dict:
+def score_file(pred_path: Path, gold_path: Path) -> dict:
     preds = read_predictions(str(pred_path))
     gold = read_gold(str(gold_path))
-    if allow_known_test_gap and len(preds) != len(gold) and len(preds) == 150 and len(gold) == 149:
-        preds = preds[:97] + preds[98:]
-    elif len(preds) != len(gold):
+    if len(preds) != len(gold):
         raise RuntimeError(
             f"Prediction/gold count mismatch for {pred_path}: "
             f"{len(preds)} predictions vs {len(gold)} gold AMRs"
@@ -343,7 +340,7 @@ def score_dev_checkpoints(
         if args.dry_run:
             continue
 
-        metrics = score_file(pred_path, dev_gold, allow_known_test_gap=False)
+        metrics = score_file(pred_path, dev_gold)
         record = {
             "method": method,
             "run_name": run_name,
@@ -413,7 +410,7 @@ def evaluate_best_on_test(
     if args.dry_run:
         return {}
 
-    metrics = score_file(pred_path, test_gold, allow_known_test_gap=True)
+    metrics = score_file(pred_path, test_gold)
     record = {
         "method": method,
         "run_name": run_name,
@@ -495,7 +492,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--timing-probe-steps", type=int, default=-1,
                         help="Run train.py for only N optimizer steps and skip dev/test scoring.")
     parser.add_argument("--dev-gold", default="data/formatted/vietnamese_v2/dev_ground_truth.txt")
-    parser.add_argument("--test-gold", default="data/raw/public_test_ground_truth.txt")
+    parser.add_argument("--test-gold", default="data/formatted/vietnamese_v2/test_ground_truth.txt")
     parser.add_argument("--force-train", action="store_true")
     parser.add_argument("--reuse-predictions", action="store_true")
     parser.add_argument("--reuse-dev-scores", action="store_true")

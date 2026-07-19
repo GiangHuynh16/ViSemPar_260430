@@ -8,9 +8,9 @@ Steps:
   3. Save formatted/{method}_train.txt (ready to feed into train.py)
 
 Methods: B1, B2, MTUP2
-  B1     – direct: sentence → AMR
-  B2     – no-var:  sentence → AMR-no-var  (intermediate only)
-  MTUP2  – 2 steps: no-var → AMR
+  B1    – direct: sentence → AMR
+  B2    – no-reentrancy skeleton baseline
+  MTUP2 – 2 steps: no-var skeleton → AMR
 
 Usage:
     python src/data_pipeline.py [--verify] [--amr1_weight 1] [--amr2_weight 1]
@@ -22,6 +22,7 @@ import argparse
 import random
 from pathlib import Path
 
+from amr_utils import canonicalize_amr, validate_amr
 from prompts import get_system_prompt
 
 
@@ -35,92 +36,40 @@ from prompts import get_system_prompt
 # AMR processing helpers
 # ─────────────────────────────────────────────────────────────────────────────
 
-def convert_underscore_to_space(text: str) -> str:
-    """Replace underscores with spaces except inside :wiki(...)."""
-    lines = text.split('\n')
-    result = []
-    for line in lines:
-        if ':wiki(' in line or ':wiki ' in line:
-            result.append(line)
-        else:
-            processed = re.sub(r'/_+', '/ ', line)
-            processed = re.sub(r'_+', '_', processed)
-            while True:
-                old = processed
-                processed = re.sub(r'([a-zA-ZÀ-ỹ]+)_([a-zA-ZÀ-ỹ]+)', r'\1 \2', processed)
-                if processed == old:
-                    break
-            result.append(processed)
-    return '\n'.join(result)
-
-
 def fix_polarity_format(text: str) -> str:
     return re.sub(r':polarity\s*\([^)]*\bno\b[^)]*\)', ':polarity -', text)
-
-
-def validate_amr(amr: str) -> bool:
-    if not amr or not amr.strip():
-        return False
-    s = amr.strip()
-    if not s.startswith('('):
-        return False
-    if s.count('(') != s.count(')'):
-        return False
-    if '/' not in s:
-        return False
-    if re.search(r'\(\s*/', s):
-        return False
-    depth = 0
-    top_level_spans = 0
-    for ch in s:
-        if ch == '(':
-            if depth == 0:
-                top_level_spans += 1
-            depth += 1
-        elif ch == ')':
-            depth -= 1
-            if depth < 0:
-                return False
-    if top_level_spans != 1:
-        return False
-    definitions = re.findall(r'\(\s*([A-Za-zÀ-ỹ][A-Za-zÀ-ỹ0-9_-]*)\s*/', s)
-    if len(definitions) != len(set(definitions)):
-        return False
-    return True
 
 
 def _extract_var_to_concept(amr: str) -> dict:
     """Build variable -> concept map from AMR node definitions."""
     var_to_concept = {}
-    for var, concept in re.findall(r'\(\s*([A-Za-zÀ-ỹ][A-Za-zÀ-ỹ0-9_-]*)\s*/\s*([^\s:()]+)', amr):
-        var_to_concept[var] = concept
+    for var, concept in re.findall(
+        r'\(\s*([A-Za-zÀ-ỹ][A-Za-zÀ-ỹ0-9_-]*)\s*/\s*([^():]+?)(?=\s+:[A-Za-z0-9_-]+|\s*\))',
+        amr,
+    ):
+        var_to_concept[var] = concept.strip()
     return var_to_concept
 
 
 def strip_variables(amr: str, mode: str = 'clean') -> str:
-    """Convert full AMR to no-var form.
-
-    legacy: remove only node declarations, preserving historical Vietnamese setup.
-    clean: additionally replace bare reentrancy variables with their concepts.
-    """
-    if mode not in {'legacy', 'clean'}:
+    """Convert full AMR to a skeleton; reentrancies are intentionally lost."""
+    if mode != 'clean':
         raise ValueError(f"Unsupported no-var mode: {mode}")
 
-    var_to_concept = _extract_var_to_concept(amr) if mode == 'clean' else {}
+    var_to_concept = _extract_var_to_concept(amr)
     result = re.sub(r'\(\s*\w+\s*/\s*', '(', amr)
 
-    if mode == 'clean':
-        for var, concept in sorted(var_to_concept.items(), key=lambda x: len(x[0]), reverse=True):
-            result = re.sub(
-                r'(:[A-Za-z0-9_-]+\s+)' + re.escape(var) + r'(?=\s|\))',
-                rf'\1({concept})',
-                result,
-            )
+    for var, concept in sorted(var_to_concept.items(), key=lambda x: len(x[0]), reverse=True):
         result = re.sub(
-            r'(:[A-Za-z0-9_-]+\s+)([A-Za-zÀ-ỹ][A-Za-zÀ-ỹ0-9_-]{0,2})(?=\s|\))',
-            r'\1(amr-unknown)',
+            r'(:[A-Za-z0-9_-]+\s+)' + re.escape(var) + r'(?=\s|\))',
+            rf'\1({concept})',
             result,
         )
+    result = re.sub(
+        r'(:[A-Za-z0-9_-]+\s+)([A-Za-zÀ-ỹ][A-Za-zÀ-ỹ0-9_-]{0,2})(?=\s|\))',
+        r'\1(amr-unknown)',
+        result,
+    )
 
     return result
 
@@ -143,7 +92,7 @@ def make_B1(sentence: str, amr: str, no_var_mode: str = 'clean',
 
 def make_B2(sentence: str, amr: str, no_var_mode: str = 'clean',
             language: str = 'vi') -> str:
-    """B2: sentence → AMR-no-var."""
+    """B2: sentence → no-reentrancy AMR skeleton."""
     no_var = strip_variables(amr, mode=no_var_mode)
     return _wrap(get_system_prompt(language, 'B2'), sentence, f"AMR_NO_VAR: {no_var}")
 
@@ -171,20 +120,37 @@ def parse_amr_file(path: str):
     with open(path, encoding='utf-8') as f:
         content = f.read()
     examples = []
-    for block in content.strip().split('\n\n'):
+    for block in re.split(r'(?m)(?=^#\s*::snt\s+)', content):
         block = block.strip()
         if not block:
             continue
         sentence = None
-        amr_lines = []
-        for line in block.split('\n'):
-            snt_match = re.match(r'#\s*::snt\s+(.+)', line)
-            if snt_match:
-                sentence = snt_match.group(1).strip()
-            elif not line.startswith('#'):
-                amr_lines.append(line)
-        if sentence and amr_lines:
-            examples.append({'sentence': sentence, 'amr': '\n'.join(amr_lines)})
+        header_match = re.match(r'#\s*::snt\s+(.+)', block)
+        if header_match:
+            sentence = header_match.group(1).strip()
+        graph_text = '\n'.join(line for line in block.split('\n')[1:] if not line.startswith('#'))
+        graphs = []
+        start = None
+        depth = 0
+        quoted = False
+        for index, char in enumerate(graph_text):
+            if char == '"':
+                quoted = not quoted
+            if quoted:
+                continue
+            if char == '(':
+                if depth == 0:
+                    start = index
+                depth += 1
+            elif char == ')' and depth:
+                depth -= 1
+                if depth == 0 and start is not None:
+                    graphs.append(graph_text[start:index + 1])
+                    start = None
+        # A malformed source block can contain a stray preceding graph. The
+        # final top-level graph is the one paired with its sentence header.
+        if sentence and graphs:
+            examples.append({'sentence': sentence, 'amr': graphs[-1]})
     return examples
 
 
@@ -220,10 +186,9 @@ def write_amr_blocks(path: Path, examples: list):
     """Write raw sentence/gold AMR blocks for dev Smatch evaluation."""
     blocks = []
     for ex in examples:
-        amr = convert_underscore_to_space(ex['amr'])
-        amr = fix_polarity_format(amr)
+        amr = canonicalize_amr(fix_polarity_format(ex['amr']))
         if not validate_amr(amr):
-            continue
+            raise ValueError(f"Invalid canonical AMR: {ex['sentence']}")
         blocks.append(f"# ::snt {ex['sentence']}\n{amr}")
     with open(path, 'w', encoding='utf-8') as f:
         f.write('\n\n'.join(blocks))
@@ -232,6 +197,30 @@ def write_amr_blocks(path: Path, examples: list):
 def write_sentence_lines(path: Path, examples: list):
     with open(path, 'w', encoding='utf-8') as f:
         f.write('\n'.join(ex['sentence'] for ex in examples))
+
+
+def write_aligned_public_test(raw_sentence_path: Path, raw_gold_path: Path,
+                              sentence_path: Path, gold_path: Path) -> list[str]:
+    """Write the maximal ordered test/gold intersection and return dropped text."""
+    sentences = [line.strip() for line in raw_sentence_path.read_text(encoding='utf-8').splitlines()
+                 if line.strip() and not line.startswith('#')]
+    gold = parse_amr_file(str(raw_gold_path))
+    kept_sentences = []
+    kept_gold = []
+    dropped = []
+    gold_index = 0
+    for sentence in sentences:
+        if gold_index < len(gold) and sentence == gold[gold_index]['sentence'].strip():
+            kept_sentences.append(sentence)
+            kept_gold.append(gold[gold_index])
+            gold_index += 1
+        else:
+            dropped.append(sentence)
+    if gold_index != len(gold):
+        raise ValueError(f"Unmatched gold entries remain: {len(gold) - gold_index}")
+    write_sentence_lines(sentence_path, [{'sentence': s} for s in kept_sentences])
+    write_amr_blocks(gold_path, kept_gold)
+    return dropped
 
 
 # ─────────────────────────────────────────────────────────────────────────────
@@ -248,10 +237,9 @@ def build_dataset(method: str, examples_1, examples_2,
     def add(exs, weight):
         for _ in range(weight):
             for ex in exs:
-                amr = convert_underscore_to_space(ex['amr'])
-                amr = fix_polarity_format(amr)
+                amr = canonicalize_amr(fix_polarity_format(ex['amr']))
                 if not validate_amr(amr):
-                    continue
+                    raise ValueError(f"Invalid canonical AMR: {ex['sentence']}")
                 result = builder(ex['sentence'], amr, no_var_mode=no_var_mode,
                                  language=language)
                 if result:
@@ -269,8 +257,8 @@ def main():
     parser.add_argument('--methods', nargs='+',
                         default=['B1', 'B2', 'MTUP2'],
                         choices=sorted(BUILDERS))
-    parser.add_argument('--no_var_mode', choices=['legacy', 'clean'], default='clean',
-                        help='clean expands bare reentrancy variables; legacy preserves old Vietnamese historical outputs')
+    parser.add_argument('--no_var_mode', choices=['clean'], default='clean',
+                        help='Active no-reentrancy skeleton representation.')
     parser.add_argument('--raw_dir', default='data/raw',
                         help='Directory containing train_amr_1.txt and train_amr_2.txt')
     parser.add_argument('--formatted_dir', default='data/formatted',
@@ -296,36 +284,42 @@ def main():
     ex1_raw = parse_amr_file(str(raw_dir / 'train_amr_1.txt'))
     ex2_raw = parse_amr_file(str(raw_dir / 'train_amr_2.txt'))
 
-    # Deduplicate each file independently by default (current Vietnamese setup).
-    ex1 = ex1_raw if args.no_dedup else dedup(ex1_raw)
-    ex2 = ex2_raw if args.no_dedup else dedup(ex2_raw)
+    all_raw = ex1_raw + ex2_raw
+    examples = all_raw if args.no_dedup else dedup(all_raw)
 
-    print(f"  train_amr_1: {len(ex1_raw)} raw -> {len(ex1)} after dedup")
-    print(f"  train_amr_2: {len(ex2_raw)} raw -> {len(ex2)} after dedup")
+    print(f"  train_amr_1: {len(ex1_raw)} raw")
+    print(f"  train_amr_2: {len(ex2_raw)} raw")
+    print(f"  unified:     {len(examples)} after dedup")
+    if args.amr1_weight != 1 or args.amr2_weight != 1:
+        raise ValueError("Source-specific weighting is disabled for the unified manifest; use weight 1.")
+    dropped_test = []
     if args.dev_split > 0:
         print(f"  dev split:   {args.dev_split:.3f} with seed {args.dev_seed}")
     print()
 
     if args.dev_split > 0:
-        ex1_train, ex1_dev = split_train_dev(ex1, args.dev_split, args.dev_seed)
-        ex2_train, ex2_dev = split_train_dev(ex2, args.dev_split, args.dev_seed + 1)
-        dev_raw_examples = ex1_dev + ex2_dev
+        train_examples_raw, dev_raw_examples = split_train_dev(
+            examples, args.dev_split, args.dev_seed)
         write_sentence_lines(fmt_dir / 'dev.txt', dev_raw_examples)
         write_amr_blocks(fmt_dir / 'dev_ground_truth.txt', dev_raw_examples)
-        print(f"  dev raw:     {len(dev_raw_examples)} sentences -> {fmt_dir / 'dev.txt'}")
-        print(f"  dev gold:    {len(dev_raw_examples)} AMRs -> {fmt_dir / 'dev_ground_truth.txt'}")
+        write_sentence_lines(fmt_dir / 'train.txt', train_examples_raw)
+        print(f"  train raw:   {len(train_examples_raw)} sentences")
+        print(f"  dev raw:     {len(dev_raw_examples)} sentences")
     else:
-        ex1_train, ex1_dev = ex1, []
-        ex2_train, ex2_dev = ex2, []
+        train_examples_raw, dev_raw_examples = examples, []
+
+    dropped_test = write_aligned_public_test(
+        raw_dir / 'public_test.txt', raw_dir / 'public_test_ground_truth.txt',
+        fmt_dir / 'test.txt', fmt_dir / 'test_ground_truth.txt')
+    print(f"  test aligned: {len(parse_amr_file(str(raw_dir / 'public_test_ground_truth.txt')))}; dropped={len(dropped_test)}")
 
     stats = {}
     for method in args.methods:
         if args.dev_split > 0:
-            train_examples = build_dataset(method, ex1_train, ex2_train,
-                                           args.amr1_weight, args.amr2_weight,
+            train_examples = build_dataset(method, train_examples_raw, [], 1, 0,
                                            no_var_mode=args.no_var_mode,
                                            language=args.language)
-            dev_examples = build_dataset(method, ex1_dev, ex2_dev, 1, 1,
+            dev_examples = build_dataset(method, dev_raw_examples, [], 1, 0,
                                          no_var_mode=args.no_var_mode,
                                          language=args.language)
             dev_path = fmt_dir / f"{method}_dev.txt"
@@ -333,8 +327,7 @@ def main():
                 f.write('\n\n'.join(dev_examples))
             print(f"  {method}: {len(train_examples)} train + {len(dev_examples)} dev -> {fmt_dir}")
         else:
-            train_examples = build_dataset(method, ex1, ex2,
-                                           args.amr1_weight, args.amr2_weight,
+            train_examples = build_dataset(method, train_examples_raw, [], 1, 0,
                                            no_var_mode=args.no_var_mode,
                                            language=args.language)
 
@@ -356,8 +349,8 @@ def main():
     stats_path = fmt_dir / 'dataset_stats.json'
     with open(stats_path, 'w') as f:
         json.dump({
-            'amr1_examples': len(ex1),
-            'amr2_examples': len(ex2),
+            'raw_examples': len(all_raw),
+            'dedup_examples': len(examples),
             'weights': {'amr1': args.amr1_weight, 'amr2': args.amr2_weight},
             'no_var_mode': args.no_var_mode,
             'dedup': not args.no_dedup,
@@ -365,6 +358,10 @@ def main():
             'dev_split': args.dev_split,
             'dev_seed': args.dev_seed if args.dev_split > 0 else None,
             'methods': stats,
+            'train_examples': len(train_examples_raw),
+            'dev_examples': len(dev_raw_examples),
+            'test_examples': len(fmt_dir.joinpath('test.txt').read_text(encoding='utf-8').splitlines()) if (fmt_dir / 'test.txt').exists() else 0,
+            'test_dropped_sentences': dropped_test,
         }, f, indent=2)
     print(f"\nStats saved to {stats_path}")
 

@@ -49,49 +49,37 @@ def extract_balanced_amr(text: str, start_pos: int) -> str:
             depth -= 1
             if depth == 0:
                 return text[paren_start:i + 1]
-    # Unbalanced – return up to last )
-    last_close = text.rfind(')', paren_start)
-    if last_close != -1:
-        fragment = text[paren_start:last_close + 1]
-        # Balance by appending missing )
-        opens = fragment.count('(')
-        closes = fragment.count(')')
-        if opens > closes:
-            fragment += ')' * (opens - closes)
-        return fragment
+    # Do not repair malformed model output. Evaluation will count it invalid.
     return None
 
 
 def extract_amr_B1(response: str) -> str:
     marker = response.find('AMR:')
     if marker == -1:
-        return '(a / amr-unknown)'
+        return ''
     amr = extract_balanced_amr(response, marker + 4)
-    return amr or '(a / amr-unknown)'
+    return amr or ''
 
 
 def extract_amr_B2(response: str) -> str:
     marker = response.find('AMR_NO_VAR:')
     if marker == -1:
-        return '(amr-unknown)'
+        return ''
     pos = marker + len('AMR_NO_VAR:')
     pstart = response.find('(', pos)
     if pstart == -1:
-        return '(amr-unknown)'
+        return ''
     amr = extract_balanced_amr(response, pstart)
-    return amr or '(amr-unknown)'
+    return amr or ''
 
 
 def extract_amr_MTUP2(response: str) -> str:
     """Extract Step 2 (final AMR with variables)."""
     marker = response.rfind('[STEP 2: AMR_WITH_VAR]')
     if marker == -1:
-        # Fallback: step 1 no-var
-        marker = response.rfind('[STEP 1: AMR_NO_VAR]')
-    if marker == -1:
-        return '(a / amr-unknown)'
+        return ''
     amr = extract_balanced_amr(response, marker)
-    return amr or '(a / amr-unknown)'
+    return amr or ''
 
 
 EXTRACTORS = {
@@ -215,6 +203,7 @@ def main():
 
     predictions = []
     full_outputs = []
+    final_failures = 0
 
     for sentence in tqdm(sentences, desc=f"Inference {method} s{args.seed}"):
         inputs = build_prompt(tokenizer, system_prompt, sentence)
@@ -235,6 +224,8 @@ def main():
         full_outputs.append(response)
 
         amr = extractor(response)
+        if not amr:
+            final_failures += 1
         if method == 'B2':
             amr = bind_no_var_amr(amr)
         amr = postprocess_amr(amr)
@@ -262,6 +253,7 @@ def main():
             'pred_path': str(pred_path),
             'full_path': str(full_path),
             'num_sentences': len(sentences),
+            'final_extraction_failures': final_failures,
             'max_new_tokens': max_new_tokens,
         }, f, indent=2, ensure_ascii=False)
 

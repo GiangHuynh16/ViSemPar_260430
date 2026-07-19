@@ -85,8 +85,14 @@ def load_chat_dataset(data_path: str, tokenizer, max_length: int = 2048):
 
     tokenized = []
     skipped = 0
+    truncated = 0
+    response_tokens = 0
 
     for ex in examples_text:
+        untruncated = tokenizer(ex, truncation=False, padding=False,
+                                return_tensors=None, add_special_tokens=False)
+        if len(untruncated['input_ids']) > max_length:
+            truncated += 1
         tokens = tokenizer(
             ex,
             truncation=True,
@@ -127,16 +133,21 @@ def load_chat_dataset(data_path: str, tokenizer, max_length: int = 2048):
             skipped += 1
             continue
 
+        response_tokens += sum(1 for label in labels if label != -100)
         tokenized.append({'input_ids': input_ids, 'labels': labels})
 
     if skipped:
         print(f"  Skipped {skipped} examples (no assistant marker or all masked)")
+    print(f"  Truncated examples: {truncated}/{len(examples_text)}")
+    if truncated:
+        print("  WARNING: truncated targets may omit the final AMR; inspect before training.")
 
     if tokenized:
         s = tokenized[0]
         n_resp = sum(1 for l in s['labels'] if l != -100)
         print(f"  Loaded {len(tokenized)} examples. "
-              f"First: {len(s['input_ids'])} tokens, {n_resp} response tokens.")
+              f"First: {len(s['input_ids'])} tokens, {n_resp} response tokens; "
+              f"total response tokens={response_tokens}.")
 
     return Dataset.from_list(tokenized)
 

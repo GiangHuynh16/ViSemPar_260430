@@ -1,11 +1,9 @@
 {
-  "amr1_examples": 1235,
-  "amr2_examples": 572,
-  "synthetic_examples": 0,
+  "raw_examples": 1842,
+  "dedup_examples": 1808,
   "weights": {
     "amr1": 1,
-    "amr2": 1,
-    "syn": 0
+    "amr2": 1
   },
   "no_var_mode": "clean",
   "dedup": true,
@@ -13,7 +11,12 @@
   "dev_split": 0.1,
   "dev_seed": 42,
   "methods": {
-    "B2": 1623,
-    "MTUP2": 1623
-  }
+    "B1": 1627,
+    "B2": 1627,
+    "MTUP2": 1627
+  },
+  "train_examples": 1627,
+  "dev_examples": 181,
+  "test_examples": 150,
+  "test_dropped_sentences": []
 }

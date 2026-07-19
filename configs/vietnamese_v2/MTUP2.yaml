@@ -20,6 +20,7 @@ data:
   train: vietnamese_v2/MTUP2_train.txt
   dev_formatted: vietnamese_v2/MTUP2_dev.txt
   val: data/formatted/vietnamese_v2/dev.txt
-  test: data/raw/public_test.txt
+  test: data/formatted/vietnamese_v2/test.txt
+  test_gold: data/formatted/vietnamese_v2/test_ground_truth.txt
 decoding:
   max_new_tokens: 1536

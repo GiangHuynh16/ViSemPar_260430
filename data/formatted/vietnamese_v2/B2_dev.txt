@@ -11,44 +11,10 @@ QUY TẮC:
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
 <|im_end|>
 <|im_start|>user
-mỗi phút ta phải thắp đèn và phải tắt đèn một lần !
+- lạ thực đấy !
 <|im_end|>
 <|im_start|>assistant
-AMR_NO_VAR: (obligate-01
-    :agent(ta)
-    :frequency(rate-entity-91
-        :ARG2(temporal-quantity
-            :unit(phút)
-            :quant 1))
-    :theme(and
-        :op1(thắp
-            :patient(đèn)
-            :agent (ta))
-        :op2(tắt
-            :agent (ta)
-            :patient (đèn))))
-<|im_end|>
-
-<|im_start|>system
-Bạn là trợ lý phân tích AMR (Abstract Meaning Representation) cho tiếng Việt.
-
-QUY TẮC:
-1. Tuân thủ đúng định dạng output được yêu cầu.
-2. Dùng concept, biến và quan hệ AMR nhất quán với dữ liệu huấn luyện.
-3. Không dùng ví dụ, câu, nhãn vàng hoặc quy tắc rút ra từ tập test.
-4. Giữ dấu ngoặc AMR cân bằng.
-5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
-6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
-7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
-<|im_end|>
-<|im_start|>user
-chúc một đêm tốt lành .
-<|im_end|>
-<|im_start|>assistant
-AMR_NO_VAR: (chúc
-    :topic(đêm
-        :mod(tốt lành)
-        :quant 1))
+AMR_NO_VAR: (lạ :degree(thực) :mode expressive)
 <|im_end|>
 
 <|im_start|>system
@@ -67,13 +33,7 @@ QUY TẮC:
 tôi biết cách cho ông nghỉ ngơi khi nào ông muốn đấy ...
 <|im_end|>
 <|im_start|>assistant
-AMR_NO_VAR: (biết
-    :pivot(tôi)
-    :theme(cách
-        :purpose(nghỉ ngơi
-            :agent(ông)
-            :time(muốn
-                :pivot (ông)))))
+AMR_NO_VAR: (biết :pivot(tôi) :theme(cách :purpose(nghỉ_ngơi :agent(ông) :time(muốn :pivot (ông)))))
 <|im_end|>
 
 <|im_start|>system
@@ -89,13 +49,10 @@ QUY TẮC:
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
 <|im_end|>
 <|im_start|>user
-ông hoàng nhỏ hỏi tiếp :
+khi nào ông muốn nghỉ , ông cứ bước đi ...
 <|im_end|>
 <|im_start|>assistant
-AMR_NO_VAR: (hỏi
-    :agent(ông hoàng
-        :mod(nhỏ))
-    :compound(tiếp))
+AMR_NO_VAR: (bước :time(muốn :theme(nghỉ :agent (ông)) :pivot (ông)) :agent(ông) :compound(đi))
 <|im_end|>
 
 <|im_start|>system
@@ -111,19 +68,10 @@ QUY TẮC:
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
 <|im_end|>
 <|im_start|>user
-cái ông này , ông hoàng nhỏ nghĩ thầm trong lúc tiếp tục cuộc hành trình .
+cái mà ta thích nhất trên đời , là ngủ .
 <|im_end|>
 <|im_start|>assistant
-AMR_NO_VAR: (nghĩ
-    :topic(ông
-        :mod(này))
-    :pivot(ông hoàng
-        :mod(nhỏ))
-    :compound(thầm)
-    :time(tiếp tục
-        :theme(cuộc
-            :mod(hành trình))
-        :agent (ông)))
+AMR_NO_VAR: (thích :pivot(ta) :degree(nhất) :setting(đời) :theme(ngủ :pivot (ta)))
 <|im_end|>
 
 <|im_start|>system
@@ -139,13 +87,10 @@ QUY TẮC:
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
 <|im_end|>
 <|im_start|>user
-- nhà địa lý là người như thế nào ?
+nhưng tinh cầu của ông ấy bé quá .
 <|im_end|>
 <|im_start|>assistant
-AMR_NO_VAR: (nhà
-    :compound(địa lý)
-    :mode interrogative
-    :domain(amr-unknown))
+AMR_NO_VAR: (contrast-01 :ARG2(bé :domain(tinh_cầu :poss(ông :mod(ấy))) :degree(quá)))
 <|im_end|>
 
 <|im_start|>system
@@ -161,13 +106,10 @@ QUY TẮC:
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
 <|im_end|>
 <|im_start|>user
-- tinh cầu của ông đẹp quá .
+- kìa ! kia là một nhà thám hiểm ! ông ta kêu lên thế khi nhìn thấy ông hoàng nhỏ .
 <|im_end|>
 <|im_start|>assistant
-AMR_NO_VAR: (đẹp
-    :domain(tinh cầu
-        :poss(ông))
-    :degree(quá))
+AMR_NO_VAR: (kêu :agent(ông :mod(ta)) :compound(lên) :time(nhìn :compound(thấy) :goal(ông :compound(hoàng) :mod(nhỏ)) :agent (ông)) :topic(and :op1(kìa :mode expressive) :op2(nhà :domain(kia) :compound(thám_hiểm))))
 <|im_end|>
 
 <|im_start|>system
@@ -183,12 +125,10 @@ QUY TẮC:
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
 <|im_end|>
 <|im_start|>user
-có đại dương không ông ?
+- chú từ đâu đến ? tôn ông già hỏi .
 <|im_end|>
 <|im_start|>assistant
-AMR_NO_VAR: (có
-    :theme(đại dương)
-    :mode interrogative)
+AMR_NO_VAR: (hỏi :topic(đến :agent(chú) :location(amr-unknown) :mode interrogative) :agent(tôn :mod(ông :mod(già))))
 <|im_end|>
 
 <|im_start|>system
@@ -204,22 +144,10 @@ QUY TẮC:
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
 <|im_end|>
 <|im_start|>user
-nhà địa lý không phải là người đi đến các thành phố , sông biển , núi non , đại dương và sa mạc .
+- Và các thành phố , và các con sông , và các sa mạc ?
 <|im_end|>
 <|im_start|>assistant
-AMR_NO_VAR: (người
-    :domain(nhà
-        :compound(địa lý))
-    :agent-of(đi
-        :direction(đến)
-        :location(and
-            :op1(thành phố)
-            :op2(sông
-                :compound(biển))
-            :op3(núi non)
-            :op4(đại dương)
-            :op5(sa mạc))
-        :polarity -))
+AMR_NO_VAR: (and :mode interrogative :op2(and :op1(thành_phố) :op2(sông :classifier(con)) :op3(sa_mạc)))
 <|im_end|>
 
 <|im_start|>system
@@ -235,18 +163,10 @@ QUY TẮC:
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
 <|im_end|>
 <|im_start|>user
-nhà địa lý rất quan trọng không thể đi lung tung .
+ông ta không rời bàn giấy của mình .
 <|im_end|>
 <|im_start|>assistant
-AMR_NO_VAR: (quan trọng
-    :domain(nhà
-        :compound(địa lý))
-    :degree(rất)
-    :result(possible-01
-        :theme(đi
-            :manner(lung tung)
-            :agent (nhà))
-        :polarity -))
+AMR_NO_VAR: (rời :agent(ông :compound(ta)) :polarity - :source(bàn_giấy :poss (ông)))
 <|im_end|>
 
 <|im_start|>system
@@ -262,15 +182,10 @@ QUY TẮC:
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
 <|im_end|>
 <|im_start|>user
-chẳng mấy khi một đại dương lại cạn nước .
+- nhưng mà chú , chú đến từ xa .
 <|im_end|>
 <|im_start|>assistant
-AMR_NO_VAR: (cạn
-    :degree(chẳng mấy khi)
-    :pivot(đại dương
-        :quant 1)
-    :theme(nước
-        :poss (đại)))
+AMR_NO_VAR: (contrast-01 :ARG2(đến :agent(chú) :extent(xa)))
 <|im_end|>
 
 <|im_start|>system
@@ -286,25 +201,10 @@ QUY TẮC:
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
 <|im_end|>
 <|im_start|>user
-có thể dồn hết nhân loại lên một hòn đảo bé nhất trong Thái Bình Dương .
+đợi cho nhà thám hiểm cung cấp bằng chứng rồi , người ta mới ghi lại bằng bút mực .
 <|im_end|>
 <|im_start|>assistant
-AMR_NO_VAR: (possible-01
-    :theme(dồn
-        :manner(hết)
-        :patient(nhân loại)
-        :direction(lên
-            :finalLocation(đảo
-                :mod(bé
-                    :degree(nhất))
-                :location(ocean
-                    :name(name
-                        :op1(Thái)
-                        :op2(Bình)
-                        :op3(Dương))
-                    :wiki(Thái_Bình_Dương))
-                :quant 1
-                    :classifier(hòn)))))
+AMR_NO_VAR: (đợi :agent(người_ta) :time(before :op1(ghi :compound(lại) :instrument(bút :mod(mực)) :agent (người_ta))) :time(until :op1(cung_cấp :agent(nhà :compound(thám_hiểm)) :theme(bằng_chứng))))
 <|im_end|>
 
 <|im_start|>system
@@ -320,16 +220,10 @@ QUY TẮC:
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
 <|im_end|>
 <|im_start|>user
-- ngay giữa loài người , cũng bơ vơ , rắn nói .
+- tôi cũng có một bông hoa .
 <|im_end|>
 <|im_start|>assistant
-AMR_NO_VAR: (nói
-    :topic(bơ vơ
-        :domain(be-located-at-91
-            :location(giữa
-                :mod(ngay)
-                :mod(loài người))))
-    :agent(rắn))
+AMR_NO_VAR: (có :pivot(tôi) :theme(hoa :quant 1 :classifier(bông)))
 <|im_end|>
 
 <|im_start|>system
@@ -345,23 +239,10 @@ QUY TẮC:
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
 <|im_end|>
 <|im_start|>user
-- anh là một con vật buồn cười thật , em nói , mảnh khảnh cứ như một ngón tay ...
+cái ta kể tới , đó là quả núi .
 <|im_end|>
 <|im_start|>assistant
-AMR_NO_VAR: (nói
-    :agent(em)
-    :topic(and
-        :op1(vật
-            :domain(anh)
-            :classifier(con)
-            :mod(buồn cười
-                :degree(thật)))
-        :op2(mảnh khảnh
-            :compared-to(ngón
-                :compound(tay)
-                :quant 1)
-            :degree(equal)
-            :domain (anh))))
+AMR_NO_VAR: (núi :domain(cái :agent-of(kể :agent(ta))) :classifier(quả))
 <|im_end|>
 
 <|im_start|>system
@@ -377,21 +258,10 @@ QUY TẮC:
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
 <|im_end|>
 <|im_start|>user
-ông hoàng nhỏ đi qua sa mạc và chỉ gặp có một bông hoa .
+thế là ông hoàng nhỏ ra đi , lòng mơ đến đoá hoa của mình .
 <|im_end|>
 <|im_start|>assistant
-AMR_NO_VAR: (and
-    :op1(đi
-        :agent(ông hoàng
-            :mod(nhỏ))
-        :compound(qua)
-        :location(sa mạc))
-    :op2(gặp
-        :degree(chỉ)
-        :goal(hoa
-            :quant 1
-                :classifier(bông))
-        :agent (ông)))
+AMR_NO_VAR: (and :op2(and :op1(ra :agent(ông_hoàng :mod(nhỏ)) :compound(đi)) :op2(mơ :pivot(lòng) :goal(hoa :classifier(đoá) :poss (ông_hoàng)))))
 <|im_end|>
 
 <|im_start|>system
@@ -407,16 +277,10 @@ QUY TẮC:
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
 <|im_end|>
 <|im_start|>user
-- chúc một ngày tốt lành , ông hoàng nhỏ nói .
+trước tiên là phiên những người đốt đèn nước Tân Tây Lan và nước úc .
 <|im_end|>
 <|im_start|>assistant
-AMR_NO_VAR: (nói
-    :topic(chúc
-        :topic(ngày
-            :mod(tốt lành)
-            :quant 1))
-    :agent(ông hoàng
-        :mod(nhỏ)))
+AMR_NO_VAR: (phiên :time(trước_tiên) :poss(person :agent-of(đốt :patient(đèn)) :source(and :op2(country :name(name :op1(Úc)) :wiki(Úc)) :op1(country :wiki(Tân_Tây_Lan) :name(name :op3(Lan) :op2(Tây) :op1(Tân))))))
 <|im_end|>
 
 <|im_start|>system
@@ -432,13 +296,10 @@ QUY TẮC:
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
 <|im_end|>
 <|im_start|>user
-gió thổi họ đi .
+sau khi đốt đèn xong , họ đi ngủ .
 <|im_end|>
 <|im_start|>assistant
-AMR_NO_VAR: (thổi
-    :theme(gió)
-    :patient(họ)
-    :direction(đi))
+AMR_NO_VAR: (đi :agent(họ) :compound(ngủ) :time(after :op1(đốt :patient(đèn :poss (họ)) :agent (họ))))
 <|im_end|>
 
 <|im_start|>system
@@ -454,17 +315,10 @@ QUY TẮC:
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
 <|im_end|>
 <|im_start|>user
-ông hoàng nhỏ trèo lên một quả núi cao .
+rồi đến những người của Châu Phi và Châu Âu .
 <|im_end|>
 <|im_start|>assistant
-AMR_NO_VAR: (trèo
-    :agent(ông hoàng
-        :mod(nhỏ))
-    :compound(lên)
-    :location(núi
-        :mod(cao)
-        :quant 1
-            :classifier(quả)))
+AMR_NO_VAR: (đến :poss(người :location(and :op1(continent :wiki(Châu_Phi) :name(name :op2(Phi) :op1(Châu))) :op2(continent :wiki(Châu_Âu) :name(name :op2(Âu) :op1(Châu))))))
 <|im_end|>
 
 <|im_start|>system
@@ -480,13 +334,10 @@ QUY TẮC:
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
 <|im_end|>
 <|im_start|>user
-chúc một ngày tốt lành !
+bạn tin vào tôi mà .
 <|im_end|>
 <|im_start|>assistant
-AMR_NO_VAR: (chúc
-    :topic(ngày
-        :mod(tốt lành)
-        :quant 1))
+AMR_NO_VAR: (tin :pivot(bạn) :goal(tôi))
 <|im_end|>
 
 <|im_start|>system
@@ -502,15 +353,10 @@ QUY TẮC:
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
 <|im_end|>
 <|im_start|>user
-và những con người thì thiếu hẳn óc tưởng tượng .
+và cả hai lặng thinh .
 <|im_end|>
 <|im_start|>assistant
-AMR_NO_VAR: (and
-    :op2(thiếu
-        :domain(con người)
-        :degree(hẳn)
-        :theme(óc
-            :mod(tưởng tượng))))
+AMR_NO_VAR: (and :op2(lặng_thinh :pivot(hai :mod(cả))))
 <|im_end|>
 
 <|im_start|>system
@@ -526,12 +372,10 @@ QUY TẮC:
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
 <|im_end|>
 <|im_start|>user
-- các nàng là ai ?
+- nhưng ta mạnh hơn ngón tay của một ông vua , rắn nói .
 <|im_end|>
 <|im_start|>assistant
-AMR_NO_VAR: (amr-unknown
-    :domain(nàng)
-    :mode interrogative)
+AMR_NO_VAR: (nói :agent(rắn) :topic(contrast-01 :ARG2(mạnh :domain(ta) :degree(hơn) :compared-to(ngón :compound(tay) :part-of(ông :compound(vua))))))
 <|im_end|>
 
 <|im_start|>system
@@ -547,21 +391,10 @@ QUY TẮC:
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
 <|im_end|>
 <|im_start|>user
-đoá hoa của em đã kể với em rằng nàng là duy nhất trong giống nòi của nàng khắp trong vũ trụ .
+- ta có thể chở cậu đi xa hơn cả một chiếc tàu , rắn nói .
 <|im_end|>
 <|im_start|>assistant
-AMR_NO_VAR: (kể
-    :agent(hoa
-        :classifier(đoá)
-        :poss(em))
-    :tense(đã)
-    :goal(em)
-    :topic(duy nhất
-        :domain(nàng)
-        :consist-of(giống nòi
-            :location(vũ trụ
-                :mod(khắp))
-            :poss (nàng))))
+AMR_NO_VAR: (nói :agent(rắn) :topic(possible-01 :theme(chở :theme(cậu) :extent(đi :manner(xa) :compared-to (chở) :agent(tàu :quant 1 :classifier(chiếc)) :theme (cậu) :degree(more)) :agent (rắn))))
 <|im_end|>
 
 <|im_start|>system
@@ -577,11 +410,10 @@ QUY TẮC:
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
 <|im_end|>
 <|im_start|>user
-- a !
+và họ lặng thinh .
 <|im_end|>
 <|im_start|>assistant
-AMR_NO_VAR: (a
-    :mode expressive)
+AMR_NO_VAR: (and :op2(lặng_thinh :pivot(họ)))
 <|im_end|>
 
 <|im_start|>system
@@ -597,24 +429,10 @@ QUY TẮC:
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
 <|im_end|>
 <|im_start|>user
-- và khi ông đã nguôi rồi ( người ta bao giờ cũng nguôi đi ) , ông sẽ bằng lòng đã từng được quen biết tôi .
+khoảng sáu hay bảy mống .
 <|im_end|>
 <|im_start|>assistant
-AMR_NO_VAR: (and
-    :op2(bằng lòng
-        :time(nguôi
-            :pivot(ông)
-            :tense(đã)
-            :pivot-of(nguôi
-                :pivot(người ta)
-                :time(always)))
-        :tense(sẽ)
-        :result-arg1(quen biết
-            :tense(đã)
-            :modality(được)
-            :theme(tôi)
-            :pivot (ông))
-        :pivot (ông)))
+AMR_NO_VAR: (mống :quant(khoảng :op1(or :op1 6 :op2 7)))
 <|im_end|>
 
 <|im_start|>system
@@ -630,13 +448,10 @@ QUY TẮC:
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
 <|im_end|>
 <|im_start|>user
-tôi sẽ có vẻ sắp chết .
+- từ biệt , đoá hoa nói .
 <|im_end|>
 <|im_start|>assistant
-AMR_NO_VAR: (chết
-    :pivot(tôi)
-    :tense(sẽ)
-    :tense(sắp))
+AMR_NO_VAR: (nói :topic(từ_biệt) :agent(hoa :classifier(đoá)))
 <|im_end|>
 
 <|im_start|>system
@@ -652,16 +467,10 @@ QUY TẮC:
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
 <|im_end|>
 <|im_start|>user
-- tôi nói với ông ... là tại vì con rắn đây .
+- hãy làm bạn với tôi , tôi cô đơn lắm , em nói .
 <|im_end|>
 <|im_start|>assistant
-AMR_NO_VAR: (nói
-    :agent(tôi)
-    :goal(ông)
-    :topic(cause-01
-        :theme(rắn
-            :classifier(con)
-            :mod(đây))))
+AMR_NO_VAR: (nói :agent(em) :topic(and :op1(làm_bạn :accompanier(tôi) :mode imperative) :op2(cô_đơn :degree(lắm) :domain (tôi))))
 <|im_end|>
 
 <|im_start|>system
@@ -677,19 +486,10 @@ QUY TẮC:
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
 <|im_end|>
 <|im_start|>user
-đêm ấy , tôi không trông thấy em bỏ đi .
+- chúc một ngày tốt lành , các hoa hồng trả lời .
 <|im_end|>
 <|im_start|>assistant
-AMR_NO_VAR: (trông
-    :agent(tôi)
-    :polarity -
-    :compound(thấy)
-    :topic(bỏ
-        :agent(em)
-        :compound(đi))
-    :time(date-entity
-        :dayperiod(đêm
-            :mod(ấy))))
+AMR_NO_VAR: (trả_lời :topic(chúc :topic(ngày :mod(tốt_lành) :quant 1)) :agent(hoa_hồng))
 <|im_end|>
 
 <|im_start|>system
@@ -705,20 +505,10 @@ QUY TẮC:
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
 <|im_end|>
 <|im_start|>user
-các ngôi sao sẽ là những cái giếng với một cái ròng rọc han rỉ .
+- đúng đó là món quà tôi biếu ông ... giống như là nước vậy ...
 <|im_end|>
 <|im_start|>assistant
-AMR_NO_VAR: (giếng
-    :domain(sao
-        :classifier(ngôi))
-    :tense(sẽ)
-    :classifier(cái)
-    :pivot-of(có
-        :theme(ròng rọc
-            :classifier(cái)
-            :mod(han
-                :compound(rỉ)))
-        :pivot (giếng)))
+AMR_NO_VAR: (quà :domain(đó) :classifier(món) :theme-of(biếu :agent(tôi) :beneficiary-arg1(ông)) :theme-of(resemble-01 :compared-to(nước) :theme-of (quà) :degree(equal)))
 <|im_end|>
 
 <|im_start|>system
@@ -734,17 +524,86 @@ QUY TẮC:
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
 <|im_end|>
 <|im_start|>user
-em lưỡng lự một chút , rồi đứng lên .
+thế thôi mà !
 <|im_end|>
 <|im_start|>assistant
-AMR_NO_VAR: (multi-sentence
-    :snt1(lưỡng lự
-        :pivot(em)
-        :degree(một chút))
-    :snt2(đứng
-        :compound(lên)
-        :time(then)
-        :agent (em)))
+AMR_NO_VAR: (thế :mode expressive)
+<|im_end|>
+
+<|im_start|>system
+Bạn là trợ lý phân tích AMR (Abstract Meaning Representation) cho tiếng Việt.
+
+QUY TẮC:
+1. Tuân thủ đúng định dạng output được yêu cầu.
+2. Dùng concept, biến và quan hệ AMR nhất quán với dữ liệu huấn luyện.
+3. Không dùng ví dụ, câu, nhãn vàng hoặc quy tắc rút ra từ tập test.
+4. Giữ dấu ngoặc AMR cân bằng.
+5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
+6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
+7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+<|im_end|>
+<|im_start|>user
+loài rắn , chúng ác lắm .
+<|im_end|>
+<|im_start|>assistant
+AMR_NO_VAR: (ác :domain(loài :compound(rắn)) :degree(lắm))
+<|im_end|>
+
+<|im_start|>system
+Bạn là trợ lý phân tích AMR (Abstract Meaning Representation) cho tiếng Việt.
+
+QUY TẮC:
+1. Tuân thủ đúng định dạng output được yêu cầu.
+2. Dùng concept, biến và quan hệ AMR nhất quán với dữ liệu huấn luyện.
+3. Không dùng ví dụ, câu, nhãn vàng hoặc quy tắc rút ra từ tập test.
+4. Giữ dấu ngoặc AMR cân bằng.
+5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
+6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
+7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+<|im_end|>
+<|im_start|>user
+chúng có thể cắn để mà chơi ...
+<|im_end|>
+<|im_start|>assistant
+AMR_NO_VAR: (possible-01 :theme(cắn :agent(chúng) :purpose(chơi)))
+<|im_end|>
+
+<|im_start|>system
+Bạn là trợ lý phân tích AMR (Abstract Meaning Representation) cho tiếng Việt.
+
+QUY TẮC:
+1. Tuân thủ đúng định dạng output được yêu cầu.
+2. Dùng concept, biến và quan hệ AMR nhất quán với dữ liệu huấn luyện.
+3. Không dùng ví dụ, câu, nhãn vàng hoặc quy tắc rút ra từ tập test.
+4. Giữ dấu ngoặc AMR cân bằng.
+5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
+6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
+7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+<|im_end|>
+<|im_start|>user
+tất cả mọi ngôi sao sẽ rót cho tôi uống ...
+<|im_end|>
+<|im_start|>assistant
+AMR_NO_VAR: (rót :agent(sao :classifier(ngôi) :mod(all)) :tense(sẽ) :purpose(uống :agent(tôi)))
+<|im_end|>
+
+<|im_start|>system
+Bạn là trợ lý phân tích AMR (Abstract Meaning Representation) cho tiếng Việt.
+
+QUY TẮC:
+1. Tuân thủ đúng định dạng output được yêu cầu.
+2. Dùng concept, biến và quan hệ AMR nhất quán với dữ liệu huấn luyện.
+3. Không dùng ví dụ, câu, nhãn vàng hoặc quy tắc rút ra từ tập test.
+4. Giữ dấu ngoặc AMR cân bằng.
+5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
+6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
+7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+<|im_end|>
+<|im_start|>user
+em không kêu .
+<|im_end|>
+<|im_start|>assistant
+AMR_NO_VAR: (kêu :agent(em) :polarity -)
 <|im_end|>
 
 <|im_start|>system
@@ -763,10 +622,7 @@ QUY TẮC:
 nghĩa là ... không hẳn là như thế .
 <|im_end|>
 <|im_start|>assistant
-AMR_NO_VAR: (nghĩa là
-    :topic(hẳn
-        :compared-to(thế)
-        :polarity -))
+AMR_NO_VAR: (nghĩa_là :topic(hẳn :compared-to(thế) :polarity -))
 <|im_end|>
 
 <|im_start|>system
@@ -782,14 +638,10 @@ QUY TẮC:
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
 <|im_end|>
 <|im_start|>user
-khi thì tôi tự nhủ : " chắc là không !
+ông hoàng nhỏ đêm nào cũng đậy hoa trong cái bầu kính , và em cũng trông chừng con cừu cẩn thận . "
 <|im_end|>
 <|im_start|>assistant
-AMR_NO_VAR: (tự nhủ
-    :pivot(tôi)
-    :topic(chắc
-        :polarity -)
-    :time(sometimes))
+AMR_NO_VAR: (and :op1(đậy :agent(ông_hoàng :mod(nhỏ)) :patient(hoa) :location(bầu :prep(trong) :classifier(cái) :consist-of(kính)) :time(rate-entity-91 :ARG2(đêm :mod(nào)))) :op2(trông_chừng :theme(cừu :classifier(con)) :manner(cẩn_thận) :agent (ông_hoàng)))
 <|im_end|>
 
 <|im_start|>system
@@ -805,40 +657,10 @@ QUY TẮC:
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
 <|im_end|>
 <|im_start|>user
-nhưng cái hoạ baobab còn ít người biết quá , mà những nguy hiểm mà một cậu bé một mai lạc vào một tiểu tinh cầu sẽ gặp phải thì rất là đáng kể , cho nên , chỉ một lần thôi , tôi làm khác với nguyên tắc của tôi .
+em đã quên mất , một đêm nào đó , cái bầu kính , hoặc con cừu lẻn ra không một tiếng động trong đêm ... "
 <|im_end|>
 <|im_start|>assistant
-AMR_NO_VAR: (contrast-01
-    :ARG2(làm
-        :frequency(lần
-            :degree(chỉ)
-            :quant 1)
-        :agent(tôi)
-        :manner(khác
-            :topic(nguyên tắc
-                :poss(tôi)))
-        :cause(and
-            :op1(biết
-                :theme(hoạ
-                    :classifier(cái)
-                    :mod(baobab))
-                :pivot(người
-                    :degree(ít))
-                :degree(quá))
-            :op2(đáng kể
-                :theme(nguy hiểm
-                    :agent-of(gặp
-                        :agent-of(lạc
-                            :agent(bé
-                                :quant 1
-                                    :classifier(cậu))
-                            :time(một mai)
-                            :compound(vào)
-                            :location(tiểu tinh cầu
-                                :quant 1))
-                        :tense(sẽ)
-                        :compound(phải)))
-                :degree(rất)))))
+AMR_NO_VAR: (or :op1(quên :pivot(em) :tense(đã) :theme(bầu :classifier(cái) :consist-of(kính))) :op2(lẻn :agent(cừu :classifier(con)) :compound(ra) :manner(tiếng_động :quant 1 :polarity - :time(date-entity :dayperiod(đêm)))) :time(date-entity :dayperiod(đêm) :mod(nào :mod(đó))))
 <|im_end|>
 
 <|im_start|>system
@@ -854,18 +676,10 @@ QUY TẮC:
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
 <|im_end|>
 <|im_start|>user
-khi vẽ cây baobab , tôi bị thôi thúc bởi một tình cảm cấp bách .
+với bạn , là người cũng yêu ông hoàng bé nhỏ , cũng như với tôi , cả vũ trụ này sẽ chẳng còn như cũ nếu như ở đâu đó , không biết ở đâu , một con cừu mà ta không biết , đã có hay là không ăn một đoá hoa hồng ...
 <|im_end|>
 <|im_start|>assistant
-AMR_NO_VAR: (thôi thúc
-    :time(vẽ
-        :result-arg1(baobab
-            :classifier(cây)))
-    :patient(tôi)
-    :modality(bị)
-    :reason(tình cảm
-        :mod(cấp bách)
-        :quant 1))
+AMR_NO_VAR: (còn :domain(vũ_trụ :mod(all)) :compared-to(cũ) :condition(ăn :location(đâu_đó :location-of(biết :location(đâu :prep(ở)) :pivot (ta) :polarity -)) :agent(cừu :pivot-of(biết :pivot(ta) :polarity -) :quant 1 :classifier(con)) :theme(hoa_hồng :quant 1 :classifier(đoá)) :mode interrogative) :goal(and :op1(người :domain(bạn) :pivot-of(yêu :goal(ông_hoàng :mod(bé_nhỏ)))) :op2(tôi)) :degree(equal) :polarity - :tense(sẽ))
 <|im_end|>
 
 <|im_start|>system
@@ -881,15 +695,10 @@ QUY TẮC:
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
 <|im_end|>
 <|im_start|>user
-thoạt nhiên em có vẻ kinh ngạc , và rồi em tự cười mình .
+ông hoàng bé nhỏ ơi , dần dà , như vậy đó , tôi hiểu ra cuộc đời nhỏ nhoi buồn bã của em .
 <|im_end|>
 <|im_start|>assistant
-AMR_NO_VAR: (and
-    :op1(kinh ngạc
-        :time(thoạt nhiên)
-        :pivot(em))
-    :op2(cười
-        :pivot(em)))
+AMR_NO_VAR: (multi-sentence :snt1(ơi :pivot(ông_hoàng :mod(bé_nhỏ)) :mode expressive) :snt2(hiểu :manner(dần_dà) :pivot(tôi) :compound(ra) :theme(cuộc_đời :poss(em) :mod(and :op1(nhỏ_nhoi) :op2(buồn_bã)))))
 <|im_end|>
 
 <|im_start|>system
@@ -905,15 +714,10 @@ QUY TẮC:
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
 <|im_end|>
 <|im_start|>user
-ông hoàng nhỏ lại làm sao lãng những suy nghĩ của tôi :
+ta đi xem mặt trời lặn đi .
 <|im_end|>
 <|im_start|>assistant
-AMR_NO_VAR: (làm
-    :cause(ông hoàng
-        :mod(nhỏ))
-    :theme(sao lãng
-        :theme(suy nghĩ
-            :poss(tôi))))
+AMR_NO_VAR: (đi :agent(ta) :compound(xem :theme(mặt_trời :theme-of(lặn))) :mode imperative)
 <|im_end|>
 
 <|im_start|>system
@@ -929,12 +733,10 @@ QUY TẮC:
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
 <|im_end|>
 <|im_start|>user
-tôi trả lời đại thế thôi .
+- đợi cái gì ?
 <|im_end|>
 <|im_start|>assistant
-AMR_NO_VAR: (trả lời
-    :agent(tôi)
-    :manner(đại))
+AMR_NO_VAR: (đợi :theme(amr-unknown))
 <|im_end|>
 
 <|im_start|>system
@@ -950,17 +752,10 @@ QUY TẮC:
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
 <|im_end|>
 <|im_start|>user
-tôi có biết một tinh cầu , trên ấy có một gã lười .
+- đợi lúc mặt trời đó lặn .
 <|im_end|>
 <|im_start|>assistant
-AMR_NO_VAR: (biết
-    :pivot(tôi)
-    :theme(tinh cầu
-        :location-of(có
-            :theme(gã
-                :mod(lười)
-                :quant 1))
-        :quant 1))
+AMR_NO_VAR: (đợi :theme(lúc :mod(lặn :theme-of(mặt_trời :mod(đó)))))
 <|im_end|>
 
 <|im_start|>system
@@ -976,16 +771,10 @@ QUY TẮC:
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
 <|im_end|>
 <|im_start|>user
-em nghẹn ngào không nói được nữa .
+và em bảo tôi :
 <|im_end|>
 <|im_start|>assistant
-AMR_NO_VAR: (and
-    :op1(nghẹn ngào
-        :pivot(em))
-    :op2(possible-01
-        :polarity -
-        :topic(nói
-            :agent (em))))
+AMR_NO_VAR: (and :op2(bảo :agent(em) :goal(tôi)))
 <|im_end|>
 
 <|im_start|>system
@@ -1001,15 +790,10 @@ QUY TẮC:
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
 <|im_end|>
 <|im_start|>user
-tôi ôm em trong vòng tay .
+nhưng ông hoàng bé nhỏ không trả lời .
 <|im_end|>
 <|im_start|>assistant
-AMR_NO_VAR: (ôm
-    :agent(tôi)
-    :theme(em)
-    :location(vòng tay
-        :prep(trong)
-        :part-of (tôi)))
+AMR_NO_VAR: (contrast-01 :ARG2(trả_lời :agent(ông_hoàng :mod(bé_nhỏ)) :polarity -))
 <|im_end|>
 
 <|im_start|>system
@@ -1025,19 +809,10 @@ QUY TẮC:
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
 <|im_end|>
 <|im_start|>user
-hoa không muốn hiện ra nhàu nát như cái mồng gà .
+tôi đã rất lo lắng vì thấy cái máy có vẻ hỏng nặng lắm , mà nước uống thì cạn dần làm cho tôi sợ xảy ra điều tệ hại nhất .
 <|im_end|>
 <|im_start|>assistant
-AMR_NO_VAR: (muốn
-    :pivot(hoa)
-    :polarity -
-    :theme(hiện
-        :compound(ra)
-        :manner(nhàu nát
-            :compared-to(mồng
-                :classifier(cái)
-                :part-of(gà)
-                :degree(equal)))))
+AMR_NO_VAR: (lo_lắng :pivot(tôi) :tense(đã) :degree(rất) :result(làm :topic(sợ :pivot(tôi) :topic(xảy :compound(ra) :theme(điều :mod(tệ_hại :degree(nhất)))))) :reason(and :op1(thấy :topic(hỏng :domain(máy :classifier(cái)) :manner(nặng :degree(lắm))) :pivot (tôi)) :op2(cạn :domain(nước :compound(uống)) :degree(dần))))
 <|im_end|>
 
 <|im_start|>system
@@ -1053,19 +828,10 @@ QUY TẮC:
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
 <|im_end|>
 <|im_start|>user
-- ôi ! em chỉ vừa thức dậy ... em xinlỗi anh ...
+một buổi sáng , chúng hiện ra trong cỏ rồi lại héo tàn vào chiều tối .
 <|im_end|>
 <|im_start|>assistant
-AMR_NO_VAR: (multi-sentence
-    :snt1(ôi
-        :mode expressive)
-    :snt2(thức
-        :agent(em)
-        :degree(chỉ)
-        :compound(dậy))
-    :snt3(xinlỗi
-        :agent(em)
-        :patient(anh)))
+AMR_NO_VAR: (and :op1(hiện :agent(chúng) :compound(ra) :location(cỏ :prep(trong)) :time(date-entity :dayperiod(buổi :mod(một) :mod(sáng)))) :op2(héo :compound(tàn) :time(date-entity :dayperiod(chiều_tối)) :patient (chúng)))
 <|im_end|>
 
 <|im_start|>system
@@ -1081,22 +847,10 @@ QUY TẮC:
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
 <|im_end|>
 <|im_start|>user
-ông hoàng nhỏ biết ngay cô nàng không lấy gì làm khiêm tốn lắm , nhưng nàng thật là dễ thương !
+nhưng cái cây nhỏ liền thôi không lớn lên nữa , và bắt đầu sửa soạn để ra hoa .
 <|im_end|>
 <|im_start|>assistant
-AMR_NO_VAR: (contrast-01
-    :ARG1(biết
-        :pivot(ông hoàng
-            :mod(nhỏ))
-        :manner(ngay)
-        :topic(khiêm tốn
-            :pivot(nàng
-                :classifier(cô))
-            :polarity -
-            :degree(lắm)))
-    :ARG2(dễ thương
-        :domain(nàng)
-        :degree(thật)))
+AMR_NO_VAR: (contrast-01 :ARG2(and :op1(thôi :agent(cây :classifier(cái) :mod(nhỏ)) :manner(liền) :theme(lớn :polarity - :compound(lên))) :op2(bắt_đầu :theme(sửa_soạn) :purpose(ra :theme(hoa)) :agent (cái))))
 <|im_end|>
 
 <|im_start|>system
@@ -1112,10 +866,10 @@ QUY TẮC:
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
 <|im_end|>
 <|im_start|>user
-- xin lỗi ...
+chẳng hạn một hôm , cô đã nói với ông hoàng
 <|im_end|>
 <|im_start|>assistant
-AMR_NO_VAR: (xin lỗi)
+AMR_NO_VAR: (nói :example(chẳng_hạn :time(hôm :mod(một))) :agent(cô) :tense(đã) :goal(ông_hoàng))
 <|im_end|>
 
 <|im_start|>system
@@ -1131,14 +885,10 @@ QUY TẮC:
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
 <|im_end|>
 <|im_start|>user
-cô nàng này thật phức tạp ... "
+cô chẳng thể hiểu được gì về các thế giới khác .
 <|im_end|>
 <|im_start|>assistant
-AMR_NO_VAR: (phức tạp
-    :pivot(nàng
-        :classifier(cô)
-        :mod(này))
-    :degree(thật))
+AMR_NO_VAR: (possible-01 :result-arg1(hiểu :pivot(cô) :theme(gì) :about(thế_giới :mod(khác))) :polarity -)
 <|im_end|>
 
 <|im_start|>system
@@ -1154,13 +904,10 @@ QUY TẮC:
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
 <|im_end|>
 <|im_start|>user
-chỗ anh rét lắm .
+" đáng lẽ tôi không nên nghe , một hôm cậu em thú nhận với tôi , không bao giờ nên nghe loài hoa cả .
 <|im_end|>
 <|im_start|>assistant
-AMR_NO_VAR: (rét
-    :domain(chỗ
-        :poss(anh))
-    :degree(lắm))
+AMR_NO_VAR: (thú_nhận :time(hôm :mod(một)) :agent(em :classifier(cậu)) :goal(tôi) :topic(and :op2(recommend-01 :time(bao_giờ :polarity -) :theme(nghe :theme(loài :mod(hoa))) :agent (tôi)) :op1(recommend-01 :agent(tôi) :polarity - :theme(nghe))))
 <|im_end|>
 
 <|im_start|>system
@@ -1176,15 +923,67 @@ QUY TẮC:
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
 <|im_end|>
 <|im_start|>user
-nên em cũng nạo vét cả quả núi lửa đã tắt nữa .
+câu chuyện móng vuốt ấy đáng lẽ làm cho tôi cảm động thì tôi lại bực ... "
 <|im_end|>
 <|im_start|>assistant
-AMR_NO_VAR: (nạo vét
-    :agent(em)
-    :patient(núi lửa
-        :classifier(quả)
-        :pivot-of(tắt
-            :tense(đã))))
+AMR_NO_VAR: (contrast-01 :ARG1(làm :cause(câu_chuyện :mod(móng_vuốt) :mod(ấy)) :beneficiary-arg2(tôi :pivot-of(cảm_động))) :ARG2(bực :pivot(tôi)))
+<|im_end|>
+
+<|im_start|>system
+Bạn là trợ lý phân tích AMR (Abstract Meaning Representation) cho tiếng Việt.
+
+QUY TẮC:
+1. Tuân thủ đúng định dạng output được yêu cầu.
+2. Dùng concept, biến và quan hệ AMR nhất quán với dữ liệu huấn luyện.
+3. Không dùng ví dụ, câu, nhãn vàng hoặc quy tắc rút ra từ tập test.
+4. Giữ dấu ngoặc AMR cân bằng.
+5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
+6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
+7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+<|im_end|>
+<|im_start|>user
+đáng lẽ tôi phải xét đoán nàng trên việc làm chứ không phải bằng lời nói .
+<|im_end|>
+<|im_start|>assistant
+AMR_NO_VAR: (obligate-01 :theme(xét_đoán :agent(tôi) :patient(nàng) :about(and :op1(việc_làm :prep(trên)) :op2(phải :polarity - :manner(lời_nói)))))
+<|im_end|>
+
+<|im_start|>system
+Bạn là trợ lý phân tích AMR (Abstract Meaning Representation) cho tiếng Việt.
+
+QUY TẮC:
+1. Tuân thủ đúng định dạng output được yêu cầu.
+2. Dùng concept, biến và quan hệ AMR nhất quán với dữ liệu huấn luyện.
+3. Không dùng ví dụ, câu, nhãn vàng hoặc quy tắc rút ra từ tập test.
+4. Giữ dấu ngoặc AMR cân bằng.
+5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
+6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
+7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+<|im_end|>
+<|im_start|>user
+nàng toả thơm tôi , làm cho tôi sáng rực lên .
+<|im_end|>
+<|im_start|>assistant
+AMR_NO_VAR: (toả :agent(nàng) :compound(thơm) :beneficiary-arg2(tôi) :result(làm :beneficiary-arg1(tôi) :manner(sáng_rực) :cause (nàng)))
+<|im_end|>
+
+<|im_start|>system
+Bạn là trợ lý phân tích AMR (Abstract Meaning Representation) cho tiếng Việt.
+
+QUY TẮC:
+1. Tuân thủ đúng định dạng output được yêu cầu.
+2. Dùng concept, biến và quan hệ AMR nhất quán với dữ liệu huấn luyện.
+3. Không dùng ví dụ, câu, nhãn vàng hoặc quy tắc rút ra từ tập test.
+4. Giữ dấu ngoặc AMR cân bằng.
+5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
+6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
+7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+<|im_end|>
+<|im_start|>user
+ông hoàng nhỏ cũng nhổ , với một chút ngậm ngùi , những cái mầm vừa nhú của bọn baobab .
+<|im_end|>
+<|im_start|>assistant
+AMR_NO_VAR: (nhổ :agent(ông_hoàng :mod(nhỏ)) :manner(ngậm_ngùi) :patient(mầm :classifier(cái) :pivot-of(nhú :tense(vừa) :poss(baobab :classifier(bọn)))))
 <|im_end|>
 
 <|im_start|>system
@@ -1203,17 +1002,7 @@ QUY TẮC:
 nhưng mọi việc quen thuộc này buổi sáng hôm nay sao đối với em thật vô cùng êm đềm .
 <|im_end|>
 <|im_start|>assistant
-AMR_NO_VAR: (contrast-01
-    :ARG2(êm đềm
-        :pivot(việc
-            :mod(quen thuộc)
-            :mod(này))
-        :source(em)
-        :degree(vô cùng)
-        :time(date-entity
-            :dayperiod(buổi
-                :compound(sáng)
-                :mod(hôm nay)))))
+AMR_NO_VAR: (contrast-01 :ARG2(êm_đềm :pivot(việc :mod(quen_thuộc) :mod(này)) :source(em) :degree(vô_cùng) :time(date-entity :dayperiod(buổi :compound(sáng) :mod(hôm_nay)))))
 <|im_end|>
 
 <|im_start|>system
@@ -1229,13 +1018,48 @@ QUY TẮC:
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
 <|im_end|>
 <|im_start|>user
-anh sẽ đi xa .
+nhưng nàng không đáp .
 <|im_end|>
 <|im_start|>assistant
-AMR_NO_VAR: (đi
-    :agent(anh)
-    :tense(sẽ)
-    :manner(xa))
+AMR_NO_VAR: (contrast-01 :ARG2(đáp :agent(nàng) :polarity -))
+<|im_end|>
+
+<|im_start|>system
+Bạn là trợ lý phân tích AMR (Abstract Meaning Representation) cho tiếng Việt.
+
+QUY TẮC:
+1. Tuân thủ đúng định dạng output được yêu cầu.
+2. Dùng concept, biến và quan hệ AMR nhất quán với dữ liệu huấn luyện.
+3. Không dùng ví dụ, câu, nhãn vàng hoặc quy tắc rút ra từ tập test.
+4. Giữ dấu ngoặc AMR cân bằng.
+5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
+6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
+7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+<|im_end|>
+<|im_start|>user
+nếu không ai sẽ viếng thăm em ?
+<|im_end|>
+<|im_start|>assistant
+AMR_NO_VAR: (viếng_thăm :tense(sẽ) :goal(em) :agent(amr-unknown))
+<|im_end|>
+
+<|im_start|>system
+Bạn là trợ lý phân tích AMR (Abstract Meaning Representation) cho tiếng Việt.
+
+QUY TẮC:
+1. Tuân thủ đúng định dạng output được yêu cầu.
+2. Dùng concept, biến và quan hệ AMR nhất quán với dữ liệu huấn luyện.
+3. Không dùng ví dụ, câu, nhãn vàng hoặc quy tắc rút ra từ tập test.
+4. Giữ dấu ngoặc AMR cân bằng.
+5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
+6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
+7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+<|im_end|>
+<|im_start|>user
+nàng ngây thơ chìa ra bốn cái gai của mình .
+<|im_end|>
+<|im_start|>assistant
+AMR_NO_VAR: (chìa :agent(nàng) :manner(ngây_thơ) :compound(ra) :theme(gai :poss(mình) :quant 4 :classifier(cái)))
 <|im_end|>
 
 <|im_start|>system
@@ -1254,10 +1078,7 @@ QUY TẮC:
 - đừng chần chờ như vậy nữa , khó chịu lắm .
 <|im_end|>
 <|im_start|>assistant
-AMR_NO_VAR: (chần chờ
-    :compared-to(vậy)
-    :reason(khó chịu
-        :degree(lắm)))
+AMR_NO_VAR: (chần_chờ :compared-to(vậy) :reason(khó_chịu :degree(lắm)))
 <|im_end|>
 
 <|im_start|>system
@@ -1273,15 +1094,10 @@ QUY TẮC:
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
 <|im_end|>
 <|im_start|>user
-- thế thì , vua phán , ta ra lệnh cho ngươi ngáp .
+nhà vua mặc áo đỏ tía đính lông thú , ngự trên một cái ngai vàng thật giản dị nhưng đồng thời cũng thật uy nghi .
 <|im_end|>
 <|im_start|>assistant
-AMR_NO_VAR: (phán
-    :agent(vua)
-    :topic(ra lệnh
-        :agent(ta)
-        :patient(ngươi)
-        :theme(ngáp)))
+AMR_NO_VAR: (and :op1(mặc :agent(nhà_vua) :theme(áo :mod(đỏ :mod(tía)) :agent-of(đính :theme(lông :mod(thú))))) :op2(ngự :location(ngai_vàng :prep(trên) :quant 1 :classifier(cái) :mod(contrast-01 :ARG1(giản_dị :degree(thật)) :ARG2(uy_nghi :degree(thật)))) :agent (nhà_vua)))
 <|im_end|>
 
 <|im_start|>system
@@ -1297,12 +1113,10 @@ QUY TẮC:
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
 <|im_end|>
 <|im_start|>user
-ngươi ngáp nữa đi .
+Det mọi người đều là thần dân .
 <|im_end|>
 <|im_start|>assistant
-AMR_NO_VAR: (ngáp
-    :agent(ngươi)
-    :mode imperative)
+AMR_NO_VAR: (thần_dân :domain(người))
 <|im_end|>
 
 <|im_start|>system
@@ -1318,18 +1132,10 @@ QUY TẮC:
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
 <|im_end|>
 <|im_start|>user
-nhưng , vì ngài rất tốt bụng , nên chỉ ra những cái lệnh hợp lý thôi .
+ông hoàng nhỏ đưa mắt tìm chỗ ngồi , nhưng cả tinh cầu đã bị cái áo choàng lông thú tuyệt đẹp choán hết chỗ .
 <|im_end|>
 <|im_start|>assistant
-AMR_NO_VAR: (contrast-01
-    :ARG2(ra
-        :reason(tốt bụng
-            :domain(ngài)
-            :degree(rất))
-        :degree(chỉ)
-        :theme(lệnh
-            :classifier(cái)
-            :mod(hợp lý))))
+AMR_NO_VAR: (contrast-01 :ARG1(đưa_mắt :agent(ông_hoàng :mod(nhỏ)) :purpose(tìm :theme(chỗ :purpose(ngồi)))) :ARG2(choán :patient(tinh_cầu) :tense(đã) :modality(bị) :cause(áo_choàng :classifier(cái) :mod(lông :mod(thú)) :mod(đẹp :degree(tuyệt))) :compound(hết :theme(chỗ))))
 <|im_end|>
 
 <|im_start|>system
@@ -1345,19 +1151,10 @@ QUY TẮC:
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
 <|im_end|>
 <|im_start|>user
-thứ nước này còn là một cái gì khác hơn mọi thứ nước uống .
+nhưng ông hoàng bé nhỏ lấy làm kinh ngạc .
 <|im_end|>
 <|im_start|>assistant
-AMR_NO_VAR: (gì
-    :pivot(thứ
-        :mod(nước)
-        :mod(này))
-    :mod(khác
-        :compared-to(nước
-            :compound(uống))
-        :degree(more)
-        :quant 1
-            :classifier(cái)))
+AMR_NO_VAR: (contrast-01 :ARG2(lấy_làm :agent(ông_hoàng :mod(bé_nhỏ)) :theme(kinh_ngạc)))
 <|im_end|>
 
 <|im_start|>system
@@ -1373,30 +1170,10 @@ QUY TẮC:
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
 <|im_end|>
 <|im_start|>user
-- loài người nơi ông , ông hoàng nhỏ nói , trồng năm nghìn hoa hồng cũng trong một khu vườn ... thế mà họ chẳng tìm thấy cái họ tìm ...
+ngày tôi còn là một cậu bé , ánh sáng của cây noel , tiếng nhạc của buổi lễ nửa đêm , những nụ cười dịu dàng cũng đã làm nên sự rực rỡ của món quà noel mà tôi được nhận .
 <|im_end|>
 <|im_start|>assistant
-AMR_NO_VAR: (nói
-    :agent(ông hoàng
-        :mod(nhỏ))
-    :topic(and
-        :op1(trồng
-            :agent(loài người
-                :location(nơi
-                    :mod(ông)))
-            :theme(hoa hồng
-                :quant 5000)
-            :location(khu
-                :prep(trong)
-                :mod(vườn)
-                :quant 1))
-        :op2(tìm
-            :agent(họ)
-            :polarity -
-            :compound(thấy
-                :theme(cái
-                    :theme-of(tìm
-                        :agent(họ)))))))
+AMR_NO_VAR: (làm :time(bé :domain(tôi) :quant 1 :classifier(cậu)) :tense(đã) :compound(nên) :result-arg1(sự :mod(rực_rỡ) :poss(quà :classifier(món) :wiki(noel :name(name :op1(noel))) :theme-of(nhận :agent(tôi)))) :cause(and :op1(ánh_sáng :poss(cây :wiki(noel :name(name :op1(noel))))) :op2(tiếng :mod(nhạc) :poss(buổi :mod(lễ)) :dayperiod(nửa_đêm)) :op3(nụ_cười :mod(dịu_dàng))))
 <|im_end|>
 
 <|im_start|>system
@@ -1412,17 +1189,10 @@ QUY TẮC:
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
 <|im_end|>
 <|im_start|>user
-vào lúc tinh mơ , cát một màu mật ong .
+và ông hoàng nhỏ nói thêm :
 <|im_end|>
 <|im_start|>assistant
-AMR_NO_VAR: (resemble
-    :time(lúc
-        :mod(tinh mơ))
-    :compared-to(màu
-        :poss(mật ong))
-    :degree(equal)
-    :domain(màu
-        :poss(cát)))
+AMR_NO_VAR: (and :op2(nói :agent(ông_hoàng :mod(nhỏ)) :compound(thêm)))
 <|im_end|>
 
 <|im_start|>system
@@ -1438,23 +1208,10 @@ QUY TẮC:
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
 <|im_end|>
 <|im_start|>user
-hai tai nó ... trông giống như hai cái sừng ... và lại dài quá !
+phải tìm kiếm với trái tim .
 <|im_end|>
 <|im_start|>assistant
-AMR_NO_VAR: (and
-    :op1(trông
-        :theme(tai
-            :part-of(nó)
-            :quant 2)
-        :theme(resemble
-            :compared-to(giống
-                :theme(sừng
-                    :quant 2
-                        :classifier(cái)))
-            :degree(equal)))
-    :op2(dài
-        :mod(quá)
-        :pivot (tai)))
+AMR_NO_VAR: (recommend-01 :theme(tìm_kiếm :manner(trái_tim)))
 <|im_end|>
 
 <|im_start|>system
@@ -1470,16 +1227,10 @@ QUY TẮC:
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
 <|im_end|>
 <|im_start|>user
-thế là tôi dùng bút chì phác một cái rọ mõm .
+nhưng em chẳng trả lời tôi .
 <|im_end|>
 <|im_start|>assistant
-AMR_NO_VAR: (dùng
-    :agent(tôi)
-    :instrument(bút chì)
-    :purpose(phác
-        :theme(rọ mõm
-            :quant 1
-                :classifier(cái))))
+AMR_NO_VAR: (contrast-01 :ARG2(trả_lời :agent(em) :polarity - :goal(tôi)))
 <|im_end|>
 
 <|im_start|>system
@@ -1498,9 +1249,7 @@ QUY TẮC:
 em bảo tôi :
 <|im_end|>
 <|im_start|>assistant
-AMR_NO_VAR: (bảo
-    :agent(em)
-    :goal(tôi))
+AMR_NO_VAR: (bảo :agent(em) :goal(tôi))
 <|im_end|>
 
 <|im_start|>system
@@ -1516,15 +1265,10 @@ QUY TẮC:
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
 <|im_end|>
 <|im_start|>user
-- tôi rơi xuống ngay gần đây ...
+và em đỏ mặt .
 <|im_end|>
 <|im_start|>assistant
-AMR_NO_VAR: (rơi
-    :agent(tôi)
-    :compound(xuống)
-    :location(gần
-        :degree(ngay)
-        :mod(đây)))
+AMR_NO_VAR: (and :op2(đỏ :pivot(em) :compound(mặt)))
 <|im_end|>
 
 <|im_start|>system
@@ -1540,16 +1284,10 @@ QUY TẮC:
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
 <|im_end|>
 <|im_start|>user
-- a , tôi nói , tôi sợ ...
+một giọng nói khác có lẽ trả lời em , vì em lại đáp :
 <|im_end|>
 <|im_start|>assistant
-AMR_NO_VAR: (nói
-    :agent(tôi)
-    :topic(and
-        :op1(a
-            :mode expressive)
-        :op2(sợ
-            :pivot(tôi))))
+AMR_NO_VAR: (trả_lời :agent(giọng :compound(nói) :mod(khác) :quant 1) :goal(em) :reason(đáp :agent(em)))
 <|im_end|>
 
 <|im_start|>system
@@ -1565,13 +1303,10 @@ QUY TẮC:
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
 <|im_end|>
 <|im_start|>user
-không phải là chỗ này đâu !
+tôi dừng lại , trái tim se thắt , nhưng tôi vẫn không hiểu .
 <|im_end|>
 <|im_start|>assistant
-AMR_NO_VAR: (phải
-    :polarity -
-    :theme(chỗ
-        :mod(này)))
+AMR_NO_VAR: (contrast-01 :ARG2(hiểu :pivot(tôi) :polarity -) :ARG1(and :op1(dừng :agent(tôi) :compound(lại)) :op2(se_thắt :pivot(trái_tim))))
 <|im_end|>
 
 <|im_start|>system
@@ -1587,20 +1322,10 @@ QUY TẮC:
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
 <|im_end|>
 <|im_start|>user
-tôi vẫn không nhìn thấy , cũng chẳng nghe thấy ai .
+- cậu em ạ , em đã sợ hãi ...
 <|im_end|>
 <|im_start|>assistant
-AMR_NO_VAR: (and
-    :op1(nhìn
-        :agent(tôi)
-        :polarity -
-        :compound(thấy))
-    :op2(nghe
-        :mod(cũng)
-        :polarity -
-        :compound(thấy)
-        :theme(ai)
-        :agent (tôi)))
+AMR_NO_VAR: (sợ_hãi :domain(em) :tense(đã))
 <|im_end|>
 
 <|im_start|>system
@@ -1616,14 +1341,10 @@ QUY TẮC:
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
 <|im_end|>
 <|im_start|>user
-- thôi bây giờ hãy đi đi , em nói .
+một lần nữa , tôi lại cảm thấy lạnh buốt người vì một cái gì đó không thể cứu vãn được nữa .
 <|im_end|>
 <|im_start|>assistant
-AMR_NO_VAR: (nói
-    :topic(đi
-        :mode imperative
-        :time(now))
-    :agent(em))
+AMR_NO_VAR: (cảm :pivot(tôi) :compound(thấy) :topic(lạnh :compound(buốt) :pivot(người)) :cause(gì :mod(đó) :patient-of(cứu_vãn :modality(không_thể) :agent (tôi)) :quant 1 :classifier(cái)) :mod(again :frequency(1)))
 <|im_end|>
 
 <|im_start|>system
@@ -1639,21 +1360,10 @@ QUY TẮC:
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
 <|im_end|>
 <|im_start|>user
-tôi tháo chiếc khăn vàng kim bao giờ cũng khoác ở cổ em .
+- giống như bông hoa của tôi .
 <|im_end|>
 <|im_start|>assistant
-AMR_NO_VAR: (tháo
-    :agent(tôi)
-    :patient(khăn
-        :classifier(chiếc)
-        :mod(vàng
-            :compound(kim))
-        :agent-of(khoác
-            :location(cổ
-                :prep(ở)
-                :part-of(em))
-            :agent (em)
-            :time(always))))
+AMR_NO_VAR: (resemble :compared-to(hoa :classifier(bông) :poss(tôi)) :degree(equal))
 <|im_end|>
 
 <|im_start|>system
@@ -1669,29 +1379,10 @@ QUY TẮC:
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
 <|im_end|>
 <|im_start|>user
-tôi nghe tiếng tim em đập như tiếng đập của một con chim sắp chết , khi bị trúng đạn súng săn .
+ví dụ ông gọi nó là tiểu hành tinh 3251 .
 <|im_end|>
 <|im_start|>assistant
-AMR_NO_VAR: (nghe
-    :agent(tôi)
-    :theme(tiếng
-        :mod(tim
-            :part-of(em)
-            :agent-of(đập
-                :resemble-01(resemble
-                    :compared-to(tiếng
-                        :compound(đập)
-                        :poss(chim
-                            :agent-of(chết
-                                :tense(sắp)
-                                :time(trúng
-                                    :modality(bị)
-                                    :instrument(đạn
-                                        :poss(súng
-                                            :compound(săn)))))
-                            :quant 1
-                                :classifier(con)))
-                    :degree(equal))))))
+AMR_NO_VAR: (example :topic(gọi :agent(ông) :theme(nó) :result-arg1(planet :wiki(Tiểu_hành_tinh_3251) :name(name :op1(tiểu_hành_tinh) :op2(3251)))))
 <|im_end|>
 
 <|im_start|>system
@@ -1707,12 +1398,10 @@ QUY TẮC:
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
 <|im_end|>
 <|im_start|>user
-- sao em biết ?
+tiểu hành tinh đó chỉ được trông thấy có một lần trong kính viễn vọng năm 1909 , bởi một nhà thiên văn Thổ Nhĩ Kỳ .
 <|im_end|>
 <|im_start|>assistant
-AMR_NO_VAR: (biết
-    :pivot(em)
-    :manner(arm-unknown))
+AMR_NO_VAR: (trông :goal(tiểu_hành_tinh :mod(đó)) :modality(được :degree(chỉ)) :compound(thấy) :instrument(kính_viễn_vọng) :agent(nhà :compound(thiên_văn) :mod(country :wiki(Thổ_Nhĩ_Kỳ) :name(name :op1(Thổ) :op2(Nhĩ) :op3(Kỳ)))) :time(date-entity :year 1909) :frequency(have-frequency-91 :unit(lần) :quant 1))
 <|im_end|>
 
 <|im_start|>system
@@ -1728,11 +1417,10 @@ QUY TẮC:
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
 <|im_end|>
 <|im_start|>user
-rồi , giọng ngậm ngùi :
+người lớn là thế đấy .
 <|im_end|>
 <|im_start|>assistant
-AMR_NO_VAR: (ngậm ngùi
-    :domain(giọng))
+AMR_NO_VAR: (thế :domain(người_lớn) :mod(đấy))
 <|im_end|>
 
 <|im_start|>system
@@ -1748,21 +1436,10 @@ QUY TẮC:
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
 <|im_end|>
 <|im_start|>user
-ánh mắt em nghiêm nghị , mất hút vào một nơi rất xa :
+những người lớn rất thích chữ số .
 <|im_end|>
 <|im_start|>assistant
-AMR_NO_VAR: (and
-    :op1(nghiêm nghị
-        :theme(ánh
-            :mod(mắt)
-            :poss(em)))
-    :op2(mất hút
-        :location(nơi
-            :prep(vào)
-            :mod(xa
-                :degree(rất))
-            :quant 1)
-        :theme (ánh)))
+AMR_NO_VAR: (thích :pivot(người_lớn) :degree(rất) :theme(chữ_số))
 <|im_end|>
 
 <|im_start|>system
@@ -1778,14 +1455,10 @@ QUY TẮC:
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
 <|im_end|>
 <|im_start|>user
-em có sợ hãi , đúng rồi !
+bởi vì tôi không muốn người ta đọc cuốn sách của tôi một cách hời hợt .
 <|im_end|>
 <|im_start|>assistant
-AMR_NO_VAR: (multi-sentence
-    :snt1(sợ hãi
-        :domain(em))
-    :snt2(đúng
-        :mode expressive))
+AMR_NO_VAR: (cause-01 :pivot(muốn :pivot(tôi) :polarity - :topic(đọc :agent(người_ta) :theme(sách :classifier(cuốn) :poss (tôi)) :manner(một_cách :mod(hời_hợt)))))
 <|im_end|>
 
 <|im_start|>system
@@ -1801,13 +1474,10 @@ QUY TẮC:
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
 <|im_end|>
 <|im_start|>user
-nhưng em cười dịu dàng :
+lại chính cũng vì thế nữa mà tôi đã mua một hộp màu nước và bút chì màu .
 <|im_end|>
 <|im_start|>assistant
-AMR_NO_VAR: (contrast-01
-    :ARG2(cười
-        :agent(em)
-        :manner(dịu dàng)))
+AMR_NO_VAR: (mua :cause(chính :manner(vì_thế)) :agent(tôi) :tense(đã) :theme(and :op1(màu_nước :quant 1 :classifier(hộp)) :op2(bút_chì :mod(màu))))
 <|im_end|>
 
 <|im_start|>system
@@ -1823,14 +1493,10 @@ QUY TẮC:
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
 <|im_end|>
 <|im_start|>user
-nhưng em không trả lời câu tôi hỏi .
+trở lại vẽ vời thật là khó , vào tuổi tôi bây giờ , khi mà người ta chưa hề vẽ gì ngoài con trăn khép kín với con trăn mở từ hồi lên sáu .
 <|im_end|>
 <|im_start|>assistant
-AMR_NO_VAR: (contrast-01
-    :ARG2(trả lời
-        :agent(em)
-        :polarity -
-        :goal(tôi)))
+AMR_NO_VAR: (khó :purpose(trở_lại :purpose(vẽ_vời :agent (tôi)) :agent (tôi)) :degree(thật) :time(tuổi :source(tôi) :time(now)) :condition(vẽ :agent(người :mod(ta)) :polarity - :modality(hề) :result-arg1(gì :concession(and :op1(trăn :classifier(con) :mod(khép_kín)) :op2(trăn :classifier(con) :mod(mở)))) :time(hồi :time-of(lên :quant(temporal-quantity :quant 6 :unit(tuổi)) :pivot (tôi)))))
 <|im_end|>
 
 <|im_start|>system
@@ -1846,20 +1512,10 @@ QUY TẮC:
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
 <|im_end|>
 <|im_start|>user
-nhưng chắc chắn rằng đối với bọn ta là những người hiểu đời , chúng ta cóc cần những con số !
+lần này cũng là nhờ con cừu , ông hoàng nhỏ hỏi tôi , như vừa mới nghĩ ra điều gì nghiêm trọng lắm :
 <|im_end|>
 <|im_start|>assistant
-AMR_NO_VAR: (contrast-01
-    :ARG2(chắc chắn
-        :topic(hiểu
-            :domain(bọn
-                :compound(ta))
-            :pivot(người)
-            :theme(đời))
-        :topic(cần
-            :polarity -
-            :theme(con số)
-            :pivot (bọn))))
+AMR_NO_VAR: (hỏi :topic(nhờ :time(lần :mod(này)) :source(cừu :classifier(con))) :agent(ông_hoàng :mod(nhỏ)) :goal(tôi) :conj-as-if(nghĩ :time(vừa_mới) :compound(ra) :result-arg1(điều :mod(gì) :mod(nghiêm_trọng :degree(lắm)))))
 <|im_end|>
 
 <|im_start|>system
@@ -1875,14 +1531,10 @@ QUY TẮC:
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
 <|im_end|>
 <|im_start|>user
-tôi lại cũng có sai lầm về tầm vóc .
+- ồ , tốt quá !
 <|im_end|>
 <|im_start|>assistant
-AMR_NO_VAR: (có
-    :pivot(tôi)
-    :modality(cũng)
-    :manner(sai lầm)
-    :topic(tầm vóc))
+AMR_NO_VAR: (and :op1(ồ :mode expressive) :op2(tốt :degree(quá)))
 <|im_end|>
 
 <|im_start|>system
@@ -1898,19 +1550,10 @@ QUY TẮC:
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
 <|im_end|>
 <|im_start|>user
-tôi cứ lần mò như thế này rồi như thế khác , khi được khi không .
+- đúng là như thế .
 <|im_end|>
 <|im_start|>assistant
-AMR_NO_VAR: (lần mò
-    :agent(tôi)
-    :manner(thế
-        :mod(này))
-    :manner(thế
-        :mod(khác))
-    :time(khi
-        :mod(được))
-    :time(khi
-        :mod(không)))
+AMR_NO_VAR: (đúng :manner(thế))
 <|im_end|>
 
 <|im_start|>system
@@ -1926,14 +1569,10 @@ QUY TẮC:
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
 <|im_end|>
 <|im_start|>user
-có lẽ tôi hơi giống những người lớn rồi .
+và tôi phải bắt trí thông minh của tôi làm việc dữ dội mới tự hiểu được vấn đề ấy .
 <|im_end|>
 <|im_start|>assistant
-AMR_NO_VAR: (resemble-01
-    :modality(có lẽ)
-    :domain(tôi)
-    :compared-to(người lớn)
-    :degree(less))
+AMR_NO_VAR: (and :op2(obligate-01 :topic(bắt :agent(tôi) :patient(làm_việc :patient-of(trí :mod(thông_minh) :poss (tôi)) :degree(dữ_dội) :purpose(hiểu :manner(tự) :manner(được) :topic(vấn_đề :mod(ấy)) :pivot (tôi))))))
 <|im_end|>
 
 <|im_start|>system
@@ -1949,18 +1588,10 @@ QUY TẮC:
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
 <|im_end|>
 <|im_start|>user
-- có thật đúng là con cừu ăn những bụi cây con không ?
+đây là một vấn đề kỷ luật , ông hoàng nhỏ về sau nói với tôi .
 <|im_end|>
 <|im_start|>assistant
-AMR_NO_VAR: (thật
-    :compound(đúng)
-    :topic(ăn
-        :agent(cừu
-            :classifier(con))
-        :patient(cây
-            :classifier(bụi)
-            :mod(con)))
-    :mode interrogative)
+AMR_NO_VAR: (nói :topic(vấn_đề :domain(đây) :mod(kỷ_luật) :quant 1) :agent(ông_hoàng :mod(nhỏ)) :goal(tôi) :time(after))
 <|im_end|>
 
 <|im_start|>system
@@ -1976,17 +1607,10 @@ QUY TẮC:
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
 <|im_end|>
 <|im_start|>user
-ý nghĩ về đàn voi làm cho ông hoàng nhỏ bật cười :
+sau đó nó không thể nhúc nhích được nữa và nó nằm ngủ sáu tháng liền trong khi chờ tiêu hoá .
 <|im_end|>
 <|im_start|>assistant
-AMR_NO_VAR: (làm
-    :theme(ý nghĩ
-        :topic(đàn
-            :consist-of(voi)))
-    :patient(bật
-        :patient-of(ông hoàng
-            :mod(nhỏ))
-        :compound(cười)))
+AMR_NO_VAR: (and :op2(nằm :compound(ngủ) :agent (nó) :duration(temporal-quantity :unit(tháng) :degree(liền) :manner(chờ :purpose(tiêu_hoá :agent (nó)) :pivot (nó)) :quant 6)) :op1(possible-01 :topic(nhúc_nhích :agent(nó) :manner(được) :modality(nữa)) :polarity -) :time(after))
 <|im_end|>
 
 <|im_start|>system
@@ -2002,27 +1626,10 @@ QUY TẮC:
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
 <|im_end|>
 <|im_start|>user
-nguyên là , trên hành tinh của ông hoàng nhỏ , cũng như trên mọi hành tinh khác , đều có những loại cỏ tốt và những loại cỏ xấu .
+tôi đã bay khắp thế giới mỗi nơi một tí .
 <|im_end|>
 <|im_start|>assistant
-AMR_NO_VAR: (có
-    :degree(đều)
-    :theme(and
-        :op1(loại
-            :mod(cỏ)
-            :mod(tốt))
-        :op2(loại
-            :mod(cỏ)
-            :mod(xấu)))
-    :location(and
-        :op1(hành tinh
-            :prep(trên)
-            :poss(ông hoàng
-                :mod(nhỏ)))
-        :op2(hành tinh
-            :prep(trên)
-            :mod(khác)
-            :mod(all))))
+AMR_NO_VAR: (bay :agent(tôi) :tense(đã) :location(nơi :part-of(thế_giới :mod(khắp)) :quant(mỗi) :quant(một_tí)))
 <|im_end|>
 
 <|im_start|>system
@@ -2038,22 +1645,10 @@ QUY TẮC:
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
 <|im_end|>
 <|im_start|>user
-nếu là nhánh dưa hay một nhánh hồng , ta có thể muốn để cho nó mọc thế nào tuỳ ý .
+và tôi chỉ đi một mình không có hành khách cũng chẳng có thợ máy , tôi phải một mình bắt đầu cuộc sửa chữa khó khăn .
 <|im_end|>
 <|im_start|>assistant
-AMR_NO_VAR: (possible-01
-    :topic(muốn
-        :pivot(ta)
-        :purpose(mọc
-            :theme(nó)
-            :manner(tuỳ ý))
-        :condition(or
-            :op1(nhánh
-                :part-of(dưa)
-                :domain (nó))
-            :op2(nhánh
-                :part-of(hồng)
-                :domain (nó)))))
+AMR_NO_VAR: (and :op2(obligate-01 :reason(đi :agent(tôi) :degree(chỉ) :manner(một_mình) :setting(and :op1(có :theme(hành_khách) :polarity - :pivot (tôi)) :op2(có :modality(cũng) :theme(thợ_máy) :polarity - :pivot (tôi)))) :agent(bắt_đầu :manner(một_mình) :topic(cuộc :compound(sửa_chữa) :mod(khó_khăn)) :agent-of (tôi))))
 <|im_end|>
 
 <|im_start|>system
@@ -2069,19 +1664,10 @@ QUY TẮC:
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
 <|im_end|>
 <|im_start|>user
-nhưng nếu là một cây xấu , ngay khi nhận ra là phải nhổ ngay .
+lúc đó tôi còn cô độc hơn cả một kẻ đắm tàu trên chiếc bè lênh đênh giữa biển .
 <|im_end|>
 <|im_start|>assistant
-AMR_NO_VAR: (contrast-01
-    :ARG2(obligate-01
-        :topic(nhổ
-            :condition(cây
-                :mod(xấu))
-            :time(khi
-                :time-of(nhận
-                    :compound(ra)))
-            :manner(ngay)
-            :patient (cây))))
+AMR_NO_VAR: (cô_độc :time(lúc :mod(đó)) :domain(tôi) :compared-to(lênh_đênh :agent(kẻ :mod(đắm :instrument(tàu)) :quant 1) :location(bè :prep(trên) :classifier(chiếc) :location(biển :part(giữa)))) :degree(more))
 <|im_end|>
 
 <|im_start|>system
@@ -2097,23 +1683,10 @@ QUY TẮC:
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
 <|im_end|>
 <|im_start|>user
-nó vẽ một con trăn đang nằm chờ tiêu hoá một con voi .
+xin nhớ là lúc ấy tôi đang ở cách mọi chỗ có người hàng ngàn dặm .
 <|im_end|>
 <|im_start|>assistant
-AMR_NO_VAR: (vẽ
-    :pivot(nó)
-    :result-arg1(nằm
-        :agent(trăn
-            :quant 1
-                :classifier(con))
-        :tense(đang)
-        :manner(chờ
-            :purpose(tiêu hoá
-                :patient(voi
-                    :quant 1
-                        :classifier(con))
-                :agent (trăn))
-            :pivot (trăn))))
+AMR_NO_VAR: (nhớ :modality(xin) :topic(ở :pivot(tôi) :tense(đang) :location(relative-position :op1(chỗ :mod(có :theme(người)) :mod(all)) :quant(distance-quantity :unit(dặm) :quant 1000)) :time(before)) :mode imperative :polite+(-))
 <|im_end|>
 
 <|im_start|>system
@@ -2129,246 +1702,10 @@ QUY TẮC:
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
 <|im_end|>
 <|im_start|>user
-cái đó thật là ích lợi nếu như người ta bay lạc đường trong đêm tối .
+tôi vẽ .
 <|im_end|>
 <|im_start|>assistant
-AMR_NO_VAR: (ích lợi
-    :domain(cái
-        :mod(đó))
-    :degree(thật)
-    :condition(bay
-        :agent(người ta)
-        :manner(lạc
-            :path(đường)
-            :time(date-entity
-                :dayperiod(đêm tối
-                    :prep(trong))))))
-<|im_end|>
-
-<|im_start|>system
-Bạn là trợ lý phân tích AMR (Abstract Meaning Representation) cho tiếng Việt.
-
-QUY TẮC:
-1. Tuân thủ đúng định dạng output được yêu cầu.
-2. Dùng concept, biến và quan hệ AMR nhất quán với dữ liệu huấn luyện.
-3. Không dùng ví dụ, câu, nhãn vàng hoặc quy tắc rút ra từ tập test.
-4. Giữ dấu ngoặc AMR cân bằng.
-5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
-6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
-7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
-<|im_end|>
-<|im_start|>user
-nhưng cái đó chẳng làm thay đổi ý kiến của tôi bao nhiêu .
-<|im_end|>
-<|im_start|>assistant
-AMR_NO_VAR: (contrast-01
-    :ARG2(làm
-        :theme(cái
-            :mod(đó))
-        :result-arg1(thay đổi
-            :theme(ý kiến
-                :poss(tôi))
-            :degree(bao nhiêu)
-            :agent (tôi))
-        :polarity -))
-<|im_end|>
-
-<|im_start|>system
-Bạn là trợ lý phân tích AMR (Abstract Meaning Representation) cho tiếng Việt.
-
-QUY TẮC:
-1. Tuân thủ đúng định dạng output được yêu cầu.
-2. Dùng concept, biến và quan hệ AMR nhất quán với dữ liệu huấn luyện.
-3. Không dùng ví dụ, câu, nhãn vàng hoặc quy tắc rút ra từ tập test.
-4. Giữ dấu ngoặc AMR cân bằng.
-5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
-6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
-7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
-<|im_end|>
-<|im_start|>user
-tôi chỉ có đủ nước để uống trong nhiều nhất là tám ngày .
-<|im_end|>
-<|im_start|>assistant
-AMR_NO_VAR: (có
-    :pivot(tôi)
-    :degree(chỉ)
-    :theme(nước
-        :purpose(uống
-            :degree(đủ)
-            :quant(nhiều
-                :degree(nhất)
-                :time(temporal-quantity
-                    :unit(ngày)
-                    :quant 8))
-            :agent (tôi))))
-<|im_end|>
-
-<|im_start|>system
-Bạn là trợ lý phân tích AMR (Abstract Meaning Representation) cho tiếng Việt.
-
-QUY TẮC:
-1. Tuân thủ đúng định dạng output được yêu cầu.
-2. Dùng concept, biến và quan hệ AMR nhất quán với dữ liệu huấn luyện.
-3. Không dùng ví dụ, câu, nhãn vàng hoặc quy tắc rút ra từ tập test.
-4. Giữ dấu ngoặc AMR cân bằng.
-5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
-6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
-7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
-<|im_end|>
-<|im_start|>user
-tôi nhảy dựng lên như là bị sét đánh .
-<|im_end|>
-<|im_start|>assistant
-AMR_NO_VAR: (nhảy
-    :agent(tôi)
-    :compound(dựng)
-    :direction(lên)
-    :compared-to(đánh
-        :modality(bị)
-        :theme(sét)
-        :patient (tôi))
-    :degree(equal))
-<|im_end|>
-
-<|im_start|>system
-Bạn là trợ lý phân tích AMR (Abstract Meaning Representation) cho tiếng Việt.
-
-QUY TẮC:
-1. Tuân thủ đúng định dạng output được yêu cầu.
-2. Dùng concept, biến và quan hệ AMR nhất quán với dữ liệu huấn luyện.
-3. Không dùng ví dụ, câu, nhãn vàng hoặc quy tắc rút ra từ tập test.
-4. Giữ dấu ngoặc AMR cân bằng.
-5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
-6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
-7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
-<|im_end|>
-<|im_start|>user
-em trả lời tôi :
-<|im_end|>
-<|im_start|>assistant
-AMR_NO_VAR: (trả lời
-    :agent(em)
-    :goal(tôi))
-<|im_end|>
-
-<|im_start|>system
-Bạn là trợ lý phân tích AMR (Abstract Meaning Representation) cho tiếng Việt.
-
-QUY TẮC:
-1. Tuân thủ đúng định dạng output được yêu cầu.
-2. Dùng concept, biến và quan hệ AMR nhất quán với dữ liệu huấn luyện.
-3. Không dùng ví dụ, câu, nhãn vàng hoặc quy tắc rút ra từ tập test.
-4. Giữ dấu ngoặc AMR cân bằng.
-5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
-6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
-7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
-<|im_end|>
-<|im_start|>user
-nó có sừng ...
-<|im_end|>
-<|im_start|>assistant
-AMR_NO_VAR: (có
-    :pivot(nó)
-    :theme(sừng))
-<|im_end|>
-
-<|im_start|>system
-Bạn là trợ lý phân tích AMR (Abstract Meaning Representation) cho tiếng Việt.
-
-QUY TẮC:
-1. Tuân thủ đúng định dạng output được yêu cầu.
-2. Dùng concept, biến và quan hệ AMR nhất quán với dữ liệu huấn luyện.
-3. Không dùng ví dụ, câu, nhãn vàng hoặc quy tắc rút ra từ tập test.
-4. Giữ dấu ngoặc AMR cân bằng.
-5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
-6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
-7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
-<|im_end|>
-<|im_start|>user
-nhưng bức này cũng bị từ chối như các bức trước .
-<|im_end|>
-<|im_start|>assistant
-AMR_NO_VAR: (contrast-01
-    :ARG2(từ chối
-        :theme(bức
-            :mod(này))
-        :modality(bị)
-        :compared-to(bức
-            :mod(trước))
-        :degree(equal)))
-<|im_end|>
-
-<|im_start|>system
-Bạn là trợ lý phân tích AMR (Abstract Meaning Representation) cho tiếng Việt.
-
-QUY TẮC:
-1. Tuân thủ đúng định dạng output được yêu cầu.
-2. Dùng concept, biến và quan hệ AMR nhất quán với dữ liệu huấn luyện.
-3. Không dùng ví dụ, câu, nhãn vàng hoặc quy tắc rút ra từ tập test.
-4. Giữ dấu ngoặc AMR cân bằng.
-5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
-6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
-7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
-<|im_end|>
-<|im_start|>user
-- con này già quá .
-<|im_end|>
-<|im_start|>assistant
-AMR_NO_VAR: (già
-    :domain(con
-        :mod(này))
-    :degree(quá))
-<|im_end|>
-
-<|im_start|>system
-Bạn là trợ lý phân tích AMR (Abstract Meaning Representation) cho tiếng Việt.
-
-QUY TẮC:
-1. Tuân thủ đúng định dạng output được yêu cầu.
-2. Dùng concept, biến và quan hệ AMR nhất quán với dữ liệu huấn luyện.
-3. Không dùng ví dụ, câu, nhãn vàng hoặc quy tắc rút ra từ tập test.
-4. Giữ dấu ngoặc AMR cân bằng.
-5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
-6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
-7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
-<|im_end|>
-<|im_start|>user
-con cừu chú muốn nó ở trong ấy đấy .
-<|im_end|>
-<|im_start|>assistant
-AMR_NO_VAR: (ở
-    :theme(cừu
-        :classifier(con))
-    :mod(muốn
-        :pivot(chú))
-    :location(ấy
-        :prep(trong)
-        :modality(đấy)))
-<|im_end|>
-
-<|im_start|>system
-Bạn là trợ lý phân tích AMR (Abstract Meaning Representation) cho tiếng Việt.
-
-QUY TẮC:
-1. Tuân thủ đúng định dạng output được yêu cầu.
-2. Dùng concept, biến và quan hệ AMR nhất quán với dữ liệu huấn luyện.
-3. Không dùng ví dụ, câu, nhãn vàng hoặc quy tắc rút ra từ tập test.
-4. Giữ dấu ngoặc AMR cân bằng.
-5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
-6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
-7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
-<|im_end|>
-<|im_start|>user
-- không nhỏ lắm đâu ... kìa !
-<|im_end|>
-<|im_start|>assistant
-AMR_NO_VAR: (multi-sentence
-    :snt1(nhỏ
-        :degree(lắm)
-        :modality(đâu)
-        :polarity -)
-    :snt2(kìa
-        :mode imperative))
+AMR_NO_VAR: (vẽ :agent(tôi))
 <|im_end|>
 
 <|im_start|>system
@@ -2387,10 +1724,7 @@ QUY TẮC:
 đó là chiếc máy bay của tôi .
 <|im_end|>
 <|im_start|>assistant
-AMR_NO_VAR: (máy bay
-    :domain(đó)
-    :classifier(chiếc)
-    :poss(tôi))
+AMR_NO_VAR: (máy_bay :domain(đó) :classifier(chiếc) :poss(tôi))
 <|im_end|>
 
 <|im_start|>system
@@ -2406,13 +1740,10 @@ QUY TẮC:
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
 <|im_end|>
 <|im_start|>user
-ông ở hành tinh nào ?
+cậu bạn của tôi lại bật cười khanh khách :
 <|im_end|>
 <|im_start|>assistant
-AMR_NO_VAR: (ở
-    :pivot(ông)
-    :location(hành tinh
-        :name(amr-unknown)))
+AMR_NO_VAR: (bật :manner(lại) :compound(cười) :manner(khanh_khách) :agent(have-rel-role-91 :ARG2(bạn :classifier(cậu)) :ARG1(tôi)))
 <|im_end|>
 
 <|im_start|>system
@@ -2428,18 +1759,10 @@ QUY TẮC:
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
 <|im_end|>
 <|im_start|>user
-em muốn mang con cừu của ta về đâu ?
+- bất cứ đâu .
 <|im_end|>
 <|im_start|>assistant
-AMR_NO_VAR: (muốn
-    :pivot(em)
-    :topic(mang
-        :theme(cừu
-            :classifier(con)
-            :poss(ta))
-        :manner(về
-            :finalLocation(amr-unknown))
-        :agent (em)))
+AMR_NO_VAR: (đâu :degree(bất_cứ))
 <|im_end|>
 
 <|im_start|>system
@@ -2455,18 +1778,10 @@ QUY TẮC:
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
 <|im_end|>
 <|im_start|>user
-lời đề nghị đó có lẽ làm cho ông hoàng bé nhỏ không vừa lòng :
+cứ đi thẳng tới trước mặt ...
 <|im_end|>
 <|im_start|>assistant
-AMR_NO_VAR: (làm
-    :theme(lời
-        :mod(đề nghị)
-        :mod(đó))
-    :modality(có lẽ)
-    :patient(vừa lòng
-        :patient-of(ông hoàng
-            :mod(bé nhỏ))
-        :polarity -))
+AMR_NO_VAR: (đi :modality(cứ) :direction(thẳng :compound(tới) :location(trước :mod(mặt))))
 <|im_end|>
 
 <|im_start|>system
@@ -2482,39 +1797,10 @@ QUY TẮC:
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
 <|im_end|>
 <|im_start|>user
-may mắn cho tiểu tinh cầu B612 , một nhà độc tài Thổ Nhĩ Kỳ buộc dân Thổ phải mặc âu phục , ai không tuân theo sẽ bị tội chết .
+- không hề gì .
 <|im_end|>
 <|im_start|>assistant
-AMR_NO_VAR: (buộc
-    :topic(may mắn
-        :beneficiary(planet
-            :name(name
-                :op1(tiểu tinh cầu)
-                :op2(B612))
-            :wiki(Tiểu_tinh_cầu_B612)))
-    :agent(nhà
-        :mod(độc tài)
-        :mod(country
-            :wiki(Thổ_Nhĩ_Kỳ)
-            :name(name
-                :op2(Nhĩ)
-                :op3(Kỳ)
-                :op1(Thổ)))
-        :quant 1)
-    :patient(dân
-        :topic(mặc
-            :modality(phải)
-            :theme(âu phục)
-            :patient-of (dân))
-        :manner(tuân
-            :agent(ai)
-            :polarity -
-            :compound(theo)
-            :topic(bị
-                :tense(sẽ)
-                :manner(tội
-                    :mod(chết))))
-        :mod (country)))
+AMR_NO_VAR: (hề :polarity - :modality(gì))
 <|im_end|>
 
 <|im_start|>system
@@ -2530,13 +1816,10 @@ QUY TẮC:
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
 <|im_end|>
 <|im_start|>user
-hắn có sưu tầm bươm bướm không ? "
+rồi , có lẽ với một chút ngậm ngùi , em nói thêm :
 <|im_end|>
 <|im_start|>assistant
-AMR_NO_VAR: (sưu tầm
-    :agent(hắn)
-    :theme(bươm bướm)
-    :mode interrogative)
+AMR_NO_VAR: (and :op2(nói :modality(có_lẽ) :degree(một_chút :mod(ngậm_ngùi)) :agent(em) :compound(thêm)))
 <|im_end|>
 
 <|im_start|>system
@@ -2552,15 +1835,10 @@ QUY TẮC:
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
 <|im_end|>
 <|im_start|>user
-nhưng không thể nhìn thấy hạt .
+nếu bạn nói với những người lớn : " tôi có thấy một cái nhà gạch mầu hồng với hoa phong lữ trên cửa sổ , và chim bồ câu trên mái ... "
 <|im_end|>
 <|im_start|>assistant
-AMR_NO_VAR: (contrast-01
-    :ARG2(possible-01
-        :topic(nhìn
-            :compound(thấy)
-            :goal(hạt))
-        :polarity -))
+AMR_NO_VAR: (nói :agent(bạn) :goal(người_lớn) :topic(thấy :goal(nhà :mod(gạch) :mod(mầu :mod(hồng)) :quant 1 :classifier(cái) :accompanier(and :op1(hoa :mod(phong_lữ) :location(cửa_sổ :prep(trên))) :op2(chim :mod(bồ_câu) :location(mái :prep(trên))))) :pivot (bạn)))
 <|im_end|>
 
 <|im_start|>system
@@ -2576,16 +1854,10 @@ QUY TẮC:
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
 <|im_end|>
 <|im_start|>user
-- tâu bệ hạ , ngài trị vì trên cái gì ?
+- tôi biết có một tinh cầu , trên đó có một ông mặt mũi đỏ gay .
 <|im_end|>
 <|im_start|>assistant
-AMR_NO_VAR: (tâu
-    :patient(bệ hạ)
-    :topic(trị vì
-        :agent (bệ)
-        :theme(amr-unknown
-            :prep(trên)
-            :classifier(cái))))
+AMR_NO_VAR: (biết :pivot(tôi) :goal(tinh_cầu :goal-of(có :pivot(ông :mod(mặt_mũi :mod(đỏ_gay)) :quant 1) :location (tôi) :prep(trên)) :quant 1))
 <|im_end|>
 
 <|im_start|>system
@@ -2601,13 +1873,10 @@ QUY TẮC:
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
 <|im_end|>
 <|im_start|>user
-- trên tất cả những cái đó ...
+- trên tất cả .
 <|im_end|>
 <|im_start|>assistant
-AMR_NO_VAR: (cái
-    :prep(trên)
-    :mod(tất cả)
-    :mod(đó))
+AMR_NO_VAR: (tất_cả :prep(trên))
 <|im_end|>
 
 <|im_start|>system
@@ -2623,17 +1892,10 @@ QUY TẮC:
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
 <|im_end|>
 <|im_start|>user
-một quyền lực như thế làm cho ông hoàng nhỏ thích mê .
+- các ngôi sao có tuân lệnh bệ hạ không ?
 <|im_end|>
 <|im_start|>assistant
-AMR_NO_VAR: (làm
-    :agent(quyền lực
-        :compared-to(thế)
-        :degree(equal))
-    :result(thích
-        :pivot(ông hoàng
-            :mod(nhỏ))
-        :compound(mê)))
+AMR_NO_VAR: (tuân :agent(sao :classifier(ngôi)) :theme(lệnh :source(bệ_hạ)) :mode interrogative)
 <|im_end|>
 
 <|im_start|>system
@@ -2649,49 +1911,10 @@ QUY TẮC:
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
 <|im_end|>
 <|im_start|>user
-- nếu ta ra lệnh cho một võ tướng bay từ đoá hoa này sang đoá hoa kia như một con bướm , hay lệnh cho ông ta viết một vở bi kịch , hay biến thành chim biển , và nếu vị võ tướng ấy không tuân lệnh , thì lỗi ấy ở ông ta hay ở ta ?
+phải cho mỗi người làm việc người đó có thể làm , đức vua nhắc lại .
 <|im_end|>
 <|im_start|>assistant
-AMR_NO_VAR: (and
-    :op2(lỗi
-        :condition(tuân
-            :agent(võ tướng
-                :classifier(vị)
-                :mod(ấy))
-            :polarity -
-            :theme(lệnh))
-        :mod(ấy)
-        :cause(or
-            :op1(ông
-                :mod(ta))
-            :op2(ta)))
-    :op1(or
-        :condition(ra lệnh
-            :agent(ta)
-            :topic(bay
-                :agent(võ tướng
-                    :quant 1)
-                :initialLocation(hoa
-                    :classifier(đoá)
-                    :mod(này))
-                :finalLocation(hoa
-                    :classifier(đoá)
-                    :mod(kia))
-                :compared-to(bướm
-                    :quant 1
-                        :classifier(con))))
-        :op1(lệnh
-            :goal(ông
-                :mod(ta))
-            :topic(viết
-                :theme(vở
-                    :quant 1
-                        :mod(bi kịch))
-                :agent (ông)))
-        :op2(biến
-            :compound(thành)
-            :result-arg1(chim
-                :compound(biển)))))
+AMR_NO_VAR: (nhắc :agent(đức :compound(vua)) :compound(lại) :topic(obligate-01 :topic(cho :topic(làm_việc :agent(người :mod(mỗi)) :theme(làm :modality(có_thể) :agent (người))))))
 <|im_end|>
 
 <|im_start|>system
@@ -2707,14 +1930,10 @@ QUY TẮC:
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
 <|im_end|>
 <|im_start|>user
-- đến bao giờ thì đủ ? ông hoàng nhỏ hỏi .
+nếu nhà ngươi ra lệnh cho thần dân của mình nhảy xuống bể , họ sẽ làm cách mạng .
 <|im_end|>
 <|im_start|>assistant
-AMR_NO_VAR: (hỏi
-    :result(đủ)
-    :agent(ông hoàng
-        :mod(nhỏ))
-    :time(amr-unknown))
+AMR_NO_VAR: (làm :condition(ra_lệnh :agent(nhà_ngươi) :topic(nhảy :agent(thần_dân :poss(mình)) :direction(xuống) :location(bể))) :tense(sẽ) :result(cách_mạng) :agent (thần_dân))
 <|im_end|>
 
 <|im_start|>system
@@ -2730,11 +1949,10 @@ QUY TẮC:
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
 <|im_end|>
 <|im_start|>user
-vào lúc ...
+- thế cảnh mặt trời lặn của tôi thì sao ?
 <|im_end|>
 <|im_start|>assistant
-AMR_NO_VAR: (vào
-    :time(lúc))
+AMR_NO_VAR: (cảnh :mod(lặn :pivot(mặt_trời)) :poss(tôi) :manner(amr-unknown))
 <|im_end|>
 
 <|im_start|>system
@@ -2750,16 +1968,10 @@ QUY TẮC:
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
 <|im_end|>
 <|im_start|>user
-em tiếc cho cảnh mặt trời lặn hụt của em .
+ta muốn thế .
 <|im_end|>
 <|im_start|>assistant
-AMR_NO_VAR: (tiếc
-    :pivot(em)
-    :theme(cảnh
-        :mod(lặn
-            :agent(mặt trời)
-            :manner(hụt))
-        :poss(em)))
+AMR_NO_VAR: (muốn :pivot(ta) :theme(thế))
 <|im_end|>
 
 <|im_start|>system
@@ -2775,17 +1987,10 @@ QUY TẮC:
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
 <|im_end|>
 <|im_start|>user
-thỉnh thoảng ngươi ghép nó vào tội tử hình .
+- tôi , ông hoàng nhỏ đáp , tôi có thể tự xét mình bất cứ ở đâu .
 <|im_end|>
 <|im_start|>assistant
-AMR_NO_VAR: (ghép
-    :agent(ngươi)
-    :patient(nó)
-    :setting(tội
-        :prep(vào)
-        :mod(tử hình))
-    :frequency(have-frequency-91
-        :unit(thỉnh thoảng)))
+AMR_NO_VAR: (đáp :agent(ông_hoàng :mod(nhỏ)) :topic(possible-01 :agent(xét :manner(tự) :location(đâu :mod(bất_cứ) :prep(ở)) :patient (ông_hoàng) :agent-of (ông_hoàng))))
 <|im_end|>
 
 <|im_start|>system
@@ -2801,20 +2006,10 @@ QUY TẮC:
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
 <|im_end|>
 <|im_start|>user
-nhưng mỗi lần buộc tội xong , thì ngươi lại nên ân xá để dành dụm chuột .
+- tôi , ông hoàng nhỏ đáp , tôi không thích buộc tội tử hình , và tôi chắc rằng tôi sắp sửa ra đi .
 <|im_end|>
 <|im_start|>assistant
-AMR_NO_VAR: (contrast-01
-    :ARG2(recommend-01
-        :result(buộc tội
-            :frequency(have-frequency-91
-                :quant(mỗi)
-                :unit(lần))
-            :agent (amr-unknown))
-        :agent(ân xá
-            :agent-of(ngươi)
-            :purpose(dành dụm
-                :theme(chuột)))))
+AMR_NO_VAR: (đáp :agent(ông_hoàng :mod(nhỏ)) :topic(and :op1(thích :pivot(tôi) :topic(buộc_tội :result(tử_hình) :agent (tôi)) :polarity -) :op2(likely-01 :topic(ra :compound(đi) :agent (tôi) :time(after)) :pivot (tôi))))
 <|im_end|>
 
 <|im_start|>system
@@ -2830,23 +2025,10 @@ QUY TẮC:
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
 <|im_end|>
 <|im_start|>user
-sau năm phút tập dượt , ông hoàng nhỏ thấy chán vì sự đơn điệu của cái trò chơi ấy :
+- không , vua nói .
 <|im_end|>
 <|im_start|>assistant
-AMR_NO_VAR: (thấy
-    :time(sau
-        :op1(tập dượt
-            :duration(temporal-quantity
-                :quant 5
-                    :unit(phút))))
-    :pivot(ông hoàng
-        :mod(nhỏ))
-    :manner(chán)
-    :cause(sự
-        :compound(đơn điệu)
-        :source(trò chơi
-            :classifier(cái)
-            :mod(ấy))))
+AMR_NO_VAR: (nói :topic(không) :agent(vua))
 <|im_end|>
 
 <|im_start|>system
@@ -2862,13 +2044,10 @@ QUY TẮC:
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
 <|im_end|>
 <|im_start|>user
-dẫu sao cứ hãy cứ khâm phục ta !
+- thế à ? ông hoàng nhỏ nói , không hiểu gì cả .
 <|im_end|>
 <|im_start|>assistant
-AMR_NO_VAR: (khâm phục
-    :modality(cứ)
-    :goal(ta)
-    :mode imperative)
+AMR_NO_VAR: (nói :agent(ông_hoàng :mod(nhỏ)) :topic(and :op1(thế :mode interrogative) :op2(hiểu :topic(gì :mod(cả)) :pivot (ông_hoàng))))
 <|im_end|>
 
 <|im_start|>system
@@ -2884,113 +2063,10 @@ QUY TẮC:
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
 <|im_end|>
 <|im_start|>user
-- xấu hổ vì cái gì ? ông hoàng nhỏ hỏi , đã muốn giúp đỡ hắn .
+hăm hai với sáu là hăm tám .
 <|im_end|>
 <|im_start|>assistant
-AMR_NO_VAR: (hỏi
-    :topic(xấu hổ
-        :pivot (hắn)
-        :reason(amr-unknown))
-    :agent(ông hoàng
-        :mod(nhỏ))
-    :setting(muốn
-        :tense(đã)
-        :topic(giúp đỡ
-            :beneficiary(hắn)
-            :agent (ông))
-        :pivot (ông)))
-<|im_end|>
-
-<|im_start|>system
-Bạn là trợ lý phân tích AMR (Abstract Meaning Representation) cho tiếng Việt.
-
-QUY TẮC:
-1. Tuân thủ đúng định dạng output được yêu cầu.
-2. Dùng concept, biến và quan hệ AMR nhất quán với dữ liệu huấn luyện.
-3. Không dùng ví dụ, câu, nhãn vàng hoặc quy tắc rút ra từ tập test.
-4. Giữ dấu ngoặc AMR cân bằng.
-5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
-6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
-7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
-<|im_end|>
-<|im_start|>user
-chào chú .
-<|im_end|>
-<|im_start|>assistant
-AMR_NO_VAR: (chào
-    :goal(chú))
-<|im_end|>
-
-<|im_start|>system
-Bạn là trợ lý phân tích AMR (Abstract Meaning Representation) cho tiếng Việt.
-
-QUY TẮC:
-1. Tuân thủ đúng định dạng output được yêu cầu.
-2. Dùng concept, biến và quan hệ AMR nhất quán với dữ liệu huấn luyện.
-3. Không dùng ví dụ, câu, nhãn vàng hoặc quy tắc rút ra từ tập test.
-4. Giữ dấu ngoặc AMR cân bằng.
-5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
-6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
-7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
-<|im_end|>
-<|im_start|>user
-ta cũng chẳng biết là cái gì nữa .
-<|im_end|>
-<|im_start|>assistant
-AMR_NO_VAR: (biết
-    :pivot(ta)
-    :modality(cũng)
-    :polarity -
-    :theme(gì
-        :classifier(cái))
-    :modality(nữa))
-<|im_end|>
-
-<|im_start|>system
-Bạn là trợ lý phân tích AMR (Abstract Meaning Representation) cho tiếng Việt.
-
-QUY TẮC:
-1. Tuân thủ đúng định dạng output được yêu cầu.
-2. Dùng concept, biến và quan hệ AMR nhất quán với dữ liệu huấn luyện.
-3. Không dùng ví dụ, câu, nhãn vàng hoặc quy tắc rút ra từ tập test.
-4. Giữ dấu ngoặc AMR cân bằng.
-5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
-6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
-7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
-<|im_end|>
-<|im_start|>user
-nhà doanh nghiệp biết không hy vọng gì được yên thân :
-<|im_end|>
-<|im_start|>assistant
-AMR_NO_VAR: (biết
-    :pivot(nhà
-        :compound(doanh nghiệp))
-    :topic(hy vọng
-        :modality(gì)
-        :result(được
-            :manner(yên thân)
-            :domain (nhà))
-        :polarity -))
-<|im_end|>
-
-<|im_start|>system
-Bạn là trợ lý phân tích AMR (Abstract Meaning Representation) cho tiếng Việt.
-
-QUY TẮC:
-1. Tuân thủ đúng định dạng output được yêu cầu.
-2. Dùng concept, biến và quan hệ AMR nhất quán với dữ liệu huấn luyện.
-3. Không dùng ví dụ, câu, nhãn vàng hoặc quy tắc rút ra từ tập test.
-4. Giữ dấu ngoặc AMR cân bằng.
-5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
-6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
-7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
-<|im_end|>
-<|im_start|>user
-- không mà ...
-<|im_end|>
-<|im_start|>assistant
-AMR_NO_VAR: (không
-    :modality(mà))
+AMR_NO_VAR: (equal-01 :ARG2 28 :ARG1(sum-of :op2 6 :op1 22))
 <|im_end|>
 
 <|im_start|>system
@@ -3009,10 +2085,7 @@ QUY TẮC:
 - chẳng làm gì sất .
 <|im_end|>
 <|im_start|>assistant
-AMR_NO_VAR: (làm
-    :theme(gì)
-    :modality(sất)
-    :polarity -)
+AMR_NO_VAR: (làm :theme(gì) :modality(sất) :polarity -)
 <|im_end|>
 
 <|im_start|>system
@@ -3028,15 +2101,10 @@ QUY TẮC:
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
 <|im_end|>
 <|im_start|>user
-- giàu giúp ông được gì ?
+- nhưng tôi biết một ông vua cũng ...
 <|im_end|>
 <|im_start|>assistant
-AMR_NO_VAR: (giúp
-    :pivot(giàu
-        :pivot-of (ông))
-    :beneficiary(được
-        :beneficiary-arg0(ông)
-        :theme(amr-unknown)))
+AMR_NO_VAR: (contrast-01 :ARG2(biết :pivot(tôi) :goal(ông :compound(vua) :quant 1) :modality(cũng)))
 <|im_end|>
 
 <|im_start|>system
@@ -3055,11 +2123,7 @@ QUY TẮC:
 tuy thế em vẫn hỏi thêm :
 <|im_end|>
 <|im_start|>assistant
-AMR_NO_VAR: (contrast-01
-    :ARG2(hỏi
-        :agent(em)
-        :manner(vẫn)
-        :compound(thêm)))
+AMR_NO_VAR: (contrast-01 :ARG2(hỏi :agent(em) :manner(vẫn) :compound(thêm)))
 <|im_end|>
 
 <|im_start|>system
@@ -3075,12 +2139,10 @@ QUY TẮC:
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
 <|im_end|>
 <|im_start|>user
-- chúng của ai nào ?
+khi chú tìm thấy một viên kim cương không là của ai cả , thì nó là của chú .
 <|im_end|>
 <|im_start|>assistant
-AMR_NO_VAR: (chúng
-    :modality(nào)
-    :poss(amr-unknown))
+AMR_NO_VAR: (kim_cương :condition(tìm :agent(chú) :compound(thấy) :theme (kim_cương) :poss(ai :degree(cả) :polarity -) :quant 1 :classifier(viên)) :poss (chú))
 <|im_end|>
 
 <|im_start|>system
@@ -3096,14 +2158,10 @@ QUY TẮC:
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
 <|im_end|>
 <|im_start|>user
-nhà doanh nghiệp vặn lại , sửng cồ .
+tôi , nếu tôi có một bông hoa , tôi có thể hái bông hoa đó và mang nó đi .
 <|im_end|>
 <|im_start|>assistant
-AMR_NO_VAR: (vặn
-    :agent(nhà
-        :compound(doanh nghiệp))
-    :compound(lại)
-    :manner(sửng cồ))
+AMR_NO_VAR: (possible-01 :condition(có :pivot(tôi) :theme(hoa :quant 1 :classifier(bông))) :theme(and :op1(hái :patient(hoa :classifier(bông) :mod(đó)) :agent (tôi)) :op2(mang :patient (hoa) :agent (tôi))))
 <|im_end|>
 
 <|im_start|>system
@@ -3119,15 +2177,10 @@ QUY TẮC:
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
 <|im_end|>
 <|im_start|>user
-ông dùng chúng để làm gì ?
+việc ấy mới thật sự là có ích là vì nó đẹp .
 <|im_end|>
 <|im_start|>assistant
-AMR_NO_VAR: (dùng
-    :agent(ông)
-    :theme(chúng)
-    :purpose(làm
-        :topic(amr-unknown)
-        :agent (ông)))
+AMR_NO_VAR: (có_ích :domain(việc :mod(ấy)) :degree(thật_sự) :reason(đẹp :domain (việc)))
 <|im_end|>
 
 <|im_start|>system
@@ -3143,38 +2196,10 @@ QUY TẮC:
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
 <|im_end|>
 <|im_start|>user
-có vẻ nên thơ đấy .
+khi đến gần tinh cầu , em kính trọng chào người thắp đèn :
 <|im_end|>
 <|im_start|>assistant
-AMR_NO_VAR: (có
-    :theme(vẻ
-        :mod(nên thơ))
-    :modality(đấy))
-<|im_end|>
-
-<|im_start|>system
-Bạn là trợ lý phân tích AMR (Abstract Meaning Representation) cho tiếng Việt.
-
-QUY TẮC:
-1. Tuân thủ đúng định dạng output được yêu cầu.
-2. Dùng concept, biến và quan hệ AMR nhất quán với dữ liệu huấn luyện.
-3. Không dùng ví dụ, câu, nhãn vàng hoặc quy tắc rút ra từ tập test.
-4. Giữ dấu ngoặc AMR cân bằng.
-5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
-6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
-7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
-<|im_end|>
-<|im_start|>user
-nhưng ông chẳng giúp ích gì cho những ngôi sao cả ...
-<|im_end|>
-<|im_start|>assistant
-AMR_NO_VAR: (contrast-01
-    :ARG2(giúp ích
-        :agent(ông)
-        :polarity -
-        :theme(gì)
-        :goal(sao
-            :classifier(ngôi))))
+AMR_NO_VAR: (chào :time(đến :degree(gần) :location(tinh_cầu) :agent (em)) :agent(em) :manner(kính_trọng) :goal(người :agent-of(thắp :patient(đèn))))
 <|im_end|>
 
 <|im_start|>system
@@ -3193,13 +2218,45 @@ QUY TẮC:
 và ông ta lại thắp đèn lên .
 <|im_end|>
 <|im_start|>assistant
-AMR_NO_VAR: (and
-    :op2(thắp
-        :agent(ông
-            :mod(ta))
-        :manner(lại)
-        :patient(đèn)
-        :manner(lên)))
+AMR_NO_VAR: (and :op2(thắp :agent(ông :mod(ta)) :manner(lại) :patient(đèn) :manner(lên)))
+<|im_end|>
+
+<|im_start|>system
+Bạn là trợ lý phân tích AMR (Abstract Meaning Representation) cho tiếng Việt.
+
+QUY TẮC:
+1. Tuân thủ đúng định dạng output được yêu cầu.
+2. Dùng concept, biến và quan hệ AMR nhất quán với dữ liệu huấn luyện.
+3. Không dùng ví dụ, câu, nhãn vàng hoặc quy tắc rút ra từ tập test.
+4. Giữ dấu ngoặc AMR cân bằng.
+5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
+6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
+7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+<|im_end|>
+<|im_start|>user
+điều lệnh là điều lệnh .
+<|im_end|>
+<|im_start|>assistant
+AMR_NO_VAR: (điều_lệnh :domain(điều_lệnh))
+<|im_end|>
+
+<|im_start|>system
+Bạn là trợ lý phân tích AMR (Abstract Meaning Representation) cho tiếng Việt.
+
+QUY TẮC:
+1. Tuân thủ đúng định dạng output được yêu cầu.
+2. Dùng concept, biến và quan hệ AMR nhất quán với dữ liệu huấn luyện.
+3. Không dùng ví dụ, câu, nhãn vàng hoặc quy tắc rút ra từ tập test.
+4. Giữ dấu ngoặc AMR cân bằng.
+5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
+6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
+7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+<|im_end|>
+<|im_start|>user
+- nghề của ta làm đây thật kinh khủng .
+<|im_end|>
+<|im_start|>assistant
+AMR_NO_VAR: (kinh_khủng :domain(nghề :mod(làm :agent(ta) :location(đây))) :degree(thật))
 <|im_end|>
 
 <|im_start|>system
@@ -3218,11 +2275,7 @@ QUY TẮC:
 xưa kia thì nó còn có lý .
 <|im_end|>
 <|im_start|>assistant
-AMR_NO_VAR: (có lý
-    :time(xưa
-        :compound(kia))
-    :domain(nó)
-    :modality(còn))
+AMR_NO_VAR: (có_lý :time(xưa :compound(kia)) :domain(nó) :modality(còn))
 <|im_end|>
 
 <|im_start|>system
@@ -3238,13 +2291,29 @@ QUY TẮC:
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
 <|im_end|>
 <|im_start|>user
-linh nói rất nhiều chuyện .
+thằng chả có cặp mắt tinh đời .
 <|im_end|>
 <|im_start|>assistant
-AMR_NO_VAR: (nói
-    :agent(linh)
-    :topic(chuyện
-        :mod(nhiều)))
+AMR_NO_VAR: (có :pivot(thằng_chả) :theme(mắt :quant(cặp) :mod(tinh_đời)))
+<|im_end|>
+
+<|im_start|>system
+Bạn là trợ lý phân tích AMR (Abstract Meaning Representation) cho tiếng Việt.
+
+QUY TẮC:
+1. Tuân thủ đúng định dạng output được yêu cầu.
+2. Dùng concept, biến và quan hệ AMR nhất quán với dữ liệu huấn luyện.
+3. Không dùng ví dụ, câu, nhãn vàng hoặc quy tắc rút ra từ tập test.
+4. Giữ dấu ngoặc AMR cân bằng.
+5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
+6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
+7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+<|im_end|>
+<|im_start|>user
+anh cho bò ăn cỏ .
+<|im_end|>
+<|im_start|>assistant
+AMR_NO_VAR: (cho :agent(anh) :beneficiary(ăn :beneficiary-arg1(bò) :patient(cỏ)))
 <|im_end|>
 
 <|im_start|>system
@@ -3263,11 +2332,7 @@ QUY TẮC:
 chúng tôi mong họ thay đổi suy nghĩ .
 <|im_end|>
 <|im_start|>assistant
-AMR_NO_VAR: (mong
-    :pivot(chúng tôi)
-    :topic(thay đổi
-        :agent(họ)
-        :theme(suy nghĩ)))
+AMR_NO_VAR: (mong :pivot(chúng_tôi) :topic(thay_đổi :agent(họ) :theme(suy_nghĩ)))
 <|im_end|>
 
 <|im_start|>system
@@ -3283,12 +2348,10 @@ QUY TẮC:
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
 <|im_end|>
 <|im_start|>user
-nam bị đánh .
+mẹ giúp con học bài .
 <|im_end|>
 <|im_start|>assistant
-AMR_NO_VAR: (đánh
-    :patient(nam)
-    :modality(bị))
+AMR_NO_VAR: (giúp :agent(mẹ) :beneficiary(học :beneficiary-arg1(con) :theme(bài)))
 <|im_end|>
 
 <|im_start|>system
@@ -3304,14 +2367,10 @@ QUY TẮC:
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
 <|im_end|>
 <|im_start|>user
-tèo bị cho điểm kém .
+lớp 12a được nhà trường khen .
 <|im_end|>
 <|im_start|>assistant
-AMR_NO_VAR: (cho
-    :patient(tèo)
-    :modality(bị)
-    :theme(điểm
-        :mod(kém)))
+AMR_NO_VAR: (khen :beneficiary-arg1(lớp :mod(12a)) :modality(được) :agent(nhà_trường))
 <|im_end|>
 
 <|im_start|>system
@@ -3327,12 +2386,10 @@ QUY TẮC:
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
 <|im_end|>
 <|im_start|>user
-anh người vùng nào ?
+cảnh vật vẫn như xưa .
 <|im_end|>
 <|im_start|>assistant
-AMR_NO_VAR: (người
-    :domain(anh)
-    :location(amr-unknown))
+AMR_NO_VAR: (resemble-01 :domain(cảnh_vật) :mod(vẫn) :compared-to(xưa) :degree(equal))
 <|im_end|>
 
 <|im_start|>system
@@ -3348,13 +2405,10 @@ QUY TẮC:
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
 <|im_end|>
 <|im_start|>user
-thủ phạm đằng sau thủ phạm .
+học tập là quyền lợi của mỗi người .
 <|im_end|>
 <|im_start|>assistant
-AMR_NO_VAR: (đằng
-    :domain(thủ phạm)
-    :compound(sau)
-    :mod(thủ phạm))
+AMR_NO_VAR: (quyền_lợi :domain(học_tập) :poss(người))
 <|im_end|>
 
 <|im_start|>system
@@ -3370,59 +2424,10 @@ QUY TẮC:
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
 <|im_end|>
 <|im_start|>user
-cái này bao nhiêu tiền ?
+cậu chưa gửi tôi tiền .
 <|im_end|>
 <|im_start|>assistant
-AMR_NO_VAR: (tiền
-    :domain(cái
-        :mod(này))
-    :quant(amr-unknown))
-<|im_end|>
-
-<|im_start|>system
-Bạn là trợ lý phân tích AMR (Abstract Meaning Representation) cho tiếng Việt.
-
-QUY TẮC:
-1. Tuân thủ đúng định dạng output được yêu cầu.
-2. Dùng concept, biến và quan hệ AMR nhất quán với dữ liệu huấn luyện.
-3. Không dùng ví dụ, câu, nhãn vàng hoặc quy tắc rút ra từ tập test.
-4. Giữ dấu ngoặc AMR cân bằng.
-5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
-6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
-7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
-<|im_end|>
-<|im_start|>user
-người nói dối sẽ bị máy phát hiện .
-<|im_end|>
-<|im_start|>assistant
-AMR_NO_VAR: (phát hiện
-    :patient(người
-        :agent-of(nói dối))
-    :tense(sẽ)
-    :modality(bị)
-    :agent(máy))
-<|im_end|>
-
-<|im_start|>system
-Bạn là trợ lý phân tích AMR (Abstract Meaning Representation) cho tiếng Việt.
-
-QUY TẮC:
-1. Tuân thủ đúng định dạng output được yêu cầu.
-2. Dùng concept, biến và quan hệ AMR nhất quán với dữ liệu huấn luyện.
-3. Không dùng ví dụ, câu, nhãn vàng hoặc quy tắc rút ra từ tập test.
-4. Giữ dấu ngoặc AMR cân bằng.
-5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
-6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
-7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
-<|im_end|>
-<|im_start|>user
-bạn rất hiểu tôi .
-<|im_end|>
-<|im_start|>assistant
-AMR_NO_VAR: (hiểu
-    :pivot(bạn)
-    :degree(rất)
-    :theme(tôi))
+AMR_NO_VAR: (gửi :agent(cậu) :beneficiary-arg1(tôi) :theme(tiền) :polarity -)
 <|im_end|>
 
 <|im_start|>system
@@ -3441,11 +2446,7 @@ QUY TẮC:
 anh vừa trả tiền ngân hàng .
 <|im_end|>
 <|im_start|>assistant
-AMR_NO_VAR: (trả
-    :agent(anh)
-    :tense(vừa)
-    :theme(tiền)
-    :beneficiary-arg2(ngân hàng))
+AMR_NO_VAR: (trả :agent(anh) :tense(vừa) :theme(tiền) :beneficiary-arg2(ngân_hàng))
 <|im_end|>
 
 <|im_start|>system
@@ -3461,13 +2462,10 @@ QUY TẮC:
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
 <|im_end|>
 <|im_start|>user
-nó chặt thịt bằng dao .
+cô ấy thích người đẹp trai .
 <|im_end|>
 <|im_start|>assistant
-AMR_NO_VAR: (chặt
-    :agent(nó)
-    :theme(thịt)
-    :instrument(dao))
+AMR_NO_VAR: (thích :pivot(cô :mod(ấy)) :theme(người :mod(đẹp_trai)))
 <|im_end|>
 
 <|im_start|>system
@@ -3483,16 +2481,10 @@ QUY TẮC:
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
 <|im_end|>
 <|im_start|>user
-tôi đã đến hầu hết các nước trên thế giới .
+tôi tin là tương lai sẽ tốt đẹp .
 <|im_end|>
 <|im_start|>assistant
-AMR_NO_VAR: (đến
-    :agent(tôi)
-    :tense(đã)
-    :location(nước
-        :mod(hầu hết)
-        :part-of(thế giới
-            :prep(trên))))
+AMR_NO_VAR: (tin :pivot(tôi) :topic(tốt_đẹp :domain(tương_lai) :tense(sẽ)))
 <|im_end|>
 
 <|im_start|>system
@@ -3508,16 +2500,10 @@ QUY TẮC:
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
 <|im_end|>
 <|im_start|>user
-có nhiều website cung cấp các nơi đặt phòng .
+ông phan , giám đốc công ti , chia sẻ về khâu thanh toán .
 <|im_end|>
 <|im_start|>assistant
-AMR_NO_VAR: (có
-    :theme(website
-        :quant(nhiều)
-        :theme-of(cung cấp
-            :theme(nơi
-                :theme-of(đặt
-                    :theme(phòng))))))
+AMR_NO_VAR: (chia_sẻ :agent(ông :mod(giám_đốc :mod(công_ti)) :mod(person :name(name :op1(phan)) :wiki -)) :topic(khâu :mod(thanh_toán)))
 <|im_end|>
 
 <|im_start|>system
@@ -3533,23 +2519,10 @@ QUY TẮC:
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
 <|im_end|>
 <|im_start|>user
-thần xã itsukushima là nơi thờ thần đạo nằm trên đảo itsukushima .
+cụ thể : chúng ta phải đi ngay .
 <|im_end|>
 <|im_start|>assistant
-AMR_NO_VAR: (nơi
-    :domain(thần xã
-        :compound(worship-place
-            :wiki(Itsukushima )
-            :name(name
-                :op1(itsukushima))))
-    :location-of(thờ
-        :theme(thần đạo))
-    :theme-of(nằm
-        :location(island
-            :prep(trên)
-            :name(name
-                :op1(itsukushima))
-            :wiki(Itsukushima))))
+AMR_NO_VAR: (cụ_thể :topic(obligate-01 :topic(đi :agent(chúng_ta) :manner(ngay))))
 <|im_end|>
 
 <|im_start|>system
@@ -3565,13 +2538,10 @@ QUY TẮC:
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
 <|im_end|>
 <|im_start|>user
-tôi dậy khi trời sáng .
+chiều , trời sẽ nổi gió .
 <|im_end|>
 <|im_start|>assistant
-AMR_NO_VAR: (dậy
-    :agent(tôi)
-    :time(sáng
-        :theme(trời)))
+AMR_NO_VAR: (nổi :theme(trời) :tense(sẽ) :theme(gió) :time(date-entity :dayperiod(chiều)))
 <|im_end|>
 
 <|im_start|>system
@@ -3587,26 +2557,10 @@ QUY TẮC:
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
 <|im_end|>
 <|im_start|>user
-kyansittha đã xây dựng chùa shwezigon mà vua anawrahta còn làm dang dở .
+gã đó , anh nói , đã đi rồi .
 <|im_end|>
 <|im_start|>assistant
-AMR_NO_VAR: (xây dựng
-    :tense(đã)
-    :result-arg1(chùa
-        :agent-of(làm
-            :agent(vua
-                :wiki(Anawrahta)
-                :name(name
-                    :op1(anawrahta)))
-            :manner(dang dở))
-        :mod(name
-            :wiki -
-            :name(name
-                :op1(shwezigon))))
-    :agent(person
-        :wiki(Kyansittha)
-        :name(name
-            :op1(kyansittha))))
+AMR_NO_VAR: (nói :agent(anh) :topic(đi :agent(gã :mod(đó)) :tense(đã)))
 <|im_end|>
 
 <|im_start|>system
@@ -3622,16 +2576,10 @@ QUY TẮC:
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
 <|im_end|>
 <|im_start|>user
-xe máy điện không dùng bàn đạp để chạy .
+bà viết : kỷ luật cán bộ gây chậm giải ngân vốn đầu_tư_công
 <|im_end|>
 <|im_start|>assistant
-AMR_NO_VAR: (dùng
-    :theme(xe máy
-        :mod(điện))
-    :polarity -
-    :instrument(bàn đạp)
-    :purpose(chạy
-        :theme (xe)))
+AMR_NO_VAR: (viết :agent(bà) :topic(kỷ_luật :patient(cán_bộ :agent-of(gây :topic(giải_ngân :manner(chậm) :theme(vốn :mod(đầu_tư_công))) :agent (cán_bộ)))))
 <|im_end|>
 
 <|im_start|>system
@@ -3647,22 +2595,10 @@ QUY TẮC:
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
 <|im_end|>
 <|im_start|>user
-rồng râu là thợ săn tầm nhìn , chúng cần nhìn thấy thức ăn để di chuyển .
+nhà , ông ấy có năm bảy cái nhà .
 <|im_end|>
 <|im_start|>assistant
-AMR_NO_VAR: (multi-sentence
-    :snt1(thợ săn
-        :domain(rồng
-            :compound(râu))
-        :mod(tầm nhìn))
-    :snt2(cần
-        :pivot(chúng)
-        :topic(nhìn
-            :compound(thấy)
-            :goal(thức ăn)
-            :purpose(di chuyển
-                :agent (chúng))
-            :agent (chúng))))
+AMR_NO_VAR: (có :pivot(ông :mod(ấy)) :theme(nhà :quant(năm_bảy :classifier(cái))))
 <|im_end|>
 
 <|im_start|>system
@@ -3678,13 +2614,10 @@ QUY TẮC:
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
 <|im_end|>
 <|im_start|>user
-cây này , lá to
+toán , cô ấy giỏi .
 <|im_end|>
 <|im_start|>assistant
-AMR_NO_VAR: (to
-    :domain(lá
-        :part-of(cây
-            :mod(này))))
+AMR_NO_VAR: (giỏi :topic(toán) :domain(cô :mod(ấy)))
 <|im_end|>
 
 <|im_start|>system
@@ -3700,15 +2633,10 @@ QUY TẮC:
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
 <|im_end|>
 <|im_start|>user
-giống đực , nó thường tổn hao đối với giống cái .
+bệnh dại là bệnh do virus dại gây nên .
 <|im_end|>
 <|im_start|>assistant
-AMR_NO_VAR: (tổn hao
-    :pivot(giống
-        :mod(đực))
-    :degree(thường)
-    :goal(giống
-        :mod(cái)))
+AMR_NO_VAR: (bệnh :domain(bệnh :mod(dại)) :cause(gây :agent(virus :mod(dại)) :compound(nên)))
 <|im_end|>
 
 <|im_start|>system
@@ -3724,16 +2652,10 @@ QUY TẮC:
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
 <|im_end|>
 <|im_start|>user
-có được đổi hàng không ad nhỉ ?
+cái này ăn được nè !
 <|im_end|>
 <|im_start|>assistant
-AMR_NO_VAR: (đổi
-    :modality(có
-        :compound(được))
-    :theme(hàng)
-    :mode interrogative
-    :goal(ad
-        :mode expressive))
+AMR_NO_VAR: (ăn :theme(cái :mod(này)) :manner(được) :modality(nè))
 <|im_end|>
 
 <|im_start|>system
@@ -3752,10 +2674,7 @@ QUY TẮC:
 tôi phải đi ngay .
 <|im_end|>
 <|im_start|>assistant
-AMR_NO_VAR: (obligate-01
-    :topic(đi
-        :agent(tôi)
-        :manner(ngay)))
+AMR_NO_VAR: (obligate-01 :topic(đi :agent(tôi) :manner(ngay)))
 <|im_end|>
 
 <|im_start|>system
@@ -3771,14 +2690,10 @@ QUY TẮC:
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
 <|im_end|>
 <|im_start|>user
-anh muốn chơi cờ .
+tôi quyết ra_đi .
 <|im_end|>
 <|im_start|>assistant
-AMR_NO_VAR: (muốn
-    :pivot(anh)
-    :topic(chơi
-        :theme(cờ)
-        :agent (anh)))
+AMR_NO_VAR: (ra_đi :agent(tôi) :modality(quyết))
 <|im_end|>
 
 <|im_start|>system
@@ -3794,13 +2709,10 @@ QUY TẮC:
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
 <|im_end|>
 <|im_start|>user
-người mù là người tàn tật .
+ông ấy được công chúng tán thưởng .
 <|im_end|>
 <|im_start|>assistant
-AMR_NO_VAR: (người
-    :domain(người
-        :mod(mù))
-    :mod(tàn tật))
+AMR_NO_VAR: (tán_thưởng :beneficiary-arg0(ông :modality(ấy)) :pivot(công_chúng) :modality +)
 <|im_end|>
 
 <|im_start|>system
@@ -3816,14 +2728,10 @@ QUY TẮC:
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
 <|im_end|>
 <|im_start|>user
-tôi với anh sẽ đi lên
+tôi bị đánh .
 <|im_end|>
 <|im_start|>assistant
-AMR_NO_VAR: (đi
-    :agent(tôi)
-    :accompanier(anh)
-    :tense(sẽ)
-    :direction(lên))
+AMR_NO_VAR: (đánh :patient(tôi) :modality -)
 <|im_end|>
 
 <|im_start|>system
@@ -3839,14 +2747,67 @@ QUY TẮC:
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
 <|im_end|>
 <|im_start|>user
-nó chạy thẳng vào nhà nghỉ .
+tôi vừa bị mất cắp .
 <|im_end|>
 <|im_start|>assistant
-AMR_NO_VAR: (chạy
-    :agent(nó)
-    :direction(thẳng)
-    :finalLocation(nhà nghỉ
-        :prep(vào)))
+AMR_NO_VAR: (mất_cắp :pivot(tôi) :time(before) :modality -)
+<|im_end|>
+
+<|im_start|>system
+Bạn là trợ lý phân tích AMR (Abstract Meaning Representation) cho tiếng Việt.
+
+QUY TẮC:
+1. Tuân thủ đúng định dạng output được yêu cầu.
+2. Dùng concept, biến và quan hệ AMR nhất quán với dữ liệu huấn luyện.
+3. Không dùng ví dụ, câu, nhãn vàng hoặc quy tắc rút ra từ tập test.
+4. Giữ dấu ngoặc AMR cân bằng.
+5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
+6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
+7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+<|im_end|>
+<|im_start|>user
+lan và linh đều xinh .
+<|im_end|>
+<|im_start|>assistant
+AMR_NO_VAR: (xinh :domain(and :op1(person :name(name :op1(lan)) :wiki -) :op2(person :wiki - :name(name :op2(linh)))))
+<|im_end|>
+
+<|im_start|>system
+Bạn là trợ lý phân tích AMR (Abstract Meaning Representation) cho tiếng Việt.
+
+QUY TẮC:
+1. Tuân thủ đúng định dạng output được yêu cầu.
+2. Dùng concept, biến và quan hệ AMR nhất quán với dữ liệu huấn luyện.
+3. Không dùng ví dụ, câu, nhãn vàng hoặc quy tắc rút ra từ tập test.
+4. Giữ dấu ngoặc AMR cân bằng.
+5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
+6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
+7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+<|im_end|>
+<|im_start|>user
+mặt trời đang lặn .
+<|im_end|>
+<|im_start|>assistant
+AMR_NO_VAR: (lặn :pivot(mặt_trời) :tense(đang))
+<|im_end|>
+
+<|im_start|>system
+Bạn là trợ lý phân tích AMR (Abstract Meaning Representation) cho tiếng Việt.
+
+QUY TẮC:
+1. Tuân thủ đúng định dạng output được yêu cầu.
+2. Dùng concept, biến và quan hệ AMR nhất quán với dữ liệu huấn luyện.
+3. Không dùng ví dụ, câu, nhãn vàng hoặc quy tắc rút ra từ tập test.
+4. Giữ dấu ngoặc AMR cân bằng.
+5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
+6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
+7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+<|im_end|>
+<|im_start|>user
+có thể ông chương là người gia trưởng .
+<|im_end|>
+<|im_start|>assistant
+AMR_NO_VAR: (người :modality(có_thể) :mod(gia_trưởng) :domain(person :wiki - :name(name :op1(ông) :op2(chương))))
 <|im_end|>
 
 <|im_start|>system
@@ -3865,11 +2826,7 @@ QUY TẮC:
 cô ấy ngày càng đẹp hơn .
 <|im_end|>
 <|im_start|>assistant
-AMR_NO_VAR: (đẹp
-    :domain(cô
-        :mod(ấy))
-    :degree(ngày càng)
-    :degree(hơn))
+AMR_NO_VAR: (đẹp :domain(cô :mod(ấy)) :degree(ngày_càng) :degree(hơn))
 <|im_end|>
 
 <|im_start|>system
@@ -3885,14 +2842,10 @@ QUY TẮC:
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
 <|im_end|>
 <|im_start|>user
-nó chẳng thiết gì nữa .
+bà luôn nhẹ nhàng khuyên bảo đứa cháu .
 <|im_end|>
 <|im_start|>assistant
-AMR_NO_VAR: (thiết
-    :pivot(nó)
-    :polarity -
-    :theme(gì)
-    :modality(nữa))
+AMR_NO_VAR: (khuyên_bảo :agent(bà) :modality(luôn) :manner(nhẹ_nhàng) :beneficiary(cháu :classifier(đứa)))
 <|im_end|>
 
 <|im_start|>system
@@ -3908,14 +2861,10 @@ QUY TẮC:
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
 <|im_end|>
 <|im_start|>user
-bà lão mở cửa ra .
+bài đã được chỉnh sửa lần đầu tiên lên website .
 <|im_end|>
 <|im_start|>assistant
-AMR_NO_VAR: (mở
-    :agent(bà
-        :mod(lão))
-    :theme(cửa)
-    :direction(ra))
+AMR_NO_VAR: (chỉnh_sửa :patient(bài) :tense(đã) :time(lần :ord(ordinal-entity :value 1)) :direction(lên :setting(website)) :modality +)
 <|im_end|>
 
 <|im_start|>system
@@ -3931,13 +2880,10 @@ QUY TẮC:
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
 <|im_end|>
 <|im_start|>user
-thuỷ thủ ném hàng xuống .
+mặt cô ta đang đỏ dần lên .
 <|im_end|>
 <|im_start|>assistant
-AMR_NO_VAR: (ném
-    :agent(thuỷ thủ)
-    :theme(hàng)
-    :direction(xuống))
+AMR_NO_VAR: (đỏ :domain(mặt :part-of(cô :mod(ta))) :tense(đang) :manner(lên :mod(dần)))
 <|im_end|>
 
 <|im_start|>system
@@ -3953,15 +2899,10 @@ QUY TẮC:
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
 <|im_end|>
 <|im_start|>user
-thiện ác , sướng khổ đều bắt đầu từ trong suy nghĩ mà ra .
+con tàu chìm mất xuống đáy bể .
 <|im_end|>
 <|im_start|>assistant
-AMR_NO_VAR: (bắt đầu
-    :source(suy nghĩ)
-    :manner(ra)
-    :theme(and
-        :op1(thiện ác)
-        :op2(sướng khổ)))
+AMR_NO_VAR: (chìm :patient(tàu :classifier(con)) :manner(mất) :direction(xuống :location(đáy :part-of(bể))))
 <|im_end|>
 
 <|im_start|>system
@@ -3977,18 +2918,10 @@ QUY TẮC:
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
 <|im_end|>
 <|im_start|>user
-thư được gửi ngày 19 tháng 2 lúc 10:32 am .
+thêm thu bớt chi .
 <|im_end|>
 <|im_start|>assistant
-AMR_NO_VAR: (gửi
-    :theme(thư)
-    :modality +
-    :time(date-entity
-        :day(19)
-        :month(2)
-        :initialTime(lúc
-            :time(10h32)
-            :dayperiod(am))))
+AMR_NO_VAR: (and :op1(thêm :theme(thu)) :op2(bớt :theme(chi)))
 <|im_end|>
 
 <|im_start|>system
@@ -4004,15 +2937,10 @@ QUY TẮC:
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
 <|im_end|>
 <|im_start|>user
-tổng mức đầu tư dự kiến 2600 tỷ đồng .
+thuốc làm bệnh nặng thêm rất nhiều .
 <|im_end|>
 <|im_start|>assistant
-AMR_NO_VAR: (dự kiến
-    :theme(tổng
-        :mod(mức
-            :mod(đầu tư)))
-    :unit(đồng)
-    :quant 2600000000000)
+AMR_NO_VAR: (làm :theme(thuốc) :result(nặng :domain(bệnh) :degree(thêm) :degree(nhiều :degree(rất))))
 <|im_end|>
 
 <|im_start|>system
@@ -4028,14 +2956,10 @@ QUY TẮC:
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
 <|im_end|>
 <|im_start|>user
-cái váy xoè rất đẹp .
+cuộn tơ vàng óng .
 <|im_end|>
 <|im_start|>assistant
-AMR_NO_VAR: (xoè
-    :theme(váy
-        :classifier(cái))
-    :manner(đẹp
-        :degree(rất)))
+AMR_NO_VAR: (vàng :theme(tơ :classifier(cuộn)) :manner(óng))
 <|im_end|>
 
 <|im_start|>system
@@ -4051,14 +2975,10 @@ QUY TẮC:
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
 <|im_end|>
 <|im_start|>user
-nó cắt đi một miếng .
+địa chỉ : số nhà 11 , phố trần hưng đạo , tp. hà nội .
 <|im_end|>
 <|im_start|>assistant
-AMR_NO_VAR: (cắt
-    :agent(nó)
-    :manner(đi)
-    :result-arg1(miếng
-        :quant 1))
+AMR_NO_VAR: (street-address-91 :ARG1(số :compound(nhà) :value 11) :ARG3(city :wiki(Hà_Nội) :name(name :op1(hà) :op2(nội))) :ARG2(street :wiki(Trần_Hưng_Đạo) :name(name :op1(trần) :op2(hưng) :op3(đạo))))
 <|im_end|>
 
 <|im_start|>system
@@ -4074,15 +2994,10 @@ QUY TẮC:
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
 <|im_end|>
 <|im_start|>user
-thứ nhất : tôi sẽ không nói .
+tôi có hai cái bánh , em một .
 <|im_end|>
 <|im_start|>assistant
-AMR_NO_VAR: (nói
-    :agent(tôi)
-    :tense(sẽ)
-    :polarity -
-    :ord(ordinal-entity 
-        :value 1))
+AMR_NO_VAR: (multi-sentence :snt1(có :pivot(tôi) :theme(bánh :quant 2 :classifier(cái))) :snt2(có :pivot(em) :quant 1))
 <|im_end|>
 
 <|im_start|>system
@@ -4098,14 +3013,10 @@ QUY TẮC:
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
 <|im_end|>
 <|im_start|>user
-đảng viên mất liên lạc với tổ chức .
+chính quyền làm thế nhằm trấn an dư luận .
 <|im_end|>
 <|im_start|>assistant
-AMR_NO_VAR: (mất
-    :pivot(đảng viên
-        :part-of (tổ))
-    :manner(liên lạc)
-    :accompanier(tổ chức))
+AMR_NO_VAR: (làm :agent(chính_quyền) :manner(thế) :purpose(trấn_an :theme(dư_luận) :agent (chính_quyền)))
 <|im_end|>
 
 <|im_start|>system
@@ -4121,17 +3032,10 @@ QUY TẮC:
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
 <|im_end|>
 <|im_start|>user
-ấn độ được chính phủ anh quản lí .
+kẻ phá hoại phải bị trừng trị đích đáng .
 <|im_end|>
 <|im_start|>assistant
-AMR_NO_VAR: (quản lí
-    :agent(chính phủ
-        :part-of(anh))
-    :beneficiary(country
-        :wiki(Ấn_Độ)
-        :name(name
-            :op1(ấn)
-            :op2(độ))))
+AMR_NO_VAR: (obligate-01 :topic(trừng_trị :patient(kẻ :mod(phá_hoại)) :manner(đích_đáng) :modality -))
 <|im_end|>
 
 <|im_start|>system
@@ -4147,13 +3051,10 @@ QUY TẮC:
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
 <|im_end|>
 <|im_start|>user
-nó ngủ như chết .
+ông ta đã đánh giá sai lầm về thực lực của quân địch .
 <|im_end|>
 <|im_start|>assistant
-AMR_NO_VAR: (ngủ
-    :agent(nó)
-    :compared-to(chết)
-    :degree(equal))
+AMR_NO_VAR: (đánh_giá :theme(ông :mod(ta)) :tense(đã) :manner(sai_lầm) :topic(thực_lực :poss(quân :mod(địch))))
 <|im_end|>
 
 <|im_start|>system
@@ -4169,14 +3070,10 @@ QUY TẮC:
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
 <|im_end|>
 <|im_start|>user
-giám đốc đang làm việc với chuyên gia nước ngoài .
+tôi không ở chung với bạn .
 <|im_end|>
 <|im_start|>assistant
-AMR_NO_VAR: (làm việc
-    :agent(giám đốc)
-    :tense(đang)
-    :accompanier(chuyên gia
-        :mod(nước ngoài)))
+AMR_NO_VAR: (ở :theme(tôi) :manner(chung) :accompanier(bạn) :polarity -)
 <|im_end|>
 
 <|im_start|>system
@@ -4192,15 +3089,10 @@ QUY TẮC:
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
 <|im_end|>
 <|im_start|>user
-tôi chỉ dựa vào sức mình là chính .
+việc đó đe doạ đối với hạnh phúc gia đình .
 <|im_end|>
 <|im_start|>assistant
-AMR_NO_VAR: (dựa
-    :theme(tôi)
-    :mod(chỉ)
-    :source(sức
-        :poss(mình))
-    :manner(chính))
+AMR_NO_VAR: (đe_doạ :agent(việc :mod(đó)) :goal(hạnh_phúc :poss(gia_đình)))
 <|im_end|>
 
 <|im_start|>system
@@ -4216,40 +3108,10 @@ QUY TẮC:
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
 <|im_end|>
 <|im_start|>user
-ông đã đi khắp châu âu .
+mèo già hoá cáo .
 <|im_end|>
 <|im_start|>assistant
-AMR_NO_VAR: (đi
-    :theme(ông)
-    :tense(đã)
-    :manner(khắp)
-    :location(region
-        :wiki(châu Âu)
-        :name(name
-            :op1(châu)
-            :op2(âu))))
-<|im_end|>
-
-<|im_start|>system
-Bạn là trợ lý phân tích AMR (Abstract Meaning Representation) cho tiếng Việt.
-
-QUY TẮC:
-1. Tuân thủ đúng định dạng output được yêu cầu.
-2. Dùng concept, biến và quan hệ AMR nhất quán với dữ liệu huấn luyện.
-3. Không dùng ví dụ, câu, nhãn vàng hoặc quy tắc rút ra từ tập test.
-4. Giữ dấu ngoặc AMR cân bằng.
-5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
-6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
-7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
-<|im_end|>
-<|im_start|>user
-cô ấy giỏi toán .
-<|im_end|>
-<|im_start|>assistant
-AMR_NO_VAR: (giỏi
-    :pivot(cô
-        :mod(ấy))
-    :topic(toán))
+AMR_NO_VAR: (hoá :theme(mèo :mod(già)) :result(cáo))
 <|im_end|>
 
 <|im_start|>system
@@ -4268,11 +3130,7 @@ QUY TẮC:
 cô ấy nghỉ việc từ hôm qua .
 <|im_end|>
 <|im_start|>assistant
-AMR_NO_VAR: (nghỉ việc
-    :agent(cô
-        :mod(ấy))
-    :initialTime(date-entity
-        :mod(hôm qua)))
+AMR_NO_VAR: (nghỉ_việc :agent(cô :mod(ấy)) :initialTime(date-entity :mod(hôm_qua)))
 <|im_end|>
 
 <|im_start|>system
@@ -4288,13 +3146,67 @@ QUY TẮC:
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
 <|im_end|>
 <|im_start|>user
-sản phẩm được in máy .
+phân xưởng được nghỉ bốn giờ .
 <|im_end|>
 <|im_start|>assistant
-AMR_NO_VAR: (in
-    :patient(sản phẩm)
-    :modality(được)
-    :instrument(máy))
+AMR_NO_VAR: (nghỉ :beneficiary(phân_xưởng) :modality(được) :duration(temporal-quantity :quant 4 :unit(giờ)))
+<|im_end|>
+
+<|im_start|>system
+Bạn là trợ lý phân tích AMR (Abstract Meaning Representation) cho tiếng Việt.
+
+QUY TẮC:
+1. Tuân thủ đúng định dạng output được yêu cầu.
+2. Dùng concept, biến và quan hệ AMR nhất quán với dữ liệu huấn luyện.
+3. Không dùng ví dụ, câu, nhãn vàng hoặc quy tắc rút ra từ tập test.
+4. Giữ dấu ngoặc AMR cân bằng.
+5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
+6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
+7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+<|im_end|>
+<|im_start|>user
+công binh tháo bom dưới đèo .
+<|im_end|>
+<|im_start|>assistant
+AMR_NO_VAR: (tháo :agent(công_binh) :patient(bom) :location(đèo :prep(dưới)))
+<|im_end|>
+
+<|im_start|>system
+Bạn là trợ lý phân tích AMR (Abstract Meaning Representation) cho tiếng Việt.
+
+QUY TẮC:
+1. Tuân thủ đúng định dạng output được yêu cầu.
+2. Dùng concept, biến và quan hệ AMR nhất quán với dữ liệu huấn luyện.
+3. Không dùng ví dụ, câu, nhãn vàng hoặc quy tắc rút ra từ tập test.
+4. Giữ dấu ngoặc AMR cân bằng.
+5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
+6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
+7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+<|im_end|>
+<|im_start|>user
+nó đang nằm võng .
+<|im_end|>
+<|im_start|>assistant
+AMR_NO_VAR: (nằm :theme(nó) :tense(đang) :location(võng))
+<|im_end|>
+
+<|im_start|>system
+Bạn là trợ lý phân tích AMR (Abstract Meaning Representation) cho tiếng Việt.
+
+QUY TẮC:
+1. Tuân thủ đúng định dạng output được yêu cầu.
+2. Dùng concept, biến và quan hệ AMR nhất quán với dữ liệu huấn luyện.
+3. Không dùng ví dụ, câu, nhãn vàng hoặc quy tắc rút ra từ tập test.
+4. Giữ dấu ngoặc AMR cân bằng.
+5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
+6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
+7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+<|im_end|>
+<|im_start|>user
+mùa màng thất bát do lũ lụt .
+<|im_end|>
+<|im_start|>assistant
+AMR_NO_VAR: (thất_bát :theme(mùa_màng) :cause(lũ_lụt))
 <|im_end|>
 
 <|im_start|>system
@@ -4313,10 +3225,7 @@ QUY TẮC:
 cha mẹ luôn hi sinh vì con cái .
 <|im_end|>
 <|im_start|>assistant
-AMR_NO_VAR: (hi sinh
-    :pivot(cha mẹ)
-    :purpose(con cái)
-    :time(always))
+AMR_NO_VAR: (hi_sinh :pivot(cha_mẹ) :purpose(con_cái) :time(always))
 <|im_end|>
 
 <|im_start|>system
@@ -4332,14 +3241,29 @@ QUY TẮC:
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
 <|im_end|>
 <|im_start|>user
-tôi thua nó nhiều mặt .
+chúng tôi hành động vì sự an toàn của nhân dân .
 <|im_end|>
 <|im_start|>assistant
-AMR_NO_VAR: (thua
-    :pivot(tôi)
-    :theme(nó)
-    :topic(mặt
-        :mod(nhiều)))
+AMR_NO_VAR: (hành_động :agent(chúng_tôi) :purpose(sự :compound(an_toàn) :poss(nhân_dân)))
+<|im_end|>
+
+<|im_start|>system
+Bạn là trợ lý phân tích AMR (Abstract Meaning Representation) cho tiếng Việt.
+
+QUY TẮC:
+1. Tuân thủ đúng định dạng output được yêu cầu.
+2. Dùng concept, biến và quan hệ AMR nhất quán với dữ liệu huấn luyện.
+3. Không dùng ví dụ, câu, nhãn vàng hoặc quy tắc rút ra từ tập test.
+4. Giữ dấu ngoặc AMR cân bằng.
+5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
+6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
+7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
+<|im_end|>
+<|im_start|>user
+nó nói như vẹt .
+<|im_end|>
+<|im_start|>assistant
+AMR_NO_VAR: (nói :agent(nó) :compared-to(vẹt))
 <|im_end|>
 
 <|im_start|>system
@@ -4358,12 +3282,7 @@ QUY TẮC:
 nhân dân đấu tranh trong niềm tin sâu sắc .
 <|im_end|>
 <|im_start|>assistant
-AMR_NO_VAR: (đấu tranh
-    :agent(nhân dân)
-    :setting(niềm
-        :prep(trong)
-        :compound(tin)
-        :mod(sâu sắc)))
+AMR_NO_VAR: (đấu_tranh :agent(nhân_dân) :setting(niềm :prep(trong) :compound(tin) :mod(sâu_sắc)))
 <|im_end|>
 
 <|im_start|>system
@@ -4379,15 +3298,10 @@ QUY TẮC:
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
 <|im_end|>
 <|im_start|>user
-ông ta gắt vợ luôn miệng .
+quán gần trường .
 <|im_end|>
 <|im_start|>assistant
-AMR_NO_VAR: (gắt
-    :agent(ông
-        :mod(ta))
-    :patient(vợ)
-    :manner(luôn
-        :compound(miệng)))
+AMR_NO_VAR: (gần :pivot(quán) :theme(trường))
 <|im_end|>
 
 <|im_start|>system
@@ -4403,18 +3317,10 @@ QUY TẮC:
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
 <|im_end|>
 <|im_start|>user
-địch tiến không được mà lùi cũng không xong .
+nó làm nhanh tay .
 <|im_end|>
 <|im_start|>assistant
-AMR_NO_VAR: (contrast-01
-    :ARG2(possible-01
-        :topic(lùi
-            :theme (địch))
-        :polarity -)
-    :ARG1(possible-01
-        :topic(tiến
-            :theme(địch))
-        :polarity -))
+AMR_NO_VAR: (làm :agent(nó) :manner(nhanh :compound(tay)))
 <|im_end|>
 
 <|im_start|>system
@@ -4430,13 +3336,10 @@ QUY TẮC:
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
 <|im_end|>
 <|im_start|>user
-cái bánh bị hỏng .
+thằng tý đã chén đĩa thịt hết nhẵn .
 <|im_end|>
 <|im_start|>assistant
-AMR_NO_VAR: (hỏng
-    :pivot(bánh
-        :classifier(cái))
-    :modality(bị))
+AMR_NO_VAR: (chén :tense(đã) :patient(đĩa :consist-of(thịt)) :manner(hết :compound(nhẵn)) :agent(person :classifier(thằng) :name(name :op1(tý))))
 <|im_end|>
 
 <|im_start|>system
@@ -4452,15 +3355,10 @@ QUY TẮC:
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
 <|im_end|>
 <|im_start|>user
-vợ ông công nằm viện .
+ông ấy có ba cái nhà .
 <|im_end|>
 <|im_start|>assistant
-AMR_NO_VAR: (nằm viện
-    :agent(vợ
-        :poss(person
-            :classifier(ông)
-            :name(name
-                :op1(công)))))
+AMR_NO_VAR: (có :pivot(ông :mod(ấy)) :theme(nhà :quant 3 :classifier(cái)))
 <|im_end|>
 
 <|im_start|>system
@@ -4476,20 +3374,10 @@ QUY TẮC:
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
 <|im_end|>
 <|im_start|>user
-quân nga chặn đứng quân đức .
+nhà nằm bên đường .
 <|im_end|>
 <|im_start|>assistant
-AMR_NO_VAR: (chặn đứng
-    :agent(quân
-        :mod(country
-            :wiki(nga)
-            :name(name
-                :op1(nga))))
-    :patient(quân
-        :mod(country
-            :wiki(đức)
-            :name(name
-                :op1(đức)))))
+AMR_NO_VAR: (nằm :theme(nhà) :location(đường :mod(bên)))
 <|im_end|>
 
 <|im_start|>system
@@ -4505,14 +3393,10 @@ QUY TẮC:
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
 <|im_end|>
 <|im_start|>user
-thuyền đi dọc bờ sông .
+bà ta đã mua một lít dung môi .
 <|im_end|>
 <|im_start|>assistant
-AMR_NO_VAR: (đi
-    :theme(thuyền)
-    :path(dọc
-        :op1(bờ
-            :mod(sông))))
+AMR_NO_VAR: (mua :agent(bà :mod(ta)) :tense(đã) :patient(dung_môi :quant 1 :unit(lít)))
 <|im_end|>
 
 <|im_start|>system
@@ -4528,13 +3412,10 @@ QUY TẮC:
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
 <|im_end|>
 <|im_start|>user
-đó là tình thương của người mẹ .
+đó là tình thương con của người mẹ .
 <|im_end|>
 <|im_start|>assistant
-AMR_NO_VAR: (tình thương
-    :domain(đó)
-    :poss(mẹ
-        :classifier(người)))
+AMR_NO_VAR: (tình :domain(đó) :compound(thương :patient(con)) :poss(mẹ :classifier(người)))
 <|im_end|>
 
 <|im_start|>system
@@ -4550,35 +3431,8 @@ QUY TẮC:
 7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
 <|im_end|>
 <|im_start|>user
-bụng tôi bị đau .
+đó là triệu chứng thông thường .
 <|im_end|>
 <|im_start|>assistant
-AMR_NO_VAR: (đau
-    :theme(bụng
-        :part-of(tôi))
-    :modality(bị))
-<|im_end|>
-
-<|im_start|>system
-Bạn là trợ lý phân tích AMR (Abstract Meaning Representation) cho tiếng Việt.
-
-QUY TẮC:
-1. Tuân thủ đúng định dạng output được yêu cầu.
-2. Dùng concept, biến và quan hệ AMR nhất quán với dữ liệu huấn luyện.
-3. Không dùng ví dụ, câu, nhãn vàng hoặc quy tắc rút ra từ tập test.
-4. Giữ dấu ngoặc AMR cân bằng.
-5. Mỗi biến phải duy nhất trong graph, trừ khi cần tái sử dụng cho reentrancy.
-6. Với output không biến, không để sót tham chiếu biến trần như `x`, `x1`.
-7. Output chỉ gồm các nhãn bước và nội dung AMR được yêu cầu.
-<|im_end|>
-<|im_start|>user
-anh đã ghi bàn thắng quốc tế đầu tiên .
-<|im_end|>
-<|im_start|>assistant
-AMR_NO_VAR: (ghi
-    :agent(anh)
-    :tense(đã)
-    :patient(bàn thắng
-        :mod(quốc tế)
-        :mod(đầu tiên)))
+AMR_NO_VAR: (triệu_chứng :domain(đó) :mod(thông_thường))
 <|im_end|>

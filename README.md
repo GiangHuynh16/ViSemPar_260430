@@ -19,6 +19,7 @@ Model selection is based on held-out dev Smatch for the final AMR only. Dev loss
 - `run_scripts/run_vi_epoch_smatch_grid.py`: current end-to-end experiment runner.
 - `run_scripts/run_vietnamese_v2.sh`: compatibility wrapper around the current runner.
 - `configs/vietnamese_v2/`: source configs for B1, B2, and MTUP2.
+- `legacy/experiments/`: archived MTUP2_CHECK/MTUP3/MTUP4 artifacts and old results.
 
 ## Environment
 
@@ -45,6 +46,11 @@ python3 src/data_pipeline.py \
   --dev_seed 42 \
   --methods B1 B2 MTUP2
 ```
+
+The generator validates every active gold graph with `penman.decode()`, creates
+one deterministic train/dev manifest, and writes an aligned 150-example public
+test manifest. Canonical AMR remains PENMAN; no display-only underscore-to-space
+conversion is applied.
 
 ## Run The Current Experiment
 
