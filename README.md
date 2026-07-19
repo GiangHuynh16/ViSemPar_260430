@@ -250,7 +250,7 @@ results/vietnamese_v2_epoch_smatch/epoch_smatch_test_summary.csv
 ## Notes
 
 - Public test is never used for checkpoint or LR selection.
-- `data/raw/public_test.txt` has 150 sentences while `public_test_ground_truth.txt` has 149 gold AMRs; the evaluator handles this known missing-gold case for test only.
+- The regenerated `data/formatted/vietnamese_v2/test.txt` and `test_ground_truth.txt` contain 150 deterministically aligned records. The old 149-example result artifacts are archived and must not be used for publication.
 - Generated configs are written under `configs/generated/vi_epoch_smatch/` when the runner executes.
 - Historical scripts and probe/dev-loss tuning helpers were removed to keep the repo focused on the active protocol.
 - Training dev-loss evaluation is disabled by default to avoid spending GPU on a metric that is not used for selection.

@@ -43,6 +43,13 @@ class CorrectnessTests(unittest.TestCase):
         for key in ["f1", "valid_graph_rate", "concept", "relation", "attribute", "root_acc"]:
             self.assertIn(key, metrics)
 
+    def test_smatch_is_reproducible(self):
+        predictions = ["(a / thing :ARG0 (b / person))"]
+        gold = ["(x / thing :ARG0 (y / person))"]
+        first = compute_metrics(predictions, gold)["smatch"]
+        second = compute_metrics(predictions, gold)["smatch"]
+        self.assertEqual(first, second)
+
     def test_training_masks_only_before_assistant_response(self):
         example = (
             "<|im_start|>system\nS\n<|im_end|>\n"

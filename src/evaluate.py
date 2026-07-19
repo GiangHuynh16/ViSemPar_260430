@@ -5,6 +5,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import random
 import re
 import sys
 from collections import Counter
@@ -64,34 +65,60 @@ def _counter_score(pred: Counter, gold: Counter) -> dict[str, float]:
     return _f1(sum((pred & gold).values()), sum(pred.values()), sum(gold.values()))
 
 
-def compute_smatch_f1(predictions: list[str], gold: list[str]) -> dict[str, float]:
+def _deterministic_random_init(candidate_mapping, rng: random.Random):
+    """Equivalent to smatch's restart initializer without time-based seeding."""
+    matched = set()
+    result = []
+    for candidates in candidate_mapping:
+        remaining = list(candidates)
+        while remaining:
+            candidate = remaining.pop(rng.randrange(len(remaining)))
+            if candidate not in matched:
+                matched.add(candidate)
+                result.append(candidate)
+                break
+        else:
+            result.append(-1)
+    return result
+
+
+def compute_smatch_f1(
+    predictions: list[str], gold: list[str], smatch_seed: int = 0
+) -> dict[str, float]:
+    """Compute Smatch with a reproducible seed for smatch's hill climbing."""
     match = predicted = gold_count = 0
-    for prediction, reference in zip(predictions, gold):
-        prediction_graph = parse_prediction(prediction)
-        if prediction_graph is None:
+    previous_initializer = smatch.random_init_mapping
+    rng = random.Random(smatch_seed)
+    smatch.random_init_mapping = lambda candidates: _deterministic_random_init(candidates, rng)
+    try:
+        for prediction, reference in zip(predictions, gold):
+            prediction_graph = parse_prediction(prediction)
+            if prediction_graph is None:
+                try:
+                    _, _, reference_count = smatch.get_amr_match("(x / invalid)", reference)
+                except Exception:
+                    reference_count = 0
+                gold_count += reference_count
+                continue
             try:
-                _, _, reference_count = smatch.get_amr_match("(x / invalid)", reference)
+                current_match, current_predicted, current_gold = smatch.get_amr_match(
+                    prediction, reference
+                )
             except Exception:
-                reference_count = 0
-            gold_count += reference_count
-            continue
-        try:
-            current_match, current_predicted, current_gold = smatch.get_amr_match(
-                prediction, reference
-            )
-        except Exception:
-            current_match = current_predicted = 0
-            try:
-                _, _, current_gold = smatch.get_amr_match("(x / invalid)", reference)
-            except Exception:
-                current_gold = 0
-        match += current_match
-        predicted += current_predicted
-        gold_count += current_gold
+                current_match = current_predicted = 0
+                try:
+                    _, _, current_gold = smatch.get_amr_match("(x / invalid)", reference)
+                except Exception:
+                    current_gold = 0
+            match += current_match
+            predicted += current_predicted
+            gold_count += current_gold
+    finally:
+        smatch.random_init_mapping = previous_initializer
     return _f1(match, predicted, gold_count)
 
 
-def compute_metrics(predictions: list[str], gold: list[str]) -> dict:
+def compute_metrics(predictions: list[str], gold: list[str], smatch_seed: int = 0) -> dict:
     if len(predictions) != len(gold):
         raise ValueError(f"Prediction/gold count mismatch: {len(predictions)} != {len(gold)}")
 
@@ -123,7 +150,7 @@ def compute_metrics(predictions: list[str], gold: list[str]) -> dict:
             root_correct += 1
 
     n = len(gold)
-    smatch_scores = compute_smatch_f1(predictions, gold)
+    smatch_scores = compute_smatch_f1(predictions, gold, smatch_seed=smatch_seed)
     concept_scores = _counter_score(concepts_pred, concepts_gold)
     relation_scores = _counter_score(relations_pred, relations_gold)
     attribute_scores = _counter_score(attributes_pred, attributes_gold)
