@@ -4,8 +4,9 @@ group: vietnamese_v2_mtup_2tasks
 language: vi
 no_var_mode: clean
 lora:
-  r: 64
-  alpha: 128
+  # Match B1/B2 capacity for a fair direct comparison.
+  r: 128
+  alpha: 256
   dropout: 0.05
   bias: none
   target_modules:
