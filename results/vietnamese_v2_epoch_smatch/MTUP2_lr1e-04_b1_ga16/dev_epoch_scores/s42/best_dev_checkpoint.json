@@ -1,0 +1,42 @@
+{
+  "method": "MTUP2",
+  "run_name": "MTUP2_lr1e-04_b1_ga16",
+  "group": "vietnamese_v2_epoch_smatch",
+  "seed": 42,
+  "checkpoint": "/mnt/nghiepth/giang/ViSemPar_260430/checkpoints/vietnamese_v2_epoch_smatch/MTUP2_lr1e-04_b1_ga16/s42/checkpoint-3060",
+  "checkpoint_step": 3060,
+  "epoch": 30.0,
+  "epoch_sort": 30.0,
+  "pred_path": "/mnt/nghiepth/giang/ViSemPar_260430/results/vietnamese_v2_epoch_smatch/MTUP2_lr1e-04_b1_ga16/dev_epoch_scores/s42/s42_checkpoint-3060_dev_pred.txt",
+  "dev_eval_interval": 5,
+  "n_samples": 181,
+  "valid_graphs": 179,
+  "valid_graph_rate": 0.989,
+  "parsable": 179,
+  "parsable_rate": 0.989,
+  "avg_output_len": 118.5,
+  "root_acc": 0.8011,
+  "precision": 0.7902,
+  "recall": 0.7262,
+  "f1": 0.7569,
+  "smatch": {
+    "precision": 0.7902,
+    "recall": 0.7262,
+    "f1": 0.7569
+  },
+  "concept": {
+    "precision": 0.8987,
+    "recall": 0.8328,
+    "f1": 0.8645
+  },
+  "relation": {
+    "precision": 0.6979,
+    "recall": 0.6252,
+    "f1": 0.6596
+  },
+  "attribute": {
+    "precision": 0.7812,
+    "recall": 0.8721,
+    "f1": 0.8242
+  }
+}

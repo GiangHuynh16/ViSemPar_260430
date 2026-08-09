@@ -1,0 +1,724 @@
+#::snt - lạ thực đấy !
+AMR: (l / lạ :modality(t / thực) :modality(đ / đấy))
+
+
+#::snt tôi biết cách cho ông nghỉ ngơi khi nào ông muốn đấy ...
+AMR: (b / biết :pivot(t / tôi) :theme(c / cách :agent-of(c1 / cho :beneficiary-arg0(ô / ông) :purpose(n / nghỉ_ngơi :time(k / khi :mod(m / muốn :pivot(ô1 / ông))) :agent ô))) :pivot t)
+
+
+#::snt khi nào ông muốn nghỉ , ông cứ bước đi ...
+AMR: (a / and :op1(m / muốn :pivot(ô / ông) :theme(n1 / nghỉ :time(wz1 / amr-unknown))) :op2(b / bước :compound(đ / đi) :agent ô))
+
+
+#::snt cái mà ta thích nhất trên đời , là ngủ .
+AMR: (a / and :op1(t / thích :pivot(t1 / ta) :degree(n / nhất) :theme(c / cái :prep(t2 / trên) :mod(đ / đời))) :op2(t3 / theme-of :domain(n1 / ngủ) :op1 t))
+
+
+#::snt nhưng tinh cầu của ông ấy bé quá .
+AMR: (c / contrast-01 :ARG2(b / bé :domain(t / tinh_cầu :poss(ô / ông :mod(ấ / ấy))) :degree(q / quá)))
+
+
+#::snt - kìa ! kia là một nhà thám hiểm ! ông ta kêu lên thế khi nhìn thấy ông hoàng nhỏ .
+AMR: (k2 / kêu :topic(n / nhà :domain(k / kia) :compound(t / thám_hiểm) :quant 1) :agent(ô / ông :mod(t1 / ta)) :compound(l1 / lên) :time(n1 / nhìn :compound(t2 / thấy) :goal(ô1 / ông_hoàng :mod(n2 / nhỏ)) :agent ô))
+
+
+#::snt - chú từ đâu đến ? tôn ông già hỏi .
+AMR: (h / hỏi :topic(đ1 / đến :agent(c / chú) :initialLocation(a / amr-unknown)) :agent(t1 / tôn :mod(ô / ông :mod(g / già))))
+
+
+#::snt - Và các thành phố , và các con sông , và các sa mạc ?
+AMR: (a / and :op1(t / thành_phố) :op2(s / sông :classifier(c1 / con)) :op3(s1 / sa_mạc))
+
+
+#::snt ông ta không rời bàn giấy của mình .
+AMR: (r / rời :agent(ô / ông :mod(t / ta)) :polarity - :source(b / bàn_giấy :poss(m / mình)))
+
+
+#::snt - nhưng mà chú , chú đến từ xa .
+AMR: (c2 / contrast-01 :ARG2(đ / đến :agent(c1 / chú) :initialLocation(x / xa)))
+
+
+#::snt đợi cho nhà thám hiểm cung cấp bằng chứng rồi , người ta mới ghi lại bằng bút mực .
+AMR: (g / ghi :condition(đ / đợi :patient(c1 / cung_cấp :agent(n / nhà :compound(t / thám_hiểm)) :theme(b / bằng_chứng))) :agent(n1 / người_ta) :compound(l / lại) :instrument(b1 / bút_mực))
+
+
+#::snt - tôi cũng có một bông hoa .
+AMR: (c1 / có :pivot(t / tôi) :theme(h / hoa :quant 1 :classifier(b / bông)))
+
+
+#::snt cái ta kể tới , đó là quả núi .
+AMR: (n / núi :domain(c / cái :mod(t / ta) :compound(k / kể :compound(t1 / tới))) :classifier(q / quả))
+
+
+#::snt thế là ông hoàng nhỏ ra đi , lòng mơ đến đoá hoa của mình .
+AMR: (r / ra :agent(ô / ông_hoàng :mod(n / nhỏ)) :compound(đ / đi) :cause(m / mơ :theme(h / hoa :classifier(đ1 / đoá) :poss ô) :pivot ô))
+
+
+#::snt trước tiên là phiên những người đốt đèn nước Tân Tây Lan và nước úc .
+AMR: (t1 / phiên :time(t / trước_tiên) :domain(n1 / người :agent-of(đ / đốt :patient(đ1 / đèn)) :location(a / and :op2(c1 / country :wiki(wz1 / Úc) :name(n5 / name :op2(wz2 / úc) :op1(wz3 / úc))) :op1(c / country :wiki(wz4 / Tân_Tây_Lan) :name(n4 / name :op2(wz5 / Tây) :op1(wz6 / Tân)))))))
+
+
+#::snt sau khi đốt đèn xong , họ đi ngủ .
+AMR: (đ1 / đi :time(đ / đốt :patient(đè / đèn) :manner(x / xong)) :agent(h / họ) :compound(n / ngủ))
+
+
+#::snt rồi đến những người của Châu Phi và Châu Âu .
+AMR: (đ / đến :poss(n1 / người :location(wz1 / and :op1(c / Châu_Phi) :op2(c1 / Châu_Eu))))
+
+
+#::snt bạn tin vào tôi mà .
+AMR: (t / tin :pivot(b / bạn) :theme(t1 / tôi) :mode expressive)
+
+
+#::snt và cả hai lặng thinh .
+AMR: (a / and :op2(l / lặng_thinh :domain(h / hai)))
+
+
+#::snt - nhưng ta mạnh hơn ngón tay của một ông vua , rắn nói .
+AMR: (c2 / contrast-01 :ARG2(m / mạnh :domain(t / ta) :compared-to(n1 / ngón_tay :part-of(v / vua :quant 1 :classifier(ô / ông))) :degree(wz1 / more)))
+
+
+#::snt - ta có thể chở cậu đi xa hơn cả một chiếc tàu , rắn nói .
+AMR: (n / nói :topic(c1 / chở :agent(t / ta) :modality(p / possible) :patient(c / cậu) :purpose(đ / đi :manner(x / xa :degree(h / hơn) :quant(t2 / tàu :quant 1 :classifier(c2 / chiếc)))) :polarity -) :agent(r / rắn))
+
+
+#::snt và họ lặng thinh .
+AMR: (a / and :op2(l / lặng_thinh :pivot(h / họ)))
+
+
+#::snt khoảng sáu hay bảy mống .
+AMR: (a / approximate-quantity :quant(s / sáu :op1(h / hay) :op2(b / bảy_mống)))
+
+
+#::snt - từ biệt , đoá hoa nói .
+AMR: (n / nói :topic(t / từ_biệt) :agent(h / hoa :classifier(đ / đoá)))
+
+
+#::snt - hãy làm bạn với tôi , tôi cô đơn lắm , em nói .
+AMR: (n / nói :topic(l / làm :mode imperative :goal(b / bạn) :source(t / tôi)) :agent(e / em) :cause(c / cô_đơn :domain(t1 / tôi) :degree(l1 / lắm)))
+
+
+#::snt - chúc một ngày tốt lành , các hoa hồng trả lời .
+AMR: (t1 / trả_lời :topic(c / chúc :topic(n / ngày :mod(t / tốt_lành) :quant 1)) :agent(h / hoa_hồng))
+
+
+#::snt - đúng đó là món quà tôi biếu ông ... giống như là nước vậy ...
+AMR: (q / quà :domain(đ / đúng :mod(đ1 / đó)) :classifier(m / món) :agent-of(b / biếu :agent(t / tôi) :beneficiary(ô / ông)) :mod(w1 / resemble :compared-to(n1 / nước :degree(e / equal))))
+
+
+#::snt thế thôi mà !
+AMR: (t / thế :mod(t1 / thôi) :mode expressive)
+
+
+#::snt loài rắn , chúng ác lắm .
+AMR: (á / ác :domain(l / loài :mod(r / rắn)) :domain(c / chúng) :degree(l1 / lắm))
+
+
+#::snt chúng có thể cắn để mà chơi ...
+AMR: (p / possible-01 :result-arg1(c1 / cắn :agent(c / chúng) :purpose(c2 / chơi :agent c)))
+
+
+#::snt tất cả mọi ngôi sao sẽ rót cho tôi uống ...
+AMR: (r / rót :theme(s / sao :classifier(n / ngôi) :mod(a / all)) :tense(s1 / sẽ) :beneficiary-arg2(t1 / tôi) :purpose(u / uống :agent t1))
+
+
+#::snt em không kêu .
+AMR: (k1 / kêu :agent(e / em) :polarity -)
+
+
+#::snt nghĩa là ... không hẳn là như thế .
+AMR: (n / nghĩa_là :manner(l1 / like :polarity - :compared-to(t / thế)))
+
+
+#::snt ông hoàng nhỏ đêm nào cũng đậy hoa trong cái bầu kính , và em cũng trông chừng con cừu cẩn thận . "
+AMR: (a / and :op1(đ1 / đậy :agent(ô / ông_hoàng :mod(n / nhỏ)) :theme(h / hoa) :location(b / bầu :prep(t / trong) :classifier(c1 / cái) :mod(k / kính)) :time(d / date-entity :dayperiod(đ / đêm :mod(n1 / nào)))) :op2(t1 / trông_chừng :agent(e / em) :goal(c3 / cừu :classifier(c2 / con)) :manner(c4 / cẩn_thận)))
+
+
+#::snt em đã quên mất , một đêm nào đó , cái bầu kính , hoặc con cừu lẻn ra không một tiếng động trong đêm ... "
+AMR: (q / quên :pivot(e / em) :tense(đ / đã) :manner(m / mất) :time(đ1 / đêm :mod(n / nào :mod(đ2 / đó))) :theme(o / or :op1(b / bầu :classifier(c / cái) :mod(k / kính)) :op2(c2 / cừu :classifier(c1 / con) :agent-of(l / lẻn :compound(r / ra) :manner(t / tiếng_động :polarity -) :location(đ3 / đêm)))))
+
+
+#::snt với bạn , là người cũng yêu ông hoàng bé nhỏ , cũng như với tôi , cả vũ trụ này sẽ chẳng còn như cũ nếu như ở đâu đó , không biết ở đâu , một con cừu mà ta không biết , đã có hay là không ăn một đoá hoa hồng ...
+AMR: (y / yêu :pivot(n / người) :theme(ô / ông_hoàng :mod(b1 / bé_nhỏ)) :degree(e / equal :compared-to(t1 / tôi)) :concession(v2 / ở :manner(đ1 / đâu_đó) :op1(b3 / biết :polarity - :agent n) :op2(ă / ăn :theme(h / hoa_hồng :quant 1 :classifier(đ2 / đoá)) :agent n :polarity - :time(n2 / now))) :condition(a / and :op1(ở / ở :manner(đ / đâu :prep(t / tại)) :op1(p / person :pivot-of(b / biết :topic(c2 / cừu :quant 1 :classifier(c1 / con)) :polarity - :pivot n))) :op2(c3 / có :tense(s / sẽ) :theme h :polarity - :condition(z / be-1 :time(n1 / now)))))
+
+
+#::snt ông hoàng bé nhỏ ơi , dần dà , như vậy đó , tôi hiểu ra cuộc đời nhỏ nhoi buồn bã của em .
+AMR: (h / hiểu :goal(ô / ông_hoàng :mod(b / bé_nhỏ) :mode expressive) :manner(d / dần_dà) :compared-to(v / vậy :mod(đ / đó)) :pivot(t / tôi) :compound(r / ra) :topic(c1 / cuộc_đời :mod(n1 / nhỏ_nhoi :comp(b1 / buồn_bã)) :poss(e / em)))
+
+
+#::snt ta đi xem mặt trời lặn đi .
+AMR: (đ / đi :agent(t / ta) :purpose(x / xem :theme(m / mặt_trời :theme-of(l / lặn)) :agent t))
+
+
+#::snt - đợi cái gì ?
+AMR: (đ / đợi :theme(a / amr-unknown))
+
+
+#::snt - đợi lúc mặt trời đó lặn .
+AMR: (đ / đợi :time(l1 / lặn :theme(m / mặt_trời :mod(đ1 / đó))))
+
+
+#::snt và em bảo tôi :
+AMR: (a / and :op2(b / bảo :agent(e / em) :goal(t / tôi)))
+
+
+#::snt nhưng ông hoàng bé nhỏ không trả lời .
+AMR: (c / contrast-01 :ARG2(t / trả_lời :agent(ô / ông_hoàng :mod(b / bé_nhỏ)) :polarity -))
+
+
+#::snt tôi đã rất lo lắng vì thấy cái máy có vẻ hỏng nặng lắm , mà nước uống thì cạn dần làm cho tôi sợ xảy ra điều tệ hại nhất .
+AMR: (l / lo_lắng :pivot(t / tôi) :tense(đ / đã) :degree(r / rất) :cause(a / and :op1(t1 / thấy :patient(m / máy :classifier(c / cái) :mod(h / hỏng :modality(c1 / có :compound(v1 / vẻ)) :degree(n / nặng :degree(l1 / lắm))) :agent t) :pivot t) :op2(s / sợ :cause(c2 / cạn :theme(n1 / nước :compound(u / uống)) :manner(d1 / dần) :patient-of(t3 / tôi)) :pivot t)))
+
+
+#::snt một buổi sáng , chúng hiện ra trong cỏ rồi lại héo tàn vào chiều tối .
+AMR: (a / and :op1(h / hiện :agent(c / chúng) :compound(r / ra) :location(c1 / cỏ :prep(t / trong))) :op2(h1 / héo_tàn :time(c2 / chiều :mod(t1 / tối)) :pivot c))
+
+
+#::snt nhưng cái cây nhỏ liền thôi không lớn lên nữa , và bắt đầu sửa soạn để ra hoa .
+AMR: (c / contrast-01 :ARG2(a / and :op1(l1 / lớn :theme(c1 / cây :classifier(c11 / cái) :mod(n1 / nhỏ)) :compound(l / lên) :polarity - :time(t / thôi)) :op2(b / bắt_đầu :topic(s / sửa_soạn :purpose(r / ra_hoa :agent c1) :agent c1))))
+
+
+#::snt chẳng hạn một hôm , cô đã nói với ông hoàng
+AMR: (n / nói :example(h / hôm :quant 1) :agent(c1 / cô) :tense(đ / đã) :goal(ô / ông_hoàng))
+
+
+#::snt cô chẳng thể hiểu được gì về các thế giới khác .
+AMR: (h / hiểu :pivot(c / cô) :polarity - :theme(g / gì) :topic(t1 / thế_giới :mod(k / khác)))
+
+
+#::snt " đáng lẽ tôi không nên nghe , một hôm cậu em thú nhận với tôi , không bao giờ nên nghe loài hoa cả .
+AMR: (t1 / thú_nhận :agent(e / em :classifier(c / cậu)) :goal(t2 / tôi) :topic(a / and :op1(r / recommend-01 :topic(n1 / nghe :agent(t / tôi) :polarity -) :time(h / hôm :quant 1) :agent e) :op2(r1 / recommend-01 :topic(n2 / nghe :polarity - :theme(l / loài :mod(h1 / hoa)) :agent t) :time(e1 / ever))))
+
+
+#::snt câu chuyện móng vuốt ấy đáng lẽ làm cho tôi cảm động thì tôi lại bực ... "
+AMR: (l1 / làm :theme(c / câu_chuyện :mod(m / móng_vuốt) :mod(ấ / ấy)) :modality(đ / đáng_lẽ) :patient(t1 / cảm_động :pivot(t / tôi)) :concession(b / bực :pivot(t2 / tôi)))
+
+
+#::snt đáng lẽ tôi phải xét đoán nàng trên việc làm chứ không phải bằng lời nói .
+AMR: (o / obligate-01 :result-arg1(x / xét_đoán :agent(t / tôi) :theme(n / nàng) :topic(v / việc_làm :prep(t1 / trên)) :manner(l / lời_nói :prep(b / bằng) :polarity -)))
+
+
+#::snt nàng toả thơm tôi , làm cho tôi sáng rực lên .
+AMR: (l / làm :cause(t / toả :agent(n / nàng) :theme(t1 / thơm :beneficiary(t2 / tôi))) :patient(s / sáng_rực :pivot(t3 / tôi) :manner(l1 / lên)))
+
+
+#::snt ông hoàng nhỏ cũng nhổ , với một chút ngậm ngùi , những cái mầm vừa nhú của bọn baobab .
+AMR: (n1 / nhổ :agent(ô / ông_hoàng :mod(n / nhỏ)) :accompanier(c1 / chút :mod(n2 / ngậm_ngùi) :quant 1) :theme(m1 / mầm :classifier(c3 / cái) :tense(v1 / vừa) :compound(n4 / nhú) :poss(b / baobab :classifier(b1 / bọn))))
+
+
+#::snt nhưng mọi việc quen thuộc này buổi sáng hôm nay sao đối với em thật vô cùng êm đềm .
+AMR: (c / contrast-01 :ARG2(v / việc :mod(q / quen_thuộc) :mod(n1 / này) :topic(s / sáng :time(b / buổi) :mod(h / hôm_nay)) :manner(ê / êm_đềm :domain v :degree(t / thật) :goal(e / em)) :mode expressive))
+
+
+#::snt nhưng nàng không đáp .
+AMR: (c / contrast-01 :ARG2(đ / đáp :agent(n1 / nàng) :polarity -))
+
+
+#::snt nếu không ai sẽ viếng thăm em ?
+AMR: (v / viếng_thăm :condition(a / ai :polarity -) :agent e :mode interrogative)
+
+
+#::snt nàng ngây thơ chìa ra bốn cái gai của mình .
+AMR: (c / chia :agent(n / nàng :mod(n1 / ngây_thơ)) :compound(r / ra) :theme(g / gai :quant 4 :classifier(c1 / cái) :poss n))
+
+
+#::snt - đừng chần chờ như vậy nữa , khó chịu lắm .
+AMR: (k / khó_chịu :domain(c / chần_chờ :modality(đ / đừng) :compared-to(v / vậy) :degree(e / equal)) :degree(l / lắm))
+
+
+#::snt nhà vua mặc áo đỏ tía đính lông thú , ngự trên một cái ngai vàng thật giản dị nhưng đồng thời cũng thật uy nghi .
+AMR: (a / and :op1(m / mặc :agent(n / nhà_vua) :theme(á / áo :mod(đ / đỏ_tía) :theme-of(đ1 / đính :theme(l / lông :mod(t / thú))))) :op2(n2 / ngự :location(n4 / ngai :prep(t1 / trên) :quant 1 :classifier(c / cái) :mod(v1 / vàng) :mod(g / giản_dị :degree(t2 / thật))) :op2(u / uy_nghi :degree(t3 / thật) :pivot n) :agent n))
+
+
+#::snt Det mọi người đều là thần dân .
+AMR: (t / thần_dân :domain(n / người))
+
+
+#::snt ông hoàng nhỏ đưa mắt tìm chỗ ngồi , nhưng cả tinh cầu đã bị cái áo choàng lông thú tuyệt đẹp choán hết chỗ .
+AMR: (c1 / contrast-01 :ARG1(đ / đưa_mắt :agent(ô / ông_hoàng :mod(n / nhỏ)) :purpose(t / tìm :location(c / chỗ :compound(n1 / ngồi)) :agent ô)) :ARG2(c2 / choán :theme(á / áo_choàng :classifier(c11 / cái) :mod(l / lông :mod(t1 / thú)) :mod(d / đẹp :degree(t2 / tuyệt))) :tense(đ1 / đã) :manner(h / hết :theme(c3 / chỗ)) :patient t11 / tinh_cầu :agent ô)))
+
+
+#::snt nhưng ông hoàng bé nhỏ lấy làm kinh ngạc .
+AMR: (c / contrast-01 :ARG2(k / kinh_ngạc :pivot(ô / ông_hoàng :mod(b / bé_nhỏ))))
+
+
+#::snt ngày tôi còn là một cậu bé , ánh sáng của cây noel , tiếng nhạc của buổi lễ nửa đêm , những nụ cười dịu dàng cũng đã làm nên sự rực rỡ của món quà noel mà tôi được nhận .
+AMR: (l1 / làm :time(n / ngày :mod(c / còn :pivot(t / tôi) :domain(b / bé :quant 1 :classifier(c2 / cậu)))) :theme(s / sự :compound(r / rực_rỡ) :poss(q / quà :classifier(m1 / món) :mod(n2 / noel) :agent-of(n4 / nhận :modality(đ1 / được) :patient t))) :modality(đ / đã) :cause(a / and :op1(á / ánh :compound(s1 / sáng) :poss(c3 / cây :mod(n1 / noel))) :op2(t1 / tiếng :compound(n3 / nhạc) :poss(b1 / buổi :mod(l2 / lễ) :time(d / date-entity :dayperiod(n5 / nửa_đêm))))))
+
+
+#::snt và ông hoàng nhỏ nói thêm :
+AMR: (a / and :op2(n1 / nói :agent(ô / ông_hoàng :mod(n / nhỏ)) :compound(t / thêm)))
+
+
+#::snt phải tìm kiếm với trái tim .
+AMR: (o / obligate-01 :topic(t / tìm_kiếm :manner(t1 / trái_tim)))
+
+
+#::snt nhưng em chẳng trả lời tôi .
+AMR: (c / contrast-01 :ARG2(t / trả_lời :agent(e / em) :polarity - :goal(t1 / tôi)))
+
+
+#::snt em bảo tôi :
+AMR: (b / bảo :agent(e / em) :goal(t / tôi))
+
+
+#::snt và em đỏ mặt .
+AMR: (a / and :op2(đ / đỏ :pivot(e / em) :compound(m / mặt)))
+
+
+#::snt một giọng nói khác có lẽ trả lời em , vì em lại đáp :
+AMR: (t / trả_lời :agent(g / giọng :compound(n / nói) :mod(k / khác)) :modality(c / có_lẽ) :goal(e / em) :cause(đ / đáp :agent(e1 / em)))
+
+
+#::snt tôi dừng lại , trái tim se thắt , nhưng tôi vẫn không hiểu .
+AMR: (c / contrast-01 :ARG1(d / dừng :agent(t / tôi) :compound(l / lại) :result(w1 / and :op1(s / se :pivot(t1 / trái_tim) :compound(t2 / thắt)) :op2(h / hiểu :polarity - :pivot t))) :ARG2(h1 / hiểu :polarity - :manner(v / vẫn) :pivot t))
+
+
+#::snt - cậu em ạ , em đã sợ hãi ...
+AMR: (s / sợ_hãi :pivot(e1 / em) :tense(đ / đã))
+
+
+#::snt một lần nữa , tôi lại cảm thấy lạnh buốt người vì một cái gì đó không thể cứu vãn được nữa .
+AMR: (c / cảm :pivot(t / tôi) :compound(t1 / thấy) :manner(l1 / lạnh_buốt :patient(n1 / người)) :cause(c2 / cứu_vãn :theme(g / gì :mod(đ / đó) :quant 1 :classifier(c1 / cái)) :polarity - :agent t))
+
+
+#::snt - giống như bông hoa của tôi .
+AMR: (r / resemble-01 :compared-to(h / hoa :classifier(b / bông) :poss(t / tôi)) :degree(e / equal))
+
+
+#::snt ví dụ ông gọi nó là tiểu hành tinh 3251 .
+AMR: (e / example :topic(g / gọi :agent(ô / ông) :patient(n / nó) :compound(w / be-planet :wiki(t / tiểu_hành_tinh :name(n1 / name :op1(wz1 / 3251))) :name(n2 / name :op1(t1 / tiểu) :op2(h / hành_tinh) :op3(wz2 / 3251)))))
+
+
+#::snt tiểu hành tinh đó chỉ được trông thấy có một lần trong kính viễn vọng năm 1909 , bởi một nhà thiên văn Thổ Nhĩ Kỳ .
+AMR: (t1 / trông :theme(t / tiểu_hành_tinh :mod(đ / đó)) :degree(c / chỉ) :compound(t2 / thấy) :frequency(l / lần :quant 1) :setting(k / kính_viễn_vọng :time(d / date-entity :year 1909)) :cause(n1 / nhà :compound(t3 / thiên_văn) :mod(c2 / country :wiki(t4 / Thổ_Nhĩ_Kỳ) :name(n11 / name :op1(t5 / Thổ) :op2(N1 / Nhĩ) :op3(K / Kỳ)))) :modality +)
+
+
+#::snt người lớn là thế đấy .
+AMR: (t / thế :domain(n / người_lớn) :modality(đ / đấy))
+
+
+#::snt những người lớn rất thích chữ số .
+AMR: (t / thích :pivot(n1 / người_lớn) :degree(r / rất) :theme(c / chữ_số))
+
+
+#::snt bởi vì tôi không muốn người ta đọc cuốn sách của tôi một cách hời hợt .
+AMR: (m / muốn :pivot(t / tôi) :polarity - :topic(đ / đọc :agent(n / người_ta) :theme(s / sách :classifier(c / cuốn) :poss(t1 / tôi)) :manner(h / hời_hập :degree(m1 / một_cách))))
+
+
+#::snt lại chính cũng vì thế nữa mà tôi đã mua một hộp màu nước và bút chì màu .
+AMR: (m1 / mua :cause(t / thế) :agent(t1 / tôi) :tense(đ / đã) :theme(a / and :op1(h / hộp :mod(m / màu :compound(n1 / nước)) :quant 1) :op2(b / bút_chì :mod(m2 / màu))))
+
+
+#::snt trở lại vẽ vời thật là khó , vào tuổi tôi bây giờ , khi mà người ta chưa hề vẽ gì ngoài con trăn khép kín với con trăn mở từ hồi lên sáu .
+AMR: (k / khó :domain(t1 / trở_lại :mod(v / vẽ_vời)) :degree(t / thật :compound(l / là)) :time(t3 / tuổi :poss(t2 / tôi) :time-of(n1 / now)) :condition(v2 / vẽ :agent(n / người_ta) :polarity - :theme(g / gì) :concession(n2 / ngoài :topic(a / and :op1(t4 / trăn :classifier(c1 / con) :mod(k1 / khép :compound(k2 / kín))) :op2(t5 / trăn :classifier(c2 / con) :mod(m / mở)) :time(h / havetime :initialTime(l1 / lên :quant(t6 / temporal-quantity :quant 6 :unit(t7 / tuổi)) :pivot n))))))
+
+
+#::snt lần này cũng là nhờ con cừu , ông hoàng nhỏ hỏi tôi , như vừa mới nghĩ ra điều gì nghiêm trọng lắm :
+AMR: (h / hỏi :topic(l1 / nhờ :domain(l / lần :mod(n / này)) :pivot h1) :agent(ô / ông_hoàng :mod(n1 / nhỏ)) :goal(t / tôi) :topic(n3 / nghĩ :time(v / vừa :compound(m / mới)) :compound(r1 / ra) :theme(đ / điều :mod(g / gì) :mod(n4 / nghiêm_trọng :degree(l2 / lắm))) :pivot ô))
+
+
+#::snt - ồ , tốt quá !
+AMR: (m / multi-sentence :snt1(ồ / ồ) :snt2(t / tốt :degree(q / quá)))
+
+
+#::snt - đúng là như thế .
+AMR: (đ / đúng :compared-to(t / thế) :degree(e / equal))
+
+
+#::snt và tôi phải bắt trí thông minh của tôi làm việc dữ dội mới tự hiểu được vấn đề ấy .
+AMR: (a / and :op2(o / obligate-01 :topic(b / bắt :agent(t / tôi) :theme(t1 / trí_thông_minh :part-of(t2 / tôi)) :purpose(l / làm_việc :manner(d / dữ_dội) :agent t1) :result(h / hiểu :degree(t3 / tự) :topic(v2 / vấn_đề :mod(ấ / ấy)) :pivot t))))
+
+
+#::snt đây là một vấn đề kỷ luật , ông hoàng nhỏ về sau nói với tôi .
+AMR: (n1 / nói :topic(v / vấn_đề :domain(đ / đây) :mod(k / kỷ_luật) :quant 1) :agent(ô / ông_hoàng :mod(n / nhỏ)) :time(a / after) :goal(t / tôi))
+
+
+#::snt sau đó nó không thể nhúc nhích được nữa và nó nằm ngủ sáu tháng liền trong khi chờ tiêu hoá .
+AMR: (a / and :op1(p / possible-01 :theme(n / nhúc_nhích :agent(n1 / nó)) :polarity - :time(a1 / after)) :op2(l / lie-91 :manner(n2 / ngủ) :duration(t / temporal-quantity :unit(t1 / tháng) :quant 6) :agent n :time(c / chờ :purpose(t2 / tiêu_hoá :agent n1) :pivot n)))
+
+
+#::snt tôi đã bay khắp thế giới mỗi nơi một tí .
+AMR: (b / bay :agent(t / tôi) :tense(đ / đã) :manner(k / khắp) :location(n / nơi :mod(wz1 / world)) :degree(m1 / một_tí))
+
+
+#::snt và tôi chỉ đi một mình không có hành khách cũng chẳng có thợ máy , tôi phải một mình bắt đầu cuộc sửa chữa khó khăn .
+AMR: (a / and :op2(b / đi :agent(t / tôi) :degree(c / chỉ) :manner(m / một_mình) :accompanier(h / hành_khách :pivot-of(c2 / có :polarity -)) :concession(t1 / thợ_máy :pivot-of(c3 / có :polarity -))) :op2(o / obligate-01 :topic(b1 / bắt_đầu :manner(m2 / một_mình) :theme(c4 / cuộc :compound(s / sửa_chữa) :mod(k / khó_khăn)) :agent t)))
+
+
+#::snt lúc đó tôi còn cô độc hơn cả một kẻ đắm tàu trên chiếc bè lênh đênh giữa biển .
+AMR: (c / còn :time(l / lúc :mod(đ / đó)) :pivot(t / tôi) :manner(c1 / cô_độc :degree(h / hơn) :compared-to(k / kẻ :agent-of(đ1 / đắm :patient(t1 / tàu) :location(b / biển :prep(t2 / trên) :classifier(c2 / chiếc) :mod(l1 / lênh_đênh))) :quant 1)))
+
+
+#::snt xin nhớ là lúc ấy tôi đang ở cách mọi chỗ có người hàng ngàn dặm .
+AMR: (n / nhớ :mode imperative :time(l / lúc :mod(ấ / ấy)) :topic(b / be-located-at-91 :pivot(t / tôi) :tense(đ / đang) :op1(c1 / chỗ :mod(c2 / có :pivot(n1 / người)) :quant(d / distance-quantity :quant 1000 :unit(d1 / dặm)))))
+
+
+#::snt tôi vẽ .
+AMR: (v / vẽ :agent(t / tôi))
+
+
+#::snt đó là chiếc máy bay của tôi .
+AMR: (m / máy_bay :domain(đ / đó) :classifier(c / chiếc) :poss(t / tôi))
+
+
+#::snt cậu bạn của tôi lại bật cười khanh khách :
+AMR: (b1 / bật :agent(b / bạn :classifier(c / cậu) :agent-of(h / have-rel-role-91 :ARG1(t / tôi) :ARG2 b)) :compound(c1 / cười) :manner(k / khanh_khách))
+
+
+#::snt - bất cứ đâu .
+AMR: (đ / đâu :modality(b / bất_cứ))
+
+
+#::snt cứ đi thẳng tới trước mặt ...
+AMR: (đ / đi :modality(c / cứ) :direction(t / thẳng) :goal(t1 / trước :prep(m / mặt)))
+
+
+#::snt - không hề gì .
+AMR: (g / gì :polarity -)
+
+
+#::snt rồi , có lẽ với một chút ngậm ngùi , em nói thêm :
+AMR: (n / nói :agent(e / em) :compound(t / thêm) :topic(c1 / possible-01 :result-arg1(n1 / ngậm_ngùi :degree(m / một_chút))))
+
+
+#::snt nếu bạn nói với những người lớn : " tôi có thấy một cái nhà gạch mầu hồng với hoa phong lữ trên cửa sổ , và chim bồ câu trên mái ... "
+AMR: (n1 / nói :agent(b / bạn) :goal(n2 / người_lớn) :topic(a / and :op1(t / thấy :pivot(t1 / tôi) :theme(n3 / nhà :compound(g / gạch) :mod(m1 / mầu :mod(h / hồng)) :concession(v1 / có :compound(h1 / hoa :mod(p / phong_lữ))) :location(c1 / cửa_sổ :prep(t4 / trên))) :quant 1 :classifier(c / cái)) :op2(c2 / chim :mod(b1 / bồ_câu) :location(m2 / mái :prep(t2 / trên)) :quant 1)))
+
+
+#::snt - tôi biết có một tinh cầu , trên đó có một ông mặt mũi đỏ gay .
+AMR: (b / biết :pivot(t / tôi) :topic(t1 / tinh_cầu :location-of(c1 / có :theme(ô / ông :mod(m1 / mặt_mũi :mod(đ1 / đỏ_gay)) :quant 1)) :quant 1))
+
+
+#::snt - trên tất cả .
+AMR: (t1 / tất_cả :prep(t / trên))
+
+
+#::snt - các ngôi sao có tuân lệnh bệ hạ không ?
+AMR: (t / tuân :pivot(s / sao :classifier(n / ngôi)) :theme(l / lệnh :poss(b / bệ_hạ)) :mode interrogative)
+
+
+#::snt phải cho mỗi người làm việc người đó có thể làm , đức vua nhắc lại .
+AMR: (n2 / nhắc_lại :topic(o / obligate-01 :topic(c / cho :beneficiary(n / người :agent-of(l / làm_việc)) :result(p1 / possible-01 :topic(l1 / làm :agent(n1 / người :mod(đ / đó)))))) :agent(v / đức :compound(v1 / vua)))
+
+
+#::snt nếu nhà ngươi ra lệnh cho thần dân của mình nhảy xuống bể , họ sẽ làm cách mạng .
+AMR: (l1 / làm :condition(r / ra_lệnh :agent(n / nhà_ngươi) :patient(n1 / nhảy :agent(t / thần_dân :poss n)) :direction(x / xuống :location(b / bể))) :agent(h / họ) :tense(s / sẽ) :theme(c1 / cách_mạng))
+
+
+#::snt - thế cảnh mặt trời lặn của tôi thì sao ?
+AMR: (l / lặn :theme(m / mặt_trời) :pivot(t1 / tôi) :mode interrogative)
+
+
+#::snt ta muốn thế .
+AMR: (m / muốn :pivot(t / ta) :theme(t1 / thế))
+
+
+#::snt - tôi , ông hoàng nhỏ đáp , tôi có thể tự xét mình bất cứ ở đâu .
+AMR: (đ / đáp :agent(ô / ông_hoàng :mod(n / nhỏ)) :topic(p / possible-01 :theme(x / xét :agent(t1 / tôi) :manner(t2 / tự) :patient(m / mình) :location(đ1 / đâu :prep(ở / ở) :mod(b / bất_cứ)))))
+
+
+#::snt - tôi , ông hoàng nhỏ đáp , tôi không thích buộc tội tử hình , và tôi chắc rằng tôi sắp sửa ra đi .
+AMR: (đ / đáp :agent(ô / ông_hoàng :mod(n / nhỏ)) :topic(a / and :op1(t1 / thích :pivot(t / tôi) :polarity - :theme(b / buộc_tội :compound(t2 / tử_hình))) :op2(c / chắc :topic(r / ra :tense(s / sắp_sửa) :agent t) :pivot t)))
+
+
+#::snt - không , vua nói .
+AMR: (n / nói :topic(k / không) :agent(v / vua))
+
+
+#::snt - thế à ? ông hoàng nhỏ nói , không hiểu gì cả .
+AMR: (n1 / nói :agent(ô / ông_hoàng :mod(n / nhỏ)) :topic(t / thế :mod(à / à) :mode interrogative) :manner(h / hiểu :polarity - :theme(g / gì) :degree(c / cả)))
+
+
+#::snt hăm hai với sáu là hăm tám .
+AMR: (e / equal-01 :ARG2 8 :ARG1(s / sum-of :op2 6 :op1 2))
+
+
+#::snt - chẳng làm gì sất .
+AMR: (l / làm :polarity - :theme(g / gì) :agent(s / sất))
+
+
+#::snt - nhưng tôi biết một ông vua cũng ...
+AMR: (c1 / contrast-01 :ARG2(b / biết :pivot(t / tôi) :theme(ô / ông :compound(v / vua) :mod(c / cũng))))
+
+
+#::snt tuy thế em vẫn hỏi thêm :
+AMR: (c / contrast-01 :ARG2(h / hỏi :agent(e / em) :modality(v / vẫn) :compound(t1 / thêm)))
+
+
+#::snt khi chú tìm thấy một viên kim cương không là của ai cả , thì nó là của chú .
+AMR: (l1 / là :time(t / tìm :agent(c / chú) :compound(t1 / thấy) :theme(k1 / kim_cương :classifier(v / viên) :poss(a / ai) :degree(c2 / cả) :polarity -)) :domain(n / nó) :poss(c3 / chú))
+
+
+#::snt tôi , nếu tôi có một bông hoa , tôi có thể hái bông hoa đó và mang nó đi .
+AMR: (p / possible-01 :condition(c / có :pivot(t1 / tôi) :theme(h / hoa :agent-of(h1 / hái :agent t1 :patient h) :quant 1 :classifier(b / bông))) :op1(a / and :op1(h1 :agent t1) :op2(m1 / mang :patient(n1 / nó) :purpose(đ / đi) :agent t1)))
+
+
+#::snt việc ấy mới thật sự là có ích là vì nó đẹp .
+AMR: (c / có_ích :domain(v / việc :mod(ấ / ấy)) :degree(t / thật_sự) :reason(đ / đẹp :domain(n / nó)))
+
+
+#::snt khi đến gần tinh cầu , em kính trọng chào người thắp đèn :
+AMR: (c / chào :time(đ / đến :manner(g / gần) :location(t / tinh_cầu)) :agent(e / em) :manner(k1 / kính_trọng) :goal(p / person :agent-of(t1 / thắp :patient(đ1 / đèn))))
+
+
+#::snt và ông ta lại thắp đèn lên .
+AMR: (a / and :op2(t1 / thắp :agent(ô / ông :mod(t / ta)) :patient(đ / đèn) :manner(l1 / lên)))
+
+
+#::snt điều lệnh là điều lệnh .
+AMR: (đ1 / điều_lệnh :domain(đ / điều_lệnh))
+
+
+#::snt - nghề của ta làm đây thật kinh khủng .
+AMR: (l / làm :cause(n / nghề :poss(t / ta)) :location(đ / đây) :manner(k / kinh_khủng :degree(t1 / thật)))
+
+
+#::snt xưa kia thì nó còn có lý .
+AMR: (c1 / có :time(x / xưa_kia) :pivot(n / nó) :theme(l / lý))
+
+
+#::snt thằng chả có cặp mắt tinh đời .
+AMR: (c1 / có :pivot(t / thằng_chả) :theme(m / mắt :quant(c / cặp) :mod(t1 / tinh_đời)))
+
+
+#::snt anh cho bò ăn cỏ .
+AMR: (c / cho :agent(a / anh) :beneficiary-arg2(b / bò) :purpose(ă / ăn :patient(c1 / cỏ) :agent b))
+
+
+#::snt chúng tôi mong họ thay đổi suy nghĩ .
+AMR: (m / mong :pivot(c / chúng_tôi) :topic(t / thay_đổi :agent(h / họ) :theme(s / suy_nghĩ)))
+
+
+#::snt mẹ giúp con học bài .
+AMR: (g / giúp :agent(m / mẹ) :topic(h / học :agent(c / con) :theme(b / bài)))
+
+
+#::snt lớp 12a được nhà trường khen .
+AMR: (k / khen :beneficiary-arg0(l / lớp :mod(1 / 12a)) :modality(đ / được) :agent(n / nhà_trường))
+
+
+#::snt cảnh vật vẫn như xưa .
+AMR: (r / resemble-01 :theme(c / cảnh_vật) :compared-to(x / xưa) :degree(e / equal))
+
+
+#::snt học tập là quyền lợi của mỗi người .
+AMR: (q / quyền_lợi :domain(h / học_tập) :poss(n / người :mod(m / mỗi)))
+
+
+#::snt cậu chưa gửi tôi tiền .
+AMR: (g / gửi :agent(c / cậu) :polarity - :beneficiary(t / tôi) :theme(t1 / tiền))
+
+
+#::snt anh vừa trả tiền ngân hàng .
+AMR: (t / trả :agent(a / anh) :tense(v / vừa) :theme(t1 / tiền) :beneficiary-arg2(n / ngân_hàng))
+
+
+#::snt cô ấy thích người đẹp trai .
+AMR: (t / thích :pivot(c / cô :mod(ấ / ấy)) :theme(n / người :mod(đ / đẹp_trai)))
+
+
+#::snt tôi tin là tương lai sẽ tốt đẹp .
+AMR: (t1 / tin :pivot(t / tôi) :topic(t2 / tốt_đẹp :domain(t3 / tương_lai) :tense(s / sẽ)))
+
+
+#::snt ông phan , giám đốc công ti , chia sẻ về khâu thanh toán .
+AMR: (c / chia_chia :agent(ô / ông :compound(p / phan) :title(g / giám_đốc :source(c1 / công_ti))) :topic(k / khâu :mod(t / thanh_toán)))
+
+
+#::snt cụ thể : chúng ta phải đi ngay .
+AMR: (o / obligate-01 :topic(đ / đi :agent(c1 / chúng_ta) :manner(n / ngay)))
+
+
+#::snt chiều , trời sẽ nổi gió .
+AMR: (n / nổi :time(c / chiều) :theme(g / gió) :pivot(t / trời))
+
+
+#::snt gã đó , anh nói , đã đi rồi .
+AMR: (n / nói :agent(a / anh) :topic(đ1 / đi :agent(g / gã :mod(đ / đó)) :tense(đ2 / đã)))
+
+
+#::snt bà viết : kỷ luật cán bộ gây chậm giải ngân vốn đầu_tư_công
+AMR: (v / viết :agent(b / bà) :topic(k / kỷ_luật :patient(c / cán_bộ :agent-of(g / gây :topic(g1 / giải_ngân :manner(c1 / chậm) :theme(v1 / vốn :mod(đ / đầu_tư_công))) :agent c))))
+
+
+#::snt nhà , ông ấy có năm bảy cái nhà .
+AMR: (c / có :pivot(ô / ông :mod(ấ / ấy)) :theme(n1 / nhà :quant(n / năm_bảy :classifier(c1 / cái))))
+
+
+#::snt toán , cô ấy giỏi .
+AMR: (g / giỏi :domain(t / toán) :pivot(c / cô :mod(ấ / ấy)))
+
+
+#::snt bệnh dại là bệnh do virus dại gây nên .
+AMR: (b1 / bệnh :domain(b / bệnh :mod(d / dại)) :cause(g / gây :modality(n / nên) :agent(v / virus :mod(d1 / dại))))
+
+
+#::snt cái này ăn được nè !
+AMR: (ă / ăn :patient(c / cái :mod(n / này)) :modality(đ / được) :mode expressive)
+
+
+#::snt tôi phải đi ngay .
+AMR: (o / obligate-01 :topic(đ / đi :agent(t / tôi) :time(n / ngay)))
+
+
+#::snt tôi quyết ra_đi .
+AMR: (q / quyết :agent(t / tôi) :topic(r / ra_đi))
+
+
+#::snt ông ấy được công chúng tán thưởng .
+AMR: (t / tán_thưởng :patient(ô / ông :mod(ấ / ấy)) :modality(đ / được) :agent(c / công_chúng))
+
+
+#::snt tôi bị đánh .
+AMR: (đ / đánh :patient(t / tôi) :modality(b / bị))
+
+
+#::snt tôi vừa bị mất cắp .
+AMR: (m / mất_cắp :patient(t / tôi) :time(b / bị :time(v / vừa)) :modality -)
+
+
+#::snt lan và linh đều xinh .
+AMR: (a / and :op1(x / xinh :domain(p / person :name(n1 / name :op1(l1 / linh)) :wiki -)) :op2(x1 / xinh :domain(p1 / person :name(n2 / name :op1(l2 / lan)) :wiki -)))
+
+
+#::snt mặt trời đang lặn .
+AMR: (l / lặn :theme(m / mặt_trời) :tense(đ / đang))
+
+
+#::snt có thể ông chương là người gia trưởng .
+AMR: (p / possible-01 :domain(ô / ông :compound(c1 / chương)) :topic(n / người :mod(g / gia_trưởng)))
+
+
+#::snt cô ấy ngày càng đẹp hơn .
+AMR: (đ / đẹp :domain(c / cô :mod(ấ / ấy)) :degree(n / ngày_càng) :degree(h / hơn))
+
+
+#::snt bà luôn nhẹ nhàng khuyên bảo đứa cháu .
+AMR: (k / khuyên_bảo :agent(b / bà) :manner(n / nhẹ_nhàng) :theme(c / cháu :classifier(đ / đứa)))
+
+
+#::snt bài đã được chỉnh sửa lần đầu tiên lên website .
+AMR: (c / chỉnh_sửa :patient(b / bài) :tense(đ / đã) :modality(đ1 / được) :frequency(l / lần :ord(o / ordinal-entity :value 1)) :result-arg1(wz1 / website :prep(l1 / lên)))
+
+
+#::snt mặt cô ta đang đỏ dần lên .
+AMR: (đ1 / đỏ :domain(m / mặt :part-of(c / cô :mod(t / ta))) :tense(đ / đang) :manner(d / dần :compound(l / lên)))
+
+
+#::snt con tàu chìm mất xuống đáy bể .
+AMR: (c1 / chìm :theme(t / tàu :classifier(c / con)) :manner(m / mất) :direction(x / xuống :location(đ / đáy :part-of(b / bể))))
+
+
+#::snt thêm thu bớt chi .
+AMR: (a / and :op1(t / thêm :theme(t1 / thu)) :op2(t2 / bớt :theme(c / chi)))
+
+
+#::snt thuốc làm bệnh nặng thêm rất nhiều .
+AMR: (l / làm :theme(t / thuốc) :patient(b / bệnh) :degree(n / nặng :compound(t1 / thêm)) :quant(v / very :degree(n1 / nhiều)))
+
+
+#::snt cuộn tơ vàng óng .
+AMR: (ó / óng :domain(t / tơ :classifier(c / cuộn) :mod(v / vàng)))
+
+
+#::snt địa chỉ : số nhà 11 , phố trần hưng đạo , tp. hà nội .
+AMR: (s / street-address-91 :ARG1(n / nhà :mod(s1 / số) :quant 11) :ARG2(p / phố :mod(t / tên :op1(wz1 / Trần) :op2(wz2 / Hưng) :op3(wz3 / Đạo)) :wiki(wz4 / Trần_Hưng_Đạo)) :ARG3(c / city :wiki(wz5 / Hà_Nội) :name(n1 / name :op1(h / hà) :op2(n2 / nội))))
+
+
+#::snt tôi có hai cái bánh , em một .
+AMR: (c / có :pivot(t / tôi) :theme(b / bánh :quant 2 :classifier(c1 / cái)) :accompanier(e / em) :theme(w1 / and :op2(b1 / bánh :quant 1 :classifier(c2 / cái))))
+
+
+#::snt chính quyền làm thế nhằm trấn an dư luận .
+AMR: (l / làm :agent(c / chính_quyền) :theme(t / thế) :purpose(t1 / trấn_an :patient(d / dư_luận)))
+
+
+#::snt kẻ phá hoại phải bị trừng trị đích đáng .
+AMR: (o / obligate-01 :topic(t / trừng_trị :patient(k / kẻ :agent-of(p / phá_hoại)) :modality(b / bị) :manner(đ / đích_đáng)))
+
+
+#::snt ông ta đã đánh giá sai lầm về thực lực của quân địch .
+AMR: (đ1 / đánh_giá :agent(ô / ông :mod(t / ta)) :tense(đ / đã) :manner(s / sai_lầm) :topic(t1 / thực_lực :poss(q / quân_địch)))
+
+
+#::snt tôi không ở chung với bạn .
+AMR: (ở / ở :pivot(t / tôi) :polarity - :compound(c / chung) :accompanier(b / bạn))
+
+
+#::snt việc đó đe doạ đối với hạnh phúc gia đình .
+AMR: (đ1 / đe_doạ :theme(v / việc :mod(đ / đó)) :goal(h / hạnh_phúc :poss(g / gia_đình)))
+
+
+#::snt mèo già hoá cáo .
+AMR: (h / hoá :pivot(m / mèo :mod(g / già)) :result-arg1(c / cáo))
+
+
+#::snt cô ấy nghỉ việc từ hôm qua .
+AMR: (n / nghỉ :agent(c / cô :mod(ấ / ấy)) :theme(v / việc) :initialTime(h / hôm_qua))
+
+
+#::snt phân xưởng được nghỉ bốn giờ .
+AMR: (n / nghỉ :pivot(p / phân_xưởng) :modality(đ / được) :duration(g / giờ :quant 4))
+
+
+#::snt công binh tháo bom dưới đèo .
+AMR: (t / tháo :agent(c / công_binh) :patient(b / bom) :location(đ / dưới :mod(đ1 / đèo)))
+
+
+#::snt nó đang nằm võng .
+AMR: (n1 / nằm :theme(n / nó) :tense(đ / đang) :location(v / võng))
+
+
+#::snt mùa màng thất bát do lũ lụt .
+AMR: (t / thất_bát :pivot(m / mùa_màng) :cause(l / lũ_lụt))
+
+
+#::snt cha mẹ luôn hi sinh vì con cái .
+AMR: (h / hi_sinh :pivot(c / cha_mẹ) :mod(l / luôn) :purpose(c1 / con_cái))
+
+
+#::snt chúng tôi hành động vì sự an toàn của nhân dân .
+AMR: (h / hành_động :agent(c / chúng_tôi) :purpose(s / sự :mod(a / an_toàn) :poss(n / nhân_dân)))
+
+
+#::snt nó nói như vẹt .
+AMR: (n1 / nói :agent(n / nó) :manner(wz1 / resemble :compared-to(v / vẹt)))
+
+
+#::snt nhân dân đấu tranh trong niềm tin sâu sắc .
+AMR: (đ / đấu_tranh :agent(n / nhân_dân) :setting(n1 / niềm_tin :prep(t / trong) :manner(s / sâu_sắc)))
+
+
+#::snt quán gần trường .
+AMR: (g / gần :theme(q / quán) :distance(t / trường))
+
+
+#::snt nó làm nhanh tay .
+AMR: (l / làm :agent(n / nó) :manner(n1 / nhanh_tay))
+
+
+#::snt thằng tý đã chén đĩa thịt hết nhẵn .
+AMR: (c / chén :agent(t1 / tý :classifier(t / thằng)) :tense(đ / đã) :patient(đ1 / đĩa :theme-of(t2 / thịt :manner(h / hết :mod(n / nhẵn)))))
+
+
+#::snt ông ấy có ba cái nhà .
+AMR: (c / có :pivot(ô / ông :mod(ấ / ấy)) :theme(n / nhà :quant 3 :classifier(c1 / cái)))
+
+
+#::snt nhà nằm bên đường .
+AMR: (n1 / nằm :theme(n / nhà) :location(b / bên :mod(đ / đường)))
+
+
+#::snt bà ta đã mua một lít dung môi .
+AMR: (m / mua :agent(b / bà :mod(t / ta)) :tense(đ / đã) :theme(d / dung_môi :quant 1 :unit(l / lít)))
+
+
+#::snt đó là tình thương con của người mẹ .
+AMR: (t / tình_thương :domain(đ / đó) :poss(c / con :poss(n / người :mod(m / mẹ))))
+
+
+#::snt đó là triệu chứng thông thường .
+AMR: (t / triệu_chứng :domain(đ / đó) :mod(t1 / thông_thường))
+
+

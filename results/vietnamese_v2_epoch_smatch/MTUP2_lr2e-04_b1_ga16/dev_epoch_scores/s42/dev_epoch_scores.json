@@ -1,0 +1,254 @@
+[
+  {
+    "method": "MTUP2",
+    "run_name": "MTUP2_lr2e-04_b1_ga16",
+    "group": "vietnamese_v2_epoch_smatch",
+    "seed": 42,
+    "checkpoint": "/mnt/nghiepth/giang/ViSemPar_260430/checkpoints/vietnamese_v2_epoch_smatch/MTUP2_lr2e-04_b1_ga16/s42/checkpoint-510",
+    "checkpoint_step": 510,
+    "epoch": 5.0,
+    "epoch_sort": 5.0,
+    "pred_path": "/mnt/nghiepth/giang/ViSemPar_260430/results/vietnamese_v2_epoch_smatch/MTUP2_lr2e-04_b1_ga16/dev_epoch_scores/s42/s42_checkpoint-510_dev_pred.txt",
+    "dev_eval_interval": 5,
+    "n_samples": 181,
+    "valid_graphs": 172,
+    "valid_graph_rate": 0.9503,
+    "parsable": 172,
+    "parsable_rate": 0.9503,
+    "avg_output_len": 101.3,
+    "root_acc": 0.7459,
+    "precision": 0.784,
+    "recall": 0.6048,
+    "f1": 0.6828,
+    "smatch": {
+      "precision": 0.784,
+      "recall": 0.6048,
+      "f1": 0.6828
+    },
+    "concept": {
+      "precision": 0.9191,
+      "recall": 0.7256,
+      "f1": 0.8109
+    },
+    "relation": {
+      "precision": 0.7358,
+      "recall": 0.5464,
+      "f1": 0.6271
+    },
+    "attribute": {
+      "precision": 0.84,
+      "recall": 0.7326,
+      "f1": 0.7826
+    }
+  },
+  {
+    "method": "MTUP2",
+    "run_name": "MTUP2_lr2e-04_b1_ga16",
+    "group": "vietnamese_v2_epoch_smatch",
+    "seed": 42,
+    "checkpoint": "/mnt/nghiepth/giang/ViSemPar_260430/checkpoints/vietnamese_v2_epoch_smatch/MTUP2_lr2e-04_b1_ga16/s42/checkpoint-1020",
+    "checkpoint_step": 1020,
+    "epoch": 10.0,
+    "epoch_sort": 10.0,
+    "pred_path": "/mnt/nghiepth/giang/ViSemPar_260430/results/vietnamese_v2_epoch_smatch/MTUP2_lr2e-04_b1_ga16/dev_epoch_scores/s42/s42_checkpoint-1020_dev_pred.txt",
+    "dev_eval_interval": 5,
+    "n_samples": 181,
+    "valid_graphs": 175,
+    "valid_graph_rate": 0.9669,
+    "parsable": 175,
+    "parsable_rate": 0.9669,
+    "avg_output_len": 112.2,
+    "root_acc": 0.7403,
+    "precision": 0.7661,
+    "recall": 0.6582,
+    "f1": 0.7081,
+    "smatch": {
+      "precision": 0.7661,
+      "recall": 0.6582,
+      "f1": 0.7081
+    },
+    "concept": {
+      "precision": 0.9031,
+      "recall": 0.7934,
+      "f1": 0.8447
+    },
+    "relation": {
+      "precision": 0.7059,
+      "recall": 0.5928,
+      "f1": 0.6445
+    },
+    "attribute": {
+      "precision": 0.9178,
+      "recall": 0.7791,
+      "f1": 0.8428
+    }
+  },
+  {
+    "method": "MTUP2",
+    "run_name": "MTUP2_lr2e-04_b1_ga16",
+    "group": "vietnamese_v2_epoch_smatch",
+    "seed": 42,
+    "checkpoint": "/mnt/nghiepth/giang/ViSemPar_260430/checkpoints/vietnamese_v2_epoch_smatch/MTUP2_lr2e-04_b1_ga16/s42/checkpoint-1530",
+    "checkpoint_step": 1530,
+    "epoch": 15.0,
+    "epoch_sort": 15.0,
+    "pred_path": "/mnt/nghiepth/giang/ViSemPar_260430/results/vietnamese_v2_epoch_smatch/MTUP2_lr2e-04_b1_ga16/dev_epoch_scores/s42/s42_checkpoint-1530_dev_pred.txt",
+    "dev_eval_interval": 5,
+    "n_samples": 181,
+    "valid_graphs": 176,
+    "valid_graph_rate": 0.9724,
+    "parsable": 176,
+    "parsable_rate": 0.9724,
+    "avg_output_len": 114.4,
+    "root_acc": 0.8011,
+    "precision": 0.7939,
+    "recall": 0.666,
+    "f1": 0.7244,
+    "smatch": {
+      "precision": 0.7939,
+      "recall": 0.666,
+      "f1": 0.7244
+    },
+    "concept": {
+      "precision": 0.9301,
+      "recall": 0.8186,
+      "f1": 0.8708
+    },
+    "relation": {
+      "precision": 0.7288,
+      "recall": 0.6165,
+      "f1": 0.6679
+    },
+    "attribute": {
+      "precision": 0.8919,
+      "recall": 0.7674,
+      "f1": 0.825
+    }
+  },
+  {
+    "method": "MTUP2",
+    "run_name": "MTUP2_lr2e-04_b1_ga16",
+    "group": "vietnamese_v2_epoch_smatch",
+    "seed": 42,
+    "checkpoint": "/mnt/nghiepth/giang/ViSemPar_260430/checkpoints/vietnamese_v2_epoch_smatch/MTUP2_lr2e-04_b1_ga16/s42/checkpoint-2040",
+    "checkpoint_step": 2040,
+    "epoch": 20.0,
+    "epoch_sort": 20.0,
+    "pred_path": "/mnt/nghiepth/giang/ViSemPar_260430/results/vietnamese_v2_epoch_smatch/MTUP2_lr2e-04_b1_ga16/dev_epoch_scores/s42/s42_checkpoint-2040_dev_pred.txt",
+    "dev_eval_interval": 5,
+    "n_samples": 181,
+    "valid_graphs": 174,
+    "valid_graph_rate": 0.9613,
+    "parsable": 174,
+    "parsable_rate": 0.9613,
+    "avg_output_len": 111.4,
+    "root_acc": 0.7569,
+    "precision": 0.806,
+    "recall": 0.6675,
+    "f1": 0.7303,
+    "smatch": {
+      "precision": 0.806,
+      "recall": 0.6675,
+      "f1": 0.7303
+    },
+    "concept": {
+      "precision": 0.9238,
+      "recall": 0.8028,
+      "f1": 0.8591
+    },
+    "relation": {
+      "precision": 0.7205,
+      "recall": 0.6095,
+      "f1": 0.6603
+    },
+    "attribute": {
+      "precision": 0.9342,
+      "recall": 0.8256,
+      "f1": 0.8765
+    }
+  },
+  {
+    "method": "MTUP2",
+    "run_name": "MTUP2_lr2e-04_b1_ga16",
+    "group": "vietnamese_v2_epoch_smatch",
+    "seed": 42,
+    "checkpoint": "/mnt/nghiepth/giang/ViSemPar_260430/checkpoints/vietnamese_v2_epoch_smatch/MTUP2_lr2e-04_b1_ga16/s42/checkpoint-2550",
+    "checkpoint_step": 2550,
+    "epoch": 25.0,
+    "epoch_sort": 25.0,
+    "pred_path": "/mnt/nghiepth/giang/ViSemPar_260430/results/vietnamese_v2_epoch_smatch/MTUP2_lr2e-04_b1_ga16/dev_epoch_scores/s42/s42_checkpoint-2550_dev_pred.txt",
+    "dev_eval_interval": 5,
+    "n_samples": 181,
+    "valid_graphs": 175,
+    "valid_graph_rate": 0.9669,
+    "parsable": 175,
+    "parsable_rate": 0.9669,
+    "avg_output_len": 110.7,
+    "root_acc": 0.779,
+    "precision": 0.7913,
+    "recall": 0.6799,
+    "f1": 0.7314,
+    "smatch": {
+      "precision": 0.7913,
+      "recall": 0.6799,
+      "f1": 0.7314
+    },
+    "concept": {
+      "precision": 0.9182,
+      "recall": 0.7965,
+      "f1": 0.853
+    },
+    "relation": {
+      "precision": 0.739,
+      "recall": 0.6173,
+      "f1": 0.6727
+    },
+    "attribute": {
+      "precision": 0.9,
+      "recall": 0.8372,
+      "f1": 0.8675
+    }
+  },
+  {
+    "method": "MTUP2",
+    "run_name": "MTUP2_lr2e-04_b1_ga16",
+    "group": "vietnamese_v2_epoch_smatch",
+    "seed": 42,
+    "checkpoint": "/mnt/nghiepth/giang/ViSemPar_260430/checkpoints/vietnamese_v2_epoch_smatch/MTUP2_lr2e-04_b1_ga16/s42/checkpoint-3060",
+    "checkpoint_step": 3060,
+    "epoch": 30.0,
+    "epoch_sort": 30.0,
+    "pred_path": "/mnt/nghiepth/giang/ViSemPar_260430/results/vietnamese_v2_epoch_smatch/MTUP2_lr2e-04_b1_ga16/dev_epoch_scores/s42/s42_checkpoint-3060_dev_pred.txt",
+    "dev_eval_interval": 5,
+    "n_samples": 181,
+    "valid_graphs": 176,
+    "valid_graph_rate": 0.9724,
+    "parsable": 176,
+    "parsable_rate": 0.9724,
+    "avg_output_len": 112.3,
+    "root_acc": 0.779,
+    "precision": 0.7894,
+    "recall": 0.6873,
+    "f1": 0.7348,
+    "smatch": {
+      "precision": 0.7894,
+      "recall": 0.6873,
+      "f1": 0.7348
+    },
+    "concept": {
+      "precision": 0.9147,
+      "recall": 0.8036,
+      "f1": 0.8556
+    },
+    "relation": {
+      "precision": 0.7309,
+      "recall": 0.6208,
+      "f1": 0.6714
+    },
+    "attribute": {
+      "precision": 0.9,
+      "recall": 0.8372,
+      "f1": 0.8675
+    }
+  }
+]

@@ -1,0 +1,9 @@
+[
+  {
+    "run_name": "MTUP2_lr2e-04_b1_ga16",
+    "seed": "s42",
+    "selected": "/mnt/nghiepth/giang/ViSemPar_260430/checkpoints/vietnamese_v2_epoch_smatch/MTUP2_lr2e-04_b1_ga16/s42/checkpoint-3060",
+    "delete_count": 0,
+    "delete_paths": []
+  }
+]
