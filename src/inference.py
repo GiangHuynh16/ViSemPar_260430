@@ -82,10 +82,28 @@ def extract_amr_MTUP2(response: str) -> str:
     return amr or ''
 
 
+def extract_amr_MTUP3(response: str) -> str:
+    """Extract only MTUP3's final AMR; earlier stages are never a fallback."""
+    marker = response.rfind('[STEP 3: AMR_WITH_VAR]')
+    if marker == -1:
+        return ''
+    return extract_balanced_amr(response, marker) or ''
+
+
+def extract_amr_MTUP4(response: str) -> str:
+    """Extract only MTUP4's final AMR; earlier stages are never a fallback."""
+    marker = response.rfind('[STEP 4: AMR_WITH_VAR]')
+    if marker == -1:
+        return ''
+    return extract_balanced_amr(response, marker) or ''
+
+
 EXTRACTORS = {
     'B1': extract_amr_B1,
     'B2': extract_amr_B2,
     'MTUP2': extract_amr_MTUP2,
+    'MTUP3': extract_amr_MTUP3,
+    'MTUP4': extract_amr_MTUP4,
 }
 
 

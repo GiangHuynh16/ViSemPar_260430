@@ -1,0 +1,26 @@
+base: ../base_v2.yaml
+method: MTUP3
+group: vietnamese_v2_mtup_3tasks
+language: vi
+no_var_mode: clean
+lora:
+  r: 128
+  alpha: 256
+  dropout: 0.05
+  bias: none
+  target_modules:
+    - q_proj
+    - k_proj
+    - v_proj
+    - o_proj
+    - gate_proj
+    - up_proj
+    - down_proj
+data:
+  train: vietnamese_v2/MTUP3_train.txt
+  dev_formatted: vietnamese_v2/MTUP3_dev.txt
+  val: data/formatted/vietnamese_v2/dev.txt
+  test: data/formatted/vietnamese_v2/test.txt
+  test_gold: data/formatted/vietnamese_v2/test_ground_truth.txt
+decoding:
+  max_new_tokens: 1536

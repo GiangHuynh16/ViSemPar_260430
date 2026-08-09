@@ -1,10 +1,10 @@
 # ViSemPar_260430
 
-LoRA SFT experiments for Vietnamese AMR parsing with B1, B2, and MTUP2.
+LoRA SFT experiments for Vietnamese AMR parsing with B1, B2, MTUP2, MTUP3, and MTUP4.
 
 ## Current Goal
 
-The active protocol answers one question: whether MTUP2 is better than the B1/B2 baselines under an objective Vietnamese v2 setup.
+The active protocol compares MTUP2, MTUP3, and MTUP4 against the B1/B2 baselines under one objective Vietnamese v2 setup.
 
 Model selection is based on held-out dev Smatch for the final AMR only. Dev loss is logged for diagnostics, but it is not used to choose MTUP2 checkpoints.
 
@@ -18,7 +18,7 @@ Model selection is based on held-out dev Smatch for the final AMR only. Dev loss
 - `src/audit_mtup2_setup.py`: verifies MTUP2 prompt/template/split cleanliness.
 - `run_scripts/run_vi_epoch_smatch_grid.py`: current end-to-end experiment runner.
 - `run_scripts/run_vietnamese_v2.sh`: compatibility wrapper around the current runner.
-- `configs/vietnamese_v2/`: source configs for B1, B2, and MTUP2.
+- `configs/vietnamese_v2/`: source configs for B1, B2, MTUP2, MTUP3, and MTUP4.
 - `legacy/experiments/`: archived MTUP2_CHECK/MTUP3/MTUP4 artifacts and old results.
 
 ## Environment
@@ -44,13 +44,17 @@ python3 src/data_pipeline.py \
   --amr2_weight 1 \
   --dev_split 0.1 \
   --dev_seed 42 \
-  --methods B1 B2 MTUP2
+  --methods B1 B2 MTUP2 MTUP3 MTUP4
 ```
 
 The generator validates every active gold graph with `penman.decode()`, creates
 one deterministic train/dev manifest, and writes an aligned 150-example public
 test manifest. Canonical AMR remains PENMAN; no display-only underscore-to-space
 conversion is applied.
+
+MTUP3 uses `CONCEPTS → AMR_NO_VAR → AMR_WITH_VAR`. MTUP4 uses
+`CONCEPTS → RELATIONS → AMR_NO_VAR → AMR_WITH_VAR`. Intermediate outputs are
+training aids; only the final AMR is decoded and evaluated.
 
 ## Run The Current Experiment
 
@@ -88,6 +92,22 @@ On unsupported GPUs, keep the default `model.flash_attn: false`.
 
 Quick protocol: MTUP2 only, seed `42`, three LR values, `batch=1`,
 `grad_accum=16`, and dev Smatch every 5 epochs.
+
+Run MTUP3 and MTUP4 with the same split and evaluation protocol:
+
+```bash
+PYTHONPATH=src python3 run_scripts/run_vi_epoch_smatch_grid.py \
+  --methods MTUP3 MTUP4 \
+  --seeds 42 \
+  --epochs 30 \
+  --mtup3-lrs 5e-5 \
+  --mtup4-lrs 5e-5 \
+  --batch-per-device 1 \
+  --grad-accum 16 \
+  --gradient-checkpointing on \
+  --flash-attn off \
+  --dev-eval-interval 5
+```
 
 ```bash
 python3 run_scripts/run_vi_epoch_smatch_grid.py

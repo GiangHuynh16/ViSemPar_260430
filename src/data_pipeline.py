@@ -4,13 +4,15 @@ Data pipeline for ViSemPar_260430.
 
 Steps:
   1. Load train_amr_1 + train_amr_2, deduplicate by sentence
-  2. Build formatted chat examples for B1, B2, and MTUP2
+  2. Build formatted chat examples for B1, B2, MTUP2, MTUP3, and MTUP4
   3. Save formatted/{method}_train.txt (ready to feed into train.py)
 
-Methods: B1, B2, MTUP2
+Methods: B1, B2, MTUP2, MTUP3, MTUP4
   B1    – direct: sentence → AMR
   B2    – no-reentrancy skeleton baseline
   MTUP2 – 2 steps: no-var skeleton → AMR
+  MTUP3 – 3 steps: concepts → no-var skeleton → AMR
+  MTUP4 – 4 steps: concepts → relations → no-var skeleton → AMR
 
 Usage:
     python src/data_pipeline.py [--verify] [--amr1_weight 1] [--amr2_weight 1]
@@ -21,6 +23,8 @@ import json
 import argparse
 import random
 from pathlib import Path
+
+import penman
 
 from amr_utils import canonicalize_amr, validate_amr
 from prompts import get_system_prompt
@@ -74,6 +78,35 @@ def strip_variables(amr: str, mode: str = 'clean') -> str:
     return result
 
 
+def concept_list(amr: str) -> str:
+    """Render graph concepts as a deterministic intermediate target.
+
+    This is not an AMR and is never evaluated as one.  Concepts remain in
+    their canonical PENMAN spelling, including underscores used by the source
+    corpus for multiword concepts.
+    """
+    graph = penman.decode(canonicalize_amr(amr))
+    concepts = [target for _source, role, target in graph.triples
+                if role == ':instance']
+    return '\n'.join(f'concept_{index} | {concept}'
+                     for index, concept in enumerate(concepts, start=1))
+
+
+def relation_list(amr: str) -> str:
+    """Render graph edges in concept space as a deterministic intermediate target."""
+    graph = penman.decode(canonicalize_amr(amr))
+    instance_map = {source: target for source, role, target in graph.triples
+                    if role == ':instance'}
+    lines = []
+    for source, role, target in graph.triples:
+        if role == ':instance':
+            continue
+        source_label = instance_map.get(source, source)
+        target_label = instance_map.get(target, target)
+        lines.append(f'{source_label} | {role} | {target_label}')
+    return '\n'.join(lines)
+
+
 # ─────────────────────────────────────────────────────────────────────────────
 # Chat example builders per method
 # ─────────────────────────────────────────────────────────────────────────────
@@ -105,10 +138,40 @@ def make_MTUP2(sentence: str, amr: str, no_var_mode: str = 'clean',
     return _wrap(get_system_prompt(language, 'MTUP2'), sentence, assistant)
 
 
+def make_MTUP3(sentence: str, amr: str, no_var_mode: str = 'clean',
+               language: str = 'vi') -> str:
+    """MTUP3A: concepts → no-var skeleton → full AMR."""
+    concepts = concept_list(amr)
+    no_var = strip_variables(amr, mode=no_var_mode)
+    assistant = (
+        f'[STEP 1: CONCEPTS]\n{concepts}\n\n'
+        f'[STEP 2: AMR_NO_VAR]\n{no_var}\n\n'
+        f'[STEP 3: AMR_WITH_VAR]\n{amr}'
+    )
+    return _wrap(get_system_prompt(language, 'MTUP3'), sentence, assistant)
+
+
+def make_MTUP4(sentence: str, amr: str, no_var_mode: str = 'clean',
+               language: str = 'vi') -> str:
+    """MTUP4: concepts → relations → no-var skeleton → full AMR."""
+    concepts = concept_list(amr)
+    relations = relation_list(amr)
+    no_var = strip_variables(amr, mode=no_var_mode)
+    assistant = (
+        f'[STEP 1: CONCEPTS]\n{concepts}\n\n'
+        f'[STEP 2: RELATIONS]\n{relations}\n\n'
+        f'[STEP 3: AMR_NO_VAR]\n{no_var}\n\n'
+        f'[STEP 4: AMR_WITH_VAR]\n{amr}'
+    )
+    return _wrap(get_system_prompt(language, 'MTUP4'), sentence, assistant)
+
+
 BUILDERS = {
     'B1': make_B1,
     'B2': make_B2,
     'MTUP2': make_MTUP2,
+    'MTUP3': make_MTUP3,
+    'MTUP4': make_MTUP4,
 }
 
 
@@ -255,7 +318,7 @@ def main():
     parser.add_argument('--amr1_weight', type=int, default=1)
     parser.add_argument('--amr2_weight', type=int, default=1)
     parser.add_argument('--methods', nargs='+',
-                        default=['B1', 'B2', 'MTUP2'],
+                        default=['B1', 'B2', 'MTUP2', 'MTUP3', 'MTUP4'],
                         choices=sorted(BUILDERS))
     parser.add_argument('--no_var_mode', choices=['clean'], default='clean',
                         help='Active no-reentrancy skeleton representation.')

@@ -31,8 +31,12 @@ DEFAULT_CONFIGS = {
     "B1": "configs/vietnamese_v2/B1.yaml",
     "B2": "configs/vietnamese_v2/B2.yaml",
     "MTUP2": "configs/vietnamese_v2/MTUP2.yaml",
+    "MTUP3": "configs/vietnamese_v2/MTUP3.yaml",
+    "MTUP4": "configs/vietnamese_v2/MTUP4.yaml",
 }
 DEFAULT_MTUP2_LRS = [2e-4, 1e-4, 5e-5]
+DEFAULT_MTUP3_LRS = [5e-5]
+DEFAULT_MTUP4_LRS = [5e-5]
 DEFAULT_BASELINE_LRS = [2e-4, 1e-4, 5e-5, 1e-5]
 
 
@@ -478,6 +482,10 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--group", default="vietnamese_v2_epoch_smatch")
     parser.add_argument("--config-dir", default="configs/generated/vi_epoch_smatch")
     parser.add_argument("--mtup2-lrs", nargs="+", type=float, default=DEFAULT_MTUP2_LRS)
+    parser.add_argument("--mtup3-lrs", nargs="+", type=float, default=DEFAULT_MTUP3_LRS,
+                        help="Learning rates for the three-subtask MTUP3 method.")
+    parser.add_argument("--mtup4-lrs", nargs="+", type=float, default=DEFAULT_MTUP4_LRS,
+                        help="Learning rates for the four-subtask MTUP4 method.")
     parser.add_argument("--baseline-lrs", nargs="+", type=float, default=DEFAULT_BASELINE_LRS)
     parser.add_argument("--tune-baselines", action="store_true",
                         help="Run B1/B2 over --baseline-lrs instead of only their config LR.")
@@ -532,6 +540,10 @@ def main() -> None:
         base_cfg = load_yaml_config(source_config)
         if method == "MTUP2":
             lrs = args.mtup2_lrs
+        elif method == "MTUP3":
+            lrs = args.mtup3_lrs
+        elif method == "MTUP4":
+            lrs = args.mtup4_lrs
         elif args.tune_baselines:
             lrs = args.baseline_lrs
         else:

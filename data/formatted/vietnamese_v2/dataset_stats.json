@@ -13,7 +13,9 @@
   "methods": {
     "B1": 1627,
     "B2": 1627,
-    "MTUP2": 1627
+    "MTUP2": 1627,
+    "MTUP3": 1627,
+    "MTUP4": 1627
   },
   "train_examples": 1627,
   "dev_examples": 181,

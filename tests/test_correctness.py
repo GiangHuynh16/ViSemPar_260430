@@ -7,8 +7,9 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "src"))
 
 from amr_utils import canonicalize_amr, validate_amr  # noqa: E402
+from data_pipeline import make_MTUP3, make_MTUP4  # noqa: E402
 from evaluate import compute_metrics  # noqa: E402
-from inference import extract_amr_MTUP2  # noqa: E402
+from inference import extract_amr_MTUP2, extract_amr_MTUP3, extract_amr_MTUP4  # noqa: E402
 from postprocess import postprocess_amr  # noqa: E402
 from train import load_chat_dataset  # noqa: E402
 
@@ -37,6 +38,19 @@ class CorrectnessTests(unittest.TestCase):
     def test_mtup2_requires_final_step(self):
         response = "[STEP 1: AMR_NO_VAR]\n(thing)"
         self.assertEqual(extract_amr_MTUP2(response), "")
+
+    def test_mtup3_and_mtup4_require_their_final_steps(self):
+        amr = "(w / want-01 :ARG0 (b / boy))"
+        mtup3 = make_MTUP3("câu", amr)
+        mtup4 = make_MTUP4("câu", amr)
+        self.assertIn("[STEP 3: AMR_WITH_VAR]", mtup3)
+        self.assertIn("[STEP 4: AMR_WITH_VAR]", mtup4)
+        self.assertEqual(extract_amr_MTUP3("[STEP 2: AMR_NO_VAR]\n(want-01)"), "")
+        self.assertEqual(extract_amr_MTUP4("[STEP 3: AMR_NO_VAR]\n(want-01)"), "")
+        response3 = "[STEP 3: AMR_WITH_VAR]\n" + amr
+        response4 = "[STEP 4: AMR_WITH_VAR]\n" + amr
+        self.assertEqual(extract_amr_MTUP3(response3), amr)
+        self.assertEqual(extract_amr_MTUP4(response4), amr)
 
     def test_metrics_report_requested_fields(self):
         metrics = compute_metrics(["(a / thing)"], ["(b / thing)"])
